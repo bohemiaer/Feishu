@@ -1,0 +1,18 @@
+{
+  "fields": [
+    "report_id",
+    "project_id",
+    "manager_id",
+    "evaluation_id",
+    "report_type",
+    "key_insights",
+    "improvement_suggestions",
+    "send_status",
+    "doc_url"
+  ],
+  "rows": [
+    ["RPT-001","PJT-001","MGR-001","EVL-001","weekly_report","风险识别较强，需继续推动退款链路闭环。","48小时内确认退款链路 owner 和测试排期。","sent","https://jcneyh7qlo8i.feishu.cn/docx/VEtTdDUpSo39X1xhMHSc5fMZnGb"],
+    ["RPT-002","PJT-002","MGR-002","EVL-002","weekly_report","问题识别准确，需加快AB实验参数闭环。","先统一数据口径，再推进实验验证。","sent","https://jcneyh7qlo8i.feishu.cn/docx/GaMXdYNGVoBIYsxUWclcxpTBnZb"],
+    ["RPT-003","PJT-003","MGR-003","EVL-003","weekly_report","判断方向正确，但owner落实仍偏慢。","本周完成owner清单确认并同步迁移规则。","sent","https://jcneyh7qlo8i.feishu.cn/docx/EYpjdb9kbo3IqaxjA1gciSlyn7d"]
+  ]
+}

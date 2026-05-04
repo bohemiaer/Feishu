@@ -1,0 +1,28 @@
+{
+  "task_id": "FRONT-PJT-CASE-04-unknown",
+  "pipeline_version": "front-pipeline-case04-v1",
+  "status": "blocked",
+  "completeness_status": "blocked",
+  "current_stage": "orchestrator",
+  "next_step": "wait_for_input_completion",
+  "trigger_type": "manual",
+  "source_mode": "case04_sample_bundle",
+  "evaluation_target": {
+    "manager_id": "MGR-CASE-04",
+    "manager_name": "陈昊",
+    "project_id": "PJT-CASE-04",
+    "evaluation_period": "2026-04-13 ~ 2026-04-24",
+    "current_meeting_id": ""
+  },
+  "degrade_reasons": [],
+  "blocking_reasons": [
+    "会议/妙记 缺失",
+    "会议主记录样本不足"
+  ],
+  "warnings": [
+    "当前会议主记录缺失",
+    "当前会议没有完整妙记转写，只能依赖会议表和其他留痕",
+    "当前会议没有 minutes 搜索命中"
+  ],
+  "updated_at": "2026-05-04T12:50:25.198Z"
+}

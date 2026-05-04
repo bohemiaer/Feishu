@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "review_result.schema.json",
+  "title": "ReviewResult",
+  "type": "object",
+  "required": [
+    "meeting_id",
+    "project_id",
+    "review_sample_count",
+    "review_result",
+    "consistency_summary",
+    "supporting_signals",
+    "conflict_signals",
+    "confidence"
+  ],
+  "properties": {
+    "meeting_id": { "type": "string" },
+    "project_id": { "type": "string" },
+    "review_sample_count": { "type": "integer" },
+    "review_result": { "type": "string" },
+    "consistency_summary": { "type": "string" },
+    "supporting_signals": { "type": "array", "items": { "type": "string" } },
+    "conflict_signals": { "type": "array", "items": { "type": "string" } },
+    "confidence": { "type": "number" }
+  },
+  "additionalProperties": false
+}

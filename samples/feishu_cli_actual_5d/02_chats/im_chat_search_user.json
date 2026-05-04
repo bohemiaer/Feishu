@@ -1,0 +1,77 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "chats": [
+      {
+        "avatar": "https://s3-imfile.feishucdn.com/static-resource/v1/v3_00t7_477252c8-67d2-4653-b85d-f58cd6116beg~?image_size=100x100\u0026cut_type=\u0026quality=\u0026format=jpeg\u0026sticker_format=.webp",
+        "chat_id": "oc_42e1fb4f2482dc265deb45d8e463ad47",
+        "chat_mode": "THREAD",
+        "chat_status": "normal",
+        "create_time": "2025-02-18T08:53:34Z",
+        "description": "交流飞书项目插件开发、企业应用 API 集成和最佳实践。",
+        "external": true,
+        "name": "飞书项目开发者社区",
+        "owner_id": "ou_043228e6d548fe1bf6e57bfc11068faf",
+        "owner_id_type": "open_id",
+        "tenant_key": "736588c9260f175d"
+      },
+      {
+        "avatar": "https://s1-imfile.feishucdn.com/static-resource/v1/v3_00110_2590c3ee-c6f9-42d7-85c4-251daaccbfcg~?image_size=100x100\u0026cut_type=\u0026quality=\u0026format=jpeg\u0026sticker_format=.webp",
+        "chat_id": "oc_987536bf63fe49a7ef1f2637915ab3ca",
+        "chat_mode": "group",
+        "chat_status": "normal",
+        "description": "",
+        "external": true,
+        "name": "飞书 AI 校园挑战赛（初赛）-官方沟通群",
+        "owner_id": "ou_5d59b1fea16d069e4e6b1bc6874819e4",
+        "owner_id_type": "open_id",
+        "tenant_key": "736588c9260f175d"
+      },
+      {
+        "avatar": "https://s1-imfile.feishucdn.com/static-resource/v1/b2c152c1-40ff-44e6-a16e-ce0bc911021g~?image_size=100x100\u0026cut_type=\u0026quality=\u0026format=jpeg\u0026sticker_format=.webp",
+        "chat_id": "oc_7fb20f7cb50c93d55ba1b0c1010835d4",
+        "chat_mode": "group",
+        "chat_status": "normal",
+        "description": "😄飞书助手是飞书官方消息推送机器人。",
+        "external": true,
+        "name": "马子民's Feishu Assistant",
+        "tenant_key": "736588c9260f175d"
+      },
+      {
+        "avatar": "https://s1-imfile.feishucdn.com/static-resource/v1/v3_00111_167423e5-03bd-423c-b88e-061fcc71f75g~?image_size=100x100\u0026cut_type=\u0026quality=\u0026format=jpeg\u0026sticker_format=.webp",
+        "chat_id": "oc_48f308f2e9012946b912301799b1d082",
+        "chat_mode": "group",
+        "chat_status": "normal",
+        "description": "",
+        "external": true,
+        "name": "飞书AI产品创新赛道-Multi-Agent Network-多维表格上的多智能体虚拟组织-5组",
+        "owner_id": "ou_17c405bb4d065a7acbaca477d5b93f18",
+        "owner_id_type": "open_id",
+        "tenant_key": "736588c9260f175d"
+      },
+      {
+        "avatar": "https://s3-imfile.feishucdn.com/static-resource/v1/default-avatar_44ae0ca3-e140-494b-956f-78091e348435~?image_size=100x100\u0026cut_type=\u0026quality=\u0026format=jpeg\u0026sticker_format=.webp",
+        "chat_id": "oc_c1a297639b9ef40bd649be0295629ed7",
+        "chat_mode": "p2p",
+        "chat_status": "normal",
+        "description": "",
+        "external": false,
+        "name": "祝可思, 马子民, 杨兆嘉",
+        "owner_id": "ou_5bc9113415fc892be295ce60bf29bb39",
+        "owner_id_type": "open_id",
+        "tenant_key": "1abd20e084069b82"
+      }
+    ],
+    "has_more": false,
+    "page_token": "",
+    "total": 5
+  },
+  "_notice": {
+    "update": {
+      "current": "1.0.19",
+      "latest": "1.0.23",
+      "message": "lark-cli 1.0.23 available, current 1.0.19"
+    }
+  }
+}

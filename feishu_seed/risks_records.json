@@ -1,0 +1,18 @@
+{
+  "fields": [
+    "risk_id",
+    "project_id",
+    "meeting_id",
+    "risk_type",
+    "risk_level",
+    "risk_description",
+    "trigger_reason",
+    "suggested_action",
+    "followup_status"
+  ],
+  "rows": [
+    ["RSK-001","PJT-001","MTG-001","integration","high","退款回调链路未完成联调","关键链路验证不足","优先关闭退款链路阻塞问题","open"],
+    ["RSK-002","PJT-002","MTG-002","data","medium","埋点字段定义尚未完全统一","数据口径未对齐","先统一口径再推进实验放量","open"],
+    ["RSK-003","PJT-003","MTG-003","ownership","medium","迁移责任边界模糊","owner未完全确认","本周锁定内容owner并明确边界","open"]
+  ]
+}

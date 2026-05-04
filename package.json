@@ -1,0 +1,18 @@
+{
+  "name": "manager-insight-mvp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Phase-one execution protocol and data normalization scripts for the Manager Insight MVP.",
+  "scripts": {
+    "bundle:inputs": "node scripts/build_local_input_bundle.js",
+    "build:case1": "node scripts/build_structured_case.js --input case_sources/case_01 --output-dir samples/case_01_generated",
+    "front:case04": "node scripts/run_front_pipeline.js --input-dir samples/feishu_cli_case_04_simulated_5d --output-dir demo_outputs/front_pipeline_case04",
+    "normalize:sample": "node scripts/normalize_meeting_payload.js --input samples/raw_meeting_payload.json --output samples/normalized_meeting_fact_pack.json",
+    "normalize:case1": "node scripts/normalize_meeting_payload.js --input samples/case_01_generated/raw_payload.json --output samples/case_01_meeting_fact_pack.json",
+    "verify:case1": "node scripts/run_evidence_verifier.js --input samples/case_01_meeting_fact_pack.json --request-output samples/case_01_evidence_request.json --output samples/case_01_evidence_result.json",
+    "demo": "node scripts/run_front_pipeline.js --input-dir samples/feishu_cli_case_04_simulated_5d --output-dir demo_outputs/front_pipeline_case04",
+    "demo:legacy": "node scripts/run_demo_pipeline.js --input-dir case_sources --output-dir demo_outputs",
+    "sync:feishu": "node scripts/sync_demo_to_feishu.js",
+    "sync:observability": "node scripts/sync_observability_to_feishu.js"
+  }
+}

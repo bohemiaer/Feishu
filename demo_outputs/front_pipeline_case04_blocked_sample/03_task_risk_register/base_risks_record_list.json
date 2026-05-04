@@ -1,0 +1,66 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "data": [
+      ["NO.201", "resolved", "MTG-CASE-04-02", "字段口径讨论持续来回，影响联调节奏", "字段口径不一致导致联调返工", "high", "PJT-CASE-04", "推进字段冻结表最终版并明确适配责任人", "PJT-CASE-04-RISK-01", "交付风险"],
+      ["NO.202", "tracking", "MTG-CASE-04-03", "高峰压测发现尾延迟，尚未完全消除", "退款回写高峰场景尾延迟", "high", "PJT-CASE-04", "继续跟踪长尾点并补充压测结论到文档", "PJT-CASE-04-RISK-02", "交付风险"],
+      ["NO.203", "resolved", "MTG-CASE-04-03", "晚间回归窗口被其他项目占用", "晚间环境窗口不稳定", "high", "PJT-CASE-04", "提前确认环境负责人并保留备选窗口", "PJT-CASE-04-RISK-03", "资源风险"],
+      ["NO.204", "closed", "MTG-CASE-04-04", "客服异常 A 复现材料不完整，影响问题判断", "客服高频异常 A 未及时复现", "medium", "PJT-CASE-04", "补齐样本后关闭该项并同步影响范围", "PJT-CASE-04-RISK-04", "质量风险"],
+      ["NO.205", "tracking", "MTG-CASE-04-04", "依赖外部供应商反馈，异常 B 处理偏慢", "客服高频异常 B 未及时复现", "medium", "PJT-CASE-04", "保留遗留项说明并顺延到下一阶段", "PJT-CASE-04-RISK-05", "协同风险"],
+      ["NO.206", "tracking", "MTG-CASE-04-03", "线下对齐后补录不完整，部分决策只有结论没有上下文", "线下结论未及时留痕", "medium", "PJT-CASE-04", "把补录结论同步进评审纪要并保留缺失说明", "PJT-CASE-04-RISK-06", "流程风险"],
+      ["NO.207", "open", "MTG-CASE-04-01", "历史旧版方案仍在流转，容易误导本轮优先级", "旧版文档口径误导执行", "medium", "PJT-CASE-04", "在主文档中明确本轮范围并弱化旧版附件影响", "PJT-CASE-04-RISK-07", "文档风险"],
+      ["NO.208", "tracking", "MTG-CASE-04-04", "如果长尾问题持续，临时补偿脚本准备不足", "低频回写补偿脚本准备不足", "medium", "PJT-CASE-04", "输出补偿脚本草案并继续补齐正式版本", "PJT-CASE-04-RISK-08", "交付风险"],
+      ["NO.209", "open", "MTG-CASE-04-04", "监控看板接入被短暂提为高优先项，但与本轮目标弱相关", "监控看板接入被误提为高优先级", "low", "PJT-CASE-04", "保留记录，不纳入本轮执行范围", "PJT-CASE-04-RISK-09", "噪音项"],
+      ["NO.210", "record_only", "MTG-CASE-04-04", "会后有个别成员反馈复盘语气带来压力，但未形成正式事件", "复盘沟通语气引发成员压力", "low", "PJT-CASE-04", "仅记录该反馈，不扩写为正式结论", "PJT-CASE-04-RISK-10", "行为观察"]
+    ],
+    "field_id_list": [
+      "fldHn0wO9Y",
+      "fldeB5UWHb",
+      "fldg2dEH1y",
+      "fldKfJl1Tq",
+      "fldNkOJqiB",
+      "fldrcHlzNn",
+      "fldUbv9Kq5",
+      "fldVNfgFxP",
+      "fldxOnFxW3",
+      "fldYWf4qYn"
+    ],
+    "fields": [
+      "ID",
+      "followup_status",
+      "meeting_id",
+      "trigger_reason",
+      "risk_description",
+      "risk_level",
+      "project_id",
+      "suggested_action",
+      "risk_id",
+      "risk_type"
+    ],
+    "has_more": false,
+    "query_context": {
+      "field_scope": "all_fields",
+      "record_scope": "all_records"
+    },
+    "record_id_list": [
+      "reccase04risk001",
+      "reccase04risk002",
+      "reccase04risk003",
+      "reccase04risk004",
+      "reccase04risk005",
+      "reccase04risk006",
+      "reccase04risk007",
+      "reccase04risk008",
+      "reccase04risk009",
+      "reccase04risk010"
+    ]
+  },
+  "_notice": {
+    "update": {
+      "current": "1.0.19",
+      "latest": "1.0.23",
+      "message": "lark-cli 1.0.23 available, current 1.0.19"
+    }
+  }
+}

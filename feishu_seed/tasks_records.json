@@ -1,0 +1,22 @@
+{
+  "fields": [
+    "task_id",
+    "project_id",
+    "source_meeting_id",
+    "task_name",
+    "owner",
+    "due_date",
+    "status",
+    "is_overdue",
+    "is_closed",
+    "close_duration"
+  ],
+  "rows": [
+    ["TSK-001","PJT-001","MTG-001","退款回调链路联调","赵敏","2026-04-28","进行中","false","false",""],
+    ["TSK-002","PJT-001","MTG-001","补齐支付成功率验证样本","陈凯","2026-04-29","已完成","false","true","2天"],
+    ["TSK-003","PJT-002","MTG-002","统一埋点字段定义","周扬","2026-04-28","进行中","false","false",""],
+    ["TSK-004","PJT-002","MTG-002","补充AB实验参数校验","何帆","2026-04-29","未开始","false","false",""],
+    ["TSK-005","PJT-003","MTG-003","形成知识归档规则草案","孙越","2026-04-30","进行中","false","false",""],
+    ["TSK-006","PJT-003","MTG-003","确认内容owner清单","高琳","2026-05-02","未开始","false","false",""]
+  ]
+}

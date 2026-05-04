@@ -1,0 +1,66 @@
+﻿{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "has_more": false,
+    "items": [
+      {
+        "display_info": "祝可思, 马子民, 杨兆嘉的视频会议\n\n昨天 21:03 | 组织者：马子民 | ID: 968 333 353",
+        "id": "7635273891663285213",
+        "meta_data": {
+          "app_link": "https://applink.feishu.cn/client/vctab/open?source=chat\u0026action=detail\u0026meetingId=7635273891663285213",
+          "avatar": "https://lf-package-cn.feishucdn.com/obj/feishu-static/vchat-static-resource/meeting_icon.png",
+          "description": "昨天 21:03 | 组织者：马子民 | ID: 968 333 353"
+        }
+      },
+      {
+        "display_info": "祝可思, 马子民, 杨兆嘉的视频会议\n\n5月1日 23:26 | 组织者：马子民 | ID: 334 432 891",
+        "id": "7634934639647837378",
+        "meta_data": {
+          "app_link": "https://applink.feishu.cn/client/vctab/open?source=chat\u0026action=detail\u0026meetingId=7634934639647837378",
+          "avatar": "https://lf-package-cn.feishucdn.com/obj/feishu-static/vchat-static-resource/meeting_icon.png",
+          "description": "5月1日 23:26 | 组织者：马子民 | ID: 334 432 891"
+        }
+      },
+      {
+        "display_info": "马子民的视频会议\n\n5月1日 21:03 | 组织者：马子民 | ID: 441 047 285\n[外部]",
+        "id": "7634900867515043007",
+        "meta_data": {
+          "app_link": "https://applink.feishu.cn/client/vctab/open?source=chat\u0026action=detail\u0026meetingId=7634900867515043007",
+          "avatar": "https://lf-package-cn.feishucdn.com/obj/feishu-static/vchat-static-resource/meeting_icon.png",
+          "description": "5月1日 21:03 | 组织者：马子民 | ID: 441 047 285"
+        }
+      },
+      {
+        "display_info": "马子民的视频会议\n\n4月30日 22:42 | 组织者：马子民 | ID: 825 982 190",
+        "id": "7634558877484665806",
+        "meta_data": {
+          "app_link": "https://applink.feishu.cn/client/vctab/open?source=chat\u0026action=detail\u0026meetingId=7634558877484665806",
+          "avatar": "https://lf-package-cn.feishucdn.com/obj/feishu-static/vchat-static-resource/meeting_icon.png",
+          "description": "4月30日 22:42 | 组织者：马子民 | ID: 825 982 190"
+        }
+      },
+      {
+        "display_info": "(无主题)\n\n4月30日 14:30 | 组织者：马子民 | ID: 707 807 056",
+        "id": "7634435493691182305",
+        "meta_data": {
+          "app_link": "https://applink.feishu.cn/client/vctab/open?source=chat\u0026action=detail\u0026meetingId=7634435493691182305",
+          "avatar": "https://lf-package-cn.feishucdn.com/obj/feishu-static/vchat-static-resource/meeting_icon.png",
+          "description": "4月30日 14:30 | 组织者：马子民 | ID: 707 807 056"
+        }
+      }
+    ],
+    "page_token": "b7d9d3db23f528ac",
+    "total": null
+  },
+  "meta": {
+    "count": 5
+  },
+  "_notice": {
+    "update": {
+      "current": "1.0.19",
+      "latest": "1.0.23",
+      "message": "lark-cli 1.0.23 available, current 1.0.19"
+    }
+  }
+}

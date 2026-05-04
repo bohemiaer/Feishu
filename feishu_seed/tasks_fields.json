@@ -1,0 +1,12 @@
+[
+  {"name":"task_id","type":"text"},
+  {"name":"project_id","type":"text"},
+  {"name":"source_meeting_id","type":"text"},
+  {"name":"task_name","type":"text"},
+  {"name":"owner","type":"text"},
+  {"name":"due_date","type":"text"},
+  {"name":"status","type":"text"},
+  {"name":"is_overdue","type":"text"},
+  {"name":"is_closed","type":"text"},
+  {"name":"close_duration","type":"text"}
+]

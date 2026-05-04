@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "history_bundle.schema.json",
+  "title": "HistoryBundle",
+  "type": "object",
+  "required": [
+    "recent_meetings",
+    "past_evaluations",
+    "risk_history",
+    "history_meetings",
+    "task_closure_notes",
+    "risk_notes"
+  ],
+  "properties": {
+    "recent_meetings": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "past_evaluations": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "risk_history": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "history_meetings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["meeting_id", "summary"],
+        "properties": {
+          "meeting_id": { "type": "string" },
+          "summary": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "task_closure_notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "risk_notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

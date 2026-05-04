@@ -1,0 +1,95 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "items": [
+      {
+        "event_id": "cal_case04_evt_0413_sync",
+        "summary": "专项同步",
+        "start_time": "2026-04-13T10:02:00+08:00",
+        "end_time": "2026-04-13T10:58:00+08:00",
+        "organizer": {
+          "open_id": "ou_case04chentarget001",
+          "name": "陈昊"
+        },
+        "attendees": [
+          "陈昊",
+          "林玥",
+          "冯子轩",
+          "沈薇",
+          "唐可",
+          "马会",
+          "罗征",
+          "吴恬"
+        ],
+        "location": "线上会议",
+        "meeting_id": "MTG-CASE-04-01"
+      },
+      {
+        "event_id": "cal_case04_evt_0416_joint",
+        "summary": "联调状态沟通",
+        "start_time": "2026-04-16T15:00:00+08:00",
+        "end_time": "2026-04-16T16:20:00+08:00",
+        "organizer": {
+          "open_id": "ou_case04wutian0005",
+          "name": "吴恬"
+        },
+        "attendees": [
+          "陈昊",
+          "林玥",
+          "冯子轩",
+          "吴恬",
+          "马会",
+          "罗征"
+        ],
+        "location": "线上 + 线下混合",
+        "meeting_id": "MTG-CASE-04-02"
+      },
+      {
+        "event_id": "cal_case04_evt_0418_offline",
+        "summary": "阶段评审前线下沟通补录",
+        "start_time": "2026-04-18T11:45:00+08:00",
+        "end_time": "2026-04-18T12:05:00+08:00",
+        "organizer": {
+          "open_id": "ou_case04chentarget001",
+          "name": "陈昊"
+        },
+        "attendees": [
+          "陈昊",
+          "林玥",
+          "沈薇",
+          "唐可"
+        ],
+        "location": "A3 会议室",
+        "meeting_id": "MTG-CASE-04-03",
+        "note": "线下沟通无完整录音，后续由吴恬补录摘要。"
+      },
+      {
+        "event_id": "cal_case04_evt_0424_review",
+        "summary": "专项阶段复盘",
+        "start_time": "2026-04-24T19:30:00+08:00",
+        "end_time": "2026-04-24T20:35:00+08:00",
+        "organizer": {
+          "open_id": "ou_case04chentarget001",
+          "name": "陈昊"
+        },
+        "attendees": [
+          "陈昊",
+          "林玥",
+          "马会",
+          "吴恬"
+        ],
+        "location": "线下会议室 + 飞书文档记录",
+        "meeting_id": "MTG-CASE-04-04"
+      }
+    ],
+    "has_more": false
+  },
+  "_notice": {
+    "update": {
+      "current": "1.0.19",
+      "latest": "1.0.23",
+      "message": "lark-cli 1.0.23 available, current 1.0.19"
+    }
+  }
+}

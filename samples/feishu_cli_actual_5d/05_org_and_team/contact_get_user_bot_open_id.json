@@ -1,0 +1,18 @@
+﻿{
+  "ok": true,
+  "identity": "bot",
+  "data": {
+    "user": {
+      "mobile_visible": true,
+      "open_id": "ou_5bc9113415fc892be295ce60bf29bb39",
+      "union_id": "on_2060cfd1c5ebe148ea462b5cb7e70f65"
+    }
+  },
+  "_notice": {
+    "update": {
+      "current": "1.0.19",
+      "latest": "1.0.23",
+      "message": "lark-cli 1.0.23 available, current 1.0.19"
+    }
+  }
+}

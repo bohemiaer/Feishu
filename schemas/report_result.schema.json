@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "report_result.schema.json",
+  "title": "ReportResult",
+  "type": "object",
+  "required": [
+    "report_title",
+    "manager_id",
+    "project_id",
+    "report_type",
+    "summary",
+    "score_overview",
+    "review_result",
+    "key_evidence",
+    "risk_alerts",
+    "next_actions"
+  ],
+  "properties": {
+    "report_title": { "type": "string" },
+    "manager_id": { "type": "string" },
+    "project_id": { "type": "string" },
+    "report_type": { "type": "string" },
+    "summary": { "type": "string" },
+    "score_overview": {
+      "type": "object",
+      "required": [
+        "project_understanding",
+        "evidence_based",
+        "execution_closure",
+        "risk_identification"
+      ],
+      "properties": {
+        "project_understanding": { "type": "integer" },
+        "evidence_based": { "type": "integer" },
+        "execution_closure": { "type": "integer" },
+        "risk_identification": { "type": "integer" }
+      },
+      "additionalProperties": false
+    },
+    "review_result": { "type": "string" },
+    "key_evidence": { "type": "array", "items": { "type": "string" } },
+    "risk_alerts": { "type": "array", "items": { "type": "string" } },
+    "next_actions": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

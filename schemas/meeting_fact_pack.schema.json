@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "meeting_fact_pack.schema.json",
+  "title": "MeetingFactPack",
+  "type": "object",
+  "required": [
+    "task_context",
+    "meeting_info",
+    "meeting_facts",
+    "project_snapshot",
+    "document_snapshot",
+    "metrics",
+    "missing_fields",
+    "provenance_refs"
+  ],
+  "properties": {
+    "task_context": {
+      "type": "object",
+      "required": [
+        "task_id",
+        "project_id",
+        "manager_id",
+        "meeting_id",
+        "evaluation_period",
+        "status",
+        "created_at",
+        "updated_at"
+      ],
+      "properties": {
+        "task_id": { "type": "string" },
+        "project_id": { "type": "string" },
+        "manager_id": { "type": "string" },
+        "meeting_id": { "type": "string" },
+        "evaluation_period": { "type": "string" },
+        "status": { "type": "string" },
+        "created_at": { "type": "string" },
+        "updated_at": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "meeting_info": {
+      "type": "object",
+      "required": [
+        "meeting_id",
+        "project_id",
+        "manager_id",
+        "meeting_title",
+        "meeting_time",
+        "participants"
+      ],
+      "properties": {
+        "meeting_id": { "type": "string" },
+        "project_id": { "type": "string" },
+        "manager_id": { "type": "string" },
+        "manager_name": { "type": "string" },
+        "meeting_title": { "type": "string" },
+        "meeting_time": { "type": "string" },
+        "participants": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "calendar_event_id": { "type": "string" },
+        "review_status": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "meeting_facts": {
+      "type": "object",
+      "required": [
+        "manager_speech_summary",
+        "decisions",
+        "risks_mentioned",
+        "action_items"
+      ],
+      "properties": {
+        "manager_speech_summary": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "decisions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "risks_mentioned": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "action_items": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "transcript_segments": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "statement_evidence": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "noise_signals": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "project_snapshot": {
+      "type": "object",
+      "required": [
+        "project_name",
+        "project_stage",
+        "project_health",
+        "open_tasks",
+        "overdue_tasks",
+        "open_risks"
+      ],
+      "properties": {
+        "project_name": { "type": "string" },
+        "project_stage": { "type": "string" },
+        "project_health": { "type": "string" },
+        "open_tasks": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "overdue_tasks": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "open_risks": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "all_tasks": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "all_risks": {
+          "type": "array",
+          "items": { "type": "object" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "document_snapshot": {
+      "type": "object",
+      "required": [
+        "project_goal",
+        "weekly_highlights",
+        "review_highlights"
+      ],
+      "properties": {
+        "project_goal": { "type": "string" },
+        "weekly_highlights": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "review_highlights": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "main_doc_excerpt": { "type": "string" },
+        "review_doc_excerpt": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "metrics": {
+      "type": "object",
+      "required": [
+        "action_item_count",
+        "open_task_count",
+        "overdue_task_count",
+        "open_risk_count"
+      ],
+      "properties": {
+        "action_item_count": { "type": "integer" },
+        "open_task_count": { "type": "integer" },
+        "overdue_task_count": { "type": "integer" },
+        "open_risk_count": { "type": "integer" },
+        "total_task_count": { "type": "integer" },
+        "total_risk_count": { "type": "integer" },
+        "historical_meeting_count": { "type": "integer" }
+      },
+      "additionalProperties": false
+    },
+    "missing_fields": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "provenance_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_type", "source_file", "source_id", "timestamp", "excerpt"],
+        "properties": {
+          "source_type": { "type": "string" },
+          "source_file": { "type": "string" },
+          "source_id": { "type": "string" },
+          "timestamp": { "type": "string" },
+          "excerpt": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

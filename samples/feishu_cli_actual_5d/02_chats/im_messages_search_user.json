@@ -1,0 +1,441 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "has_more": false,
+    "messages": [
+      {
+        "content": "[ 多Agent编排_降级版 - 飞书云文档](https://jcneyh7qlo8i.feishu.cn/wiki/EepRwzyMPidNcZkxGjKcxmptnbg)",
+        "create_time": "2026-05-03 22:56",
+        "deleted": false,
+        "message_id": "om_x100b50426ccb50a0c4d0cafb105fce4",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_d03447c7dca5f164173ee917b3f2f3dd",
+          "id_type": "open_id",
+          "name": "祝可思",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "[Docs](https://jcneyh7qlo8i.feishu.cn/wiki/Zf8cwshXXiiHPjklGVPc3fjInJg)",
+        "create_time": "2026-05-03 22:47",
+        "deleted": false,
+        "message_id": "om_x100b5041b01324a4c3308975898581f",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_d03447c7dca5f164173ee917b3f2f3dd",
+          "id_type": "open_id",
+          "name": "祝可思",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "[多Agent编排 - 飞书云文档](https://jcneyh7qlo8i.feishu.cn/wiki/MTvTwjhQ3ivnOKk5jtIcoko5nke)",
+        "create_time": "2026-05-03 22:46",
+        "deleted": false,
+        "message_id": "om_x100b5041b33f94a0c4c5d93338debc8",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_d03447c7dca5f164173ee917b3f2f3dd",
+          "id_type": "open_id",
+          "name": "祝可思",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "把协同那一部分直接改成协同阻塞清理成功率：衡量跨团队阻塞最终是否被清理、关闭或解除，更强调问题是否被推进到可解决状态，而不只看处理动作是否发生。",
+        "create_time": "2026-05-03 22:19",
+        "deleted": false,
+        "message_id": "om_x100b5041d94390a0c38bd2ce5b4647e",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_d03447c7dca5f164173ee917b3f2f3dd",
+          "id_type": "open_id",
+          "name": "祝可思",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "[中层管理效能洞察-MVP - 飞书云文档](https://jcneyh7qlo8i.feishu.cn/base/R7bebfixvam0AqsPowucJcuHn2e?table=tblicUOibiCMfJ3h\u0026view=vewSpWh2K3)",
+        "create_time": "2026-05-03 21:51",
+        "deleted": false,
+        "message_id": "om_x100b50416023e0a4b360d4a8132767c",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_5bc9113415fc892be295ce60bf29bb39",
+          "id_type": "open_id",
+          "name": "马子民",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "拉屎晚个3分钟",
+        "create_time": "2026-05-03 21:00",
+        "deleted": false,
+        "message_id": "om_x100b5040230144a0b21111c1f46d325",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_d03447c7dca5f164173ee917b3f2f3dd",
+          "id_type": "open_id",
+          "name": "祝可思",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "[Video call]",
+        "create_time": "2026-05-03 20:58",
+        "deleted": false,
+        "message_id": "om_x100b50407d17c088c2a4285859c65a8",
+        "msg_type": "video_chat",
+        "sender": {
+          "id": "ou_5bc9113415fc892be295ce60bf29bb39",
+          "id_type": "open_id",
+          "name": "马子民",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": true
+      },
+      {
+        "content": "Meeting has started. New messages will be synced in the group chat and in-meeting chat.",
+        "create_time": "2026-05-03 20:58",
+        "deleted": false,
+        "message_id": "om_x100b50402b6434a8c43db0a3df5a5a5",
+        "msg_type": "system",
+        "sender": {
+          "id": "",
+          "id_type": "",
+          "sender_type": "",
+          "tenant_key": ""
+        },
+        "updated": false
+      },
+      {
+        "content": "有个问题，不参与一线业务的领导，风险是他们提出来的还是下属提出来，他们只需要接受汇报就好了",
+        "create_time": "2026-05-03 17:58",
+        "deleted": false,
+        "message_id": "om_x100b504588d000a0b37307a100b4b92",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_5bc9113415fc892be295ce60bf29bb39",
+          "id_type": "open_id",
+          "name": "马子民",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "最近7天群消息记录（共23条，展示前8条）",
+        "create_time": "2026-05-02 23:09",
+        "deleted": false,
+        "message_id": "om_x100b5055772d2ca0b34ca9b042039bc",
+        "msg_type": "text",
+        "sender": {
+          "id": "cli_a97f42e901789bc9",
+          "id_type": "app_id",
+          "sender_type": "app",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "杨兆嘉 invited 杨兆嘉的飞书 CLI to the group. New members can view all chat history.",
+        "create_time": "2026-05-02 23:04",
+        "deleted": false,
+        "message_id": "om_x100b505569a170a4b10597c33f8ab5e",
+        "msg_type": "system",
+        "sender": {
+          "id": "",
+          "id_type": "",
+          "sender_type": "",
+          "tenant_key": ""
+        },
+        "updated": false
+      },
+      {
+        "content": "https://project.feishu.cn/home/product",
+        "create_time": "2026-05-02 22:27",
+        "deleted": false,
+        "message_id": "om_x100b5054d567f0a4b4cc59f876d6447",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_5bc9113415fc892be295ce60bf29bb39",
+          "id_type": "open_id",
+          "name": "马子民",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": true
+      },
+      {
+        "content": "[获取会话历史消息 - 服务端 API - 开发文档 - 飞书开放平台](https://open.feishu.cn/document/server-docs/im-v1/message/list)",
+        "create_time": "2026-05-02 21:51",
+        "deleted": false,
+        "message_id": "om_x100b50545bf568b0b398285d6105ecc",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_5bc9113415fc892be295ce60bf29bb39",
+          "id_type": "open_id",
+          "name": "马子民",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "[Image: img_v3_0211a_b60e883e-bccb-4afa-9733-518f24f52dag]",
+        "create_time": "2026-05-02 21:28",
+        "deleted": false,
+        "message_id": "om_x100b506b8eb034a0b2a3fc4dbf7b7a8",
+        "msg_type": "image",
+        "sender": {
+          "id": "ou_5bc9113415fc892be295ce60bf29bb39",
+          "id_type": "open_id",
+          "name": "马子民",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "[Video call]",
+        "create_time": "2026-05-02 21:03",
+        "deleted": false,
+        "message_id": "om_x100b506b5f3db1acc4c4f6beb961f0f",
+        "msg_type": "video_chat",
+        "sender": {
+          "id": "ou_5bc9113415fc892be295ce60bf29bb39",
+          "id_type": "open_id",
+          "name": "马子民",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": true
+      },
+      {
+        "content": "Meeting has started. New messages will be synced in the group chat and in-meeting chat.",
+        "create_time": "2026-05-02 21:03",
+        "deleted": false,
+        "message_id": "om_x100b506b2c48f0b0b3b1293c8b279e4",
+        "msg_type": "system",
+        "sender": {
+          "id": "",
+          "id_type": "",
+          "sender_type": "",
+          "tenant_key": ""
+        },
+        "updated": false
+      },
+      {
+        "content": "测试",
+        "create_time": "2026-05-02 17:45",
+        "deleted": false,
+        "message_id": "om_x100b506832d480a0c2ed8a3d7236f67",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_d03447c7dca5f164173ee917b3f2f3dd",
+          "id_type": "open_id",
+          "name": "祝可思",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "我觉得比较重要的是，先模拟出一版比较全面的输入数据源（各种会议、聊天记录、项目文档、周报等），基于这个我们去做初版的agent架构，调整的能输出 我们满意的输出成果物；之后再做一版包含各种边界情况（信息模糊、确实、噪音大）的case输入源，根据这个我们确定失败和降级策略、兜底措施",
+        "create_time": "2026-05-02 17:26",
+        "deleted": false,
+        "message_id": "om_x100b50687db788a4b4a6bac0ee7ef6c",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_5bc9113415fc892be295ce60bf29bb39",
+          "id_type": "open_id",
+          "name": "马子民",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "好难啊，头痛",
+        "create_time": "2026-05-02 17:07",
+        "deleted": false,
+        "message_id": "om_x100b506fa08bcca4b3db7ac53225063",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_5bc9113415fc892be295ce60bf29bb39",
+          "id_type": "open_id",
+          "name": "马子民",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "thread_id": "omt_1a90362d420f5c91",
+        "thread_replies": [
+          {
+            "content": "我去",
+            "create_time": "2026-05-02 17:23",
+            "deleted": false,
+            "message_id": "om_x100b506869bdacacc38ef8ddba50069",
+            "msg_type": "text",
+            "sender": {
+              "id": "ou_d03447c7dca5f164173ee917b3f2f3dd",
+              "id_type": "open_id",
+              "name": "祝可思",
+              "sender_type": "user",
+              "tenant_key": "1abd20e084069b82"
+            },
+            "thread_id": "omt_1a90362d420f5c91",
+            "updated": false
+          },
+          {
+            "content": "有折叠讨论",
+            "create_time": "2026-05-02 17:23",
+            "deleted": false,
+            "message_id": "om_x100b506869129cacc4ca5c39abc6d2b",
+            "msg_type": "text",
+            "sender": {
+              "id": "ou_d03447c7dca5f164173ee917b3f2f3dd",
+              "id_type": "open_id",
+              "name": "祝可思",
+              "sender_type": "user",
+              "tenant_key": "1abd20e084069b82"
+            },
+            "thread_id": "omt_1a90362d420f5c91",
+            "updated": false
+          },
+          {
+            "content": "测试",
+            "create_time": "2026-05-02 17:45",
+            "deleted": false,
+            "message_id": "om_x100b506832d4c8a0c39fc5fc8ef4981",
+            "msg_type": "text",
+            "sender": {
+              "id": "ou_d03447c7dca5f164173ee917b3f2f3dd",
+              "id_type": "open_id",
+              "name": "祝可思",
+              "sender_type": "user",
+              "tenant_key": "1abd20e084069b82"
+            },
+            "thread_id": "omt_1a90362d420f5c91",
+            "updated": false
+          },
+          {
+            "content": "？",
+            "create_time": "2026-05-02 18:06",
+            "deleted": false,
+            "message_id": "om_x100b50688748a8b4b4bc0f9c0fcb293",
+            "msg_type": "text",
+            "sender": {
+              "id": "ou_5bc9113415fc892be295ce60bf29bb39",
+              "id_type": "open_id",
+              "name": "马子民",
+              "sender_type": "user",
+              "tenant_key": "1abd20e084069b82"
+            },
+            "thread_id": "omt_1a90362d420f5c91",
+            "updated": false
+          }
+        ],
+        "updated": true
+      },
+      {
+        "content": "我觉得我们昨天提到的关于会议的卡点还是存在，每次会议不一定是线上会议，有可能是线下，没办法清晰识别到哪句话发言人；会议的标注信息不足，无法判断是哪种会议；所以我觉得还是要从云文档和聊天记录里面获取信息，会议作为辅助判断，尽可能提取信息作为证据；",
+        "create_time": "2026-05-02 17:02",
+        "deleted": false,
+        "message_id": "om_x100b506f97046cb8b264f33feb7e921",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_5bc9113415fc892be295ce60bf29bb39",
+          "id_type": "open_id",
+          "name": "马子民",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "会议前需要完成的工作：1.写周报；2.整理昨天的会议内容；3.生成比较具体的方案，如agent架构；会议需要确认的内容：具体方案、分工",
+        "create_time": "2026-05-02 16:33",
+        "deleted": false,
+        "message_id": "om_x100b506f20ece4a4b26dda3f936093c",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_5bc9113415fc892be295ce60bf29bb39",
+          "id_type": "open_id",
+          "name": "马子民",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "https://jcneyh7qlo8i.feishu.cn/wiki/GUf5wdfikiuSAgkObgDcgHNKn9e?from=from_copylink",
+        "create_time": "2026-05-02 16:25",
+        "deleted": false,
+        "message_id": "om_x100b506f032290acb291b1483d7b63a",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_5bc9113415fc892be295ce60bf29bb39",
+          "id_type": "open_id",
+          "name": "马子民",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "求编辑",
+        "create_time": "2026-05-02 15:58",
+        "deleted": false,
+        "message_id": "om_x100b506ea713cd00c4254073b08c0e2",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_d03447c7dca5f164173ee917b3f2f3dd",
+          "id_type": "open_id",
+          "name": "祝可思",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "[中层管理效能洞察-MVP - 飞书云文档](https://jcneyh7qlo8i.feishu.cn/base/R7bebfixvam0AqsPowucJcuHn2e?table=tblhYdNqCBoSlArI\u0026view=vewidcSWT8)",
+        "create_time": "2026-05-02 15:58",
+        "deleted": false,
+        "message_id": "om_x100b506ea636f0a0b2da28e28849645",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_5bc9113415fc892be295ce60bf29bb39",
+          "id_type": "open_id",
+          "name": "马子民",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      }
+    ],
+    "page_token": "",
+    "total": 29
+  },
+  "_notice": {
+    "update": {
+      "current": "1.0.19",
+      "latest": "1.0.23",
+      "message": "lark-cli 1.0.23 available, current 1.0.19"
+    }
+  }
+}

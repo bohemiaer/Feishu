@@ -1,0 +1,20 @@
+{
+  "meeting_id": "MTG-CASE-01",
+  "project_id": "PJT-001",
+  "manager_id": "MGR-001",
+  "scores": {
+    "project_understanding": 74,
+    "evidence_based": 55,
+    "execution_closure": 59,
+    "risk_identification": 74
+  },
+  "score_explanations": {
+    "project_understanding": "对项目重点有一定把握，但表达与事实支撑仍不够稳定。",
+    "evidence_based": "当前会议中存在多条依据不足或需要继续校验的表达。",
+    "execution_closure": "会后动作虽然存在，但推进和闭环效率仍需加强。",
+    "risk_identification": "风险识别或风险表达仍存在遗漏与不稳定之处。"
+  },
+  "overall_summary": "当前会议表达与项目事实存在冲突信号，建议优先复核风险判断与推进口径。",
+  "top_strength": "project_understanding",
+  "top_risk": "evidence_based"
+}

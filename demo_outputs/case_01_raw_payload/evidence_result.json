@@ -1,0 +1,60 @@
+{
+  "meeting_id": "MTG-CASE-01",
+  "project_id": "PJT-001",
+  "statement_checks": [
+    {
+      "statement_id": "stmt-1",
+      "statement_summary": "如果退款回调链路和商户配置脚本两个高风险点不收口，本周不能进入灰度。",
+      "judgement": "无依据",
+      "confidence": 0.35,
+      "supporting_evidence": [
+        "本次升级目标是完成新支付路由切换，并同步收敛退款回调与商户配置链路。",
+        "退款回调链路剩余 2 个阻塞问题，预计周一晚可收口。",
+        "退款回调链路联调 进行中 赵敏 2026-04-28 18:00"
+      ],
+      "conflict_evidence": []
+    },
+    {
+      "statement_id": "stmt-2",
+      "statement_summary": "测试样本数量已经接近门槛，但异常退款和弱网场景覆盖还不够，需要今天内补齐。",
+      "judgement": "无依据",
+      "confidence": 0.4,
+      "supporting_evidence": [
+        "核心支付成功率验证样本已补齐，但异常退款和弱网样本仍有缺口。",
+        "test_coverage high 异常退款与弱网场景覆盖不足，灰度前验证不完整 open",
+        "补齐异常退款与弱网验证样本 进行中 陈凯 2026-04-27 20:00"
+      ],
+      "conflict_evidence": []
+    },
+    {
+      "statement_id": "stmt-3",
+      "statement_summary": "灰度不是为了赶节点，必须保证支付成功率、退款一致性和回滚方案三个条件同时满足。",
+      "judgement": "无依据",
+      "confidence": 0.26,
+      "supporting_evidence": [
+        "核心支付成功率验证样本已补齐，但异常退款和弱网样本仍有缺口。",
+        "更新灰度前置条件清单 进行中 吴桐 2026-04-28 10:00",
+        "test_coverage high 异常退款与弱网场景覆盖不足，灰度前验证不完整 open"
+      ],
+      "conflict_evidence": []
+    },
+    {
+      "statement_id": "stmt-4",
+      "statement_summary": "我要今天晚上拿到联调收口清单和灰度前置条件确认表，否则周三的灰度申请先不提。",
+      "judgement": "无依据",
+      "confidence": 0.27,
+      "supporting_evidence": [
+        "更新灰度前置条件清单 进行中 吴桐 2026-04-28 10:00",
+        "test_coverage high 异常退款与弱网场景覆盖不足，灰度前验证不完整 open",
+        "若今晚测试环境排期被压缩，灰度前回归窗口将受到影响。"
+      ],
+      "conflict_evidence": []
+    }
+  ],
+  "meeting_preliminary_result": {
+    "supported_ratio": 0,
+    "conflict_count": 0,
+    "high_risk_flag": true,
+    "summary": "当前会议存在需要重点关注的表达或项目风险，建议进入 review 复核。"
+  }
+}

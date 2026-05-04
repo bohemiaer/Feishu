@@ -1,0 +1,56 @@
+{
+  "fields": [
+    "statement_id",
+    "meeting_id",
+    "project_id",
+    "speaker_id",
+    "speaker_name",
+    "statement_summary",
+    "evidence_source_type",
+    "evidence_ref",
+    "evidence_confidence",
+    "fact_check_result",
+    "review_meeting_count"
+  ],
+  "rows": [
+    [
+      "STM-001",
+      "MTG-001",
+      "PJT-001",
+      "MGR-001",
+      "张磊",
+      "灰度前最大风险在退款回调和测试资源。",
+      "doc+risk+weekly",
+      "主文档/周报/风险表",
+      "0.91",
+      "有依据",
+      "4"
+    ],
+    [
+      "STM-002",
+      "MTG-002",
+      "PJT-002",
+      "MGR-002",
+      "李洁",
+      "当前主要问题在数据埋点口径和实验参数校验。",
+      "doc+weekly+risk",
+      "主文档/周报/风险表",
+      "0.88",
+      "有依据",
+      "3"
+    ],
+    [
+      "STM-003",
+      "MTG-003",
+      "PJT-003",
+      "MGR-003",
+      "王晨",
+      "owner不清和迁移规则未统一会直接拖慢推进。",
+      "doc+weekly",
+      "主文档/周报",
+      "0.86",
+      "有依据",
+      "3"
+    ]
+  ]
+}

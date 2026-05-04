@@ -1,0 +1,13 @@
+[
+  {"name":"evaluation_id","type":"text"},
+  {"name":"project_id","type":"text"},
+  {"name":"manager_id","type":"text"},
+  {"name":"current_meeting_id","type":"text"},
+  {"name":"evaluation_period","type":"text"},
+  {"name":"project_understanding_score","type":"text"},
+  {"name":"evidence_based_score","type":"text"},
+  {"name":"execution_closure_score","type":"text"},
+  {"name":"risk_identification_score","type":"text"},
+  {"name":"review_result","type":"text"},
+  {"name":"overall_summary","type":"text"}
+]

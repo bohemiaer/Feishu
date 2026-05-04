@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "evaluation_result.schema.json",
+  "title": "EvaluationResult",
+  "type": "object",
+  "required": [
+    "meeting_id",
+    "project_id",
+    "manager_id",
+    "scores",
+    "score_explanations",
+    "overall_summary",
+    "top_strength",
+    "top_risk"
+  ],
+  "properties": {
+    "meeting_id": { "type": "string" },
+    "project_id": { "type": "string" },
+    "manager_id": { "type": "string" },
+    "scores": {
+      "type": "object",
+      "required": [
+        "project_understanding",
+        "evidence_based",
+        "execution_closure",
+        "risk_identification"
+      ],
+      "properties": {
+        "project_understanding": { "type": "integer" },
+        "evidence_based": { "type": "integer" },
+        "execution_closure": { "type": "integer" },
+        "risk_identification": { "type": "integer" }
+      },
+      "additionalProperties": false
+    },
+    "score_explanations": {
+      "type": "object",
+      "required": [
+        "project_understanding",
+        "evidence_based",
+        "execution_closure",
+        "risk_identification"
+      ],
+      "properties": {
+        "project_understanding": { "type": "string" },
+        "evidence_based": { "type": "string" },
+        "execution_closure": { "type": "string" },
+        "risk_identification": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "overall_summary": { "type": "string" },
+    "top_strength": { "type": "string" },
+    "top_risk": { "type": "string" }
+  },
+  "additionalProperties": false
+}

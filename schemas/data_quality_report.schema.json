@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "data_quality_report.schema.json",
+  "title": "DataQualityReport",
+  "type": "object",
+  "required": [
+    "task_id",
+    "checked_at",
+    "current_meeting_id",
+    "coverage_status",
+    "source_coverage",
+    "sample_counts",
+    "warnings",
+    "issues",
+    "recommended_actions"
+  ],
+  "properties": {
+    "task_id": { "type": "string" },
+    "checked_at": { "type": "string" },
+    "current_meeting_id": { "type": "string" },
+    "coverage_status": {
+      "type": "string",
+      "enum": ["ready", "degraded", "blocked"]
+    },
+    "source_coverage": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "sample_counts": { "type": "object" },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "issues": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "recommended_actions": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

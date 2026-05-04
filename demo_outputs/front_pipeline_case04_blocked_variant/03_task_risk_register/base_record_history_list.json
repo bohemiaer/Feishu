@@ -1,0 +1,148 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "base_token": "R7bebfixvam0AqsPowucJcuHn2e",
+    "table_id": "Tasks",
+    "histories": [
+      {
+        "record_id": "reccase04task003",
+        "task_id": "PJT-CASE-04-TASK-03",
+        "field_changes": [
+          {
+            "field": "status",
+            "old_value": "未开始",
+            "new_value": "进行中",
+            "operator": {
+              "open_id": "ou_case04fengzx003",
+              "name": "冯子轩"
+            },
+            "update_time": "2026-04-16 18:36"
+          },
+          {
+            "field": "status",
+            "old_value": "进行中",
+            "new_value": "已完成",
+            "operator": {
+              "open_id": "ou_case04fengzx003",
+              "name": "冯子轩"
+            },
+            "update_time": "2026-04-16 21:18"
+          }
+        ]
+      },
+      {
+        "record_id": "reccase04task005",
+        "task_id": "PJT-CASE-04-TASK-05",
+        "field_changes": [
+          {
+            "field": "status",
+            "old_value": "未开始",
+            "new_value": "进行中",
+            "operator": {
+              "open_id": "ou_case04mahuai007",
+              "name": "马会"
+            },
+            "update_time": "2026-04-18 17:40"
+          },
+          {
+            "field": "due_date",
+            "old_value": "2026-04-18 18:00",
+            "new_value": "下一阶段首周",
+            "operator": {
+              "open_id": "ou_case04wutian0005",
+              "name": "吴恬"
+            },
+            "update_time": "2026-04-24 17:10"
+          }
+        ]
+      },
+      {
+        "record_id": "reccase04task012",
+        "task_id": "PJT-CASE-04-TASK-12",
+        "field_changes": [
+          {
+            "field": "status",
+            "old_value": "进行中",
+            "new_value": "延期",
+            "operator": {
+              "open_id": "ou_case04mahuai007",
+              "name": "马会"
+            },
+            "update_time": "2026-04-21 18:40"
+          },
+          {
+            "field": "due_date",
+            "old_value": "2026-04-21 18:00",
+            "new_value": "下一阶段首周",
+            "operator": {
+              "open_id": "ou_case04wutian0005",
+              "name": "吴恬"
+            },
+            "update_time": "2026-04-24 16:50"
+          }
+        ]
+      },
+      {
+        "record_id": "reccase04task013",
+        "task_id": "PJT-CASE-04-TASK-13",
+        "field_changes": [
+          {
+            "field": "status",
+            "old_value": "进行中",
+            "new_value": "延期",
+            "operator": {
+              "open_id": "ou_case04fengzx003",
+              "name": "冯子轩"
+            },
+            "update_time": "2026-04-22 20:35"
+          },
+          {
+            "field": "due_date",
+            "old_value": "2026-04-22 20:00",
+            "new_value": "2026-04-24 12:00",
+            "operator": {
+              "open_id": "ou_case04fengzx003",
+              "name": "冯子轩"
+            },
+            "update_time": "2026-04-22 20:36"
+          }
+        ]
+      },
+      {
+        "record_id": "reccase04risk003",
+        "risk_id": "PJT-CASE-04-RISK-03",
+        "field_changes": [
+          {
+            "field": "followup_status",
+            "old_value": "open",
+            "new_value": "tracking",
+            "operator": {
+              "open_id": "ou_case04tangke006",
+              "name": "唐可"
+            },
+            "update_time": "2026-04-19 11:15"
+          },
+          {
+            "field": "followup_status",
+            "old_value": "tracking",
+            "new_value": "resolved",
+            "operator": {
+              "open_id": "ou_case04tangke006",
+              "name": "唐可"
+            },
+            "update_time": "2026-04-20 09:08"
+          }
+        ]
+      }
+    ],
+    "has_more": false
+  },
+  "_notice": {
+    "update": {
+      "current": "1.0.19",
+      "latest": "1.0.23",
+      "message": "lark-cli 1.0.23 available, current 1.0.19"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "task_context": {
+    "task_id": "task-case-01",
+    "project_id": "PJT-001",
+    "manager_id": "MGR-001",
+    "meeting_id": "MTG-CASE-01",
+    "evaluation_period": "2026-W18",
+    "status": "collected",
+    "created_at": "2026-04-27T07:33:49.653Z",
+    "updated_at": "2026-04-27T07:33:49.654Z"
+  },
+  "meeting_id": "MTG-CASE-01",
+  "project_id": "PJT-001",
+  "preliminary_result": {
+    "supported_ratio": 0,
+    "conflict_count": 0,
+    "high_risk_flag": true,
+    "summary": "当前会议存在需要重点关注的表达或项目风险，建议进入 review 复核。"
+  },
+  "history_meetings": [
+    {
+      "meeting_id": "HIS-001",
+      "summary": "持续关注退款回调和测试资源风险。"
+    },
+    {
+      "meeting_id": "HIS-002",
+      "summary": "灰度条件一直与关键链路验证完成度绑定。"
+    },
+    {
+      "meeting_id": "HIS-003",
+      "summary": "历史会议多次强调退款链路完成前不推进灰度。"
+    }
+  ],
+  "history_signals": {
+    "task_closure_notes": [
+      "历史任务整体能推进，但关键链路仍有收口压力。"
+    ],
+    "risk_notes": [
+      "退款回调和测试资源一直是同项目的连续风险。"
+    ]
+  }
+}

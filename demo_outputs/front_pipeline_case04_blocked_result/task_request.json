@@ -1,0 +1,22 @@
+{
+  "task_id": "FRONT-PJT-CASE-04-unknown",
+  "evaluation_target": {
+    "manager_id": "MGR-CASE-04",
+    "manager_name": "陈昊",
+    "project_id": "PJT-CASE-04",
+    "evaluation_period": "2026-04-13 ~ 2026-04-24",
+    "current_meeting_id": ""
+  },
+  "trigger_context": {
+    "trigger_type": "manual",
+    "report_type": "single",
+    "audience": [
+      "pmo",
+      "manager"
+    ]
+  },
+  "source_config": {
+    "source_mode": "case04_sample_bundle",
+    "bundle_path": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\demo_outputs\\front_pipeline_case04_blocked_variant"
+  }
+}

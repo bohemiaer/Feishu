@@ -1,0 +1,17 @@
+{
+  "case_id": "case_01",
+  "current_meeting": "current_meeting/meeting_minutes.md",
+  "project_documents": [
+    "project_documents/project_main_doc.md",
+    "project_documents/weekly_report.md",
+    "project_documents/stage_review.md"
+  ],
+  "review_context": "review_context/history_context.md",
+  "review_meetings": [
+    "review_meetings/HIS-001_meeting_minutes.md",
+    "review_meetings/HIS-002_meeting_minutes.md",
+    "review_meetings/HIS-003_meeting_minutes.md",
+    "review_meetings/HIS-004_meeting_minutes.md",
+    "review_meetings/HIS-005_meeting_minutes.md"
+  ]
+}

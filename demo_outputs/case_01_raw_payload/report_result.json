@@ -1,0 +1,28 @@
+{
+  "report_title": "支付链路升级-管理效能周报-MTG-CASE-01",
+  "manager_id": "MGR-001",
+  "project_id": "PJT-001",
+  "report_type": "weekly_report",
+  "summary": "当前会议表达与项目事实存在冲突信号，建议优先复核风险判断与推进口径。",
+  "score_overview": {
+    "project_understanding": 74,
+    "evidence_based": 55,
+    "execution_closure": 59,
+    "risk_identification": 74
+  },
+  "review_result": "存在冲突",
+  "key_evidence": [
+    "如果退款回调链路和商户配置脚本两个高风险点不收口，本周不能进入灰度。 -> 无依据",
+    "测试样本数量已经接近门槛，但异常退款和弱网场景覆盖还不够，需要今天内补齐。 -> 无依据",
+    "灰度不是为了赶节点，必须保证支付成功率、退款一致性和回滚方案三个条件同时满足。 -> 无依据"
+  ],
+  "risk_alerts": [
+    "当前会议存在需要重点关注的风险表达或项目阻塞。",
+    "同项目历史 review 显示当前会议判断与历史信号存在冲突。",
+    "当前最弱维度为 evidence_based。"
+  ],
+  "next_actions": [
+    "复核当前会议中的关键判断与任务风险状态是否一致。",
+    "跟进本周行动项闭环情况，并在下一次周会上验证整改效果。"
+  ]
+}

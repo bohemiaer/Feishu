@@ -1,0 +1,89 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "users": [
+      {
+        "name": "陈昊",
+        "open_id": "ou_case04chentarget001",
+        "user_id": "u_case04_chenhao",
+        "department": "履约中台交付部",
+        "title": "部门负责人",
+        "manager": "周岚",
+        "project_role": "manager"
+      },
+      {
+        "name": "林玥",
+        "open_id": "ou_case04linyue0002",
+        "user_id": "u_case04_linyue",
+        "department": "履约中台交付部",
+        "title": "产品负责人",
+        "manager": "陈昊",
+        "project_role": "product_lead"
+      },
+      {
+        "name": "冯子轩",
+        "open_id": "ou_case04fengzx003",
+        "user_id": "u_case04_fengzixuan",
+        "department": "履约中台交付部",
+        "title": "后端组长",
+        "manager": "陈昊",
+        "project_role": "engineering_lead"
+      },
+      {
+        "name": "沈薇",
+        "open_id": "ou_case04shenwei004",
+        "user_id": "u_case04_shenwei",
+        "department": "履约中台交付部",
+        "title": "测试负责人",
+        "manager": "陈昊",
+        "project_role": "qa_lead"
+      },
+      {
+        "name": "吴恬",
+        "open_id": "ou_case04wutian0005",
+        "user_id": "u_case04_wutian",
+        "department": "履约中台交付部",
+        "title": "项目协调",
+        "manager": "陈昊",
+        "project_role": "project_coordinator"
+      },
+      {
+        "name": "唐可",
+        "open_id": "ou_case04tangke006",
+        "user_id": "u_case04_tangke",
+        "department": "平台运维组",
+        "title": "运维接口人",
+        "manager": "平台运维经理",
+        "project_role": "ops_partner"
+      },
+      {
+        "name": "马会",
+        "open_id": "ou_case04mahuai007",
+        "user_id": "u_case04_mahuai",
+        "department": "客服平台部",
+        "title": "接口负责人",
+        "manager": "客服平台主管",
+        "project_role": "customer_service_partner"
+      },
+      {
+        "name": "罗征",
+        "open_id": "ou_case04luozheng008",
+        "user_id": "u_case04_luozheng",
+        "department": "仓配系统部",
+        "title": "接口负责人",
+        "manager": "仓配平台主管",
+        "project_role": "warehouse_partner"
+      }
+    ],
+    "has_more": false,
+    "total": 8
+  },
+  "_notice": {
+    "update": {
+      "current": "1.0.19",
+      "latest": "1.0.23",
+      "message": "lark-cli 1.0.23 available, current 1.0.19"
+    }
+  }
+}

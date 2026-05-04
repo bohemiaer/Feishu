@@ -1,0 +1,11 @@
+{
+  "synced_table": "数据表",
+  "artifact_count": 24,
+  "sample_artifacts": [
+    "input_manifest",
+    "input_current_meeting_minutes",
+    "input_project_main_doc",
+    "input_weekly_report",
+    "input_stage_review"
+  ]
+}

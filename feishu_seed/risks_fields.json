@@ -1,0 +1,11 @@
+[
+  {"name":"risk_id","type":"text"},
+  {"name":"project_id","type":"text"},
+  {"name":"meeting_id","type":"text"},
+  {"name":"risk_type","type":"text"},
+  {"name":"risk_level","type":"text"},
+  {"name":"risk_description","type":"text"},
+  {"name":"trigger_reason","type":"text"},
+  {"name":"suggested_action","type":"text"},
+  {"name":"followup_status","type":"text"}
+]

@@ -1,0 +1,14 @@
+{
+  "meeting_id": "MTG-CASE-01",
+  "project_id": "PJT-001",
+  "review_sample_count": 3,
+  "review_result": "存在冲突",
+  "consistency_summary": "当前会议判断与历史项目信号存在明显张力，建议重点复核。",
+  "supporting_signals": [
+    "历史风险信号与当前会议关注点存在连续性。"
+  ],
+  "conflict_signals": [
+    "当前会议的依据率偏低，且历史项目信号不足以稳定支撑该判断。"
+  ],
+  "confidence": 0.72
+}

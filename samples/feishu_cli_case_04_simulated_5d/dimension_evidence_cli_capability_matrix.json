@@ -1,0 +1,191 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "purpose": "按收敛后的 7 类输入源分析五维证据源的 CLI 可获取性。",
+    "case_id": "case_04",
+    "project_id": "PJT-CASE-04",
+    "manager_id": "MGR-CASE-04",
+    "manager_name": "陈昊",
+    "converged_sources": [
+      {
+        "source": "Base 记录",
+        "cli_routes": [
+          "base +record-list",
+          "base +record-search",
+          "base +record-get",
+          "base +data-query",
+          "base +field-list"
+        ],
+        "sample_files": [
+          "03_task_risk_register/base_projects_record_list.json",
+          "03_task_risk_register/base_tasks_record_list.json",
+          "03_task_risk_register/base_risks_record_list.json",
+          "04_meetings/base_meetings_record_list.json",
+          "04_meetings/base_statements_record_list.json"
+        ]
+      },
+      {
+        "source": "Base 历史",
+        "cli_routes": [
+          "base +record-history-list"
+        ],
+        "sample_files": [
+          "03_task_risk_register/base_record_history_list.json"
+        ]
+      },
+      {
+        "source": "云文档",
+        "cli_routes": [
+          "docs +fetch",
+          "docs +search",
+          "drive +export"
+        ],
+        "sample_files": [
+          "01_cloud_docs/docs_fetch_main_doc_v2.json"
+        ]
+      },
+      {
+        "source": "聊天历史",
+        "cli_routes": [
+          "im +chat-search",
+          "im +chat-messages-list",
+          "im +messages-search",
+          "im +messages-mget",
+          "im +threads-messages-list"
+        ],
+        "sample_files": [
+          "02_chats/im_chat_search_user.json",
+          "02_chats/im_messages_search_user.json"
+        ]
+      },
+      {
+        "source": "会议/妙记",
+        "cli_routes": [
+          "vc +search",
+          "minutes +search",
+          "minutes minutes operations",
+          "docs +fetch"
+        ],
+        "sample_files": [
+          "04_meetings/vc_search_by_participant.json",
+          "04_meetings/minutes_search_user.json",
+          "04_meetings/minutes_transcript_case04.json",
+          "04_meetings/base_meetings_record_list.json"
+        ]
+      },
+      {
+        "source": "日历",
+        "cli_routes": [
+          "calendar events operations",
+          "calendar event.attendees operations",
+          "calendar +agenda",
+          "calendar +freebusy"
+        ],
+        "sample_files": [
+          "06_calendar/calendar_events_instance_view.json"
+        ]
+      },
+      {
+        "source": "通讯录",
+        "cli_routes": [
+          "contact +get-user",
+          "contact +search-user"
+        ],
+        "sample_files": [
+          "05_org_and_team/contact_get_user_user.json",
+          "05_org_and_team/contact_search_user_project_members.json"
+        ]
+      }
+    ],
+    "dimension_summary": [
+      {
+        "dimension": "方向校准力",
+        "coverage": "high",
+        "primary_sources": [
+          "会议/妙记",
+          "云文档",
+          "Base 记录",
+          "Base 历史"
+        ],
+        "supporting_sources": [
+          "聊天历史",
+          "日历"
+        ]
+      },
+      {
+        "dimension": "推进闭环力",
+        "coverage": "very_high",
+        "primary_sources": [
+          "Base 记录",
+          "Base 历史"
+        ],
+        "supporting_sources": [
+          "会议/妙记",
+          "云文档",
+          "聊天历史"
+        ]
+      },
+      {
+        "dimension": "风险治理力",
+        "coverage": "high",
+        "primary_sources": [
+          "Base 记录",
+          "Base 历史",
+          "云文档"
+        ],
+        "supporting_sources": [
+          "聊天历史",
+          "会议/妙记"
+        ]
+      },
+      {
+        "dimension": "协同调度力",
+        "coverage": "high",
+        "primary_sources": [
+          "聊天历史",
+          "会议/妙记",
+          "Base 记录"
+        ],
+        "supporting_sources": [
+          "Base 历史",
+          "日历",
+          "通讯录",
+          "云文档"
+        ]
+      },
+      {
+        "dimension": "组织行为健康度",
+        "coverage": "medium_high",
+        "primary_sources": [
+          "聊天历史",
+          "会议/妙记"
+        ],
+        "supporting_sources": [
+          "日历",
+          "通讯录",
+          "云文档",
+          "Base 记录"
+        ],
+        "notes": "组织行为证据需要最小化采样、上下文保留和人工复核。"
+      }
+    ],
+    "excluded_sources": [
+      "邮件",
+      "飞书任务中心",
+      "审批",
+      "OKR",
+      "考勤",
+      "Drive 评论",
+      "外部 Jira/GitLab/Bug 系统",
+      "非飞书工单系统"
+    ]
+  },
+  "_notice": {
+    "update": {
+      "current": "1.0.19",
+      "latest": "1.0.23",
+      "message": "lark-cli 1.0.23 available, current 1.0.19"
+    }
+  }
+}

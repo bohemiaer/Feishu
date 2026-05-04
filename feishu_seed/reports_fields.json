@@ -1,0 +1,11 @@
+[
+  {"name":"report_id","type":"text"},
+  {"name":"project_id","type":"text"},
+  {"name":"manager_id","type":"text"},
+  {"name":"evaluation_id","type":"text"},
+  {"name":"report_type","type":"text"},
+  {"name":"key_insights","type":"text"},
+  {"name":"improvement_suggestions","type":"text"},
+  {"name":"send_status","type":"text"},
+  {"name":"doc_url","type":"text"}
+]

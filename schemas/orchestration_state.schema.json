@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "orchestration_state.schema.json",
+  "title": "OrchestrationState",
+  "type": "object",
+  "required": [
+    "task_id",
+    "pipeline_version",
+    "status",
+    "completeness_status",
+    "current_stage",
+    "next_step",
+    "trigger_type",
+    "source_mode",
+    "evaluation_target",
+    "degrade_reasons",
+    "blocking_reasons",
+    "warnings",
+    "updated_at"
+  ],
+  "properties": {
+    "task_id": { "type": "string" },
+    "pipeline_version": { "type": "string" },
+    "status": {
+      "type": "string",
+      "enum": [
+        "idle",
+        "task_received",
+        "input_checking",
+        "input_checked",
+        "collecting",
+        "collected",
+        "metrics_running",
+        "metrics_ready",
+        "planning",
+        "planned",
+        "expert_analyzing",
+        "expert_analyzed",
+        "assessing",
+        "assessed",
+        "self_checking",
+        "awaiting_human_review",
+        "reporting",
+        "writing_back",
+        "completed",
+        "degraded",
+        "blocked",
+        "failed"
+      ]
+    },
+    "completeness_status": {
+      "type": "string",
+      "enum": ["unknown", "ready", "degraded", "blocked"]
+    },
+    "current_stage": { "type": "string" },
+    "next_step": { "type": "string" },
+    "trigger_type": { "type": "string" },
+    "source_mode": { "type": "string" },
+    "evaluation_target": {
+      "type": "object",
+      "required": ["manager_id", "manager_name", "project_id", "evaluation_period", "current_meeting_id"],
+      "properties": {
+        "manager_id": { "type": "string" },
+        "manager_name": { "type": "string" },
+        "project_id": { "type": "string" },
+        "evaluation_period": { "type": "string" },
+        "current_meeting_id": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "degrade_reasons": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "blocking_reasons": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "node_status": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["node_name", "status"],
+        "properties": {
+          "node_name": { "type": "string" },
+          "status": {
+            "type": "string",
+            "enum": ["pending", "running", "completed", "degraded", "blocked", "failed", "skipped"]
+          },
+          "started_at": { "type": "string" },
+          "finished_at": { "type": "string" },
+          "error": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "human_review_items": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "updated_at": { "type": "string" }
+  },
+  "additionalProperties": false
+}

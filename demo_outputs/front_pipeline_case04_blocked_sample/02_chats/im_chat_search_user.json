@@ -1,0 +1,66 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "chats": [
+      {
+        "avatar": "https://s1-imfile.feishucdn.com/static-resource/v1/v3_00111_case04mainchat~?image_size=100x100&cut_type=&quality=&format=jpeg&sticker_format=.webp",
+        "chat_id": "oc_case04mainchat9f31ac82",
+        "chat_mode": "group",
+        "chat_status": "normal",
+        "description": "专项项目主群，包含业务、客服、仓配、中台、测试和运维同步。",
+        "external": false,
+        "name": "履约稳定性专项主群",
+        "owner_id": "ou_case04chentarget001",
+        "owner_id_type": "open_id",
+        "tenant_key": "1abd20e084069b82"
+      },
+      {
+        "avatar": "https://s1-imfile.feishucdn.com/static-resource/v1/v3_00111_case04deptchat~?image_size=100x100&cut_type=&quality=&format=jpeg&sticker_format=.webp",
+        "chat_id": "oc_case04deptchat0b6d5a31",
+        "chat_mode": "group",
+        "chat_status": "normal",
+        "description": "交付部周群，穿插行政、人力和值班提醒。",
+        "external": false,
+        "name": "履约中台交付部周群",
+        "owner_id": "ou_case04chentarget001",
+        "owner_id_type": "open_id",
+        "tenant_key": "1abd20e084069b82"
+      },
+      {
+        "avatar": "https://s1-imfile.feishucdn.com/static-resource/v1/v3_00111_case04riskchat~?image_size=100x100&cut_type=&quality=&format=jpeg&sticker_format=.webp",
+        "chat_id": "oc_case04riskchat7d923cb1",
+        "chat_mode": "group",
+        "chat_status": "normal",
+        "description": "风险升级专用群，只同步风险、影响和下一步。",
+        "external": false,
+        "name": "履约专项风险升级群",
+        "owner_id": "ou_case04chentarget001",
+        "owner_id_type": "open_id",
+        "tenant_key": "1abd20e084069b82"
+      },
+      {
+        "avatar": "https://s1-imfile.feishucdn.com/static-resource/v1/v3_00111_case04thread~?image_size=100x100&cut_type=&quality=&format=jpeg&sticker_format=.webp",
+        "chat_id": "oc_case04fieldthread18ca7f2e",
+        "chat_mode": "THREAD",
+        "chat_status": "normal",
+        "description": "字段冻结表是否本轮强制执行的线程。",
+        "external": false,
+        "name": "字段冻结表是否本轮强制执行",
+        "owner_id": "ou_case04wutian0005",
+        "owner_id_type": "open_id",
+        "tenant_key": "1abd20e084069b82"
+      }
+    ],
+    "has_more": false,
+    "page_token": "",
+    "total": 4
+  },
+  "_notice": {
+    "update": {
+      "current": "1.0.19",
+      "latest": "1.0.23",
+      "message": "lark-cli 1.0.23 available, current 1.0.19"
+    }
+  }
+}

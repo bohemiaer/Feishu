@@ -1,0 +1,20 @@
+{
+  "fields": [
+    "evaluation_id",
+    "project_id",
+    "manager_id",
+    "current_meeting_id",
+    "evaluation_period",
+    "project_understanding_score",
+    "evidence_based_score",
+    "execution_closure_score",
+    "risk_identification_score",
+    "review_result",
+    "overall_summary"
+  ],
+  "rows": [
+    ["EVL-001","PJT-001","MGR-001","MTG-001","2026-W17","88","90","78","89","一致支持","对核心风险识别准确，闭环推进中等偏上。"],
+    ["EVL-002","PJT-002","MGR-002","MTG-002","2026-W17","84","87","75","82","一致支持","对问题判断准确，需继续推动实验动作闭环。"],
+    ["EVL-003","PJT-003","MGR-003","MTG-003","2026-W17","86","85","73","84","部分支持","对推进阻塞判断准确，但动作落地还需继续跟踪。"]
+  ]
+}

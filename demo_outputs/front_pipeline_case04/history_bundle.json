@@ -1,0 +1,208 @@
+{
+  "recent_meetings": [
+    {
+      "meeting_id": "MTG-CASE-04-03",
+      "meeting_title": "阶段评审前线下沟通补录",
+      "meeting_time": "2026-04-18 11:45 - 12:05",
+      "review_status": "补录摘要",
+      "summary": [
+        "先把 go/no-go 输入收齐，再决定是否继续推进。",
+        "如果暂停扩面，需要同步业务侧预期。",
+        "暂不直接扩面验证",
+        "先收齐环境和回归输入"
+      ]
+    },
+    {
+      "meeting_id": "MTG-CASE-04-02",
+      "meeting_title": "联调状态沟通",
+      "meeting_time": "2026-04-16 15:00 - 16:20",
+      "review_status": "部分留痕缺失",
+      "summary": [
+        "本轮不要因为争论长期最优方案影响节前目标。",
+        "当日需明确由谁先做适配，不继续开放式讨论。",
+        "冻结表草案今晚输出。",
+        "中台先输出冻结表草案"
+      ]
+    },
+    {
+      "meeting_id": "MTG-CASE-04-01",
+      "meeting_title": "专项同步",
+      "meeting_time": "2026-04-13 10:02 - 10:58",
+      "review_status": "需复核缺失片段",
+      "summary": [
+        "这轮先把目标定窄，不追求一次解决所有问题。",
+        "先保主链路稳定和退款一致性，体验项后置。",
+        "把依赖和阻塞项今天收出来，别留到周中再看。",
+        "本轮优先级先收窄到主链路稳定和退款一致性"
+      ]
+    }
+  ],
+  "past_evaluations": [],
+  "risk_history": [
+    {
+      "record_id": "reccase04task003",
+      "task_id": "PJT-CASE-04-TASK-03",
+      "risk_id": "",
+      "field_changes": [
+        {
+          "field": "status",
+          "old_value": "未开始",
+          "new_value": "进行中",
+          "operator": {
+            "open_id": "ou_case04fengzx003",
+            "name": "冯子轩"
+          },
+          "update_time": "2026-04-16 18:36"
+        },
+        {
+          "field": "status",
+          "old_value": "进行中",
+          "new_value": "已完成",
+          "operator": {
+            "open_id": "ou_case04fengzx003",
+            "name": "冯子轩"
+          },
+          "update_time": "2026-04-16 21:18"
+        }
+      ]
+    },
+    {
+      "record_id": "reccase04task005",
+      "task_id": "PJT-CASE-04-TASK-05",
+      "risk_id": "",
+      "field_changes": [
+        {
+          "field": "status",
+          "old_value": "未开始",
+          "new_value": "进行中",
+          "operator": {
+            "open_id": "ou_case04mahuai007",
+            "name": "马会"
+          },
+          "update_time": "2026-04-18 17:40"
+        },
+        {
+          "field": "due_date",
+          "old_value": "2026-04-18 18:00",
+          "new_value": "下一阶段首周",
+          "operator": {
+            "open_id": "ou_case04wutian0005",
+            "name": "吴恬"
+          },
+          "update_time": "2026-04-24 17:10"
+        }
+      ]
+    },
+    {
+      "record_id": "reccase04task012",
+      "task_id": "PJT-CASE-04-TASK-12",
+      "risk_id": "",
+      "field_changes": [
+        {
+          "field": "status",
+          "old_value": "进行中",
+          "new_value": "延期",
+          "operator": {
+            "open_id": "ou_case04mahuai007",
+            "name": "马会"
+          },
+          "update_time": "2026-04-21 18:40"
+        },
+        {
+          "field": "due_date",
+          "old_value": "2026-04-21 18:00",
+          "new_value": "下一阶段首周",
+          "operator": {
+            "open_id": "ou_case04wutian0005",
+            "name": "吴恬"
+          },
+          "update_time": "2026-04-24 16:50"
+        }
+      ]
+    },
+    {
+      "record_id": "reccase04task013",
+      "task_id": "PJT-CASE-04-TASK-13",
+      "risk_id": "",
+      "field_changes": [
+        {
+          "field": "status",
+          "old_value": "进行中",
+          "new_value": "延期",
+          "operator": {
+            "open_id": "ou_case04fengzx003",
+            "name": "冯子轩"
+          },
+          "update_time": "2026-04-22 20:35"
+        },
+        {
+          "field": "due_date",
+          "old_value": "2026-04-22 20:00",
+          "new_value": "2026-04-24 12:00",
+          "operator": {
+            "open_id": "ou_case04fengzx003",
+            "name": "冯子轩"
+          },
+          "update_time": "2026-04-22 20:36"
+        }
+      ]
+    },
+    {
+      "record_id": "reccase04risk003",
+      "task_id": "",
+      "risk_id": "PJT-CASE-04-RISK-03",
+      "field_changes": [
+        {
+          "field": "followup_status",
+          "old_value": "open",
+          "new_value": "tracking",
+          "operator": {
+            "open_id": "ou_case04tangke006",
+            "name": "唐可"
+          },
+          "update_time": "2026-04-19 11:15"
+        },
+        {
+          "field": "followup_status",
+          "old_value": "tracking",
+          "new_value": "resolved",
+          "operator": {
+            "open_id": "ou_case04tangke006",
+            "name": "唐可"
+          },
+          "update_time": "2026-04-20 09:08"
+        }
+      ]
+    }
+  ],
+  "history_meetings": [
+    {
+      "meeting_id": "MTG-CASE-04-03",
+      "summary": "阶段评审前线下沟通补录：先把 go/no-go 输入收齐，再决定是否继续推进。；如果暂停扩面，需要同步业务侧预期。"
+    },
+    {
+      "meeting_id": "MTG-CASE-04-02",
+      "summary": "联调状态沟通：本轮不要因为争论长期最优方案影响节前目标。；当日需明确由谁先做适配，不继续开放式讨论。"
+    },
+    {
+      "meeting_id": "MTG-CASE-04-01",
+      "summary": "专项同步：这轮先把目标定窄，不追求一次解决所有问题。；先保主链路稳定和退款一致性，体验项后置。"
+    }
+  ],
+  "task_closure_notes": [
+    "PJT-CASE-04-TASK-01 输出专项目标与边界文档 状态=已完成 owner=林玥 DDL=2026-04-13 15:00",
+    "PJT-CASE-04-TASK-02 整理跨团队阻塞项清单 状态=已完成 owner=吴恬 DDL=2026-04-13 18:00",
+    "PJT-CASE-04-TASK-03 输出字段冻结表草案 状态=已完成 owner=冯子轩 DDL=2026-04-16 20:00",
+    "PJT-CASE-04-TASK-04 确认字段冻结表最终版 状态=已完成 owner=吴恬 DDL=2026-04-17 12:00",
+    "PJT-CASE-04-TASK-05 修正客服异常子状态映射 状态=进行中 owner=马会 DDL=2026-04-18 18:00",
+    "PJT-CASE-04-TASK-06 补充仓配异常子状态说明 状态=已完成 owner=罗征 DDL=2026-04-17 19:00"
+  ],
+  "risk_notes": [
+    "PJT-CASE-04-RISK-01 字段口径不一致导致联调返工 跟进状态=resolved",
+    "PJT-CASE-04-RISK-02 退款回写高峰场景尾延迟 跟进状态=tracking",
+    "PJT-CASE-04-RISK-03 晚间环境窗口不稳定 跟进状态=resolved",
+    "PJT-CASE-04-RISK-04 客服高频异常 A 未及时复现 跟进状态=closed",
+    "PJT-CASE-04-RISK-05 客服高频异常 B 未及时复现 跟进状态=tracking",
+    "PJT-CASE-04-RISK-06 线下结论未及时留痕 跟进状态=tracking"
+  ]
+}

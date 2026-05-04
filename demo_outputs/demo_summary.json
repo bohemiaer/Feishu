@@ -1,0 +1,12 @@
+[
+  {
+    "case_id": "case_01",
+    "project_id": "PJT-001",
+    "meeting_id": "MTG-CASE-01",
+    "meeting_title": "支付链路升级项目周会（联调收口与灰度准备）",
+    "supported_ratio": 0.66,
+    "review_result": "一致支持",
+    "top_risk": "execution_closure",
+    "report_title": "支付链路升级项目周报（2026-W18）"
+  }
+]

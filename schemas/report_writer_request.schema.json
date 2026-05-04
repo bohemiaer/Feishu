@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "report_writer_request.schema.json",
+  "title": "ReportWriterRequest",
+  "type": "object",
+  "required": [
+    "task_context",
+    "meeting_fact_pack",
+    "evidence_result",
+    "review_result",
+    "evaluation_result"
+  ],
+  "properties": {
+    "task_context": { "type": "object" },
+    "meeting_fact_pack": { "type": "object" },
+    "evidence_result": { "type": "object" },
+    "review_result": { "type": "object" },
+    "evaluation_result": { "type": "object" }
+  },
+  "additionalProperties": false
+}

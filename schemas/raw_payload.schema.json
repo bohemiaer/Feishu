@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "raw_payload.schema.json",
+  "title": "RawPayload",
+  "type": "object",
+  "required": ["evaluation_target", "raw_payload"],
+  "properties": {
+    "evaluation_target": {
+      "type": "object",
+      "required": ["manager_id", "manager_name", "project_id", "evaluation_period"],
+      "properties": {
+        "manager_id": { "type": "string" },
+        "manager_name": { "type": "string" },
+        "project_id": { "type": "string" },
+        "evaluation_period": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "raw_payload": {
+      "type": "object",
+      "required": [
+        "base_snapshot",
+        "base_history",
+        "meeting_docs",
+        "project_docs",
+        "chat_history",
+        "calendar_events",
+        "org_contacts"
+      ],
+      "properties": {
+        "base_snapshot": { "type": "object" },
+        "base_history": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "meeting_docs": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "project_docs": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "chat_history": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "calendar_events": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "org_contacts": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "source_catalog": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "current_meeting_tasks": {
+          "type": "array",
+          "items": { "type": "object" }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

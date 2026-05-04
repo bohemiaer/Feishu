@@ -1,0 +1,57 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "has_more": false,
+    "items": [
+      {
+        "display_info": "专项同步\n\n4月13日 10:02 | 组织者：陈昊 | ID: 410 213 586",
+        "id": "7634013213586001001",
+        "meta_data": {
+          "app_link": "https://applink.feishu.cn/client/vctab/open?source=chat&action=detail&meetingId=7634013213586001001",
+          "avatar": "https://lf-package-cn.feishucdn.com/obj/feishu-static/vchat-static-resource/meeting_icon.png",
+          "description": "4月13日 10:02 | 组织者：陈昊 | ID: 410 213 586"
+        }
+      },
+      {
+        "display_info": "联调状态沟通\n\n4月16日 15:00 | 组织者：吴恬 | ID: 416 150 220",
+        "id": "7634016150220001002",
+        "meta_data": {
+          "app_link": "https://applink.feishu.cn/client/vctab/open?source=chat&action=detail&meetingId=7634016150220001002",
+          "avatar": "https://lf-package-cn.feishucdn.com/obj/feishu-static/vchat-static-resource/meeting_icon.png",
+          "description": "4月16日 15:00 | 组织者：吴恬 | ID: 416 150 220"
+        }
+      },
+      {
+        "display_info": "(无主题)\n\n4月18日 11:45 | 组织者：陈昊 | ID: 418 114 505",
+        "id": "7634018114505001003",
+        "meta_data": {
+          "app_link": "https://applink.feishu.cn/client/vctab/open?source=chat&action=detail&meetingId=7634018114505001003",
+          "avatar": "https://lf-package-cn.feishucdn.com/obj/feishu-static/vchat-static-resource/meeting_icon.png",
+          "description": "4月18日 11:45 | 组织者：陈昊 | ID: 418 114 505"
+        }
+      },
+      {
+        "display_info": "专项阶段复盘\n\n4月24日 19:30 | 组织者：陈昊 | ID: 424 193 035",
+        "id": "7634024193035001004",
+        "meta_data": {
+          "app_link": "https://applink.feishu.cn/client/vctab/open?source=chat&action=detail&meetingId=7634024193035001004",
+          "avatar": "https://lf-package-cn.feishucdn.com/obj/feishu-static/vchat-static-resource/meeting_icon.png",
+          "description": "4月24日 19:30 | 组织者：陈昊 | ID: 424 193 035"
+        }
+      }
+    ],
+    "page_token": "case04_vc_token_end",
+    "total": null
+  },
+  "meta": {
+    "count": 4
+  },
+  "_notice": {
+    "update": {
+      "current": "1.0.19",
+      "latest": "1.0.23",
+      "message": "lark-cli 1.0.23 available, current 1.0.19"
+    }
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "task_context": {
+    "task_id": "task-case-01",
+    "project_id": "PJT-001",
+    "manager_id": "MGR-001",
+    "meeting_id": "MTG-CASE-01",
+    "evaluation_period": "2026-W18",
+    "status": "collected",
+    "created_at": "2026-04-27T07:33:49.653Z",
+    "updated_at": "2026-04-27T07:33:49.654Z"
+  },
+  "meeting_info": {
+    "meeting_id": "MTG-CASE-01",
+    "project_id": "PJT-001",
+    "manager_id": "MGR-001",
+    "meeting_title": "支付链路升级项目周会（联调收口与灰度准备）",
+    "meeting_time": "2026-04-27 10:00",
+    "participants": [
+      "张磊",
+      "赵敏",
+      "陈凯",
+      "刘宁",
+      "周舟",
+      "吴桐",
+      "何嘉"
+    ]
+  },
+  "meeting_facts": {
+    "manager_speech_summary": [
+      "如果退款回调链路和商户配置脚本两个高风险点不收口，本周不能进入灰度。",
+      "测试样本数量已经接近门槛，但异常退款和弱网场景覆盖还不够，需要今天内补齐。",
+      "灰度不是为了赶节点，必须保证支付成功率、退款一致性和回滚方案三个条件同时满足。",
+      "我要今天晚上拿到联调收口清单和灰度前置条件确认表，否则周三的灰度申请先不提。"
+    ],
+    "decisions": [
+      "退款回调链路必须在 4 月 28 日 18:00 前完成联调并出具验证结果。",
+      "灰度申请提交前，必须补齐弱网和异常退款样本。",
+      "商户配置同步脚本增加一次回滚演练，结果写入上线清单。",
+      "支付、测试、运维三方在周二晚共同确认灰度前置条件。"
+    ],
+    "risks_mentioned": [
+      "退款回调链路仍有 2 个阻塞问题未关闭。",
+      "弱网退款与并发补单样本覆盖不足。",
+      "商户配置同步脚本还未经过完整回滚演练。",
+      "测试资源排期紧张，若今晚环境不稳定会挤压验证时间。"
+    ],
+    "action_items": [
+      "赵敏今天 17:00 前推动退款回调链路联调完成并同步阻塞项清零情况。",
+      "陈凯今天 20:00 前补齐异常退款和弱网场景验证样本。",
+      "刘宁今晚组织灰度前回滚演练并输出演练记录。",
+      "吴桐明天上午更新上线前置条件清单并同步给全体负责人。"
+    ]
+  },
+  "project_snapshot": {
+    "project_name": "支付链路升级",
+    "project_stage": "联调收口阶段",
+    "project_health": "yellow",
+    "open_tasks": [
+      {
+        "task_id": "TSK-001",
+        "task_name": "退款回调链路联调",
+        "owner": "赵敏",
+        "due_date": "2026-04-28 18:00",
+        "status": "进行中",
+        "is_overdue": "false"
+      },
+      {
+        "task_id": "TSK-002",
+        "task_name": "补齐异常退款与弱网验证样本",
+        "owner": "陈凯",
+        "due_date": "2026-04-27 20:00",
+        "status": "进行中",
+        "is_overdue": "false"
+      },
+      {
+        "task_id": "TSK-003",
+        "task_name": "执行商户配置脚本回滚演练",
+        "owner": "刘宁",
+        "due_date": "2026-04-27 22:00",
+        "status": "未开始",
+        "is_overdue": "false"
+      },
+      {
+        "task_id": "TSK-004",
+        "task_name": "更新灰度前置条件清单",
+        "owner": "吴桐",
+        "due_date": "2026-04-28 10:00",
+        "status": "进行中",
+        "is_overdue": "false"
+      },
+      {
+        "task_id": "TSK-005",
+        "task_name": "确认晚间测试环境排期",
+        "owner": "何嘉",
+        "due_date": "2026-04-27 18:30",
+        "status": "进行中",
+        "is_overdue": "false"
+      }
+    ],
+    "overdue_tasks": [],
+    "open_risks": [
+      {
+        "risk_id": "RSK-001",
+        "risk_type": "integration",
+        "risk_level": "high",
+        "risk_description": "退款回调链路仍有 2 个阻塞问题未关闭",
+        "followup_status": "open"
+      },
+      {
+        "risk_id": "RSK-002",
+        "risk_type": "test_coverage",
+        "risk_level": "high",
+        "risk_description": "异常退款与弱网场景覆盖不足，灰度前验证不完整",
+        "followup_status": "open"
+      },
+      {
+        "risk_id": "RSK-003",
+        "risk_type": "rollback",
+        "risk_level": "medium",
+        "risk_description": "商户配置同步脚本未完成完整回滚演练",
+        "followup_status": "open"
+      },
+      {
+        "risk_id": "RSK-004",
+        "risk_type": "resource",
+        "risk_level": "medium",
+        "risk_description": "测试环境晚间排期紧张，可能影响回归时间",
+        "followup_status": "open"
+      }
+    ]
+  },
+  "document_snapshot": {
+    "project_goal": "本次升级目标是完成新支付路由切换，并同步收敛退款回调与商户配置链路。",
+    "weekly_highlights": [
+      "# 支付链路升级周报",
+      "联调完成度 82%，主支付链路已稳定。",
+      "核心支付成功率验证样本已补齐，但异常退款和弱网样本仍有缺口。",
+      "退款回调链路剩余 2 个阻塞问题，预计周一晚可收口。",
+      "商户配置同步脚本尚未做批量回滚演练。",
+      "若今晚测试环境排期被压缩，灰度前回归窗口将受到影响。"
+    ],
+    "review_highlights": [
+      "# 支付链路升级阶段复盘",
+      "第一阶段需求冻结晚于原计划 3 天，导致测试准备窗口被压缩。",
+      "接口变更同步不及时，联调期间出现两次重复返工。",
+      "风险暴露后推进节奏恢复较快，但对回滚链路的关注仍然偏晚。",
+      "后续类似项目需在联调初期就引入回滚演练 checklist。"
+    ]
+  },
+  "metrics": {
+    "action_item_count": 4,
+    "open_task_count": 5,
+    "overdue_task_count": 0,
+    "open_risk_count": 4
+  },
+  "missing_fields": []
+}

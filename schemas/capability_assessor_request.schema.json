@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "capability_assessor_request.schema.json",
+  "title": "CapabilityAssessorRequest",
+  "type": "object",
+  "required": [
+    "task_context",
+    "meeting_fact_pack",
+    "evidence_result",
+    "review_result",
+    "derived_metrics"
+  ],
+  "properties": {
+    "task_context": { "type": "object" },
+    "meeting_fact_pack": { "type": "object" },
+    "evidence_result": { "type": "object" },
+    "review_result": { "type": "object" },
+    "derived_metrics": {
+      "type": "object",
+      "required": [
+        "supported_ratio",
+        "conflict_count",
+        "action_item_count",
+        "open_task_count",
+        "overdue_task_count",
+        "open_risk_count"
+      ],
+      "properties": {
+        "supported_ratio": { "type": "number" },
+        "conflict_count": { "type": "integer" },
+        "action_item_count": { "type": "integer" },
+        "open_task_count": { "type": "integer" },
+        "overdue_task_count": { "type": "integer" },
+        "open_risk_count": { "type": "integer" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "input_completeness_report.schema.json",
+  "title": "InputCompletenessReport",
+  "type": "object",
+  "required": [
+    "task_id",
+    "checked_at",
+    "required_sources",
+    "optional_sources",
+    "available_sources",
+    "missing_sources",
+    "degrade_reasons",
+    "blocking_reasons",
+    "source_checks",
+    "sample_checks",
+    "recommended_actions"
+  ],
+  "properties": {
+    "task_id": { "type": "string" },
+    "checked_at": { "type": "string" },
+    "required_sources": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "optional_sources": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "available_sources": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "missing_sources": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "degrade_reasons": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "blocking_reasons": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "source_checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_name", "required", "status", "sample_count", "files", "notes"],
+        "properties": {
+          "source_name": { "type": "string" },
+          "required": { "type": "boolean" },
+          "status": {
+            "type": "string",
+            "enum": ["available", "missing", "insufficient"]
+          },
+          "sample_count": { "type": "integer" },
+          "files": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "notes": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "sample_checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["check_name", "status", "detail"],
+        "properties": {
+          "check_name": { "type": "string" },
+          "status": {
+            "type": "string",
+            "enum": ["pass", "fail", "warn"]
+          },
+          "detail": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "recommended_actions": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

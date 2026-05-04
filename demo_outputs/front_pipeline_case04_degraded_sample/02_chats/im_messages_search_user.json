@@ -1,0 +1,285 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "has_more": false,
+    "messages": [
+      {
+        "content": "吴恬 invited 履约专项风险升级群助手 to the group. New members can view recent chat history.",
+        "create_time": "2026-04-19 10:24",
+        "deleted": false,
+        "message_id": "om_case04msg0001",
+        "msg_type": "system",
+        "sender": {
+          "id": "",
+          "id_type": "",
+          "sender_type": "",
+          "tenant_key": ""
+        },
+        "updated": false
+      },
+      {
+        "content": "今天先把本轮目标和边界说清楚，不在范围里的先别展开。",
+        "create_time": "2026-04-13 09:16",
+        "deleted": false,
+        "message_id": "om_case04msg0002",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04chentarget001",
+          "id_type": "open_id",
+          "name": "陈昊",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "业务那边还在问体验优化是不是也一起做。",
+        "create_time": "2026-04-13 09:17",
+        "deleted": false,
+        "message_id": "om_case04msg0003",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04linyue0002",
+          "id_type": "open_id",
+          "name": "林玥",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "先不追求全部体验项一起做，主链路稳定和退款一致先保住。",
+        "create_time": "2026-04-13 09:18",
+        "deleted": false,
+        "message_id": "om_case04msg0004",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04chentarget001",
+          "id_type": "open_id",
+          "name": "陈昊",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "`2026Q1_履约问题复盘_v5`",
+        "create_time": "2026-04-13 09:25",
+        "deleted": false,
+        "message_id": "om_case04msg0005",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04wutian0005",
+          "id_type": "open_id",
+          "name": "吴恬",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "这个版本已经很旧了。",
+        "create_time": "2026-04-13 09:26",
+        "deleted": false,
+        "message_id": "om_case04msg0006",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04fengzx003",
+          "id_type": "open_id",
+          "name": "冯子轩",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "今天 5 点前必须统一一版口径，谁负责适配今天就定下来，不能继续空转。",
+        "create_time": "2026-04-15 16:16",
+        "deleted": false,
+        "message_id": "om_case04msg0007",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04chentarget001",
+          "id_type": "open_id",
+          "name": "陈昊",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "中台可以输出冻结版草案。",
+        "create_time": "2026-04-15 16:52",
+        "deleted": false,
+        "message_id": "om_case04msg0008",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04fengzx003",
+          "id_type": "open_id",
+          "name": "冯子轩",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "结算项目别发到专项线程里。",
+        "create_time": "2026-04-14 09:34",
+        "deleted": false,
+        "message_id": "om_case04msg0009",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04chentarget001",
+          "id_type": "open_id",
+          "name": "陈昊",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "今天下午茶改到 4 点。",
+        "create_time": "2026-04-14 08:58",
+        "deleted": false,
+        "message_id": "om_case04msg0010",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04adminxia",
+          "id_type": "open_id",
+          "name": "行政小夏",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "请各位主管周三前提交五一值班安排。",
+        "create_time": "2026-04-14 09:01",
+        "deleted": false,
+        "message_id": "om_case04msg0011",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04hrxuxu",
+          "id_type": "open_id",
+          "name": "人力小许",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "昨晚环境 22:47 开始波动，23:18 才恢复。",
+        "create_time": "2026-04-19 10:27",
+        "deleted": false,
+        "message_id": "om_case04msg0012",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04tangke006",
+          "id_type": "open_id",
+          "name": "唐可",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "这里先只说风险、影响、下一步。背景长文别贴。",
+        "create_time": "2026-04-19 10:36",
+        "deleted": false,
+        "message_id": "om_case04msg0013",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04chentarget001",
+          "id_type": "open_id",
+          "name": "陈昊",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "12 点前给我 go/no-go 输入，不要等到晚上才决定。",
+        "create_time": "2026-04-19 10:44",
+        "deleted": false,
+        "message_id": "om_case04msg0014",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04chentarget001",
+          "id_type": "open_id",
+          "name": "陈昊",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "我开个线程，避免主群刷掉。",
+        "create_time": "2026-04-16 16:58",
+        "deleted": false,
+        "message_id": "om_case04msg0015",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04wutian0005",
+          "id_type": "open_id",
+          "name": "吴恬",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "本轮先不争论长期最优结构，字段冻结表今天必须出，先服务上线前执行口径。",
+        "create_time": "2026-04-16 17:11",
+        "deleted": false,
+        "message_id": "om_case04msg0016",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04chentarget001",
+          "id_type": "open_id",
+          "name": "陈昊",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "今晚有人一起加班点餐吗。",
+        "create_time": "2026-04-16 21:31",
+        "deleted": false,
+        "message_id": "om_case04msg0017",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04teamnoise1",
+          "id_type": "open_id",
+          "name": "同事乙",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "先不在群里说了，线下碰一下。",
+        "create_time": "2026-04-18 11:41",
+        "deleted": false,
+        "message_id": "om_case04msg0018",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04teamnoise2",
+          "id_type": "open_id",
+          "name": "某参会人",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      }
+    ]
+  },
+  "_notice": {
+    "update": {
+      "current": "1.0.19",
+      "latest": "1.0.23",
+      "message": "lark-cli 1.0.23 available, current 1.0.19"
+    }
+  }
+}
