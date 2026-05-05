@@ -1,0 +1,132 @@
+{
+  "meeting_id": "MTG-CASE-04-04",
+  "project_id": "PJT-CASE-04",
+  "manager_id": "MGR-CASE-04",
+  "dimension_findings": [
+    {
+      "dimension": "协同调度力",
+      "finding_type": "strength",
+      "summary": "管理者通过聊天和会议，有效澄清项目范围、明确依赖责任方并推动解决路径，形成闭环。",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case04msg0002",
+          "timestamp": "2026-04-13 09:16",
+          "excerpt": "今天先把本轮目标和边界说清楚，不在范围里的先别展开。",
+          "evidence_note": "管理者在专项启动时，明确要求澄清项目范围，防止范围蔓延。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case04msg0007",
+          "timestamp": "2026-04-15 16:16",
+          "excerpt": "今天 5 点前必须统一一版口径，谁负责适配今天就定下来，不能继续空转。",
+          "evidence_note": "管理者在字段口径阻塞时，明确要求定下责任方和截止时间，推动解决。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case04msg0016",
+          "timestamp": "2026-04-16 17:11",
+          "excerpt": "本轮先不争论长期最优结构，字段冻结表今天必须出，先服务上线前执行口径。",
+          "evidence_note": "管理者明确决策，推动冻结表产出，为联调提供明确依据，解决协同阻塞。"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics",
+          "source_id": "calendar_stakeholder_coverage_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 1, expression = 4 / 4",
+          "evidence_note": "metric_id: calendar_stakeholder_coverage_rate, formula: value = calendar_events_with_required_stakeholders / total_calendar_events, calculation.expression: 4 / 4, value: 1。表明所有会议都覆盖了必要的干系人。"
+        }
+      ],
+      "confidence": 0.9,
+      "risk_tags": [],
+      "suggested_actions": []
+    },
+    {
+      "dimension": "协同调度力",
+      "finding_type": "risk",
+      "summary": "存在线下沟通未及时留痕、关键风险（客服链路遗留问题）未完全收口即进入下一阶段的情况，可能导致信息不同步和风险延续。",
+      "evidence_refs": [
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-04-04-STM-1",
+          "timestamp": "MTG-CASE-04-04",
+          "excerpt": "前几天对字段问题的处理还是慢了。",
+          "evidence_note": "复盘会议中承认前期协同处理存在延迟，表明存在协同效率问题。"
+        },
+        {
+          "source_type": "calendar",
+          "source_file": "06_calendar/calendar_events_instance_view.json",
+          "source_id": "cal_case04_evt_0418_offline",
+          "timestamp": "2026-04-18T11:45:00+08:00",
+          "excerpt": "阶段评审前线下沟通补录 attendees=陈昊,林玥,沈薇,唐可",
+          "evidence_note": "存在线下沟通事件，且备注‘线下沟通无完整录音，后续由吴恬补录摘要’，表明存在信息留痕风险。"
+        },
+        {
+          "source_type": "risk",
+          "source_file": "coordination_context",
+          "source_id": "NO.206",
+          "timestamp": "MTG-CASE-04-03",
+          "excerpt": "线下对齐后补录不完整，部分决策只有结论没有上下文",
+          "evidence_note": "风险记录明确指出线下结论未及时留痕，是协同流程风险。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting",
+          "source_id": "MTG-CASE-04-04",
+          "timestamp": "2026-04-24 19:30 - 20:35",
+          "excerpt": "客服链路遗留项进入下一阶段继续跟踪",
+          "evidence_note": "会议决策显示，关键风险（客服链路遗留问题）未在本阶段完全解决，将延续到下一阶段，存在风险升级和同步不彻底的可能。"
+        }
+      ],
+      "confidence": 0.8,
+      "risk_tags": [
+        "信息留痕不足",
+        "风险延续"
+      ],
+      "suggested_actions": [
+        "建议明确线下沟通结论同步到公共文档的SOP和责任人。",
+        "对于顺延到下一阶段的风险，应确保有明确的交接说明和跟踪机制，并同步给所有相关干系人。"
+      ]
+    }
+  ],
+  "human_review_items": [
+    {
+      "review_id": "HRV-CASE-04-COORD-01",
+      "reason": "需要人工复核‘客服链路遗留项进入下一阶段继续跟踪’这一决策，是否已明确同步给所有必要的干系人（如客服平台部主管、仓配系统部接口人等），并形成了被各方确认的解决路径和交接计划。当前证据仅显示为会议决策，缺乏跨团队同步的明确证据。",
+      "severity": "medium",
+      "related_dimension": "协同调度力",
+      "evidence_refs": [
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting",
+          "source_id": "MTG-CASE-04-04",
+          "timestamp": "2026-04-24 19:30 - 20:35",
+          "excerpt": "客服链路遗留项进入下一阶段继续跟踪",
+          "evidence_note": "关键风险项的处置决策，需要确认是否已有效同步给所有相关方。"
+        },
+        {
+          "source_type": "risk",
+          "source_file": "coordination_context",
+          "source_id": "NO.205",
+          "timestamp": "MTG-CASE-04-04",
+          "excerpt": "依赖外部供应商反馈，异常 B 处理偏慢",
+          "evidence_note": "相关风险描述，涉及外部依赖，协同同步更为关键。"
+        },
+        {
+          "source_type": "org_contacts",
+          "source_file": "coordination_context",
+          "source_id": "马会",
+          "timestamp": "N/A",
+          "excerpt": "name: 马会, department: 客服平台部, project_role: customer_service_partner",
+          "evidence_note": "客服链路的关键干系人之一，需确认其是否知晓并同意遗留项顺延计划。"
+        }
+      ]
+    }
+  ],
+  "coordination_summary": "管理者在专项中展现出较强的主动调度能力，能通过即时通讯明确范围、推动解决依赖阻塞，且会议覆盖了必要干系人。但存在线下沟通留痕不足的流程风险，且关键风险项（客服链路问题）未完全收口即转入下一阶段，其跨团队同步的充分性需要进一步复核。"
+}

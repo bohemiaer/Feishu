@@ -1,0 +1,161 @@
+{
+  "task_id": "FRONT-PJT-CASE-05-MTG-CASE-05-03",
+  "checked_at": "2026-05-04T16:42:31.101Z",
+  "required_sources": [
+    "Base 记录",
+    "云文档",
+    "会议/妙记"
+  ],
+  "optional_sources": [
+    "Base 历史",
+    "聊天历史",
+    "日历",
+    "通讯录"
+  ],
+  "available_sources": [
+    "Base 记录",
+    "聊天历史",
+    "会议/妙记",
+    "日历",
+    "通讯录"
+  ],
+  "missing_sources": [
+    "Base 历史",
+    "云文档"
+  ],
+  "degrade_reasons": [
+    "Base 历史 缺失"
+  ],
+  "blocking_reasons": [
+    "云文档 缺失",
+    "会议/妙记留痕样本不足"
+  ],
+  "source_checks": [
+    {
+      "source_name": "Base 记录",
+      "required": true,
+      "status": "available",
+      "sample_count": 39,
+      "files": [
+        "03_task_risk_register/base_projects_record_list.json",
+        "03_task_risk_register/base_tasks_record_list.json",
+        "03_task_risk_register/base_risks_record_list.json",
+        "04_meetings/base_meetings_record_list.json",
+        "04_meetings/base_statements_record_list.json"
+      ],
+      "notes": []
+    },
+    {
+      "source_name": "Base 历史",
+      "required": false,
+      "status": "missing",
+      "sample_count": 0,
+      "files": [
+        "03_task_risk_register/base_record_history_list.json"
+      ],
+      "notes": []
+    },
+    {
+      "source_name": "云文档",
+      "required": true,
+      "status": "missing",
+      "sample_count": 0,
+      "files": [
+        "01_cloud_docs/docs_fetch_main_doc_v2.json"
+      ],
+      "notes": [
+        "主文档内容为空"
+      ]
+    },
+    {
+      "source_name": "聊天历史",
+      "required": false,
+      "status": "available",
+      "sample_count": 50,
+      "files": [
+        "02_chats/im_chat_search_user.json",
+        "02_chats/im_messages_search_user.json"
+      ],
+      "notes": []
+    },
+    {
+      "source_name": "会议/妙记",
+      "required": true,
+      "status": "available",
+      "sample_count": 3,
+      "files": [
+        "04_meetings/base_meetings_record_list.json",
+        "04_meetings/minutes_search_user.json",
+        "04_meetings/minutes_transcript_case04.json",
+        "04_meetings/vc_search_by_participant.json"
+      ],
+      "notes": [
+        "当前会议没有完整妙记转写，只能依赖会议表和其他留痕",
+        "当前会议没有 minutes 搜索命中"
+      ]
+    },
+    {
+      "source_name": "日历",
+      "required": false,
+      "status": "available",
+      "sample_count": 3,
+      "files": [
+        "06_calendar/calendar_events_instance_view.json"
+      ],
+      "notes": []
+    },
+    {
+      "source_name": "通讯录",
+      "required": false,
+      "status": "available",
+      "sample_count": 5,
+      "files": [
+        "05_org_and_team/contact_get_user_user.json",
+        "05_org_and_team/contact_search_user_project_members.json"
+      ],
+      "notes": []
+    }
+  ],
+  "sample_checks": [
+    {
+      "check_name": "evaluation_target.manager_id",
+      "status": "pass",
+      "detail": "present"
+    },
+    {
+      "check_name": "evaluation_target.manager_name",
+      "status": "pass",
+      "detail": "present"
+    },
+    {
+      "check_name": "evaluation_target.project_id",
+      "status": "pass",
+      "detail": "present"
+    },
+    {
+      "check_name": "evaluation_target.evaluation_period",
+      "status": "pass",
+      "detail": "present"
+    },
+    {
+      "check_name": "project_snapshot_count",
+      "status": "pass",
+      "detail": "1"
+    },
+    {
+      "check_name": "meeting_record_count",
+      "status": "pass",
+      "detail": "3"
+    },
+    {
+      "check_name": "current_meeting_id",
+      "status": "pass",
+      "detail": "MTG-CASE-05-03"
+    }
+  ],
+  "recommended_actions": [
+    "补齐阻断输入：云文档 缺失",
+    "补齐阻断输入：会议/妙记留痕样本不足",
+    "补充辅助样本：Base 历史 缺失"
+  ]
+}

@@ -1,0 +1,1463 @@
+{
+  "task_context": {
+    "task_id": "FRONT-PJT-CASE-04-MTG-CASE-04-04",
+    "project_id": "PJT-CASE-04",
+    "manager_id": "MGR-CASE-04",
+    "meeting_id": "MTG-CASE-04-04",
+    "evaluation_period": "2026-04-13 ~ 2026-04-24",
+    "status": "collected",
+    "created_at": "2026-05-04T16:24:36.118Z",
+    "updated_at": "2026-05-04T16:24:36.118Z"
+  },
+  "meeting_id": "MTG-CASE-04-04",
+  "project_id": "PJT-CASE-04",
+  "manager_id": "MGR-CASE-04",
+  "manager_name": "陈昊",
+  "planner_slice": {
+    "focus_dimensions": [
+      {
+        "dimension": "方向校准力",
+        "priority": "medium",
+        "reasons": [
+          "当前会议为阶段复盘，需要校验目标、范围和优先级是否与文档和历史决策一致。",
+          "当前会议缺完整妙记转写，发言语境需要依赖会议表和 Statements 交叉校验。"
+        ]
+      },
+      {
+        "dimension": "推进闭环力",
+        "priority": "high",
+        "reasons": [
+          "任务延期率为 0.25，需要重点检查延期原因、owner/DDL 重设和闭环质量。",
+          "任务关闭率为 0.7，需要检查遗留项是否被清楚转入下一阶段。",
+          "当前会议行动项与任务表关联数量不一致，需要复核会后扩展任务或重复挂载。"
+        ]
+      }
+    ],
+    "assigned_plan": {
+      "agent_name": "Management Reviewer",
+      "required": true,
+      "input_keys": [
+        "meeting_fact_pack",
+        "history_bundle",
+        "hard_metrics_result"
+      ],
+      "output_keys": [
+        "dimension_findings",
+        "human_review_items"
+      ],
+      "focus_dimensions": [
+        "方向校准力",
+        "推进闭环力"
+      ]
+    },
+    "human_review_rules": [
+      {
+        "rule_id": "review_missing_current_transcript",
+        "severity": "medium",
+        "reason": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+        "target_nodes": [
+          "Management Reviewer",
+          "Risk & Behavior Auditor"
+        ]
+      },
+      {
+        "rule_id": "review_action_task_mapping",
+        "severity": "medium",
+        "reason": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",
+        "target_nodes": [
+          "Management Reviewer"
+        ]
+      }
+    ]
+  },
+  "current_meeting": {
+    "meeting_info": {
+      "meeting_id": "MTG-CASE-04-04",
+      "project_id": "PJT-CASE-04",
+      "manager_id": "MGR-CASE-04",
+      "manager_name": "陈昊",
+      "meeting_title": "专项阶段复盘",
+      "meeting_time": "2026-04-24 19:30 - 20:35",
+      "participants": [
+        "陈昊",
+        "林玥",
+        "马会",
+        "吴恬",
+        "其他专项成员"
+      ],
+      "calendar_event_id": "cal_case04_evt_0424_review",
+      "review_status": "有会后补充"
+    },
+    "meeting_facts": {
+      "manager_speech_summary": [
+        "前几天对字段问题的处理还是慢了。",
+        "如果今天还停留在“我以为”，那就是管理动作不到位。",
+        "下次专项第 1 天就出这个表。"
+      ],
+      "decisions": [
+        "主链路目标基本达成",
+        "字段冻结表后续可沉淀为固定机制",
+        "客服链路遗留项进入下一阶段继续跟踪"
+      ],
+      "risks_mentioned": [
+        "客服链路遗留问题未完全收口",
+        "线下沟通留痕不完整导致重复确认",
+        "会后有成员反馈 19:56 表达带来压力"
+      ],
+      "action_items": [
+        "复现工单高频异常 A",
+        "复现工单高频异常 B",
+        "输出低频回写补偿脚本"
+      ],
+      "transcript_segments": [],
+      "statement_evidence": [
+        {
+          "id": "NO.407",
+          "evidence_confidence": 0.8,
+          "review_meeting_count": 2,
+          "evidence_ref": "复盘纪要 19:42 原话提到字段问题处理偏慢 | 周报 W2 记录字段冻结表已发布但遗留项仍未完全关闭",
+          "speaker_name": "陈昊",
+          "project_id": "PJT-CASE-04",
+          "statement_id": "MTG-CASE-04-04-STM-1",
+          "evidence_source_type": "meeting+doc",
+          "statement_summary": "前几天对字段问题的处理还是慢了。",
+          "meeting_id": "MTG-CASE-04-04",
+          "speaker_id": "MGR-CASE-04",
+          "fact_check_result": "有依据"
+        },
+        {
+          "id": "NO.408",
+          "evidence_confidence": 0.8,
+          "review_meeting_count": 2,
+          "evidence_ref": "复盘纪要 20:22 原话提到下次专项第 1 天就出字段冻结表 | 任务表 T-003、T-004 显示字段冻结表在本轮中途才形成",
+          "speaker_name": "陈昊",
+          "project_id": "PJT-CASE-04",
+          "statement_id": "MTG-CASE-04-04-STM-2",
+          "evidence_source_type": "meeting+task",
+          "statement_summary": "下次专项第 1 天就出这个表。",
+          "meeting_id": "MTG-CASE-04-04",
+          "speaker_id": "MGR-CASE-04",
+          "fact_check_result": "有依据"
+        }
+      ],
+      "noise_signals": []
+    },
+    "missing_fields": [
+      "meeting_docs.current_transcript"
+    ],
+    "provenance_refs": [
+      {
+        "source_type": "base_record",
+        "source_file": "03_task_risk_register/base_projects_record_list.json",
+        "source_id": "PJT-CASE-04",
+        "timestamp": "2026-04-13",
+        "excerpt": "五一前履约稳定性专项治理"
+      },
+      {
+        "source_type": "base_record",
+        "source_file": "04_meetings/base_meetings_record_list.json",
+        "source_id": "MTG-CASE-04-04",
+        "timestamp": "2026-04-24 19:30 - 20:35",
+        "excerpt": "专项阶段复盘"
+      },
+      {
+        "source_type": "cloud_doc",
+        "source_file": "01_cloud_docs/docs_fetch_main_doc_v2.json",
+        "source_id": "V2mCdcase04MainDocx",
+        "timestamp": "4",
+        "excerpt": "范围内：主链路订单状态同步稳定性、退款状态回写一致性、客服工单联动中的关键高频异常、关键风险项的升级跟踪和回滚预案；范围外：客服体验优化类非阻断需求、仓配底层字段体系重构、新监控平台接入、历史低频长尾问题清理；五一前主链路履约状态同步成功率达到 99.95%；退款状态回写一致性达到 99.90%"
+      },
+      {
+        "source_type": "statement",
+        "source_file": "04_meetings/base_statements_record_list.json",
+        "source_id": "MTG-CASE-04-04-STM-1",
+        "timestamp": "MTG-CASE-04-04",
+        "excerpt": "前几天对字段问题的处理还是慢了。"
+      },
+      {
+        "source_type": "statement",
+        "source_file": "04_meetings/base_statements_record_list.json",
+        "source_id": "MTG-CASE-04-04-STM-2",
+        "timestamp": "MTG-CASE-04-04",
+        "excerpt": "下次专项第 1 天就出这个表。"
+      },
+      {
+        "source_type": "chat",
+        "source_file": "02_chats/im_messages_search_user.json",
+        "source_id": "om_case04msg0002",
+        "timestamp": "2026-04-13 09:16",
+        "excerpt": "今天先把本轮目标和边界说清楚，不在范围里的先别展开。"
+      },
+      {
+        "source_type": "chat",
+        "source_file": "02_chats/im_messages_search_user.json",
+        "source_id": "om_case04msg0004",
+        "timestamp": "2026-04-13 09:18",
+        "excerpt": "先不追求全部体验项一起做，主链路稳定和退款一致先保住。"
+      },
+      {
+        "source_type": "chat",
+        "source_file": "02_chats/im_messages_search_user.json",
+        "source_id": "om_case04msg0007",
+        "timestamp": "2026-04-15 16:16",
+        "excerpt": "今天 5 点前必须统一一版口径，谁负责适配今天就定下来，不能继续空转。"
+      },
+      {
+        "source_type": "chat",
+        "source_file": "02_chats/im_messages_search_user.json",
+        "source_id": "om_case04msg0009",
+        "timestamp": "2026-04-14 09:34",
+        "excerpt": "结算项目别发到专项线程里。"
+      },
+      {
+        "source_type": "calendar",
+        "source_file": "06_calendar/calendar_events_instance_view.json",
+        "source_id": "cal_case04_evt_0424_review",
+        "timestamp": "2026-04-24T19:30:00+08:00",
+        "excerpt": "专项阶段复盘"
+      }
+    ]
+  },
+  "project_context": {
+    "project_snapshot": {
+      "project_name": "五一前履约稳定性专项治理",
+      "project_stage": "阶段复盘收口",
+      "project_health": "yellow",
+      "open_tasks": [
+        {
+          "id": "NO.105",
+          "task_name": "修正客服异常子状态映射",
+          "status": "进行中",
+          "is_closed": "false",
+          "task_id": "PJT-CASE-04-TASK-05",
+          "project_id": "PJT-CASE-04",
+          "close_duration": null,
+          "is_overdue": "true",
+          "owner": "马会",
+          "due_date": "2026-04-18 18:00",
+          "source_meeting_id": "MTG-CASE-04-02"
+        },
+        {
+          "id": "NO.112",
+          "task_name": "复现工单高频异常 B",
+          "status": "延期",
+          "is_closed": "false",
+          "task_id": "PJT-CASE-04-TASK-12",
+          "project_id": "PJT-CASE-04",
+          "close_duration": null,
+          "is_overdue": "true",
+          "owner": "马会",
+          "due_date": "2026-04-21 18:00",
+          "source_meeting_id": "MTG-CASE-04-04"
+        },
+        {
+          "id": "NO.113",
+          "task_name": "输出低频回写补偿脚本",
+          "status": "延期",
+          "is_closed": "false",
+          "task_id": "PJT-CASE-04-TASK-13",
+          "project_id": "PJT-CASE-04",
+          "close_duration": null,
+          "is_overdue": "true",
+          "owner": "冯子轩",
+          "due_date": "2026-04-22 20:00",
+          "source_meeting_id": "MTG-CASE-04-04"
+        },
+        {
+          "id": "NO.115",
+          "task_name": "清理文档中的旧版本路线图",
+          "status": "未开始",
+          "is_closed": "false",
+          "task_id": "PJT-CASE-04-TASK-15",
+          "project_id": "PJT-CASE-04",
+          "close_duration": null,
+          "is_overdue": "false",
+          "owner": "吴恬",
+          "due_date": "2026-04-23 17:00",
+          "source_meeting_id": "MTG-CASE-04-04"
+        },
+        {
+          "id": "NO.116",
+          "task_name": "线下沟通补录到评审纪要",
+          "status": "部分完成",
+          "is_closed": "false",
+          "task_id": "PJT-CASE-04-TASK-16",
+          "project_id": "PJT-CASE-04",
+          "close_duration": null,
+          "is_overdue": "true",
+          "owner": "吴恬",
+          "due_date": "2026-04-18 17:00",
+          "source_meeting_id": "MTG-CASE-04-03"
+        },
+        {
+          "id": "NO.120",
+          "task_name": "监控看板接入评估",
+          "status": "未开始",
+          "is_closed": "false",
+          "task_id": "PJT-CASE-04-TASK-20",
+          "project_id": "PJT-CASE-04",
+          "close_duration": null,
+          "is_overdue": "false",
+          "owner": "同事甲",
+          "due_date": "2026-04-24 18:00",
+          "source_meeting_id": "MTG-CASE-04-04"
+        }
+      ],
+      "overdue_tasks": [
+        {
+          "id": "NO.103",
+          "task_name": "输出字段冻结表草案",
+          "status": "已完成",
+          "is_closed": "true",
+          "task_id": "PJT-CASE-04-TASK-03",
+          "project_id": "PJT-CASE-04",
+          "close_duration": "4h06m",
+          "is_overdue": "true",
+          "owner": "冯子轩",
+          "due_date": "2026-04-16 20:00",
+          "source_meeting_id": "MTG-CASE-04-02"
+        },
+        {
+          "id": "NO.105",
+          "task_name": "修正客服异常子状态映射",
+          "status": "进行中",
+          "is_closed": "false",
+          "task_id": "PJT-CASE-04-TASK-05",
+          "project_id": "PJT-CASE-04",
+          "close_duration": null,
+          "is_overdue": "true",
+          "owner": "马会",
+          "due_date": "2026-04-18 18:00",
+          "source_meeting_id": "MTG-CASE-04-02"
+        },
+        {
+          "id": "NO.112",
+          "task_name": "复现工单高频异常 B",
+          "status": "延期",
+          "is_closed": "false",
+          "task_id": "PJT-CASE-04-TASK-12",
+          "project_id": "PJT-CASE-04",
+          "close_duration": null,
+          "is_overdue": "true",
+          "owner": "马会",
+          "due_date": "2026-04-21 18:00",
+          "source_meeting_id": "MTG-CASE-04-04"
+        },
+        {
+          "id": "NO.113",
+          "task_name": "输出低频回写补偿脚本",
+          "status": "延期",
+          "is_closed": "false",
+          "task_id": "PJT-CASE-04-TASK-13",
+          "project_id": "PJT-CASE-04",
+          "close_duration": null,
+          "is_overdue": "true",
+          "owner": "冯子轩",
+          "due_date": "2026-04-22 20:00",
+          "source_meeting_id": "MTG-CASE-04-04"
+        },
+        {
+          "id": "NO.116",
+          "task_name": "线下沟通补录到评审纪要",
+          "status": "部分完成",
+          "is_closed": "false",
+          "task_id": "PJT-CASE-04-TASK-16",
+          "project_id": "PJT-CASE-04",
+          "close_duration": null,
+          "is_overdue": "true",
+          "owner": "吴恬",
+          "due_date": "2026-04-18 17:00",
+          "source_meeting_id": "MTG-CASE-04-03"
+        }
+      ],
+      "open_risks": [
+        {
+          "id": "NO.202",
+          "followup_status": "tracking",
+          "meeting_id": "MTG-CASE-04-03",
+          "trigger_reason": "高峰压测发现尾延迟，尚未完全消除",
+          "risk_description": "退款回写高峰场景尾延迟",
+          "risk_level": "high",
+          "project_id": "PJT-CASE-04",
+          "suggested_action": "继续跟踪长尾点并补充压测结论到文档",
+          "risk_id": "PJT-CASE-04-RISK-02",
+          "risk_type": "交付风险"
+        },
+        {
+          "id": "NO.205",
+          "followup_status": "tracking",
+          "meeting_id": "MTG-CASE-04-04",
+          "trigger_reason": "依赖外部供应商反馈，异常 B 处理偏慢",
+          "risk_description": "客服高频异常 B 未及时复现",
+          "risk_level": "medium",
+          "project_id": "PJT-CASE-04",
+          "suggested_action": "保留遗留项说明并顺延到下一阶段",
+          "risk_id": "PJT-CASE-04-RISK-05",
+          "risk_type": "协同风险"
+        },
+        {
+          "id": "NO.206",
+          "followup_status": "tracking",
+          "meeting_id": "MTG-CASE-04-03",
+          "trigger_reason": "线下对齐后补录不完整，部分决策只有结论没有上下文",
+          "risk_description": "线下结论未及时留痕",
+          "risk_level": "medium",
+          "project_id": "PJT-CASE-04",
+          "suggested_action": "把补录结论同步进评审纪要并保留缺失说明",
+          "risk_id": "PJT-CASE-04-RISK-06",
+          "risk_type": "流程风险"
+        },
+        {
+          "id": "NO.207",
+          "followup_status": "open",
+          "meeting_id": "MTG-CASE-04-01",
+          "trigger_reason": "历史旧版方案仍在流转，容易误导本轮优先级",
+          "risk_description": "旧版文档口径误导执行",
+          "risk_level": "medium",
+          "project_id": "PJT-CASE-04",
+          "suggested_action": "在主文档中明确本轮范围并弱化旧版附件影响",
+          "risk_id": "PJT-CASE-04-RISK-07",
+          "risk_type": "文档风险"
+        },
+        {
+          "id": "NO.208",
+          "followup_status": "tracking",
+          "meeting_id": "MTG-CASE-04-04",
+          "trigger_reason": "如果长尾问题持续，临时补偿脚本准备不足",
+          "risk_description": "低频回写补偿脚本准备不足",
+          "risk_level": "medium",
+          "project_id": "PJT-CASE-04",
+          "suggested_action": "输出补偿脚本草案并继续补齐正式版本",
+          "risk_id": "PJT-CASE-04-RISK-08",
+          "risk_type": "交付风险"
+        },
+        {
+          "id": "NO.209",
+          "followup_status": "open",
+          "meeting_id": "MTG-CASE-04-04",
+          "trigger_reason": "监控看板接入被短暂提为高优先项，但与本轮目标弱相关",
+          "risk_description": "监控看板接入被误提为高优先级",
+          "risk_level": "low",
+          "project_id": "PJT-CASE-04",
+          "suggested_action": "保留记录，不纳入本轮执行范围",
+          "risk_id": "PJT-CASE-04-RISK-09",
+          "risk_type": "噪音项"
+        }
+      ],
+      "all_tasks": [
+        {
+          "id": "NO.101",
+          "task_name": "输出专项目标与边界文档",
+          "status": "已完成",
+          "is_closed": "true",
+          "task_id": "PJT-CASE-04-TASK-01",
+          "project_id": "PJT-CASE-04",
+          "close_duration": "2h15m",
+          "is_overdue": "false",
+          "owner": "林玥",
+          "due_date": "2026-04-13 15:00",
+          "source_meeting_id": "MTG-CASE-04-01"
+        },
+        {
+          "id": "NO.102",
+          "task_name": "整理跨团队阻塞项清单",
+          "status": "已完成",
+          "is_closed": "true",
+          "task_id": "PJT-CASE-04-TASK-02",
+          "project_id": "PJT-CASE-04",
+          "close_duration": "4h30m",
+          "is_overdue": "false",
+          "owner": "吴恬",
+          "due_date": "2026-04-13 18:00",
+          "source_meeting_id": "MTG-CASE-04-01"
+        },
+        {
+          "id": "NO.103",
+          "task_name": "输出字段冻结表草案",
+          "status": "已完成",
+          "is_closed": "true",
+          "task_id": "PJT-CASE-04-TASK-03",
+          "project_id": "PJT-CASE-04",
+          "close_duration": "4h06m",
+          "is_overdue": "true",
+          "owner": "冯子轩",
+          "due_date": "2026-04-16 20:00",
+          "source_meeting_id": "MTG-CASE-04-02"
+        },
+        {
+          "id": "NO.104",
+          "task_name": "确认字段冻结表最终版",
+          "status": "已完成",
+          "is_closed": "true",
+          "task_id": "PJT-CASE-04-TASK-04",
+          "project_id": "PJT-CASE-04",
+          "close_duration": "1h20m",
+          "is_overdue": "false",
+          "owner": "吴恬",
+          "due_date": "2026-04-17 12:00",
+          "source_meeting_id": "MTG-CASE-04-02"
+        },
+        {
+          "id": "NO.105",
+          "task_name": "修正客服异常子状态映射",
+          "status": "进行中",
+          "is_closed": "false",
+          "task_id": "PJT-CASE-04-TASK-05",
+          "project_id": "PJT-CASE-04",
+          "close_duration": null,
+          "is_overdue": "true",
+          "owner": "马会",
+          "due_date": "2026-04-18 18:00",
+          "source_meeting_id": "MTG-CASE-04-02"
+        },
+        {
+          "id": "NO.106",
+          "task_name": "补充仓配异常子状态说明",
+          "status": "已完成",
+          "is_closed": "true",
+          "task_id": "PJT-CASE-04-TASK-06",
+          "project_id": "PJT-CASE-04",
+          "close_duration": "0h48m",
+          "is_overdue": "false",
+          "owner": "罗征",
+          "due_date": "2026-04-17 19:00",
+          "source_meeting_id": "MTG-CASE-04-02"
+        },
+        {
+          "id": "NO.107",
+          "task_name": "退款回写高峰场景压测",
+          "status": "已完成",
+          "is_closed": "true",
+          "task_id": "PJT-CASE-04-TASK-07",
+          "project_id": "PJT-CASE-04",
+          "close_duration": "2h10m",
+          "is_overdue": "false",
+          "owner": "冯子轩",
+          "due_date": "2026-04-19 11:30",
+          "source_meeting_id": "MTG-CASE-04-03"
+        },
+        {
+          "id": "NO.108",
+          "task_name": "晚间环境窗口确认",
+          "status": "已完成",
+          "is_closed": "true",
+          "task_id": "PJT-CASE-04-TASK-08",
+          "project_id": "PJT-CASE-04",
+          "close_duration": "1h29m",
+          "is_overdue": "false",
+          "owner": "唐可",
+          "due_date": "2026-04-19 12:00",
+          "source_meeting_id": "MTG-CASE-04-03"
+        },
+        {
+          "id": "NO.109",
+          "task_name": "输出 go/no-go 输入清单",
+          "status": "已完成",
+          "is_closed": "true",
+          "task_id": "PJT-CASE-04-TASK-09",
+          "project_id": "PJT-CASE-04",
+          "close_duration": "1h35m",
+          "is_overdue": "false",
+          "owner": "吴恬",
+          "due_date": "2026-04-19 12:00",
+          "source_meeting_id": "MTG-CASE-04-03"
+        },
+        {
+          "id": "NO.110",
+          "task_name": "补跑退款回写回归用例",
+          "status": "已完成",
+          "is_closed": "true",
+          "task_id": "PJT-CASE-04-TASK-10",
+          "project_id": "PJT-CASE-04",
+          "close_duration": "0h55m",
+          "is_overdue": "false",
+          "owner": "沈薇",
+          "due_date": "2026-04-20 10:00",
+          "source_meeting_id": "MTG-CASE-04-03"
+        },
+        {
+          "id": "NO.111",
+          "task_name": "复现工单高频异常 A",
+          "status": "已完成",
+          "is_closed": "true",
+          "task_id": "PJT-CASE-04-TASK-11",
+          "project_id": "PJT-CASE-04",
+          "close_duration": "3h00m",
+          "is_overdue": "false",
+          "owner": "马会",
+          "due_date": "2026-04-21 18:00",
+          "source_meeting_id": "MTG-CASE-04-04"
+        },
+        {
+          "id": "NO.112",
+          "task_name": "复现工单高频异常 B",
+          "status": "延期",
+          "is_closed": "false",
+          "task_id": "PJT-CASE-04-TASK-12",
+          "project_id": "PJT-CASE-04",
+          "close_duration": null,
+          "is_overdue": "true",
+          "owner": "马会",
+          "due_date": "2026-04-21 18:00",
+          "source_meeting_id": "MTG-CASE-04-04"
+        },
+        {
+          "id": "NO.113",
+          "task_name": "输出低频回写补偿脚本",
+          "status": "延期",
+          "is_closed": "false",
+          "task_id": "PJT-CASE-04-TASK-13",
+          "project_id": "PJT-CASE-04",
+          "close_duration": null,
+          "is_overdue": "true",
+          "owner": "冯子轩",
+          "due_date": "2026-04-22 20:00",
+          "source_meeting_id": "MTG-CASE-04-04"
+        },
+        {
+          "id": "NO.114",
+          "task_name": "更新延期事项 owner 和新 DDL",
+          "status": "已完成",
+          "is_closed": "true",
+          "task_id": "PJT-CASE-04-TASK-14",
+          "project_id": "PJT-CASE-04",
+          "close_duration": "0h50m",
+          "is_overdue": "false",
+          "owner": "吴恬",
+          "due_date": "2026-04-22 19:00",
+          "source_meeting_id": "MTG-CASE-04-04"
+        },
+        {
+          "id": "NO.115",
+          "task_name": "清理文档中的旧版本路线图",
+          "status": "未开始",
+          "is_closed": "false",
+          "task_id": "PJT-CASE-04-TASK-15",
+          "project_id": "PJT-CASE-04",
+          "close_duration": null,
+          "is_overdue": "false",
+          "owner": "吴恬",
+          "due_date": "2026-04-23 17:00",
+          "source_meeting_id": "MTG-CASE-04-04"
+        },
+        {
+          "id": "NO.116",
+          "task_name": "线下沟通补录到评审纪要",
+          "status": "部分完成",
+          "is_closed": "false",
+          "task_id": "PJT-CASE-04-TASK-16",
+          "project_id": "PJT-CASE-04",
+          "close_duration": null,
+          "is_overdue": "true",
+          "owner": "吴恬",
+          "due_date": "2026-04-18 17:00",
+          "source_meeting_id": "MTG-CASE-04-03"
+        },
+        {
+          "id": "NO.117",
+          "task_name": "输出专项复盘初稿",
+          "status": "已完成",
+          "is_closed": "true",
+          "task_id": "PJT-CASE-04-TASK-17",
+          "project_id": "PJT-CASE-04",
+          "close_duration": "1h10m",
+          "is_overdue": "false",
+          "owner": "吴恬",
+          "due_date": "2026-04-24 20:00",
+          "source_meeting_id": "MTG-CASE-04-04"
+        },
+        {
+          "id": "NO.118",
+          "task_name": "新周报模板落地",
+          "status": "已完成",
+          "is_closed": "true",
+          "task_id": "PJT-CASE-04-TASK-18",
+          "project_id": "PJT-CASE-04",
+          "close_duration": "0h40m",
+          "is_overdue": "false",
+          "owner": "吴恬",
+          "due_date": "2026-04-21 18:00",
+          "source_meeting_id": "MTG-CASE-04-04"
+        },
+        {
+          "id": "NO.119",
+          "task_name": "客服链路遗留项顺延说明",
+          "status": "已完成",
+          "is_closed": "true",
+          "task_id": "PJT-CASE-04-TASK-19",
+          "project_id": "PJT-CASE-04",
+          "close_duration": "0h35m",
+          "is_overdue": "false",
+          "owner": "马会",
+          "due_date": "2026-04-24 17:00",
+          "source_meeting_id": "MTG-CASE-04-04"
+        },
+        {
+          "id": "NO.120",
+          "task_name": "监控看板接入评估",
+          "status": "未开始",
+          "is_closed": "false",
+          "task_id": "PJT-CASE-04-TASK-20",
+          "project_id": "PJT-CASE-04",
+          "close_duration": null,
+          "is_overdue": "false",
+          "owner": "同事甲",
+          "due_date": "2026-04-24 18:00",
+          "source_meeting_id": "MTG-CASE-04-04"
+        }
+      ],
+      "all_risks": [
+        {
+          "id": "NO.201",
+          "followup_status": "resolved",
+          "meeting_id": "MTG-CASE-04-02",
+          "trigger_reason": "字段口径讨论持续来回，影响联调节奏",
+          "risk_description": "字段口径不一致导致联调返工",
+          "risk_level": "high",
+          "project_id": "PJT-CASE-04",
+          "suggested_action": "推进字段冻结表最终版并明确适配责任人",
+          "risk_id": "PJT-CASE-04-RISK-01",
+          "risk_type": "交付风险"
+        },
+        {
+          "id": "NO.202",
+          "followup_status": "tracking",
+          "meeting_id": "MTG-CASE-04-03",
+          "trigger_reason": "高峰压测发现尾延迟，尚未完全消除",
+          "risk_description": "退款回写高峰场景尾延迟",
+          "risk_level": "high",
+          "project_id": "PJT-CASE-04",
+          "suggested_action": "继续跟踪长尾点并补充压测结论到文档",
+          "risk_id": "PJT-CASE-04-RISK-02",
+          "risk_type": "交付风险"
+        },
+        {
+          "id": "NO.203",
+          "followup_status": "resolved",
+          "meeting_id": "MTG-CASE-04-03",
+          "trigger_reason": "晚间回归窗口被其他项目占用",
+          "risk_description": "晚间环境窗口不稳定",
+          "risk_level": "high",
+          "project_id": "PJT-CASE-04",
+          "suggested_action": "提前确认环境负责人并保留备选窗口",
+          "risk_id": "PJT-CASE-04-RISK-03",
+          "risk_type": "资源风险"
+        },
+        {
+          "id": "NO.204",
+          "followup_status": "closed",
+          "meeting_id": "MTG-CASE-04-04",
+          "trigger_reason": "客服异常 A 复现材料不完整，影响问题判断",
+          "risk_description": "客服高频异常 A 未及时复现",
+          "risk_level": "medium",
+          "project_id": "PJT-CASE-04",
+          "suggested_action": "补齐样本后关闭该项并同步影响范围",
+          "risk_id": "PJT-CASE-04-RISK-04",
+          "risk_type": "质量风险"
+        },
+        {
+          "id": "NO.205",
+          "followup_status": "tracking",
+          "meeting_id": "MTG-CASE-04-04",
+          "trigger_reason": "依赖外部供应商反馈，异常 B 处理偏慢",
+          "risk_description": "客服高频异常 B 未及时复现",
+          "risk_level": "medium",
+          "project_id": "PJT-CASE-04",
+          "suggested_action": "保留遗留项说明并顺延到下一阶段",
+          "risk_id": "PJT-CASE-04-RISK-05",
+          "risk_type": "协同风险"
+        },
+        {
+          "id": "NO.206",
+          "followup_status": "tracking",
+          "meeting_id": "MTG-CASE-04-03",
+          "trigger_reason": "线下对齐后补录不完整，部分决策只有结论没有上下文",
+          "risk_description": "线下结论未及时留痕",
+          "risk_level": "medium",
+          "project_id": "PJT-CASE-04",
+          "suggested_action": "把补录结论同步进评审纪要并保留缺失说明",
+          "risk_id": "PJT-CASE-04-RISK-06",
+          "risk_type": "流程风险"
+        },
+        {
+          "id": "NO.207",
+          "followup_status": "open",
+          "meeting_id": "MTG-CASE-04-01",
+          "trigger_reason": "历史旧版方案仍在流转，容易误导本轮优先级",
+          "risk_description": "旧版文档口径误导执行",
+          "risk_level": "medium",
+          "project_id": "PJT-CASE-04",
+          "suggested_action": "在主文档中明确本轮范围并弱化旧版附件影响",
+          "risk_id": "PJT-CASE-04-RISK-07",
+          "risk_type": "文档风险"
+        },
+        {
+          "id": "NO.208",
+          "followup_status": "tracking",
+          "meeting_id": "MTG-CASE-04-04",
+          "trigger_reason": "如果长尾问题持续，临时补偿脚本准备不足",
+          "risk_description": "低频回写补偿脚本准备不足",
+          "risk_level": "medium",
+          "project_id": "PJT-CASE-04",
+          "suggested_action": "输出补偿脚本草案并继续补齐正式版本",
+          "risk_id": "PJT-CASE-04-RISK-08",
+          "risk_type": "交付风险"
+        },
+        {
+          "id": "NO.209",
+          "followup_status": "open",
+          "meeting_id": "MTG-CASE-04-04",
+          "trigger_reason": "监控看板接入被短暂提为高优先项，但与本轮目标弱相关",
+          "risk_description": "监控看板接入被误提为高优先级",
+          "risk_level": "low",
+          "project_id": "PJT-CASE-04",
+          "suggested_action": "保留记录，不纳入本轮执行范围",
+          "risk_id": "PJT-CASE-04-RISK-09",
+          "risk_type": "噪音项"
+        },
+        {
+          "id": "NO.210",
+          "followup_status": "record_only",
+          "meeting_id": "MTG-CASE-04-04",
+          "trigger_reason": "会后有个别成员反馈复盘语气带来压力，但未形成正式事件",
+          "risk_description": "复盘沟通语气引发成员压力",
+          "risk_level": "low",
+          "project_id": "PJT-CASE-04",
+          "suggested_action": "仅记录该反馈，不扩写为正式结论",
+          "risk_id": "PJT-CASE-04-RISK-10",
+          "risk_type": "行为观察"
+        }
+      ]
+    },
+    "document_snapshot": {
+      "project_goal": "范围内：主链路订单状态同步稳定性、退款状态回写一致性、客服工单联动中的关键高频异常、关键风险项的升级跟踪和回滚预案；范围外：客服体验优化类非阻断需求、仓配底层字段体系重构、新监控平台接入、历史低频长尾问题清理；五一前主链路履约状态同步成功率达到 99.95%；退款状态回写一致性达到 99.90%",
+      "weekly_highlights": [
+        "主链路订单状态同步链路核心验证完成约 72%",
+        "退款回写链路已定位出 2 个高峰场景下的延迟点",
+        "仓配和客服对状态字段大类口径已对齐，但异常子状态仍有 3 项未统一",
+        "风险升级群已启用，测试环境问题开始单独跟踪",
+        "主链路稳定和退款一致性继续作为本轮最高优先级",
+        "客服体验优化中的 4 个建议项暂缓进入下一阶段",
+        "跨团队字段问题必须在下周一中午前形成冻结版",
+        "主链路指标趋稳"
+      ],
+      "review_highlights": [
+        "主链路指标趋稳",
+        "字段冻结表已发布",
+        "退款回写高峰复测完成，仍有 1 个长尾延迟问题需后续清理",
+        "客服链路遗留 2 项异常仍未关闭",
+        "上周确认的 7 条高优先 action item 中，5 条按期完成",
+        "2 条延期事项已重新确认 owner 和 DDL",
+        "线下沟通补录不及时，部分决策留痕不足",
+        "3 月底旧版履约方案文档曾把客服体验项列为 P0，本轮口径已不再完全适用"
+      ],
+      "main_doc_excerpt": "# 履约稳定性专项治理主文档\n## 文档说明\n本文档为五一前履约稳定性专项治理的主控文档，整合需求背景、执行方案、周报进展和阶段复盘输入，供履约中台、客服平台、仓配系统、测试和运维协同使用。\n最近更新时间：2026-04-24 20:40\n文档 owner：陈昊\n协同维护：林玥、冯子轩、沈薇、吴恬、唐可\n## 一、需求背景\n五一前订单峰值预估较上月提升 28%，履约链路中的订单状态同步、退款逆向回写和客服工单联动近期都出现过波动。专项目标不是重构全部系统，而是在两周内优先降低高频异常和跨团队协同成本。\n- 仓配系统和客服平台对部分状态字段解释不一致\n- 退款回写链路在高峰场景下有偶发延迟\n- 晚间回归环境与其他项目冲突，验证窗口不稳定\n- 多个团队在群聊中同步很多，但形成统一执行口径较慢\n## 二、本轮范围与目标\n- 范围内：主链路订单状态同步稳定性、退款状态回写一致性、客服工单联动中的关键高频异常、关键风险项的升级跟踪和回滚预案\n- 范围外：客服体验优化类非阻断需求、仓配底层字段体系重构、新监控平台接入、历史低频长尾问题清理\n- 五一前主链路履约状态同步成功率达到 99.95%\n- 退款状态回写一致性达到 99.90%\n- 高优先级工单异常量较上周下降 40%\n- 跨团队阻塞项在 24 小时内明确 owner 和处理路径\n## 三、参与角色\n- 陈昊：履约中台交付部负责人\n- 林",
+      "review_doc_excerpt": "时间：2026-04-24 18:20，整理人：吴恬\n- 主链路指标趋稳\n- 字段冻结表已发布\n- 退款回写高峰复测完成，仍有 1 个长尾延迟问题需后续清理\n- 客服链路遗留 2 项异常仍未关闭\n- 上周确认的 7 条高优先 action item 中，5 条按期完成\n- 2 条延期事项已重新确认 owner 和 DDL\n- 线下沟通补录不及时，部分决策留痕不足\n- 3 月底旧版履约方案文档曾把客服体验项列为 P0，本轮口径已不再完全适用\n- 附件区仍保留上季度异常清单，部分问题已失效\n- 周报草稿历史版本里仍能看到另一个结算项目的转发同步\n- 线下沟通原始语气、追问顺序和细节未完全保留\n- 项目名称：五一前履约稳定性专项治理\n- 项目 ID：PJT-CASE-04\n- 负责人：陈昊\n- 当前阶段：阶段复盘收口\n- 开始时间：2026-04-13\n- 观察周期结束：2026-04-24\n-"
+    }
+  },
+  "history_context": {
+    "recent_meetings": [
+      {
+        "meeting_id": "MTG-CASE-04-03",
+        "meeting_title": "阶段评审前线下沟通补录",
+        "meeting_time": "2026-04-18 11:45 - 12:05",
+        "review_status": "补录摘要",
+        "summary": [
+          "先把 go/no-go 输入收齐，再决定是否继续推进。",
+          "如果暂停扩面，需要同步业务侧预期。",
+          "暂不直接扩面验证",
+          "先收齐环境和回归输入"
+        ]
+      },
+      {
+        "meeting_id": "MTG-CASE-04-02",
+        "meeting_title": "联调状态沟通",
+        "meeting_time": "2026-04-16 15:00 - 16:20",
+        "review_status": "部分留痕缺失",
+        "summary": [
+          "本轮不要因为争论长期最优方案影响节前目标。",
+          "当日需明确由谁先做适配，不继续开放式讨论。",
+          "冻结表草案今晚输出。",
+          "中台先输出冻结表草案"
+        ]
+      },
+      {
+        "meeting_id": "MTG-CASE-04-01",
+        "meeting_title": "专项同步",
+        "meeting_time": "2026-04-13 10:02 - 10:58",
+        "review_status": "需复核缺失片段",
+        "summary": [
+          "这轮先把目标定窄，不追求一次解决所有问题。",
+          "先保主链路稳定和退款一致性，体验项后置。",
+          "把依赖和阻塞项今天收出来，别留到周中再看。",
+          "本轮优先级先收窄到主链路稳定和退款一致性"
+        ]
+      }
+    ],
+    "history_meetings": [
+      {
+        "meeting_id": "MTG-CASE-04-03",
+        "summary": "阶段评审前线下沟通补录：先把 go/no-go 输入收齐，再决定是否继续推进。；如果暂停扩面，需要同步业务侧预期。"
+      },
+      {
+        "meeting_id": "MTG-CASE-04-02",
+        "summary": "联调状态沟通：本轮不要因为争论长期最优方案影响节前目标。；当日需明确由谁先做适配，不继续开放式讨论。"
+      },
+      {
+        "meeting_id": "MTG-CASE-04-01",
+        "summary": "专项同步：这轮先把目标定窄，不追求一次解决所有问题。；先保主链路稳定和退款一致性，体验项后置。"
+      }
+    ],
+    "task_closure_notes": [
+      "PJT-CASE-04-TASK-01 输出专项目标与边界文档 状态=已完成 owner=林玥 DDL=2026-04-13 15:00",
+      "PJT-CASE-04-TASK-02 整理跨团队阻塞项清单 状态=已完成 owner=吴恬 DDL=2026-04-13 18:00",
+      "PJT-CASE-04-TASK-03 输出字段冻结表草案 状态=已完成 owner=冯子轩 DDL=2026-04-16 20:00",
+      "PJT-CASE-04-TASK-04 确认字段冻结表最终版 状态=已完成 owner=吴恬 DDL=2026-04-17 12:00",
+      "PJT-CASE-04-TASK-05 修正客服异常子状态映射 状态=进行中 owner=马会 DDL=2026-04-18 18:00",
+      "PJT-CASE-04-TASK-06 补充仓配异常子状态说明 状态=已完成 owner=罗征 DDL=2026-04-17 19:00"
+    ]
+  },
+  "hard_metrics": [
+    {
+      "metric_id": "meeting_decision_coverage_rate",
+      "dimension": "方向校准力",
+      "label": "会议决策留痕覆盖率",
+      "value": 1,
+      "numerator": 4,
+      "denominator": 4,
+      "unit": "ratio",
+      "window": "2026-04-13 ~ 2026-04-24",
+      "sample_scope": "Base Meetings decision_summary or history summary",
+      "formula": {
+        "formula": "value = meetings_with_decision_trace / total_meetings",
+        "numerator_definition": "会议记录中 decision_summary 非空，或历史会议 summary 非空的会议数",
+        "denominator_definition": "评估周期内可用会议样本总数",
+        "value_rule": "ratio 保留 4 位小数；分母为 0 时 value=null 且 status=no_sample"
+      },
+      "calculation": {
+        "expression": "4 / 4",
+        "numerator": 4,
+        "denominator": 4,
+        "value": 1
+      },
+      "status": "available",
+      "missing_fields": [],
+      "anomalies": [],
+      "evidence_refs": [
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-04-01",
+          "timestamp": "2026-04-13 10:02 - 10:58",
+          "evidence_label": "MTG-CASE-04-01 专项同步",
+          "excerpt": "本轮优先级先收窄到主链路稳定和退款一致性 | 当天需收出依赖和阻塞项 | 后续推进方案另行整理"
+        },
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-04-02",
+          "timestamp": "2026-04-16 15:00 - 16:20",
+          "evidence_label": "MTG-CASE-04-02 联调状态沟通",
+          "excerpt": "中台先输出冻结表草案 | 客服和仓配对草案做确认和补充 | 吴恬整理统一版并回发群里"
+        },
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-04-03",
+          "timestamp": "2026-04-18 11:45 - 12:05",
+          "evidence_label": "MTG-CASE-04-03 阶段评审前线下沟通补录",
+          "excerpt": "暂不直接扩面验证 | 先收齐环境和回归输入 | 再决定是否继续推进"
+        },
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-04-04",
+          "timestamp": "2026-04-24 19:30 - 20:35",
+          "evidence_label": "MTG-CASE-04-04 专项阶段复盘",
+          "excerpt": "主链路目标基本达成 | 字段冻结表后续可沉淀为固定机制 | 客服链路遗留项进入下一阶段继续跟踪"
+        }
+      ]
+    },
+    {
+      "metric_id": "task_definition_completeness_rate",
+      "dimension": "推进闭环力",
+      "label": "任务定义完整率",
+      "value": 1,
+      "numerator": 20,
+      "denominator": 20,
+      "unit": "ratio",
+      "window": "2026-04-13 ~ 2026-04-24",
+      "sample_scope": "Base Tasks: owner + DDL + task_name",
+      "formula": {
+        "formula": "value = tasks_with_task_name_owner_due_date / total_tasks",
+        "numerator_definition": "同时具备 task_name、owner、due_date 的任务数",
+        "denominator_definition": "Base Tasks 中评估周期内项目任务总数",
+        "value_rule": "ratio 保留 4 位小数；缺字段任务进入 missing_fields/anomalies"
+      },
+      "calculation": {
+        "expression": "20 / 20",
+        "numerator": 20,
+        "denominator": 20,
+        "value": 1
+      },
+      "status": "available",
+      "missing_fields": [],
+      "anomalies": [],
+      "evidence_refs": [
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-01",
+          "timestamp": "2026-04-13 15:00",
+          "evidence_label": "PJT-CASE-04-TASK-01 输出专项目标与边界文档",
+          "excerpt": "输出专项目标与边界文档"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-02",
+          "timestamp": "2026-04-13 18:00",
+          "evidence_label": "PJT-CASE-04-TASK-02 整理跨团队阻塞项清单",
+          "excerpt": "整理跨团队阻塞项清单"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-03",
+          "timestamp": "2026-04-16 20:00",
+          "evidence_label": "PJT-CASE-04-TASK-03 输出字段冻结表草案",
+          "excerpt": "输出字段冻结表草案"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-04",
+          "timestamp": "2026-04-17 12:00",
+          "evidence_label": "PJT-CASE-04-TASK-04 确认字段冻结表最终版",
+          "excerpt": "确认字段冻结表最终版"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-05",
+          "timestamp": "2026-04-18 18:00",
+          "evidence_label": "PJT-CASE-04-TASK-05 修正客服异常子状态映射",
+          "excerpt": "修正客服异常子状态映射"
+        }
+      ]
+    },
+    {
+      "metric_id": "task_overdue_rate",
+      "dimension": "推进闭环力",
+      "label": "任务延期率",
+      "value": 0.25,
+      "numerator": 5,
+      "denominator": 20,
+      "unit": "ratio",
+      "window": "2026-04-13 ~ 2026-04-24",
+      "sample_scope": "Base Tasks with due_date",
+      "formula": {
+        "formula": "value = overdue_tasks / tasks_with_due_date",
+        "numerator_definition": "is_overdue 为 true/yes/1/已完成/已关闭 等真值的任务数",
+        "denominator_definition": "具备 due_date 的任务数",
+        "value_rule": "ratio 保留 4 位小数；延期任务逐条进入 anomalies"
+      },
+      "calculation": {
+        "expression": "5 / 20",
+        "numerator": 5,
+        "denominator": 20,
+        "value": 0.25
+      },
+      "status": "available",
+      "missing_fields": [],
+      "anomalies": [
+        "PJT-CASE-04-TASK-03 输出字段冻结表草案 DDL=2026-04-16 20:00",
+        "PJT-CASE-04-TASK-05 修正客服异常子状态映射 DDL=2026-04-18 18:00",
+        "PJT-CASE-04-TASK-12 复现工单高频异常 B DDL=2026-04-21 18:00",
+        "PJT-CASE-04-TASK-13 输出低频回写补偿脚本 DDL=2026-04-22 20:00",
+        "PJT-CASE-04-TASK-16 线下沟通补录到评审纪要 DDL=2026-04-18 17:00"
+      ],
+      "evidence_refs": [
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-03",
+          "timestamp": "2026-04-16 20:00",
+          "evidence_label": "PJT-CASE-04-TASK-03 输出字段冻结表草案",
+          "excerpt": "输出字段冻结表草案 DDL=2026-04-16 20:00 is_overdue=true"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-05",
+          "timestamp": "2026-04-18 18:00",
+          "evidence_label": "PJT-CASE-04-TASK-05 修正客服异常子状态映射",
+          "excerpt": "修正客服异常子状态映射 DDL=2026-04-18 18:00 is_overdue=true"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-12",
+          "timestamp": "2026-04-21 18:00",
+          "evidence_label": "PJT-CASE-04-TASK-12 复现工单高频异常 B",
+          "excerpt": "复现工单高频异常 B DDL=2026-04-21 18:00 is_overdue=true"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-13",
+          "timestamp": "2026-04-22 20:00",
+          "evidence_label": "PJT-CASE-04-TASK-13 输出低频回写补偿脚本",
+          "excerpt": "输出低频回写补偿脚本 DDL=2026-04-22 20:00 is_overdue=true"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-16",
+          "timestamp": "2026-04-18 17:00",
+          "evidence_label": "PJT-CASE-04-TASK-16 线下沟通补录到评审纪要",
+          "excerpt": "线下沟通补录到评审纪要 DDL=2026-04-18 17:00 is_overdue=true"
+        }
+      ]
+    },
+    {
+      "metric_id": "task_closure_rate",
+      "dimension": "推进闭环力",
+      "label": "任务关闭率",
+      "value": 0.7,
+      "numerator": 14,
+      "denominator": 20,
+      "unit": "ratio",
+      "window": "2026-04-13 ~ 2026-04-24",
+      "sample_scope": "Base Tasks closed flag/status",
+      "formula": {
+        "formula": "value = closed_tasks / total_tasks",
+        "numerator_definition": "is_closed 为真值，或 status 属于 已完成/done/closed/resolved 的任务数",
+        "denominator_definition": "Base Tasks 中评估周期内项目任务总数",
+        "value_rule": "ratio 保留 4 位小数"
+      },
+      "calculation": {
+        "expression": "14 / 20",
+        "numerator": 14,
+        "denominator": 20,
+        "value": 0.7
+      },
+      "status": "available",
+      "missing_fields": [],
+      "anomalies": [],
+      "evidence_refs": [
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-01",
+          "timestamp": "2026-04-13 15:00",
+          "evidence_label": "PJT-CASE-04-TASK-01 输出专项目标与边界文档",
+          "excerpt": "输出专项目标与边界文档 status=已完成 is_closed=true"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-02",
+          "timestamp": "2026-04-13 18:00",
+          "evidence_label": "PJT-CASE-04-TASK-02 整理跨团队阻塞项清单",
+          "excerpt": "整理跨团队阻塞项清单 status=已完成 is_closed=true"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-03",
+          "timestamp": "2026-04-16 20:00",
+          "evidence_label": "PJT-CASE-04-TASK-03 输出字段冻结表草案",
+          "excerpt": "输出字段冻结表草案 status=已完成 is_closed=true"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-04",
+          "timestamp": "2026-04-17 12:00",
+          "evidence_label": "PJT-CASE-04-TASK-04 确认字段冻结表最终版",
+          "excerpt": "确认字段冻结表最终版 status=已完成 is_closed=true"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-06",
+          "timestamp": "2026-04-17 19:00",
+          "evidence_label": "PJT-CASE-04-TASK-06 补充仓配异常子状态说明",
+          "excerpt": "补充仓配异常子状态说明 status=已完成 is_closed=true"
+        }
+      ]
+    },
+    {
+      "metric_id": "closed_task_quality_rate",
+      "dimension": "推进闭环力",
+      "label": "任务关闭质量代理指标",
+      "value": 1,
+      "numerator": 14,
+      "denominator": 14,
+      "unit": "ratio",
+      "window": "2026-04-13 ~ 2026-04-24",
+      "sample_scope": "Closed tasks with close_duration + owner + DDL + source/history trace",
+      "formula": {
+        "formula": "value = qualified_closed_tasks / closed_tasks",
+        "numerator_definition": "已关闭且具备 close_duration、owner、due_date，并能通过 source_meeting_id 或 Base 历史找到留痕的任务数",
+        "denominator_definition": "已关闭任务数",
+        "value_rule": "ratio 保留 4 位小数；不满足代理质量字段的任务进入 missing_fields/anomalies"
+      },
+      "calculation": {
+        "expression": "14 / 14",
+        "numerator": 14,
+        "denominator": 14,
+        "value": 1
+      },
+      "status": "available",
+      "missing_fields": [],
+      "anomalies": [],
+      "evidence_refs": [
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-01",
+          "timestamp": "2026-04-13 15:00",
+          "evidence_label": "PJT-CASE-04-TASK-01 输出专项目标与边界文档",
+          "excerpt": "输出专项目标与边界文档 close_duration=2h15m source_meeting_id=MTG-CASE-04-01"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-02",
+          "timestamp": "2026-04-13 18:00",
+          "evidence_label": "PJT-CASE-04-TASK-02 整理跨团队阻塞项清单",
+          "excerpt": "整理跨团队阻塞项清单 close_duration=4h30m source_meeting_id=MTG-CASE-04-01"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-03",
+          "timestamp": "2026-04-16 20:00",
+          "evidence_label": "PJT-CASE-04-TASK-03 输出字段冻结表草案",
+          "excerpt": "输出字段冻结表草案 close_duration=4h06m source_meeting_id=MTG-CASE-04-02"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-04",
+          "timestamp": "2026-04-17 12:00",
+          "evidence_label": "PJT-CASE-04-TASK-04 确认字段冻结表最终版",
+          "excerpt": "确认字段冻结表最终版 close_duration=1h20m source_meeting_id=MTG-CASE-04-02"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-06",
+          "timestamp": "2026-04-17 19:00",
+          "evidence_label": "PJT-CASE-04-TASK-06 补充仓配异常子状态说明",
+          "excerpt": "补充仓配异常子状态说明 close_duration=0h48m source_meeting_id=MTG-CASE-04-02"
+        }
+      ]
+    },
+    {
+      "metric_id": "current_meeting_action_task_rate",
+      "dimension": "推进闭环力",
+      "label": "当前会议行动项入表率",
+      "value": 1,
+      "numerator": 3,
+      "denominator": 3,
+      "unit": "ratio",
+      "window": "2026-04-13 ~ 2026-04-24",
+      "sample_scope": "Current meeting action_item_count vs Base Tasks source_meeting_id",
+      "formula": {
+        "formula": "value = min(tasks_linked_to_current_meeting, current_meeting_action_item_count) / current_meeting_action_item_count",
+        "numerator_definition": "source_meeting_id 等于当前会议 ID 的任务数，上限截断为会议行动项数量",
+        "denominator_definition": "当前会议记录中的 action_item_count",
+        "value_rule": "ratio 保留 4 位小数；任务关联数大于或小于行动项数都进入 anomalies"
+      },
+      "calculation": {
+        "expression": "3 / 3",
+        "numerator": 3,
+        "denominator": 3,
+        "value": 1
+      },
+      "status": "available",
+      "missing_fields": [],
+      "anomalies": [
+        "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载"
+      ],
+      "evidence_refs": [
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-11",
+          "timestamp": "2026-04-21 18:00",
+          "evidence_label": "PJT-CASE-04-TASK-11 复现工单高频异常 A",
+          "excerpt": "复现工单高频异常 A source_meeting_id=MTG-CASE-04-04"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-12",
+          "timestamp": "2026-04-21 18:00",
+          "evidence_label": "PJT-CASE-04-TASK-12 复现工单高频异常 B",
+          "excerpt": "复现工单高频异常 B source_meeting_id=MTG-CASE-04-04"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-13",
+          "timestamp": "2026-04-22 20:00",
+          "evidence_label": "PJT-CASE-04-TASK-13 输出低频回写补偿脚本",
+          "excerpt": "输出低频回写补偿脚本 source_meeting_id=MTG-CASE-04-04"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-14",
+          "timestamp": "2026-04-22 19:00",
+          "evidence_label": "PJT-CASE-04-TASK-14 更新延期事项 owner 和新 DDL",
+          "excerpt": "更新延期事项 owner 和新 DDL source_meeting_id=MTG-CASE-04-04"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-15",
+          "timestamp": "2026-04-23 17:00",
+          "evidence_label": "PJT-CASE-04-TASK-15 清理文档中的旧版本路线图",
+          "excerpt": "清理文档中的旧版本路线图 source_meeting_id=MTG-CASE-04-04"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-17",
+          "timestamp": "2026-04-24 20:00",
+          "evidence_label": "PJT-CASE-04-TASK-17 输出专项复盘初稿",
+          "excerpt": "输出专项复盘初稿 source_meeting_id=MTG-CASE-04-04"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-18",
+          "timestamp": "2026-04-21 18:00",
+          "evidence_label": "PJT-CASE-04-TASK-18 新周报模板落地",
+          "excerpt": "新周报模板落地 source_meeting_id=MTG-CASE-04-04"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-19",
+          "timestamp": "2026-04-24 17:00",
+          "evidence_label": "PJT-CASE-04-TASK-19 客服链路遗留项顺延说明",
+          "excerpt": "客服链路遗留项顺延说明 source_meeting_id=MTG-CASE-04-04"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "PJT-CASE-04-TASK-20",
+          "timestamp": "2026-04-24 18:00",
+          "evidence_label": "PJT-CASE-04-TASK-20 监控看板接入评估",
+          "excerpt": "监控看板接入评估 source_meeting_id=MTG-CASE-04-04"
+        }
+      ]
+    },
+    {
+      "metric_id": "meeting_action_item_coverage_rate",
+      "dimension": "推进闭环力",
+      "label": "会议行动项留痕覆盖率",
+      "value": 1,
+      "numerator": 4,
+      "denominator": 4,
+      "unit": "ratio",
+      "window": "2026-04-13 ~ 2026-04-24",
+      "sample_scope": "Base Meetings action_item_count",
+      "formula": {
+        "formula": "value = meetings_with_action_item_count_gt_0 / total_meetings",
+        "numerator_definition": "action_item_count > 0 的会议数",
+        "denominator_definition": "评估周期内可用会议样本总数",
+        "value_rule": "ratio 保留 4 位小数；action_item_count=0 的会议进入 anomalies"
+      },
+      "calculation": {
+        "expression": "4 / 4",
+        "numerator": 4,
+        "denominator": 4,
+        "value": 1
+      },
+      "status": "available",
+      "missing_fields": [],
+      "anomalies": [],
+      "evidence_refs": [
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-04-01",
+          "timestamp": "2026-04-13 10:02 - 10:58",
+          "evidence_label": "MTG-CASE-04-01 专项同步",
+          "excerpt": "专项同步 action_item_count=3"
+        },
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-04-02",
+          "timestamp": "2026-04-16 15:00 - 16:20",
+          "evidence_label": "MTG-CASE-04-02 联调状态沟通",
+          "excerpt": "联调状态沟通 action_item_count=3"
+        },
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-04-03",
+          "timestamp": "2026-04-18 11:45 - 12:05",
+          "evidence_label": "MTG-CASE-04-03 阶段评审前线下沟通补录",
+          "excerpt": "阶段评审前线下沟通补录 action_item_count=2"
+        },
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-04-04",
+          "timestamp": "2026-04-24 19:30 - 20:35",
+          "evidence_label": "MTG-CASE-04-04 专项阶段复盘",
+          "excerpt": "专项阶段复盘 action_item_count=3"
+        }
+      ]
+    }
+  ],
+  "metric_quality_report": {
+    "sample_counts": {
+      "task_count": 20,
+      "risk_count": 10,
+      "meeting_count": 4,
+      "chat_message_count": 18,
+      "calendar_event_count": 4,
+      "contact_count": 8,
+      "base_history_count": 5
+    },
+    "metric_count": 15,
+    "available_count": 15,
+    "degraded_count": 0,
+    "no_sample_count": 0
+  },
+  "anomaly_samples": [
+    {
+      "metric_id": "task_overdue_rate",
+      "detail": "PJT-CASE-04-TASK-03 输出字段冻结表草案 DDL=2026-04-16 20:00"
+    },
+    {
+      "metric_id": "task_overdue_rate",
+      "detail": "PJT-CASE-04-TASK-05 修正客服异常子状态映射 DDL=2026-04-18 18:00"
+    },
+    {
+      "metric_id": "task_overdue_rate",
+      "detail": "PJT-CASE-04-TASK-12 复现工单高频异常 B DDL=2026-04-21 18:00"
+    },
+    {
+      "metric_id": "task_overdue_rate",
+      "detail": "PJT-CASE-04-TASK-13 输出低频回写补偿脚本 DDL=2026-04-22 20:00"
+    },
+    {
+      "metric_id": "task_overdue_rate",
+      "detail": "PJT-CASE-04-TASK-16 线下沟通补录到评审纪要 DDL=2026-04-18 17:00"
+    },
+    {
+      "metric_id": "current_meeting_action_task_rate",
+      "detail": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载"
+    }
+  ]
+}

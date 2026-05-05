@@ -1,0 +1,246 @@
+{
+  "meeting_id": "MTG-CASE-05-01",
+  "project_id": "PJT-CASE-05",
+  "manager_id": "MGR-CASE-05",
+  "dimension_findings": [
+    {
+      "dimension": "风险治理力",
+      "finding_type": "observation",
+      "summary": "高等级风险收口率为0，两个高风险（NO.601, NO.602）均处于未收口状态，表明高风险治理存在缺口。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_risk_resolution_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "value = 0, numerator = 0, denominator = 2",
+          "evidence_note": "metric_id=high_risk_resolution_rate, formula=value = resolved_high_risks / total_high_risks, calculation.expression=0 / 2, value=0"
+        }
+      ],
+      "confidence": 0.7,
+      "risk_tags": [],
+      "suggested_actions": []
+    },
+    {
+      "dimension": "风险治理力",
+      "finding_type": "observation",
+      "summary": "风险未收口占比为1，所有5个风险均未关闭，其中4个为open状态，1个为tracking状态，表明风险治理闭环存在系统性延迟。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "open_risk_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "value = 1, numerator = 5, denominator = 5",
+          "evidence_note": "metric_id=open_risk_rate, formula=value = open_or_tracking_risks / total_risks, calculation.expression=5 / 5, value=1"
+        }
+      ],
+      "confidence": 0.7,
+      "risk_tags": [],
+      "suggested_actions": []
+    },
+    {
+      "dimension": "风险治理力",
+      "finding_type": "observation",
+      "summary": "存在供应链风险复发线索，同类风险（供应链）出现2次（NO.601, NO.604），表明供应链风险治理可能存在薄弱环节或未形成有效预防机制。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "repeated_risk_type_count",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "value = 2, anomalies = [\"供应链:2\"]",
+          "evidence_note": "metric_id=repeated_risk_type_count, formula=value = sum(count(risk_type) where count(risk_type) > 1), calculation.expression=2, value=2"
+        }
+      ],
+      "confidence": 0.7,
+      "risk_tags": [],
+      "suggested_actions": []
+    },
+    {
+      "dimension": "风险治理力",
+      "finding_type": "observation",
+      "summary": "风险缓释动作覆盖率为1，所有风险均提出了建议动作，表明风险识别后能形成初步治理思路。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "risk_mitigation_action_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "value = 1, numerator = 5, denominator = 5",
+          "evidence_note": "metric_id=risk_mitigation_action_rate, formula=value = risks_with_suggested_action / total_risks, calculation.expression=5 / 5, value=1"
+        }
+      ],
+      "confidence": 0.7,
+      "risk_tags": [],
+      "suggested_actions": []
+    },
+    {
+      "dimension": "组织行为健康度",
+      "finding_type": "observation",
+      "summary": "管理者非常规时段消息占比为0，未发现深夜或凌晨催办行为。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "late_night_manager_message_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "value = 0, numerator = 0, denominator = 25",
+          "evidence_note": "metric_id=late_night_manager_message_rate, formula=value = manager_messages_between_22_00_and_08_00 / manager_chat_messages, calculation.expression=0 / 25, value=0"
+        }
+      ],
+      "confidence": 0.7,
+      "risk_tags": [],
+      "suggested_actions": []
+    },
+    {
+      "dimension": "组织行为健康度",
+      "finding_type": "observation",
+      "summary": "高压推进语言样本占比为0.04，仅命中1条规则样本，需结合语境进行人工复核。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_pressure_language_sample_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "value = 0.04, numerator = 1, denominator = 25, anomalies = [\"2026-04-21 09:15 本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。\"]",
+          "evidence_note": "metric_id=high_pressure_language_sample_rate, formula=value = manager_messages_matching_pressure_keywords / manager_chat_messages, calculation.expression=1 / 25, value=0.04"
+        }
+      ],
+      "confidence": 0.7,
+      "risk_tags": [],
+      "suggested_actions": []
+    }
+  ],
+  "risk_flags": [
+    {
+      "flag_id": "RF-CASE-05-01",
+      "flag_type": "risk_governance",
+      "severity": "high",
+      "summary": "高等级风险（NO.601, NO.602）收口率为0，高风险治理存在缺口，可能影响项目关键节点。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_risk_resolution_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "value = 0, numerator = 0, denominator = 2",
+          "evidence_note": "metric_id=high_risk_resolution_rate, formula=value = resolved_high_risks / total_high_risks, calculation.expression=0 / 2, value=0"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.601",
+          "timestamp": "MTG-CASE-05-02",
+          "excerpt": "供应商A模具曲面壁厚不均，需返工3处，可能延误T0节点 followup_status=open",
+          "evidence_note": "高风险NO.601未收口"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.602",
+          "timestamp": "MTG-CASE-05-01",
+          "excerpt": "智能门锁防水等级从IPX4提升至IPX6，外观开口需重新设计 followup_status=open",
+          "evidence_note": "高风险NO.602未收口"
+        }
+      ],
+      "confidence": 0.95,
+      "requires_human_review": true
+    },
+    {
+      "flag_id": "RF-CASE-05-02",
+      "flag_type": "risk_governance",
+      "severity": "medium",
+      "summary": "供应链风险复发，同类风险出现2次（NO.601, NO.604），提示供应链风险治理可能存在薄弱环节。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "repeated_risk_type_count",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "value = 2, anomalies = [\"供应链:2\"]",
+          "evidence_note": "metric_id=repeated_risk_type_count, formula=value = sum(count(risk_type) where count(risk_type) > 1), calculation.expression=2, value=2"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.601",
+          "timestamp": "MTG-CASE-05-02",
+          "excerpt": "供应链: 供应商A模具曲面壁厚不均，需返工3处，可能延误T0节点",
+          "evidence_note": "供应链风险样本1"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.604",
+          "timestamp": "MTG-CASE-05-03",
+          "excerpt": "供应链: 核心注塑供应商Q2产能饱和，模具排期可能延后10天",
+          "evidence_note": "供应链风险样本2"
+        }
+      ],
+      "confidence": 0.9,
+      "requires_human_review": true
+    },
+    {
+      "flag_id": "RF-CASE-05-03",
+      "flag_type": "behavior_observation",
+      "severity": "medium",
+      "summary": "发现1条高压推进语言规则命中样本，需人工复核语境以判断是否为正常项目压力传导。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_pressure_language_sample_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "anomalies = [\"2026-04-21 09:15 本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。\"]",
+          "evidence_note": "metric_id=high_pressure_language_sample_rate, formula=value = manager_messages_matching_pressure_keywords / manager_chat_messages, calculation.expression=1 / 25, value=0.04"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0025",
+          "timestamp": "2026-04-21 09:15",
+          "excerpt": "本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。",
+          "evidence_note": "规则命中样本，命中关键词“必须”、“不能再改了”，需人工复核语境。"
+        }
+      ],
+      "confidence": 0.6,
+      "requires_human_review": true
+    }
+  ],
+  "human_review_items": [
+    {
+      "review_id": "HR-CASE-05-01",
+      "reason": "高等级风险未完全收口，风险治理结论需人工复核。",
+      "severity": "medium",
+      "related_dimension": "风险治理力",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_risk_resolution_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "value = 0, numerator = 0, denominator = 2",
+          "evidence_note": "metric_id=high_risk_resolution_rate, formula=value = resolved_high_risks / total_high_risks, calculation.expression=0 / 2, value=0"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-CASE-05-02",
+      "reason": "组织行为相关语言只能作为观察项，需人工确认语境和场景。",
+      "severity": "medium",
+      "related_dimension": "风险治理力",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0025",
+          "timestamp": "2026-04-21 09:15",
+          "excerpt": "本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。",
+          "evidence_note": "规则命中样本，需人工复核是否为正常项目节点压力传导，或存在不当高压。"
+        }
+      ]
+    }
+  ],
+  "risk_behavior_summary": "风险治理力方面，项目存在5个未收口风险，高等级风险收口率为0，且供应链风险出现复发，表明风险治理闭环存在显著缺口，高风险治理和供应链风险预防是主要薄弱点。组织行为健康度方面，未发现深夜催办行为，仅有一条高压语言规则命中样本，需人工复核语境；整体聊天记录显示团队成员能就风险（如专利、成本）进行公开讨论和反馈，未观察到明显的公开负向反馈或重复催办模式。"
+}

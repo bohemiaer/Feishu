@@ -4,43 +4,109 @@
   "title": "ReportResult",
   "type": "object",
   "required": [
+    "report_status",
     "report_title",
     "manager_id",
     "project_id",
     "report_type",
     "summary",
     "score_overview",
-    "review_result",
     "key_evidence",
     "risk_alerts",
-    "next_actions"
+    "human_review_items",
+    "next_actions",
+    "base_writeback_payload",
+    "missing_upstream_results"
   ],
   "properties": {
+    "report_status": {
+      "type": "string",
+      "enum": ["ready", "degraded", "blocked"]
+    },
     "report_title": { "type": "string" },
     "manager_id": { "type": "string" },
     "project_id": { "type": "string" },
-    "report_type": { "type": "string" },
+    "report_type": {
+      "type": "string",
+      "enum": ["weekly_report"]
+    },
     "summary": { "type": "string" },
     "score_overview": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence_backed_report_item"
+      }
+    },
+    "key_evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence_backed_report_item"
+      }
+    },
+    "risk_alerts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence_backed_report_item"
+      }
+    },
+    "human_review_items": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "next_actions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence_backed_report_item"
+      }
+    },
+    "base_writeback_payload": { "type": "object" },
+    "missing_upstream_results": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "$defs": {
+    "evidence_backed_report_item": {
       "type": "object",
       "required": [
-        "project_understanding",
-        "evidence_based",
-        "execution_closure",
-        "risk_identification"
+        "content",
+        "evidence_refs"
       ],
       "properties": {
-        "project_understanding": { "type": "integer" },
-        "evidence_based": { "type": "integer" },
-        "execution_closure": { "type": "integer" },
-        "risk_identification": { "type": "integer" }
+        "dimension": { "type": "string" },
+        "level": { "type": "string" },
+        "content": { "type": "string" },
+        "evidence": { "type": "string" },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "evidence_ref": {
+      "type": "object",
+      "required": [
+        "source_type",
+        "source_file",
+        "source_id",
+        "timestamp",
+        "excerpt",
+        "evidence_note"
+      ],
+      "properties": {
+        "source_type": { "type": "string" },
+        "source_file": { "type": "string" },
+        "source_id": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "excerpt": { "type": "string" },
+        "evidence_note": { "type": "string" }
       },
       "additionalProperties": false
-    },
-    "review_result": { "type": "string" },
-    "key_evidence": { "type": "array", "items": { "type": "string" } },
-    "risk_alerts": { "type": "array", "items": { "type": "string" } },
-    "next_actions": { "type": "array", "items": { "type": "string" } }
+    }
   },
   "additionalProperties": false
 }

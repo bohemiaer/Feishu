@@ -1,0 +1,1270 @@
+{
+  "task_context": {
+    "task_id": "FRONT-PJT-CASE-05-MTG-CASE-05-01",
+    "project_id": "PJT-CASE-05",
+    "manager_id": "MGR-CASE-05",
+    "meeting_id": "MTG-CASE-05-01",
+    "evaluation_period": "2026-01-01 ~ 2026-04-21",
+    "status": "collected",
+    "created_at": "2026-05-04T17:17:57.533Z",
+    "updated_at": "2026-05-04T17:17:57.533Z"
+  },
+  "meeting_id": "MTG-CASE-05-01",
+  "project_id": "PJT-CASE-05",
+  "manager_id": "MGR-CASE-05",
+  "manager_name": "周牧",
+  "input_status": {
+    "readiness": "blocked",
+    "missing_upstream_results": [
+      "capability_assessor_result_ready"
+    ]
+  },
+  "capability_assessor_result": {
+    "meeting_id": "MTG-CASE-05-01",
+    "project_id": "PJT-CASE-05",
+    "manager_id": "MGR-CASE-05",
+    "assessment_status": "blocked",
+    "dimension_scores": [],
+    "overall_assessment": {
+      "overall_score": 0,
+      "top_strengths": [],
+      "top_risks": [],
+      "confidence": 0,
+      "summary": "Capability assessment is blocked because required expert results are missing."
+    },
+    "human_review_items": [],
+    "missing_upstream_results": [
+      "management_reviewer_result",
+      "risk_behavior_auditor_result",
+      "coordination_lens_result"
+    ]
+  },
+  "expert_summaries": {
+    "management_review_summary": "",
+    "risk_behavior_summary": "",
+    "coordination_summary": ""
+  },
+  "evaluation_plan": {
+    "task_context": {
+      "task_id": "FRONT-PJT-CASE-05-MTG-CASE-05-01",
+      "project_id": "PJT-CASE-05",
+      "manager_id": "MGR-CASE-05",
+      "meeting_id": "MTG-CASE-05-01",
+      "evaluation_period": "2026-01-01 ~ 2026-04-21",
+      "status": "collected",
+      "created_at": "2026-05-04T17:17:57.533Z",
+      "updated_at": "2026-05-04T17:17:57.533Z"
+    },
+    "generated_at": "2026-05-04T17:17:57.539Z",
+    "project_id": "PJT-CASE-05",
+    "manager_id": "MGR-CASE-05",
+    "meeting_id": "MTG-CASE-05-01",
+    "evaluation_focus": {
+      "evaluation_period": "2026-01-01 ~ 2026-04-21",
+      "report_type": "single",
+      "execution_mode": "degraded_evaluation",
+      "focus_dimensions": [
+        {
+          "dimension": "方向校准力",
+          "priority": "medium",
+          "reasons": [
+            "当前会议为阶段复盘，需要校验目标、范围和优先级是否与文档和历史决策一致。"
+          ]
+        },
+        {
+          "dimension": "推进闭环力",
+          "priority": "high",
+          "reasons": [
+            "任务关闭率为 0.4333，需要检查遗留项是否被清楚转入下一阶段。",
+            "当前会议行动项与任务表关联数量不一致，需要复核会后扩展任务或重复挂载。"
+          ]
+        },
+        {
+          "dimension": "风险治理力",
+          "priority": "high",
+          "reasons": [
+            "风险未收口占比为 1，需要重点检查高等级风险和遗留风险治理。",
+            "高等级风险收口率为 0，需要复核未收口高风险的缓释动作。"
+          ]
+        },
+        {
+          "dimension": "协同调度力",
+          "priority": "medium",
+          "reasons": [
+            "日历、会议和通讯录样本齐备，可检查必要干系人同步与跨团队阻塞处理。"
+          ]
+        },
+        {
+          "dimension": "组织行为健康度",
+          "priority": "high",
+          "reasons": [
+            "高压推进语言样本占比为 0.04，只生成观察项并进入人工复核。",
+            "当前输入存在补录、噪音或上下文不足，组织行为判断必须降低置信度。"
+          ]
+        }
+      ],
+      "data_warnings": [
+        "历史会议中存在 summary_only 样本，历史复核时需降低留痕置信度。"
+      ],
+      "metric_gaps": []
+    },
+    "execution_plan": {
+      "plan_id": "PLAN-PJT-CASE-05-MTG-CASE-05-01",
+      "execution_mode": "degraded_evaluation",
+      "agent_plan": [
+        {
+          "agent_name": "Management Reviewer",
+          "required": true,
+          "input_keys": [
+            "meeting_fact_pack",
+            "history_bundle",
+            "hard_metrics_result"
+          ],
+          "output_keys": [
+            "dimension_findings",
+            "human_review_items"
+          ],
+          "focus_dimensions": [
+            "方向校准力",
+            "推进闭环力"
+          ]
+        },
+        {
+          "agent_name": "Risk & Behavior Auditor",
+          "required": true,
+          "input_keys": [
+            "meeting_fact_pack",
+            "history_bundle",
+            "hard_metrics_result",
+            "raw_payload"
+          ],
+          "output_keys": [
+            "dimension_findings",
+            "risk_flags",
+            "human_review_items"
+          ],
+          "focus_dimensions": [
+            "风险治理力",
+            "组织行为健康度"
+          ]
+        },
+        {
+          "agent_name": "Coordination Lens",
+          "required": true,
+          "input_keys": [
+            "meeting_fact_pack",
+            "hard_metrics_result",
+            "raw_payload"
+          ],
+          "output_keys": [
+            "dimension_findings",
+            "human_review_items"
+          ],
+          "focus_dimensions": [
+            "协同调度力"
+          ]
+        },
+        {
+          "agent_name": "Capability Assessor",
+          "required": true,
+          "input_keys": [
+            "dimension_findings",
+            "risk_flags",
+            "hard_metrics_result",
+            "human_review_items"
+          ],
+          "output_keys": [
+            "dimension_findings",
+            "risk_flags",
+            "human_review_items"
+          ],
+          "focus_dimensions": [
+            "方向校准力",
+            "推进闭环力",
+            "风险治理力",
+            "协同调度力",
+            "组织行为健康度"
+          ]
+        },
+        {
+          "agent_name": "Report Writer",
+          "required": true,
+          "input_keys": [
+            "dimension_findings",
+            "risk_flags",
+            "human_review_items"
+          ],
+          "output_keys": [
+            "report_payload"
+          ],
+          "focus_dimensions": [
+            "方向校准力",
+            "推进闭环力",
+            "风险治理力",
+            "协同调度力",
+            "组织行为健康度"
+          ]
+        }
+      ],
+      "required_inputs": [
+        "meeting_fact_pack",
+        "history_bundle",
+        "raw_payload",
+        "hard_metrics_result"
+      ],
+      "output_contracts": [
+        "evaluation_focus",
+        "execution_plan",
+        "human_review_rules"
+      ],
+      "stop_conditions": []
+    },
+    "human_review_rules": [
+      {
+        "rule_id": "review_behavior_language_context",
+        "severity": "medium",
+        "reason": "组织行为相关语言只能作为观察项，需人工确认语境和场景。",
+        "target_nodes": [
+          "Risk & Behavior Auditor",
+          "Capability Assessor"
+        ]
+      },
+      {
+        "rule_id": "review_unresolved_high_risks",
+        "severity": "high",
+        "reason": "高等级风险未完全收口，风险治理结论需人工复核。",
+        "target_nodes": [
+          "Risk & Behavior Auditor"
+        ]
+      },
+      {
+        "rule_id": "review_action_task_mapping",
+        "severity": "medium",
+        "reason": "会议行动项 3 条，任务表关联 4 条，存在会后扩展任务或重复挂载",
+        "target_nodes": [
+          "Management Reviewer"
+        ]
+      },
+      {
+        "rule_id": "review_data_quality_warnings",
+        "severity": "medium",
+        "reason": "前链路数据质量报告存在 warning，后续结论需要保留置信度说明。",
+        "target_nodes": [
+          "Capability Assessor",
+          "Report Writer"
+        ]
+      }
+    ],
+    "planner_notes": [
+      "历史会议样本数：2",
+      "聊天样本数：50",
+      "硬指标数：15"
+    ]
+  },
+  "hard_metrics_result": {
+    "task_context": {
+      "task_id": "FRONT-PJT-CASE-05-MTG-CASE-05-01",
+      "project_id": "PJT-CASE-05",
+      "manager_id": "MGR-CASE-05",
+      "meeting_id": "MTG-CASE-05-01",
+      "evaluation_period": "2026-01-01 ~ 2026-04-21",
+      "status": "collected",
+      "created_at": "2026-05-04T17:17:57.533Z",
+      "updated_at": "2026-05-04T17:17:57.533Z"
+    },
+    "generated_at": "2026-05-04T17:17:57.538Z",
+    "project_id": "PJT-CASE-05",
+    "manager_id": "MGR-CASE-05",
+    "meeting_id": "MTG-CASE-05-01",
+    "evaluation_period": "2026-01-01 ~ 2026-04-21",
+    "hard_metrics_result": {
+      "方向校准力": [
+        {
+          "metric_id": "meeting_decision_coverage_rate",
+          "dimension": "方向校准力",
+          "label": "会议决策留痕覆盖率",
+          "value": 1,
+          "numerator": 3,
+          "denominator": 3,
+          "unit": "ratio",
+          "window": "2026-01-01 ~ 2026-04-21",
+          "sample_scope": "Base Meetings decision_summary or history summary",
+          "formula": {
+            "formula": "value = meetings_with_decision_trace / total_meetings",
+            "numerator_definition": "会议记录中 decision_summary 非空，或历史会议 summary 非空的会议数",
+            "denominator_definition": "评估周期内可用会议样本总数",
+            "value_rule": "ratio 保留 4 位小数；分母为 0 时 value=null 且 status=no_sample"
+          },
+          "calculation": {
+            "expression": "3 / 3",
+            "numerator": 3,
+            "denominator": 3,
+            "value": 1
+          },
+          "status": "available",
+          "missing_fields": [],
+          "anomalies": [],
+          "evidence_refs": [
+            {
+              "source_type": "base_meeting",
+              "source_file": "04_meetings/base_meetings_record_list.json",
+              "source_id": "MTG-CASE-05-01",
+              "timestamp": "2026-04-21 09:15 - 10:30",
+              "evidence_label": "MTG-CASE-05-01 V1.5迭代同步会",
+              "excerpt": "外观冻结本周完成 | 门锁防水方案5月5日前输出 | 成本上升15%由设计效果优先覆盖"
+            },
+            {
+              "source_type": "base_meeting",
+              "source_file": "04_meetings/base_meetings_record_list.json",
+              "source_id": "MTG-CASE-05-02",
+              "timestamp": "2026-04-22 10:30 - 11:45",
+              "evidence_label": "MTG-CASE-05-02 供应商模具评审会",
+              "excerpt": "同步调整拔模角度压缩返工周期 | 预算问题单独与财务沟通 | 林峰跟进供应商排期"
+            },
+            {
+              "source_type": "base_meeting",
+              "source_file": "04_meetings/base_meetings_record_list.json",
+              "source_id": "MTG-CASE-05-03",
+              "timestamp": "2026-04-24 09:00 - 09:45",
+              "evidence_label": "MTG-CASE-05-03 供应链风险应急沟通",
+              "excerpt": "协调供应链总监争取插队 | 同步评估供应商C打样能力 | 周牧单独跟进不占用群资源"
+            }
+          ]
+        }
+      ],
+      "推进闭环力": [
+        {
+          "metric_id": "task_definition_completeness_rate",
+          "dimension": "推进闭环力",
+          "label": "任务定义完整率",
+          "value": 1,
+          "numerator": 30,
+          "denominator": 30,
+          "unit": "ratio",
+          "window": "2026-01-01 ~ 2026-04-21",
+          "sample_scope": "Base Tasks: owner + DDL + task_name",
+          "formula": {
+            "formula": "value = tasks_with_task_name_owner_due_date / total_tasks",
+            "numerator_definition": "同时具备 task_name、owner、due_date 的任务数",
+            "denominator_definition": "Base Tasks 中评估周期内项目任务总数",
+            "value_rule": "ratio 保留 4 位小数；缺字段任务进入 missing_fields/anomalies"
+          },
+          "calculation": {
+            "expression": "30 / 30",
+            "numerator": 30,
+            "denominator": 30,
+            "value": 1
+          },
+          "status": "available",
+          "missing_fields": [],
+          "anomalies": [],
+          "evidence_refs": [
+            {
+              "source_type": "base_task",
+              "source_file": "03_task_risk_register/base_tasks_record_list.json",
+              "source_id": "",
+              "timestamp": "2026-04-05",
+              "evidence_label": "NO.501 智能音箱概念设计稿输出",
+              "excerpt": "智能音箱概念设计稿输出"
+            },
+            {
+              "source_type": "base_task",
+              "source_file": "03_task_risk_register/base_tasks_record_list.json",
+              "source_id": "",
+              "timestamp": "2026-04-05",
+              "evidence_label": "NO.502 扫地机器人概念设计稿输出",
+              "excerpt": "扫地机器人概念设计稿输出"
+            },
+            {
+              "source_type": "base_task",
+              "source_file": "03_task_risk_register/base_tasks_record_list.json",
+              "source_id": "",
+              "timestamp": "2026-04-08",
+              "evidence_label": "NO.503 智能门锁概念设计稿输出",
+              "excerpt": "智能门锁概念设计稿输出"
+            },
+            {
+              "source_type": "base_task",
+              "source_file": "03_task_risk_register/base_tasks_record_list.json",
+              "source_id": "",
+              "timestamp": "2026-04-10",
+              "evidence_label": "NO.504 概念设计评审会组织",
+              "excerpt": "概念设计评审会组织"
+            },
+            {
+              "source_type": "base_task",
+              "source_file": "03_task_risk_register/base_tasks_record_list.json",
+              "source_id": "",
+              "timestamp": "2026-04-15",
+              "evidence_label": "NO.505 品牌颜色方案调整",
+              "excerpt": "品牌颜色方案调整"
+            }
+          ]
+        },
+        {
+          "metric_id": "task_overdue_rate",
+          "dimension": "推进闭环力",
+          "label": "任务延期率",
+          "value": 0,
+          "numerator": 0,
+          "denominator": 30,
+          "unit": "ratio",
+          "window": "2026-01-01 ~ 2026-04-21",
+          "sample_scope": "Base Tasks with due_date",
+          "formula": {
+            "formula": "value = overdue_tasks / tasks_with_due_date",
+            "numerator_definition": "is_overdue 为 true/yes/1/已完成/已关闭 等真值的任务数",
+            "denominator_definition": "具备 due_date 的任务数",
+            "value_rule": "ratio 保留 4 位小数；延期任务逐条进入 anomalies"
+          },
+          "calculation": {
+            "expression": "0 / 30",
+            "numerator": 0,
+            "denominator": 30,
+            "value": 0
+          },
+          "status": "available",
+          "missing_fields": [],
+          "anomalies": [],
+          "evidence_refs": []
+        },
+        {
+          "metric_id": "task_closure_rate",
+          "dimension": "推进闭环力",
+          "label": "任务关闭率",
+          "value": 0.4333,
+          "numerator": 13,
+          "denominator": 30,
+          "unit": "ratio",
+          "window": "2026-01-01 ~ 2026-04-21",
+          "sample_scope": "Base Tasks closed flag/status",
+          "formula": {
+            "formula": "value = closed_tasks / total_tasks",
+            "numerator_definition": "is_closed 为真值，或 status 属于 已完成/done/closed/resolved 的任务数",
+            "denominator_definition": "Base Tasks 中评估周期内项目任务总数",
+            "value_rule": "ratio 保留 4 位小数"
+          },
+          "calculation": {
+            "expression": "13 / 30",
+            "numerator": 13,
+            "denominator": 30,
+            "value": 0.4333
+          },
+          "status": "available",
+          "missing_fields": [],
+          "anomalies": [],
+          "evidence_refs": [
+            {
+              "source_type": "base_task",
+              "source_file": "03_task_risk_register/base_tasks_record_list.json",
+              "source_id": "",
+              "timestamp": "2026-04-05",
+              "evidence_label": "NO.501 智能音箱概念设计稿输出",
+              "excerpt": "智能音箱概念设计稿输出 status=已完成 is_closed=true"
+            },
+            {
+              "source_type": "base_task",
+              "source_file": "03_task_risk_register/base_tasks_record_list.json",
+              "source_id": "",
+              "timestamp": "2026-04-05",
+              "evidence_label": "NO.502 扫地机器人概念设计稿输出",
+              "excerpt": "扫地机器人概念设计稿输出 status=已完成 is_closed=true"
+            },
+            {
+              "source_type": "base_task",
+              "source_file": "03_task_risk_register/base_tasks_record_list.json",
+              "source_id": "",
+              "timestamp": "2026-04-08",
+              "evidence_label": "NO.503 智能门锁概念设计稿输出",
+              "excerpt": "智能门锁概念设计稿输出 status=已完成 is_closed=true"
+            },
+            {
+              "source_type": "base_task",
+              "source_file": "03_task_risk_register/base_tasks_record_list.json",
+              "source_id": "",
+              "timestamp": "2026-04-10",
+              "evidence_label": "NO.504 概念设计评审会组织",
+              "excerpt": "概念设计评审会组织 status=已完成 is_closed=true"
+            },
+            {
+              "source_type": "base_task",
+              "source_file": "03_task_risk_register/base_tasks_record_list.json",
+              "source_id": "",
+              "timestamp": "2026-04-15",
+              "evidence_label": "NO.505 品牌颜色方案调整",
+              "excerpt": "品牌颜色方案调整 status=已完成 is_closed=true"
+            }
+          ]
+        },
+        {
+          "metric_id": "closed_task_quality_rate",
+          "dimension": "推进闭环力",
+          "label": "任务关闭质量代理指标",
+          "value": 1,
+          "numerator": 13,
+          "denominator": 13,
+          "unit": "ratio",
+          "window": "2026-01-01 ~ 2026-04-21",
+          "sample_scope": "Closed tasks with close_duration + owner + DDL + source/history trace",
+          "formula": {
+            "formula": "value = qualified_closed_tasks / closed_tasks",
+            "numerator_definition": "已关闭且具备 close_duration、owner、due_date，并能通过 source_meeting_id 或 Base 历史找到留痕的任务数",
+            "denominator_definition": "已关闭任务数",
+            "value_rule": "ratio 保留 4 位小数；不满足代理质量字段的任务进入 missing_fields/anomalies"
+          },
+          "calculation": {
+            "expression": "13 / 13",
+            "numerator": 13,
+            "denominator": 13,
+            "value": 1
+          },
+          "status": "available",
+          "missing_fields": [],
+          "anomalies": [],
+          "evidence_refs": [
+            {
+              "source_type": "base_task",
+              "source_file": "03_task_risk_register/base_tasks_record_list.json",
+              "source_id": "",
+              "timestamp": "2026-04-05",
+              "evidence_label": "NO.501 智能音箱概念设计稿输出",
+              "excerpt": "智能音箱概念设计稿输出 close_duration=3 source_meeting_id=MTG-CASE-05-01"
+            },
+            {
+              "source_type": "base_task",
+              "source_file": "03_task_risk_register/base_tasks_record_list.json",
+              "source_id": "",
+              "timestamp": "2026-04-05",
+              "evidence_label": "NO.502 扫地机器人概念设计稿输出",
+              "excerpt": "扫地机器人概念设计稿输出 close_duration=3 source_meeting_id=MTG-CASE-05-01"
+            },
+            {
+              "source_type": "base_task",
+              "source_file": "03_task_risk_register/base_tasks_record_list.json",
+              "source_id": "",
+              "timestamp": "2026-04-08",
+              "evidence_label": "NO.503 智能门锁概念设计稿输出",
+              "excerpt": "智能门锁概念设计稿输出 close_duration=5 source_meeting_id=MTG-CASE-05-01"
+            },
+            {
+              "source_type": "base_task",
+              "source_file": "03_task_risk_register/base_tasks_record_list.json",
+              "source_id": "",
+              "timestamp": "2026-04-10",
+              "evidence_label": "NO.504 概念设计评审会组织",
+              "excerpt": "概念设计评审会组织 close_duration=2 source_meeting_id=MTG-CASE-05-01"
+            },
+            {
+              "source_type": "base_task",
+              "source_file": "03_task_risk_register/base_tasks_record_list.json",
+              "source_id": "",
+              "timestamp": "2026-04-15",
+              "evidence_label": "NO.505 品牌颜色方案调整",
+              "excerpt": "品牌颜色方案调整 close_duration=4 source_meeting_id=MTG-CASE-05-02"
+            }
+          ]
+        },
+        {
+          "metric_id": "current_meeting_action_task_rate",
+          "dimension": "推进闭环力",
+          "label": "当前会议行动项入表率",
+          "value": 1,
+          "numerator": 3,
+          "denominator": 3,
+          "unit": "ratio",
+          "window": "2026-01-01 ~ 2026-04-21",
+          "sample_scope": "Current meeting action_item_count vs Base Tasks source_meeting_id",
+          "formula": {
+            "formula": "value = min(tasks_linked_to_current_meeting, current_meeting_action_item_count) / current_meeting_action_item_count",
+            "numerator_definition": "source_meeting_id 等于当前会议 ID 的任务数，上限截断为会议行动项数量",
+            "denominator_definition": "当前会议记录中的 action_item_count",
+            "value_rule": "ratio 保留 4 位小数；任务关联数大于或小于行动项数都进入 anomalies"
+          },
+          "calculation": {
+            "expression": "3 / 3",
+            "numerator": 3,
+            "denominator": 3,
+            "value": 1
+          },
+          "status": "available",
+          "missing_fields": [],
+          "anomalies": [
+            "会议行动项 3 条，任务表关联 4 条，存在会后扩展任务或重复挂载"
+          ],
+          "evidence_refs": [
+            {
+              "source_type": "base_task",
+              "source_file": "03_task_risk_register/base_tasks_record_list.json",
+              "source_id": "",
+              "timestamp": "2026-04-05",
+              "evidence_label": "NO.501 智能音箱概念设计稿输出",
+              "excerpt": "智能音箱概念设计稿输出 source_meeting_id=MTG-CASE-05-01"
+            },
+            {
+              "source_type": "base_task",
+              "source_file": "03_task_risk_register/base_tasks_record_list.json",
+              "source_id": "",
+              "timestamp": "2026-04-05",
+              "evidence_label": "NO.502 扫地机器人概念设计稿输出",
+              "excerpt": "扫地机器人概念设计稿输出 source_meeting_id=MTG-CASE-05-01"
+            },
+            {
+              "source_type": "base_task",
+              "source_file": "03_task_risk_register/base_tasks_record_list.json",
+              "source_id": "",
+              "timestamp": "2026-04-08",
+              "evidence_label": "NO.503 智能门锁概念设计稿输出",
+              "excerpt": "智能门锁概念设计稿输出 source_meeting_id=MTG-CASE-05-01"
+            },
+            {
+              "source_type": "base_task",
+              "source_file": "03_task_risk_register/base_tasks_record_list.json",
+              "source_id": "",
+              "timestamp": "2026-04-10",
+              "evidence_label": "NO.504 概念设计评审会组织",
+              "excerpt": "概念设计评审会组织 source_meeting_id=MTG-CASE-05-01"
+            }
+          ]
+        },
+        {
+          "metric_id": "meeting_action_item_coverage_rate",
+          "dimension": "推进闭环力",
+          "label": "会议行动项留痕覆盖率",
+          "value": 1,
+          "numerator": 3,
+          "denominator": 3,
+          "unit": "ratio",
+          "window": "2026-01-01 ~ 2026-04-21",
+          "sample_scope": "Base Meetings action_item_count",
+          "formula": {
+            "formula": "value = meetings_with_action_item_count_gt_0 / total_meetings",
+            "numerator_definition": "action_item_count > 0 的会议数",
+            "denominator_definition": "评估周期内可用会议样本总数",
+            "value_rule": "ratio 保留 4 位小数；action_item_count=0 的会议进入 anomalies"
+          },
+          "calculation": {
+            "expression": "3 / 3",
+            "numerator": 3,
+            "denominator": 3,
+            "value": 1
+          },
+          "status": "available",
+          "missing_fields": [],
+          "anomalies": [],
+          "evidence_refs": [
+            {
+              "source_type": "base_meeting",
+              "source_file": "04_meetings/base_meetings_record_list.json",
+              "source_id": "MTG-CASE-05-01",
+              "timestamp": "2026-04-21 09:15 - 10:30",
+              "evidence_label": "MTG-CASE-05-01 V1.5迭代同步会",
+              "excerpt": "V1.5迭代同步会 action_item_count=3"
+            },
+            {
+              "source_type": "base_meeting",
+              "source_file": "04_meetings/base_meetings_record_list.json",
+              "source_id": "MTG-CASE-05-02",
+              "timestamp": "2026-04-22 10:30 - 11:45",
+              "evidence_label": "MTG-CASE-05-02 供应商模具评审会",
+              "excerpt": "供应商模具评审会 action_item_count=3"
+            },
+            {
+              "source_type": "base_meeting",
+              "source_file": "04_meetings/base_meetings_record_list.json",
+              "source_id": "MTG-CASE-05-03",
+              "timestamp": "2026-04-24 09:00 - 09:45",
+              "evidence_label": "MTG-CASE-05-03 供应链风险应急沟通",
+              "excerpt": "供应链风险应急沟通 action_item_count=3"
+            }
+          ]
+        }
+      ],
+      "风险治理力": [
+        {
+          "metric_id": "high_risk_resolution_rate",
+          "dimension": "风险治理力",
+          "label": "高等级风险收口率",
+          "value": 0,
+          "numerator": 0,
+          "denominator": 2,
+          "unit": "ratio",
+          "window": "2026-01-01 ~ 2026-04-21",
+          "sample_scope": "Base Risks level=high",
+          "formula": {
+            "formula": "value = resolved_high_risks / total_high_risks",
+            "numerator_definition": "risk_level=high 且 followup_status 不属于 open/tracking 等未收口状态的风险数",
+            "denominator_definition": "risk_level=high 的风险总数",
+            "value_rule": "ratio 保留 4 位小数"
+          },
+          "calculation": {
+            "expression": "0 / 2",
+            "numerator": 0,
+            "denominator": 2,
+            "value": 0
+          },
+          "status": "available",
+          "missing_fields": [],
+          "anomalies": [],
+          "evidence_refs": [
+            {
+              "source_type": "base_risk",
+              "source_file": "03_task_risk_register/base_risks_record_list.json",
+              "source_id": "",
+              "timestamp": "MTG-CASE-05-02",
+              "evidence_label": "NO.601 high open",
+              "excerpt": "供应商A模具曲面壁厚不均，需返工3处，可能延误T0节点 followup_status=open"
+            },
+            {
+              "source_type": "base_risk",
+              "source_file": "03_task_risk_register/base_risks_record_list.json",
+              "source_id": "",
+              "timestamp": "MTG-CASE-05-01",
+              "evidence_label": "NO.602 high open",
+              "excerpt": "智能门锁防水等级从IPX4提升至IPX6，外观开口需重新设计 followup_status=open"
+            }
+          ]
+        },
+        {
+          "metric_id": "risk_mitigation_action_rate",
+          "dimension": "风险治理力",
+          "label": "风险缓释动作覆盖率",
+          "value": 1,
+          "numerator": 5,
+          "denominator": 5,
+          "unit": "ratio",
+          "window": "2026-01-01 ~ 2026-04-21",
+          "sample_scope": "Base Risks suggested_action completeness",
+          "formula": {
+            "formula": "value = risks_with_suggested_action / total_risks",
+            "numerator_definition": "suggested_action 非空的风险数",
+            "denominator_definition": "Base Risks 中评估周期内项目风险总数",
+            "value_rule": "ratio 保留 4 位小数"
+          },
+          "calculation": {
+            "expression": "5 / 5",
+            "numerator": 5,
+            "denominator": 5,
+            "value": 1
+          },
+          "status": "available",
+          "missing_fields": [],
+          "anomalies": [],
+          "evidence_refs": [
+            {
+              "source_type": "base_risk",
+              "source_file": "03_task_risk_register/base_risks_record_list.json",
+              "source_id": "",
+              "timestamp": "MTG-CASE-05-02",
+              "evidence_label": "NO.601 high open",
+              "excerpt": "同步调整拔模角度压缩返工周期至4天"
+            },
+            {
+              "source_type": "base_risk",
+              "source_file": "03_task_risk_register/base_risks_record_list.json",
+              "source_id": "",
+              "timestamp": "MTG-CASE-05-01",
+              "evidence_label": "NO.602 high open",
+              "excerpt": "评估密封圈+导流槽组合方案，5月5日前输出新方案"
+            },
+            {
+              "source_type": "base_risk",
+              "source_file": "03_task_risk_register/base_risks_record_list.json",
+              "source_id": "",
+              "timestamp": "MTG-CASE-05-03",
+              "evidence_label": "NO.603 medium open",
+              "excerpt": "法务评估规避空间，调整底部轮廓线差异化设计"
+            },
+            {
+              "source_type": "base_risk",
+              "source_file": "03_task_risk_register/base_risks_record_list.json",
+              "source_id": "",
+              "timestamp": "MTG-CASE-05-03",
+              "evidence_label": "NO.604 medium open",
+              "excerpt": "协调供应链总监争取插队，同步评估供应商C打样能力"
+            },
+            {
+              "source_type": "base_risk",
+              "source_file": "03_task_risk_register/base_risks_record_list.json",
+              "source_id": "",
+              "timestamp": "MTG-CASE-05-02",
+              "evidence_label": "NO.605 low tracking",
+              "excerpt": "设计效果优先，预算问题单独与财务沟通"
+            }
+          ]
+        },
+        {
+          "metric_id": "open_risk_rate",
+          "dimension": "风险治理力",
+          "label": "风险未收口占比",
+          "value": 1,
+          "numerator": 5,
+          "denominator": 5,
+          "unit": "ratio",
+          "window": "2026-01-01 ~ 2026-04-21",
+          "sample_scope": "Base Risks followup_status",
+          "formula": {
+            "formula": "value = open_or_tracking_risks / total_risks",
+            "numerator_definition": "followup_status 不属于 resolved/closed/record_only/已关闭/已解决 的风险数",
+            "denominator_definition": "Base Risks 中评估周期内项目风险总数",
+            "value_rule": "ratio 保留 4 位小数；未收口风险逐条进入 anomalies"
+          },
+          "calculation": {
+            "expression": "5 / 5",
+            "numerator": 5,
+            "denominator": 5,
+            "value": 1
+          },
+          "status": "available",
+          "missing_fields": [],
+          "anomalies": [
+            "undefined open",
+            "undefined open",
+            "undefined open",
+            "undefined open",
+            "undefined tracking"
+          ],
+          "evidence_refs": [
+            {
+              "source_type": "base_risk",
+              "source_file": "03_task_risk_register/base_risks_record_list.json",
+              "source_id": "",
+              "timestamp": "MTG-CASE-05-02",
+              "evidence_label": "NO.601 high open",
+              "excerpt": "供应商A模具曲面壁厚不均，需返工3处，可能延误T0节点 followup_status=open"
+            },
+            {
+              "source_type": "base_risk",
+              "source_file": "03_task_risk_register/base_risks_record_list.json",
+              "source_id": "",
+              "timestamp": "MTG-CASE-05-01",
+              "evidence_label": "NO.602 high open",
+              "excerpt": "智能门锁防水等级从IPX4提升至IPX6，外观开口需重新设计 followup_status=open"
+            },
+            {
+              "source_type": "base_risk",
+              "source_file": "03_task_risk_register/base_risks_record_list.json",
+              "source_id": "",
+              "timestamp": "MTG-CASE-05-03",
+              "evidence_label": "NO.603 medium open",
+              "excerpt": "竞品发布相似外观方案，存在专利侵权风险 followup_status=open"
+            },
+            {
+              "source_type": "base_risk",
+              "source_file": "03_task_risk_register/base_risks_record_list.json",
+              "source_id": "",
+              "timestamp": "MTG-CASE-05-03",
+              "evidence_label": "NO.604 medium open",
+              "excerpt": "核心注塑供应商Q2产能饱和，模具排期可能延后10天 followup_status=open"
+            },
+            {
+              "source_type": "base_risk",
+              "source_file": "03_task_risk_register/base_risks_record_list.json",
+              "source_id": "",
+              "timestamp": "MTG-CASE-05-02",
+              "evidence_label": "NO.605 low tracking",
+              "excerpt": "ID曲面导致模具成本上升15% followup_status=tracking"
+            }
+          ]
+        },
+        {
+          "metric_id": "repeated_risk_type_count",
+          "dimension": "风险治理力",
+          "label": "同类风险复发样本数",
+          "value": 2,
+          "numerator": 2,
+          "denominator": 5,
+          "unit": "count",
+          "window": "2026-01-01 ~ 2026-04-21",
+          "sample_scope": "Base Risks grouped by risk_type",
+          "formula": {
+            "formula": "value = sum(count(risk_type) where count(risk_type) > 1)",
+            "numerator_definition": "按 risk_type 分组后，出现次数大于 1 的组内样本总数",
+            "denominator_definition": "Base Risks 中评估周期内项目风险总数",
+            "value_rule": "count 指标直接返回 numerator；重复类型进入 anomalies"
+          },
+          "calculation": {
+            "expression": "2",
+            "numerator": 2,
+            "denominator": 5,
+            "value": 2
+          },
+          "status": "available",
+          "missing_fields": [],
+          "anomalies": [
+            "供应链:2"
+          ],
+          "evidence_refs": [
+            {
+              "source_type": "base_risk",
+              "source_file": "03_task_risk_register/base_risks_record_list.json",
+              "source_id": "",
+              "timestamp": "MTG-CASE-05-02",
+              "evidence_label": "NO.601 high open",
+              "excerpt": "供应链: 供应商A模具曲面壁厚不均，需返工3处，可能延误T0节点"
+            },
+            {
+              "source_type": "base_risk",
+              "source_file": "03_task_risk_register/base_risks_record_list.json",
+              "source_id": "",
+              "timestamp": "MTG-CASE-05-01",
+              "evidence_label": "NO.602 high open",
+              "excerpt": "认证变更: 智能门锁防水等级从IPX4提升至IPX6，外观开口需重新设计"
+            },
+            {
+              "source_type": "base_risk",
+              "source_file": "03_task_risk_register/base_risks_record_list.json",
+              "source_id": "",
+              "timestamp": "MTG-CASE-05-03",
+              "evidence_label": "NO.603 medium open",
+              "excerpt": "知识产权: 竞品发布相似外观方案，存在专利侵权风险"
+            },
+            {
+              "source_type": "base_risk",
+              "source_file": "03_task_risk_register/base_risks_record_list.json",
+              "source_id": "",
+              "timestamp": "MTG-CASE-05-03",
+              "evidence_label": "NO.604 medium open",
+              "excerpt": "供应链: 核心注塑供应商Q2产能饱和，模具排期可能延后10天"
+            },
+            {
+              "source_type": "base_risk",
+              "source_file": "03_task_risk_register/base_risks_record_list.json",
+              "source_id": "",
+              "timestamp": "MTG-CASE-05-02",
+              "evidence_label": "NO.605 low tracking",
+              "excerpt": "成本: ID曲面导致模具成本上升15%"
+            }
+          ]
+        }
+      ],
+      "协同调度力": [
+        {
+          "metric_id": "calendar_stakeholder_coverage_rate",
+          "dimension": "协同调度力",
+          "label": "日历必要干系人覆盖率",
+          "value": 1,
+          "numerator": 3,
+          "denominator": 3,
+          "unit": "ratio",
+          "window": "2026-01-01 ~ 2026-04-21",
+          "sample_scope": "Calendar attendees against project contacts",
+          "formula": {
+            "formula": "value = calendar_events_with_required_stakeholders / total_calendar_events",
+            "numerator_definition": "日历参会人同时覆盖评估对象、关键协作者，并命中项目通讯录成员的事件数",
+            "denominator_definition": "评估周期内项目日历事件数；若日历为空则回退会议样本数",
+            "value_rule": "ratio 保留 4 位小数"
+          },
+          "calculation": {
+            "expression": "3 / 3",
+            "numerator": 3,
+            "denominator": 3,
+            "value": 1
+          },
+          "status": "available",
+          "missing_fields": [],
+          "anomalies": [],
+          "evidence_refs": [
+            {
+              "source_type": "calendar",
+              "source_file": "06_calendar/calendar_events_instance_view.json",
+              "source_id": "cal_case05_evt_0421_sync",
+              "timestamp": "2026-04-21T09:15:00+08:00",
+              "evidence_label": "cal_case05_evt_0421_sync V1.5迭代同步会",
+              "excerpt": "V1.5迭代同步会 attendees=周牧,陈立,林峰,赵雪,张悦"
+            },
+            {
+              "source_type": "calendar",
+              "source_file": "06_calendar/calendar_events_instance_view.json",
+              "source_id": "cal_case05_evt_0422_tech",
+              "timestamp": "2026-04-22T10:30:00+08:00",
+              "evidence_label": "cal_case05_evt_0422_tech 供应商模具评审会",
+              "excerpt": "供应商模具评审会 attendees=周牧,林峰,陈立"
+            },
+            {
+              "source_type": "calendar",
+              "source_file": "06_calendar/calendar_events_instance_view.json",
+              "source_id": "cal_case05_evt_0424_emergency",
+              "timestamp": "2026-04-24T09:00:00+08:00",
+              "evidence_label": "cal_case05_evt_0424_emergency 供应链风险应急沟通",
+              "excerpt": "供应链风险应急沟通 attendees=周牧,林峰"
+            }
+          ]
+        },
+        {
+          "metric_id": "manager_chat_signal_count",
+          "dimension": "协同调度力",
+          "label": "管理者聊天同步样本数",
+          "value": 25,
+          "numerator": 25,
+          "denominator": 50,
+          "unit": "count",
+          "window": "2026-01-01 ~ 2026-04-21",
+          "sample_scope": "Chat messages where sender is evaluation target",
+          "formula": {
+            "formula": "value = manager_chat_messages_count",
+            "numerator_definition": "sender.name 等于评估对象姓名的聊天消息数",
+            "denominator_definition": "评估周期内聊天样本总数",
+            "value_rule": "count 指标直接返回 numerator；denominator 用于展示样本覆盖"
+          },
+          "calculation": {
+            "expression": "25",
+            "numerator": 25,
+            "denominator": 50,
+            "value": 25
+          },
+          "status": "available",
+          "missing_fields": [],
+          "anomalies": [],
+          "evidence_refs": [
+            {
+              "source_type": "chat",
+              "source_file": "02_chats/im_messages_search_user.json",
+              "source_id": "om_case05msg0002",
+              "timestamp": "2026-04-01 09:15",
+              "evidence_label": "周牧 2026-04-01 09:15",
+              "excerpt": "4月项目启动，本周重点是完成智能音箱和扫地机器人的概念设计评审。"
+            },
+            {
+              "source_type": "chat",
+              "source_file": "02_chats/im_messages_search_user.json",
+              "source_id": "om_case05msg0003",
+              "timestamp": "2026-04-01 09:20",
+              "evidence_label": "周牧 2026-04-01 09:20",
+              "excerpt": "概念设计稿我已经发到云文档了，大家看一下有没有问题。"
+            },
+            {
+              "source_type": "chat",
+              "source_file": "02_chats/im_messages_search_user.json",
+              "source_id": "om_case05msg0005",
+              "timestamp": "2026-04-01 10:35",
+              "evidence_label": "周牧 2026-04-01 10:35",
+              "excerpt": "收到，我调整一下底部轮廓线，增加差异化。"
+            },
+            {
+              "source_type": "chat",
+              "source_file": "02_chats/im_messages_search_user.json",
+              "source_id": "om_case05msg0007",
+              "timestamp": "2026-04-02 14:05",
+              "evidence_label": "周牧 2026-04-02 14:05",
+              "excerpt": "我和声学团队确认一下，如果影响比较大就调整散热孔位置。"
+            },
+            {
+              "source_type": "chat",
+              "source_file": "02_chats/im_messages_search_user.json",
+              "source_id": "om_case05msg0009",
+              "timestamp": "2026-04-03 09:05",
+              "evidence_label": "周牧 2026-04-03 09:05",
+              "excerpt": "高在哪里？是材料还是工艺？"
+            }
+          ]
+        }
+      ],
+      "组织行为健康度": [
+        {
+          "metric_id": "late_night_manager_message_rate",
+          "dimension": "组织行为健康度",
+          "label": "管理者非常规时段消息占比",
+          "value": 0,
+          "numerator": 0,
+          "denominator": 25,
+          "unit": "ratio",
+          "window": "2026-01-01 ~ 2026-04-21",
+          "sample_scope": "Manager chat messages between 22:00 and 08:00",
+          "formula": {
+            "formula": "value = manager_messages_between_22_00_and_08_00 / manager_chat_messages",
+            "numerator_definition": "评估对象在 22:00-08:00 发送的聊天消息数",
+            "denominator_definition": "评估对象发送的聊天消息总数",
+            "value_rule": "ratio 保留 4 位小数；非常规时段消息逐条进入 anomalies"
+          },
+          "calculation": {
+            "expression": "0 / 25",
+            "numerator": 0,
+            "denominator": 25,
+            "value": 0
+          },
+          "status": "available",
+          "missing_fields": [],
+          "anomalies": [],
+          "evidence_refs": []
+        },
+        {
+          "metric_id": "high_pressure_language_sample_rate",
+          "dimension": "组织行为健康度",
+          "label": "高压推进语言样本占比",
+          "value": 0.04,
+          "numerator": 1,
+          "denominator": 25,
+          "unit": "ratio",
+          "window": "2026-01-01 ~ 2026-04-21",
+          "sample_scope": "Rule-based keyword scan on manager chat messages",
+          "formula": {
+            "formula": "value = manager_messages_matching_pressure_keywords / manager_chat_messages",
+            "numerator_definition": "评估对象消息中命中 /必须|给我|不要等|不能继续|不到位|别留到/ 的样本数",
+            "denominator_definition": "评估对象发送的聊天消息总数",
+            "value_rule": "ratio 保留 4 位小数；该指标只表示规则命中样本，不直接等同组织行为结论"
+          },
+          "calculation": {
+            "expression": "1 / 25",
+            "numerator": 1,
+            "denominator": 25,
+            "value": 0.04
+          },
+          "status": "available",
+          "missing_fields": [],
+          "anomalies": [
+            "2026-04-21 09:15 本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。"
+          ],
+          "evidence_refs": [
+            {
+              "source_type": "chat",
+              "source_file": "02_chats/im_messages_search_user.json",
+              "source_id": "om_case05msg0025",
+              "timestamp": "2026-04-21 09:15",
+              "evidence_label": "周牧 2026-04-21 09:15",
+              "excerpt": "本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。"
+            }
+          ]
+        }
+      ]
+    },
+    "metric_quality_report": {
+      "sample_counts": {
+        "task_count": 30,
+        "risk_count": 5,
+        "meeting_count": 3,
+        "chat_message_count": 50,
+        "calendar_event_count": 3,
+        "contact_count": 5,
+        "base_history_count": 0
+      },
+      "metric_count": 15,
+      "available_count": 15,
+      "degraded_count": 0,
+      "no_sample_count": 0
+    },
+    "metric_gaps": [],
+    "anomaly_samples": [
+      {
+        "metric_id": "current_meeting_action_task_rate",
+        "detail": "会议行动项 3 条，任务表关联 4 条，存在会后扩展任务或重复挂载"
+      },
+      {
+        "metric_id": "open_risk_rate",
+        "detail": "undefined open"
+      },
+      {
+        "metric_id": "open_risk_rate",
+        "detail": "undefined open"
+      },
+      {
+        "metric_id": "open_risk_rate",
+        "detail": "undefined open"
+      },
+      {
+        "metric_id": "open_risk_rate",
+        "detail": "undefined open"
+      },
+      {
+        "metric_id": "open_risk_rate",
+        "detail": "undefined tracking"
+      },
+      {
+        "metric_id": "repeated_risk_type_count",
+        "detail": "供应链:2"
+      },
+      {
+        "metric_id": "high_pressure_language_sample_rate",
+        "detail": "2026-04-21 09:15 本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。"
+      }
+    ]
+  },
+  "meeting_fact_pack": {
+    "meeting_info": {
+      "meeting_id": "MTG-CASE-05-01",
+      "project_id": "PJT-CASE-05",
+      "manager_id": "MGR-CASE-05",
+      "manager_name": "周牧",
+      "meeting_title": "V1.5迭代同步会",
+      "meeting_time": "2026-04-21 09:15 - 10:30",
+      "participants": [
+        "周牧",
+        "陈立",
+        "林峰",
+        "赵雪",
+        "张悦"
+      ],
+      "calendar_event_id": "cal_case05_evt_0421_sync",
+      "review_status": "需复核"
+    },
+    "task_context": {
+      "task_id": "FRONT-PJT-CASE-05-MTG-CASE-05-01",
+      "project_id": "PJT-CASE-05",
+      "manager_id": "MGR-CASE-05",
+      "meeting_id": "MTG-CASE-05-01",
+      "evaluation_period": "2026-01-01 ~ 2026-04-21",
+      "status": "collected",
+      "created_at": "2026-05-04T17:17:57.533Z",
+      "updated_at": "2026-05-04T17:17:57.533Z"
+    },
+    "provenance_refs": [
+      {
+        "source_type": "base_record",
+        "source_file": "03_task_risk_register/base_projects_record_list.json",
+        "source_id": "PJT-CASE-05",
+        "timestamp": "2026-01-01",
+        "excerpt": "2026年度智能家居产品线工业设计"
+      },
+      {
+        "source_type": "base_record",
+        "source_file": "04_meetings/base_meetings_record_list.json",
+        "source_id": "MTG-CASE-05-01",
+        "timestamp": "2026-04-21 09:15 - 10:30",
+        "excerpt": "V1.5迭代同步会"
+      },
+      {
+        "source_type": "minutes",
+        "source_file": "04_meetings/minutes_transcript_case05.json",
+        "source_id": "mn_case05_0421_sync",
+        "timestamp": "MTG-CASE-05-01",
+        "excerpt": "会议前半段围绕智能音箱和扫地机器人外观冻结节点展开，确认本周必须完成。；中段讨论智能门锁防水等级变更影响，确认需要重新调整外观开口设计。"
+      },
+      {
+        "source_type": "chat",
+        "source_file": "02_chats/im_messages_search_user.json",
+        "source_id": "om_case05msg0002",
+        "timestamp": "2026-04-01 09:15",
+        "excerpt": "4月项目启动，本周重点是完成智能音箱和扫地机器人的概念设计评审。"
+      },
+      {
+        "source_type": "chat",
+        "source_file": "02_chats/im_messages_search_user.json",
+        "source_id": "om_case05msg0003",
+        "timestamp": "2026-04-01 09:20",
+        "excerpt": "概念设计稿我已经发到云文档了，大家看一下有没有问题。"
+      },
+      {
+        "source_type": "chat",
+        "source_file": "02_chats/im_messages_search_user.json",
+        "source_id": "om_case05msg0005",
+        "timestamp": "2026-04-01 10:35",
+        "excerpt": "收到，我调整一下底部轮廓线，增加差异化。"
+      },
+      {
+        "source_type": "chat",
+        "source_file": "02_chats/im_messages_search_user.json",
+        "source_id": "om_case05msg0007",
+        "timestamp": "2026-04-02 14:05",
+        "excerpt": "我和声学团队确认一下，如果影响比较大就调整散热孔位置。"
+      },
+      {
+        "source_type": "calendar",
+        "source_file": "06_calendar/calendar_events_instance_view.json",
+        "source_id": "cal_case05_evt_0421_sync",
+        "timestamp": "2026-04-21T09:15:00+08:00",
+        "excerpt": "V1.5迭代同步会"
+      }
+    ],
+    "missing_fields": []
+  },
+  "human_review_items": []
+}

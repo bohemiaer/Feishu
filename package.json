@@ -4,15 +4,19 @@
   "private": true,
   "description": "Phase-one execution protocol and data normalization scripts for the Manager Insight MVP.",
   "scripts": {
-    "bundle:inputs": "node scripts/build_local_input_bundle.js",
-    "build:case1": "node scripts/build_structured_case.js --input case_sources/case_01 --output-dir samples/case_01_generated",
-    "front:case04": "node scripts/run_front_pipeline.js --input-dir samples/feishu_cli_case_04_simulated_5d --output-dir demo_outputs/front_pipeline_case04",
-    "normalize:sample": "node scripts/normalize_meeting_payload.js --input samples/raw_meeting_payload.json --output samples/normalized_meeting_fact_pack.json",
-    "normalize:case1": "node scripts/normalize_meeting_payload.js --input samples/case_01_generated/raw_payload.json --output samples/case_01_meeting_fact_pack.json",
-    "verify:case1": "node scripts/run_evidence_verifier.js --input samples/case_01_meeting_fact_pack.json --request-output samples/case_01_evidence_request.json --output samples/case_01_evidence_result.json",
-    "demo": "node scripts/run_front_pipeline.js --input-dir samples/feishu_cli_case_04_simulated_5d --output-dir demo_outputs/front_pipeline_case04",
-    "demo:legacy": "node scripts/run_demo_pipeline.js --input-dir case_sources --output-dir demo_outputs",
-    "sync:feishu": "node scripts/sync_demo_to_feishu.js",
-    "sync:observability": "node scripts/sync_observability_to_feishu.js"
+    "front:case04": "node scripts/demo/run_front_pipeline.js --input-dir data/fixtures/feishu_cli_case_04_simulated_5d --output-dir data/outputs/demo/case04/current",
+    "metrics:case04": "node scripts/demo/run_hard_metrics.js --input-dir data/outputs/demo/case04/current --output data/outputs/demo/case04/current/hard_metrics_result.json",
+    "plan:case04": "node scripts/demo/run_evaluation_planner.js --input-dir data/outputs/demo/case04/current --output data/outputs/demo/case04/current/evaluation_plan.json",
+    "review:management:case04": "node scripts/demo/run_management_reviewer.js --input-dir data/outputs/demo/case04/current --request-output data/outputs/demo/case04/current/management_reviewer_request.json",
+    "audit:risk-behavior:case04": "node scripts/demo/run_risk_behavior_auditor.js --input-dir data/outputs/demo/case04/current --request-output data/outputs/demo/case04/current/risk_behavior_auditor_request.json",
+    "review:coordination:case04": "node scripts/demo/run_coordination_lens.js --input-dir data/outputs/demo/case04/current --request-output data/outputs/demo/case04/current/coordination_lens_request.json",
+    "assess:capability:case04": "node scripts/demo/run_capability_assessor.js --input-dir data/outputs/demo/case04/current --request-output data/outputs/demo/case04/current/capability_assessor_request.json --output data/outputs/demo/case04/current/capability_assessor_result.json",
+    "report:case04": "node scripts/demo/run_report_writer.js --input-dir data/outputs/demo/case04/current --request-output data/outputs/demo/case04/current/report_writer_request.json --output data/outputs/demo/case04/current/report_result.json",
+    "observability:case04": "node scripts/dev/write_case04_observability_md.js --input-dir data/outputs/demo/case04/current --output docs/observability/case04_full_loop_observability.md",
+    "writeback:csv:case04": "node scripts/dev/write_feishu_base_csv.js --input-dir data/outputs/demo/case04/current --output-dir data/outputs/demo/case04/feishu_base_csv",
+    "demo": "node scripts/demo/run_front_pipeline.js --input-dir data/fixtures/feishu_cli_case_04_simulated_5d --output-dir data/outputs/demo/case04/current",
+    "auto:case05": "node scripts/demo/run_evaluation_automation.js --input-dir data/fixtures/feishu_cli_case_05_desktop_robot --output-dir data/outputs/demo/case05/auto",
+    "automation:run": "node scripts/demo/run_evaluation_automation.js",
+    "bot:server": "node scripts/dev/run_feishu_bot_server.js --port 3030"
   }
 }

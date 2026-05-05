@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "risk_behavior_auditor_result.schema.json",
+  "title": "RiskBehaviorAuditorResult",
+  "type": "object",
+  "required": [
+    "meeting_id",
+    "project_id",
+    "manager_id",
+    "dimension_findings",
+    "risk_flags",
+    "human_review_items",
+    "risk_behavior_summary"
+  ],
+  "properties": {
+    "meeting_id": { "type": "string" },
+    "project_id": { "type": "string" },
+    "manager_id": { "type": "string" },
+    "dimension_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "dimension",
+          "finding_type",
+          "summary",
+          "evidence_refs",
+          "confidence",
+          "risk_tags",
+          "suggested_actions"
+        ],
+        "properties": {
+          "dimension": {
+            "type": "string",
+            "enum": ["风险治理力", "组织行为健康度"]
+          },
+          "finding_type": {
+            "type": "string",
+            "enum": ["strength", "risk", "observation", "no_sample"]
+          },
+          "summary": { "type": "string" },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/evidence_ref"
+            },
+            "minItems": 1
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "risk_tags": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "suggested_actions": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "risk_flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "flag_id",
+          "flag_type",
+          "severity",
+          "summary",
+          "evidence_refs",
+          "confidence",
+          "requires_human_review"
+        ],
+        "properties": {
+          "flag_id": { "type": "string" },
+          "flag_type": {
+            "type": "string",
+            "enum": ["risk_governance", "behavior_observation"]
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "critical"]
+          },
+          "summary": { "type": "string" },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/evidence_ref"
+            },
+            "minItems": 1
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "requires_human_review": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "human_review_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "review_id",
+          "reason",
+          "severity",
+          "related_dimension",
+          "evidence_refs"
+        ],
+        "properties": {
+          "review_id": { "type": "string" },
+          "reason": { "type": "string" },
+          "severity": {
+            "type": "string",
+            "enum": ["low", "medium", "high"]
+          },
+          "related_dimension": {
+            "type": "string",
+            "enum": ["风险治理力", "组织行为健康度"]
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/evidence_ref"
+            },
+            "minItems": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "risk_behavior_summary": { "type": "string" }
+  },
+  "$defs": {
+    "evidence_ref": {
+      "type": "object",
+      "required": [
+        "source_type",
+        "source_file",
+        "source_id",
+        "timestamp",
+        "excerpt",
+        "evidence_note"
+      ],
+      "properties": {
+        "source_type": { "type": "string" },
+        "source_file": { "type": "string" },
+        "source_id": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "excerpt": { "type": "string" },
+        "evidence_note": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

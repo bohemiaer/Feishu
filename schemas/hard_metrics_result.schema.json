@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hard_metrics_result.schema.json",
+  "title": "HardMetricsResult",
+  "type": "object",
+  "required": [
+    "task_context",
+    "generated_at",
+    "project_id",
+    "manager_id",
+    "meeting_id",
+    "evaluation_period",
+    "hard_metrics_result",
+    "metric_quality_report",
+    "metric_gaps",
+    "anomaly_samples"
+  ],
+  "properties": {
+    "task_context": { "type": "object" },
+    "generated_at": { "type": "string" },
+    "project_id": { "type": "string" },
+    "manager_id": { "type": "string" },
+    "meeting_id": { "type": "string" },
+    "evaluation_period": { "type": "string" },
+    "hard_metrics_result": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "metric_id",
+            "dimension",
+            "label",
+            "value",
+            "numerator",
+            "denominator",
+            "unit",
+            "window",
+            "sample_scope",
+            "formula",
+            "calculation",
+            "status",
+            "missing_fields",
+            "anomalies",
+            "evidence_refs"
+          ],
+          "properties": {
+            "metric_id": { "type": "string" },
+            "dimension": { "type": "string" },
+            "label": { "type": "string" },
+            "value": {
+              "type": ["number", "null"]
+            },
+            "numerator": { "type": "number" },
+            "denominator": { "type": "number" },
+            "unit": {
+              "type": "string",
+              "enum": ["ratio", "count"]
+            },
+            "window": { "type": "string" },
+            "sample_scope": { "type": "string" },
+            "formula": {
+              "type": "object",
+              "required": [
+                "formula",
+                "numerator_definition",
+                "denominator_definition",
+                "value_rule"
+              ],
+              "properties": {
+                "formula": { "type": "string" },
+                "numerator_definition": { "type": "string" },
+                "denominator_definition": { "type": "string" },
+                "value_rule": { "type": "string" }
+              },
+              "additionalProperties": false
+            },
+            "calculation": {
+              "type": "object",
+              "required": [
+                "expression",
+                "numerator",
+                "denominator",
+                "value"
+              ],
+              "properties": {
+                "expression": { "type": "string" },
+                "numerator": { "type": "number" },
+                "denominator": { "type": "number" },
+                "value": { "type": ["number", "null"] }
+              },
+              "additionalProperties": false
+            },
+            "status": {
+              "type": "string",
+              "enum": ["available", "degraded", "no_sample"]
+            },
+            "missing_fields": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "anomalies": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "source_type",
+                  "source_file",
+                  "source_id",
+                  "timestamp",
+                  "evidence_label",
+                  "excerpt"
+                ],
+                "properties": {
+                  "source_type": { "type": "string" },
+                  "source_file": { "type": "string" },
+                  "source_id": { "type": "string" },
+                  "timestamp": { "type": "string" },
+                  "evidence_label": { "type": "string" },
+                  "excerpt": { "type": "string" }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "metric_quality_report": {
+      "type": "object",
+      "required": [
+        "sample_counts",
+        "metric_count",
+        "available_count",
+        "degraded_count",
+        "no_sample_count"
+      ],
+      "properties": {
+        "sample_counts": { "type": "object" },
+        "metric_count": { "type": "integer" },
+        "available_count": { "type": "integer" },
+        "degraded_count": { "type": "integer" },
+        "no_sample_count": { "type": "integer" }
+      },
+      "additionalProperties": false
+    },
+    "metric_gaps": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "anomaly_samples": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["metric_id", "detail"],
+        "properties": {
+          "metric_id": { "type": "string" },
+          "detail": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

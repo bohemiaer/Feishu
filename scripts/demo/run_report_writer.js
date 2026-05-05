@@ -1,0 +1,61 @@
+"use strict";
+
+const fs = require("fs");
+const path = require("path");
+const { readJson, writeJson } = require("../../src/shared/fs_utils");
+const { buildCase04ReportRequest, writeCase04Report } = require("../../src/agents/report_writer");
+
+function parseArgs(argv) {
+  const args = {};
+  for (let i = 2; i < argv.length; i += 1) {
+    const token = argv[i];
+    if (token.startsWith("--")) {
+      const key = token.slice(2);
+      const value = argv[i + 1] && !argv[i + 1].startsWith("--") ? argv[++i] : true;
+      args[key] = value;
+    }
+  }
+  return args;
+}
+
+function readOptionalJson(filePath) {
+  return fs.existsSync(filePath) ? readJson(filePath) : null;
+}
+
+async function main() {
+  const args = parseArgs(process.argv);
+  const inputDir = path.resolve(args["input-dir"] || "data/outputs/demo/case04/current");
+  const requestOutput = path.resolve(args["request-output"] || path.join(inputDir, "report_writer_request.json"));
+  const output = path.resolve(args.output || path.join(inputDir, "report_result.json"));
+  const request = buildCase04ReportRequest({
+    meetingFactPack: readJson(path.join(inputDir, "meeting_fact_pack.json")),
+    hardMetricsResult: readJson(path.join(inputDir, "hard_metrics_result.json")),
+    evaluationPlan: readJson(path.join(inputDir, "evaluation_plan.json")),
+    capabilityAssessorResult: readOptionalJson(path.join(inputDir, "capability_assessor_result.json")),
+    managementReviewerResult: readOptionalJson(path.join(inputDir, "management_reviewer_result.json")),
+    riskBehaviorAuditorResult: readOptionalJson(path.join(inputDir, "risk_behavior_auditor_result.json")),
+    coordinationLensResult: readOptionalJson(path.join(inputDir, "coordination_lens_result.json"))
+  });
+
+  writeJson(requestOutput, request);
+
+  if (args["call-model"] || request.input_status.readiness === "blocked") {
+    writeJson(output, await writeCase04Report(request));
+  }
+
+  process.stdout.write(JSON.stringify({
+    request_output: requestOutput,
+    output: request.input_status.readiness === "blocked" || args["call-model"] ? output : null,
+    call_model: Boolean(args["call-model"]),
+    readiness: request.input_status.readiness,
+    missing_upstream_results: request.input_status.missing_upstream_results,
+    human_review_item_count: request.human_review_items.length
+  }, null, 2) + "\n");
+}
+
+if (require.main === module) {
+  main().catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+}

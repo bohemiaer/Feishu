@@ -1,0 +1,67 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "users": [
+      {
+        "open_id": "ou_case05zhoumutarget001",
+        "name": "周牧",
+        "en_name": "Mu Zhou",
+        "email": "zhoumu@company.com",
+        "department": "工业设计中心",
+        "title": "工业设计组组长",
+        "employee_type": "正式员工",
+        "status": "activated"
+      },
+      {
+        "open_id": "ou_case05chenstruct002",
+        "name": "陈立",
+        "en_name": "Li Chen",
+        "email": "chenli@company.com",
+        "department": "结构设计部",
+        "title": "结构工程师",
+        "employee_type": "正式员工",
+        "status": "activated"
+      },
+      {
+        "open_id": "ou_case05suppliermgr003",
+        "name": "林峰",
+        "en_name": "Feng Lin",
+        "email": "linfeng@company.com",
+        "department": "供应链管理",
+        "title": "供应商管理经理",
+        "employee_type": "正式员工",
+        "status": "activated"
+      },
+      {
+        "open_id": "ou_case05zhangbrand004",
+        "name": "张悦",
+        "en_name": "Yue Zhang",
+        "email": "zhangyue@company.com",
+        "department": "品牌市场部",
+        "title": "品牌经理",
+        "employee_type": "正式员工",
+        "status": "activated"
+      },
+      {
+        "open_id": "ou_case05zhaoxue005",
+        "name": "赵雪",
+        "en_name": "Xue Zhao",
+        "email": "zhaoxue@company.com",
+        "department": "工业设计中心",
+        "title": "CMF设计师",
+        "employee_type": "正式员工",
+        "status": "activated"
+      }
+    ],
+    "has_more": false,
+    "total": 5
+  },
+  "_notice": {
+    "update": {
+      "current": "1.0.19",
+      "latest": "1.0.23",
+      "message": "lark-cli 1.0.23 available, current 1.0.19"
+    }
+  }
+}

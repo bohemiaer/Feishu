@@ -1,7 +1,7 @@
 "use strict";
 
 const path = require("path");
-const { createTaskContext, TASK_STATUS } = require("../protocol/execution");
+const { createTaskContext, TASK_STATUS } = require("../domain/task/task_context");
 const { CASE04_SOURCE_FILES, SOURCE_GROUPS, loadCase04SampleBundle, splitPiped } = require("../integrations/sample_case04_adapter");
 
 const FRONT_PIPELINE_VERSION = "front-pipeline-case04-v1";
@@ -358,6 +358,7 @@ function buildDocumentSnapshot(projectDocs) {
 }
 
 function buildRawPayload(taskRequest, sampleBundle) {
+  const sourceFiles = sampleBundle.source_files || CASE04_SOURCE_FILES;
   const projectDocs = sampleBundle.project_docs;
   const currentMeetingTasks = buildCurrentMeetingTasks(
     sampleBundle.tasks,
@@ -378,7 +379,7 @@ function buildRawPayload(taskRequest, sampleBundle) {
         `会议决策：${splitPiped(sampleBundle.current_meeting ? sampleBundle.current_meeting.decision_summary : "").join("；")}`,
         `会议风险：${splitPiped(sampleBundle.current_meeting ? sampleBundle.current_meeting.risk_summary : "").join("；")}`
       ].join("\n"),
-      source_file: CASE04_SOURCE_FILES.baseMeetings
+      source_file: sourceFiles.baseMeetings
     },
     {
       doc_type: "minutes_transcript",
@@ -389,14 +390,14 @@ function buildRawPayload(taskRequest, sampleBundle) {
           .map((segment) => `${segment.start} ${segment.speaker}: ${segment.text}`)
           .join("\n")
         : "",
-      source_file: CASE04_SOURCE_FILES.minutesTranscript
+      source_file: sourceFiles.minutesTranscript
     },
     {
       doc_type: "statement_records",
       meeting_id: sampleBundle.current_meeting_id,
       title: "Statements 证据",
       content_text: currentStatements.map((item) => item.statement_summary).join("\n"),
-      source_file: CASE04_SOURCE_FILES.baseStatements
+      source_file: sourceFiles.baseStatements
     }
   ];
 
@@ -490,6 +491,7 @@ function buildDataQualityReport(taskRequest, sampleBundle, inputReport, historyB
 }
 
 function buildMeetingFactPack(taskRequest, sampleBundle, rawPayload, historyBundle) {
+  const sourceFiles = sampleBundle.source_files || CASE04_SOURCE_FILES;
   const currentMeeting = sampleBundle.current_meeting || {};
   const project = sampleBundle.project_record || {};
   const currentTasks = rawPayload.raw_payload.current_meeting_tasks || [];
@@ -503,21 +505,21 @@ function buildMeetingFactPack(taskRequest, sampleBundle, rawPayload, historyBund
 
   addProvenance(provenanceRefs, {
     source_type: "base_record",
-    source_file: CASE04_SOURCE_FILES.baseProjects,
+    source_file: sourceFiles.baseProjects,
     source_id: project.project_id,
     timestamp: project.start_date,
     excerpt: project.project_name
   });
   addProvenance(provenanceRefs, {
     source_type: "base_record",
-    source_file: CASE04_SOURCE_FILES.baseMeetings,
+    source_file: sourceFiles.baseMeetings,
     source_id: currentMeeting.meeting_id,
     timestamp: currentMeeting.meeting_time,
     excerpt: currentMeeting.meeting_title
   });
   addProvenance(provenanceRefs, {
     source_type: "cloud_doc",
-    source_file: CASE04_SOURCE_FILES.cloudDoc,
+    source_file: sourceFiles.cloudDoc,
     source_id: sampleBundle.project_docs.main_doc.doc_id,
     timestamp: String(sampleBundle.project_docs.main_doc.revision_id || ""),
     excerpt: buildProjectGoal(sampleBundle.project_docs)
@@ -526,7 +528,7 @@ function buildMeetingFactPack(taskRequest, sampleBundle, rawPayload, historyBund
   if (sampleBundle.current_transcript) {
     addProvenance(provenanceRefs, {
       source_type: "minutes",
-      source_file: CASE04_SOURCE_FILES.minutesTranscript,
+      source_file: sourceFiles.minutesTranscript,
       source_id: sampleBundle.current_transcript.minute_token,
       timestamp: sampleBundle.current_transcript.meeting_id,
       excerpt: (sampleBundle.current_transcript.summary || []).slice(0, 2).join("；")
@@ -536,7 +538,7 @@ function buildMeetingFactPack(taskRequest, sampleBundle, rawPayload, historyBund
   currentStatements.slice(0, 4).forEach((statement) => {
     addProvenance(provenanceRefs, {
       source_type: "statement",
-      source_file: CASE04_SOURCE_FILES.baseStatements,
+      source_file: sourceFiles.baseStatements,
       source_id: statement.statement_id,
       timestamp: statement.meeting_id,
       excerpt: statement.statement_summary
@@ -549,7 +551,7 @@ function buildMeetingFactPack(taskRequest, sampleBundle, rawPayload, historyBund
     .forEach((message) => {
       addProvenance(provenanceRefs, {
         source_type: "chat",
-        source_file: CASE04_SOURCE_FILES.chatMessages,
+        source_file: sourceFiles.chatMessages,
         source_id: message.message_id,
         timestamp: message.create_time,
         excerpt: message.content
@@ -559,7 +561,7 @@ function buildMeetingFactPack(taskRequest, sampleBundle, rawPayload, historyBund
   if (sampleBundle.current_calendar_event) {
     addProvenance(provenanceRefs, {
       source_type: "calendar",
-      source_file: CASE04_SOURCE_FILES.calendar,
+      source_file: sourceFiles.calendar,
       source_id: sampleBundle.current_calendar_event.event_id,
       timestamp: sampleBundle.current_calendar_event.start_time,
       excerpt: sampleBundle.current_calendar_event.summary
@@ -640,7 +642,7 @@ function collectFrontData(taskRequest, sampleBundle, inputReport) {
 }
 
 function runFrontPipeline(options = {}) {
-  const bundleRoot = path.resolve(options.bundlePath || "samples/feishu_cli_case_04_simulated_5d");
+  const bundleRoot = path.resolve(options.bundlePath || "data/fixtures/feishu_cli_case_04_simulated_5d");
   const sampleBundle = loadCase04SampleBundle(bundleRoot, {
     meetingId: options.meetingId
   });

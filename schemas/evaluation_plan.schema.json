@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "evaluation_plan.schema.json",
+  "title": "EvaluationPlan",
+  "type": "object",
+  "required": [
+    "task_context",
+    "generated_at",
+    "project_id",
+    "manager_id",
+    "meeting_id",
+    "evaluation_focus",
+    "execution_plan",
+    "human_review_rules",
+    "planner_notes"
+  ],
+  "properties": {
+    "task_context": { "type": "object" },
+    "generated_at": { "type": "string" },
+    "project_id": { "type": "string" },
+    "manager_id": { "type": "string" },
+    "meeting_id": { "type": "string" },
+    "evaluation_focus": {
+      "type": "object",
+      "required": [
+        "evaluation_period",
+        "report_type",
+        "execution_mode",
+        "focus_dimensions",
+        "data_warnings",
+        "metric_gaps"
+      ],
+      "properties": {
+        "evaluation_period": { "type": "string" },
+        "report_type": { "type": "string" },
+        "execution_mode": {
+          "type": "string",
+          "enum": ["full_evaluation", "degraded_evaluation", "blocked"]
+        },
+        "focus_dimensions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["dimension", "priority", "reasons"],
+            "properties": {
+              "dimension": { "type": "string" },
+              "priority": {
+                "type": "string",
+                "enum": ["low", "medium", "high"]
+              },
+              "reasons": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "data_warnings": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "metric_gaps": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "execution_plan": {
+      "type": "object",
+      "required": [
+        "plan_id",
+        "execution_mode",
+        "agent_plan",
+        "required_inputs",
+        "output_contracts",
+        "stop_conditions"
+      ],
+      "properties": {
+        "plan_id": { "type": "string" },
+        "execution_mode": { "type": "string" },
+        "agent_plan": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["agent_name", "required", "input_keys", "output_keys", "focus_dimensions"],
+            "properties": {
+              "agent_name": { "type": "string" },
+              "required": { "type": "boolean" },
+              "input_keys": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "output_keys": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "focus_dimensions": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "required_inputs": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "output_contracts": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "stop_conditions": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "human_review_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["rule_id", "severity", "reason", "target_nodes"],
+        "properties": {
+          "rule_id": { "type": "string" },
+          "severity": {
+            "type": "string",
+            "enum": ["low", "medium", "high"]
+          },
+          "reason": { "type": "string" },
+          "target_nodes": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "planner_notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

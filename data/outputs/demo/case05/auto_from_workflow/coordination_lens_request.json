@@ -1,0 +1,1557 @@
+{
+  "task_context": {
+    "task_id": "FRONT-PJT-CASE-05-MTG-CASE-05-01",
+    "project_id": "PJT-CASE-05",
+    "manager_id": "MGR-CASE-05",
+    "meeting_id": "MTG-CASE-05-01",
+    "evaluation_period": "2026-01-01 ~ 2026-04-21",
+    "status": "collected",
+    "created_at": "2026-05-04T17:07:39.677Z",
+    "updated_at": "2026-05-04T17:07:39.677Z"
+  },
+  "meeting_id": "MTG-CASE-05-01",
+  "project_id": "PJT-CASE-05",
+  "manager_id": "MGR-CASE-05",
+  "manager_name": "周牧",
+  "planner_slice": {
+    "focus_dimensions": [
+      {
+        "dimension": "协同调度力",
+        "priority": "medium",
+        "reasons": [
+          "日历、会议和通讯录样本齐备，可检查必要干系人同步与跨团队阻塞处理。"
+        ]
+      }
+    ],
+    "assigned_plan": {
+      "agent_name": "Coordination Lens",
+      "required": true,
+      "input_keys": [
+        "meeting_fact_pack",
+        "hard_metrics_result",
+        "raw_payload"
+      ],
+      "output_keys": [
+        "dimension_findings",
+        "human_review_items"
+      ],
+      "focus_dimensions": [
+        "协同调度力"
+      ]
+    },
+    "human_review_rules": []
+  },
+  "current_meeting": {
+    "meeting_info": {
+      "meeting_id": "MTG-CASE-05-01",
+      "project_id": "PJT-CASE-05",
+      "manager_id": "MGR-CASE-05",
+      "manager_name": "周牧",
+      "meeting_title": "V1.5迭代同步会",
+      "meeting_time": "2026-04-21 09:15 - 10:30",
+      "participants": [
+        "周牧",
+        "陈立",
+        "林峰",
+        "赵雪",
+        "张悦"
+      ],
+      "calendar_event_id": "cal_case05_evt_0421_sync",
+      "review_status": "需复核"
+    },
+    "decisions": [
+      "外观冻结本周完成",
+      "门锁防水方案5月5日前输出",
+      "成本上升15%由设计效果优先覆盖"
+    ],
+    "action_items": [
+      "智能音箱概念设计稿输出",
+      "扫地机器人概念设计稿输出",
+      "智能门锁概念设计稿输出"
+    ],
+    "risks_mentioned": [
+      "外观冻结节点逼近",
+      "防水等级变更影响门锁设计",
+      "跨部门协同待加强"
+    ],
+    "provenance_refs": [
+      {
+        "source_type": "base_record",
+        "source_file": "03_task_risk_register/base_projects_record_list.json",
+        "source_id": "PJT-CASE-05",
+        "timestamp": "2026-01-01",
+        "excerpt": "2026年度智能家居产品线工业设计"
+      },
+      {
+        "source_type": "base_record",
+        "source_file": "04_meetings/base_meetings_record_list.json",
+        "source_id": "MTG-CASE-05-01",
+        "timestamp": "2026-04-21 09:15 - 10:30",
+        "excerpt": "V1.5迭代同步会"
+      },
+      {
+        "source_type": "minutes",
+        "source_file": "04_meetings/minutes_transcript_case05.json",
+        "source_id": "mn_case05_0421_sync",
+        "timestamp": "MTG-CASE-05-01",
+        "excerpt": "会议前半段围绕智能音箱和扫地机器人外观冻结节点展开，确认本周必须完成。；中段讨论智能门锁防水等级变更影响，确认需要重新调整外观开口设计。"
+      },
+      {
+        "source_type": "chat",
+        "source_file": "02_chats/im_messages_search_user.json",
+        "source_id": "om_case05msg0002",
+        "timestamp": "2026-04-01 09:15",
+        "excerpt": "4月项目启动，本周重点是完成智能音箱和扫地机器人的概念设计评审。"
+      },
+      {
+        "source_type": "chat",
+        "source_file": "02_chats/im_messages_search_user.json",
+        "source_id": "om_case05msg0003",
+        "timestamp": "2026-04-01 09:20",
+        "excerpt": "概念设计稿我已经发到云文档了，大家看一下有没有问题。"
+      },
+      {
+        "source_type": "chat",
+        "source_file": "02_chats/im_messages_search_user.json",
+        "source_id": "om_case05msg0005",
+        "timestamp": "2026-04-01 10:35",
+        "excerpt": "收到，我调整一下底部轮廓线，增加差异化。"
+      },
+      {
+        "source_type": "chat",
+        "source_file": "02_chats/im_messages_search_user.json",
+        "source_id": "om_case05msg0007",
+        "timestamp": "2026-04-02 14:05",
+        "excerpt": "我和声学团队确认一下，如果影响比较大就调整散热孔位置。"
+      },
+      {
+        "source_type": "calendar",
+        "source_file": "06_calendar/calendar_events_instance_view.json",
+        "source_id": "cal_case05_evt_0421_sync",
+        "timestamp": "2026-04-21T09:15:00+08:00",
+        "excerpt": "V1.5迭代同步会"
+      }
+    ]
+  },
+  "coordination_context": {
+    "tasks": [
+      {
+        "id": "NO.501",
+        "task_name": "智能音箱概念设计稿输出",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "3",
+        "is_overdue": "false",
+        "owner": "周牧",
+        "due_date": "2026-04-05",
+        "source_meeting_id": "MTG-CASE-05-01"
+      },
+      {
+        "id": "NO.502",
+        "task_name": "扫地机器人概念设计稿输出",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "3",
+        "is_overdue": "false",
+        "owner": "周牧",
+        "due_date": "2026-04-05",
+        "source_meeting_id": "MTG-CASE-05-01"
+      },
+      {
+        "id": "NO.503",
+        "task_name": "智能门锁概念设计稿输出",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "5",
+        "is_overdue": "false",
+        "owner": "周牧",
+        "due_date": "2026-04-08",
+        "source_meeting_id": "MTG-CASE-05-01"
+      },
+      {
+        "id": "NO.504",
+        "task_name": "概念设计评审会组织",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "2",
+        "is_overdue": "false",
+        "owner": "周牧",
+        "due_date": "2026-04-10",
+        "source_meeting_id": "MTG-CASE-05-01"
+      },
+      {
+        "id": "NO.505",
+        "task_name": "品牌颜色方案调整",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "4",
+        "is_overdue": "false",
+        "owner": "赵雪",
+        "due_date": "2026-04-15",
+        "source_meeting_id": "MTG-CASE-05-02"
+      },
+      {
+        "id": "NO.506",
+        "task_name": "供应商A报价评估",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "3",
+        "is_overdue": "false",
+        "owner": "林峰",
+        "due_date": "2026-04-12",
+        "source_meeting_id": "MTG-CASE-05-02"
+      },
+      {
+        "id": "NO.507",
+        "task_name": "散热孔与音质冲突协调",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "5",
+        "is_overdue": "false",
+        "owner": "周牧",
+        "due_date": "2026-04-18",
+        "source_meeting_id": "MTG-CASE-05-02"
+      },
+      {
+        "id": "NO.508",
+        "task_name": "供应商B打样评估",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "2",
+        "is_overdue": "false",
+        "owner": "林峰",
+        "due_date": "2026-04-20",
+        "source_meeting_id": "MTG-CASE-05-03"
+      },
+      {
+        "id": "NO.509",
+        "task_name": "智能音箱外观方案冻结",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "2",
+        "is_overdue": "false",
+        "owner": "周牧",
+        "due_date": "2026-04-25",
+        "source_meeting_id": "MTG-CASE-05-04"
+      },
+      {
+        "id": "NO.510",
+        "task_name": "扫地机器人外观方案冻结",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "2",
+        "is_overdue": "false",
+        "owner": "周牧",
+        "due_date": "2026-04-25",
+        "source_meeting_id": "MTG-CASE-05-04"
+      },
+      {
+        "id": "NO.511",
+        "task_name": "智能门锁防水等级调整",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "周牧",
+        "due_date": "2026-05-05",
+        "source_meeting_id": "MTG-CASE-05-04"
+      },
+      {
+        "id": "NO.512",
+        "task_name": "供应商A模具曲面返工",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "林峰",
+        "due_date": "2026-04-28",
+        "source_meeting_id": "MTG-CASE-05-05"
+      },
+      {
+        "id": "NO.513",
+        "task_name": "竞品专利规避方案",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "张悦",
+        "due_date": "2026-05-10",
+        "source_meeting_id": "MTG-CASE-05-06"
+      },
+      {
+        "id": "NO.514",
+        "task_name": "核心注塑供应商产能协调",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "林峰",
+        "due_date": "2026-04-26",
+        "source_meeting_id": "MTG-CASE-05-06"
+      },
+      {
+        "id": "NO.515",
+        "task_name": "CMF样品签样",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "赵雪",
+        "due_date": "2026-06-15",
+        "source_meeting_id": "MTG-CASE-05-05"
+      },
+      {
+        "id": "NO.516",
+        "task_name": "底部轮廓线专利规避调整",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "周牧",
+        "due_date": "2026-05-08",
+        "source_meeting_id": "MTG-CASE-05-06"
+      },
+      {
+        "id": "NO.517",
+        "task_name": "密封圈+导流槽方案验证",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "陈立",
+        "due_date": "2026-05-15",
+        "source_meeting_id": "MTG-CASE-05-04"
+      },
+      {
+        "id": "NO.518",
+        "task_name": "模具成本上升15%预算沟通",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "周牧",
+        "due_date": "2026-04-30",
+        "source_meeting_id": "MTG-CASE-05-05"
+      },
+      {
+        "id": "NO.519",
+        "task_name": "家族化视觉识别体系建立",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "周牧",
+        "due_date": "2026-05-20",
+        "source_meeting_id": "MTG-CASE-05-04"
+      },
+      {
+        "id": "NO.520",
+        "task_name": "设计组件库搭建",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "赵雪",
+        "due_date": "2026-06-01",
+        "source_meeting_id": "MTG-CASE-05-05"
+      },
+      {
+        "id": "NO.521",
+        "task_name": "开模周期压缩方案制定",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "林峰",
+        "due_date": "2026-05-15",
+        "source_meeting_id": "MTG-CASE-05-05"
+      },
+      {
+        "id": "NO.522",
+        "task_name": "声学团队散热孔位置确认",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "3",
+        "is_overdue": "false",
+        "owner": "周牧",
+        "due_date": "2026-04-20",
+        "source_meeting_id": "MTG-CASE-05-03"
+      },
+      {
+        "id": "NO.523",
+        "task_name": "安全认证部门防水要求确认",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "5",
+        "is_overdue": "false",
+        "owner": "周牧",
+        "due_date": "2026-04-25",
+        "source_meeting_id": "MTG-CASE-05-04"
+      },
+      {
+        "id": "NO.524",
+        "task_name": "法务专利规避初步评估",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "2",
+        "is_overdue": "false",
+        "owner": "张悦",
+        "due_date": "2026-04-28",
+        "source_meeting_id": "MTG-CASE-05-06"
+      },
+      {
+        "id": "NO.525",
+        "task_name": "供应链总监插队协调",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "周牧",
+        "due_date": "2026-05-10",
+        "source_meeting_id": "MTG-CASE-05-06"
+      },
+      {
+        "id": "NO.526",
+        "task_name": "供应商C打样能力评估",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "林峰",
+        "due_date": "2026-05-05",
+        "source_meeting_id": "MTG-CASE-05-06"
+      },
+      {
+        "id": "NO.527",
+        "task_name": "智能音箱手板制作",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "陈立",
+        "due_date": "2026-05-20",
+        "source_meeting_id": "MTG-CASE-05-05"
+      },
+      {
+        "id": "NO.528",
+        "task_name": "扫地机器人手板制作",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "陈立",
+        "due_date": "2026-05-20",
+        "source_meeting_id": "MTG-CASE-05-05"
+      },
+      {
+        "id": "NO.529",
+        "task_name": "智能门锁手板制作",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "陈立",
+        "due_date": "2026-05-25",
+        "source_meeting_id": "MTG-CASE-05-05"
+      },
+      {
+        "id": "NO.530",
+        "task_name": "模具T0试模准备",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-05",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "林峰",
+        "due_date": "2026-07-15",
+        "source_meeting_id": "MTG-CASE-05-07"
+      }
+    ],
+    "risks": [
+      {
+        "id": "NO.601",
+        "followup_status": "open",
+        "meeting_id": "MTG-CASE-05-02",
+        "trigger_reason": "设计曲面过于复杂，超出供应商当前工艺能力",
+        "risk_description": "供应商A模具曲面壁厚不均，需返工3处，可能延误T0节点",
+        "risk_level": "high",
+        "project_id": "PJT-CASE-05",
+        "suggested_action": "同步调整拔模角度压缩返工周期至4天",
+        "risk_type": "供应链"
+      },
+      {
+        "id": "NO.602",
+        "followup_status": "open",
+        "meeting_id": "MTG-CASE-05-01",
+        "trigger_reason": "安全认证部门新增指纹识别模块防水要求",
+        "risk_description": "智能门锁防水等级从IPX4提升至IPX6，外观开口需重新设计",
+        "risk_level": "high",
+        "project_id": "PJT-CASE-05",
+        "suggested_action": "评估密封圈+导流槽组合方案，5月5日前输出新方案",
+        "risk_type": "认证变更"
+      },
+      {
+        "id": "NO.603",
+        "followup_status": "open",
+        "meeting_id": "MTG-CASE-05-03",
+        "trigger_reason": "竞品提前发布，设计相似度较高",
+        "risk_description": "竞品发布相似外观方案，存在专利侵权风险",
+        "risk_level": "medium",
+        "project_id": "PJT-CASE-05",
+        "suggested_action": "法务评估规避空间，调整底部轮廓线差异化设计",
+        "risk_type": "知识产权"
+      },
+      {
+        "id": "NO.604",
+        "followup_status": "open",
+        "meeting_id": "MTG-CASE-05-03",
+        "trigger_reason": "供应商订单过载，备选供应商精度不达标",
+        "risk_description": "核心注塑供应商Q2产能饱和，模具排期可能延后10天",
+        "risk_level": "medium",
+        "project_id": "PJT-CASE-05",
+        "suggested_action": "协调供应链总监争取插队，同步评估供应商C打样能力",
+        "risk_type": "供应链"
+      },
+      {
+        "id": "NO.605",
+        "followup_status": "tracking",
+        "meeting_id": "MTG-CASE-05-02",
+        "trigger_reason": "复杂曲面需要多轴加工，制造成本增加",
+        "risk_description": "ID曲面导致模具成本上升15%",
+        "risk_level": "low",
+        "project_id": "PJT-CASE-05",
+        "suggested_action": "设计效果优先，预算问题单独与财务沟通",
+        "risk_type": "成本"
+      }
+    ],
+    "chat_history": [
+      {
+        "content": "周牧 invited 智能家居ID项目助手 to the group. New members can view recent chat history.",
+        "create_time": "2026-04-01 09:00",
+        "deleted": false,
+        "message_id": "om_case05msg0001",
+        "msg_type": "system",
+        "sender": {
+          "id": "",
+          "id_type": "",
+          "sender_type": "",
+          "tenant_key": ""
+        },
+        "updated": false
+      },
+      {
+        "content": "4月项目启动，本周重点是完成智能音箱和扫地机器人的概念设计评审。",
+        "create_time": "2026-04-01 09:15",
+        "deleted": false,
+        "message_id": "om_case05msg0002",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "概念设计稿我已经发到云文档了，大家看一下有没有问题。",
+        "create_time": "2026-04-01 09:20",
+        "deleted": false,
+        "message_id": "om_case05msg0003",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "扫地机器人的底部结构我看了一下，和竞品太像了，需要调整。",
+        "create_time": "2026-04-01 10:30",
+        "deleted": false,
+        "message_id": "om_case05msg0004",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhangbrand004",
+          "id_type": "open_id",
+          "name": "张悦",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "收到，我调整一下底部轮廓线，增加差异化。",
+        "create_time": "2026-04-01 10:35",
+        "deleted": false,
+        "message_id": "om_case05msg0005",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "智能音箱的散热孔设计，结构那边反馈可能会影响音质。",
+        "create_time": "2026-04-02 14:00",
+        "deleted": false,
+        "message_id": "om_case05msg0006",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05chenstruct002",
+          "id_type": "open_id",
+          "name": "陈立",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "我和声学团队确认一下，如果影响比较大就调整散热孔位置。",
+        "create_time": "2026-04-02 14:05",
+        "deleted": false,
+        "message_id": "om_case05msg0007",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "供应商A的报价出来了，比预算高了20%。",
+        "create_time": "2026-04-03 09:00",
+        "deleted": false,
+        "message_id": "om_case05msg0008",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05suppliermgr003",
+          "id_type": "open_id",
+          "name": "林峰",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "高在哪里？是材料还是工艺？",
+        "create_time": "2026-04-03 09:05",
+        "deleted": false,
+        "message_id": "om_case05msg0009",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "主要是工艺，我们要求的曲面精度太高，需要五轴加工。",
+        "create_time": "2026-04-03 09:10",
+        "deleted": false,
+        "message_id": "om_case05msg0010",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05suppliermgr003",
+          "id_type": "open_id",
+          "name": "林峰",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "能不能优化一下设计，降低加工难度？",
+        "create_time": "2026-04-03 09:15",
+        "deleted": false,
+        "message_id": "om_case05msg0011",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "我评估一下，看看能不能在保证效果的前提下简化曲面。",
+        "create_time": "2026-04-03 09:20",
+        "deleted": false,
+        "message_id": "om_case05msg0012",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "今晚有人一起加班审图吗，我请咖啡。",
+        "create_time": "2026-04-03 18:00",
+        "deleted": false,
+        "message_id": "om_case05msg0013",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05teamnoise1",
+          "id_type": "open_id",
+          "name": "设计师甲",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "概念设计评审定在下周一，大家准备好材料。",
+        "create_time": "2026-04-07 09:00",
+        "deleted": false,
+        "message_id": "om_case05msg0014",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "评审通过了，但品牌那边提了几个修改意见。",
+        "create_time": "2026-04-07 15:00",
+        "deleted": false,
+        "message_id": "om_case05msg0015",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "主要是颜色方案，他们想要更年轻化的配色。",
+        "create_time": "2026-04-07 15:05",
+        "deleted": false,
+        "message_id": "om_case05msg0016",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhangbrand004",
+          "id_type": "open_id",
+          "name": "张悦",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "收到，赵雪你跟进一下CMF调整。",
+        "create_time": "2026-04-07 15:10",
+        "deleted": false,
+        "message_id": "om_case05msg0017",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "好的，我本周内输出一版新方案。",
+        "create_time": "2026-04-07 15:15",
+        "deleted": false,
+        "message_id": "om_case05msg0018",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhaoxue005",
+          "id_type": "open_id",
+          "name": "赵雪",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "智能门锁的外观方案我这边有点问题，指纹识别模块的位置和防水结构冲突。",
+        "create_time": "2026-04-08 10:00",
+        "deleted": false,
+        "message_id": "om_case05msg0019",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05chenstruct002",
+          "id_type": "open_id",
+          "name": "陈立",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "先按当前方案做，防水问题我和安全认证部门确认一下具体要求。",
+        "create_time": "2026-04-08 10:05",
+        "deleted": false,
+        "message_id": "om_case05msg0020",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "供应商B的打样出来了，但精度和A比差一些。",
+        "create_time": "2026-04-09 14:00",
+        "deleted": false,
+        "message_id": "om_case05msg0021",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05suppliermgr003",
+          "id_type": "open_id",
+          "name": "林峰",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "差多少？能不能通过后期工艺弥补？",
+        "create_time": "2026-04-09 14:05",
+        "deleted": false,
+        "message_id": "om_case05msg0022",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "表面粗糙度差一个等级，打磨可以弥补，但成本会上升。",
+        "create_time": "2026-04-09 14:10",
+        "deleted": false,
+        "message_id": "om_case05msg0023",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05suppliermgr003",
+          "id_type": "open_id",
+          "name": "林峰",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "先作为备选方案，主方案还是A。",
+        "create_time": "2026-04-09 14:15",
+        "deleted": false,
+        "message_id": "om_case05msg0024",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。",
+        "create_time": "2026-04-21 09:15",
+        "deleted": false,
+        "message_id": "om_case05msg0025",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "智能门锁的防水等级从IPX4提到IPX6，外观开口设计要重新调整，这个变更谁确认的？",
+        "create_time": "2026-04-21 09:18",
+        "deleted": false,
+        "message_id": "om_case05msg0026",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05chenstruct002",
+          "id_type": "open_id",
+          "name": "陈立",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "是安全认证部门上周发的变更通知，我已经同步到项目文档里了。",
+        "create_time": "2026-04-21 09:22",
+        "deleted": false,
+        "message_id": "om_case05msg0027",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "供应商A的模具可行性评审出来了，壁厚不均有3处曲面需要返工。",
+        "create_time": "2026-04-22 10:30",
+        "deleted": false,
+        "message_id": "om_case05msg0028",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05suppliermgr003",
+          "id_type": "open_id",
+          "name": "林峰",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "返工要多久？会不会影响T0节点？",
+        "create_time": "2026-04-22 10:35",
+        "deleted": false,
+        "message_id": "om_case05msg0029",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "预计5-7个工作日，如果同步调整拔模角度可以压缩到4天。",
+        "create_time": "2026-04-22 10:40",
+        "deleted": false,
+        "message_id": "om_case05msg0030",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05suppliermgr003",
+          "id_type": "open_id",
+          "name": "林峰",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "结构工程反馈ID曲面导致模具成本上升15%，这个谁来承担？",
+        "create_time": "2026-04-22 14:00",
+        "deleted": false,
+        "message_id": "om_case05msg0031",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05chenstruct002",
+          "id_type": "open_id",
+          "name": "陈立",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "先不要纠结成本，保证设计效果优先，预算问题我单独找财务沟通。",
+        "create_time": "2026-04-22 14:05",
+        "deleted": false,
+        "message_id": "om_case05msg0032",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "竞品上周发布的新品外观和我们扫地机器人的方案很像，要不要评估专利风险？",
+        "create_time": "2026-04-23 11:20",
+        "deleted": false,
+        "message_id": "om_case05msg0033",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhangbrand004",
+          "id_type": "open_id",
+          "name": "张悦",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "已经让法务在看了，初步判断有规避空间，但需要调整底部轮廓线。",
+        "create_time": "2026-04-23 11:25",
+        "deleted": false,
+        "message_id": "om_case05msg0034",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "核心注塑供应商Q2订单饱和，我们的模具排期可能要延后。",
+        "create_time": "2026-04-24 09:00",
+        "deleted": false,
+        "message_id": "om_case05msg0035",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05suppliermgr003",
+          "id_type": "open_id",
+          "name": "林峰",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "延后多久？有没有备选供应商？",
+        "create_time": "2026-04-24 09:05",
+        "deleted": false,
+        "message_id": "om_case05msg0036",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "备选供应商B的精度达不到我们的要求，只能等A的产能释放，预计延后10天。",
+        "create_time": "2026-04-24 09:10",
+        "deleted": false,
+        "message_id": "om_case05msg0037",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05suppliermgr003",
+          "id_type": "open_id",
+          "name": "林峰",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "先不在群里说了，我单独找供应链总监协调，看看能不能插队。",
+        "create_time": "2026-04-24 09:12",
+        "deleted": false,
+        "message_id": "om_case05msg0038",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "CMF新方案我做好了，大家看一下。",
+        "create_time": "2026-04-25 10:00",
+        "deleted": false,
+        "message_id": "om_case05msg0039",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhaoxue005",
+          "id_type": "open_id",
+          "name": "赵雪",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "颜色不错，但材质手感还需要再确认一下。",
+        "create_time": "2026-04-25 10:30",
+        "deleted": false,
+        "message_id": "om_case05msg0040",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhangbrand004",
+          "id_type": "open_id",
+          "name": "张悦",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "收到，我联系供应商打样。",
+        "create_time": "2026-04-25 10:35",
+        "deleted": false,
+        "message_id": "om_case05msg0041",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhaoxue005",
+          "id_type": "open_id",
+          "name": "赵雪",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "智能音箱的外观方案冻结了，大家后续不要改了。",
+        "create_time": "2026-04-28 09:00",
+        "deleted": false,
+        "message_id": "om_case05msg0042",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "扫地机器人的也冻结了吗？",
+        "create_time": "2026-04-28 09:05",
+        "deleted": false,
+        "message_id": "om_case05msg0043",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05chenstruct002",
+          "id_type": "open_id",
+          "name": "陈立",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "也冻结了，但底部轮廓线还需要微调，法务那边有规避要求。",
+        "create_time": "2026-04-28 09:10",
+        "deleted": false,
+        "message_id": "om_case05msg0044",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "模具返工的进度怎么样了？",
+        "create_time": "2026-04-29 10:00",
+        "deleted": false,
+        "message_id": "om_case05msg0045",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "已经完成2处，还有1处明天可以搞定。",
+        "create_time": "2026-04-29 10:05",
+        "deleted": false,
+        "message_id": "om_case05msg0046",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05suppliermgr003",
+          "id_type": "open_id",
+          "name": "林峰",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "供应链总监那边协调得怎么样了？",
+        "create_time": "2026-04-29 10:10",
+        "deleted": false,
+        "message_id": "om_case05msg0047",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "还在沟通，总监说需要高层会议决策。",
+        "create_time": "2026-04-29 10:15",
+        "deleted": false,
+        "message_id": "om_case05msg0048",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05suppliermgr003",
+          "id_type": "open_id",
+          "name": "林峰",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "智能门锁的新方案我做好了，大家看一下有没有问题。",
+        "create_time": "2026-04-30 09:00",
+        "deleted": false,
+        "message_id": "om_case05msg0049",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "密封圈+导流槽的方案看起来可行，但需要验证实际防水效果。",
+        "create_time": "2026-04-30 09:30",
+        "deleted": false,
+        "message_id": "om_case05msg0050",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05chenstruct002",
+          "id_type": "open_id",
+          "name": "陈立",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      }
+    ],
+    "calendar_events": [
+      {
+        "event_id": "cal_case05_evt_0421_sync",
+        "summary": "V1.5迭代同步会",
+        "start_time": "2026-04-21T09:15:00+08:00",
+        "end_time": "2026-04-21T10:30:00+08:00",
+        "organizer": {
+          "open_id": "ou_case05zhoumutarget001",
+          "name": "周牧"
+        },
+        "attendees": [
+          "周牧",
+          "陈立",
+          "林峰",
+          "赵雪",
+          "张悦"
+        ],
+        "location": "A1会议室",
+        "meeting_id": "MTG-CASE-05-01"
+      },
+      {
+        "event_id": "cal_case05_evt_0422_tech",
+        "summary": "供应商模具评审会",
+        "start_time": "2026-04-22T10:30:00+08:00",
+        "end_time": "2026-04-22T11:45:00+08:00",
+        "organizer": {
+          "open_id": "ou_case05zhoumutarget001",
+          "name": "周牧"
+        },
+        "attendees": [
+          "周牧",
+          "林峰",
+          "陈立"
+        ],
+        "location": "A2会议室",
+        "meeting_id": "MTG-CASE-05-02"
+      },
+      {
+        "event_id": "cal_case05_evt_0424_emergency",
+        "summary": "供应链风险应急沟通",
+        "start_time": "2026-04-24T09:00:00+08:00",
+        "end_time": "2026-04-24T09:45:00+08:00",
+        "organizer": {
+          "open_id": "ou_case05suppliermgr003",
+          "name": "林峰"
+        },
+        "attendees": [
+          "周牧",
+          "林峰"
+        ],
+        "location": "线上会议",
+        "meeting_id": "MTG-CASE-05-03",
+        "note": "紧急会议，无提前预定会议室。"
+      }
+    ],
+    "org_contacts": [
+      {
+        "open_id": "ou_case05zhoumutarget001",
+        "name": "周牧",
+        "en_name": "Mu Zhou",
+        "email": "zhoumu@company.com",
+        "department": "工业设计中心",
+        "title": "工业设计组组长",
+        "employee_type": "正式员工",
+        "status": "activated",
+        "source": "project_contacts"
+      },
+      {
+        "open_id": "ou_case05chenstruct002",
+        "name": "陈立",
+        "en_name": "Li Chen",
+        "email": "chenli@company.com",
+        "department": "结构设计部",
+        "title": "结构工程师",
+        "employee_type": "正式员工",
+        "status": "activated",
+        "source": "project_contacts"
+      },
+      {
+        "open_id": "ou_case05suppliermgr003",
+        "name": "林峰",
+        "en_name": "Feng Lin",
+        "email": "linfeng@company.com",
+        "department": "供应链管理",
+        "title": "供应商管理经理",
+        "employee_type": "正式员工",
+        "status": "activated",
+        "source": "project_contacts"
+      },
+      {
+        "open_id": "ou_case05zhangbrand004",
+        "name": "张悦",
+        "en_name": "Yue Zhang",
+        "email": "zhangyue@company.com",
+        "department": "品牌市场部",
+        "title": "品牌经理",
+        "employee_type": "正式员工",
+        "status": "activated",
+        "source": "project_contacts"
+      },
+      {
+        "open_id": "ou_case05zhaoxue005",
+        "name": "赵雪",
+        "en_name": "Xue Zhao",
+        "email": "zhaoxue@company.com",
+        "department": "工业设计中心",
+        "title": "CMF设计师",
+        "employee_type": "正式员工",
+        "status": "activated",
+        "source": "project_contacts"
+      }
+    ]
+  },
+  "hard_metrics": [
+    {
+      "metric_id": "calendar_stakeholder_coverage_rate",
+      "dimension": "协同调度力",
+      "label": "日历必要干系人覆盖率",
+      "value": 1,
+      "numerator": 3,
+      "denominator": 3,
+      "unit": "ratio",
+      "window": "2026-01-01 ~ 2026-04-21",
+      "sample_scope": "Calendar attendees against project contacts",
+      "formula": {
+        "formula": "value = calendar_events_with_required_stakeholders / total_calendar_events",
+        "numerator_definition": "日历参会人同时覆盖评估对象、关键协作者，并命中项目通讯录成员的事件数",
+        "denominator_definition": "评估周期内项目日历事件数；若日历为空则回退会议样本数",
+        "value_rule": "ratio 保留 4 位小数"
+      },
+      "calculation": {
+        "expression": "3 / 3",
+        "numerator": 3,
+        "denominator": 3,
+        "value": 1
+      },
+      "status": "available",
+      "missing_fields": [],
+      "anomalies": [],
+      "evidence_refs": [
+        {
+          "source_type": "calendar",
+          "source_file": "06_calendar/calendar_events_instance_view.json",
+          "source_id": "cal_case05_evt_0421_sync",
+          "timestamp": "2026-04-21T09:15:00+08:00",
+          "evidence_label": "cal_case05_evt_0421_sync V1.5迭代同步会",
+          "excerpt": "V1.5迭代同步会 attendees=周牧,陈立,林峰,赵雪,张悦"
+        },
+        {
+          "source_type": "calendar",
+          "source_file": "06_calendar/calendar_events_instance_view.json",
+          "source_id": "cal_case05_evt_0422_tech",
+          "timestamp": "2026-04-22T10:30:00+08:00",
+          "evidence_label": "cal_case05_evt_0422_tech 供应商模具评审会",
+          "excerpt": "供应商模具评审会 attendees=周牧,林峰,陈立"
+        },
+        {
+          "source_type": "calendar",
+          "source_file": "06_calendar/calendar_events_instance_view.json",
+          "source_id": "cal_case05_evt_0424_emergency",
+          "timestamp": "2026-04-24T09:00:00+08:00",
+          "evidence_label": "cal_case05_evt_0424_emergency 供应链风险应急沟通",
+          "excerpt": "供应链风险应急沟通 attendees=周牧,林峰"
+        }
+      ]
+    },
+    {
+      "metric_id": "manager_chat_signal_count",
+      "dimension": "协同调度力",
+      "label": "管理者聊天同步样本数",
+      "value": 25,
+      "numerator": 25,
+      "denominator": 50,
+      "unit": "count",
+      "window": "2026-01-01 ~ 2026-04-21",
+      "sample_scope": "Chat messages where sender is evaluation target",
+      "formula": {
+        "formula": "value = manager_chat_messages_count",
+        "numerator_definition": "sender.name 等于评估对象姓名的聊天消息数",
+        "denominator_definition": "评估周期内聊天样本总数",
+        "value_rule": "count 指标直接返回 numerator；denominator 用于展示样本覆盖"
+      },
+      "calculation": {
+        "expression": "25",
+        "numerator": 25,
+        "denominator": 50,
+        "value": 25
+      },
+      "status": "available",
+      "missing_fields": [],
+      "anomalies": [],
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0002",
+          "timestamp": "2026-04-01 09:15",
+          "evidence_label": "周牧 2026-04-01 09:15",
+          "excerpt": "4月项目启动，本周重点是完成智能音箱和扫地机器人的概念设计评审。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0003",
+          "timestamp": "2026-04-01 09:20",
+          "evidence_label": "周牧 2026-04-01 09:20",
+          "excerpt": "概念设计稿我已经发到云文档了，大家看一下有没有问题。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0005",
+          "timestamp": "2026-04-01 10:35",
+          "evidence_label": "周牧 2026-04-01 10:35",
+          "excerpt": "收到，我调整一下底部轮廓线，增加差异化。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0007",
+          "timestamp": "2026-04-02 14:05",
+          "evidence_label": "周牧 2026-04-02 14:05",
+          "excerpt": "我和声学团队确认一下，如果影响比较大就调整散热孔位置。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0009",
+          "timestamp": "2026-04-03 09:05",
+          "evidence_label": "周牧 2026-04-03 09:05",
+          "excerpt": "高在哪里？是材料还是工艺？"
+        }
+      ]
+    }
+  ],
+  "metric_quality_report": {
+    "sample_counts": {
+      "task_count": 30,
+      "risk_count": 5,
+      "meeting_count": 3,
+      "chat_message_count": 50,
+      "calendar_event_count": 3,
+      "contact_count": 5,
+      "base_history_count": 0
+    },
+    "metric_count": 15,
+    "available_count": 15,
+    "degraded_count": 0,
+    "no_sample_count": 0
+  }
+}

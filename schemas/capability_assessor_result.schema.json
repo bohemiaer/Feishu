@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "capability_assessor_result.schema.json",
+  "title": "CapabilityAssessorResult",
+  "type": "object",
+  "required": [
+    "meeting_id",
+    "project_id",
+    "manager_id",
+    "assessment_status",
+    "dimension_scores",
+    "overall_assessment",
+    "human_review_items",
+    "missing_upstream_results"
+  ],
+  "properties": {
+    "meeting_id": { "type": "string" },
+    "project_id": { "type": "string" },
+    "manager_id": { "type": "string" },
+    "assessment_status": {
+      "type": "string",
+      "enum": ["ready", "degraded", "blocked"]
+    },
+    "dimension_scores": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "dimension",
+          "score",
+          "confidence",
+          "score_basis",
+          "supporting_finding_refs",
+          "supporting_metric_refs",
+          "evidence_quotes",
+          "limitations"
+        ],
+        "properties": {
+          "dimension": {
+            "type": "string",
+            "enum": [
+              "方向校准力",
+              "推进闭环力",
+              "风险治理力",
+              "协同调度力",
+              "组织行为健康度"
+            ]
+          },
+          "score": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "score_basis": { "type": "string" },
+          "supporting_finding_refs": {
+            "type": "array",
+            "items": { "type": "object" }
+          },
+          "supporting_metric_refs": {
+            "type": "array",
+            "items": { "type": "object" }
+          },
+          "evidence_quotes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/evidence_ref"
+            },
+            "minItems": 1
+          },
+          "limitations": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "overall_assessment": {
+      "type": "object",
+      "required": [
+        "overall_score",
+        "top_strengths",
+        "top_risks",
+        "confidence",
+        "summary"
+      ],
+      "properties": {
+        "overall_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "top_strengths": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "top_risks": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "summary": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "human_review_items": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "missing_upstream_results": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "$defs": {
+    "evidence_ref": {
+      "type": "object",
+      "required": [
+        "source_type",
+        "source_file",
+        "source_id",
+        "timestamp",
+        "excerpt",
+        "evidence_note"
+      ],
+      "properties": {
+        "source_type": { "type": "string" },
+        "source_file": { "type": "string" },
+        "source_id": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "excerpt": { "type": "string" },
+        "evidence_note": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

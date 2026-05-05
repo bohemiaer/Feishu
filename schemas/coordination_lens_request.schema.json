@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "coordination_lens_request.schema.json",
+  "title": "CoordinationLensRequest",
+  "type": "object",
+  "required": [
+    "task_context",
+    "meeting_id",
+    "project_id",
+    "manager_id",
+    "manager_name",
+    "planner_slice",
+    "current_meeting",
+    "coordination_context",
+    "hard_metrics",
+    "metric_quality_report"
+  ],
+  "properties": {
+    "task_context": { "type": "object" },
+    "meeting_id": { "type": "string" },
+    "project_id": { "type": "string" },
+    "manager_id": { "type": "string" },
+    "manager_name": { "type": "string" },
+    "planner_slice": { "type": "object" },
+    "current_meeting": { "type": "object" },
+    "coordination_context": { "type": "object" },
+    "hard_metrics": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "metric_quality_report": { "type": "object" }
+  },
+  "additionalProperties": false
+}

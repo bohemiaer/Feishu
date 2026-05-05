@@ -1,0 +1,580 @@
+{
+  "report_status": "degraded",
+  "report_title": "PJT-CASE-04专项阶段复盘（2026-04-13 ~ 2026-04-24）管理能力评估报告",
+  "manager_id": "MGR-CASE-04",
+  "project_id": "PJT-CASE-04",
+  "report_type": "weekly_report",
+  "summary": "本报告基于专项阶段复盘会议（MTG-CASE-04-04）及周期内数据，对管理者陈昊的五维管理能力进行评估。评估显示，管理者在方向校准和协同调度方面表现突出，能有效聚焦目标、推动解决阻塞。然而，在推进闭环和风险治理方面存在显著短板，表现为任务管理流程混乱、延期处理不彻底以及风险收口率低。组织行为方面观察到潜在风险信号，需结合语境进行人工复核。整体管理能力因闭环和治理环节的缺陷而受限，报告置信度为68%。",
+  "score_overview": [
+    {
+      "dimension": "方向校准力",
+      "score": 8,
+      "confidence": 0.8,
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case04msg0002",
+          "timestamp": "2026-04-13 09:16",
+          "excerpt": "今天先把本轮目标和边界说清楚，不在范围里的先别展开。",
+          "evidence_note": "项目启动时，管理者明确要求聚焦目标与边界，体现方向校准。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting_facts",
+          "source_id": "MTG-CASE-04-04",
+          "timestamp": "2026-04-24 19:30 - 20:35",
+          "excerpt": "字段冻结表后续可沉淀为固定机制",
+          "evidence_note": "会议结论表明管理者从具体问题中提炼出机制化改进方向，进行方向校准。"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "meeting_decision_coverage_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 1",
+          "evidence_note": "metric_id: meeting_decision_coverage_rate, formula: value = meetings_with_decision_trace / total_meetings, calculation.expression: 4 / 4, value: 1。表明所有会议均有决策留痕，支持方向校准的留痕习惯。"
+        }
+      ],
+      "content": "方向校准力 8"
+    },
+    {
+      "dimension": "推进闭环力",
+      "score": 5,
+      "confidence": 0.7,
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",
+          "evidence_note": "metric_id: current_meeting_action_task_rate, formula: value = min(tasks_linked_to_current_meeting, current_meeting_action_item_count) / current_meeting_action_item_count, calculation.expression: 3 / 3, value: 1。指标anomalies明确指出数量不一致问题。"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "task_overdue_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 0.25",
+          "evidence_note": "metric_id: task_overdue_rate, formula: value = overdue_tasks / tasks_with_due_date, calculation.expression: 5 / 20, value: 0.25。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting_facts",
+          "source_id": "MTG-CASE-04-04",
+          "timestamp": "2026-04-24 19:30 - 20:35",
+          "excerpt": "客服链路遗留项进入下一阶段继续跟踪",
+          "evidence_note": "会议结论之一，虽然明确了遗留项转入下一阶段，但未体现具体的跟踪owner、新DDL或转入机制，闭环动作不完整。"
+        }
+      ],
+      "content": "推进闭环力 5"
+    },
+    {
+      "dimension": "风险治理力",
+      "score": 6,
+      "confidence": 0.7,
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_risk_resolution_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 2 / 3",
+          "evidence_note": "metric_id=high_risk_resolution_rate, formula=resolved_high_risks / total_high_risks, calculation.expression=2 / 3, value=0.6667。指标显示仍有1个高风险未收口。"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "open_risk_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 6 / 10",
+          "evidence_note": "metric_id=open_risk_rate, formula=open_or_tracking_risks / total_risks, calculation.expression=6 / 10, value=0.6。指标显示60%的风险未收口。"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "repeated_risk_type_count",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 3",
+          "evidence_note": "metric_id=repeated_risk_type_count, formula=sum(count(risk_type) where count(risk_type) > 1), calculation.expression=3, value=3。anomalies显示“交付风险:3”。"
+        }
+      ],
+      "content": "风险治理力 6"
+    },
+    {
+      "dimension": "协同调度力",
+      "score": 7,
+      "confidence": 0.8,
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case04msg0007",
+          "timestamp": "2026-04-15 16:16",
+          "excerpt": "今天 5 点前必须统一一版口径，谁负责适配今天就定下来，不能继续空转。",
+          "evidence_note": "管理者在字段口径阻塞时，明确要求定下责任方和截止时间，推动解决，体现协同调度力。"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "calendar_stakeholder_coverage_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 1, expression = 4 / 4",
+          "evidence_note": "metric_id: calendar_stakeholder_coverage_rate, formula: value = calendar_events_with_required_stakeholders / total_calendar_events, calculation.expression: 4 / 4, value: 1。表明所有会议都覆盖了必要的干系人。"
+        },
+        {
+          "source_type": "calendar",
+          "source_file": "06_calendar/calendar_events_instance_view.json",
+          "source_id": "cal_case04_evt_0418_offline",
+          "timestamp": "2026-04-18T11:45:00+08:00",
+          "excerpt": "阶段评审前线下沟通补录 attendees=陈昊,林玥,沈薇,唐可",
+          "evidence_note": "存在线下沟通事件，且备注‘线下沟通无完整录音，后续由吴恬补录摘要’，表明存在信息留痕风险。"
+        }
+      ],
+      "content": "协同调度力 7"
+    },
+    {
+      "dimension": "组织行为健康度",
+      "score": 6,
+      "confidence": 0.4,
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_pressure_language_sample_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 3 / 7",
+          "evidence_note": "metric_id=high_pressure_language_sample_rate, formula=manager_messages_matching_pressure_keywords / manager_chat_messages, calculation.expression=3 / 7, value=0.4286。指标显示42.86%的管理者消息命中高压关键词。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case04msg0007",
+          "timestamp": "2026-04-15 16:16",
+          "excerpt": "今天 5 点前必须统一一版口径，谁负责适配今天就定下来，不能继续空转。",
+          "evidence_note": "管理者陈昊在群聊中使用高压推进语言示例。此为观察项，需人工复核语境。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-10",
+          "timestamp": "MTG-CASE-04-04",
+          "excerpt": "复盘沟通语气引发成员压力 followup_status=record_only",
+          "evidence_note": "风险记录显示有成员反馈压力，但仅记录。此为观察项，需人工复核上下文。"
+        }
+      ],
+      "content": "组织行为健康度 6"
+    }
+  ],
+  "key_evidence": [
+    {
+      "evidence_type": "strength",
+      "description": "方向校准力：专项启动时明确要求聚焦目标与边界，复盘时能提炼机制化改进方向。",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case04msg0002",
+          "timestamp": "2026-04-13 09:16",
+          "excerpt": "今天先把本轮目标和边界说清楚，不在范围里的先别展开。",
+          "evidence_note": "项目启动时明确聚焦目标与边界。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting_facts",
+          "source_id": "MTG-CASE-04-04",
+          "timestamp": "2026-04-24 19:30 - 20:35",
+          "excerpt": "字段冻结表后续可沉淀为固定机制",
+          "evidence_note": "复盘会议中从具体问题提炼机制化改进方向。"
+        }
+      ],
+      "content": "方向校准力：专项启动时明确要求聚焦目标与边界，复盘时能提炼机制化改进方向。"
+    },
+    {
+      "evidence_type": "strength",
+      "description": "协同调度力：能主动通过即时通讯推动解决依赖阻塞，且会议覆盖了必要干系人。",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case04msg0007",
+          "timestamp": "2026-04-15 16:16",
+          "excerpt": "今天 5 点前必须统一一版口径，谁负责适配今天就定下来，不能继续空转。",
+          "evidence_note": "管理者在字段口径阻塞时，明确要求定下责任方和截止时间，推动解决。"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "calendar_stakeholder_coverage_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 1, expression = 4 / 4",
+          "evidence_note": "metric_id: calendar_stakeholder_coverage_rate, calculation.expression: 4 / 4, value: 1。表明所有会议都覆盖了必要的干系人。"
+        }
+      ],
+      "content": "协同调度力：能主动通过即时通讯推动解决依赖阻塞，且会议覆盖了必要干系人。"
+    },
+    {
+      "evidence_type": "risk",
+      "description": "推进闭环力：会议行动项（3条）与任务表关联项（9条）严重脱节，且存在25%的任务延期率。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",
+          "evidence_note": "metric_id: current_meeting_action_task_rate, anomalies字段明确指出该不一致问题。"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "task_overdue_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 0.25",
+          "evidence_note": "metric_id: task_overdue_rate, calculation.expression: 5 / 20, value: 0.25。"
+        }
+      ],
+      "content": "推进闭环力：会议行动项（3条）与任务表关联项（9条）严重脱节，且存在25%的任务延期率。"
+    },
+    {
+      "evidence_type": "risk",
+      "description": "风险治理力：存在高等级风险未收口（收口率66.67%）、整体60%风险未收口及同类风险复发（交付风险复发3次）的情况。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_risk_resolution_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 2 / 3",
+          "evidence_note": "metric_id=high_risk_resolution_rate, calculation.expression=2 / 3, value=0.6667。"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "open_risk_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 6 / 10",
+          "evidence_note": "metric_id=open_risk_rate, calculation.expression=6 / 10, value=0.6。"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "repeated_risk_type_count",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 3",
+          "evidence_note": "metric_id=repeated_risk_type_count, calculation.expression=3, value=3。anomalies显示“交付风险:3”。"
+        }
+      ],
+      "content": "风险治理力：存在高等级风险未收口（收口率66.67%）、整体60%风险未收口及同类风险复发（交付风险复发3次）的情况。"
+    }
+  ],
+  "risk_alerts": [
+    {
+      "risk_level": "high",
+      "description": "推进闭环流程混乱：会议行动项与任务表严重脱节（3 vs 9），闭环源头断裂，可能导致任务跟踪失效和权责不清。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",
+          "evidence_note": "metric_id: current_meeting_action_task_rate, anomalies字段明确指出该不一致问题。"
+        }
+      ],
+      "content": "推进闭环流程混乱：会议行动项与任务表严重脱节（3 vs 9），闭环源头断裂，可能导致任务跟踪失效和权责不清。"
+    },
+    {
+      "risk_level": "high",
+      "description": "风险治理闭环不足：存在高等级风险未收口（如PJT-CASE-04-RISK-02状态为tracking），且同类交付风险复发3次，表明风险识别后的治理动作未有效闭环。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_risk_resolution_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 2 / 3",
+          "evidence_note": "metric_id=high_risk_resolution_rate, calculation.expression=2 / 3, value=0.6667。"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "repeated_risk_type_count",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 3",
+          "evidence_note": "metric_id=repeated_risk_type_count, calculation.expression=3, value=3。anomalies显示“交付风险:3”。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-02",
+          "timestamp": "MTG-CASE-04-03",
+          "excerpt": "退款回写高峰场景尾延迟 followup_status=tracking",
+          "evidence_note": "高风险PJT-CASE-04-RISK-02状态为tracking，未收口。"
+        }
+      ],
+      "content": "风险治理闭环不足：存在高等级风险未收口（如PJT-CASE-04-RISK-02状态为tracking），且同类交付风险复发3次，表明风险识别后的治理动作未有效闭环。"
+    },
+    {
+      "risk_level": "medium",
+      "description": "关键风险项跨阶段同步风险：复盘会议决定“客服链路遗留项进入下一阶段继续跟踪”，但缺乏明确的跨团队同步证据，存在信息断层风险。",
+      "evidence_refs": [
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting_facts",
+          "source_id": "MTG-CASE-04-04",
+          "timestamp": "2026-04-24 19:30 - 20:35",
+          "excerpt": "客服链路遗留项进入下一阶段继续跟踪",
+          "evidence_note": "关键风险项的处置决策，需要确认是否已有效同步给所有相关方。"
+        }
+      ],
+      "content": "关键风险项跨阶段同步风险：复盘会议决定“客服链路遗留项进入下一阶段继续跟踪”，但缺乏明确的跨团队同步证据，存在信息断层风险。"
+    },
+    {
+      "risk_level": "medium",
+      "description": "组织行为观察项：管理者在群聊中多次使用高压推进语言（样本占比42.86%），并有成员反馈压力的记录，需人工复核具体语境以评估对团队氛围的实际影响。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_pressure_language_sample_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 3 / 7",
+          "evidence_note": "metric_id=high_pressure_language_sample_rate, calculation.expression=3 / 7, value=0.4286。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-10",
+          "timestamp": "MTG-CASE-04-04",
+          "excerpt": "复盘沟通语气引发成员压力 followup_status=record_only",
+          "evidence_note": "风险记录显示有成员反馈压力，但仅记录。此为观察项，需人工复核上下文。"
+        }
+      ],
+      "content": "组织行为观察项：管理者在群聊中多次使用高压推进语言（样本占比42.86%），并有成员反馈压力的记录，需人工复核具体语境以评估对团队氛围的实际影响。"
+    }
+  ],
+  "human_review_items": [
+    {
+      "review_id": "HR-MTG-CASE-04-04-01",
+      "reason": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+      "severity": "medium",
+      "related_dimension": "方向校准力",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "task_context",
+          "source_id": "FRONT-PJT-CASE-04-MTG-CASE-04-04",
+          "timestamp": "2026-05-04T13:59:55.174Z",
+          "excerpt": "当前会议缺完整妙记转写，发言语境需要依赖会议表和 Statements 交叉校验。",
+          "evidence_note": "来自planner_slice中human_review_rules的规则review_missing_current_transcript。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting_facts",
+          "source_id": "MTG-CASE-04-04",
+          "timestamp": "2026-04-24 19:30 - 20:35",
+          "excerpt": "\"missing_fields\": [\"meeting_docs.current_transcript\"]",
+          "evidence_note": "当前会议记录确认缺少完整转写。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-MTG-CASE-04-04-02",
+      "reason": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",
+      "severity": "medium",
+      "related_dimension": "推进闭环力",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "task_context",
+          "source_id": "FRONT-PJT-CASE-04-MTG-CASE-04-04",
+          "timestamp": "2026-05-04T13:59:55.174Z",
+          "excerpt": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",
+          "evidence_note": "来自planner_slice中human_review_rules的规则review_action_task_mapping。"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",
+          "evidence_note": "metric_id: current_meeting_action_task_rate, anomalies字段明确指出该不一致问题。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-001",
+      "reason": "高等级风险未完全收口，风险治理结论需人工复核。",
+      "severity": "medium",
+      "related_dimension": "风险治理力",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_risk_resolution_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 2 / 3",
+          "evidence_note": "metric_id=high_risk_resolution_rate, formula=resolved_high_risks / total_high_risks, calculation.expression=2 / 3, value=0.6667。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-002",
+      "reason": "组织行为相关语言（高压推进、成员反馈压力）只能作为观察项，需人工确认语境和场景。",
+      "severity": "medium",
+      "related_dimension": "组织行为健康度",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case04msg0007",
+          "timestamp": "2026-04-15 16:16",
+          "excerpt": "今天 5 点前必须统一一版口径，谁负责适配今天就定下来，不能继续空转。",
+          "evidence_note": "需人工复核该指令的具体背景、紧迫性及团队接受度。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-003",
+      "reason": "当前会议MTG-CASE-04-04缺完整妙记转写，关键语义判断（如复盘语气、决策过程）需人工确认上下文。",
+      "severity": "medium",
+      "related_dimension": "风险治理力",
+      "evidence_refs": [
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting.missing_fields",
+          "source_id": "MTG-CASE-04-04",
+          "timestamp": "2026-04-24 19:30 - 20:35",
+          "excerpt": "meeting_docs.current_transcript",
+          "evidence_note": "会议记录缺失完整转写，影响对风险讨论和行为语境的准确判断。"
+        }
+      ]
+    },
+    {
+      "review_id": "HRV-CASE-04-COORD-01",
+      "reason": "需要人工复核‘客服链路遗留项进入下一阶段继续跟踪’这一决策，是否已明确同步给所有必要的干系人（如客服平台部主管、仓配系统部接口人等），并形成了被各方确认的解决路径和交接计划。当前证据仅显示为会议决策，缺乏跨团队同步的明确证据。",
+      "severity": "medium",
+      "related_dimension": "协同调度力",
+      "evidence_refs": [
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting_facts",
+          "source_id": "MTG-CASE-04-04",
+          "timestamp": "2026-04-24 19:30 - 20:35",
+          "excerpt": "客服链路遗留项进入下一阶段继续跟踪",
+          "evidence_note": "关键风险项的处置决策，需要确认是否已有效同步给所有相关方。"
+        },
+        {
+          "source_type": "risk",
+          "source_file": "coordination_context",
+          "source_id": "NO.205",
+          "timestamp": "MTG-CASE-04-04",
+          "excerpt": "依赖外部供应商反馈，异常 B 处理偏慢",
+          "evidence_note": "相关风险描述，涉及外部依赖，协同同步更为关键。"
+        },
+        {
+          "source_type": "org_contacts",
+          "source_file": "coordination_context",
+          "source_id": "马会",
+          "timestamp": "N/A",
+          "excerpt": "name: 马会, department: 客服平台部, project_role: customer_service_partner",
+          "evidence_note": "客服链路的关键干系人之一，需确认其是否知晓并同意遗留项顺延计划。"
+        }
+      ]
+    }
+  ],
+  "next_actions": [
+    {
+      "action": "复核并修正任务管理流程：明确会议行动项与Base任务表的映射规则，确保会后的任务扩展或调整有明确的留痕和审批流程。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",
+          "evidence_note": "metric_id: current_meeting_action_task_rate, anomalies字段明确指出该不一致问题。"
+        }
+      ],
+      "content": "复核并修正任务管理流程：明确会议行动项与Base任务表的映射规则，确保会后的任务扩展或调整有明确的留痕和审批流程。"
+    },
+    {
+      "action": "制定高风险及遗留风险专项收口计划：针对未收口的高风险（如PJT-CASE-04-RISK-02）和60%的未收口风险，制定明确的收口时间表、责任人和验收标准。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_risk_resolution_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 2 / 3",
+          "evidence_note": "metric_id=high_risk_resolution_rate, calculation.expression=2 / 3, value=0.6667。"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "open_risk_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 6 / 10",
+          "evidence_note": "metric_id=open_risk_rate, calculation.expression=6 / 10, value=0.6。"
+        }
+      ],
+      "content": "制定高风险及遗留风险专项收口计划：针对未收口的高风险（如PJT-CASE-04-RISK-02）和60%的未收口风险，制定明确的收口时间表、责任人和验收标准。"
+    },
+    {
+      "action": "完善跨阶段事项交接机制：针对“客服链路遗留项进入下一阶段”的决策，补充跨团队同步的留痕（如会议纪要确认、任务交接文档），并明确下一阶段的跟踪要素（owner、新DDL、验收标准）。",
+      "evidence_refs": [
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting_facts",
+          "source_id": "MTG-CASE-04-04",
+          "timestamp": "2026-04-24 19:30 - 20:35",
+          "excerpt": "客服链路遗留项进入下一阶段继续跟踪",
+          "evidence_note": "关键风险项的处置决策，需要确认是否已有效同步给所有相关方。"
+        }
+      ],
+      "content": "完善跨阶段事项交接机制：针对“客服链路遗留项进入下一阶段”的决策，补充跨团队同步的留痕（如会议纪要确认、任务交接文档），并明确下一阶段的跟踪要素（owner、新DDL、验收标准）。"
+    },
+    {
+      "action": "结合人工复核结果，审视沟通方式：待HR-002等人审项完成后，评估高压推进语言的使用场景和团队反馈，必要时调整沟通策略。",
+      "evidence_refs": [
+        {
+          "source_type": "human_review_items",
+          "source_file": "capability_assessor_result",
+          "source_id": "HR-002",
+          "timestamp": "N/A",
+          "excerpt": "组织行为相关语言（高压推进、成员反馈压力）只能作为观察项，需人工确认语境和场景。",
+          "evidence_note": "待人工复核完成后，根据结论制定相应改进动作。"
+        }
+      ],
+      "content": "结合人工复核结果，审视沟通方式：待HR-002等人审项完成后，评估高压推进语言的使用场景和团队反馈，必要时调整沟通策略。"
+    }
+  ],
+  "base_writeback_payload": {
+    "project_id": "PJT-CASE-04",
+    "manager_id": "MGR-CASE-04",
+    "evaluation_period": "2026-04-13 ~ 2026-04-24",
+    "reporting_meeting_id": "MTG-CASE-04-04",
+    "overall_score": 6,
+    "overall_confidence": 0.68,
+    "dimension_scores": {
+      "方向校准力": 8,
+      "推进闭环力": 5,
+      "风险治理力": 6,
+      "协同调度力": 7,
+      "组织行为健康度": 6
+    },
+    "top_strengths": [
+      "方向校准力：专项执行期间能持续聚焦核心目标并防止范围蔓延，复盘中能校验成果并推动机制沉淀。",
+      "协同调度力：能主动澄清范围、推动解决依赖阻塞，且会议覆盖了必要干系人。"
+    ],
+    "top_improvement_areas": [
+      "推进闭环力：会议行动项与任务表严重脱节（3 vs 9），闭环源头混乱；面对25%的延期率，复盘会议对部分遗留问题的闭环处理不够彻底。",
+      "风险治理力：存在高等级风险未收口、整体未收口占比较高及同类风险复发的情况，风险治理闭环执行存在不足。"
+    ],
+    "human_review_required": true,
+    "next_review_focus": "任务管理流程一致性、高风险收口计划、跨阶段事项交接机制"
+  },
+  "missing_upstream_results": []
+}

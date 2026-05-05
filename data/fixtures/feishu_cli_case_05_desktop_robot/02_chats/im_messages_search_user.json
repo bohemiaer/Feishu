@@ -1,0 +1,765 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "has_more": false,
+    "messages": [
+      {
+        "content": "周牧 invited 智能家居ID项目助手 to the group. New members can view recent chat history.",
+        "create_time": "2026-04-01 09:00",
+        "deleted": false,
+        "message_id": "om_case05msg0001",
+        "msg_type": "system",
+        "sender": {
+          "id": "",
+          "id_type": "",
+          "sender_type": "",
+          "tenant_key": ""
+        },
+        "updated": false
+      },
+      {
+        "content": "4月项目启动，本周重点是完成智能音箱和扫地机器人的概念设计评审。",
+        "create_time": "2026-04-01 09:15",
+        "deleted": false,
+        "message_id": "om_case05msg0002",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "概念设计稿我已经发到云文档了，大家看一下有没有问题。",
+        "create_time": "2026-04-01 09:20",
+        "deleted": false,
+        "message_id": "om_case05msg0003",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "扫地机器人的底部结构我看了一下，和竞品太像了，需要调整。",
+        "create_time": "2026-04-01 10:30",
+        "deleted": false,
+        "message_id": "om_case05msg0004",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhangbrand004",
+          "id_type": "open_id",
+          "name": "张悦",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "收到，我调整一下底部轮廓线，增加差异化。",
+        "create_time": "2026-04-01 10:35",
+        "deleted": false,
+        "message_id": "om_case05msg0005",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "智能音箱的散热孔设计，结构那边反馈可能会影响音质。",
+        "create_time": "2026-04-02 14:00",
+        "deleted": false,
+        "message_id": "om_case05msg0006",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05chenstruct002",
+          "id_type": "open_id",
+          "name": "陈立",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "我和声学团队确认一下，如果影响比较大就调整散热孔位置。",
+        "create_time": "2026-04-02 14:05",
+        "deleted": false,
+        "message_id": "om_case05msg0007",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "供应商A的报价出来了，比预算高了20%。",
+        "create_time": "2026-04-03 09:00",
+        "deleted": false,
+        "message_id": "om_case05msg0008",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05suppliermgr003",
+          "id_type": "open_id",
+          "name": "林峰",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "高在哪里？是材料还是工艺？",
+        "create_time": "2026-04-03 09:05",
+        "deleted": false,
+        "message_id": "om_case05msg0009",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "主要是工艺，我们要求的曲面精度太高，需要五轴加工。",
+        "create_time": "2026-04-03 09:10",
+        "deleted": false,
+        "message_id": "om_case05msg0010",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05suppliermgr003",
+          "id_type": "open_id",
+          "name": "林峰",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "能不能优化一下设计，降低加工难度？",
+        "create_time": "2026-04-03 09:15",
+        "deleted": false,
+        "message_id": "om_case05msg0011",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "我评估一下，看看能不能在保证效果的前提下简化曲面。",
+        "create_time": "2026-04-03 09:20",
+        "deleted": false,
+        "message_id": "om_case05msg0012",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "今晚有人一起加班审图吗，我请咖啡。",
+        "create_time": "2026-04-03 18:00",
+        "deleted": false,
+        "message_id": "om_case05msg0013",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05teamnoise1",
+          "id_type": "open_id",
+          "name": "设计师甲",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "概念设计评审定在下周一，大家准备好材料。",
+        "create_time": "2026-04-07 09:00",
+        "deleted": false,
+        "message_id": "om_case05msg0014",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "评审通过了，但品牌那边提了几个修改意见。",
+        "create_time": "2026-04-07 15:00",
+        "deleted": false,
+        "message_id": "om_case05msg0015",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "主要是颜色方案，他们想要更年轻化的配色。",
+        "create_time": "2026-04-07 15:05",
+        "deleted": false,
+        "message_id": "om_case05msg0016",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhangbrand004",
+          "id_type": "open_id",
+          "name": "张悦",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "收到，赵雪你跟进一下CMF调整。",
+        "create_time": "2026-04-07 15:10",
+        "deleted": false,
+        "message_id": "om_case05msg0017",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "好的，我本周内输出一版新方案。",
+        "create_time": "2026-04-07 15:15",
+        "deleted": false,
+        "message_id": "om_case05msg0018",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhaoxue005",
+          "id_type": "open_id",
+          "name": "赵雪",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "智能门锁的外观方案我这边有点问题，指纹识别模块的位置和防水结构冲突。",
+        "create_time": "2026-04-08 10:00",
+        "deleted": false,
+        "message_id": "om_case05msg0019",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05chenstruct002",
+          "id_type": "open_id",
+          "name": "陈立",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "先按当前方案做，防水问题我和安全认证部门确认一下具体要求。",
+        "create_time": "2026-04-08 10:05",
+        "deleted": false,
+        "message_id": "om_case05msg0020",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "供应商B的打样出来了，但精度和A比差一些。",
+        "create_time": "2026-04-09 14:00",
+        "deleted": false,
+        "message_id": "om_case05msg0021",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05suppliermgr003",
+          "id_type": "open_id",
+          "name": "林峰",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "差多少？能不能通过后期工艺弥补？",
+        "create_time": "2026-04-09 14:05",
+        "deleted": false,
+        "message_id": "om_case05msg0022",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "表面粗糙度差一个等级，打磨可以弥补，但成本会上升。",
+        "create_time": "2026-04-09 14:10",
+        "deleted": false,
+        "message_id": "om_case05msg0023",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05suppliermgr003",
+          "id_type": "open_id",
+          "name": "林峰",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "先作为备选方案，主方案还是A。",
+        "create_time": "2026-04-09 14:15",
+        "deleted": false,
+        "message_id": "om_case05msg0024",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。",
+        "create_time": "2026-04-21 09:15",
+        "deleted": false,
+        "message_id": "om_case05msg0025",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "智能门锁的防水等级从IPX4提到IPX6，外观开口设计要重新调整，这个变更谁确认的？",
+        "create_time": "2026-04-21 09:18",
+        "deleted": false,
+        "message_id": "om_case05msg0026",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05chenstruct002",
+          "id_type": "open_id",
+          "name": "陈立",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "是安全认证部门上周发的变更通知，我已经同步到项目文档里了。",
+        "create_time": "2026-04-21 09:22",
+        "deleted": false,
+        "message_id": "om_case05msg0027",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "供应商A的模具可行性评审出来了，壁厚不均有3处曲面需要返工。",
+        "create_time": "2026-04-22 10:30",
+        "deleted": false,
+        "message_id": "om_case05msg0028",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05suppliermgr003",
+          "id_type": "open_id",
+          "name": "林峰",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "返工要多久？会不会影响T0节点？",
+        "create_time": "2026-04-22 10:35",
+        "deleted": false,
+        "message_id": "om_case05msg0029",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "预计5-7个工作日，如果同步调整拔模角度可以压缩到4天。",
+        "create_time": "2026-04-22 10:40",
+        "deleted": false,
+        "message_id": "om_case05msg0030",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05suppliermgr003",
+          "id_type": "open_id",
+          "name": "林峰",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "结构工程反馈ID曲面导致模具成本上升15%，这个谁来承担？",
+        "create_time": "2026-04-22 14:00",
+        "deleted": false,
+        "message_id": "om_case05msg0031",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05chenstruct002",
+          "id_type": "open_id",
+          "name": "陈立",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "先不要纠结成本，保证设计效果优先，预算问题我单独找财务沟通。",
+        "create_time": "2026-04-22 14:05",
+        "deleted": false,
+        "message_id": "om_case05msg0032",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "竞品上周发布的新品外观和我们扫地机器人的方案很像，要不要评估专利风险？",
+        "create_time": "2026-04-23 11:20",
+        "deleted": false,
+        "message_id": "om_case05msg0033",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhangbrand004",
+          "id_type": "open_id",
+          "name": "张悦",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "已经让法务在看了，初步判断有规避空间，但需要调整底部轮廓线。",
+        "create_time": "2026-04-23 11:25",
+        "deleted": false,
+        "message_id": "om_case05msg0034",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "核心注塑供应商Q2订单饱和，我们的模具排期可能要延后。",
+        "create_time": "2026-04-24 09:00",
+        "deleted": false,
+        "message_id": "om_case05msg0035",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05suppliermgr003",
+          "id_type": "open_id",
+          "name": "林峰",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "延后多久？有没有备选供应商？",
+        "create_time": "2026-04-24 09:05",
+        "deleted": false,
+        "message_id": "om_case05msg0036",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "备选供应商B的精度达不到我们的要求，只能等A的产能释放，预计延后10天。",
+        "create_time": "2026-04-24 09:10",
+        "deleted": false,
+        "message_id": "om_case05msg0037",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05suppliermgr003",
+          "id_type": "open_id",
+          "name": "林峰",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "先不在群里说了，我单独找供应链总监协调，看看能不能插队。",
+        "create_time": "2026-04-24 09:12",
+        "deleted": false,
+        "message_id": "om_case05msg0038",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "CMF新方案我做好了，大家看一下。",
+        "create_time": "2026-04-25 10:00",
+        "deleted": false,
+        "message_id": "om_case05msg0039",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhaoxue005",
+          "id_type": "open_id",
+          "name": "赵雪",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "颜色不错，但材质手感还需要再确认一下。",
+        "create_time": "2026-04-25 10:30",
+        "deleted": false,
+        "message_id": "om_case05msg0040",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhangbrand004",
+          "id_type": "open_id",
+          "name": "张悦",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "收到，我联系供应商打样。",
+        "create_time": "2026-04-25 10:35",
+        "deleted": false,
+        "message_id": "om_case05msg0041",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhaoxue005",
+          "id_type": "open_id",
+          "name": "赵雪",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "智能音箱的外观方案冻结了，大家后续不要改了。",
+        "create_time": "2026-04-28 09:00",
+        "deleted": false,
+        "message_id": "om_case05msg0042",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "扫地机器人的也冻结了吗？",
+        "create_time": "2026-04-28 09:05",
+        "deleted": false,
+        "message_id": "om_case05msg0043",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05chenstruct002",
+          "id_type": "open_id",
+          "name": "陈立",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "也冻结了，但底部轮廓线还需要微调，法务那边有规避要求。",
+        "create_time": "2026-04-28 09:10",
+        "deleted": false,
+        "message_id": "om_case05msg0044",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "模具返工的进度怎么样了？",
+        "create_time": "2026-04-29 10:00",
+        "deleted": false,
+        "message_id": "om_case05msg0045",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "已经完成2处，还有1处明天可以搞定。",
+        "create_time": "2026-04-29 10:05",
+        "deleted": false,
+        "message_id": "om_case05msg0046",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05suppliermgr003",
+          "id_type": "open_id",
+          "name": "林峰",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "供应链总监那边协调得怎么样了？",
+        "create_time": "2026-04-29 10:10",
+        "deleted": false,
+        "message_id": "om_case05msg0047",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "还在沟通，总监说需要高层会议决策。",
+        "create_time": "2026-04-29 10:15",
+        "deleted": false,
+        "message_id": "om_case05msg0048",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05suppliermgr003",
+          "id_type": "open_id",
+          "name": "林峰",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "智能门锁的新方案我做好了，大家看一下有没有问题。",
+        "create_time": "2026-04-30 09:00",
+        "deleted": false,
+        "message_id": "om_case05msg0049",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05zhoumutarget001",
+          "id_type": "open_id",
+          "name": "周牧",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "密封圈+导流槽的方案看起来可行，但需要验证实际防水效果。",
+        "create_time": "2026-04-30 09:30",
+        "deleted": false,
+        "message_id": "om_case05msg0050",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case05chenstruct002",
+          "id_type": "open_id",
+          "name": "陈立",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      }
+    ]
+  },
+  "_notice": {
+    "update": {
+      "current": "1.0.19",
+      "latest": "1.0.23",
+      "message": "lark-cli 1.0.23 available, current 1.0.19"
+    }
+  }
+}

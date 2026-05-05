@@ -1,0 +1,268 @@
+{
+  "meeting_id": "MTG-CASE-04-04",
+  "project_id": "PJT-CASE-04",
+  "manager_id": "MGR-CASE-04",
+  "dimension_findings": [
+    {
+      "dimension": "风险治理力",
+      "finding_type": "observation",
+      "summary": "高等级风险未完全收口，存在遗留风险治理动作不闭环。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_risk_resolution_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 2 / 3",
+          "evidence_note": "metric_id=high_risk_resolution_rate, formula=resolved_high_risks / total_high_risks, calculation.expression=2 / 3, value=0.6667。指标显示仍有1个高风险未收口。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-02",
+          "timestamp": "MTG-CASE-04-03",
+          "excerpt": "退款回写高峰场景尾延迟 followup_status=tracking",
+          "evidence_note": "高风险PJT-CASE-04-RISK-02状态为tracking，未收口。"
+        }
+      ],
+      "confidence": 0.7,
+      "risk_tags": [],
+      "suggested_actions": []
+    },
+    {
+      "dimension": "风险治理力",
+      "finding_type": "observation",
+      "summary": "风险未收口占比较高，存在风险识别但治理动作未闭环或延期的情况。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "open_risk_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 6 / 10",
+          "evidence_note": "metric_id=open_risk_rate, formula=open_or_tracking_risks / total_risks, calculation.expression=6 / 10, value=0.6。指标显示60%的风险未收口。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-05",
+          "timestamp": "MTG-CASE-04-04",
+          "excerpt": "客服高频异常 B 未及时复现 followup_status=tracking",
+          "evidence_note": "中风险PJT-CASE-04-RISK-05状态为tracking，未收口。"
+        }
+      ],
+      "confidence": 0.7,
+      "risk_tags": [],
+      "suggested_actions": []
+    },
+    {
+      "dimension": "风险治理力",
+      "finding_type": "observation",
+      "summary": "存在同类风险复发线索，表明某些风险类型（如交付风险）的治理模式可能存在不足。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "repeated_risk_type_count",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 3",
+          "evidence_note": "metric_id=repeated_risk_type_count, formula=sum(count(risk_type) where count(risk_type) > 1), calculation.expression=3, value=3。anomalies显示“交付风险:3”。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-01",
+          "timestamp": "MTG-CASE-04-02",
+          "excerpt": "交付风险: 字段口径不一致导致联调返工",
+          "evidence_note": "交付风险类型复发样本之一。"
+        }
+      ],
+      "confidence": 0.7,
+      "risk_tags": [],
+      "suggested_actions": []
+    },
+    {
+      "dimension": "组织行为健康度",
+      "finding_type": "observation",
+      "summary": "管理者在群聊中多次使用高压推进语言，可能对团队沟通氛围产生影响。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_pressure_language_sample_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 3 / 7",
+          "evidence_note": "metric_id=high_pressure_language_sample_rate, formula=manager_messages_matching_pressure_keywords / manager_chat_messages, calculation.expression=3 / 7, value=0.4286。指标显示42.86%的管理者消息命中高压关键词。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case04msg0007",
+          "timestamp": "2026-04-15 16:16",
+          "excerpt": "今天 5 点前必须统一一版口径，谁负责适配今天就定下来，不能继续空转。",
+          "evidence_note": "管理者陈昊在群聊中使用高压推进语言示例。此为观察项，需人工复核语境。"
+        }
+      ],
+      "confidence": 0.7,
+      "risk_tags": [],
+      "suggested_actions": []
+    }
+  ],
+  "risk_flags": [
+    {
+      "flag_id": "RF-001",
+      "flag_type": "risk_governance",
+      "severity": "high",
+      "summary": "高风险PJT-CASE-04-RISK-02（退款回写高峰场景尾延迟）在阶段复盘时仍处于tracking状态，治理动作未闭环。",
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-02",
+          "timestamp": "MTG-CASE-04-03",
+          "excerpt": "退款回写高峰场景尾延迟 followup_status=tracking",
+          "evidence_note": "高风险在评估周期结束时未收口。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting.risks_mentioned",
+          "source_id": "MTG-CASE-04-04",
+          "timestamp": "2026-04-24 19:30 - 20:35",
+          "excerpt": "客服链路遗留问题未完全收口",
+          "evidence_note": "会议提及遗留问题，与未收口风险形成印证。"
+        }
+      ],
+      "confidence": 0.9,
+      "requires_human_review": true
+    },
+    {
+      "flag_id": "RF-002",
+      "flag_type": "risk_governance",
+      "severity": "medium",
+      "summary": "流程风险PJT-CASE-04-RISK-06（线下结论未及时留痕）被识别后，虽有suggested_action但状态仍为tracking，治理效果待观察。",
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-06",
+          "timestamp": "MTG-CASE-04-03",
+          "excerpt": "线下结论未及时留痕 followup_status=tracking",
+          "evidence_note": "风险被识别但未收口。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting.risks_mentioned",
+          "source_id": "MTG-CASE-04-04",
+          "timestamp": "2026-04-24 19:30 - 20:35",
+          "excerpt": "线下沟通留痕不完整导致重复确认",
+          "evidence_note": "会议中再次提及同类问题，表明风险可能复发或未根治。"
+        }
+      ],
+      "confidence": 0.8,
+      "requires_human_review": true
+    },
+    {
+      "flag_id": "BF-001",
+      "flag_type": "behavior_observation",
+      "severity": "medium",
+      "summary": "管理者在群聊中多次使用包含“必须”、“给我”、“不能继续”等关键词的指令性语言，构成高压推进语言观察样本。",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case04msg0007",
+          "timestamp": "2026-04-15 16:16",
+          "excerpt": "今天 5 点前必须统一一版口径，谁负责适配今天就定下来，不能继续空转。",
+          "evidence_note": "高压推进语言样本1。此为观察项，需人工复核语境。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case04msg0014",
+          "timestamp": "2026-04-19 10:44",
+          "excerpt": "12 点前给我 go/no-go 输入，不要等到晚上才决定。",
+          "evidence_note": "高压推进语言样本2。此为观察项，需人工复核语境。"
+        }
+      ],
+      "confidence": 0.7,
+      "requires_human_review": true
+    },
+    {
+      "flag_id": "BF-002",
+      "flag_type": "behavior_observation",
+      "severity": "low",
+      "summary": "存在会后成员反馈复盘语气带来压力的记录，但未形成正式事件，需作为行为观察项记录。",
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-10",
+          "timestamp": "MTG-CASE-04-04",
+          "excerpt": "复盘沟通语气引发成员压力 followup_status=record_only",
+          "evidence_note": "风险记录显示有成员反馈压力，但仅记录。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting.risks_mentioned",
+          "source_id": "MTG-CASE-04-04",
+          "timestamp": "2026-04-24 19:30 - 20:35",
+          "excerpt": "会后有成员反馈 19:56 表达带来压力",
+          "evidence_note": "会议记录提及成员反馈。此为观察项，需人工复核上下文。"
+        }
+      ],
+      "confidence": 0.6,
+      "requires_human_review": true
+    }
+  ],
+  "human_review_items": [
+    {
+      "review_id": "HR-001",
+      "reason": "高等级风险未完全收口，风险治理结论需人工复核。",
+      "severity": "medium",
+      "related_dimension": "风险治理力",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_risk_resolution_rate",
+          "timestamp": "2026-04-13 ~ 2026-04-24",
+          "excerpt": "value = 2 / 3",
+          "evidence_note": "metric_id=high_risk_resolution_rate, formula=resolved_high_risks / total_high_risks, calculation.expression=2 / 3, value=0.6667。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-002",
+      "reason": "组织行为相关语言（高压推进、成员反馈压力）只能作为观察项，需人工确认语境和场景。",
+      "severity": "medium",
+      "related_dimension": "组织行为健康度",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case04msg0007",
+          "timestamp": "2026-04-15 16:16",
+          "excerpt": "今天 5 点前必须统一一版口径，谁负责适配今天就定下来，不能继续空转。",
+          "evidence_note": "需人工复核该指令的具体背景、紧迫性及团队接受度。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-003",
+      "reason": "当前会议MTG-CASE-04-04缺完整妙记转写，关键语义判断（如复盘语气、决策过程）需人工确认上下文。",
+      "severity": "medium",
+      "related_dimension": "风险治理力",
+      "evidence_refs": [
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting.missing_fields",
+          "source_id": "MTG-CASE-04-04",
+          "timestamp": "2026-04-24 19:30 - 20:35",
+          "excerpt": "meeting_docs.current_transcript",
+          "evidence_note": "会议记录缺失完整转写，影响对风险讨论和行为语境的准确判断。"
+        }
+      ]
+    }
+  ],
+  "risk_behavior_summary": "风险治理方面，项目风险识别与缓释动作覆盖完整，但存在高等级风险未收口、整体未收口占比较高及同类风险复发的情况，表明风险治理的闭环执行存在不足。组织行为方面，管理者在群聊中多次使用高压推进语言，并有会后成员反馈压力的记录，这些观察项需结合具体语境进行人工复核。当前会议缺少完整转写，进一步增加了判断的不确定性。"
+}

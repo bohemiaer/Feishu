@@ -1,0 +1,211 @@
+{
+  "meeting_id": "MTG-CASE-05-01",
+  "project_id": "PJT-CASE-05",
+  "manager_id": "MGR-CASE-05",
+  "dimension_findings": [
+    {
+      "dimension": "协同调度力",
+      "finding_type": "strength",
+      "summary": "管理者在聊天中有效响应跨角色问题，明确责任方与下一步动作，形成解决路径。",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0006",
+          "timestamp": "2026-04-02 14:00",
+          "excerpt": "智能音箱的散热孔设计，结构那边反馈可能会影响音质。",
+          "evidence_note": "结构工程师陈立提出跨角色（声学）问题。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0007",
+          "timestamp": "2026-04-02 14:05",
+          "excerpt": "我和声学团队确认一下，如果影响比较大就调整散热孔位置。",
+          "evidence_note": "管理者周牧明确责任方（自己）和下一步动作（与声学团队确认并可能调整设计）。"
+        },
+        {
+          "source_type": "coordination_context",
+          "source_file": "coordination_context.json",
+          "source_id": "NO.522",
+          "timestamp": "2026-04-20",
+          "excerpt": "{\"id\": \"NO.522\", \"task_name\": \"声学团队散热孔位置确认\", \"status\": \"已完成\", \"owner\": \"周牧\"}",
+          "evidence_note": "任务记录显示该依赖澄清已形成明确任务并完成，阻塞解除。"
+        }
+      ],
+      "confidence": 0.9,
+      "risk_tags": [],
+      "suggested_actions": []
+    },
+    {
+      "dimension": "协同调度力",
+      "finding_type": "strength",
+      "summary": "关键风险（防水等级变更）在会议中被提出，管理者确认已同步到项目文档，并指定了解决方案和截止日期。",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0026",
+          "timestamp": "2026-04-21 09:18",
+          "excerpt": "智能门锁的防水等级从IPX4提到IPX6，外观开口设计要重新调整，这个变更谁确认的？",
+          "evidence_note": "结构工程师陈立在会议中提出关键风险升级。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0027",
+          "timestamp": "2026-04-21 09:22",
+          "excerpt": "是安全认证部门上周发的变更通知，我已经同步到项目文档里了。",
+          "evidence_note": "管理者周牧确认风险来源（安全认证部门）并已同步到必要干系人（通过项目文档）。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting.json",
+          "source_id": "MTG-CASE-05-01",
+          "timestamp": "2026-04-21",
+          "excerpt": "\"decisions\": [\"门锁防水方案5月5日前输出\"]",
+          "evidence_note": "会议决策明确了解决方案的输出截止日期，形成解决路径。"
+        }
+      ],
+      "confidence": 0.9,
+      "risk_tags": [],
+      "suggested_actions": []
+    },
+    {
+      "dimension": "协同调度力",
+      "finding_type": "risk",
+      "summary": "关键供应链风险（产能饱和）的解决路径依赖高层协调，当前状态不明确，存在协同阻塞。",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0035",
+          "timestamp": "2026-04-24 09:00",
+          "excerpt": "核心注塑供应商Q2订单饱和，我们的模具排期可能要延后。",
+          "evidence_note": "供应链经理林峰提出高风险阻塞。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0038",
+          "timestamp": "2026-04-24 09:12",
+          "excerpt": "先不在群里说了，我单独找供应链总监协调，看看能不能插队。",
+          "evidence_note": "管理者周牧提出解决路径（找供应链总监协调），但未在群聊中同步后续进展。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0048",
+          "timestamp": "2026-04-29 10:15",
+          "excerpt": "还在沟通，总监说需要高层会议决策。",
+          "evidence_note": "后续沟通显示解决路径受阻（需高层决策），且状态（进行中）未形成被相关方确认的明确解决路径，阻塞未解除。"
+        }
+      ],
+      "confidence": 0.8,
+      "risk_tags": [
+        "依赖外部决策",
+        "解决路径不明确"
+      ],
+      "suggested_actions": [
+        "建议在项目群或会议中定期同步与供应链总监协调的进展和决策结果。"
+      ]
+    },
+    {
+      "dimension": "协同调度力",
+      "finding_type": "observation",
+      "summary": "日历事件（会议）的参会人名单与项目核心干系人（通讯录）高度一致，但硬指标显示“日历必要干系人覆盖率”为0，可能存在指标计算逻辑与样本实际情况不符。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics.json",
+          "source_id": "calendar_stakeholder_coverage_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "{\"metric_id\": \"calendar_stakeholder_coverage_rate\", \"value\": 0, \"numerator\": 0, \"denominator\": 3}",
+          "evidence_note": "metric_id: calendar_stakeholder_coverage_rate, formula: value = calendar_events_with_required_stakeholders / total_calendar_events, calculation.expression: 0 / 3, value: 0"
+        },
+        {
+          "source_type": "coordination_context",
+          "source_file": "coordination_context.json",
+          "source_id": "cal_case05_evt_0421_sync",
+          "timestamp": "2026-04-21T09:15:00+08:00",
+          "excerpt": "{\"event_id\": \"cal_case05_evt_0421_sync\", \"attendees\": [\"周牧\", \"陈立\", \"林峰\", \"赵雪\", \"张悦\"]}",
+          "evidence_note": "会议‘V1.5迭代同步会’的参会人包含项目通讯录中所有5名核心成员。"
+        },
+        {
+          "source_type": "coordination_context",
+          "source_file": "coordination_context.json",
+          "source_id": "org_contacts_list",
+          "timestamp": "N/A",
+          "excerpt": "[{\"name\": \"周牧\"}, {\"name\": \"陈立\"}, {\"name\": \"林峰\"}, {\"name\": \"张悦\"}, {\"name\": \"赵雪\"}]",
+          "evidence_note": "项目通讯录包含5名核心干系人。"
+        }
+      ],
+      "confidence": 0.7,
+      "risk_tags": [
+        "指标异常"
+      ],
+      "suggested_actions": [
+        "建议复核‘日历必要干系人覆盖率’指标的计算逻辑，确认为何分子为0。"
+      ]
+    }
+  ],
+  "human_review_items": [
+    {
+      "review_id": "HRV-CASE-05-COORD-01",
+      "reason": "需要人工复核‘日历必要干系人覆盖率’硬指标（值为0）的计算准确性。证据显示会议参会人与项目通讯录成员高度重合，但指标分子为0，可能存在数据提取或计算逻辑错误。",
+      "severity": "medium",
+      "related_dimension": "协同调度力",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics.json",
+          "source_id": "calendar_stakeholder_coverage_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "{\"metric_id\": \"calendar_stakeholder_coverage_rate\", \"value\": 0, \"numerator\": 0, \"denominator\": 3, \"formula\": {\"numerator_definition\": \"日历参会人同时覆盖评估对象、关键协作者，并命中项目通讯录成员的事件数\"}}",
+          "evidence_note": "指标定义要求覆盖评估对象、关键协作者并命中通讯录，但计算值为0。"
+        },
+        {
+          "source_type": "coordination_context",
+          "source_file": "coordination_context.json",
+          "source_id": "cal_case05_evt_0421_sync",
+          "timestamp": "2026-04-21T09:15:00+08:00",
+          "excerpt": "{\"summary\": \"V1.5迭代同步会\", \"attendees\": [\"周牧\", \"陈立\", \"林峰\", \"赵雪\", \"张悦\"], \"organizer\": {\"name\": \"周牧\"}}",
+          "evidence_note": "会议包含评估对象（周牧）及所有项目通讯录中的关键协作者。"
+        }
+      ]
+    },
+    {
+      "review_id": "HRV-CASE-05-COORD-02",
+      "reason": "需要人工确认‘成本上升15%由设计效果优先覆盖’这一关键决策（范围/预算变化）是否已同步给财务等必要干系人。当前证据仅显示在群聊中讨论并由管理者承诺单独沟通，但缺乏已同步的明确证据。",
+      "severity": "medium",
+      "related_dimension": "协同调度力",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0031",
+          "timestamp": "2026-04-22 14:00",
+          "excerpt": "结构工程反馈ID曲面导致模具成本上升15%，这个谁来承担？",
+          "evidence_note": "结构工程师提出成本风险。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0032",
+          "timestamp": "2026-04-22 14:05",
+          "excerpt": "先不要纠结成本，保证设计效果优先，预算问题我单独找财务沟通。",
+          "evidence_note": "管理者做出决策（设计效果优先）并承诺单独沟通，但未在现有样本中展示已同步给财务的证据。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting.json",
+          "source_id": "MTG-CASE-05-01",
+          "timestamp": "2026-04-21",
+          "excerpt": "\"decisions\": [\"成本上升15%由设计效果优先覆盖\"]",
+          "evidence_note": "该决策被记录在会议决议中。"
+        }
+      ]
+    }
+  ],
+  "coordination_summary": "管理者在跨角色问题响应、风险同步及依赖澄清方面表现积极，能明确责任和下一步动作。但在处理高度依赖外部决策的阻塞（如供应链产能）时，解决路径尚不明确，且关键成本决策的干系人同步情况需复核。一个关于会议覆盖率的硬指标与观察证据存在矛盾，需技术复核。"
+}

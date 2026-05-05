@@ -1,0 +1,186 @@
+{
+  "meeting_id": "MTG-CASE-05-01",
+  "project_id": "PJT-CASE-05",
+  "manager_id": "MGR-CASE-05",
+  "dimension_findings": [
+    {
+      "dimension": "方向校准力",
+      "finding_type": "strength",
+      "summary": "管理者在会议中对关键节点和约束做出了清晰判断，明确本周必须完成外观冻结，并对成本上升问题给出了优先级决策（设计效果优先）。",
+      "evidence_refs": [
+        {
+          "source_type": "transcript",
+          "source_file": "04_meetings/minutes_transcript_case05.json",
+          "source_id": "mn_case05_0421_sync",
+          "timestamp": "MTG-CASE-05-01",
+          "excerpt": "本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。",
+          "evidence_note": "管理者明确本周必须完成外观冻结的关键节点。"
+        },
+        {
+          "source_type": "transcript",
+          "source_file": "04_meetings/minutes_transcript_case05.json",
+          "source_id": "mn_case05_0421_sync",
+          "timestamp": "MTG-CASE-05-01",
+          "excerpt": "先不要纠结成本，保证设计效果优先，预算问题我单独找财务沟通。",
+          "evidence_note": "管理者对成本上升的约束给出了明确的优先级判断（设计效果优先），并明确了后续处理路径。"
+        },
+        {
+          "source_type": "meeting_facts",
+          "source_file": "current_meeting",
+          "source_id": "MTG-CASE-05-01",
+          "timestamp": "2026-04-21 09:15 - 10:30",
+          "excerpt": "成本上升15%由设计效果优先覆盖",
+          "evidence_note": "会议决策中明确了成本问题的处理原则。"
+        }
+      ],
+      "confidence": 0.9,
+      "risk_tags": [],
+      "suggested_actions": []
+    },
+    {
+      "dimension": "方向校准力",
+      "finding_type": "observation",
+      "summary": "会议中提及了外部变更（门锁防水等级提升）并确认已同步到文档，但未深入讨论此变更对项目范围、优先级或关键里程碑（如手板验证）的具体影响。",
+      "evidence_refs": [
+        {
+          "source_type": "transcript",
+          "source_file": "04_meetings/minutes_transcript_case05.json",
+          "source_id": "mn_case05_0421_sync",
+          "timestamp": "MTG-CASE-05-01",
+          "excerpt": "智能门锁的防水等级从IPX4提到IPX6，外观开口设计要重新调整，这个变更谁确认的？",
+          "evidence_note": "会议中识别了外部变更对设计的影响。"
+        },
+        {
+          "source_type": "transcript",
+          "source_file": "04_meetings/minutes_transcript_case05.json",
+          "source_id": "mn_case05_0421_sync",
+          "timestamp": "MTG-CASE-05-01",
+          "excerpt": "是安全认证部门上周发的变更通知，我已经同步到项目文档里了。",
+          "evidence_note": "管理者确认变更来源并已同步文档，但未在会议中进一步校准其对项目整体计划的影响。"
+        },
+        {
+          "source_type": "meeting_facts",
+          "source_file": "current_meeting",
+          "source_id": "MTG-CASE-05-01",
+          "timestamp": "2026-04-21 09:15 - 10:30",
+          "excerpt": "门锁防水方案5月5日前输出",
+          "evidence_note": "会议决策中给出了新方案输出的DDL，但未明确这是否会调整项目阶段或后续里程碑。"
+        }
+      ],
+      "confidence": 0.7,
+      "risk_tags": [
+        "scope_creep_risk"
+      ],
+      "suggested_actions": [
+        "建议在后续会议中，针对此类外部变更，明确评估并沟通其对项目范围、阶段目标和关键里程碑的潜在影响。"
+      ]
+    },
+    {
+      "dimension": "推进闭环力",
+      "finding_type": "strength",
+      "summary": "会议决策和行动项有明确的留痕，且历史任务定义完整、关闭质量高，显示管理者具备将会议结论转化为可跟踪任务的基础能力。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics",
+          "source_id": "meeting_decision_coverage_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "value = 1",
+          "evidence_note": "metric_id=meeting_decision_coverage_rate, formula=value = meetings_with_decision_trace / total_meetings, calculation.expression=3 / 3, value=1"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics",
+          "source_id": "task_definition_completeness_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "value = 1",
+          "evidence_note": "metric_id=task_definition_completeness_rate, formula=value = tasks_with_task_name_owner_due_date / total_tasks, calculation.expression=30 / 30, value=1"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics",
+          "source_id": "closed_task_quality_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "value = 1",
+          "evidence_note": "metric_id=closed_task_quality_rate, formula=value = qualified_closed_tasks / closed_tasks, calculation.expression=13 / 13, value=1"
+        }
+      ],
+      "confidence": 0.9,
+      "risk_tags": [],
+      "suggested_actions": []
+    },
+    {
+      "dimension": "推进闭环力",
+      "finding_type": "risk",
+      "summary": "当前会议产生的行动项（3条）与任务表中关联到该会议的任务（4条）数量不一致，存在会后扩展任务或重复挂载的风险，可能影响行动项跟踪的清晰度和闭环管理。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "anomalies: [\"会议行动项 3 条，任务表关联 4 条，存在会后扩展任务或重复挂载\"]",
+          "evidence_note": "metric_id=current_meeting_action_task_rate, formula=value = min(tasks_linked_to_current_meeting, current_meeting_action_item_count) / current_meeting_action_item_count, calculation.expression=3 / 3, value=1, anomalies 字段指出了不一致问题。"
+        },
+        {
+          "source_type": "meeting_facts",
+          "source_file": "current_meeting",
+          "source_id": "MTG-CASE-05-01",
+          "timestamp": "2026-04-21 09:15 - 10:30",
+          "excerpt": "action_items: [\"智能音箱概念设计稿输出\", \"扫地机器人概念设计稿输出\", \"智能门锁概念设计稿输出\"]",
+          "evidence_note": "当前会议记录的行动项为3条。"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.504",
+          "timestamp": "2026-04-10",
+          "excerpt": "概念设计评审会组织 status=已完成 is_closed=true source_meeting_id=MTG-CASE-05-01",
+          "evidence_note": "任务表中关联到 MTG-CASE-05-01 的任务有4条（NO.501, NO.502, NO.503, NO.504），多于会议行动项数量。"
+        }
+      ],
+      "confidence": 0.8,
+      "risk_tags": [
+        "action_tracking_inconsistency"
+      ],
+      "suggested_actions": [
+        "建议复核任务表，确认‘概念设计评审会组织’（NO.504）是否确实源于本次会议，并确保会议行动项与后续创建的任务严格对应，避免混淆。"
+      ]
+    }
+  ],
+  "human_review_items": [
+    {
+      "review_id": "review_action_task_mapping_MTG-CASE-05-01",
+      "reason": "会议行动项 3 条，任务表关联 4 条，存在会后扩展任务或重复挂载",
+      "severity": "medium",
+      "related_dimension": "推进闭环力",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "anomalies: [\"会议行动项 3 条，任务表关联 4 条，存在会后扩展任务或重复挂载\"]",
+          "evidence_note": "metric_id=current_meeting_action_task_rate, formula=value = min(tasks_linked_to_current_meeting, current_meeting_action_item_count) / current_meeting_action_item_count, calculation.expression=3 / 3, value=1, anomalies 字段指出了不一致问题。"
+        },
+        {
+          "source_type": "meeting_facts",
+          "source_file": "current_meeting",
+          "source_id": "MTG-CASE-05-01",
+          "timestamp": "2026-04-21 09:15 - 10:30",
+          "excerpt": "action_items: [\"智能音箱概念设计稿输出\", \"扫地机器人概念设计稿输出\", \"智能门锁概念设计稿输出\"]",
+          "evidence_note": "当前会议记录的行动项为3条。"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.504",
+          "timestamp": "2026-04-10",
+          "excerpt": "概念设计评审会组织 status=已完成 is_closed=true source_meeting_id=MTG-CASE-05-01",
+          "evidence_note": "任务表中关联到 MTG-CASE-05-01 的任务有4条（NO.501, NO.502, NO.503, NO.504），多于会议行动项数量。"
+        }
+      ]
+    }
+  ],
+  "management_review_summary": "方向校准力方面，管理者在关键节点（外观冻结）和约束（成本 vs 效果）上判断清晰，决策果断。但在处理外部变更（防水等级提升）时，虽同步了信息，但未在会议中充分校准其对项目整体范围与计划的影响，存在潜在的范围蔓延风险。推进闭环力方面，历史任务管理基础良好（定义完整、关闭质量高）。但当前会议的行动项与任务表关联数量不一致，暴露出会后任务扩展或挂载不清晰的问题，可能削弱行动项跟踪的有效性，需要人工复核以确保闭环链条的清晰可靠。"
+}

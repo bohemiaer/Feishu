@@ -1,0 +1,1384 @@
+{
+  "task_context": {
+    "task_id": "FRONT-PJT-CASE-04-MTG-CASE-04-04",
+    "project_id": "PJT-CASE-04",
+    "manager_id": "MGR-CASE-04",
+    "meeting_id": "MTG-CASE-04-04",
+    "evaluation_period": "2026-04-13 ~ 2026-04-24",
+    "status": "collected",
+    "created_at": "2026-05-04T16:24:36.118Z",
+    "updated_at": "2026-05-04T16:24:36.118Z"
+  },
+  "meeting_id": "MTG-CASE-04-04",
+  "project_id": "PJT-CASE-04",
+  "manager_id": "MGR-CASE-04",
+  "manager_name": "陈昊",
+  "planner_slice": {
+    "focus_dimensions": [
+      {
+        "dimension": "风险治理力",
+        "priority": "high",
+        "reasons": [
+          "风险未收口占比为 0.6，需要重点检查高等级风险和遗留风险治理。",
+          "高等级风险收口率为 0.6667，需要复核未收口高风险的缓释动作。"
+        ]
+      },
+      {
+        "dimension": "组织行为健康度",
+        "priority": "high",
+        "reasons": [
+          "高压推进语言样本占比为 0.4286，只生成观察项并进入人工复核。",
+          "当前输入存在补录、噪音或上下文不足，组织行为判断必须降低置信度。"
+        ]
+      }
+    ],
+    "assigned_plan": {
+      "agent_name": "Risk & Behavior Auditor",
+      "required": true,
+      "input_keys": [
+        "meeting_fact_pack",
+        "history_bundle",
+        "hard_metrics_result",
+        "raw_payload"
+      ],
+      "output_keys": [
+        "dimension_findings",
+        "risk_flags",
+        "human_review_items"
+      ],
+      "focus_dimensions": [
+        "风险治理力",
+        "组织行为健康度"
+      ]
+    },
+    "human_review_rules": [
+      {
+        "rule_id": "review_missing_current_transcript",
+        "severity": "medium",
+        "reason": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+        "target_nodes": [
+          "Management Reviewer",
+          "Risk & Behavior Auditor"
+        ]
+      },
+      {
+        "rule_id": "review_behavior_language_context",
+        "severity": "high",
+        "reason": "组织行为相关语言只能作为观察项，需人工确认语境和场景。",
+        "target_nodes": [
+          "Risk & Behavior Auditor",
+          "Capability Assessor"
+        ]
+      },
+      {
+        "rule_id": "review_unresolved_high_risks",
+        "severity": "high",
+        "reason": "高等级风险未完全收口，风险治理结论需人工复核。",
+        "target_nodes": [
+          "Risk & Behavior Auditor"
+        ]
+      }
+    ]
+  },
+  "current_meeting": {
+    "meeting_info": {
+      "meeting_id": "MTG-CASE-04-04",
+      "project_id": "PJT-CASE-04",
+      "manager_id": "MGR-CASE-04",
+      "manager_name": "陈昊",
+      "meeting_title": "专项阶段复盘",
+      "meeting_time": "2026-04-24 19:30 - 20:35",
+      "participants": [
+        "陈昊",
+        "林玥",
+        "马会",
+        "吴恬",
+        "其他专项成员"
+      ],
+      "calendar_event_id": "cal_case04_evt_0424_review",
+      "review_status": "有会后补充"
+    },
+    "risks_mentioned": [
+      "客服链路遗留问题未完全收口",
+      "线下沟通留痕不完整导致重复确认",
+      "会后有成员反馈 19:56 表达带来压力"
+    ],
+    "decisions": [
+      "主链路目标基本达成",
+      "字段冻结表后续可沉淀为固定机制",
+      "客服链路遗留项进入下一阶段继续跟踪"
+    ],
+    "noise_signals": [],
+    "missing_fields": [
+      "meeting_docs.current_transcript"
+    ],
+    "provenance_refs": [
+      {
+        "source_type": "base_record",
+        "source_file": "03_task_risk_register/base_projects_record_list.json",
+        "source_id": "PJT-CASE-04",
+        "timestamp": "2026-04-13",
+        "excerpt": "五一前履约稳定性专项治理"
+      },
+      {
+        "source_type": "base_record",
+        "source_file": "04_meetings/base_meetings_record_list.json",
+        "source_id": "MTG-CASE-04-04",
+        "timestamp": "2026-04-24 19:30 - 20:35",
+        "excerpt": "专项阶段复盘"
+      },
+      {
+        "source_type": "cloud_doc",
+        "source_file": "01_cloud_docs/docs_fetch_main_doc_v2.json",
+        "source_id": "V2mCdcase04MainDocx",
+        "timestamp": "4",
+        "excerpt": "范围内：主链路订单状态同步稳定性、退款状态回写一致性、客服工单联动中的关键高频异常、关键风险项的升级跟踪和回滚预案；范围外：客服体验优化类非阻断需求、仓配底层字段体系重构、新监控平台接入、历史低频长尾问题清理；五一前主链路履约状态同步成功率达到 99.95%；退款状态回写一致性达到 99.90%"
+      },
+      {
+        "source_type": "statement",
+        "source_file": "04_meetings/base_statements_record_list.json",
+        "source_id": "MTG-CASE-04-04-STM-1",
+        "timestamp": "MTG-CASE-04-04",
+        "excerpt": "前几天对字段问题的处理还是慢了。"
+      },
+      {
+        "source_type": "statement",
+        "source_file": "04_meetings/base_statements_record_list.json",
+        "source_id": "MTG-CASE-04-04-STM-2",
+        "timestamp": "MTG-CASE-04-04",
+        "excerpt": "下次专项第 1 天就出这个表。"
+      },
+      {
+        "source_type": "chat",
+        "source_file": "02_chats/im_messages_search_user.json",
+        "source_id": "om_case04msg0002",
+        "timestamp": "2026-04-13 09:16",
+        "excerpt": "今天先把本轮目标和边界说清楚，不在范围里的先别展开。"
+      },
+      {
+        "source_type": "chat",
+        "source_file": "02_chats/im_messages_search_user.json",
+        "source_id": "om_case04msg0004",
+        "timestamp": "2026-04-13 09:18",
+        "excerpt": "先不追求全部体验项一起做，主链路稳定和退款一致先保住。"
+      },
+      {
+        "source_type": "chat",
+        "source_file": "02_chats/im_messages_search_user.json",
+        "source_id": "om_case04msg0007",
+        "timestamp": "2026-04-15 16:16",
+        "excerpt": "今天 5 点前必须统一一版口径，谁负责适配今天就定下来，不能继续空转。"
+      },
+      {
+        "source_type": "chat",
+        "source_file": "02_chats/im_messages_search_user.json",
+        "source_id": "om_case04msg0009",
+        "timestamp": "2026-04-14 09:34",
+        "excerpt": "结算项目别发到专项线程里。"
+      },
+      {
+        "source_type": "calendar",
+        "source_file": "06_calendar/calendar_events_instance_view.json",
+        "source_id": "cal_case04_evt_0424_review",
+        "timestamp": "2026-04-24T19:30:00+08:00",
+        "excerpt": "专项阶段复盘"
+      }
+    ]
+  },
+  "risk_context": {
+    "open_risks": [
+      {
+        "id": "NO.202",
+        "followup_status": "tracking",
+        "meeting_id": "MTG-CASE-04-03",
+        "trigger_reason": "高峰压测发现尾延迟，尚未完全消除",
+        "risk_description": "退款回写高峰场景尾延迟",
+        "risk_level": "high",
+        "project_id": "PJT-CASE-04",
+        "suggested_action": "继续跟踪长尾点并补充压测结论到文档",
+        "risk_id": "PJT-CASE-04-RISK-02",
+        "risk_type": "交付风险"
+      },
+      {
+        "id": "NO.205",
+        "followup_status": "tracking",
+        "meeting_id": "MTG-CASE-04-04",
+        "trigger_reason": "依赖外部供应商反馈，异常 B 处理偏慢",
+        "risk_description": "客服高频异常 B 未及时复现",
+        "risk_level": "medium",
+        "project_id": "PJT-CASE-04",
+        "suggested_action": "保留遗留项说明并顺延到下一阶段",
+        "risk_id": "PJT-CASE-04-RISK-05",
+        "risk_type": "协同风险"
+      },
+      {
+        "id": "NO.206",
+        "followup_status": "tracking",
+        "meeting_id": "MTG-CASE-04-03",
+        "trigger_reason": "线下对齐后补录不完整，部分决策只有结论没有上下文",
+        "risk_description": "线下结论未及时留痕",
+        "risk_level": "medium",
+        "project_id": "PJT-CASE-04",
+        "suggested_action": "把补录结论同步进评审纪要并保留缺失说明",
+        "risk_id": "PJT-CASE-04-RISK-06",
+        "risk_type": "流程风险"
+      },
+      {
+        "id": "NO.207",
+        "followup_status": "open",
+        "meeting_id": "MTG-CASE-04-01",
+        "trigger_reason": "历史旧版方案仍在流转，容易误导本轮优先级",
+        "risk_description": "旧版文档口径误导执行",
+        "risk_level": "medium",
+        "project_id": "PJT-CASE-04",
+        "suggested_action": "在主文档中明确本轮范围并弱化旧版附件影响",
+        "risk_id": "PJT-CASE-04-RISK-07",
+        "risk_type": "文档风险"
+      },
+      {
+        "id": "NO.208",
+        "followup_status": "tracking",
+        "meeting_id": "MTG-CASE-04-04",
+        "trigger_reason": "如果长尾问题持续，临时补偿脚本准备不足",
+        "risk_description": "低频回写补偿脚本准备不足",
+        "risk_level": "medium",
+        "project_id": "PJT-CASE-04",
+        "suggested_action": "输出补偿脚本草案并继续补齐正式版本",
+        "risk_id": "PJT-CASE-04-RISK-08",
+        "risk_type": "交付风险"
+      },
+      {
+        "id": "NO.209",
+        "followup_status": "open",
+        "meeting_id": "MTG-CASE-04-04",
+        "trigger_reason": "监控看板接入被短暂提为高优先项，但与本轮目标弱相关",
+        "risk_description": "监控看板接入被误提为高优先级",
+        "risk_level": "low",
+        "project_id": "PJT-CASE-04",
+        "suggested_action": "保留记录，不纳入本轮执行范围",
+        "risk_id": "PJT-CASE-04-RISK-09",
+        "risk_type": "噪音项"
+      }
+    ],
+    "all_risks": [
+      {
+        "id": "NO.201",
+        "followup_status": "resolved",
+        "meeting_id": "MTG-CASE-04-02",
+        "trigger_reason": "字段口径讨论持续来回，影响联调节奏",
+        "risk_description": "字段口径不一致导致联调返工",
+        "risk_level": "high",
+        "project_id": "PJT-CASE-04",
+        "suggested_action": "推进字段冻结表最终版并明确适配责任人",
+        "risk_id": "PJT-CASE-04-RISK-01",
+        "risk_type": "交付风险"
+      },
+      {
+        "id": "NO.202",
+        "followup_status": "tracking",
+        "meeting_id": "MTG-CASE-04-03",
+        "trigger_reason": "高峰压测发现尾延迟，尚未完全消除",
+        "risk_description": "退款回写高峰场景尾延迟",
+        "risk_level": "high",
+        "project_id": "PJT-CASE-04",
+        "suggested_action": "继续跟踪长尾点并补充压测结论到文档",
+        "risk_id": "PJT-CASE-04-RISK-02",
+        "risk_type": "交付风险"
+      },
+      {
+        "id": "NO.203",
+        "followup_status": "resolved",
+        "meeting_id": "MTG-CASE-04-03",
+        "trigger_reason": "晚间回归窗口被其他项目占用",
+        "risk_description": "晚间环境窗口不稳定",
+        "risk_level": "high",
+        "project_id": "PJT-CASE-04",
+        "suggested_action": "提前确认环境负责人并保留备选窗口",
+        "risk_id": "PJT-CASE-04-RISK-03",
+        "risk_type": "资源风险"
+      },
+      {
+        "id": "NO.204",
+        "followup_status": "closed",
+        "meeting_id": "MTG-CASE-04-04",
+        "trigger_reason": "客服异常 A 复现材料不完整，影响问题判断",
+        "risk_description": "客服高频异常 A 未及时复现",
+        "risk_level": "medium",
+        "project_id": "PJT-CASE-04",
+        "suggested_action": "补齐样本后关闭该项并同步影响范围",
+        "risk_id": "PJT-CASE-04-RISK-04",
+        "risk_type": "质量风险"
+      },
+      {
+        "id": "NO.205",
+        "followup_status": "tracking",
+        "meeting_id": "MTG-CASE-04-04",
+        "trigger_reason": "依赖外部供应商反馈，异常 B 处理偏慢",
+        "risk_description": "客服高频异常 B 未及时复现",
+        "risk_level": "medium",
+        "project_id": "PJT-CASE-04",
+        "suggested_action": "保留遗留项说明并顺延到下一阶段",
+        "risk_id": "PJT-CASE-04-RISK-05",
+        "risk_type": "协同风险"
+      },
+      {
+        "id": "NO.206",
+        "followup_status": "tracking",
+        "meeting_id": "MTG-CASE-04-03",
+        "trigger_reason": "线下对齐后补录不完整，部分决策只有结论没有上下文",
+        "risk_description": "线下结论未及时留痕",
+        "risk_level": "medium",
+        "project_id": "PJT-CASE-04",
+        "suggested_action": "把补录结论同步进评审纪要并保留缺失说明",
+        "risk_id": "PJT-CASE-04-RISK-06",
+        "risk_type": "流程风险"
+      },
+      {
+        "id": "NO.207",
+        "followup_status": "open",
+        "meeting_id": "MTG-CASE-04-01",
+        "trigger_reason": "历史旧版方案仍在流转，容易误导本轮优先级",
+        "risk_description": "旧版文档口径误导执行",
+        "risk_level": "medium",
+        "project_id": "PJT-CASE-04",
+        "suggested_action": "在主文档中明确本轮范围并弱化旧版附件影响",
+        "risk_id": "PJT-CASE-04-RISK-07",
+        "risk_type": "文档风险"
+      },
+      {
+        "id": "NO.208",
+        "followup_status": "tracking",
+        "meeting_id": "MTG-CASE-04-04",
+        "trigger_reason": "如果长尾问题持续，临时补偿脚本准备不足",
+        "risk_description": "低频回写补偿脚本准备不足",
+        "risk_level": "medium",
+        "project_id": "PJT-CASE-04",
+        "suggested_action": "输出补偿脚本草案并继续补齐正式版本",
+        "risk_id": "PJT-CASE-04-RISK-08",
+        "risk_type": "交付风险"
+      },
+      {
+        "id": "NO.209",
+        "followup_status": "open",
+        "meeting_id": "MTG-CASE-04-04",
+        "trigger_reason": "监控看板接入被短暂提为高优先项，但与本轮目标弱相关",
+        "risk_description": "监控看板接入被误提为高优先级",
+        "risk_level": "low",
+        "project_id": "PJT-CASE-04",
+        "suggested_action": "保留记录，不纳入本轮执行范围",
+        "risk_id": "PJT-CASE-04-RISK-09",
+        "risk_type": "噪音项"
+      },
+      {
+        "id": "NO.210",
+        "followup_status": "record_only",
+        "meeting_id": "MTG-CASE-04-04",
+        "trigger_reason": "会后有个别成员反馈复盘语气带来压力，但未形成正式事件",
+        "risk_description": "复盘沟通语气引发成员压力",
+        "risk_level": "low",
+        "project_id": "PJT-CASE-04",
+        "suggested_action": "仅记录该反馈，不扩写为正式结论",
+        "risk_id": "PJT-CASE-04-RISK-10",
+        "risk_type": "行为观察"
+      }
+    ],
+    "risk_history": [
+      {
+        "record_id": "reccase04task003",
+        "task_id": "PJT-CASE-04-TASK-03",
+        "risk_id": "",
+        "field_changes": [
+          {
+            "field": "status",
+            "old_value": "未开始",
+            "new_value": "进行中",
+            "operator": {
+              "open_id": "ou_case04fengzx003",
+              "name": "冯子轩"
+            },
+            "update_time": "2026-04-16 18:36"
+          },
+          {
+            "field": "status",
+            "old_value": "进行中",
+            "new_value": "已完成",
+            "operator": {
+              "open_id": "ou_case04fengzx003",
+              "name": "冯子轩"
+            },
+            "update_time": "2026-04-16 21:18"
+          }
+        ]
+      },
+      {
+        "record_id": "reccase04task005",
+        "task_id": "PJT-CASE-04-TASK-05",
+        "risk_id": "",
+        "field_changes": [
+          {
+            "field": "status",
+            "old_value": "未开始",
+            "new_value": "进行中",
+            "operator": {
+              "open_id": "ou_case04mahuai007",
+              "name": "马会"
+            },
+            "update_time": "2026-04-18 17:40"
+          },
+          {
+            "field": "due_date",
+            "old_value": "2026-04-18 18:00",
+            "new_value": "下一阶段首周",
+            "operator": {
+              "open_id": "ou_case04wutian0005",
+              "name": "吴恬"
+            },
+            "update_time": "2026-04-24 17:10"
+          }
+        ]
+      },
+      {
+        "record_id": "reccase04task012",
+        "task_id": "PJT-CASE-04-TASK-12",
+        "risk_id": "",
+        "field_changes": [
+          {
+            "field": "status",
+            "old_value": "进行中",
+            "new_value": "延期",
+            "operator": {
+              "open_id": "ou_case04mahuai007",
+              "name": "马会"
+            },
+            "update_time": "2026-04-21 18:40"
+          },
+          {
+            "field": "due_date",
+            "old_value": "2026-04-21 18:00",
+            "new_value": "下一阶段首周",
+            "operator": {
+              "open_id": "ou_case04wutian0005",
+              "name": "吴恬"
+            },
+            "update_time": "2026-04-24 16:50"
+          }
+        ]
+      },
+      {
+        "record_id": "reccase04task013",
+        "task_id": "PJT-CASE-04-TASK-13",
+        "risk_id": "",
+        "field_changes": [
+          {
+            "field": "status",
+            "old_value": "进行中",
+            "new_value": "延期",
+            "operator": {
+              "open_id": "ou_case04fengzx003",
+              "name": "冯子轩"
+            },
+            "update_time": "2026-04-22 20:35"
+          },
+          {
+            "field": "due_date",
+            "old_value": "2026-04-22 20:00",
+            "new_value": "2026-04-24 12:00",
+            "operator": {
+              "open_id": "ou_case04fengzx003",
+              "name": "冯子轩"
+            },
+            "update_time": "2026-04-22 20:36"
+          }
+        ]
+      },
+      {
+        "record_id": "reccase04risk003",
+        "task_id": "",
+        "risk_id": "PJT-CASE-04-RISK-03",
+        "field_changes": [
+          {
+            "field": "followup_status",
+            "old_value": "open",
+            "new_value": "tracking",
+            "operator": {
+              "open_id": "ou_case04tangke006",
+              "name": "唐可"
+            },
+            "update_time": "2026-04-19 11:15"
+          },
+          {
+            "field": "followup_status",
+            "old_value": "tracking",
+            "new_value": "resolved",
+            "operator": {
+              "open_id": "ou_case04tangke006",
+              "name": "唐可"
+            },
+            "update_time": "2026-04-20 09:08"
+          }
+        ]
+      }
+    ],
+    "risk_notes": [
+      "PJT-CASE-04-RISK-01 字段口径不一致导致联调返工 跟进状态=resolved",
+      "PJT-CASE-04-RISK-02 退款回写高峰场景尾延迟 跟进状态=tracking",
+      "PJT-CASE-04-RISK-03 晚间环境窗口不稳定 跟进状态=resolved",
+      "PJT-CASE-04-RISK-04 客服高频异常 A 未及时复现 跟进状态=closed",
+      "PJT-CASE-04-RISK-05 客服高频异常 B 未及时复现 跟进状态=tracking",
+      "PJT-CASE-04-RISK-06 线下结论未及时留痕 跟进状态=tracking"
+    ],
+    "review_highlights": [
+      "主链路指标趋稳",
+      "字段冻结表已发布",
+      "退款回写高峰复测完成，仍有 1 个长尾延迟问题需后续清理",
+      "客服链路遗留 2 项异常仍未关闭",
+      "上周确认的 7 条高优先 action item 中，5 条按期完成",
+      "2 条延期事项已重新确认 owner 和 DDL",
+      "线下沟通补录不及时，部分决策留痕不足",
+      "3 月底旧版履约方案文档曾把客服体验项列为 P0，本轮口径已不再完全适用"
+    ]
+  },
+  "behavior_context": {
+    "chat_history": [
+      {
+        "content": "吴恬 invited 履约专项风险升级群助手 to the group. New members can view recent chat history.",
+        "create_time": "2026-04-19 10:24",
+        "deleted": false,
+        "message_id": "om_case04msg0001",
+        "msg_type": "system",
+        "sender": {
+          "id": "",
+          "id_type": "",
+          "sender_type": "",
+          "tenant_key": ""
+        },
+        "updated": false
+      },
+      {
+        "content": "今天先把本轮目标和边界说清楚，不在范围里的先别展开。",
+        "create_time": "2026-04-13 09:16",
+        "deleted": false,
+        "message_id": "om_case04msg0002",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04chentarget001",
+          "id_type": "open_id",
+          "name": "陈昊",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "业务那边还在问体验优化是不是也一起做。",
+        "create_time": "2026-04-13 09:17",
+        "deleted": false,
+        "message_id": "om_case04msg0003",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04linyue0002",
+          "id_type": "open_id",
+          "name": "林玥",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "先不追求全部体验项一起做，主链路稳定和退款一致先保住。",
+        "create_time": "2026-04-13 09:18",
+        "deleted": false,
+        "message_id": "om_case04msg0004",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04chentarget001",
+          "id_type": "open_id",
+          "name": "陈昊",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "`2026Q1_履约问题复盘_v5`",
+        "create_time": "2026-04-13 09:25",
+        "deleted": false,
+        "message_id": "om_case04msg0005",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04wutian0005",
+          "id_type": "open_id",
+          "name": "吴恬",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "这个版本已经很旧了。",
+        "create_time": "2026-04-13 09:26",
+        "deleted": false,
+        "message_id": "om_case04msg0006",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04fengzx003",
+          "id_type": "open_id",
+          "name": "冯子轩",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "今天 5 点前必须统一一版口径，谁负责适配今天就定下来，不能继续空转。",
+        "create_time": "2026-04-15 16:16",
+        "deleted": false,
+        "message_id": "om_case04msg0007",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04chentarget001",
+          "id_type": "open_id",
+          "name": "陈昊",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "中台可以输出冻结版草案。",
+        "create_time": "2026-04-15 16:52",
+        "deleted": false,
+        "message_id": "om_case04msg0008",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04fengzx003",
+          "id_type": "open_id",
+          "name": "冯子轩",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "结算项目别发到专项线程里。",
+        "create_time": "2026-04-14 09:34",
+        "deleted": false,
+        "message_id": "om_case04msg0009",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04chentarget001",
+          "id_type": "open_id",
+          "name": "陈昊",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "今天下午茶改到 4 点。",
+        "create_time": "2026-04-14 08:58",
+        "deleted": false,
+        "message_id": "om_case04msg0010",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04adminxia",
+          "id_type": "open_id",
+          "name": "行政小夏",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "请各位主管周三前提交五一值班安排。",
+        "create_time": "2026-04-14 09:01",
+        "deleted": false,
+        "message_id": "om_case04msg0011",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04hrxuxu",
+          "id_type": "open_id",
+          "name": "人力小许",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "昨晚环境 22:47 开始波动，23:18 才恢复。",
+        "create_time": "2026-04-19 10:27",
+        "deleted": false,
+        "message_id": "om_case04msg0012",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04tangke006",
+          "id_type": "open_id",
+          "name": "唐可",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "这里先只说风险、影响、下一步。背景长文别贴。",
+        "create_time": "2026-04-19 10:36",
+        "deleted": false,
+        "message_id": "om_case04msg0013",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04chentarget001",
+          "id_type": "open_id",
+          "name": "陈昊",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "12 点前给我 go/no-go 输入，不要等到晚上才决定。",
+        "create_time": "2026-04-19 10:44",
+        "deleted": false,
+        "message_id": "om_case04msg0014",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04chentarget001",
+          "id_type": "open_id",
+          "name": "陈昊",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "我开个线程，避免主群刷掉。",
+        "create_time": "2026-04-16 16:58",
+        "deleted": false,
+        "message_id": "om_case04msg0015",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04wutian0005",
+          "id_type": "open_id",
+          "name": "吴恬",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "本轮先不争论长期最优结构，字段冻结表今天必须出，先服务上线前执行口径。",
+        "create_time": "2026-04-16 17:11",
+        "deleted": false,
+        "message_id": "om_case04msg0016",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04chentarget001",
+          "id_type": "open_id",
+          "name": "陈昊",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "今晚有人一起加班点餐吗。",
+        "create_time": "2026-04-16 21:31",
+        "deleted": false,
+        "message_id": "om_case04msg0017",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04teamnoise1",
+          "id_type": "open_id",
+          "name": "同事乙",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      },
+      {
+        "content": "先不在群里说了，线下碰一下。",
+        "create_time": "2026-04-18 11:41",
+        "deleted": false,
+        "message_id": "om_case04msg0018",
+        "msg_type": "text",
+        "sender": {
+          "id": "ou_case04teamnoise2",
+          "id_type": "open_id",
+          "name": "某参会人",
+          "sender_type": "user",
+          "tenant_key": "1abd20e084069b82"
+        },
+        "updated": false
+      }
+    ],
+    "calendar_events": [
+      {
+        "event_id": "cal_case04_evt_0413_sync",
+        "summary": "专项同步",
+        "start_time": "2026-04-13T10:02:00+08:00",
+        "end_time": "2026-04-13T10:58:00+08:00",
+        "organizer": {
+          "open_id": "ou_case04chentarget001",
+          "name": "陈昊"
+        },
+        "attendees": [
+          "陈昊",
+          "林玥",
+          "冯子轩",
+          "沈薇",
+          "唐可",
+          "马会",
+          "罗征",
+          "吴恬"
+        ],
+        "location": "线上会议",
+        "meeting_id": "MTG-CASE-04-01"
+      },
+      {
+        "event_id": "cal_case04_evt_0416_joint",
+        "summary": "联调状态沟通",
+        "start_time": "2026-04-16T15:00:00+08:00",
+        "end_time": "2026-04-16T16:20:00+08:00",
+        "organizer": {
+          "open_id": "ou_case04wutian0005",
+          "name": "吴恬"
+        },
+        "attendees": [
+          "陈昊",
+          "林玥",
+          "冯子轩",
+          "吴恬",
+          "马会",
+          "罗征"
+        ],
+        "location": "线上 + 线下混合",
+        "meeting_id": "MTG-CASE-04-02"
+      },
+      {
+        "event_id": "cal_case04_evt_0418_offline",
+        "summary": "阶段评审前线下沟通补录",
+        "start_time": "2026-04-18T11:45:00+08:00",
+        "end_time": "2026-04-18T12:05:00+08:00",
+        "organizer": {
+          "open_id": "ou_case04chentarget001",
+          "name": "陈昊"
+        },
+        "attendees": [
+          "陈昊",
+          "林玥",
+          "沈薇",
+          "唐可"
+        ],
+        "location": "A3 会议室",
+        "meeting_id": "MTG-CASE-04-03",
+        "note": "线下沟通无完整录音，后续由吴恬补录摘要。"
+      },
+      {
+        "event_id": "cal_case04_evt_0424_review",
+        "summary": "专项阶段复盘",
+        "start_time": "2026-04-24T19:30:00+08:00",
+        "end_time": "2026-04-24T20:35:00+08:00",
+        "organizer": {
+          "open_id": "ou_case04chentarget001",
+          "name": "陈昊"
+        },
+        "attendees": [
+          "陈昊",
+          "林玥",
+          "马会",
+          "吴恬"
+        ],
+        "location": "线下会议室 + 飞书文档记录",
+        "meeting_id": "MTG-CASE-04-04"
+      }
+    ],
+    "org_contacts": [
+      {
+        "name": "陈昊",
+        "open_id": "ou_case04chentarget001",
+        "user_id": "u_case04_chenhao",
+        "department": "履约中台交付部",
+        "title": "部门负责人",
+        "manager": "周岚",
+        "project_role": "manager",
+        "source": "project_contacts"
+      },
+      {
+        "name": "林玥",
+        "open_id": "ou_case04linyue0002",
+        "user_id": "u_case04_linyue",
+        "department": "履约中台交付部",
+        "title": "产品负责人",
+        "manager": "陈昊",
+        "project_role": "product_lead",
+        "source": "project_contacts"
+      },
+      {
+        "name": "冯子轩",
+        "open_id": "ou_case04fengzx003",
+        "user_id": "u_case04_fengzixuan",
+        "department": "履约中台交付部",
+        "title": "后端组长",
+        "manager": "陈昊",
+        "project_role": "engineering_lead",
+        "source": "project_contacts"
+      },
+      {
+        "name": "沈薇",
+        "open_id": "ou_case04shenwei004",
+        "user_id": "u_case04_shenwei",
+        "department": "履约中台交付部",
+        "title": "测试负责人",
+        "manager": "陈昊",
+        "project_role": "qa_lead",
+        "source": "project_contacts"
+      },
+      {
+        "name": "吴恬",
+        "open_id": "ou_case04wutian0005",
+        "user_id": "u_case04_wutian",
+        "department": "履约中台交付部",
+        "title": "项目协调",
+        "manager": "陈昊",
+        "project_role": "project_coordinator",
+        "source": "project_contacts"
+      },
+      {
+        "name": "唐可",
+        "open_id": "ou_case04tangke006",
+        "user_id": "u_case04_tangke",
+        "department": "平台运维组",
+        "title": "运维接口人",
+        "manager": "平台运维经理",
+        "project_role": "ops_partner",
+        "source": "project_contacts"
+      },
+      {
+        "name": "马会",
+        "open_id": "ou_case04mahuai007",
+        "user_id": "u_case04_mahuai",
+        "department": "客服平台部",
+        "title": "接口负责人",
+        "manager": "客服平台主管",
+        "project_role": "customer_service_partner",
+        "source": "project_contacts"
+      },
+      {
+        "name": "罗征",
+        "open_id": "ou_case04luozheng008",
+        "user_id": "u_case04_luozheng",
+        "department": "仓配系统部",
+        "title": "接口负责人",
+        "manager": "仓配平台主管",
+        "project_role": "warehouse_partner",
+        "source": "project_contacts"
+      }
+    ]
+  },
+  "hard_metrics": [
+    {
+      "metric_id": "high_risk_resolution_rate",
+      "dimension": "风险治理力",
+      "label": "高等级风险收口率",
+      "value": 0.6667,
+      "numerator": 2,
+      "denominator": 3,
+      "unit": "ratio",
+      "window": "2026-04-13 ~ 2026-04-24",
+      "sample_scope": "Base Risks level=high",
+      "formula": {
+        "formula": "value = resolved_high_risks / total_high_risks",
+        "numerator_definition": "risk_level=high 且 followup_status 不属于 open/tracking 等未收口状态的风险数",
+        "denominator_definition": "risk_level=high 的风险总数",
+        "value_rule": "ratio 保留 4 位小数"
+      },
+      "calculation": {
+        "expression": "2 / 3",
+        "numerator": 2,
+        "denominator": 3,
+        "value": 0.6667
+      },
+      "status": "available",
+      "missing_fields": [],
+      "anomalies": [],
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-01",
+          "timestamp": "MTG-CASE-04-02",
+          "evidence_label": "PJT-CASE-04-RISK-01 high resolved",
+          "excerpt": "字段口径不一致导致联调返工 followup_status=resolved"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-02",
+          "timestamp": "MTG-CASE-04-03",
+          "evidence_label": "PJT-CASE-04-RISK-02 high tracking",
+          "excerpt": "退款回写高峰场景尾延迟 followup_status=tracking"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-03",
+          "timestamp": "MTG-CASE-04-03",
+          "evidence_label": "PJT-CASE-04-RISK-03 high resolved",
+          "excerpt": "晚间环境窗口不稳定 followup_status=resolved"
+        }
+      ]
+    },
+    {
+      "metric_id": "risk_mitigation_action_rate",
+      "dimension": "风险治理力",
+      "label": "风险缓释动作覆盖率",
+      "value": 1,
+      "numerator": 10,
+      "denominator": 10,
+      "unit": "ratio",
+      "window": "2026-04-13 ~ 2026-04-24",
+      "sample_scope": "Base Risks suggested_action completeness",
+      "formula": {
+        "formula": "value = risks_with_suggested_action / total_risks",
+        "numerator_definition": "suggested_action 非空的风险数",
+        "denominator_definition": "Base Risks 中评估周期内项目风险总数",
+        "value_rule": "ratio 保留 4 位小数"
+      },
+      "calculation": {
+        "expression": "10 / 10",
+        "numerator": 10,
+        "denominator": 10,
+        "value": 1
+      },
+      "status": "available",
+      "missing_fields": [],
+      "anomalies": [],
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-01",
+          "timestamp": "MTG-CASE-04-02",
+          "evidence_label": "PJT-CASE-04-RISK-01 high resolved",
+          "excerpt": "推进字段冻结表最终版并明确适配责任人"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-02",
+          "timestamp": "MTG-CASE-04-03",
+          "evidence_label": "PJT-CASE-04-RISK-02 high tracking",
+          "excerpt": "继续跟踪长尾点并补充压测结论到文档"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-03",
+          "timestamp": "MTG-CASE-04-03",
+          "evidence_label": "PJT-CASE-04-RISK-03 high resolved",
+          "excerpt": "提前确认环境负责人并保留备选窗口"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-04",
+          "timestamp": "MTG-CASE-04-04",
+          "evidence_label": "PJT-CASE-04-RISK-04 medium closed",
+          "excerpt": "补齐样本后关闭该项并同步影响范围"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-05",
+          "timestamp": "MTG-CASE-04-04",
+          "evidence_label": "PJT-CASE-04-RISK-05 medium tracking",
+          "excerpt": "保留遗留项说明并顺延到下一阶段"
+        }
+      ]
+    },
+    {
+      "metric_id": "open_risk_rate",
+      "dimension": "风险治理力",
+      "label": "风险未收口占比",
+      "value": 0.6,
+      "numerator": 6,
+      "denominator": 10,
+      "unit": "ratio",
+      "window": "2026-04-13 ~ 2026-04-24",
+      "sample_scope": "Base Risks followup_status",
+      "formula": {
+        "formula": "value = open_or_tracking_risks / total_risks",
+        "numerator_definition": "followup_status 不属于 resolved/closed/record_only/已关闭/已解决 的风险数",
+        "denominator_definition": "Base Risks 中评估周期内项目风险总数",
+        "value_rule": "ratio 保留 4 位小数；未收口风险逐条进入 anomalies"
+      },
+      "calculation": {
+        "expression": "6 / 10",
+        "numerator": 6,
+        "denominator": 10,
+        "value": 0.6
+      },
+      "status": "available",
+      "missing_fields": [],
+      "anomalies": [
+        "PJT-CASE-04-RISK-02 tracking",
+        "PJT-CASE-04-RISK-05 tracking",
+        "PJT-CASE-04-RISK-06 tracking",
+        "PJT-CASE-04-RISK-07 open",
+        "PJT-CASE-04-RISK-08 tracking",
+        "PJT-CASE-04-RISK-09 open"
+      ],
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-02",
+          "timestamp": "MTG-CASE-04-03",
+          "evidence_label": "PJT-CASE-04-RISK-02 high tracking",
+          "excerpt": "退款回写高峰场景尾延迟 followup_status=tracking"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-05",
+          "timestamp": "MTG-CASE-04-04",
+          "evidence_label": "PJT-CASE-04-RISK-05 medium tracking",
+          "excerpt": "客服高频异常 B 未及时复现 followup_status=tracking"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-06",
+          "timestamp": "MTG-CASE-04-03",
+          "evidence_label": "PJT-CASE-04-RISK-06 medium tracking",
+          "excerpt": "线下结论未及时留痕 followup_status=tracking"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-07",
+          "timestamp": "MTG-CASE-04-01",
+          "evidence_label": "PJT-CASE-04-RISK-07 medium open",
+          "excerpt": "旧版文档口径误导执行 followup_status=open"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-08",
+          "timestamp": "MTG-CASE-04-04",
+          "evidence_label": "PJT-CASE-04-RISK-08 medium tracking",
+          "excerpt": "低频回写补偿脚本准备不足 followup_status=tracking"
+        }
+      ]
+    },
+    {
+      "metric_id": "repeated_risk_type_count",
+      "dimension": "风险治理力",
+      "label": "同类风险复发样本数",
+      "value": 3,
+      "numerator": 3,
+      "denominator": 10,
+      "unit": "count",
+      "window": "2026-04-13 ~ 2026-04-24",
+      "sample_scope": "Base Risks grouped by risk_type",
+      "formula": {
+        "formula": "value = sum(count(risk_type) where count(risk_type) > 1)",
+        "numerator_definition": "按 risk_type 分组后，出现次数大于 1 的组内样本总数",
+        "denominator_definition": "Base Risks 中评估周期内项目风险总数",
+        "value_rule": "count 指标直接返回 numerator；重复类型进入 anomalies"
+      },
+      "calculation": {
+        "expression": "3",
+        "numerator": 3,
+        "denominator": 10,
+        "value": 3
+      },
+      "status": "available",
+      "missing_fields": [],
+      "anomalies": [
+        "交付风险:3"
+      ],
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-01",
+          "timestamp": "MTG-CASE-04-02",
+          "evidence_label": "PJT-CASE-04-RISK-01 high resolved",
+          "excerpt": "交付风险: 字段口径不一致导致联调返工"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-02",
+          "timestamp": "MTG-CASE-04-03",
+          "evidence_label": "PJT-CASE-04-RISK-02 high tracking",
+          "excerpt": "交付风险: 退款回写高峰场景尾延迟"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-03",
+          "timestamp": "MTG-CASE-04-03",
+          "evidence_label": "PJT-CASE-04-RISK-03 high resolved",
+          "excerpt": "资源风险: 晚间环境窗口不稳定"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-04",
+          "timestamp": "MTG-CASE-04-04",
+          "evidence_label": "PJT-CASE-04-RISK-04 medium closed",
+          "excerpt": "质量风险: 客服高频异常 A 未及时复现"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "PJT-CASE-04-RISK-05",
+          "timestamp": "MTG-CASE-04-04",
+          "evidence_label": "PJT-CASE-04-RISK-05 medium tracking",
+          "excerpt": "协同风险: 客服高频异常 B 未及时复现"
+        }
+      ]
+    },
+    {
+      "metric_id": "late_night_manager_message_rate",
+      "dimension": "组织行为健康度",
+      "label": "管理者非常规时段消息占比",
+      "value": 0,
+      "numerator": 0,
+      "denominator": 7,
+      "unit": "ratio",
+      "window": "2026-04-13 ~ 2026-04-24",
+      "sample_scope": "Manager chat messages between 22:00 and 08:00",
+      "formula": {
+        "formula": "value = manager_messages_between_22_00_and_08_00 / manager_chat_messages",
+        "numerator_definition": "评估对象在 22:00-08:00 发送的聊天消息数",
+        "denominator_definition": "评估对象发送的聊天消息总数",
+        "value_rule": "ratio 保留 4 位小数；非常规时段消息逐条进入 anomalies"
+      },
+      "calculation": {
+        "expression": "0 / 7",
+        "numerator": 0,
+        "denominator": 7,
+        "value": 0
+      },
+      "status": "available",
+      "missing_fields": [],
+      "anomalies": [],
+      "evidence_refs": []
+    },
+    {
+      "metric_id": "high_pressure_language_sample_rate",
+      "dimension": "组织行为健康度",
+      "label": "高压推进语言样本占比",
+      "value": 0.4286,
+      "numerator": 3,
+      "denominator": 7,
+      "unit": "ratio",
+      "window": "2026-04-13 ~ 2026-04-24",
+      "sample_scope": "Rule-based keyword scan on manager chat messages",
+      "formula": {
+        "formula": "value = manager_messages_matching_pressure_keywords / manager_chat_messages",
+        "numerator_definition": "评估对象消息中命中 /必须|给我|不要等|不能继续|不到位|别留到/ 的样本数",
+        "denominator_definition": "评估对象发送的聊天消息总数",
+        "value_rule": "ratio 保留 4 位小数；该指标只表示规则命中样本，不直接等同组织行为结论"
+      },
+      "calculation": {
+        "expression": "3 / 7",
+        "numerator": 3,
+        "denominator": 7,
+        "value": 0.4286
+      },
+      "status": "available",
+      "missing_fields": [],
+      "anomalies": [
+        "2026-04-15 16:16 今天 5 点前必须统一一版口径，谁负责适配今天就定下来，不能继续空转。",
+        "2026-04-19 10:44 12 点前给我 go/no-go 输入，不要等到晚上才决定。",
+        "2026-04-16 17:11 本轮先不争论长期最优结构，字段冻结表今天必须出，先服务上线前执行口径。"
+      ],
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case04msg0007",
+          "timestamp": "2026-04-15 16:16",
+          "evidence_label": "陈昊 2026-04-15 16:16",
+          "excerpt": "今天 5 点前必须统一一版口径，谁负责适配今天就定下来，不能继续空转。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case04msg0014",
+          "timestamp": "2026-04-19 10:44",
+          "evidence_label": "陈昊 2026-04-19 10:44",
+          "excerpt": "12 点前给我 go/no-go 输入，不要等到晚上才决定。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case04msg0016",
+          "timestamp": "2026-04-16 17:11",
+          "evidence_label": "陈昊 2026-04-16 17:11",
+          "excerpt": "本轮先不争论长期最优结构，字段冻结表今天必须出，先服务上线前执行口径。"
+        }
+      ]
+    }
+  ],
+  "metric_quality_report": {
+    "sample_counts": {
+      "task_count": 20,
+      "risk_count": 10,
+      "meeting_count": 4,
+      "chat_message_count": 18,
+      "calendar_event_count": 4,
+      "contact_count": 8,
+      "base_history_count": 5
+    },
+    "metric_count": 15,
+    "available_count": 15,
+    "degraded_count": 0,
+    "no_sample_count": 0
+  },
+  "anomaly_samples": [
+    {
+      "metric_id": "open_risk_rate",
+      "detail": "PJT-CASE-04-RISK-02 tracking"
+    },
+    {
+      "metric_id": "open_risk_rate",
+      "detail": "PJT-CASE-04-RISK-05 tracking"
+    },
+    {
+      "metric_id": "open_risk_rate",
+      "detail": "PJT-CASE-04-RISK-06 tracking"
+    },
+    {
+      "metric_id": "open_risk_rate",
+      "detail": "PJT-CASE-04-RISK-07 open"
+    },
+    {
+      "metric_id": "open_risk_rate",
+      "detail": "PJT-CASE-04-RISK-08 tracking"
+    },
+    {
+      "metric_id": "open_risk_rate",
+      "detail": "PJT-CASE-04-RISK-09 open"
+    },
+    {
+      "metric_id": "repeated_risk_type_count",
+      "detail": "交付风险:3"
+    },
+    {
+      "metric_id": "high_pressure_language_sample_rate",
+      "detail": "2026-04-15 16:16 今天 5 点前必须统一一版口径，谁负责适配今天就定下来，不能继续空转。"
+    },
+    {
+      "metric_id": "high_pressure_language_sample_rate",
+      "detail": "2026-04-19 10:44 12 点前给我 go/no-go 输入，不要等到晚上才决定。"
+    },
+    {
+      "metric_id": "high_pressure_language_sample_rate",
+      "detail": "2026-04-16 17:11 本轮先不争论长期最优结构，字段冻结表今天必须出，先服务上线前执行口径。"
+    }
+  ]
+}

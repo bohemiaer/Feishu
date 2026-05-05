@@ -1,0 +1,17 @@
+{
+  "report_status": "blocked",
+  "report_title": "",
+  "manager_id": "MGR-CASE-05",
+  "project_id": "PJT-CASE-05",
+  "report_type": "weekly_report",
+  "summary": "Report generation is blocked because the capability assessment is not ready.",
+  "score_overview": [],
+  "key_evidence": [],
+  "risk_alerts": [],
+  "human_review_items": [],
+  "next_actions": [],
+  "base_writeback_payload": {},
+  "missing_upstream_results": [
+    "capability_assessor_result_ready"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "chats": [
+      {
+        "avatar": "https://s1-imfile.feishucdn.com/static-resource/v1/v3_00111_case05mainchat~?image_size=100x100&cut_type=&quality=&format=jpeg&sticker_format=.webp",
+        "chat_id": "oc_case05mainchat7a3b9c21",
+        "chat_mode": "group",
+        "chat_status": "normal",
+        "description": "智能家居ID项目主群，包含设计、结构、供应链、用研、品牌市场团队。",
+        "external": false,
+        "name": "智能家居ID项目主群",
+        "owner_id": "ou_case05zhoumutarget001",
+        "owner_id_type": "open_id",
+        "tenant_key": "1abd20e084069b82"
+      },
+      {
+        "avatar": "https://s1-imfile.feishucdn.com/static-resource/v1/v3_00111_case05idchat~?image_size=100x100&cut_type=&quality=&format=jpeg&sticker_format=.webp",
+        "chat_id": "oc_case05idchat4f8d2e15",
+        "chat_mode": "group",
+        "chat_status": "normal",
+        "description": "工业设计组内部群，聚焦设计评审、工艺讨论和供应商对接。",
+        "external": false,
+        "name": "工业设计组内部",
+        "owner_id": "ou_case05zhoumutarget001",
+        "owner_id_type": "open_id",
+        "tenant_key": "1abd20e084069b82"
+      },
+      {
+        "avatar": "https://s1-imfile.feishucdn.com/static-resource/v1/v3_00111_case05supplierchat~?image_size=100x100&cut_type=&quality=&format=jpeg&sticker_format=.webp",
+        "chat_id": "oc_case05supplierchat9c1b4f38",
+        "chat_mode": "group",
+        "chat_status": "normal",
+        "description": "供应商对接群，含模具厂、注塑厂、表面处理厂项目对接人。",
+        "external": true,
+        "name": "智能家居ID-供应商对接群",
+        "owner_id": "ou_case05zhoumutarget001",
+        "owner_id_type": "open_id",
+        "tenant_key": "1abd20e084069b82"
+      },
+      {
+        "avatar": "https://s1-imfile.feishucdn.com/static-resource/v1/v3_00111_case05thread~?image_size=100x100&cut_type=&quality=&format=jpeg&sticker_format=.webp",
+        "chat_id": "oc_case05lockthread2e7a5d91",
+        "chat_mode": "THREAD",
+        "chat_status": "normal",
+        "description": "智能门锁IPX6防水方案调整讨论线程。",
+        "external": false,
+        "name": "智能门锁防水等级变更方案讨论",
+        "owner_id": "ou_case05zhoumutarget001",
+        "owner_id_type": "open_id",
+        "tenant_key": "1abd20e084069b82"
+      }
+    ],
+    "has_more": false,
+    "page_token": "",
+    "total": 4
+  },
+  "_notice": {
+    "update": {
+      "current": "1.0.19",
+      "latest": "1.0.23",
+      "message": "lark-cli 1.0.23 available, current 1.0.19"
+    }
+  }
+}

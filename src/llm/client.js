@@ -1,6 +1,6 @@
 "use strict";
 
-const { loadLlmConfig } = require("./config");
+const { loadLlmConfig } = require("../config/llm");
 
 function stripCodeFences(text) {
   return String(text || "")

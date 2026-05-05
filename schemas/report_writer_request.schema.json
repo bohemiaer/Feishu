@@ -5,17 +5,66 @@
   "type": "object",
   "required": [
     "task_context",
+    "meeting_id",
+    "project_id",
+    "manager_id",
+    "manager_name",
+    "input_status",
+    "capability_assessor_result",
+    "expert_summaries",
+    "evaluation_plan",
+    "hard_metrics_result",
     "meeting_fact_pack",
-    "evidence_result",
-    "review_result",
-    "evaluation_result"
+    "human_review_items"
   ],
   "properties": {
     "task_context": { "type": "object" },
+    "meeting_id": { "type": "string" },
+    "project_id": { "type": "string" },
+    "manager_id": { "type": "string" },
+    "manager_name": { "type": "string" },
+    "input_status": {
+      "type": "object",
+      "required": [
+        "readiness",
+        "missing_upstream_results"
+      ],
+      "properties": {
+        "readiness": {
+          "type": "string",
+          "enum": ["ready", "blocked"]
+        },
+        "missing_upstream_results": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "capability_assessor_result": {
+      "type": ["object", "null"]
+    },
+    "expert_summaries": {
+      "type": "object",
+      "required": [
+        "management_review_summary",
+        "risk_behavior_summary",
+        "coordination_summary"
+      ],
+      "properties": {
+        "management_review_summary": { "type": "string" },
+        "risk_behavior_summary": { "type": "string" },
+        "coordination_summary": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "evaluation_plan": { "type": "object" },
+    "hard_metrics_result": { "type": "object" },
     "meeting_fact_pack": { "type": "object" },
-    "evidence_result": { "type": "object" },
-    "review_result": { "type": "object" },
-    "evaluation_result": { "type": "object" }
+    "human_review_items": {
+      "type": "array",
+      "items": { "type": "object" }
+    }
   },
   "additionalProperties": false
 }

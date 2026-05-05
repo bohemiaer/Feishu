@@ -1,0 +1,4 @@
+evaluation_id,project_id,manager_id,manager_name,meeting_id,evaluation_period,assessment_status,report_status,overall_score,overall_confidence,human_review_required,next_review_focus,top_strengths,top_improvement_areas,summary,source_task_id,generated_at
+EVAL-PJT-CASE-04-MTG-CASE-04-04,PJT-CASE-04,MGR-CASE-04,陈昊,MTG-CASE-04-04,2026-04-13 ~ 2026-04-24,degraded,degraded,6,0.68,true,任务管理流程一致性、高风险收口计划、跨阶段事项交接机制,"方向校准力：专项执行期间能持续聚焦核心目标并防止范围蔓延，复盘中能校验成果并推动机制沉淀。
+协同调度力：能主动澄清范围、推动解决依赖阻塞，且会议覆盖了必要干系人。","推进闭环力：会议行动项与任务表严重脱节（3 vs 9），闭环源头混乱；面对25%的延期率，复盘会议对部分遗留问题的闭环处理不够彻底。
+风险治理力：存在高等级风险未收口、整体未收口占比较高及同类风险复发的情况，风险治理闭环执行存在不足。",管理者陈昊在专项中展现出较强的方向校准和协同调度能力，能有效聚焦目标并推动解决阻塞。然而，在推进闭环和风险治理方面存在显著短板，表现为任务管理流程混乱、延期处理不彻底以及风险收口率低。组织行为方面观察到潜在风险信号，需结合语境进行人工复核。整体管理能力因闭环和治理环节的缺陷而受限。,FRONT-PJT-CASE-04-MTG-CASE-04-04,2026-05-04T16:24:39.054Z

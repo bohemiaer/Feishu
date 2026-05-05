@@ -5,35 +5,111 @@
   "type": "object",
   "required": [
     "task_context",
-    "meeting_fact_pack",
-    "evidence_result",
-    "review_result",
-    "derived_metrics"
+    "meeting_id",
+    "project_id",
+    "manager_id",
+    "manager_name",
+    "input_status",
+    "planner_slice",
+    "expert_results",
+    "hard_metrics",
+    "quality_context",
+    "score_dimensions"
   ],
   "properties": {
     "task_context": { "type": "object" },
-    "meeting_fact_pack": { "type": "object" },
-    "evidence_result": { "type": "object" },
-    "review_result": { "type": "object" },
-    "derived_metrics": {
+    "meeting_id": { "type": "string" },
+    "project_id": { "type": "string" },
+    "manager_id": { "type": "string" },
+    "manager_name": { "type": "string" },
+    "input_status": {
       "type": "object",
       "required": [
-        "supported_ratio",
-        "conflict_count",
-        "action_item_count",
-        "open_task_count",
-        "overdue_task_count",
-        "open_risk_count"
+        "readiness",
+        "missing_upstream_results",
+        "completeness_status"
       ],
       "properties": {
-        "supported_ratio": { "type": "number" },
-        "conflict_count": { "type": "integer" },
-        "action_item_count": { "type": "integer" },
-        "open_task_count": { "type": "integer" },
-        "overdue_task_count": { "type": "integer" },
-        "open_risk_count": { "type": "integer" }
+        "readiness": {
+          "type": "string",
+          "enum": ["ready", "blocked"]
+        },
+        "missing_upstream_results": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "completeness_status": {
+          "type": "string",
+          "enum": ["unknown", "ready", "degraded", "blocked"]
+        }
       },
       "additionalProperties": false
+    },
+    "planner_slice": { "type": "object" },
+    "expert_results": {
+      "type": "object",
+      "required": [
+        "management_reviewer_result",
+        "risk_behavior_auditor_result",
+        "coordination_lens_result"
+      ],
+      "properties": {
+        "management_reviewer_result": {
+          "type": ["object", "null"]
+        },
+        "risk_behavior_auditor_result": {
+          "type": ["object", "null"]
+        },
+        "coordination_lens_result": {
+          "type": ["object", "null"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "hard_metrics": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "quality_context": {
+      "type": "object",
+      "required": [
+        "data_quality_report",
+        "metric_quality_report",
+        "metric_gaps",
+        "anomaly_samples"
+      ],
+      "properties": {
+        "data_quality_report": {
+          "type": ["object", "null"]
+        },
+        "metric_quality_report": {
+          "type": ["object", "null"]
+        },
+        "metric_gaps": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "anomaly_samples": {
+          "type": "array",
+          "items": { "type": "object" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "score_dimensions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "方向校准力",
+          "推进闭环力",
+          "风险治理力",
+          "协同调度力",
+          "组织行为健康度"
+        ]
+      },
+      "minItems": 5,
+      "maxItems": 5
     }
   },
   "additionalProperties": false

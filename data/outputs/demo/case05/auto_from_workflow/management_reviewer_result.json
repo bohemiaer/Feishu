@@ -1,0 +1,158 @@
+{
+  "meeting_id": "MTG-CASE-05-01",
+  "project_id": "PJT-CASE-05",
+  "manager_id": "MGR-CASE-05",
+  "dimension_findings": [
+    {
+      "dimension": "方向校准力",
+      "finding_type": "strength",
+      "summary": "管理者在会议中对关键目标（外观冻结）和约束（成本、认证变更）做出了清晰判断，决策与项目文档一致。",
+      "evidence_refs": [
+        {
+          "source_type": "transcript",
+          "source_file": "04_meetings/minutes_transcript_case05.json",
+          "source_id": "mn_case05_0421_sync",
+          "timestamp": "MTG-CASE-05-01",
+          "excerpt": "会议前半段围绕智能音箱和扫地机器人外观冻结节点展开，确认本周必须完成。",
+          "evidence_note": "会议明确本周必须完成外观冻结，与项目阶段目标一致。"
+        },
+        {
+          "source_type": "transcript",
+          "source_file": "04_meetings/minutes_transcript_case05.json",
+          "source_id": "mn_case05_0421_sync",
+          "timestamp": "MTG-CASE-05-01",
+          "excerpt": "中段讨论智能门锁防水等级变更影响，确认需要重新调整外观开口设计。",
+          "evidence_note": "会议确认了认证变更（IPX4提升至IPX6）对设计的影响，并同步到文档，与项目风险描述一致。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "",
+          "source_id": "MTG-CASE-05-01",
+          "timestamp": "2026-04-21 09:55",
+          "excerpt": "先不要纠结成本，保证设计效果优先，预算问题我单独找财务沟通。",
+          "evidence_note": "管理者在成本上升15%的约束下，明确了“设计效果优先”的优先级判断。"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "",
+          "source_id": "meeting_decision_coverage_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "value = 1",
+          "evidence_note": "metric_id=meeting_decision_coverage_rate, formula=value = meetings_with_decision_trace / total_meetings, calculation.expression=3 / 3, value=1。表明会议决策留痕完整。"
+        }
+      ],
+      "confidence": 0.9,
+      "risk_tags": [],
+      "suggested_actions": []
+    },
+    {
+      "dimension": "推进闭环力",
+      "finding_type": "risk",
+      "summary": "任务关闭率偏低（0.4333），且当前会议行动项与任务表关联数量不一致，存在会后扩展任务或重复挂载的风险，可能影响闭环追踪。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "",
+          "source_id": "task_closure_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "value = 0.4333",
+          "evidence_note": "metric_id=task_closure_rate, formula=value = closed_tasks / total_tasks, calculation.expression=13 / 30, value=0.4333。表明大量任务尚未关闭。"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "会议行动项 3 条，任务表关联 4 条，存在会后扩展任务或重复挂载",
+          "evidence_note": "metric_id=current_meeting_action_task_rate, formula=value = min(tasks_linked_to_current_meeting, current_meeting_action_item_count) / current_meeting_action_item_count, calculation.expression=3 / 3, value=1。指标值为1，但anomalies指出关联任务数（4）大于行动项数（3），存在不一致。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "",
+          "source_id": "MTG-CASE-05-01",
+          "timestamp": "2026-04-21",
+          "excerpt": "action_items: [\"智能音箱概念设计稿输出\", \"扫地机器人概念设计稿输出\", \"智能门锁概念设计稿输出\"]",
+          "evidence_note": "当前会议记录的行动项为3条。"
+        },
+        {
+          "source_type": "project_context",
+          "source_file": "",
+          "source_id": "PJT-CASE-05",
+          "timestamp": "",
+          "excerpt": "all_tasks: [{\"id\": \"NO.501\", \"task_name\": \"智能音箱概念设计稿输出\", \"source_meeting_id\": \"MTG-CASE-05-01\"}, {\"id\": \"NO.502\", \"task_name\": \"扫地机器人概念设计稿输出\", \"source_meeting_id\": \"MTG-CASE-05-01\"}, {\"id\": \"NO.503\", \"task_name\": \"智能门锁概念设计稿输出\", \"source_meeting_id\": \"MTG-CASE-05-01\"}, {\"id\": \"NO.504\", \"task_name\": \"概念设计评审会组织\", \"source_meeting_id\": \"MTG-CASE-05-01\"}]",
+          "evidence_note": "任务表中关联到MTG-CASE-05-01的任务有4条，比会议行动项多出1条（概念设计评审会组织）。"
+        }
+      ],
+      "confidence": 0.8,
+      "risk_tags": [
+        "任务积压",
+        "行动项管理不一致"
+      ],
+      "suggested_actions": [
+        "复核任务NO.504（概念设计评审会组织）的来源，确认是否为会后扩展任务或错误关联。",
+        "检查低关闭率任务的状态，明确遗留项是否已清晰转入下一阶段或制定明确的关闭计划。"
+      ]
+    },
+    {
+      "dimension": "推进闭环力",
+      "finding_type": "strength",
+      "summary": "任务定义完整率和关闭质量代理指标均为1，表明已关闭的任务有明确的Owner、DDL和来源追溯，基础闭环管理良好。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "",
+          "source_id": "task_definition_completeness_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "value = 1",
+          "evidence_note": "metric_id=task_definition_completeness_rate, formula=value = tasks_with_task_name_owner_due_date / total_tasks, calculation.expression=30 / 30, value=1。表明所有任务都有名称、负责人和截止日期。"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "",
+          "source_id": "closed_task_quality_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "value = 1",
+          "evidence_note": "metric_id=closed_task_quality_rate, formula=value = qualified_closed_tasks / closed_tasks, calculation.expression=13 / 13, value=1。表明已关闭的任务都具备关闭时长、负责人、截止日期和来源会议追溯。"
+        }
+      ],
+      "confidence": 1,
+      "risk_tags": [],
+      "suggested_actions": []
+    }
+  ],
+  "human_review_items": [
+    {
+      "review_id": "review_action_task_mapping_MTG-CASE-05-01",
+      "reason": "会议行动项 3 条，任务表关联 4 条，存在会后扩展任务或重复挂载",
+      "severity": "medium",
+      "related_dimension": "推进闭环力",
+      "evidence_refs": [
+        {
+          "source_type": "current_meeting",
+          "source_file": "",
+          "source_id": "MTG-CASE-05-01",
+          "timestamp": "2026-04-21",
+          "excerpt": "action_items: [\"智能音箱概念设计稿输出\", \"扫地机器人概念设计稿输出\", \"智能门锁概念设计稿输出\"]",
+          "evidence_note": "当前会议记录的行动项为3条。"
+        },
+        {
+          "source_type": "project_context",
+          "source_file": "",
+          "source_id": "PJT-CASE-05",
+          "timestamp": "",
+          "excerpt": "all_tasks: [{\"id\": \"NO.501\", \"task_name\": \"智能音箱概念设计稿输出\", \"source_meeting_id\": \"MTG-CASE-05-01\"}, {\"id\": \"NO.502\", \"task_name\": \"扫地机器人概念设计稿输出\", \"source_meeting_id\": \"MTG-CASE-05-01\"}, {\"id\": \"NO.503\", \"task_name\": \"智能门锁概念设计稿输出\", \"source_meeting_id\": \"MTG-CASE-05-01\"}, {\"id\": \"NO.504\", \"task_name\": \"概念设计评审会组织\", \"source_meeting_id\": \"MTG-CASE-05-01\"}]",
+          "evidence_note": "任务表中关联到MTG-CASE-05-01的任务有4条，比会议行动项多出1条（概念设计评审会组织）。"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-21",
+          "excerpt": "会议行动项 3 条，任务表关联 4 条，存在会后扩展任务或重复挂载",
+          "evidence_note": "metric_id=current_meeting_action_task_rate，指标anomalies明确指出此不一致情况。"
+        }
+      ]
+    }
+  ],
+  "management_review_summary": "方向校准力表现良好，管理者在关键节点和约束上判断清晰，决策与项目目标一致。推进闭环力存在风险：任务关闭率偏低（0.4333），且当前会议行动项与任务表关联数量不一致（3 vs 4），需要复核是否存在会后扩展任务或重复挂载，这可能影响闭环追踪的准确性。已关闭任务的基础管理（定义、追溯）质量较高。"
+}

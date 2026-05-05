@@ -1,5 +1,6 @@
 "use strict";
 
+const fs = require("fs");
 const path = require("path");
 const { fileExists, readJson } = require("../shared/fs_utils");
 
@@ -70,6 +71,90 @@ const SOURCE_GROUPS = Object.freeze([
   }
 ]);
 
+function pickFirstExisting(bundleRoot, candidates) {
+  for (const relativePath of candidates) {
+    if (relativePath && fileExists(path.join(bundleRoot, relativePath))) {
+      return relativePath;
+    }
+  }
+  return candidates[0] || "";
+}
+
+function pickFirstMatching(bundleRoot, directory, pattern, fallbackRelativePath) {
+  const fallbackAbsolutePath = path.join(bundleRoot, fallbackRelativePath);
+  if (fileExists(fallbackAbsolutePath)) {
+    return fallbackRelativePath;
+  }
+
+  const absoluteDirectory = path.join(bundleRoot, directory);
+  if (!fileExists(absoluteDirectory)) {
+    return fallbackRelativePath;
+  }
+
+  const matchedFile = fs.readdirSync(absoluteDirectory).find((name) => pattern.test(name));
+  return matchedFile ? path.posix.join(directory.replace(/\\/g, "/"), matchedFile) : fallbackRelativePath;
+}
+
+function resolveSourceFiles(bundleRoot) {
+  return {
+    cloudDoc: pickFirstExisting(bundleRoot, [CASE04_SOURCE_FILES.cloudDoc]),
+    chatCatalog: pickFirstExisting(bundleRoot, [CASE04_SOURCE_FILES.chatCatalog]),
+    chatMessages: pickFirstExisting(bundleRoot, [CASE04_SOURCE_FILES.chatMessages]),
+    baseProjects: pickFirstExisting(bundleRoot, [CASE04_SOURCE_FILES.baseProjects]),
+    baseTasks: pickFirstExisting(bundleRoot, [CASE04_SOURCE_FILES.baseTasks]),
+    baseRisks: pickFirstExisting(bundleRoot, [CASE04_SOURCE_FILES.baseRisks]),
+    baseHistory: pickFirstMatching(
+      bundleRoot,
+      "03_task_risk_register",
+      /^base_.*history.*\.json$/i,
+      CASE04_SOURCE_FILES.baseHistory
+    ),
+    baseMeetings: pickFirstExisting(bundleRoot, [CASE04_SOURCE_FILES.baseMeetings]),
+    baseStatements: pickFirstMatching(
+      bundleRoot,
+      "04_meetings",
+      /^base_.*statements.*\.json$/i,
+      CASE04_SOURCE_FILES.baseStatements
+    ),
+    minutesSearch: pickFirstMatching(
+      bundleRoot,
+      "04_meetings",
+      /^minutes_search_.*\.json$/i,
+      CASE04_SOURCE_FILES.minutesSearch
+    ),
+    minutesTranscript: pickFirstMatching(
+      bundleRoot,
+      "04_meetings",
+      /^minutes_transcript_.*\.json$/i,
+      CASE04_SOURCE_FILES.minutesTranscript
+    ),
+    vcSearch: pickFirstMatching(
+      bundleRoot,
+      "04_meetings",
+      /^vc_search_.*\.json$/i,
+      CASE04_SOURCE_FILES.vcSearch
+    ),
+    managerProfile: pickFirstMatching(
+      bundleRoot,
+      "05_org_and_team",
+      /^contact_get_user_.*\.json$/i,
+      CASE04_SOURCE_FILES.managerProfile
+    ),
+    contacts: pickFirstMatching(
+      bundleRoot,
+      "05_org_and_team",
+      /^contact_search_.*\.json$/i,
+      CASE04_SOURCE_FILES.contacts
+    ),
+    calendar: pickFirstMatching(
+      bundleRoot,
+      "06_calendar",
+      /^calendar_.*\.json$/i,
+      CASE04_SOURCE_FILES.calendar
+    )
+  };
+}
+
 function parseArgsDate(value) {
   return String(value || "").replace(" ", "T");
 }
@@ -112,6 +197,42 @@ function htmlToTextLines(html) {
     .filter(Boolean);
 }
 
+function blocksToTextLines(blocks) {
+  const lines = [];
+
+  (blocks || []).forEach((block) => {
+    if (!block || typeof block !== "object") {
+      return;
+    }
+
+    if (block.type === "heading1") {
+      lines.push(`# ${block.text || ""}`.trim());
+      return;
+    }
+    if (block.type === "heading2") {
+      lines.push(`## ${block.text || ""}`.trim());
+      return;
+    }
+    if (block.type === "heading3") {
+      lines.push(`### ${block.text || ""}`.trim());
+      return;
+    }
+    if (block.type === "paragraph" && block.text) {
+      lines.push(String(block.text).trim());
+      return;
+    }
+    if ((block.type === "bullet" || block.type === "ordered") && Array.isArray(block.items)) {
+      block.items.forEach((item) => {
+        if (item) {
+          lines.push(`- ${String(item).trim()}`);
+        }
+      });
+    }
+  });
+
+  return lines.filter(Boolean);
+}
+
 function buildSectionMap(lines) {
   const sections = {};
   let current = "_root";
@@ -136,6 +257,18 @@ function extractBullets(lines) {
     .filter((line) => /^-\s*/.test(line))
     .map((line) => line.replace(/^-\s*/, "").trim())
     .filter(Boolean);
+}
+
+function extractHighlights(lines) {
+  const bulletHighlights = extractBullets(lines);
+  if (bulletHighlights.length > 0) {
+    return bulletHighlights;
+  }
+
+  return (lines || [])
+    .map((line) => String(line || "").trim())
+    .filter((line) => line && !/^#+\s+/.test(line))
+    .slice(0, 6);
 }
 
 function parseTableRecords(payload) {
@@ -235,55 +368,125 @@ function normalizeStatementRecord(record) {
   };
 }
 
-function buildProjectDocs(projectRecord, docPayload) {
-  const document = docPayload && docPayload.data && docPayload.data.document ? docPayload.data.document : {};
-  const lines = htmlToTextLines(document.content || "");
+function buildProjectDocs(projectRecord, docPayload, sourceFiles) {
+  const document =
+    docPayload && docPayload.data && docPayload.data.document
+      ? docPayload.data.document
+      : docPayload && docPayload.data
+        ? docPayload.data
+        : {};
+  const lines = document.content
+    ? htmlToTextLines(document.content)
+    : blocksToTextLines(document.blocks || []);
   const sections = buildSectionMap(lines);
-  const goalLines = extractBullets(sections["二、本轮范围与目标"] || []);
+  const goalLines = extractHighlights(
+    sections["二、本轮范围与目标"] ||
+    sections["核心目标"] ||
+    sections["_root"] ||
+    []
+  );
   const weeklyLines = []
     .concat(sections["六、周报 W1"] || [])
     .concat(sections["七、周报 W2"] || []);
+  const fallbackWeeklyLines = []
+    .concat(sections["当前阶段"] || [])
+    .concat(sections["已知风险"] || []);
   const reviewLines = []
     .concat(sections["七、周报 W2"] || [])
     .concat(sections["八、遗留与噪音"] || [])
     .concat(sections["九、当前状态"] || []);
+  const fallbackReviewLines = []
+    .concat(sections["已知风险"] || [])
+    .concat(sections["里程碑"] || [])
+    .concat(sections["当前阶段"] || []);
+  const resolvedWeeklyLines = weeklyLines.length > 0 ? weeklyLines : fallbackWeeklyLines;
+  const resolvedReviewLines = reviewLines.length > 0 ? reviewLines : fallbackReviewLines;
 
   return {
     main_doc: {
       doc_type: "main_doc",
-      doc_id: document.document_id || "",
-      revision_id: document.revision_id || 0,
-      title: "履约稳定性专项治理主文档",
+      doc_id: document.document_id || document.doc_id || "",
+      revision_id: document.revision_id || document.last_modified || 0,
+      title: document.title || "项目主文档",
       url: projectRecord && projectRecord.main_doc_url ? projectRecord.main_doc_url : "",
       content_text: lines.join("\n"),
       highlights: goalLines,
-      source_file: CASE04_SOURCE_FILES.cloudDoc
+      source_file: sourceFiles.cloudDoc
     },
     weekly_report: {
       doc_type: "weekly_report",
-      doc_id: `${document.document_id || "doc"}-weekly`,
-      revision_id: document.revision_id || 0,
-      title: "履约稳定性专项治理周报摘录",
+      doc_id: `${document.document_id || document.doc_id || "doc"}-weekly`,
+      revision_id: document.revision_id || document.last_modified || 0,
+      title: "项目阶段进展摘录",
       url: projectRecord && projectRecord.latest_weekly_report_url ? projectRecord.latest_weekly_report_url : "",
-      content_text: weeklyLines.join("\n"),
-      highlights: extractBullets(weeklyLines),
-      source_file: CASE04_SOURCE_FILES.cloudDoc
+      content_text: resolvedWeeklyLines.join("\n"),
+      highlights: extractHighlights(resolvedWeeklyLines),
+      source_file: sourceFiles.cloudDoc
     },
     review_doc: {
       doc_type: "review_doc",
-      doc_id: `${document.document_id || "doc"}-review`,
-      revision_id: document.revision_id || 0,
-      title: "履约稳定性专项治理阶段复盘摘录",
+      doc_id: `${document.document_id || document.doc_id || "doc"}-review`,
+      revision_id: document.revision_id || document.last_modified || 0,
+      title: "项目复盘摘录",
       url: projectRecord && projectRecord.latest_review_doc_url ? projectRecord.latest_review_doc_url : "",
-      content_text: reviewLines.join("\n"),
-      highlights: extractBullets(reviewLines),
-      source_file: CASE04_SOURCE_FILES.cloudDoc
+      content_text: resolvedReviewLines.join("\n"),
+      highlights: extractHighlights(resolvedReviewLines),
+      source_file: sourceFiles.cloudDoc
     }
   };
 }
 
-function buildSourceCatalog(bundleRoot) {
-  return SOURCE_GROUPS.map((source) => ({
+function buildSourceCatalog(bundleRoot, sourceFiles) {
+  const resolvedSourceGroups = [
+    {
+      name: "Base 记录",
+      required: true,
+      files: [
+        sourceFiles.baseProjects,
+        sourceFiles.baseTasks,
+        sourceFiles.baseRisks,
+        sourceFiles.baseMeetings,
+        sourceFiles.baseStatements
+      ]
+    },
+    {
+      name: "Base 历史",
+      required: false,
+      files: [sourceFiles.baseHistory]
+    },
+    {
+      name: "云文档",
+      required: true,
+      files: [sourceFiles.cloudDoc]
+    },
+    {
+      name: "聊天历史",
+      required: false,
+      files: [sourceFiles.chatCatalog, sourceFiles.chatMessages]
+    },
+    {
+      name: "会议/妙记",
+      required: true,
+      files: [
+        sourceFiles.baseMeetings,
+        sourceFiles.minutesSearch,
+        sourceFiles.minutesTranscript,
+        sourceFiles.vcSearch
+      ]
+    },
+    {
+      name: "日历",
+      required: false,
+      files: [sourceFiles.calendar]
+    },
+    {
+      name: "通讯录",
+      required: false,
+      files: [sourceFiles.managerProfile, sourceFiles.contacts]
+    }
+  ];
+
+  return resolvedSourceGroups.map((source) => ({
     source_name: source.name,
     required: source.required,
     files: source.files.map((relativePath) => ({
@@ -309,21 +512,22 @@ function selectCurrentMeetingId(meetings, requestedMeetingId) {
 }
 
 function loadCase04SampleBundle(bundleRoot, options = {}) {
-  const cloudDoc = loadJsonIfPresent(bundleRoot, CASE04_SOURCE_FILES.cloudDoc);
-  const chatCatalog = loadJsonIfPresent(bundleRoot, CASE04_SOURCE_FILES.chatCatalog);
-  const chatMessages = loadJsonIfPresent(bundleRoot, CASE04_SOURCE_FILES.chatMessages);
-  const baseProjects = loadJsonIfPresent(bundleRoot, CASE04_SOURCE_FILES.baseProjects);
-  const baseTasks = loadJsonIfPresent(bundleRoot, CASE04_SOURCE_FILES.baseTasks);
-  const baseRisks = loadJsonIfPresent(bundleRoot, CASE04_SOURCE_FILES.baseRisks);
-  const baseHistory = loadJsonIfPresent(bundleRoot, CASE04_SOURCE_FILES.baseHistory);
-  const baseMeetings = loadJsonIfPresent(bundleRoot, CASE04_SOURCE_FILES.baseMeetings);
-  const baseStatements = loadJsonIfPresent(bundleRoot, CASE04_SOURCE_FILES.baseStatements);
-  const minutesSearch = loadJsonIfPresent(bundleRoot, CASE04_SOURCE_FILES.minutesSearch);
-  const minutesTranscript = loadJsonIfPresent(bundleRoot, CASE04_SOURCE_FILES.minutesTranscript);
-  const vcSearch = loadJsonIfPresent(bundleRoot, CASE04_SOURCE_FILES.vcSearch);
-  const managerProfile = loadJsonIfPresent(bundleRoot, CASE04_SOURCE_FILES.managerProfile);
-  const contacts = loadJsonIfPresent(bundleRoot, CASE04_SOURCE_FILES.contacts);
-  const calendar = loadJsonIfPresent(bundleRoot, CASE04_SOURCE_FILES.calendar);
+  const sourceFiles = resolveSourceFiles(bundleRoot);
+  const cloudDoc = loadJsonIfPresent(bundleRoot, sourceFiles.cloudDoc);
+  const chatCatalog = loadJsonIfPresent(bundleRoot, sourceFiles.chatCatalog);
+  const chatMessages = loadJsonIfPresent(bundleRoot, sourceFiles.chatMessages);
+  const baseProjects = loadJsonIfPresent(bundleRoot, sourceFiles.baseProjects);
+  const baseTasks = loadJsonIfPresent(bundleRoot, sourceFiles.baseTasks);
+  const baseRisks = loadJsonIfPresent(bundleRoot, sourceFiles.baseRisks);
+  const baseHistory = loadJsonIfPresent(bundleRoot, sourceFiles.baseHistory);
+  const baseMeetings = loadJsonIfPresent(bundleRoot, sourceFiles.baseMeetings);
+  const baseStatements = loadJsonIfPresent(bundleRoot, sourceFiles.baseStatements);
+  const minutesSearch = loadJsonIfPresent(bundleRoot, sourceFiles.minutesSearch);
+  const minutesTranscript = loadJsonIfPresent(bundleRoot, sourceFiles.minutesTranscript);
+  const vcSearch = loadJsonIfPresent(bundleRoot, sourceFiles.vcSearch);
+  const managerProfile = loadJsonIfPresent(bundleRoot, sourceFiles.managerProfile);
+  const contacts = loadJsonIfPresent(bundleRoot, sourceFiles.contacts);
+  const calendar = loadJsonIfPresent(bundleRoot, sourceFiles.calendar);
 
   const projectRecords = parseTableRecords(baseProjects).map(normalizeProjectRecord);
   const taskRecords = parseTableRecords(baseTasks).map(normalizeTaskRecord);
@@ -349,7 +553,7 @@ function loadCase04SampleBundle(bundleRoot, options = {}) {
       ? minutesTranscript.data
       : null;
   const projectRecord = projectRecords[0] || null;
-  const projectDocs = buildProjectDocs(projectRecord, cloudDoc || {});
+  const projectDocs = buildProjectDocs(projectRecord, cloudDoc || {}, sourceFiles);
   const allContacts = [];
 
   if (managerProfile && managerProfile.data && managerProfile.data.user) {
@@ -369,13 +573,14 @@ function loadCase04SampleBundle(bundleRoot, options = {}) {
 
   return {
     bundle_root: bundleRoot,
+    source_files: sourceFiles,
     manifest: {
       case_id: "case_04",
       project_id: projectRecord ? projectRecord.project_id : "PJT-CASE-04",
       manager_id: projectRecord ? projectRecord.manager_id : "MGR-CASE-04",
       manager_name: projectRecord ? projectRecord.manager_name : "陈昊"
     },
-    source_catalog: buildSourceCatalog(bundleRoot),
+    source_catalog: buildSourceCatalog(bundleRoot, sourceFiles),
     project_record: projectRecord,
     tasks: taskRecords,
     risks: riskRecords,
