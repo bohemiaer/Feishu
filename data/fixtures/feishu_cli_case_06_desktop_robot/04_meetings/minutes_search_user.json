@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "has_more": false,
+    "items": [
+      {"minute_token": "mn_case06_0110_startup", "title": "项目启动会与技术方案评审", "owner": "周牧", "start_time": "2026-01-10 09:00", "end_time": "2026-01-10 12:00", "participants": ["周牧", "李明", "王芳", "张强", "刘洋"], "meeting_id": "MTG-CASE-06-01"},
+      {"minute_token": "mn_case06_0120_chip", "title": "芯片缺货与结构方案评审会", "owner": "周牧", "start_time": "2026-01-20 14:00", "end_time": "2026-01-20 17:00", "participants": ["周牧", "李明", "王芳", "刘洋"], "meeting_id": "MTG-CASE-06-02"},
+      {"minute_token": "mn_case06_0128_progress", "title": "结构方案进度跟进会", "owner": "周牧", "start_time": "2026-01-28 10:00", "end_time": "2026-01-28 11:00", "participants": ["周牧", "李明", "刘洋"], "meeting_id": "MTG-CASE-06-03"},
+      {"minute_token": "mn_case06_0205_hw", "title": "硬件方案与芯片替代评审会", "owner": "周牧", "start_time": "2026-02-05 10:00", "end_time": "2026-02-05 12:00", "participants": ["周牧", "王芳", "张强", "刘洋"], "meeting_id": "MTG-CASE-06-04"},
+      {"minute_token": "mn_case06_0212_color", "title": "外观设计颜色讨论会", "owner": "周牧", "start_time": "2026-02-12 14:00", "end_time": "2026-02-12 15:00", "participants": ["周牧", "李明", "王芳", "刘洋"], "meeting_id": "MTG-CASE-06-05"},
+      {"minute_token": "mn_case06_0215_design", "title": "外观设计初稿评审会", "owner": "周牧", "start_time": "2026-02-15 14:00", "end_time": "2026-02-15 17:00", "participants": ["周牧", "李明", "王芳", "张强", "刘洋"], "meeting_id": "MTG-CASE-06-06"},
+      {"minute_token": "mn_case06_0225_freeze", "title": "外观冻结与进度同步会", "owner": "周牧", "start_time": "2026-02-25 10:00", "end_time": "2026-02-25 12:00", "participants": ["周牧", "李明", "王芳", "张强", "刘洋"], "meeting_id": "MTG-CASE-06-07"},
+      {"minute_token": "mn_case06_0303_weekly", "title": "项目周例会", "owner": "周牧", "start_time": "2026-03-03 10:00", "end_time": "2026-03-03 11:00", "participants": ["周牧", "李明", "王芳", "张强", "刘洋"], "meeting_id": "MTG-CASE-06-08"},
+      {"minute_token": "mn_case06_0305_integration", "title": "联合调试启动会", "owner": "周牧", "start_time": "2026-03-05 14:00", "end_time": "2026-03-05 17:00", "participants": ["周牧", "王芳", "张强", "刘洋"], "meeting_id": "MTG-CASE-06-09"},
+      {"minute_token": "mn_case06_0315_supplier", "title": "手板供应商问题专题会", "owner": "周牧", "start_time": "2026-03-15 10:00", "end_time": "2026-03-15 12:00", "participants": ["周牧", "李明", "刘洋"], "meeting_id": "MTG-CASE-06-10"},
+      {"minute_token": "mn_case06_0320_negotiation", "title": "供应商价格谈判会", "owner": "周牧", "start_time": "2026-03-20 14:00", "end_time": "2026-03-20 15:00", "participants": ["周牧", "刘洋"], "meeting_id": "MTG-CASE-06-11"},
+      {"minute_token": "mn_case06_0326_test", "title": "手板功能测试结果评审会", "owner": "周牧", "start_time": "2026-03-26 09:00", "end_time": "2026-03-26 10:00", "participants": ["周牧", "李明", "王芳", "张强", "刘洋"], "meeting_id": "MTG-CASE-06-12"}
+    ],
+    "total": 12
+  }
+}

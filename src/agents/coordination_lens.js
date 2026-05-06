@@ -87,8 +87,15 @@ const SYSTEM_PROMPT = `
 
 硬性证据要求：
 - 你必须先为协同调度力计算 2-3 个 soft_indicators，再输出 findings
-- soft_indicators 是专家根据多条证据归纳出的软指标，不得复写 hard_metrics 中已有 metric_id
-- soft_indicators 的 score_basis 必须说明它如何结合事实与 hard_metrics
+- 你必须输出 4 个 PRD 对齐的 soft_indicators，indicator_id 固定为：
+  - cross_role_effective_response_time
+  - key_milestone_sync_rate
+  - dependency_clarification_time
+  - blocker_resolution_success_rate
+- soft_indicators 是专家根据多条证据归纳出的 PRD 指标结果，不得复写 hard_metrics 中已有 metric_id
+- 每个 soft_indicator 都要给出 value、unit、status、score
+- value 要尽量贴近 PRD 原始口径，例如 minutes、hours、days、ratio
+- score 是为了后续总评估而做的 0-100 归一化分
 - 每一条 dimension_findings 和 human_review_items 都必须至少包含 1 条 evidence_refs
 - evidence_refs 不得只写 ID；必须包含 source_type、source_file、source_id、timestamp、excerpt、evidence_note
 - excerpt 必须引用输入原文或硬指标计算表达式，不得写成二次总结
@@ -224,11 +231,16 @@ function normalizeFinding(item) {
 }
 
 function normalizeSoftIndicator(item) {
+  const score = typeof item.score === "number" ? Math.round(item.score) : 0;
+  const resolvedValue = item.value === undefined || item.value === null ? score : item.value;
   return {
     indicator_id: item.indicator_id || item.id || "",
     dimension: normalizeCoordinationDimension(item.dimension),
     label: item.label || item.name || "",
-    score: typeof item.score === "number" ? Math.round(item.score) : 0,
+    value: resolvedValue,
+    unit: item.unit || "score",
+    status: item.status || "degraded",
+    score,
     confidence: typeof item.confidence === "number" ? item.confidence : 0.7,
     score_basis: item.score_basis || item.summary || "",
     evidence_refs: ensureEvidenceRefs(

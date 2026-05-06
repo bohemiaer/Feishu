@@ -448,6 +448,8 @@ async function runEvaluationAutomation(options = {}) {
 
     const reportRequest = buildCase04ReportRequest({
       meetingFactPack: frontResult.meeting_fact_pack,
+      historyBundle: frontResult.history_bundle,
+      rawPayload: frontResult.raw_payload,
       hardMetricsResult,
       evaluationPlan,
       capabilityAssessorResult: capabilityResult,

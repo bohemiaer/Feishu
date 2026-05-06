@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "chats": [
+      {
+        "avatar": "https://s1-imfile.feishu.cn/static-resource/v1/case06chat~?image_size=100x100",
+        "chat_id": "oc_case06mainchat001",
+        "chat_mode": "group",
+        "chat_status": "normal",
+        "description": "桌面机器人产品研发项目沟通群，包含项目经理、结构工程师、硬件工程师、算法工程师、项目助理。",
+        "external": false,
+        "name": "桌面机器人项目群",
+        "owner_id": "ou_case06zhoumu001",
+        "owner_id_type": "open_id",
+        "tenant_key": "1abd20e084069b82"
+      }
+    ],
+    "has_more": false,
+    "page_token": "",
+    "total": 1
+  }
+}

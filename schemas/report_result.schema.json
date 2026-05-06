@@ -10,6 +10,7 @@
     "project_id",
     "report_type",
     "summary",
+    "indicator_results",
     "score_overview",
     "key_evidence",
     "risk_alerts",
@@ -31,6 +32,12 @@
       "enum": ["weekly_report"]
     },
     "summary": { "type": "string" },
+    "indicator_results": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/indicator_result"
+      }
+    },
     "score_overview": {
       "type": "array",
       "items": {
@@ -66,6 +73,56 @@
     }
   },
   "$defs": {
+    "indicator_result": {
+      "type": "object",
+      "required": [
+        "indicator_id",
+        "dimension",
+        "label",
+        "value",
+        "unit",
+        "status",
+        "source_type",
+        "source_id",
+        "evidence_refs"
+      ],
+      "properties": {
+        "indicator_id": { "type": "string" },
+        "dimension": { "type": "string" },
+        "label": { "type": "string" },
+        "value": {
+          "type": ["number", "string", "null"]
+        },
+        "unit": { "type": "string" },
+        "status": {
+          "type": "string",
+          "enum": ["available", "degraded", "no_sample", "missing"]
+        },
+        "source_type": {
+          "type": "string",
+          "enum": ["hard_metric", "soft_indicator"]
+        },
+        "source_id": { "type": "string" },
+        "score": {
+          "type": ["number", "null"]
+        },
+        "confidence": {
+          "type": ["number", "null"]
+        },
+        "calculation_basis": { "type": "string" },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
     "evidence_backed_report_item": {
       "type": "object",
       "required": [

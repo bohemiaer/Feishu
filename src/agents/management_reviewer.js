@@ -88,8 +88,16 @@ const SYSTEM_PROMPT = `
 要求：
 - 只使用输入中提供的事实、指标和证据引用
 - 你必须先为本职责范围内的维度计算 2-4 个 soft_indicators，再输出 dimension_findings
-- soft_indicators 是专家根据多条证据归纳出的软指标，不得复写 hard_metrics 中已有 metric_id
-- soft_indicators 要服务于后续总评估，评分范围 0-100，且 score_basis 必须说明它如何结合事实和硬指标
+- 你必须输出 4 个 PRD 对齐的 soft_indicators，indicator_id 固定为：
+  - judgment_basis_degree
+  - goal_correction_clarity
+  - priority_convergence_time
+  - direction_flip_flop_count
+- task_definition_completeness_rate、task_overdue_rate、task_closure_quality_rate 由硬指标层直接提供，不要在 soft_indicators 里重复生成
+- soft_indicators 是专家根据多条证据归纳出的 PRD 指标结果，不得复写 hard_metrics 中已有 metric_id
+- 每个 soft_indicator 都要给出 value、unit、status、score
+- value 要尽量贴近 PRD 原始口径，例如 ratio、hours、count
+- score 是为了后续总评估而做的 0-100 归一化分
 - 每一条 finding 和 human_review_item 都必须至少包含 1 条 evidence_refs
 - evidence_refs 不得只写 ID；必须包含 source_type、source_file、source_id、timestamp、excerpt、evidence_note
 - excerpt 必须是输入中的原文片段或硬指标计算表达式，不得改写成自己的总结
@@ -194,11 +202,16 @@ function ensureEvidenceRefs(refs, fallbackText) {
 }
 
 function normalizeSoftIndicator(item, fallbackDimension) {
+  const score = typeof item.score === "number" ? Math.round(item.score) : 0;
+  const resolvedValue = item.value === undefined || item.value === null ? score : item.value;
   return {
     indicator_id: item.indicator_id || item.id || "",
     dimension: normalizeManagementDimension(item.dimension, fallbackDimension),
     label: item.label || item.name || "",
-    score: typeof item.score === "number" ? Math.round(item.score) : 0,
+    value: resolvedValue,
+    unit: item.unit || "score",
+    status: item.status || "degraded",
+    score,
     confidence: typeof item.confidence === "number" ? item.confidence : 0.7,
     score_basis: item.score_basis || item.summary || "",
     evidence_refs: ensureEvidenceRefs(

@@ -1,0 +1,60 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "users": [
+      {
+        "open_id": "ou_case06zhoumu001",
+        "name": "周牧",
+        "en_name": "Mu Zhou",
+        "email": "zhoumu@company.com",
+        "department": "智能硬件研发部",
+        "title": "项目经理/工业设计负责人",
+        "employee_type": "正式员工",
+        "status": "activated"
+      },
+      {
+        "open_id": "ou_case06liming002",
+        "name": "李明",
+        "en_name": "Ming Li",
+        "email": "liming@company.com",
+        "department": "硬件研发部",
+        "title": "结构工程师",
+        "employee_type": "正式员工",
+        "status": "activated"
+      },
+      {
+        "open_id": "ou_case06wangfang003",
+        "name": "王芳",
+        "en_name": "Fang Wang",
+        "email": "wangfang@company.com",
+        "department": "硬件研发部",
+        "title": "硬件工程师",
+        "employee_type": "正式员工",
+        "status": "activated"
+      },
+      {
+        "open_id": "ou_case06zhangqiang004",
+        "name": "张强",
+        "en_name": "Qiang Zhang",
+        "email": "zhangqiang@company.com",
+        "department": "AI研发部",
+        "title": "算法工程师",
+        "employee_type": "正式员工",
+        "status": "activated"
+      },
+      {
+        "open_id": "ou_case06liuyang005",
+        "name": "刘洋",
+        "en_name": "Yang Liu",
+        "email": "liuyang@company.com",
+        "department": "智能硬件研发部",
+        "title": "项目经理助理",
+        "employee_type": "正式员工",
+        "status": "activated"
+      }
+    ],
+    "has_more": false,
+    "total": 5
+  }
+}

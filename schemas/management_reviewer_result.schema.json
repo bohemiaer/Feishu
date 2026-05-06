@@ -110,6 +110,9 @@
         "indicator_id",
         "dimension",
         "label",
+        "value",
+        "unit",
+        "status",
         "score",
         "confidence",
         "score_basis",
@@ -123,6 +126,14 @@
           "enum": ["方向校准力", "推进闭环力"]
         },
         "label": { "type": "string" },
+        "value": {
+          "type": ["number", "string", "null"]
+        },
+        "unit": { "type": "string" },
+        "status": {
+          "type": "string",
+          "enum": ["available", "degraded", "no_sample"]
+        },
         "score": {
           "type": "integer",
           "minimum": 0,

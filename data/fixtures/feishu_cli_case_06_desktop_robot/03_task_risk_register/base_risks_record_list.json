@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "data": [
+      ["NO.701", "PJT-CASE-06", "MTG-CASE-06-02", "供应链", "high", "核心芯片供应商产能不足，可能影响交期", "供应商Q1订单饱和，优先供应大客户", "立即启动替代方案评估，寻找备选供应商", "resolved"],
+      ["NO.702", "PJT-CASE-06", "MTG-CASE-06-03", "技术风险", "medium", "结构方案需要调整，电池仓和散热设计不合理", "初稿评审发现设计问题", "打回重做，调整电池仓和散热方案", "resolved"],
+      ["NO.703", "PJT-CASE-06", "MTG-CASE-06-04", "成本风险", "low", "替代芯片价格上浮15%，超出预算", "核心芯片缺货，替代方案成本增加", "向领导汇报成本增加事项，接受价格上浮", "resolved"],
+      ["NO.704", "PJT-CASE-06", "MTG-CASE-06-05", "技术风险", "medium", "外观设计颜色方案讨论无结论，方案悬而未决", "多次讨论未能达成一致", "继续讨论，收集更多参考方案", "open"],
+      ["NO.705", "PJT-CASE-06", "MTG-CASE-06-06", "技术风险", "medium", "硬件方案需要补充，部分接口设计不清晰", "评审中发现方案不完整", "补充接口设计和电源方案", "resolved"],
+      ["NO.706", "PJT-CASE-06", "MTG-CASE-06-09", "技术风险", "medium", "语音模块和主控芯片兼容性问题", "联合调试中发现接口不匹配", "调整接口电路，解决兼容性问题", "resolved"],
+      ["NO.707", "PJT-CASE-06", "MTG-CASE-06-10", "供应商质量", "high", "手板供应商CNC加工精度不够，尺寸有偏差", "供应商设备老旧，加工精度下降", "更换供应商，选择有高精度设备的厂商", "resolved"],
+      ["NO.708", "PJT-CASE-06", "MTG-CASE-06-11", "成本风险", "low", "新供应商价格贵30%，增加项目成本", "为保证质量选择高价供应商", "与供应商谈判，争取优惠", "resolved"],
+      ["NO.709", "PJT-CASE-06", "MTG-CASE-06-12", "技术风险", "medium", "电池续航时间低于设计指标15分钟", "当前电池容量无法满足完整工作日需求", "评估软件功耗优化和电池容量提升两个方案", "tracking"],
+      ["NO.710", "PJT-CASE-06", "MTG-CASE-06-10", "进度风险", "medium", "手板延期可能导致后续认证测试时间压缩", "供应商切换和返工导致进度延迟", "加快后续工作节奏，压缩非关键路径时间", "tracking"]
+    ],
+    "field_id_list": ["fldRiskID", "fldProjectID", "fldMeetingID", "fldRiskType", "fldRiskLevel", "fldRiskDescription", "fldTriggerReason", "fldSuggestedAction", "fldFollowupStatus"],
+    "fields": ["ID", "project_id", "meeting_id", "risk_type", "risk_level", "risk_description", "trigger_reason", "suggested_action", "followup_status"],
+    "has_more": false,
+    "query_context": {"field_scope": "all_fields", "record_scope": "all_records"},
+    "record_id_list": ["reccase06risk001", "reccase06risk002", "reccase06risk003", "reccase06risk004", "reccase06risk005", "reccase06risk006", "reccase06risk007", "reccase06risk008", "reccase06risk009", "reccase06risk010"]
+  }
+}

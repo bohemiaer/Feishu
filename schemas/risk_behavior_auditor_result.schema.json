@@ -152,6 +152,9 @@
         "indicator_id",
         "dimension",
         "label",
+        "value",
+        "unit",
+        "status",
         "score",
         "confidence",
         "score_basis",
@@ -165,6 +168,14 @@
           "enum": ["风险治理力", "组织行为健康度"]
         },
         "label": { "type": "string" },
+        "value": {
+          "type": ["number", "string", "null"]
+        },
+        "unit": { "type": "string" },
+        "status": {
+          "type": "string",
+          "enum": ["available", "degraded", "no_sample"]
+        },
         "score": {
           "type": "integer",
           "minimum": 0,

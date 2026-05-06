@@ -10,9 +10,13 @@ MVP 的核心业务闭环为：
 
 `会议/文档/Base 数据进入 -> 事实结构化 -> 动态评估规划 -> 多 Agent 分析 -> 人工复核 -> 报告生成 -> Base 回写 -> 下一周期持续观察`
 
-## 1.2 功能介绍
+当前仓库实现态说明：
 
-MVP 提供 6 类核心能力：
+- 当前 MVP 已经跑通离线评估主链路，能够从样例输入包生成事实包、硬指标、专家结论、综合评分、最终报告和观测产物。
+- 当前运行主形态是 `CLI/自动化触发 -> 工作流编排 -> 5 个 LLM Agent + 4 个规则/流程节点 -> JSON 成果物输出`，而不是完整在线 SaaS。
+- 真实飞书在线拉数、在线回写、持久任务队列和审批闭环仍属于上线前待补能力；现阶段以 `report_result`、`base_writeback_payload` 和观测文档作为主要交付物。
+
+## 1.2 功能介绍
 
 1. 数据接入与事实结构化
    - 读取 Base 中的项目、任务、风险、评估结果和报告状态。
@@ -66,12 +70,12 @@ MVP 只覆盖单项目、单负责人、单周期评估：
 
 核心指标：
 
-| 二级指标     | 判断口径                                                    | 数据源锚点                 | 阈值/提示                 |
-| :------- | :------------------------------------------------------ | :-------------------- | :-------------------- |
-| 判断依据度    | `1 - 无依据决策数 / 总决策数`。有具体数据、文档引用、历史决议或项目事实视为有依据。          | 主：会议/妙记、云文档、Base 记录；辅：聊天历史；校验：Base 历史。 | 无依据决策占比高时触发方向校准风险。    |
-| 目标纠偏清晰度  | 异常后 48 小时内的纠偏动作是否包含 owner 和 DDL，缺任一项视为模糊纠偏。             | 主：聊天历史、会议/妙记、Base 风险记录；辅：云文档复盘；校验：Base 历史。       | 模糊纠偏率高时触发人工复核。        |
-| 优先级收敛时长  | 从首次优先级分歧到形成统一口径并落盘的时间差。                                 | 主：聊天历史、会议/妙记；落盘校验：Base 记录、Base 历史；辅助：日历会议时间。  | v1 健康阈值建议为 24 小时以内。   |
-| 方向反复变更次数 | 同一 P0/P1 事项出现“推进 -> 暂缓/废弃 -> 重新推进”或“上线 -> 回滚 -> 再上”的次数。 | 主：Base 历史；辅：Base 记录、聊天历史、会议/妙记。  | 周期内超过 2 次视为严重方向稳定性风险。 |
+| 二级指标     | 判断口径                                                    | 数据源锚点                                        | 阈值/提示                 |
+| :------- | :------------------------------------------------------ | :------------------------------------------- | :-------------------- |
+| 判断依据度    | `1 - 无依据决策数 / 总决策数`。有具体数据、文档引用、历史决议或项目事实视为有依据。          | 主：会议/妙记、云文档、Base 记录；辅：聊天历史；校验：Base 历史。       | 无依据决策占比高时触发方向校准风险。    |
+| 目标纠偏清晰度  | 异常后 48 小时内的纠偏动作是否包含 owner 和 DDL，缺任一项视为模糊纠偏。             | 主：聊天历史、会议/妙记、Base 风险记录；辅：云文档复盘；校验：Base 历史。   | 模糊纠偏率高时触发人工复核。        |
+| 优先级收敛时长  | 从首次优先级分歧到形成统一口径并落盘的时间差。                                 | 主：聊天历史、会议/妙记；落盘校验：Base 记录、Base 历史；辅助：日历会议时间。 | v1 健康阈值建议为 24 小时以内。   |
+| 方向反复变更次数 | 同一 P0/P1 事项出现“推进 -> 暂缓/废弃 -> 重新推进”或“上线 -> 回滚 -> 再上”的次数。 | 主：Base 历史；辅：Base 记录、聊天历史、会议/妙记。              | 周期内超过 2 次视为严重方向稳定性风险。 |
 
 降级与复核：若只有会议文本、缺少 Base 或文档依据，则只输出低置信度观察；若管理者发言与项目事实冲突，或同一事项多次反向调整，进入人工复核。
 
@@ -85,11 +89,11 @@ MVP 只覆盖单项目、单负责人、单周期评估：
 
 核心指标：
 
-| 二级指标    | 判断口径                                              | 数据源锚点                         | 阈值版本                         |
-| :------ | :------------------------------------------------ | :---------------------------- | :--------------------------- |
+| 二级指标    | 判断口径                                              | 数据源锚点                                          | 阈值版本                         |
+| :------ | :------------------------------------------------ | :--------------------------------------------- | :--------------------------- |
 | 任务定义完整率 | 应执行事项中，已沉淀为任务且同时具备 owner、DDL、任务描述的比例；抢资源事项还需有优先级。 | 主：Base 任务记录；辅：会议/妙记 Action Item、云文档周报；补充：聊天历史。 | v1：>=85% 好，60%-85% 中，<60% 坏。 |
-| 任务延期率   | 月内逾期任务数 / 月内应完成任务总数，仅统计有明确 DDL 的任务。               | 主：Base 任务记录；校验：Base 历史；辅：云文档周报、会议/妙记。 | v1：<10% 好，10%-25% 中，>25% 坏。  |
-| 任务关闭质量  | 已关闭任务中，具备交付结果、验收结论、关闭留痕三项证据的任务占比。                 | 主：Base 任务记录与 Base 历史；辅：云文档周报/复盘、会议/妙记。   | v1：>=80% 好，60%-80% 中，<60% 坏。 |
+| 任务延期率   | 月内逾期任务数 / 月内应完成任务总数，仅统计有明确 DDL 的任务。               | 主：Base 任务记录；校验：Base 历史；辅：云文档周报、会议/妙记。          | v1：<10% 好，10%-25% 中，>25% 坏。  |
+| 任务关闭质量  | 已关闭任务中，具备交付结果、验收结论、关闭留痕三项证据的任务占比。                 | 主：Base 任务记录与 Base 历史；辅：云文档周报/复盘、会议/妙记。         | v1：>=80% 好，60%-80% 中，<60% 坏。 |
 
 降级与复核：无结构化任务表时，降级为会议/周报抽样统计并标注置信度；关闭任务数量高但验收证据不足、同一任务反复开关、纪要事项显著多于任务表时触发人工复核。
 
@@ -103,12 +107,12 @@ MVP 只覆盖单项目、单负责人、单周期评估：
 
 核心指标：
 
-| 二级指标       | 判断口径                                      | 数据源锚点                                 | 阈值版本                               |
-| :--------- | :---------------------------------------- | :------------------------------------ | :--------------------------------- |
-| 高等级风险识别覆盖率 | 实际发生的 P0/P1 高影响问题中，事前至少 24 小时被建档或明确提及的比例。 | 主：Base 风险记录、云文档复盘/周报；辅：会议/妙记、聊天历史；校验：Base 历史。                | v0.1：>=80% 健康，50%-80% 中等，<50% 风险高。 |
-| 缓释动作落地率    | 生成并有实质推进记录的缓释动作数 / 已识别风险总数。               | 主：Base 风险记录与关联任务记录；校验：Base 历史；辅：会议/妙记 Action Item、聊天历史。             | v0.1：>=85% 健康，60%-85% 中等，<60% 风险高。 |
-| 风险升级及时率    | 满足 SLA 条件的阻塞事项中，在规定时间内完成升级的比例。            | 主：Base 风险记录、聊天历史风险升级群；辅：会议/妙记、云文档升级标记；时间校验：Base 历史。 | v0.1：>=90% 健康，70%-90% 中等，<70% 需关注。 |
-| 同类风险复发率    | 周期内被归因为同类根因复发的风险占比，反向指标。                  | 主：Base 风险记录、云文档复盘/周报；辅：会议/妙记；历史校验：Base 历史。                 | v0.1：<10% 健康，10%-25% 中等，>25% 需关注。  |
+| 二级指标       | 判断口径                                      | 数据源锚点                                                   | 阈值版本                               |
+| :--------- | :---------------------------------------- | :------------------------------------------------------ | :--------------------------------- |
+| 高等级风险识别覆盖率 | 实际发生的 P0/P1 高影响问题中，事前至少 24 小时被建档或明确提及的比例。 | 主：Base 风险记录、云文档复盘/周报；辅：会议/妙记、聊天历史；校验：Base 历史。           | v0.1：>=80% 健康，50%-80% 中等，<50% 风险高。 |
+| 缓释动作落地率    | 生成并有实质推进记录的缓释动作数 / 已识别风险总数。               | 主：Base 风险记录与关联任务记录；校验：Base 历史；辅：会议/妙记 Action Item、聊天历史。 | v0.1：>=85% 健康，60%-85% 中等，<60% 风险高。 |
+| 风险升级及时率    | 满足 SLA 条件的阻塞事项中，在规定时间内完成升级的比例。            | 主：Base 风险记录、聊天历史风险升级群；辅：会议/妙记、云文档升级标记；时间校验：Base 历史。     | v0.1：>=90% 健康，70%-90% 中等，<70% 需关注。 |
+| 同类风险复发率    | 周期内被归因为同类根因复发的风险占比，反向指标。                  | 主：Base 风险记录、云文档复盘/周报；辅：会议/妙记；历史校验：Base 历史。              | v0.1：<10% 健康，10%-25% 中等，>25% 需关注。  |
 
 降级与复核：周期内没有高影响问题时不计算覆盖率，只输出暂无样本；风险话术模糊且匹配置信度低于 0.7 时判为未识别；重大事故复盘大量外部归因、缓释任务大面积烂尾、出现“先压下来”等掩饰性指令时触发人工复核。
 
@@ -122,12 +126,12 @@ MVP 只覆盖单项目、单负责人、单周期评估：
 
 核心指标：
 
-| 二级指标      | 判断口径                                             | 数据源锚点                  | 阈值版本                                          |
-| :-------- | :----------------------------------------------- | :--------------------- | :-------------------------------------------- |
-| 跨角色有效响应时长 | 从跨团队 @、明确求助、依赖提起到首次有效响应的平均时长；有效响应需包含接收、路径或下一步动作。 | 主：聊天历史；辅：会议/妙记、Base 记录；必要干系人校验：通讯录。 | 紧急事项 <=30 分钟好，30-60 分钟中，>60 分钟坏；常规事项 <=4 小时好。 |
-| 关键里程碑同步率  | 需求冻结、排期变更、责任调整、风险升级等事项中，已同步必要干系人且形成下一步的比例。       | 主：云文档、会议/妙记、日历；辅：聊天历史、Base 记录；干系人校验：通讯录。   | v1：>=90% 好，75%-90% 中，<75% 坏。                  |
-| 依赖澄清时长    | 从首次暴露依赖/边界/责任不清，到明确责任方、配合方和下一步动作的平均时间。           | 主：聊天历史、会议/妙记；落盘校验：Base 记录、Base 历史；干系人校验：通讯录。       | v1：<=2 天好，2-4 天中，>4 天坏。                       |
-| 协同阻塞清理成功率 | 跨团队阻塞事项中，在窗口期内解除阻塞，或形成相关方确认的解决路径并进入执行的比例。        | 主：Base 风险/任务记录；校验：Base 历史；辅：聊天历史、会议/妙记、云文档复盘。     | v1：>=85% 好，60%-85% 中，<60% 坏。                  |
+| 二级指标      | 判断口径                                             | 数据源锚点                                         | 阈值版本                                          |
+| :-------- | :----------------------------------------------- | :-------------------------------------------- | :-------------------------------------------- |
+| 跨角色有效响应时长 | 从跨团队 @、明确求助、依赖提起到首次有效响应的平均时长；有效响应需包含接收、路径或下一步动作。 | 主：聊天历史；辅：会议/妙记、Base 记录；必要干系人校验：通讯录。           | 紧急事项 <=30 分钟好，30-60 分钟中，>60 分钟坏；常规事项 <=4 小时好。 |
+| 关键里程碑同步率  | 需求冻结、排期变更、责任调整、风险升级等事项中，已同步必要干系人且形成下一步的比例。       | 主：云文档、会议/妙记、日历；辅：聊天历史、Base 记录；干系人校验：通讯录。      | v1：>=90% 好，75%-90% 中，<75% 坏。                  |
+| 依赖澄清时长    | 从首次暴露依赖/边界/责任不清，到明确责任方、配合方和下一步动作的平均时间。           | 主：聊天历史、会议/妙记；落盘校验：Base 记录、Base 历史；干系人校验：通讯录。  | v1：<=2 天好，2-4 天中，>4 天坏。                       |
+| 协同阻塞清理成功率 | 跨团队阻塞事项中，在窗口期内解除阻塞，或形成相关方确认的解决路径并进入执行的比例。        | 主：Base 风险/任务记录；校验：Base 历史；辅：聊天历史、会议/妙记、云文档复盘。 | v1：>=85% 好，60%-85% 中，<60% 坏。                  |
 
 降级与复核：无结构化阻塞标签时，降级为升级记录和会议结论抽样统计；只有“收到/已读”但没有实质动作、必要干系人范围有争议、阻塞关闭缺少解除证据时触发人工复核。
 
@@ -141,13 +145,13 @@ MVP 只覆盖单项目、单负责人、单周期评估：
 
 核心指标：
 
-| 二级指标      | 判断口径                                               | 数据源锚点                  | 阈值版本                         |
-| :-------- | :------------------------------------------------- | :--------------------- | :--------------------------- |
-| 高风险语言触发频次 | 命中公开羞辱、甩锅免责、威胁式压迫、人身攻击等分类库的次数。                     | 主：聊天历史、会议/妙记；辅：云文档纪要。             | 0 次健康，1-2 次观察，>=3 次需人工复核。    |
-| 公开负向反馈占比  | 公开场景下针对具体个人的负向评价消息数 / 公开场景下全部反馈消息数。                | 主：聊天历史、会议/妙记；场景校验：日历参与人、通讯录。    | <20% 健康，20%-40% 中等，>40% 需关注。 |
+| 二级指标      | 判断口径                                               | 数据源锚点                                     | 阈值版本                         |
+| :-------- | :------------------------------------------------- | :---------------------------------------- | :--------------------------- |
+| 高风险语言触发频次 | 命中公开羞辱、甩锅免责、威胁式压迫、人身攻击等分类库的次数。                     | 主：聊天历史、会议/妙记；辅：云文档纪要。                     | 0 次健康，1-2 次观察，>=3 次需人工复核。    |
+| 公开负向反馈占比  | 公开场景下针对具体个人的负向评价消息数 / 公开场景下全部反馈消息数。                | 主：聊天历史、会议/妙记；场景校验：日历参与人、通讯录。              | <20% 健康，20%-40% 中等，>40% 需关注。 |
 | 深夜高压催办占比  | 22:00 至次日 08:00 及周末非发版日的催办消息数 / 全部催办消息数。           | 主：聊天历史时间戳；辅：日历、Base 任务 DDL；必要时用会议/妙记补上下文。 | <10% 健康，10%-25% 中等，>25% 风险高。 |
-| 重复催办率     | 同一事项在未到 DDL 且无信息增量情况下的重复催问次数 / 该事项总催问次数。           | 主：聊天历史；校验：Base 任务记录、Base 历史；辅：会议/妙记。         | <15% 健康，15%-30% 中等，>30% 需关注。 |
-| 会议空转率     | 缺失结论/Next Step、Owner、DDL 中任意两项的会议数 / 管理者发起的主题会议总数。 | 主：会议/妙记、云文档纪要；辅：日历、Base 任务记录。     | <10% 健康，10%-25% 中等，>25% 风险高。 |
+| 重复催办率     | 同一事项在未到 DDL 且无信息增量情况下的重复催问次数 / 该事项总催问次数。           | 主：聊天历史；校验：Base 任务记录、Base 历史；辅：会议/妙记。      | <15% 健康，15%-30% 中等，>30% 需关注。 |
+| 会议空转率     | 缺失结论/Next Step、Owner、DDL 中任意两项的会议数 / 管理者发起的主题会议总数。 | 主：会议/妙记、云文档纪要；辅：日历、Base 任务记录。             | <10% 健康，10%-25% 中等，>25% 风险高。 |
 
 降级与复核：文本缺上下文时标记低置信度，不计入强结论；头脑风暴、信息同步、茶话会等明确非决策会议可豁免会议空转统计；出现人身攻击、合规红线、连续深夜高压催办、单人被持续公开负向反馈时必须人工复核。
 
@@ -161,42 +165,28 @@ MVP 只覆盖单项目、单负责人、单周期评估：
 
 ```text
                     ┌──────────────────────────┐
-                    │ Human / Admin            │
-                    │ 选择评估对象、周期、项目范围 │
+                    │ Trigger Layer            │
+                    │ CLI / Automation / Bot   │
                     └────────────┬─────────────┘
                                  ↓
                     ┌──────────────────────────┐
-                    │ Master Agent /           │
-                    │ Orchestrator              │
-                    │ 接任务/查输入/调节点/收口   │
+                    │ Evaluation Automation     │
+                    │ Master Orchestrator       │
                     └────────────┬─────────────┘
                                  ↓
                     ┌──────────────────────────┐
-                    │ Input Completeness Check  │
-                    │ 文件齐备性/权限/样本量检查 │
-                    └────────────┬─────────────┘
-                                 ↓
-        ┌────────────────────────┼────────────────────────┐
-        ↓                        ↓                        ↓
-┌────────────────┐      ┌────────────────┐      ┌────────────────┐
-│ Base 数据       │      │ 云文档/会议纪要  │      │ 聊天记录样本     │
-│ 项目/任务/风险   │      │ 周报/复盘/评审   │      │ 辅助证据        │
-└───────┬────────┘      └───────┬────────┘      └───────┬────────┘
-        └───────────────────────┼───────────────────────┘
-                                ↓
-                    ┌──────────────────────────┐
-                    │ Data Collector            │
-                    │ 拉数/清洗/事实包/历史包     │
+                    │ Front Pipeline            │
+                    │ 输入检查/事实包/质量报告    │
                     └────────────┬─────────────┘
                                  ↓
                     ┌──────────────────────────┐
                     │ Hard Metrics Engine       │
-                    │ DDL/延期/关闭/响应/频次硬算 │
+                    │ 15 个硬指标确定性计算      │
                     └────────────┬─────────────┘
                                  ↓
                     ┌──────────────────────────┐
                     │ Evaluation Planner        │
-                    │ 维度规划/分支/复核策略      │
+                    │ 本轮重点/复核规则/执行计划  │
                     └────────────┬─────────────┘
                                  ↓
        ┌─────────────────────────┼─────────────────────────┐
@@ -204,25 +194,30 @@ MVP 只覆盖单项目、单负责人、单周期评估：
 ┌────────────────────┐  ┌────────────────────┐  ┌────────────────────┐
 │ Management Reviewer │  │ Risk & Behavior     │  │ Coordination Lens   │
 │ 方向校准/推进闭环    │  │ Auditor 风险/行为    │  │ 协同调度专项判断      │
+│ soft indicators     │  │ soft indicators     │  │ soft indicators     │
 └─────────┬──────────┘  └─────────┬──────────┘  └─────────┬──────────┘
           └───────────────────────┼───────────────────────┘
                                   ↓
                     ┌──────────────────────────┐
                     │ Capability Assessor       │
-                    │ 五维汇总/置信度/风险标签    │
+                    │ 硬指标 + 软指标五维汇总    │
                     └────────────┬─────────────┘
                                  ↓
                     ┌──────────────────────────┐
-                    │ Master Agent /            │
-                    │ Orchestrator 汇总收口       │
-                    │ 触发人审/报告/回写          │
+                    │ Report Writer             │
+                    │ 20 个 PRD 指标结果输出     │
                     └───────┬──────────┬───────┘
                             ↓          ↓
-                 ┌──────────────┐  ┌────────────────────┐
-                 │ Report Writer │  │ Human Review / Base │
-                 │ 摘要/完整/预警 │  │ 复核/审批/状态回写    │
-                 └──────────────┘  └────────────────────┘
+             ┌────────────────────┐  ┌────────────────────────┐
+             │ report_result.json │  │ automation_summary /   │
+             │ base_writeback      │  │ observability outputs  │
+             └────────────────────┘  └────────────────────────┘
 ```
+
+当前实现上，系统共包含 9 个主节点，其中 5 个是真正调用大模型的 Agent：
+
+- 流程/规则节点：Evaluation Automation、Front Pipeline、Hard Metrics Engine、Evaluation Planner。
+- LLM Agent：Management Reviewer、Risk & Behavior Auditor、Coordination Lens、Capability Assessor、Report Writer。
 
 # 2. IO 设计
 
@@ -246,14 +241,14 @@ MVP 输入源收敛为 7 类：
 
 ### 2.1.2 数据源清单
 
-| 数据源      | MVP 输入内容                         | 用途                   |
-| :------- | :------------------------------- | :------------------- |
-| Base 记录 | 项目、任务、风险、会议、Statements 等表的当前记录。        | 硬指标计算、评估对象定位、任务/风险/会议事实。   |
-| Base 历史 | 记录字段变更、状态流转、owner/DDL 调整、reopen/关闭轨迹。 | 状态变更校验、方向反复、延期和关闭质量判定。 |
-| 云文档      | 需求文档、项目方案、周报、复盘、评审结论、计划变更记录。     | 依据溯源、结果校验、风险根因和历史复核。 |
-| 聊天历史   | 项目群、部门群、风险升级群、关键决策讨论串、线下补录线索。           | 响应时长、公开反馈、催办、升级证据、优先级收敛。   |
-| 会议/妙记  | 会议检索结果、会议纪要、妙记摘要、转写片段、Action Item、参会人。  | 方向校准、闭环沉淀、协同和行为审计。   |
-| 日历      | 会议事件、时间、组织者、参会人、会议室、重复日程和关键窗口。 | 会议样本校验、必要干系人同步、非常规时段识别。 |
+| 数据源     | MVP 输入内容                               | 用途                          |
+| :------ | :------------------------------------- | :-------------------------- |
+| Base 记录 | 项目、任务、风险、会议、Statements 等表的当前记录。        | 硬指标计算、评估对象定位、任务/风险/会议事实。    |
+| Base 历史 | 记录字段变更、状态流转、owner/DDL 调整、reopen/关闭轨迹。  | 状态变更校验、方向反复、延期和关闭质量判定。      |
+| 云文档     | 需求文档、项目方案、周报、复盘、评审结论、计划变更记录。           | 依据溯源、结果校验、风险根因和历史复核。        |
+| 聊天历史    | 项目群、部门群、风险升级群、关键决策讨论串、线下补录线索。          | 响应时长、公开反馈、催办、升级证据、优先级收敛。    |
+| 会议/妙记   | 会议检索结果、会议纪要、妙记摘要、转写片段、Action Item、参会人。 | 方向校准、闭环沉淀、协同和行为审计。          |
+| 日历      | 会议事件、时间、组织者、参会人、会议室、重复日程和关键窗口。         | 会议样本校验、必要干系人同步、非常规时段识别。     |
 | 通讯录     | 用户、部门、上下级、项目角色、跨部门协作关系。                | RACI 判断、协同边界、必要同步范围和公开场景识别。 |
 
 ### 2.1.3 标准输入对象
@@ -285,7 +280,12 @@ MVP 输入源收敛为 7 类：
 
 ## 2.2 输出内容
 
-MVP 输出 4 类产物：
+MVP 输出分为两层：
+
+- 面向业务的最终交付：单次评估结果、周期评估报告、风险提示、人工复核项。
+- 面向系统运行的中间成果物：`task_request`、`input_completeness_report`、`orchestration_state`、`raw_payload`、`history_bundle`、`meeting_fact_pack`、`data_quality_report`、`hard_metrics_result`、`evaluation_plan`、各 Agent result、`capability_assessor_result`、`report_result`、`automation_summary`、`observability`。
+
+其中 `report_result` 是当前 MVP 最终交付的主产物，必须覆盖 PRD 五个维度下全部指标，并给出每个指标的具体数值和证据源。
 
 ### 2.2.1 单次评估结果
 
@@ -307,6 +307,22 @@ MVP 输出 4 类产物：
       "recommended_actions": []
     }
   ],
+  "indicator_results": [
+    {
+      "dimension": "方向校准力",
+      "indicator_id": "judgment_basis_degree",
+      "indicator_name": "判断依据度",
+      "value": 0.9444,
+      "unit": "ratio",
+      "status": "available/degraded/no_sample/missing",
+      "score": 88,
+      "confidence": 0.84,
+      "evidence_refs": [
+        "04_meetings/base_statements_record_list.json#statement_id=stmt_001",
+        "02_chats/im_messages_search_user.json#message_id=om_xxx"
+      ]
+    }
+  ],
   "risk_flags": [],
   "human_review_items": [],
   "ai_replacement_risk_observation": {
@@ -316,12 +332,20 @@ MVP 输出 4 类产物：
 }
 ```
 
+补充要求：
+
+- `dimension_findings` 用于表达维度结论。
+- `indicator_results` 用于表达 PRD 指标层结果，当前要求覆盖 20 个指标。
+- 每个指标必须至少包含 `value`、`unit`、`status` 和 `evidence_refs`；软指标额外建议包含 `score` 和 `confidence`。
+- 当模型正文生成失败时，系统仍需保底输出 `indicator_results` 和基础证据链，不得因为报告文案失败而丢失指标结果。
+
 ### 2.2.2 周期评估报告
 
 用于每周或指定周期向 HRBP、PMO、上级管理者输出。报告包含：
 
 - 管理者和项目基本信息。
 - 五维评分和趋势箭头。
+- 五个维度下全部指标的数值表、状态和证据源摘要。
 - 关键证据摘要。
 - 本周期高风险行为或管理风险。
 - 与上周期相比的改善或恶化项。
@@ -401,7 +425,7 @@ MVP 支持 4 类触发：
 5. 已为每个结论关联关键证据、置信度、风险标签和建议动作。
 6. 已生成至少一类报告：单次评估结果、周期评估报告或风险提示。
 7. 已处理所有命中规则的人工复核项，或明确等待人工审批。
-8. 已将评估结果、复核状态、报告记录和反馈入口回写至 Base。
+8. 已生成 `report_result` 和可消费的 `base_writeback_payload`；若在线回写链路可用，则需完成 Base 回写。
 
 ## 3.4 失败标准
 
@@ -410,7 +434,7 @@ MVP 支持 4 类触发：
 1. 无法获取必要数据源，导致核心结论不成立。
 2. 证据不足但仍输出高确定性结论。
 3. 未完成历史复核却直接输出高风险定性结论。
-4. 未完成 Base 回写，导致流程中断。
+4. 未生成最终 `report_result` 或可回写 payload，导致流程中断。
 5. 报告缺少依据说明、证据引用错误或引用对象错配。
 6. 越权访问未授权数据。
 7. 超过任务时限仍未进入可交付、降级或待审批状态。
@@ -443,19 +467,19 @@ MVP 支持 4 类触发：
 
 状态说明：
 
-| 状态    | 进入条件                        | 退出条件                                                                   |
-| :---- | :-------------------------- | :--------------------------------------------------------------------- |
-| 待命    | 无运行任务。                      | 收到事件、周期、人工或风险触发。                                                       |
-| 接收任务  | Master Agent 已获得评估对象、项目、周期。 | 形成 `orchestration_state`。                                              |
-| 输入检查  | 已收到评估任务。                    | 生成 `input_completeness_report`，确认权限、文件和样本量。                            |
-| 拉数    | 输入检查通过，或允许降级运行。             | `raw_payload`、`meeting_fact_pack` 和 `history_bundle` 生成完成。             |
-| 硬指标计算 | 事实包和 Base 快照可用。             | 生成 `hard_metrics_result`。                                              |
-| 规划    | 事实包、历史包和硬指标结果可用。            | 生成 `evaluation_focus` 和 `execution_plan`。                              |
-| 专家分析  | 评估计划可用。                     | 生成专家 Agent 的初步 `dimension_findings`、`risk_flags`、`human_review_items`。 |
-| 汇总收口  | 专家输出完成。                     | Master Agent 汇总状态，Capability Assessor 形成综合结论。                          |
-| 自检    | 综合输出完成。                     | JSON 合法、证据齐全、置信度和敏感规则检查完成。                                             |
-| 人审/降级 | 命中复核规则、工具失败或数据不足。           | 人工确认或系统输出降级结果。                                                         |
-| 完成    | 报告生成并回写完成。                  | 进入下一周期观察。                                                              |
+| 状态             | 进入条件                               | 退出条件                                                                                          |
+| :------------- | :--------------------------------- | :-------------------------------------------------------------------------------------------- |
+| 待命             | 无运行任务。                             | 收到事件、周期、人工或风险触发。                                                                              |
+| 接收任务           | Master Agent 已获得评估对象、项目、周期。        | 形成 `orchestration_state`。                                                                     |
+| 输入检查           | 已收到评估任务。                           | 生成 `input_completeness_report`，确认权限、文件和样本量。                                                   |
+| Front Pipeline | 输入检查通过，或允许降级运行。                    | `task_request`、`raw_payload`、`meeting_fact_pack`、`history_bundle`、`data_quality_report` 生成完成。 |
+| 硬指标计算          | 事实包和 Base 快照可用。                    | 生成 `hard_metrics_result`。                                                                     |
+| 规划             | 事实包、历史包和硬指标结果可用。                   | 生成 `evaluation_plan`，其中包含 `evaluation_focus`、`execution_plan` 和 `human_review_rules`。         |
+| 专家分析           | 评估计划可用。                            | 生成专家 Agent 的 `dimension_findings`、`soft_indicators`、`risk_flags`、`human_review_items`。        |
+| 汇总收口           | 专家输出完成。                            | Master Agent 汇总状态，Capability Assessor 形成 `dimension_scores` 和综合结论。                            |
+| 自检             | 综合输出完成。                            | JSON 合法、证据齐全、置信度和敏感规则检查完成。                                                                    |
+| 人审/降级          | 命中复核规则、工具失败或数据不足。                  | 人工确认或系统输出降级结果。                                                                                |
+| 完成             | `report_result` 生成，且已完成回写或形成可回写载荷。 | 进入下一周期观察。                                                                                     |
 
 # 4. 代理边界
 
@@ -499,48 +523,53 @@ LLM Agent 负责需要语义理解、判断、归因和表达的工作：
 
 # 5. Agent 设计
 
-MVP 固定为 `Master Agent / Orchestrator + Data Collector + Hard Metrics Engine + Evaluation Planner + 专家 Agent + Capability Assessor + Report Writer`。其中 `Master Agent / Orchestrator` 是主控 Agent，负责接收任务、检查输入、调度节点、汇总状态和触发报告；`Hard Metrics Engine` 是代码/规则节点，负责所有可确定计算的硬指标；专家 Agent 只处理需要语义理解、证据判断和管理归因的部分。
+MVP 当前运行态固定为 `Evaluation Automation + Front Pipeline + Hard Metrics Engine + Evaluation Planner + 3 个专家 Agent + Capability Assessor + Report Writer`。其中前 4 个是流程/规则节点，后 5 个是真正调用模型的 LLM Agent。
 
 ## 5.1 Agent 名称总览
 
-| 节点                          | 类型               | 定位                                               |
-| :-------------------------- | :--------------- | :----------------------------------------------- |
-| Master Agent / Orchestrator | LLM Agent + 规则调度 | 接收评估对象、周期、项目范围，检查输入完整性，调度硬指标和专家 Agent，汇总结果并触发报告。 |
-| Data Collector              | 脚本化节点            | 拉数、清洗、结构化事实包。                                    |
-| Hard Metrics Engine         | 代码/规则节点          | 计算 owner、DDL、延期、关闭质量、响应时长、频次占比等硬指标。              |
-| Evaluation Planner          | 规则 + 轻量 LLM      | 判断本次评估重点、执行计划和复核策略。                              |
-| Management Reviewer         | LLM Agent        | 分析方向校准力、推进闭环力中的管理动作和闭环证据。                        |
-| Risk & Behavior Auditor     | LLM Agent        | 分析风险治理力和组织行为健康度。                                 |
-| Coordination Lens           | LLM Agent        | 对跨角色响应、里程碑同步、依赖澄清和阻塞清理做协同调度专项判断。                 |
-| Capability Assessor         | LLM Agent        | 汇总五维结论、置信度、风险标签和附加观察项。                           |
-| Report Writer               | LLM Agent        | 生成摘要版、完整版、风险提示版报告并组织回写内容。                        |
+| 节点                                          | 类型               | 定位                                               |
+| :------------------------------------------ | :--------------- | :----------------------------------------------- |
+| Evaluation Automation / Master Orchestrator | 工作流编排节点          | 接收评估对象、周期、项目范围，检查输入完整性，调度硬指标和专家 Agent，汇总结果并触发报告。 |
+| Front Pipeline                              | 工作流节点            | 输入检查、拉数、清洗、结构化事实包、历史包和数据质量报告。                    |
+| Hard Metrics Engine                         | 代码/规则节点          | 计算 15 个确定性硬指标，输出分子、分母、样本口径和缺口。                   |
+| Evaluation Planner                          | 规则节点             | 判断本次评估重点、执行计划和复核策略。                              |
+| Management Reviewer                         | LLM Agent        | 分析方向校准力、推进闭环力中的管理动作和闭环证据。                        |
+| Risk & Behavior Auditor                     | LLM Agent        | 分析风险治理力和组织行为健康度。                                 |
+| Coordination Lens                           | LLM Agent        | 对跨角色响应、里程碑同步、依赖澄清和阻塞清理做协同调度专项判断。                 |
+| Capability Assessor                         | LLM Agent        | 汇总硬指标、软指标和专家结论，形成五维评分、总评和附加观察项。                  |
+| Report Writer                               | LLM Agent + 保底规则 | 生成摘要版、完整版、风险提示版报告，输出 20 个 PRD 指标结果并组织回写内容。       |
 
 ## 5.2 标准接口字段
 
 系统内部统一使用以下字段，避免旧维度口径混杂：
 
-| 字段                          | 生成方                          | 消费方                                  | 说明                       |
-| :-------------------------- | :--------------------------- | :----------------------------------- | :----------------------- |
-| `orchestration_state`       | Master Agent / Orchestrator  | 全流程节点                                | 当前评估任务的状态、下一步动作、失败/降级状态。 |
-| `input_completeness_report` | Master Agent / Orchestrator  | Data Collector、Human Review          | 输入文件、权限、样本量和必填字段检查结果。    |
-| `meeting_fact_pack`         | Data Collector               | Planner、各分析 Agent                    | 当前会议的结构化事实包。             |
-| `history_bundle`            | Data Collector               | Planner、各分析 Agent                    | 同项目历史会议、历史风险、过往评估和复盘材料。  |
-| `hard_metrics_result`       | Hard Metrics Engine          | Planner、专家 Agent、Capability Assessor | 确定性硬指标计算结果和样本口径。         |
-| `evaluation_focus`          | Evaluation Planner           | 各分析 Agent                            | 本次重点维度、是否全量评估、是否专项审计。    |
-| `execution_plan`            | Evaluation Planner           | 各分析 Agent                            | Agent 执行顺序、输入范围、输出要求。    |
-| `dimension_findings`        | 分析 Agent、Capability Assessor | Report Writer、Base                   | 五维结论、评分、证据、置信度、建议动作。     |
-| `risk_flags`                | 分析 Agent、Capability Assessor | Report Writer、Human Review           | 高风险管理信号、组织行为信号、项目治理风险。   |
-| `human_review_items`        | 各 Agent                      | Human Review、Base                    | 待人工确认、驳回、降级或补充的复核项。      |
-| `report_payload`            | Report Writer                | 文档、消息、Base                           | 最终报告内容和发送配置。             |
+| 字段                          | 生成方                          | 消费方                                                  | 说明                          |
+| :-------------------------- | :--------------------------- | :--------------------------------------------------- | :-------------------------- |
+| `orchestration_state`       | Master Agent / Orchestrator  | 全流程节点                                                | 当前评估任务的状态、下一步动作、失败/降级状态。    |
+| `input_completeness_report` | Master Agent / Orchestrator  | Front Pipeline、Human Review                          | 输入文件、权限、样本量和必填字段检查结果。       |
+| `task_request`              | Front Pipeline               | 全流程节点                                                | 本次评估任务的项目、负责人、会议、触发方式和时间窗口。 |
+| `raw_payload`               | Front Pipeline               | Hard Metrics Engine、各分析 Agent、Report Writer          | 标准化后的原始输入总包。                |
+| `meeting_fact_pack`         | Front Pipeline               | Evaluation Planner、各分析 Agent                         | 当前会议的结构化事实包。                |
+| `history_bundle`            | Front Pipeline               | Evaluation Planner、各分析 Agent                         | 同项目历史会议、历史风险、过往评估和复盘材料。     |
+| `data_quality_report`       | Front Pipeline               | Evaluation Planner、Capability Assessor、Report Writer | 数据质量、样本缺口和降级原因。             |
+| `hard_metrics_result`       | Hard Metrics Engine          | Evaluation Planner、专家 Agent、Capability Assessor      | 确定性硬指标计算结果和样本口径。            |
+| `evaluation_plan`           | Evaluation Planner           | 各分析 Agent、Capability Assessor、Report Writer          | 本次重点维度、执行顺序、人工复核规则和降级策略。    |
+| `dimension_findings`        | 分析 Agent、Capability Assessor | Report Writer、Base                                   | 五维结论、评分、证据、置信度、建议动作。        |
+| `soft_indicators`           | 各专家 Agent                    | Capability Assessor、Report Writer                    | 由专家语义判断产出的软指标，最终要与硬指标一起交付。  |
+| `risk_flags`                | 分析 Agent、Capability Assessor | Report Writer、Human Review                           | 高风险管理信号、组织行为信号、项目治理风险。      |
+| `human_review_items`        | 各 Agent                      | Human Review、Base                                    | 待人工确认、驳回、降级或补充的复核项。         |
+| `dimension_scores`          | Capability Assessor          | Report Writer、Base                                   | 五维分数、等级和支持证据。               |
+| `indicator_results`         | Report Writer                | 报告、Base、展示层                                          | PRD 五个维度下所有指标的数值、状态和证据源。    |
+| `report_result`             | Report Writer                | 文档、消息、Base、观测层                                       | 最终报告内容、指标表和回写载荷。            |
 
-## 5.3 Master Agent / Orchestrator
+## 5.3 Evaluation Automation / Master Orchestrator
 
 职责：
 
 - 接收评估对象、评估周期、项目范围和报告受众。
 - 检查输入文件是否齐全，包括 Base 表、会议纪要、项目文档、周报/复盘和必要聊天样本。
 - 判断任务是否可以全量运行、降级运行或需要人工补充材料。
-- 调用 Data Collector、Hard Metrics Engine、Evaluation Planner 和专家 Agent。
+- 调用 Front Pipeline、Hard Metrics Engine、Evaluation Planner 和专家 Agent。
 - 汇总各节点运行状态，处理失败、超时、低置信度和人工复核分支。
 - 在 Capability Assessor 形成综合结论后，触发 Report Writer 生成报告，并推动 Base 回写。
 
@@ -558,18 +587,19 @@ MVP 固定为 `Master Agent / Orchestrator + Data Collector + Hard Metrics Engin
 
 交接条件：
 
-- 输入齐备时进入 Data Collector。
+- 输入齐备时进入 Front Pipeline。
 - 输入缺失但可降级时标记降级原因后继续。
 - 输入缺失导致核心结论不成立时，停止任务并生成补充材料清单。
 
-## 5.4 Data Collector
+## 5.4 Front Pipeline / Data Collector
 
 职责：
 
+- 生成 `task_request`、`input_completeness_report` 和 `orchestration_state`。
 - 拉取当前会议妙记、项目主文档、周报、复盘、同项目历史会议材料。
 - 读取 Base 中项目、任务、风险、评估结果、报告状态数据。
 - 将非结构化内容转成统一结构化事实包。
-- 为后续 Agent 准备 `raw_payload`、`history_bundle`、`meeting_fact_pack`。
+- 为后续 Agent 准备 `raw_payload`、`history_bundle`、`meeting_fact_pack` 和 `data_quality_report`。
 
 输入：
 
@@ -579,6 +609,9 @@ MVP 固定为 `Master Agent / Orchestrator + Data Collector + Hard Metrics Engin
 
 输出：
 
+- `task_request`
+- `input_completeness_report`
+- `orchestration_state`
 - `raw_payload`
 - `meeting_fact_pack`
 - `history_bundle`
@@ -594,6 +627,7 @@ MVP 固定为 `Master Agent / Orchestrator + Data Collector + Hard Metrics Engin
 职责：
 
 - 对确定性指标进行代码/规则计算，不调用 LLM 做主判断。
+- 当前实现中固定输出 15 个硬指标；PRD 中其余软指标由专家 Agent 计算，再由 Report Writer 汇总成完整 20 指标结果。
 - 计算任务定义完整率、任务延期率、任务关闭质量。
 - 计算风险升级及时率、缓释动作落地率、同类风险复发样本量。
 - 计算跨角色有效响应时长、关键里程碑同步率、依赖澄清时长、协同阻塞清理成功率的可计算部分。
@@ -637,6 +671,7 @@ MVP 固定为 `Master Agent / Orchestrator + Data Collector + Hard Metrics Engin
 
 输出：
 
+- `evaluation_plan`
 - `evaluation_focus`
 - `execution_plan`
 - `review_requirements`
@@ -661,13 +696,15 @@ MVP 固定为 `Master Agent / Orchestrator + Data Collector + Hard Metrics Engin
 
 - `meeting_fact_pack`
 - `history_bundle`
-- `evaluation_focus`
+- `hard_metrics_result`
+- `evaluation_plan`
 - Base 任务、项目状态、里程碑、会议结论。
 
 输出：
 
 - 方向校准力相关 findings。
 - 推进闭环力相关 findings。
+- `soft_indicators`
 - 证据链、置信度、待复核项。
 
 交接条件：
@@ -687,13 +724,15 @@ MVP 固定为 `Master Agent / Orchestrator + Data Collector + Hard Metrics Engin
 
 - `meeting_fact_pack`
 - `history_bundle`
-- `evaluation_focus`
+- `hard_metrics_result`
+- `evaluation_plan`
 - Base 风险表、复盘文档、聊天样本、会议逐轮对话。
 
 输出：
 
 - 风险治理力相关 findings。
 - 组织行为健康度相关 findings。
+- `soft_indicators`
 - `risk_flags`
 - `human_review_items`
 
@@ -717,12 +756,13 @@ MVP 固定为 `Master Agent / Orchestrator + Data Collector + Hard Metrics Engin
 - `meeting_fact_pack`
 - `history_bundle`
 - `hard_metrics_result`
-- `evaluation_focus`
+- `evaluation_plan`
 - Base 记录、Base 历史、聊天历史、会议/妙记、日历和通讯录/RACI 信息。
 
 输出：
 
 - 协同调度力相关 findings。
+- `soft_indicators`
 - 协同阻塞证据链。
 - 需要人工复核的干系人范围争议和阻塞关闭争议。
 
@@ -736,6 +776,7 @@ MVP 固定为 `Master Agent / Orchestrator + Data Collector + Hard Metrics Engin
 职责：
 
 - 汇总五个主维度的 findings。
+- 将硬指标、专家 soft indicators、风险标签和数据质量约束一起纳入打分。
 - 统一评分、等级、置信度和风险标签。
 - 处理跨 Agent 输出冲突。
 - 生成综合结论和 `AI 替代风险指数` 附加观察项。
@@ -744,12 +785,17 @@ MVP 固定为 `Master Agent / Orchestrator + Data Collector + Hard Metrics Engin
 
 - Management Reviewer 输出。
 - Risk & Behavior Auditor 输出。
+- Coordination Lens 输出。
+- `hard_metrics_result`
+- `evaluation_plan`
+- `data_quality_report`
 - `human_review_items`
 - 历史评估趋势。
 
 输出：
 
 - `dimension_findings`
+- `dimension_scores`
 - `risk_flags`
 - 综合结论。
 - 趋势变化。
@@ -766,18 +812,28 @@ MVP 固定为 `Master Agent / Orchestrator + Data Collector + Hard Metrics Engin
 
 - 将结构化结论转写为飞书云文档和消息可读内容。
 - 生成摘要版、完整版、风险提示版报告。
+- 输出五个维度下 20 个指标的最终 `indicator_results`，每个指标必须包含具体数值和证据源。
 - 组织 Base 回写字段和消息通知内容。
+- 当模型正文失败时，仍需保底生成结构化 `report_result` 和 `base_writeback_payload`。
 
 输入：
 
 - `dimension_findings`
+- `dimension_scores`
+- `soft_indicators`
+- `hard_metrics_result`
 - `risk_flags`
 - `human_review_items`
+- `meeting_fact_pack`
+- `history_bundle`
+- `raw_payload`
+- `evaluation_plan`
 - 综合结论、证据摘要、建议动作。
 
 输出：
 
-- `report_payload`
+- `report_result`
+- `indicator_results`
 - 报告正文。
 - Base 回写内容。
 - 消息通知内容。
@@ -785,6 +841,7 @@ MVP 固定为 `Master Agent / Orchestrator + Data Collector + Hard Metrics Engin
 交接条件：
 
 - 报告必须说明证据来源和置信度。
+- 每个 PRD 指标必须能追溯到 `evidence_refs`。
 - 高风险和敏感报告必须带审批状态，不得绕过签字层直接发送。
 
 # 6. Base 表结构
@@ -905,6 +962,9 @@ MVP 字段：
 - `behavior_health_score`
 - `overall_risk_level`
 - `confidence`
+- `dimension_scores`
+- `overall_assessment`
+- `indicator_snapshot_ref`
 - `ai_replacement_risk_observation`
 - `review_status`
 
@@ -922,9 +982,12 @@ MVP 字段：
 - `audience`
 - `doc_link`
 - `send_status`
+- `report_status`
 - `approval_status`
 - `created_at`
 - `summary`
+- `indicator_results_snapshot`
+- `base_writeback_payload`
 
 关系：报告由评估生成，可被反馈日志引用。
 
@@ -1006,7 +1069,7 @@ Agent 仅接收目标，不自定义组织考核目标。
 负责角色：
 
 - Master Agent / Orchestrator。
-- Data Collector。
+- Front Pipeline / Data Collector。
 - Hard Metrics Engine。
 - Evaluation Planner。
 - Management Reviewer。
@@ -1261,3 +1324,4 @@ MVP 可采用 100 分制或好/中/坏等级制，但对用户展示时必须优
 - Agent 章节、Base 章节、输出章节的接口字段一致。
 - 高风险结论均要求人工复核或审批。
 - 文档既能支持比赛讲解，也能作为后续工程拆解依据。
+

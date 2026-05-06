@@ -1,0 +1,23 @@
+{
+  "task_id": "FRONT-PJT-CASE-05-MTG-CASE-05-03",
+  "pipeline_version": "front-pipeline-case04-v1",
+  "status": "collected",
+  "completeness_status": "ready",
+  "current_stage": "data_collector",
+  "next_step": "handoff_to_hard_metrics_engine",
+  "trigger_type": "manual",
+  "source_mode": "case04_sample_bundle",
+  "evaluation_target": {
+    "manager_id": "MGR-CASE-05",
+    "manager_name": "周牧",
+    "project_id": "PJT-CASE-05",
+    "evaluation_period": "2026-01-01 ~ 2026-04-24",
+    "current_meeting_id": "MTG-CASE-05-03"
+  },
+  "degrade_reasons": [],
+  "blocking_reasons": [],
+  "warnings": [
+    "当前会议没有完整妙记转写，只能依赖会议表和其他留痕"
+  ],
+  "updated_at": "2026-05-06T11:04:28.100Z"
+}

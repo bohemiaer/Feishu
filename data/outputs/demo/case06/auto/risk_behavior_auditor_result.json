@@ -1,0 +1,528 @@
+{
+  "meeting_id": "MTG-CASE-06-12",
+  "project_id": "PJT-CASE-06",
+  "manager_id": "MGR-CASE-06",
+  "dimension_findings": [
+    {
+      "dimension": "风险治理力",
+      "finding_type": "observation",
+      "summary": "风险识别与缓释动作覆盖率高，但存在风险遗留与同类风险复发问题。高等级风险已全部收口，且所有风险均有缓释动作建议。然而，仍有3个中等级风险（外观设计、电池续航、手板延期）处于未收口状态（open/tracking），占风险总数的30%。同时，技术风险（5次）和成本风险（2次）出现多次复发，表明在特定领域（如技术方案、成本控制）的风险预防和根治措施有待加强。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "open_risk_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.3, numerator = 3, denominator = 10, anomalies = [\"NO.704 open\", \"NO.709 tracking\", \"NO.710 tracking\"]",
+          "evidence_note": "metric_id=open_risk_rate, formula=open_or_tracking_risks / total_risks, calculation.expression=3 / 10, value=0.3。显示有3个风险未收口。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "repeated_risk_type_count",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 7, numerator = 7, denominator = 10, anomalies = [\"技术风险:5\", \"成本风险:2\"]",
+          "evidence_note": "metric_id=repeated_risk_type_count, formula=sum(count(risk_type) where count(risk_type) > 1), calculation.expression=7, value=7。显示技术风险复发5次，成本风险复发2次。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "risk_mitigation_action_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 1, numerator = 10, denominator = 10",
+          "evidence_note": "metric_id=risk_mitigation_action_rate, formula=risks_with_suggested_action / total_risks, calculation.expression=10 / 10, value=1。显示所有风险均有缓释动作建议。"
+        }
+      ],
+      "confidence": 0.7,
+      "risk_tags": [],
+      "suggested_actions": []
+    },
+    {
+      "dimension": "组织行为健康度",
+      "finding_type": "observation",
+      "summary": "管理者存在夜间工作与高压语言模式，但缺乏公开负向反馈与会议空转的直接证据。管理者在22:00-08:00时段发送消息占比达23.33%（14条），且其中部分消息包含高压推进语言（如“必须”、“给我”）。高压语言样本占比为16.67%（10条）。聊天记录中未发现公开的负向反馈（如指责、抱怨）。由于缺少当前会议的完整转写，无法评估会议空转情况。组织行为观察需结合具体工作语境进行人工复核。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "late_night_manager_message_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.2333, numerator = 14, denominator = 60, anomalies = [\"2026-01-08 00:15 李明，结构方案有几个问题：电池仓设计不合理，散热方案需要优化。不能用，打回重做。\", ...]",
+          "evidence_note": "metric_id=late_night_manager_message_rate, formula=manager_messages_between_22_00_and_08_00 / manager_chat_messages, calculation.expression=14 / 60, value=0.2333。显示管理者在非常规时段发送消息比例较高。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_pressure_language_sample_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.1667, numerator = 10, denominator = 60, anomalies = [\"2026-01-10 23:30 李明，结构方案周五前必须给我，不能再拖了。\", ...]",
+          "evidence_note": "metric_id=high_pressure_language_sample_rate, formula=manager_messages_matching_pressure_keywords / manager_chat_messages, calculation.expression=10 / 60, value=0.1667。显示管理者消息中规则命中的高压语言样本比例。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0016",
+          "timestamp": "2026-01-08 00:15",
+          "excerpt": "李明，结构方案有几个问题：电池仓设计不合理，散热方案需要优化。不能用，打回重做。",
+          "evidence_note": "管理者在深夜（00:15）发送工作指令，内容包含明确的工作否定（“不能用”）和指令（“打回重做”），属于高风险语言观察项，需结合语境复核。"
+        }
+      ],
+      "confidence": 0.7,
+      "risk_tags": [],
+      "suggested_actions": []
+    }
+  ],
+  "soft_indicators": [
+    {
+      "indicator_id": "high_risk_identification_coverage_rate",
+      "dimension": "风险治理力",
+      "label": "高等级风险识别覆盖率",
+      "value": 100,
+      "unit": "score",
+      "status": "degraded",
+      "score": 100,
+      "confidence": 0.9,
+      "score_basis": "根据风险表，所有高等级风险（NO.701, NO.707）均在会议中被识别并记录，覆盖率为100%。证据显示风险描述、等级和触发会议明确。",
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.701",
+          "timestamp": "MTG-CASE-06-02",
+          "excerpt": "核心芯片供应商产能不足，可能影响交期 followup_status=resolved risk_level=high",
+          "evidence_note": "高等级风险NO.701在MTG-CASE-06-02会议中被识别并记录。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.707",
+          "timestamp": "MTG-CASE-06-10",
+          "excerpt": "手板供应商CNC加工精度不够，尺寸有偏差 followup_status=resolved risk_level=high",
+          "evidence_note": "高等级风险NO.707在MTG-CASE-06-10会议中被识别并记录。"
+        }
+      ],
+      "limitations": [
+        "无法确认风险在会议讨论前是否已被团队内部感知。"
+      ]
+    },
+    {
+      "indicator_id": "risk_escalation_timeliness_rate",
+      "dimension": "风险治理力",
+      "label": "风险升级及时率",
+      "value": 80,
+      "unit": "score",
+      "status": "degraded",
+      "score": 80,
+      "confidence": 0.7,
+      "score_basis": "多数高风险（如NO.701芯片缺货）在识别后（2026-01-12聊天）次日即安排专题会议（2026-01-13），行动迅速。但风险NO.704（外观设计颜色）自2026-02-12会议提出后，截至评估期末（2026-03-26）仍为open状态，未见明确的升级或决策动作记录，存在延迟。",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0019",
+          "timestamp": "2026-01-12 14:00",
+          "excerpt": "周经理，供应商那边说核心芯片缺货，可能要延期2周。",
+          "evidence_note": "风险NO.701的触发信息在聊天中提及。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0020",
+          "timestamp": "2026-01-12 14:15",
+          "excerpt": "这个问题很严重，明天上午我们开个会专题讨论。",
+          "evidence_note": "管理者在风险提出后立即决定召开专题会议，显示及时升级。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.704",
+          "timestamp": "MTG-CASE-06-05",
+          "excerpt": "外观设计颜色方案讨论无结论，方案悬而未决 followup_status=open",
+          "evidence_note": "风险NO.704自MTG-CASE-06-05（2026-02-12）提出后，状态持续为open，未见后续升级或解决记录。"
+        }
+      ],
+      "limitations": [
+        "部分风险升级可能通过线下或非记录渠道进行，无法完全捕获。"
+      ]
+    },
+    {
+      "indicator_id": "similar_risk_recurrence_rate",
+      "dimension": "风险治理力",
+      "label": "同类风险复发率",
+      "value": 30,
+      "unit": "score",
+      "status": "degraded",
+      "score": 30,
+      "confidence": 0.9,
+      "score_basis": "在10个总风险中，有7个属于复发类型（技术风险5个，成本风险2个），复发率高达70%。表明在技术方案设计评审、成本控制等环节，相似问题反复出现，风险的根本原因未得到有效治理。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "repeated_risk_type_count",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 7, numerator = 7, denominator = 10, anomalies = [\"技术风险:5\", \"成本风险:2\"]",
+          "evidence_note": "metric_id=repeated_risk_type_count, formula=sum(count(risk_type) where count(risk_type) > 1), calculation.expression=7, value=7。直接表明有7个风险属于复发类型。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.702",
+          "timestamp": "MTG-CASE-06-03",
+          "excerpt": "结构方案需要调整，电池仓和散热设计不合理 risk_type=技术风险",
+          "evidence_note": "技术风险复发案例之一。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.705",
+          "timestamp": "MTG-CASE-06-06",
+          "excerpt": "硬件方案需要补充，部分接口设计不清晰 risk_type=技术风险",
+          "evidence_note": "技术风险复发案例之二。"
+        }
+      ],
+      "limitations": [
+        "风险分类（risk_type）的粒度可能影响复发判断。"
+      ]
+    },
+    {
+      "indicator_id": "high_risk_language_trigger_frequency",
+      "dimension": "组织行为健康度",
+      "label": "高风险语言触发频次",
+      "value": 40,
+      "unit": "score",
+      "status": "degraded",
+      "score": 40,
+      "confidence": 0.8,
+      "score_basis": "在评估期内，管理者共发送60条消息，其中10条触发了高压推进关键词规则，触发频率为每6条消息中有1条。触发消息多与设定明确 deadline（“周五前必须给我”、“这周内必须搞定”）和表达强硬要求（“不能用，打回重做”、“必须更换供应商”）相关。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_pressure_language_sample_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.1667, numerator = 10, denominator = 60",
+          "evidence_note": "metric_id=high_pressure_language_sample_rate, formula=manager_messages_matching_pressure_keywords / manager_chat_messages, calculation.expression=10 / 60, value=0.1667。提供触发比例。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0016",
+          "timestamp": "2026-01-08 00:15",
+          "excerpt": "李明，结构方案有几个问题：电池仓设计不合理，散热方案需要优化。不能用，打回重做。",
+          "evidence_note": "包含否定性指令“不能用，打回重做”，属于高风险语言观察项。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0121",
+          "timestamp": "2026-03-26 09:00",
+          "excerpt": "续航必须达标，这个月内解决。张强你评估下优化方案。",
+          "evidence_note": "包含强制性要求“必须达标”，属于高压推进语言观察项。"
+        }
+      ],
+      "limitations": [
+        "关键词命中不能直接等同于不当管理行为，需结合具体工作压力、项目阶段和团队文化进行人工语境复核。"
+      ]
+    },
+    {
+      "indicator_id": "public_negative_feedback_ratio",
+      "dimension": "组织行为健康度",
+      "label": "公开负向反馈比例",
+      "value": 95,
+      "unit": "score",
+      "status": "degraded",
+      "score": 95,
+      "confidence": 0.9,
+      "score_basis": "在提供的127条群聊记录中，未发现管理者对团队成员进行公开的、人身攻击或情绪化的负向反馈（如指责、抱怨、讽刺）。工作反馈多针对具体问题（如方案不合理、需要补充）。",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0016",
+          "timestamp": "2026-01-08 00:15",
+          "excerpt": "李明，结构方案有几个问题：电池仓设计不合理，散热方案需要优化。不能用，打回重做。",
+          "evidence_note": "反馈针对具体技术问题（电池仓、散热），虽语气直接，但未涉及人身攻击或情绪化指责，属于工作指令范畴。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0045",
+          "timestamp": "2026-01-23 23:30",
+          "excerpt": "王芳，硬件方案有几个地方需要补充，明天上午给我。",
+          "evidence_note": "指令明确要求补充材料，未包含负向情绪表达。"
+        }
+      ],
+      "limitations": [
+        "仅基于群聊文本分析，私聊或线下沟通中的反馈无法评估。"
+      ]
+    },
+    {
+      "indicator_id": "late_night_high_pressure_urging_ratio",
+      "dimension": "组织行为健康度",
+      "label": "深夜高压催办比例",
+      "value": 35,
+      "unit": "score",
+      "status": "degraded",
+      "score": 35,
+      "confidence": 0.85,
+      "score_basis": "在管理者于22:00-08:00时段发送的14条消息中，有4条同时符合“深夜”和“高压语言”特征（om_case06msg0016, om_case06msg0018, om_case06msg0045, om_case06msg0070），占比约28.6%。这些消息均在深夜发出，且包含“必须给我”、“不能再拖了”、“打回重做”等高压指令。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "late_night_manager_message_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.2333, numerator = 14, denominator = 60, anomalies = [\"2026-01-08 00:15 李明，结构方案有几个问题：电池仓设计不合理，散热方案需要优化。不能用，打回重做。\", \"2026-01-10 23:30 李明，结构方案周五前必须给我，不能再拖了。\", \"2026-01-23 23:30 王芳，硬件方案有几个地方需要补充，明天上午给我。\", \"2026-02-15 23:30 李明，外观设计有几个地方需要调整：颜色方案和材质选择，周一前给我。\"]",
+          "evidence_note": "metric_id=late_night_manager_message_rate, value=0.2333。其anomalies列表中包含多条深夜高压催办消息样本。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0018",
+          "timestamp": "2026-01-10 23:30",
+          "excerpt": "李明，结构方案周五前必须给我，不能再拖了。",
+          "evidence_note": "深夜（23:30）发送，包含高压词汇“必须给我”、“不能再拖了”，属于深夜高压催办观察项。"
+        }
+      ],
+      "limitations": [
+        "无法判断接收方是否处于正常工作待命状态，或是否存在紧急项目背景。"
+      ]
+    },
+    {
+      "indicator_id": "repeated_urging_rate",
+      "dimension": "组织行为健康度",
+      "label": "重复催办率",
+      "value": 70,
+      "unit": "score",
+      "status": "degraded",
+      "score": 70,
+      "confidence": 0.6,
+      "score_basis": "在聊天记录中，对同一事项（如李明的结构方案、刘洋的进度同步）存在多次提醒或催办的情况。例如，关于结构方案，在1月8日、1月10日、1月15日、1月16日均有相关催办消息。但多数催办间隔合理，且随着事项推进而减少，未观察到针对单一事项在极短时间内（如几小时内）的密集、无效重复催办。",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0016",
+          "timestamp": "2026-01-08 00:15",
+          "excerpt": "李明，结构方案有几个问题：电池仓设计不合理，散热方案需要优化。不能用，打回重做。",
+          "evidence_note": "首次针对结构方案提出修改要求。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0018",
+          "timestamp": "2026-01-10 23:30",
+          "excerpt": "李明，结构方案周五前必须给我，不能再拖了。",
+          "evidence_note": "两天后再次催办结构方案终稿。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0026",
+          "timestamp": "2026-01-15 23:00",
+          "excerpt": "刘洋，帮我跟催下李明的结构方案，周三前必须出终稿。",
+          "evidence_note": "通过助理再次催办结构方案。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0028",
+          "timestamp": "2026-01-16 09:00",
+          "excerpt": "李明，结构方案终稿什么时候能好？",
+          "evidence_note": "次日白天再次询问进度。"
+        }
+      ],
+      "limitations": [
+        "催办的必要性和合理性需结合任务紧急程度和成员响应情况综合判断。"
+      ]
+    },
+    {
+      "indicator_id": "meeting_idle_churn_rate",
+      "dimension": "组织行为健康度",
+      "label": "会议空转率",
+      "value": 50,
+      "unit": "score",
+      "status": "degraded",
+      "score": 50,
+      "confidence": 0.3,
+      "score_basis": "由于当前会议（MTG-CASE-06-12）缺少完整的妙记转写，无法直接分析该会议是否存在讨论发散、议而不决等空转现象。从日历和决议摘要看，会议有明确议题（手板功能测试结果评审）并产生了决策（软件优化优先、启动认证测试准备），但无法评估会议过程中的效率。",
+      "evidence_refs": [
+        {
+          "source_type": "current_meeting",
+          "source_file": "meeting_fact_pack",
+          "source_id": "MTG-CASE-06-12",
+          "timestamp": "2026-03-26 09:00 - 10:00",
+          "excerpt": "\"missing_fields\": [\"meeting_docs.current_transcript\"]",
+          "evidence_note": "输入数据明确标注当前会议缺少完整转写文本。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "meeting_fact_pack",
+          "source_id": "MTG-CASE-06-12",
+          "timestamp": "2026-03-26 09:00 - 10:00",
+          "excerpt": "\"decisions\": [\"续航优化方案评估; 软件优化优先; 认证测试准备启动\"]",
+          "evidence_note": "会议产生了明确的决策输出。"
+        }
+      ],
+      "limitations": [
+        "关键证据（会议转录）缺失，导致本指标置信度很低，无法做出可靠判断。"
+      ]
+    }
+  ],
+  "risk_flags": [
+    {
+      "flag_id": "RF-001",
+      "flag_type": "risk_governance",
+      "severity": "medium",
+      "summary": "中等级风险遗留问题突出，存在治理延迟风险。风险NO.704（外观设计颜色）、NO.709（电池续航）、NO.710（手板延期）均处于未收口状态（open/tracking），且后两者为当前会议（MTG-CASE-06-12）及近期会议识别，需关注其治理动作的及时性与有效性。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "open_risk_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.3, numerator = 3, denominator = 10, anomalies = [\"NO.704 open\", \"NO.709 tracking\", \"NO.710 tracking\"]",
+          "evidence_note": "metric_id=open_risk_rate, value=0.3，明确列出三个未收口风险。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.709",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "电池续航时间低于设计指标15分钟 followup_status=tracking risk_level=medium",
+          "evidence_note": "风险NO.709在当前会议MTG-CASE-06-12中被识别并标记为tracking。"
+        }
+      ],
+      "confidence": 0.9,
+      "requires_human_review": true
+    },
+    {
+      "flag_id": "RF-002",
+      "flag_type": "risk_governance",
+      "severity": "medium",
+      "summary": "技术风险高频复发，表明在该领域的风险预防或根治机制可能存在缺陷。项目周期内技术风险累计出现5次，涉及结构方案、硬件方案、兼容性、外观设计、电池续航等多个方面。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "repeated_risk_type_count",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 7, numerator = 7, denominator = 10, anomalies = [\"技术风险:5\", \"成本风险:2\"]",
+          "evidence_note": "metric_id=repeated_risk_type_count, value=7, anomalies显示技术风险复发5次。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.702",
+          "timestamp": "MTG-CASE-06-03",
+          "excerpt": "结构方案需要调整，电池仓和散热设计不合理 risk_type=技术风险",
+          "evidence_note": "技术风险复发案例。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.706",
+          "timestamp": "MTG-CASE-06-09",
+          "excerpt": "语音模块和主控芯片兼容性问题 risk_type=技术风险",
+          "evidence_note": "技术风险复发案例。"
+        }
+      ],
+      "confidence": 0.9,
+      "requires_human_review": true
+    },
+    {
+      "flag_id": "BF-001",
+      "flag_type": "behavior_observation",
+      "severity": "medium",
+      "summary": "管理者存在深夜工作沟通与使用高压指令语言的行为模式，可能对团队工作节奏与心理安全产生影响，需结合具体情境进行人工复核。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "late_night_manager_message_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.2333, numerator = 14, denominator = 60",
+          "evidence_note": "metric_id=late_night_manager_message_rate, value=0.2333，显示管理者23.33%的消息在非常规时段发送。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_pressure_language_sample_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.1667, numerator = 10, denominator = 60",
+          "evidence_note": "metric_id=high_pressure_language_sample_rate, value=0.1667，显示16.67%的消息命中高压语言关键词。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0016",
+          "timestamp": "2026-01-08 00:15",
+          "excerpt": "李明，结构方案有几个问题：电池仓设计不合理，散热方案需要优化。不能用，打回重做。",
+          "evidence_note": "深夜发送的包含明确否定和指令的高风险语言实例。"
+        }
+      ],
+      "confidence": 0.8,
+      "requires_human_review": true
+    }
+  ],
+  "human_review_items": [
+    {
+      "review_id": "HR-001",
+      "reason": "",
+      "severity": "medium",
+      "related_dimension": "组织行为健康度",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "late_night_manager_message_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.2333, numerator = 14, denominator = 60",
+          "evidence_note": "metric_id=late_night_manager_message_rate, value=0.2333，显示管理者23.33%的消息在非常规时段发送。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_pressure_language_sample_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.1667, numerator = 10, denominator = 60",
+          "evidence_note": "metric_id=high_pressure_language_sample_rate, value=0.1667，显示16.67%的消息命中高压语言关键词。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0016",
+          "timestamp": "2026-01-08 00:15",
+          "excerpt": "李明，结构方案有几个问题：电池仓设计不合理，散热方案需要优化。不能用，打回重做。",
+          "evidence_note": "深夜发送的包含明确否定和指令的高风险语言实例。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-002",
+      "reason": "",
+      "severity": "medium",
+      "related_dimension": "风险治理力",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "open_risk_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.3, numerator = 3, denominator = 10, anomalies = [\"NO.704 open\", \"NO.709 tracking\", \"NO.710 tracking\"]",
+          "evidence_note": "metric_id=open_risk_rate, value=0.3，明确列出三个未收口风险。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.709",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "电池续航时间低于设计指标15分钟 followup_status=tracking risk_level=medium",
+          "evidence_note": "风险NO.709在当前会议MTG-CASE-06-12中被识别并标记为tracking。"
+        }
+      ]
+    }
+  ],
+  "risk_behavior_summary": "风险治理方面，项目展现了良好的高风险识别与基础缓释动作覆盖能力，所有风险均有应对建议且高等级风险已全部收口。主要短板在于风险治理的闭环及时性与根治效果：三个中等级风险遗留未决，且技术、成本类风险反复发生，提示在特定领域的深度治理和预防机制有待加强。组织行为方面，管理者呈现出明显的夜间工作与高压指令沟通模式，虽未发现公开负向反馈，但该行为模式可能潜在地影响团队健康度，需要结合具体项目压力背景进行人工语境复核。由于缺少当前会议完整转录，无法评估会议效率。"
+}

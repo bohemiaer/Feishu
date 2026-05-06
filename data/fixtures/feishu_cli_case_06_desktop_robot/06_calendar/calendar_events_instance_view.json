@@ -1,0 +1,166 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "has_more": false,
+    "items": [
+      {
+        "event_id": "cal_case06_evt_0110",
+        "summary": "项目启动会与技术方案评审",
+        "start_time": "2026-01-10T09:00:00+08:00",
+        "end_time": "2026-01-10T12:00:00+08:00",
+        "organizer": {
+          "open_id": "ou_case06zhoumu001",
+          "name": "周牧"
+        },
+        "attendees": ["周牧", "李明", "王芳", "张强", "刘洋"],
+        "location": "A1会议室",
+        "meeting_id": "MTG-CASE-06-01"
+      },
+      {
+        "event_id": "cal_case06_evt_0120",
+        "summary": "芯片缺货与结构方案评审会",
+        "start_time": "2026-01-20T14:00:00+08:00",
+        "end_time": "2026-01-20T17:00:00+08:00",
+        "organizer": {
+          "open_id": "ou_case06zhoumu001",
+          "name": "周牧"
+        },
+        "attendees": ["周牧", "李明", "王芳", "刘洋"],
+        "location": "A2会议室",
+        "meeting_id": "MTG-CASE-06-02"
+      },
+      {
+        "event_id": "cal_case06_evt_0128",
+        "summary": "结构方案进度跟进会",
+        "start_time": "2026-01-28T10:00:00+08:00",
+        "end_time": "2026-01-28T11:00:00+08:00",
+        "organizer": {
+          "open_id": "ou_case06zhoumu001",
+          "name": "周牧"
+        },
+        "attendees": ["周牧", "李明", "刘洋"],
+        "location": "A1会议室",
+        "meeting_id": "MTG-CASE-06-03"
+      },
+      {
+        "event_id": "cal_case06_evt_0205",
+        "summary": "硬件方案与芯片替代评审会",
+        "start_time": "2026-02-05T10:00:00+08:00",
+        "end_time": "2026-02-05T12:00:00+08:00",
+        "organizer": {
+          "open_id": "ou_case06zhoumu001",
+          "name": "周牧"
+        },
+        "attendees": ["周牧", "王芳", "张强", "刘洋"],
+        "location": "B1会议室",
+        "meeting_id": "MTG-CASE-06-04"
+      },
+      {
+        "event_id": "cal_case06_evt_0212",
+        "summary": "外观设计颜色讨论会",
+        "start_time": "2026-02-12T14:00:00+08:00",
+        "end_time": "2026-02-12T15:00:00+08:00",
+        "organizer": {
+          "open_id": "ou_case06zhoumu001",
+          "name": "周牧"
+        },
+        "attendees": ["周牧", "李明", "王芳", "刘洋"],
+        "location": "A2会议室",
+        "meeting_id": "MTG-CASE-06-05"
+      },
+      {
+        "event_id": "cal_case06_evt_0215",
+        "summary": "外观设计初稿评审会",
+        "start_time": "2026-02-15T14:00:00+08:00",
+        "end_time": "2026-02-15T17:00:00+08:00",
+        "organizer": {
+          "open_id": "ou_case06zhoumu001",
+          "name": "周牧"
+        },
+        "attendees": ["周牧", "李明", "王芳", "张强", "刘洋"],
+        "location": "A1会议室",
+        "meeting_id": "MTG-CASE-06-06"
+      },
+      {
+        "event_id": "cal_case06_evt_0225",
+        "summary": "外观冻结与进度同步会",
+        "start_time": "2026-02-25T10:00:00+08:00",
+        "end_time": "2026-02-25T12:00:00+08:00",
+        "organizer": {
+          "open_id": "ou_case06zhoumu001",
+          "name": "周牧"
+        },
+        "attendees": ["周牧", "李明", "王芳", "张强", "刘洋"],
+        "location": "A2会议室",
+        "meeting_id": "MTG-CASE-06-07"
+      },
+      {
+        "event_id": "cal_case06_evt_0303",
+        "summary": "项目周例会",
+        "start_time": "2026-03-03T10:00:00+08:00",
+        "end_time": "2026-03-03T11:00:00+08:00",
+        "organizer": {
+          "open_id": "ou_case06zhoumu001",
+          "name": "周牧"
+        },
+        "attendees": ["周牧", "李明", "王芳", "张强", "刘洋"],
+        "location": "B1会议室",
+        "meeting_id": "MTG-CASE-06-08"
+      },
+      {
+        "event_id": "cal_case06_evt_0305",
+        "summary": "联合调试启动会",
+        "start_time": "2026-03-05T14:00:00+08:00",
+        "end_time": "2026-03-05T17:00:00+08:00",
+        "organizer": {
+          "open_id": "ou_case06zhoumu001",
+          "name": "周牧"
+        },
+        "attendees": ["周牧", "王芳", "张强", "刘洋"],
+        "location": "B1会议室",
+        "meeting_id": "MTG-CASE-06-09"
+      },
+      {
+        "event_id": "cal_case06_evt_0315",
+        "summary": "手板供应商问题专题会",
+        "start_time": "2026-03-15T10:00:00+08:00",
+        "end_time": "2026-03-15T12:00:00+08:00",
+        "organizer": {
+          "open_id": "ou_case06zhoumu001",
+          "name": "周牧"
+        },
+        "attendees": ["周牧", "李明", "刘洋"],
+        "location": "A1会议室",
+        "meeting_id": "MTG-CASE-06-10"
+      },
+      {
+        "event_id": "cal_case06_evt_0320",
+        "summary": "供应商价格谈判会",
+        "start_time": "2026-03-20T14:00:00+08:00",
+        "end_time": "2026-03-20T15:00:00+08:00",
+        "organizer": {
+          "open_id": "ou_case06zhoumu001",
+          "name": "周牧"
+        },
+        "attendees": ["周牧", "刘洋"],
+        "location": "A2会议室",
+        "meeting_id": "MTG-CASE-06-11"
+      },
+      {
+        "event_id": "cal_case06_evt_0326",
+        "summary": "手板功能测试结果评审会",
+        "start_time": "2026-03-26T09:00:00+08:00",
+        "end_time": "2026-03-26T10:00:00+08:00",
+        "organizer": {
+          "open_id": "ou_case06zhoumu001",
+          "name": "周牧"
+        },
+        "attendees": ["周牧", "李明", "王芳", "张强", "刘洋"],
+        "location": "A2会议室",
+        "meeting_id": "MTG-CASE-06-12"
+      }
+    ],
+    "has_more": false
+  }
+}

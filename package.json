@@ -19,6 +19,8 @@
     "writeback:csv:case04": "node scripts/dev/write_feishu_base_csv.js --input-dir data/outputs/demo/case04/current --output-dir data/outputs/demo/case04/feishu_base_csv",
     "demo": "node scripts/demo/run_front_pipeline.js --input-dir data/fixtures/feishu_cli_case_04_simulated_5d --output-dir data/outputs/demo/case04/current",
     "auto:case05": "node scripts/demo/run_evaluation_automation.js --input-dir data/fixtures/feishu_cli_case_05_desktop_robot --output-dir data/outputs/demo/case05/auto",
+    "auto:case06": "node scripts/demo/run_evaluation_automation.js --input-dir data/fixtures/feishu_cli_case_06_desktop_robot --output-dir data/outputs/demo/case06/auto",
+    "observability:case06": "node scripts/dev/write_full_loop_observability_md.js --input-dir data/outputs/demo/case06/auto --output docs/observability/case06_full_loop_observability.md --title \"Case 06 Full Loop Observability\"",
     "automation:run": "node scripts/demo/run_evaluation_automation.js",
     "bot:server": "node scripts/dev/run_feishu_bot_server.js --port 3030"
   },

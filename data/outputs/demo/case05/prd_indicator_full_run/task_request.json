@@ -1,0 +1,22 @@
+{
+  "task_id": "FRONT-PJT-CASE-05-MTG-CASE-05-03",
+  "evaluation_target": {
+    "manager_id": "MGR-CASE-05",
+    "manager_name": "周牧",
+    "project_id": "PJT-CASE-05",
+    "evaluation_period": "2026-01-01 ~ 2026-04-24",
+    "current_meeting_id": "MTG-CASE-05-03"
+  },
+  "trigger_context": {
+    "trigger_type": "manual",
+    "report_type": "single",
+    "audience": [
+      "pmo",
+      "manager"
+    ]
+  },
+  "source_config": {
+    "source_mode": "case04_sample_bundle",
+    "bundle_path": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\fixtures\\feishu_cli_case_05_desktop_robot"
+  }
+}

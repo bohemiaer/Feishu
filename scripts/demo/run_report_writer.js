@@ -29,6 +29,8 @@ async function main() {
   const output = path.resolve(args.output || path.join(inputDir, "report_result.json"));
   const request = buildCase04ReportRequest({
     meetingFactPack: readArtifactJson(path.join(inputDir, "meeting_fact_pack.json")),
+    historyBundle: readArtifactJson(path.join(inputDir, "history_bundle.json")),
+    rawPayload: readArtifactJson(path.join(inputDir, "raw_payload.json")),
     hardMetricsResult: readArtifactJson(path.join(inputDir, "hard_metrics_result.json")),
     evaluationPlan: readArtifactJson(path.join(inputDir, "evaluation_plan.json")),
     capabilityAssessorResult: readOptionalJson(path.join(inputDir, "capability_assessor_result.json")),
@@ -41,11 +43,13 @@ async function main() {
 
   if (args["call-model"] || request.input_status.readiness === "blocked") {
     writeArtifactJson(output, await writeCase04Report(request));
+  } else if (args.output || args["write-deterministic"]) {
+    writeArtifactJson(output, await writeCase04Report(request, { skipModel: true }));
   }
 
   process.stdout.write(JSON.stringify({
     request_output: requestOutput,
-    output: request.input_status.readiness === "blocked" || args["call-model"] ? output : null,
+    output: request.input_status.readiness === "blocked" || args["call-model"] || args.output || args["write-deterministic"] ? output : null,
     call_model: Boolean(args["call-model"]),
     readiness: request.input_status.readiness,
     missing_upstream_results: request.input_status.missing_upstream_results,

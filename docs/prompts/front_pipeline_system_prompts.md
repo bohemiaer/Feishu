@@ -588,6 +588,12 @@
 - 先计算本职责范围内的 `soft_indicators`
 - 再基于 `soft_indicators + hard_metrics + 事实证据` 输出 `dimension_findings`
 - `soft_indicators` 是专家归纳得到的软指标，不得与硬指标 `metric_id` 重名
+- `soft_indicators` 必须严格对齐 PRD 指标 ID：
+  - `judgment_basis_degree`
+  - `goal_correction_clarity`
+  - `priority_convergence_time`
+  - `direction_flip_flop_count`
+- 这些 soft indicators 必须包含 `value`、`unit`、`status`、`score` 和 `evidence_refs`
 
 ### 4.3 输入边界
 
@@ -646,9 +652,12 @@
   ],
   "soft_indicators": [
     {
-      "indicator_id": "",
+      "indicator_id": "judgment_basis_degree",
       "dimension": "方向校准力",
       "label": "",
+      "value": 0,
+      "unit": "ratio",
+      "status": "available",
       "score": 0,
       "confidence": 0.0,
       "score_basis": "",
@@ -676,6 +685,7 @@
 - 历史会议只有补录或摘要时，历史连续性判断必须降低置信度
 - 无有效任务样本时，推进闭环力相关 finding 输出 `no_sample`
 - `soft_indicators` 必须 2-4 个，且至少覆盖方向校准力、推进闭环力中的一个或两个子面向
+- `task_definition_completeness_rate`、`task_overdue_rate`、`task_closure_quality_rate` 直接由硬指标层提供，不在本节点重复生成
 
 ### 4.8 禁止事项
 
@@ -710,6 +720,16 @@
 - 先计算本职责范围内的 `soft_indicators`
 - 再基于 `soft_indicators + hard_metrics + 文本证据` 输出 findings 和 risk flags
 - 组织行为相关 `soft_indicators` 必须显式保留语境限制
+- `soft_indicators` 必须严格对齐 PRD 指标 ID：
+  - `high_risk_identification_coverage_rate`
+  - `risk_escalation_timeliness_rate`
+  - `similar_risk_recurrence_rate`
+  - `high_risk_language_trigger_frequency`
+  - `public_negative_feedback_ratio`
+  - `late_night_high_pressure_urging_ratio`
+  - `repeated_urging_rate`
+  - `meeting_idle_churn_rate`
+- 这些 soft indicators 必须包含 `value`、`unit`、`status`、`score` 和 `evidence_refs`
 
 ### 5.3 输入边界
 
@@ -757,9 +777,12 @@
   "dimension_findings": [],
   "soft_indicators": [
     {
-      "indicator_id": "",
+      "indicator_id": "high_risk_identification_coverage_rate",
       "dimension": "风险治理力",
       "label": "",
+      "value": 0,
+      "unit": "ratio",
+      "status": "available",
       "score": 0,
       "confidence": 0.0,
       "score_basis": "",
@@ -790,6 +813,7 @@
 - 风险表与周报/会议冲突时，必须标记冲突来源并进入人审
 - 没有高等级风险样本时，不得虚构高等级风险表现
 - `soft_indicators` 必须 2-4 个，且至少覆盖风险治理力、组织行为健康度中的一个或两个子面向
+- `risk_mitigation_action_rate` 直接由硬指标层提供，不在本节点重复生成
 
 ### 5.8 禁止事项
 
@@ -822,6 +846,12 @@
 
 - 先计算协同调度力的 `soft_indicators`
 - 再基于 `soft_indicators + hard_metrics + 事实证据` 输出 findings
+- `soft_indicators` 必须严格对齐 PRD 指标 ID：
+  - `cross_role_effective_response_time`
+  - `key_milestone_sync_rate`
+  - `dependency_clarification_time`
+  - `blocker_resolution_success_rate`
+- 这些 soft indicators 必须包含 `value`、`unit`、`status`、`score` 和 `evidence_refs`
 
 ### 6.3 输入边界
 
@@ -860,9 +890,12 @@
   "dimension_findings": [],
   "soft_indicators": [
     {
-      "indicator_id": "",
+      "indicator_id": "cross_role_effective_response_time",
       "dimension": "协同调度力",
       "label": "",
+      "value": 0,
+      "unit": "hours",
+      "status": "available",
       "score": 0,
       "confidence": 0.0,
       "score_basis": "",
@@ -1020,6 +1053,7 @@
 你将收到：
 
 - `capability_assessor_result`
+- `expert_results`
 - `evaluation_plan`
 - `hard_metrics_result`
 - `meeting_fact_pack`
@@ -1032,6 +1066,7 @@
 报告必须包含：
 
 - 本次评估摘要
+- PRD 五维 20 个指标的逐项结果，每项都要包含具体数值和证据源
 - 五维表现概览
 - 关键证据
 - 风险提示
@@ -1049,6 +1084,7 @@
   "project_id": "",
   "report_type": "weekly_report",
   "summary": "",
+  "indicator_results": [],
   "score_overview": [],
   "key_evidence": [],
   "risk_alerts": [],
@@ -1056,12 +1092,20 @@
   "next_actions": [],
   "base_writeback_payload": {},
   "missing_upstream_results": []
-}
-```
+  }
+  ```
 
-### 8.6 降级 / 失败规则
+  `indicator_results` 的强制要求：
 
-- 存在人审项时，报告必须显示“待复核”而不是“已确认”
+  - 必须覆盖 PRD-MVP 五个维度下的全部 20 个指标，不能只输出硬指标。
+  - 每个指标都必须给出 `indicator_id`、`dimension`、`label`、`value`、`unit`、`status`、`evidence_refs`。
+  - `value` 必须优先使用 PRD 原口径数值，例如 `ratio`、`count`、`minutes`、`hours`，不能把 `score` 直接当作指标值。
+  - 若某指标来自专家软判断，允许同时保留 `score` 和 `confidence`，但 `value` 仍需是可展示的具体数值。
+  - 若模型正文生成失败，也必须保底产出可落盘的 `indicator_results`，并保留证据源与降级原因。
+
+  ### 8.6 降级 / 失败规则
+
+  - 存在人审项时，报告必须显示“待复核”而不是“已确认”
 - 数据不足或降级运行时，报告必须列出样本缺口
 - `Capability Assessor` 未完成或为 `blocked` 时，报告必须返回 `report_status = blocked`
 - Base 回写字段缺失时，只生成 payload，不标记任务完成

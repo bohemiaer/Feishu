@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "user": {
+      "avatar_big": "https://s1-imfile.feishucdn.com/static-resource/v1/v3_00110_case06zhoumu~?image_size=640x640&cut_type=&quality=&format=image&sticker_format=.webp",
+      "avatar_middle": "https://s1-imfile.feishucdn.com/static-resource/v1/v3_00110_case06zhoumu~?image_size=240x240&cut_type=&quality=&format=image&sticker_format=.webp",
+      "avatar_thumb": "https://s1-imfile.feishucdn.com/static-resource/v1/v3_00110_case06zhoumu~?image_size=72x72&cut_type=&quality=&format=image&sticker_format=.webp",
+      "avatar_url": "https://s1-imfile.feishucdn.com/static-resource/v1/v3_00110_case06zhoumu~?image_size=72x72&cut_type=&quality=&format=image&sticker_format=.webp",
+      "email": "",
+      "employee_no": "U1006",
+      "en_name": "Mu Zhou",
+      "enterprise_email": "",
+      "mobile": "+8613900000601",
+      "name": "周牧",
+      "open_id": "ou_case06zhoumu001",
+      "tenant_key": "1abd20e084069b82",
+      "union_id": "on_case06zhoumu_union_001",
+      "user_id": "u_case06_zhoumu"
+    }
+  }
+}

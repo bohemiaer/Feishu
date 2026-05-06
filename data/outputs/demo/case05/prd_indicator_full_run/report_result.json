@@ -1,0 +1,1606 @@
+{
+  "report_status": "degraded",
+  "report_title": "周牧 MTG-CASE-05-03 周报评估",
+  "manager_id": "MGR-CASE-05",
+  "project_id": "PJT-CASE-05",
+  "report_type": "weekly_report",
+  "summary": "Report Writer 模型调用失败，已回退为确定性指标摘要输出。原因: model_skipped_for_deterministic_report",
+  "indicator_results": [
+    {
+      "indicator_id": "judgment_basis_degree",
+      "dimension": "方向校准力",
+      "label": "判断依据度",
+      "value": 0.9444,
+      "unit": "ratio",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "judgment_basis_degree",
+      "score": 80,
+      "confidence": 0.8,
+      "calculation_basis": "value = supported_decision_weight / total_decision_points; calculation.expression=8.5 / 9",
+      "evidence_refs": [
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-05-01-STM-1",
+          "timestamp": "MTG-CASE-05-01",
+          "excerpt": "本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。",
+          "evidence_note": "fact_check_result=有依据; evidence_ref=会议纪要：V1.5迭代同步会 09:17 明确“外观本周必须冻结” | 项目主文档里程碑：4月底前完成外观冻结"
+        },
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-05-01-STM-2",
+          "timestamp": "MTG-CASE-05-01",
+          "excerpt": "是安全认证部门上周发的变更通知，我已经同步到项目文档里了。",
+          "evidence_note": "fact_check_result=有依据; evidence_ref=会议纪要：V1.5迭代同步会 09:22 同步防水等级变更通知 | 安全认证部门变更邮件作为证据"
+        },
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-05-01-STM-3",
+          "timestamp": "MTG-CASE-05-01",
+          "excerpt": "先不要纠结成本，保证设计效果优先，预算问题我单独找财务沟通。",
+          "evidence_note": "fact_check_result=有依据; evidence_ref=会议纪要：V1.5迭代同步会 09:38 明确“保证设计效果优先” | 成本增加15%但未影响设计决策"
+        },
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-05-02-STM-1",
+          "timestamp": "MTG-CASE-05-02",
+          "excerpt": "预计5-7个工作日，如果同步调整拔模角度可以压缩到4天。",
+          "evidence_note": "fact_check_result=有依据; evidence_ref=会议纪要：供应商模具评审会 10:35 评估返工周期影响 | 实际返工进度与预期基本一致"
+        },
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-05-03-STM-1",
+          "timestamp": "MTG-CASE-05-03",
+          "excerpt": "已经让法务在看了，初步判断有规避空间，但需要调整底部轮廓线。",
+          "evidence_note": "fact_check_result=有依据; evidence_ref=群聊记录：2026-04-23 11:25 同步法务初步评估结果 | 法务确认有规避空间"
+        }
+      ],
+      "limitations": [
+        "当前会议缺完整妙记，无法评估决策过程中是否充分讨论了项目目标、范围等更广泛的校准依据。"
+      ]
+    },
+    {
+      "indicator_id": "goal_correction_clarity",
+      "dimension": "方向校准力",
+      "label": "目标纠偏清晰度",
+      "value": 0.6667,
+      "unit": "ratio",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "goal_correction_clarity",
+      "score": 60,
+      "confidence": 0.6,
+      "calculation_basis": "value = current_meeting_actions_with_task_owner_and_deadline_proxy / current_meeting_action_items; calculation.expression=2 / 3",
+      "evidence_refs": [
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.508",
+          "timestamp": "2026-04-20",
+          "excerpt": "供应商B打样评估 owner=林峰 due_date=2026-04-20",
+          "evidence_note": "用具备 owner 与 due_date 的任务作为纠偏清晰度代理证据。"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.522",
+          "timestamp": "2026-04-20",
+          "excerpt": "声学团队散热孔位置确认 owner=周牧 due_date=2026-04-20",
+          "evidence_note": "用具备 owner 与 due_date 的任务作为纠偏清晰度代理证据。"
+        }
+      ],
+      "limitations": [
+        "缺少会议完整讨论记录，无法判断是否隐含了目标调整。",
+        "当前实现按任务匹配作为 owner/DDL 代理。"
+      ]
+    },
+    {
+      "indicator_id": "priority_convergence_time",
+      "dimension": "方向校准力",
+      "label": "优先级收敛时长",
+      "value": 3.5,
+      "unit": "minutes",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "priority_convergence_time",
+      "score": 85,
+      "confidence": 0.7,
+      "calculation_basis": "value = avg(manager_priority_response_minutes); samples=2",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0031",
+          "timestamp": "2026-04-22 14:00",
+          "excerpt": "结构工程反馈ID曲面导致模具成本上升15%，这个谁来承担？",
+          "evidence_note": "优先级分歧或问题首次暴露。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0032",
+          "timestamp": "2026-04-22 14:05",
+          "excerpt": "先不要纠结成本，保证设计效果优先，预算问题我单独找财务沟通。",
+          "evidence_note": "管理者在 5 分钟后给出优先级/取舍口径。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0037",
+          "timestamp": "2026-04-24 09:10",
+          "excerpt": "备选供应商B的精度达不到我们的要求，只能等A的产能释放，预计延后10天。",
+          "evidence_note": "优先级分歧或问题首次暴露。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0038",
+          "timestamp": "2026-04-24 09:12",
+          "excerpt": "先不在群里说了，我单独找供应链总监协调，看看能不能插队。",
+          "evidence_note": "管理者在 2 分钟后给出优先级/取舍口径。"
+        }
+      ],
+      "limitations": [
+        "无法获取本次会议的实际讨论时长和优先级辩论细节。",
+        "按聊天中显式优先级话术做分钟级代理统计。"
+      ]
+    },
+    {
+      "indicator_id": "direction_flip_flop_count",
+      "dimension": "方向校准力",
+      "label": "方向反复变更次数",
+      "value": 0,
+      "unit": "count",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "direction_flip_flop_count",
+      "score": 95,
+      "confidence": 0.9,
+      "calculation_basis": "value = count(explicit_direction_flip_flop_patterns); no explicit push-pause-restart pattern found in current Base history sample.",
+      "evidence_refs": [
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-05-01",
+          "timestamp": "2026-04-21 09:15 - 10:30",
+          "excerpt": "外观冻结本周完成 | 门锁防水方案5月5日前输出 | 成本上升15%由设计效果优先覆盖",
+          "evidence_note": "历史会议决策口径保持连续，当前样本未发现明确反向折返。"
+        },
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "协调供应链总监争取插队 | 同步评估供应商C打样能力 | 周牧单独跟进不占用群资源",
+          "evidence_note": "历史会议决策口径保持连续，当前样本未发现明确反向折返。"
+        }
+      ],
+      "limitations": [
+        "历史会议样本有限（3次），可能未覆盖所有决策点。",
+        "当前仅基于可用会议决策摘要与 Base 历史抽样。"
+      ]
+    },
+    {
+      "indicator_id": "task_definition_completeness_rate",
+      "dimension": "推进闭环力",
+      "label": "任务定义完整率",
+      "value": 1,
+      "unit": "ratio",
+      "status": "available",
+      "source_type": "hard_metric",
+      "source_id": "task_definition_completeness_rate",
+      "score": null,
+      "confidence": null,
+      "calculation_basis": "value = tasks_with_task_name_owner_due_date / total_tasks",
+      "evidence_refs": [
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.501",
+          "timestamp": "2026-04-05",
+          "excerpt": "智能音箱概念设计稿输出",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.502",
+          "timestamp": "2026-04-05",
+          "excerpt": "扫地机器人概念设计稿输出",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.503",
+          "timestamp": "2026-04-08",
+          "excerpt": "智能门锁概念设计稿输出",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.504",
+          "timestamp": "2026-04-10",
+          "excerpt": "概念设计评审会组织",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.505",
+          "timestamp": "2026-04-15",
+          "excerpt": "品牌颜色方案调整",
+          "evidence_note": ""
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "indicator_id": "task_overdue_rate",
+      "dimension": "推进闭环力",
+      "label": "任务延期率",
+      "value": 0,
+      "unit": "ratio",
+      "status": "available",
+      "source_type": "hard_metric",
+      "source_id": "task_overdue_rate",
+      "score": null,
+      "confidence": null,
+      "calculation_basis": "value = overdue_tasks / tasks_with_due_date",
+      "evidence_refs": [],
+      "limitations": []
+    },
+    {
+      "indicator_id": "task_closure_quality_rate",
+      "dimension": "推进闭环力",
+      "label": "任务关闭质量",
+      "value": 1,
+      "unit": "ratio",
+      "status": "available",
+      "source_type": "hard_metric",
+      "source_id": "closed_task_quality_rate",
+      "score": null,
+      "confidence": null,
+      "calculation_basis": "value = qualified_closed_tasks / closed_tasks",
+      "evidence_refs": [
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.501",
+          "timestamp": "2026-04-05",
+          "excerpt": "智能音箱概念设计稿输出 close_duration=3 source_meeting_id=MTG-CASE-05-01",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.502",
+          "timestamp": "2026-04-05",
+          "excerpt": "扫地机器人概念设计稿输出 close_duration=3 source_meeting_id=MTG-CASE-05-01",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.503",
+          "timestamp": "2026-04-08",
+          "excerpt": "智能门锁概念设计稿输出 close_duration=5 source_meeting_id=MTG-CASE-05-01",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.504",
+          "timestamp": "2026-04-10",
+          "excerpt": "概念设计评审会组织 close_duration=2 source_meeting_id=MTG-CASE-05-01",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.505",
+          "timestamp": "2026-04-15",
+          "excerpt": "品牌颜色方案调整 close_duration=4 source_meeting_id=MTG-CASE-05-02",
+          "evidence_note": ""
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "indicator_id": "high_risk_identification_coverage_rate",
+      "dimension": "风险治理力",
+      "label": "高等级风险识别覆盖率",
+      "value": 1,
+      "unit": "ratio",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "high_risk_identification_coverage_rate",
+      "score": 100,
+      "confidence": 0.9,
+      "calculation_basis": "value = identified_high_risks / total_high_risks; calculation.expression=2 / 2",
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.601",
+          "timestamp": "MTG-CASE-05-02",
+          "excerpt": "供应商A模具曲面壁厚不均，需返工3处，可能延误T0节点 trigger_reason=设计曲面过于复杂，超出供应商当前工艺能力",
+          "evidence_note": "高等级风险建档与触发原因留痕。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.602",
+          "timestamp": "MTG-CASE-05-01",
+          "excerpt": "智能门锁防水等级从IPX4提升至IPX6，外观开口需重新设计 trigger_reason=安全认证部门新增指纹识别模块防水要求",
+          "evidence_note": "高等级风险建档与触发原因留痕。"
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "indicator_id": "risk_mitigation_action_rate",
+      "dimension": "风险治理力",
+      "label": "缓释动作落地率",
+      "value": 1,
+      "unit": "ratio",
+      "status": "available",
+      "source_type": "hard_metric",
+      "source_id": "risk_mitigation_action_rate",
+      "score": null,
+      "confidence": null,
+      "calculation_basis": "value = risks_with_suggested_action / total_risks",
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.601",
+          "timestamp": "MTG-CASE-05-02",
+          "excerpt": "同步调整拔模角度压缩返工周期至4天",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.602",
+          "timestamp": "MTG-CASE-05-01",
+          "excerpt": "评估密封圈+导流槽组合方案，5月5日前输出新方案",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.603",
+          "timestamp": "MTG-CASE-05-03",
+          "excerpt": "法务评估规避空间，调整底部轮廓线差异化设计",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.604",
+          "timestamp": "MTG-CASE-05-03",
+          "excerpt": "协调供应链总监争取插队，同步评估供应商C打样能力",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.605",
+          "timestamp": "MTG-CASE-05-02",
+          "excerpt": "设计效果优先，预算问题单独与财务沟通",
+          "evidence_note": ""
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "indicator_id": "risk_escalation_timeliness_rate",
+      "dimension": "风险治理力",
+      "label": "风险升级及时率",
+      "value": 1,
+      "unit": "ratio",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "risk_escalation_timeliness_rate",
+      "score": 60,
+      "confidence": 0.7,
+      "calculation_basis": "value = timely_escalation_signals / eligible_non_low_risks_proxy; calculation.expression=4 / 4",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0020",
+          "timestamp": "2026-04-08 10:05",
+          "excerpt": "先按当前方案做，防水问题我和安全认证部门确认一下具体要求。",
+          "evidence_note": "管理者通过跨职能或向上协调动作进行风险升级。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0027",
+          "timestamp": "2026-04-21 09:22",
+          "excerpt": "是安全认证部门上周发的变更通知，我已经同步到项目文档里了。",
+          "evidence_note": "管理者通过跨职能或向上协调动作进行风险升级。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0034",
+          "timestamp": "2026-04-23 11:25",
+          "excerpt": "已经让法务在看了，初步判断有规避空间，但需要调整底部轮廓线。",
+          "evidence_note": "管理者通过跨职能或向上协调动作进行风险升级。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0038",
+          "timestamp": "2026-04-24 09:12",
+          "excerpt": "先不在群里说了，我单独找供应链总监协调，看看能不能插队。",
+          "evidence_note": "管理者通过跨职能或向上协调动作进行风险升级。"
+        }
+      ],
+      "limitations": [
+        "当前会议缺少完整转写，可能遗漏其他升级讨论。",
+        "当前以聊天/发言中的升级信号作为及时升级代理。"
+      ]
+    },
+    {
+      "indicator_id": "similar_risk_recurrence_rate",
+      "dimension": "风险治理力",
+      "label": "同类风险复发率",
+      "value": 0.4,
+      "unit": "ratio",
+      "status": "available",
+      "source_type": "soft_indicator",
+      "source_id": "similar_risk_recurrence_rate",
+      "score": 40,
+      "confidence": 0.8,
+      "calculation_basis": "value = repeated_risk_samples / total_risks; calculation.expression=2 / 5",
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.601",
+          "timestamp": "MTG-CASE-05-02",
+          "excerpt": "供应链: 供应商A模具曲面壁厚不均，需返工3处，可能延误T0节点",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.602",
+          "timestamp": "MTG-CASE-05-01",
+          "excerpt": "认证变更: 智能门锁防水等级从IPX4提升至IPX6，外观开口需重新设计",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.603",
+          "timestamp": "MTG-CASE-05-03",
+          "excerpt": "知识产权: 竞品发布相似外观方案，存在专利侵权风险",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.604",
+          "timestamp": "MTG-CASE-05-03",
+          "excerpt": "供应链: 核心注塑供应商Q2产能饱和，模具排期可能延后10天",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.605",
+          "timestamp": "MTG-CASE-05-02",
+          "excerpt": "成本: ID曲面导致模具成本上升15%",
+          "evidence_note": ""
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "indicator_id": "cross_role_effective_response_time",
+      "dimension": "协同调度力",
+      "label": "跨角色有效响应时长",
+      "value": 4.9,
+      "unit": "minutes",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "cross_role_effective_response_time",
+      "score": 85,
+      "confidence": 0.8,
+      "calculation_basis": "value = avg(first_effective_response_minutes); samples=7",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0006",
+          "timestamp": "2026-04-02 14:00",
+          "excerpt": "智能音箱的散热孔设计，结构那边反馈可能会影响音质。",
+          "evidence_note": "跨角色问题/依赖首次提出。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0007",
+          "timestamp": "2026-04-02 14:05",
+          "excerpt": "我和声学团队确认一下，如果影响比较大就调整散热孔位置。",
+          "evidence_note": "管理者在 5 分钟后给出有效响应。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0019",
+          "timestamp": "2026-04-08 10:00",
+          "excerpt": "智能门锁的外观方案我这边有点问题，指纹识别模块的位置和防水结构冲突。",
+          "evidence_note": "跨角色问题/依赖首次提出。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0020",
+          "timestamp": "2026-04-08 10:05",
+          "excerpt": "先按当前方案做，防水问题我和安全认证部门确认一下具体要求。",
+          "evidence_note": "管理者在 5 分钟后给出有效响应。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0026",
+          "timestamp": "2026-04-21 09:18",
+          "excerpt": "智能门锁的防水等级从IPX4提到IPX6，外观开口设计要重新调整，这个变更谁确认的？",
+          "evidence_note": "跨角色问题/依赖首次提出。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0027",
+          "timestamp": "2026-04-21 09:22",
+          "excerpt": "是安全认证部门上周发的变更通知，我已经同步到项目文档里了。",
+          "evidence_note": "管理者在 4 分钟后给出有效响应。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0031",
+          "timestamp": "2026-04-22 14:00",
+          "excerpt": "结构工程反馈ID曲面导致模具成本上升15%，这个谁来承担？",
+          "evidence_note": "跨角色问题/依赖首次提出。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0032",
+          "timestamp": "2026-04-22 14:05",
+          "excerpt": "先不要纠结成本，保证设计效果优先，预算问题我单独找财务沟通。",
+          "evidence_note": "管理者在 5 分钟后给出有效响应。"
+        }
+      ],
+      "limitations": [
+        "精确时间戳可能包含分钟级误差；部分复杂问题的‘响应’可能跨越多个回合，此处仅计算首次有效互动。"
+      ]
+    },
+    {
+      "indicator_id": "key_milestone_sync_rate",
+      "dimension": "协同调度力",
+      "label": "关键里程碑同步率",
+      "value": 1,
+      "unit": "ratio",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "key_milestone_sync_rate",
+      "score": 90,
+      "confidence": 0.9,
+      "calculation_basis": "value = stakeholder_synced_meetings_proxy / total_key_meetings_proxy; calculation.expression=3 / 3",
+      "evidence_refs": [
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-05-01",
+          "timestamp": "2026-04-21 09:15 - 10:30",
+          "excerpt": "V1.5迭代同步会 participants=周牧,陈立,林峰,赵雪,张悦 decisions=外观冻结本周完成 | 门锁防水方案5月5日前输出 | 成本上升15%由设计效果优先覆盖",
+          "evidence_note": "关键会议有必要干系人与后续决策留痕。"
+        },
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-05-02",
+          "timestamp": "2026-04-22 10:30 - 11:45",
+          "excerpt": "供应商模具评审会 participants=周牧,林峰,陈立 decisions=同步调整拔模角度压缩返工周期 | 预算问题单独与财务沟通 | 林峰跟进供应商排期",
+          "evidence_note": "关键会议有必要干系人与后续决策留痕。"
+        },
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "供应链风险应急沟通 participants=周牧,林峰 decisions=协调供应链总监争取插队 | 同步评估供应商C打样能力 | 周牧单独跟进不占用群资源",
+          "evidence_note": "关键会议有必要干系人与后续决策留痕。"
+        }
+      ],
+      "limitations": [
+        "无法确认所有风险是否都通过正式会议纪要或文档进行了书面同步。"
+      ]
+    },
+    {
+      "indicator_id": "dependency_clarification_time",
+      "dimension": "协同调度力",
+      "label": "依赖澄清时长",
+      "value": 4.7,
+      "unit": "minutes",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "dependency_clarification_time",
+      "score": 80,
+      "confidence": 0.75,
+      "calculation_basis": "value = avg(dependency_clarification_minutes); samples=3",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0006",
+          "timestamp": "2026-04-02 14:00",
+          "excerpt": "智能音箱的散热孔设计，结构那边反馈可能会影响音质。",
+          "evidence_note": "依赖/边界问题暴露。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0007",
+          "timestamp": "2026-04-02 14:05",
+          "excerpt": "我和声学团队确认一下，如果影响比较大就调整散热孔位置。",
+          "evidence_note": "管理者在 5 分钟后明确责任方或下一步动作。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0026",
+          "timestamp": "2026-04-21 09:18",
+          "excerpt": "智能门锁的防水等级从IPX4提到IPX6，外观开口设计要重新调整，这个变更谁确认的？",
+          "evidence_note": "依赖/边界问题暴露。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0027",
+          "timestamp": "2026-04-21 09:22",
+          "excerpt": "是安全认证部门上周发的变更通知，我已经同步到项目文档里了。",
+          "evidence_note": "管理者在 4 分钟后明确责任方或下一步动作。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0033",
+          "timestamp": "2026-04-23 11:20",
+          "excerpt": "竞品上周发布的新品外观和我们扫地机器人的方案很像，要不要评估专利风险？",
+          "evidence_note": "依赖/边界问题暴露。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0034",
+          "timestamp": "2026-04-23 11:25",
+          "excerpt": "已经让法务在看了，初步判断有规避空间，但需要调整底部轮廓线。",
+          "evidence_note": "管理者在 5 分钟后明确责任方或下一步动作。"
+        }
+      ],
+      "limitations": [
+        "依赖的‘完全澄清’可能涉及多轮沟通，此处以管理者首次明确责任方和动作为准。"
+      ]
+    },
+    {
+      "indicator_id": "blocker_resolution_success_rate",
+      "dimension": "协同调度力",
+      "label": "协同阻塞清理成功率",
+      "value": 0.8333,
+      "unit": "ratio",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "blocker_resolution_success_rate",
+      "score": 75,
+      "confidence": 0.7,
+      "calculation_basis": "value = blockers_with_resolution_or_confirmed_path_proxy / total_blockers_proxy; calculation.expression=10 / 12",
+      "evidence_refs": [
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.506",
+          "timestamp": "2026-04-12",
+          "excerpt": "供应商A报价评估 status=已完成 owner=林峰",
+          "evidence_note": "跨团队阻塞的任务化推进或解决路径证据。"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.507",
+          "timestamp": "2026-04-18",
+          "excerpt": "散热孔与音质冲突协调 status=已完成 owner=周牧",
+          "evidence_note": "跨团队阻塞的任务化推进或解决路径证据。"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.508",
+          "timestamp": "2026-04-20",
+          "excerpt": "供应商B打样评估 status=已完成 owner=林峰",
+          "evidence_note": "跨团队阻塞的任务化推进或解决路径证据。"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.512",
+          "timestamp": "2026-04-28",
+          "excerpt": "供应商A模具曲面返工 status=进行中 owner=林峰",
+          "evidence_note": "跨团队阻塞的任务化推进或解决路径证据。"
+        }
+      ],
+      "limitations": [
+        "评估期结束时，部分高风险阻塞的解决结果尚未显现。"
+      ]
+    },
+    {
+      "indicator_id": "high_risk_language_trigger_frequency",
+      "dimension": "组织行为健康度",
+      "label": "高风险语言触发频次",
+      "value": 1,
+      "unit": "count",
+      "status": "available",
+      "source_type": "soft_indicator",
+      "source_id": "high_risk_language_trigger_frequency",
+      "score": 96,
+      "confidence": 0.8,
+      "calculation_basis": "value = manager_messages_matching_pressure_keywords; calculation.expression=1",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0025",
+          "timestamp": "2026-04-21 09:15",
+          "excerpt": "本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。",
+          "evidence_note": ""
+        }
+      ],
+      "limitations": [
+        "该指标仅为规则命中，需结合语境进行人工复核。"
+      ]
+    },
+    {
+      "indicator_id": "public_negative_feedback_ratio",
+      "dimension": "组织行为健康度",
+      "label": "公开负向反馈占比",
+      "value": 0,
+      "unit": "ratio",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "public_negative_feedback_ratio",
+      "score": 100,
+      "confidence": 0.9,
+      "calculation_basis": "value = public_negative_feedback_messages_proxy / manager_public_messages_proxy; calculation.expression=0 / 25",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0002",
+          "timestamp": "2026-04-01 09:15",
+          "excerpt": "4月项目启动，本周重点是完成智能音箱和扫地机器人的概念设计评审。",
+          "evidence_note": "公开沟通样本；当前未识别到针对个人的负向评价。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0003",
+          "timestamp": "2026-04-01 09:20",
+          "excerpt": "概念设计稿我已经发到云文档了，大家看一下有没有问题。",
+          "evidence_note": "公开沟通样本；当前未识别到针对个人的负向评价。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0005",
+          "timestamp": "2026-04-01 10:35",
+          "excerpt": "收到，我调整一下底部轮廓线，增加差异化。",
+          "evidence_note": "公开沟通样本；当前未识别到针对个人的负向评价。"
+        }
+      ],
+      "limitations": [
+        "聊天记录可能不完整，但现有样本中未发现负向反馈。",
+        "当前以公开群聊中的管理者消息作为反馈样本代理。"
+      ]
+    },
+    {
+      "indicator_id": "late_night_high_pressure_urging_ratio",
+      "dimension": "组织行为健康度",
+      "label": "深夜高压催办占比",
+      "value": 0,
+      "unit": "ratio",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "late_night_high_pressure_urging_ratio",
+      "score": 100,
+      "confidence": 0.95,
+      "calculation_basis": "value = late_night_urging_messages / total_urging_messages_proxy; calculation.expression=0 / 13",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0003",
+          "timestamp": "2026-04-01 09:20",
+          "excerpt": "概念设计稿我已经发到云文档了，大家看一下有没有问题。",
+          "evidence_note": "催办/跟进样本；当前未识别到深夜催办。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0007",
+          "timestamp": "2026-04-02 14:05",
+          "excerpt": "我和声学团队确认一下，如果影响比较大就调整散热孔位置。",
+          "evidence_note": "催办/跟进样本；当前未识别到深夜催办。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0012",
+          "timestamp": "2026-04-03 09:20",
+          "excerpt": "我评估一下，看看能不能在保证效果的前提下简化曲面。",
+          "evidence_note": "催办/跟进样本；当前未识别到深夜催办。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0020",
+          "timestamp": "2026-04-08 10:05",
+          "excerpt": "先按当前方案做，防水问题我和安全认证部门确认一下具体要求。",
+          "evidence_note": "催办/跟进样本；当前未识别到深夜催办。"
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "indicator_id": "repeated_urging_rate",
+      "dimension": "组织行为健康度",
+      "label": "重复催办率",
+      "value": 0,
+      "unit": "ratio",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "repeated_urging_rate",
+      "score": 100,
+      "confidence": 0.8,
+      "calculation_basis": "value = repeated_urging_without_new_information / total_urging_messages_proxy; calculation.expression=0 / 13",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0003",
+          "timestamp": "2026-04-01 09:20",
+          "excerpt": "概念设计稿我已经发到云文档了，大家看一下有没有问题。",
+          "evidence_note": "当前样本未发现同一事项在 24 小时内无信息增量的重复催办。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0007",
+          "timestamp": "2026-04-02 14:05",
+          "excerpt": "我和声学团队确认一下，如果影响比较大就调整散热孔位置。",
+          "evidence_note": "当前样本未发现同一事项在 24 小时内无信息增量的重复催办。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0012",
+          "timestamp": "2026-04-03 09:20",
+          "excerpt": "我评估一下，看看能不能在保证效果的前提下简化曲面。",
+          "evidence_note": "当前样本未发现同一事项在 24 小时内无信息增量的重复催办。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0020",
+          "timestamp": "2026-04-08 10:05",
+          "excerpt": "先按当前方案做，防水问题我和安全认证部门确认一下具体要求。",
+          "evidence_note": "当前样本未发现同一事项在 24 小时内无信息增量的重复催办。"
+        }
+      ],
+      "limitations": [
+        "仅基于聊天记录分析，未包含私聊或电话沟通。",
+        "当前基于样本人工规则近似，未做主题聚类。"
+      ]
+    },
+    {
+      "indicator_id": "meeting_idle_churn_rate",
+      "dimension": "组织行为健康度",
+      "label": "会议空转率",
+      "value": 0,
+      "unit": "ratio",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "meeting_idle_churn_rate",
+      "score": 80,
+      "confidence": 0.6,
+      "calculation_basis": "value = meetings_missing_two_of_decision_owner_deadline / total_meetings; calculation.expression=0 / 3",
+      "evidence_refs": [
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-05-01",
+          "timestamp": "2026-04-21 09:15 - 10:30",
+          "excerpt": "V1.5迭代同步会 decisions=外观冻结本周完成 | 门锁防水方案5月5日前输出 | 成本上升15%由设计效果优先覆盖 action_item_count=3",
+          "evidence_note": "结合会议决策留痕与 source_meeting_id 对应任务，判断会议是否空转。"
+        },
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-05-02",
+          "timestamp": "2026-04-22 10:30 - 11:45",
+          "excerpt": "供应商模具评审会 decisions=同步调整拔模角度压缩返工周期 | 预算问题单独与财务沟通 | 林峰跟进供应商排期 action_item_count=3",
+          "evidence_note": "结合会议决策留痕与 source_meeting_id 对应任务，判断会议是否空转。"
+        },
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "供应链风险应急沟通 decisions=协调供应链总监争取插队 | 同步评估供应商C打样能力 | 周牧单独跟进不占用群资源 action_item_count=3",
+          "evidence_note": "结合会议决策留痕与 source_meeting_id 对应任务，判断会议是否空转。"
+        }
+      ],
+      "limitations": [
+        "关键会议（MTG-CASE-05-03）缺少完整转写，判断基于摘要，置信度降低。"
+      ]
+    }
+  ],
+  "score_overview": [
+    {
+      "dimension": "方向校准力",
+      "level": "dimension_score",
+      "content": "方向校准力 80 分",
+      "evidence_refs": [
+        {
+          "source_type": "soft_indicator",
+          "source_file": "expert_results.management_reviewer_result.soft_indicators",
+          "source_id": "judgment_basis_degree",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "管理者在会议中明确指出了决策依据（供应商产能饱和、备选方案精度不足），并提出了具体应对方向（协调插队、评估C）。但缺乏与项目长期目标（如压缩开模周期）的直接关联阐述。",
+          "evidence_note": "软指标‘决策依据清晰度’评分为80，表明决策依据清晰，但与长期目标关联阐述不足。"
+        },
+        {
+          "source_type": "soft_indicator",
+          "source_file": "expert_results.management_reviewer_result.soft_indicators",
+          "source_id": "direction_flip_flop_count",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "在评估周期内，未发现明显的方向反复。项目从概念设计到结构设计深化的主线清晰，近期会议决策（外观冻结、设计效果优先、应对供应链风险）具有连续性，未出现推翻先前关键决策的情况。",
+          "evidence_note": "软指标‘方向反复次数’评分为95，表明决策方向稳定。"
+        }
+      ]
+    },
+    {
+      "dimension": "推进闭环力",
+      "level": "dimension_score",
+      "content": "推进闭环力 40 分",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "task_closure_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = closed_tasks / total_tasks",
+          "evidence_note": "metric_id=task_closure_rate, formula=value = closed_tasks / total_tasks, calculation.expression=13 / 30, value=0.4333。任务关闭率偏低。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = min(tasks_linked_to_current_meeting, current_meeting_action_item_count) / current_meeting_action_item_count",
+          "evidence_note": "metric_id=current_meeting_action_task_rate, formula=value = min(tasks_linked_to_current_meeting, current_meeting_action_item_count) / current_meeting_action_item_count, calculation.expression=2 / 3, value=0.6667。指标显示行动项入表率不足。"
+        }
+      ]
+    },
+    {
+      "dimension": "风险治理力",
+      "level": "dimension_score",
+      "content": "风险治理力 50 分",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "high_risk_resolution_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = resolved_high_risks / total_high_risks",
+          "evidence_note": "metric_id=high_risk_resolution_rate, formula=value = resolved_high_risks / total_high_risks, calculation.expression=0 / 2, value=0。高等级风险收口率为0。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "open_risk_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = open_or_tracking_risks / total_risks",
+          "evidence_note": "metric_id=open_risk_rate, formula=value = open_or_tracking_risks / total_risks, calculation.expression=5 / 5, value=1。所有风险均未收口。"
+        }
+      ]
+    },
+    {
+      "dimension": "协同调度力",
+      "level": "dimension_score",
+      "content": "协同调度力 82 分",
+      "evidence_refs": [
+        {
+          "source_type": "soft_indicator",
+          "source_file": "expert_results.coordination_lens_result.soft_indicators",
+          "source_id": "cross_role_effective_response_time",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "基于聊天记录中管理者对跨角色问题（如供应链、结构、品牌）的首次有效响应（非‘收到’，包含澄清或行动）的时间差估算。多数响应在几分钟内，但存在个别需后续会议讨论的复杂问题。",
+          "evidence_note": "软指标‘跨角色有效响应平均时间’评分为85，表明响应及时。"
+        },
+        {
+          "source_type": "soft_indicator",
+          "source_file": "expert_results.coordination_lens_result.soft_indicators",
+          "source_id": "blocker_resolution_success_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "在观察期内，多数技术或设计类阻塞（如散热孔冲突、专利规避调整）通过明确任务得以解决。但供应链产能瓶颈（高风险）的解决路径（插队协调）依赖高层决策，截至评估期结束（4月24日）仍在进行中，存在不确定性。",
+          "evidence_note": "软指标‘协同阻塞解决成功率’评分为75，因高风险阻塞未闭环而拉低。"
+        }
+      ]
+    },
+    {
+      "dimension": "组织行为健康度",
+      "level": "dimension_score",
+      "content": "组织行为健康度 95 分",
+      "evidence_refs": [
+        {
+          "source_type": "soft_indicator",
+          "source_file": "expert_results.risk_behavior_auditor_result.soft_indicators",
+          "source_id": "public_negative_feedback_ratio",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "在提供的50条群聊消息中，未发现管理者周牧对团队成员进行公开指责、抱怨或负面评价的言论。所有沟通均为任务导向或信息同步。",
+          "evidence_note": "软指标‘公开负向反馈比例’评分为100，表明无公开负向反馈。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "high_pressure_language_sample_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = manager_messages_matching_pressure_keywords / manager_chat_messages",
+          "evidence_note": "metric_id=high_pressure_language_sample_rate, formula=value = manager_messages_matching_pressure_keywords / manager_chat_messages, calculation.expression=1 / 25, value=0.04, anomalies=['2026-04-21 09:15 本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。']。高压语言样本占比低，但需语境复核。"
+        }
+      ]
+    }
+  ],
+  "key_evidence": [
+    {
+      "dimension": "方向校准力",
+      "level": "evidence",
+      "content": "管理者在会议中明确指出了决策依据（供应商产能饱和、备选方案精度不足），并提出了具体应对方向（协调插队、评估C）。但缺乏与项目长期目标（如压缩开模周期）的直接关联阐述。",
+      "evidence_refs": [
+        {
+          "source_type": "soft_indicator",
+          "source_file": "expert_results.management_reviewer_result.soft_indicators",
+          "source_id": "judgment_basis_degree",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "管理者在会议中明确指出了决策依据（供应商产能饱和、备选方案精度不足），并提出了具体应对方向（协调插队、评估C）。但缺乏与项目长期目标（如压缩开模周期）的直接关联阐述。",
+          "evidence_note": "软指标‘决策依据清晰度’评分为80，表明决策依据清晰，但与长期目标关联阐述不足。"
+        }
+      ]
+    },
+    {
+      "dimension": "推进闭环力",
+      "level": "evidence",
+      "content": "value = closed_tasks / total_tasks",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "task_closure_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = closed_tasks / total_tasks",
+          "evidence_note": "metric_id=task_closure_rate, formula=value = closed_tasks / total_tasks, calculation.expression=13 / 30, value=0.4333。任务关闭率偏低。"
+        }
+      ]
+    },
+    {
+      "dimension": "风险治理力",
+      "level": "evidence",
+      "content": "value = resolved_high_risks / total_high_risks",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "high_risk_resolution_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = resolved_high_risks / total_high_risks",
+          "evidence_note": "metric_id=high_risk_resolution_rate, formula=value = resolved_high_risks / total_high_risks, calculation.expression=0 / 2, value=0。高等级风险收口率为0。"
+        }
+      ]
+    },
+    {
+      "dimension": "协同调度力",
+      "level": "evidence",
+      "content": "基于聊天记录中管理者对跨角色问题（如供应链、结构、品牌）的首次有效响应（非‘收到’，包含澄清或行动）的时间差估算。多数响应在几分钟内，但存在个别需后续会议讨论的复杂问题。",
+      "evidence_refs": [
+        {
+          "source_type": "soft_indicator",
+          "source_file": "expert_results.coordination_lens_result.soft_indicators",
+          "source_id": "cross_role_effective_response_time",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "基于聊天记录中管理者对跨角色问题（如供应链、结构、品牌）的首次有效响应（非‘收到’，包含澄清或行动）的时间差估算。多数响应在几分钟内，但存在个别需后续会议讨论的复杂问题。",
+          "evidence_note": "软指标‘跨角色有效响应平均时间’评分为85，表明响应及时。"
+        }
+      ]
+    },
+    {
+      "dimension": "组织行为健康度",
+      "level": "evidence",
+      "content": "在提供的50条群聊消息中，未发现管理者周牧对团队成员进行公开指责、抱怨或负面评价的言论。所有沟通均为任务导向或信息同步。",
+      "evidence_refs": [
+        {
+          "source_type": "soft_indicator",
+          "source_file": "expert_results.risk_behavior_auditor_result.soft_indicators",
+          "source_id": "public_negative_feedback_ratio",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "在提供的50条群聊消息中，未发现管理者周牧对团队成员进行公开指责、抱怨或负面评价的言论。所有沟通均为任务导向或信息同步。",
+          "evidence_note": "软指标‘公开负向反馈比例’评分为100，表明无公开负向反馈。"
+        }
+      ]
+    }
+  ],
+  "risk_alerts": [
+    {
+      "dimension": "方向校准力",
+      "level": "medium",
+      "content": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "planner_slice.human_review_rules",
+          "source_id": "review_missing_current_transcript",
+          "timestamp": "",
+          "excerpt": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+          "evidence_note": "规则明确指出当前会议转写缺失。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting.missing_fields",
+          "source_id": "",
+          "timestamp": "",
+          "excerpt": "meeting_docs.current_transcript",
+          "evidence_note": "missing_fields 确认缺少当前会议转写。"
+        }
+      ]
+    },
+    {
+      "dimension": "推进闭环力",
+      "level": "medium",
+      "content": "会议行动项 3 条，任务表命中 2 条，存在行动项与任务关联不一致的情况，需人工复核是遗漏入表、任务合并还是记录误差。",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "planner_slice.human_review_rules",
+          "source_id": "review_action_task_mapping",
+          "timestamp": "",
+          "excerpt": "会议行动项 3 条，任务表命中 2 条",
+          "evidence_note": "规则明确指出行动项与任务表映射不一致。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "会议行动项 3 条，任务表命中 2 条",
+          "evidence_note": "metric_id=current_meeting_action_task_rate 的 anomalies 字段记录了此不一致情况。"
+        }
+      ]
+    },
+    {
+      "dimension": "风险治理力",
+      "level": "medium",
+      "content": "高等级风险未完全收口，风险治理结论需人工复核。",
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.601",
+          "timestamp": "MTG-CASE-05-02",
+          "excerpt": "供应商A模具曲面壁厚不均，需返工3处，可能延误T0节点 followup_status=open",
+          "evidence_note": "高风险NO.601状态为open。"
+        }
+      ]
+    },
+    {
+      "dimension": "风险治理力",
+      "level": "medium",
+      "content": "组织行为相关语言只能作为观察项，需人工确认语境和场景。",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0025",
+          "timestamp": "2026-04-21 09:15",
+          "excerpt": "本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。",
+          "evidence_note": "需复核该表述的具体语境和团队反应。"
+        }
+      ]
+    },
+    {
+      "dimension": "风险治理力",
+      "level": "medium",
+      "content": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+      "evidence_refs": [
+        {
+          "source_type": "current_meeting",
+          "source_file": "meeting_fact_pack",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "missing_fields: [\"meeting_docs.current_transcript\"]",
+          "evidence_note": "会议完整转写缺失。"
+        }
+      ]
+    }
+  ],
+  "human_review_items": [
+    {
+      "review_id": "HR-MTG-CASE-05-03-01",
+      "reason": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+      "severity": "medium",
+      "related_dimension": "方向校准力",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "planner_slice.human_review_rules",
+          "source_id": "review_missing_current_transcript",
+          "timestamp": "",
+          "excerpt": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+          "evidence_note": "规则明确指出当前会议转写缺失。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting.missing_fields",
+          "source_id": "",
+          "timestamp": "",
+          "excerpt": "meeting_docs.current_transcript",
+          "evidence_note": "missing_fields 确认缺少当前会议转写。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-MTG-CASE-05-03-02",
+      "reason": "会议行动项 3 条，任务表命中 2 条，存在行动项与任务关联不一致的情况，需人工复核是遗漏入表、任务合并还是记录误差。",
+      "severity": "medium",
+      "related_dimension": "推进闭环力",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "planner_slice.human_review_rules",
+          "source_id": "review_action_task_mapping",
+          "timestamp": "",
+          "excerpt": "会议行动项 3 条，任务表命中 2 条",
+          "evidence_note": "规则明确指出行动项与任务表映射不一致。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "会议行动项 3 条，任务表命中 2 条",
+          "evidence_note": "metric_id=current_meeting_action_task_rate 的 anomalies 字段记录了此不一致情况。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-CASE05-01",
+      "reason": "高等级风险未完全收口，风险治理结论需人工复核。",
+      "severity": "medium",
+      "related_dimension": "风险治理力",
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.601",
+          "timestamp": "MTG-CASE-05-02",
+          "excerpt": "供应商A模具曲面壁厚不均，需返工3处，可能延误T0节点 followup_status=open",
+          "evidence_note": "高风险NO.601状态为open。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-CASE05-02",
+      "reason": "组织行为相关语言只能作为观察项，需人工确认语境和场景。",
+      "severity": "medium",
+      "related_dimension": "风险治理力",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0025",
+          "timestamp": "2026-04-21 09:15",
+          "excerpt": "本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。",
+          "evidence_note": "需复核该表述的具体语境和团队反应。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-CASE05-03",
+      "reason": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+      "severity": "medium",
+      "related_dimension": "风险治理力",
+      "evidence_refs": [
+        {
+          "source_type": "current_meeting",
+          "source_file": "meeting_fact_pack",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "missing_fields: [\"meeting_docs.current_transcript\"]",
+          "evidence_note": "会议完整转写缺失。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-CASE-05-COORD-01",
+      "reason": "需要人工复核‘供应链总监插队协调’（任务NO.525）的最终结果。该任务是应对高风险‘供应商产能瓶颈’的关键解决路径，但解决过程依赖高层决策，且评估期结束时任务状态仍为‘进行中’。需确认该阻塞是否最终被解除，以及是否对模具T0节点造成实际影响。",
+      "severity": "medium",
+      "related_dimension": "协同调度力",
+      "evidence_refs": [
+        {
+          "source_type": "coordination_context",
+          "source_file": "input",
+          "source_id": "NO.604",
+          "timestamp": "2026-04-24",
+          "excerpt": "风险ID: NO.604, 风险描述: 核心注塑供应商Q2产能饱和，模具排期可能延后10天, 风险等级: medium, 建议行动: 协调供应链总监争取插队，同步评估供应商C打样能力",
+          "evidence_note": "该风险触发了需要协调解决的阻塞。"
+        },
+        {
+          "source_type": "coordination_context",
+          "source_file": "input",
+          "source_id": "NO.525",
+          "timestamp": "2026-05-10",
+          "excerpt": "任务ID: NO.525, 任务名称: 供应链总监插队协调, 状态: 进行中, 关闭时长: \"\"",
+          "evidence_note": "为解决阻塞而创建的任务，状态未关闭。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0048",
+          "timestamp": "2026-04-29 10:15",
+          "excerpt": "还在沟通，总监说需要高层会议决策。",
+          "evidence_note": "表明协调过程遇到更高层级的决策依赖，增加了解决的不确定性。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-MTG-CASE-05-03-01",
+      "reason": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+      "severity": "medium",
+      "related_dimension": "方向校准力",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "planner_slice.human_review_rules",
+          "source_id": "review_missing_current_transcript",
+          "timestamp": "",
+          "excerpt": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+          "evidence_note": "规则明确指出当前会议转写缺失。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting.missing_fields",
+          "source_id": "",
+          "timestamp": "",
+          "excerpt": "meeting_docs.current_transcript",
+          "evidence_note": "missing_fields 确认缺少当前会议转写。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-MTG-CASE-05-03-02",
+      "reason": "会议行动项 3 条，任务表命中 2 条，存在行动项与任务关联不一致的情况，需人工复核是遗漏入表、任务合并还是记录误差。",
+      "severity": "medium",
+      "related_dimension": "推进闭环力",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "planner_slice.human_review_rules",
+          "source_id": "review_action_task_mapping",
+          "timestamp": "",
+          "excerpt": "会议行动项 3 条，任务表命中 2 条",
+          "evidence_note": "规则明确指出行动项与任务表映射不一致。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "会议行动项 3 条，任务表命中 2 条",
+          "evidence_note": "metric_id=current_meeting_action_task_rate 的 anomalies 字段记录了此不一致情况。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-CASE05-01",
+      "reason": "高等级风险未完全收口，风险治理结论需人工复核。",
+      "severity": "medium",
+      "related_dimension": "风险治理力",
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.601",
+          "timestamp": "MTG-CASE-05-02",
+          "excerpt": "供应商A模具曲面壁厚不均，需返工3处，可能延误T0节点 followup_status=open",
+          "evidence_note": "高风险NO.601状态为open。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-CASE05-02",
+      "reason": "组织行为相关语言只能作为观察项，需人工确认语境和场景。",
+      "severity": "medium",
+      "related_dimension": "风险治理力",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0025",
+          "timestamp": "2026-04-21 09:15",
+          "excerpt": "本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。",
+          "evidence_note": "需复核该表述的具体语境和团队反应。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-CASE05-03",
+      "reason": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+      "severity": "medium",
+      "related_dimension": "风险治理力",
+      "evidence_refs": [
+        {
+          "source_type": "current_meeting",
+          "source_file": "meeting_fact_pack",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "missing_fields: [\"meeting_docs.current_transcript\"]",
+          "evidence_note": "会议完整转写缺失。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-CASE-05-COORD-01",
+      "reason": "需要人工复核‘供应链总监插队协调’（任务NO.525）的最终结果。该任务是应对高风险‘供应商产能瓶颈’的关键解决路径，但解决过程依赖高层决策，且评估期结束时任务状态仍为‘进行中’。需确认该阻塞是否最终被解除，以及是否对模具T0节点造成实际影响。",
+      "severity": "medium",
+      "related_dimension": "协同调度力",
+      "evidence_refs": [
+        {
+          "source_type": "coordination_context",
+          "source_file": "input",
+          "source_id": "NO.604",
+          "timestamp": "2026-04-24",
+          "excerpt": "风险ID: NO.604, 风险描述: 核心注塑供应商Q2产能饱和，模具排期可能延后10天, 风险等级: medium, 建议行动: 协调供应链总监争取插队，同步评估供应商C打样能力",
+          "evidence_note": "该风险触发了需要协调解决的阻塞。"
+        },
+        {
+          "source_type": "coordination_context",
+          "source_file": "input",
+          "source_id": "NO.525",
+          "timestamp": "2026-05-10",
+          "excerpt": "任务ID: NO.525, 任务名称: 供应链总监插队协调, 状态: 进行中, 关闭时长: \"\"",
+          "evidence_note": "为解决阻塞而创建的任务，状态未关闭。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0048",
+          "timestamp": "2026-04-29 10:15",
+          "excerpt": "还在沟通，总监说需要高层会议决策。",
+          "evidence_note": "表明协调过程遇到更高层级的决策依赖，增加了解决的不确定性。"
+        }
+      ]
+    }
+  ],
+  "next_actions": [
+    {
+      "dimension": "方向校准力",
+      "level": "medium",
+      "content": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "planner_slice.human_review_rules",
+          "source_id": "review_missing_current_transcript",
+          "timestamp": "",
+          "excerpt": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+          "evidence_note": "规则明确指出当前会议转写缺失。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting.missing_fields",
+          "source_id": "",
+          "timestamp": "",
+          "excerpt": "meeting_docs.current_transcript",
+          "evidence_note": "missing_fields 确认缺少当前会议转写。"
+        }
+      ]
+    },
+    {
+      "dimension": "推进闭环力",
+      "level": "medium",
+      "content": "会议行动项 3 条，任务表命中 2 条，存在行动项与任务关联不一致的情况，需人工复核是遗漏入表、任务合并还是记录误差。",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "planner_slice.human_review_rules",
+          "source_id": "review_action_task_mapping",
+          "timestamp": "",
+          "excerpt": "会议行动项 3 条，任务表命中 2 条",
+          "evidence_note": "规则明确指出行动项与任务表映射不一致。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "会议行动项 3 条，任务表命中 2 条",
+          "evidence_note": "metric_id=current_meeting_action_task_rate 的 anomalies 字段记录了此不一致情况。"
+        }
+      ]
+    },
+    {
+      "dimension": "风险治理力",
+      "level": "medium",
+      "content": "高等级风险未完全收口，风险治理结论需人工复核。",
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.601",
+          "timestamp": "MTG-CASE-05-02",
+          "excerpt": "供应商A模具曲面壁厚不均，需返工3处，可能延误T0节点 followup_status=open",
+          "evidence_note": "高风险NO.601状态为open。"
+        }
+      ]
+    },
+    {
+      "dimension": "风险治理力",
+      "level": "medium",
+      "content": "组织行为相关语言只能作为观察项，需人工确认语境和场景。",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0025",
+          "timestamp": "2026-04-21 09:15",
+          "excerpt": "本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。",
+          "evidence_note": "需复核该表述的具体语境和团队反应。"
+        }
+      ]
+    },
+    {
+      "dimension": "风险治理力",
+      "level": "medium",
+      "content": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+      "evidence_refs": [
+        {
+          "source_type": "current_meeting",
+          "source_file": "meeting_fact_pack",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "missing_fields: [\"meeting_docs.current_transcript\"]",
+          "evidence_note": "会议完整转写缺失。"
+        }
+      ]
+    }
+  ],
+  "base_writeback_payload": {
+    "manager_id": "MGR-CASE-05",
+    "project_id": "PJT-CASE-05",
+    "report_status": "degraded",
+    "fallback_reason": "model_skipped_for_deterministic_report"
+  },
+  "missing_upstream_results": []
+}
