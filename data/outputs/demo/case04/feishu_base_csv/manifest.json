@@ -1,0 +1,63 @@
+{
+  "generated_at": "2026-05-06T08:52:02.863Z",
+  "package_type": "feishu_bitable_structured_writeback_package",
+  "source_type": "output_layer_input",
+  "input_file": "E:\\GITHUB-RES\\Feishu\\data\\outputs\\demo\\case04\\current\\output_layer_input.json",
+  "input_dir": "E:\\GITHUB-RES\\Feishu\\data\\outputs\\demo\\case04\\current",
+  "evaluation_id": "EVAL-PJT-CASE-04-MTG-CASE-04-04",
+  "manager_id": "MGR-CASE-04",
+  "project_id": "PJT-CASE-04",
+  "writeback_decisions": {
+    "report_can_finalize": false,
+    "report_status": "needs_evidence 需补证",
+    "needs_human_review": true,
+    "needs_evidence": true,
+    "observation_only": true,
+    "tables_to_write": [
+      "workspace_home",
+      "people_overview",
+      "evaluation_runs",
+      "dimension_results",
+      "metric_results",
+      "review_items",
+      "evidence_index"
+    ]
+  },
+  "files": [
+    {
+      "filename": "workspace_home.csv",
+      "rows": 5,
+      "columns": 10
+    },
+    {
+      "filename": "people_overview.csv",
+      "rows": 1,
+      "columns": 20
+    },
+    {
+      "filename": "evaluation_runs.csv",
+      "rows": 1,
+      "columns": 18
+    },
+    {
+      "filename": "dimension_results.csv",
+      "rows": 5,
+      "columns": 20
+    },
+    {
+      "filename": "metric_results.csv",
+      "rows": 15,
+      "columns": 23
+    },
+    {
+      "filename": "review_items.csv",
+      "rows": 6,
+      "columns": 18
+    },
+    {
+      "filename": "evidence_index.csv",
+      "rows": 55,
+      "columns": 20
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "data": [
+      [
+        "NO.301",
+        "0.9",
+        "2",
+        "会议纪要：V1.5迭代同步会 09:17 明确“外观本周必须冻结” | 项目主文档里程碑：4月底前完成外观冻结",
+        "周牧",
+        "PJT-CASE-05",
+        "MTG-CASE-05-01-STM-1",
+        "meeting+doc",
+        "本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。",
+        "MTG-CASE-05-01",
+        "MGR-CASE-05",
+        "有依据"
+      ],
+      [
+        "NO.302",
+        "1",
+        "2",
+        "会议纪要：V1.5迭代同步会 09:22 同步防水等级变更通知 | 安全认证部门变更邮件作为证据",
+        "周牧",
+        "PJT-CASE-05",
+        "MTG-CASE-05-01-STM-2",
+        "meeting+doc",
+        "是安全认证部门上周发的变更通知，我已经同步到项目文档里了。",
+        "MTG-CASE-05-01",
+        "MGR-CASE-05",
+        "有依据"
+      ],
+      [
+        "NO.303",
+        "1",
+        "2",
+        "会议纪要：V1.5迭代同步会 09:38 明确“保证设计效果优先” | 成本增加15%但未影响设计决策",
+        "周牧",
+        "PJT-CASE-05",
+        "MTG-CASE-05-01-STM-3",
+        "meeting+doc",
+        "先不要纠结成本，保证设计效果优先，预算问题我单独找财务沟通。",
+        "MTG-CASE-05-01",
+        "MGR-CASE-05",
+        "有依据"
+      ],
+      [
+        "NO.304",
+        "0.9",
+        "2",
+        "会议纪要：供应商模具评审会 10:35 评估返工周期影响 | 实际返工进度与预期基本一致",
+        "林峰",
+        "PJT-CASE-05",
+        "MTG-CASE-05-02-STM-1",
+        "meeting+chat",
+        "预计5-7个工作日，如果同步调整拔模角度可以压缩到4天。",
+        "MTG-CASE-05-02",
+        "MGR-CASE-05",
+        "有依据"
+      ],
+      [
+        "NO.305",
+        "0.8",
+        "2",
+        "群聊记录：2026-04-23 11:25 同步法务初步评估结果 | 法务确认有规避空间",
+        "周牧",
+        "PJT-CASE-05",
+        "MTG-CASE-05-03-STM-1",
+        "chat+doc",
+        "已经让法务在看了，初步判断有规避空间，但需要调整底部轮廓线。",
+        "MTG-CASE-05-03",
+        "MGR-CASE-05",
+        "有依据"
+      ],
+      [
+        "NO.306",
+        "0.7",
+        "1",
+        "群聊记录：2026-04-24 09:12 提及单独跟进供应链问题 | 但未说明具体协调进展和结果",
+        "周牧",
+        "PJT-CASE-05",
+        "MTG-CASE-05-03-STM-2",
+        "chat",
+        "先不在群里说了，我单独找供应链总监协调，看看能不能插队。",
+        "MTG-CASE-05-03",
+        "MGR-CASE-05",
+        "部分有依据"
+      ],
+      [
+        "NO.307",
+        "0.9",
+        "3",
+        "会议纪要：外观冻结确认会 09:10 确认扫地机器人需微调 | 法务规避要求与设计调整执行一致",
+        "周牧",
+        "PJT-CASE-05",
+        "MTG-CASE-05-04-STM-1",
+        "meeting+chat",
+        "扫地机器人的也冻结了，但底部轮廓线还需要微调，法务那边有规避要求。",
+        "MTG-CASE-05-04",
+        "MGR-CASE-05",
+        "有依据"
+      ],
+      [
+        "NO.308",
+        "0.8",
+        "2",
+        "会议纪要：进度跟进会 10:05 更新模具返工进度 | 实际完成进度与会上预期一致",
+        "林峰",
+        "PJT-CASE-05",
+        "MTG-CASE-05-05-STM-1",
+        "meeting",
+        "已经完成2处，还有1处明天可以搞定。",
+        "MTG-CASE-05-05",
+        "MGR-CASE-05",
+        "有依据"
+      ],
+      [
+        "NO.309",
+        "0.9",
+        "2",
+        "会议纪要：月度总结会 09:30 总结4月成果与5月计划 | 计划与实际任务安排一致",
+        "周牧",
+        "PJT-CASE-05",
+        "MTG-CASE-05-06-STM-1",
+        "meeting+task",
+        "4月完成了概念设计评审、外观方案冻结、供应商模具评审。",
+        "MTG-CASE-05-06",
+        "MGR-CASE-05",
+        "有依据"
+      ]
+    ],
+    "field_id_list": [
+      "fldStmID",
+      "fldEvidenceConfidence",
+      "fldReviewMeetingCount",
+      "fldEvidenceRef",
+      "fldSpeakerName",
+      "fldProjectID",
+      "fldStatementID",
+      "fldEvidenceSourceType",
+      "fldStatementSummary",
+      "fldMeetingID",
+      "fldSpeakerID",
+      "fldFactCheckResult"
+    ],
+    "fields": [
+      "ID",
+      "evidence_confidence",
+      "review_meeting_count",
+      "evidence_ref",
+      "speaker_name",
+      "project_id",
+      "statement_id",
+      "evidence_source_type",
+      "statement_summary",
+      "meeting_id",
+      "speaker_id",
+      "fact_check_result"
+    ],
+    "has_more": false,
+    "query_context": {
+      "field_scope": "all_fields",
+      "record_scope": "all_records"
+    },
+    "record_id_list": [
+      "reccase05stm001",
+      "reccase05stm002",
+      "reccase05stm003",
+      "reccase05stm004",
+      "reccase05stm005",
+      "reccase05stm006",
+      "reccase05stm007",
+      "reccase05stm008",
+      "reccase05stm009"
+    ]
+  },
+  "_notice": {
+    "update": {
+      "current": "1.0.19",
+      "latest": "1.0.23",
+      "message": "lark-cli 1.0.23 available, current 1.0.19"
+    }
+  }
+}

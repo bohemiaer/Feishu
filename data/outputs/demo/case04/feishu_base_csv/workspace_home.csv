@@ -1,0 +1,14 @@
+module_id,模块名称,平台视角,模块说明,入口链接,关联数据表,推荐使用人,展示顺序,展示状态,备注
+front_people_overview,人员评估总览,评估平台,前台一级入口：按中层管理者查看本轮评估状态、数据覆盖、待复核数量和报告入口。,https://jcneyh7qlo8i.feishu.cn/base/Z6d9bO5UqajK01swK9CcoGU9nkf?table=tblfQS3bHVLNavvZ,"people_overview
+evaluation_runs",HRBP / 评审负责人 / 业务负责人,1,启用,用户心智：看人。
+front_review_packet,单人 Review Packet,评估平台,核心阅读页：围绕单个中层展示评估概览、五维结论、指标卡、低置信/降级、关键证据、人工复核和建议动作。,https://jcneyh7qlo8i.feishu.cn/base/Z6d9bO5UqajK01swK9CcoGU9nkf?table=tblcGy0h0fx4pIoG,"evaluation_runs
+dimension_results
+metric_results
+review_items
+evidence_index",上级管理者 / HRBP / 签字人,2,启用,用户心智：看报告。
+front_metric_coverage_dashboard,指标与数据覆盖看板,BI看板,BI/看板入口：查看指标值、样本量、缺失率、数据源质量、降级原因和证据权限风险。,https://jcneyh7qlo8i.feishu.cn/base/Z6d9bO5UqajK01swK9CcoGU9nkf?table=tbldjPFXVZ4PD9RJ,"metric_results
+evidence_index
+仪表盘",PMO / 数据负责人 / Agent 评测人员,3,启用,用户心智：看数据质量。
+front_human_review,人工复核工作台,复核审批,工单/审批入口：复核人只在这里更新复核状态、复核备注、是否允许报告生效。,https://jcneyh7qlo8i.feishu.cn/base/Z6d9bO5UqajK01swK9CcoGU9nkf?table=tblShT3KAkGRjj1T,"review_items
+evidence_index",复核人 / HRBP / 评审负责人,4,启用,人工 update 在 review_items；结果由写回 Agent / Adapter 返回其他结果表。
+front_evidence_library,证据溯源库,证据下钻,证据下钻入口：默认查看关键证据和冲突证据，辅助证据折叠查看。,https://jcneyh7qlo8i.feishu.cn/base/Z6d9bO5UqajK01swK9CcoGU9nkf?table=tblQenU1BAdECcY2,evidence_index,复核人 / 审计查看人 / Agent 评测人员,5,启用,只保留证据片段、原始链接、权限状态和冲突说明。

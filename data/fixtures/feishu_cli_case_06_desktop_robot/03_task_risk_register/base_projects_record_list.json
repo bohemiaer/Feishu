@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "data": [
+      ["PJT-CASE-06", "桌面机器人产品研发项目", "https://case06.feishu.cn/docx/case06MainDoc", "", "智能硬件研发部", "周牧", "2026-06-30", "MGR-CASE-06", "PJT-CASE-06", "2026-01-01", "yellow"]
+    ],
+    "field_id_list": ["fld001", "fld002", "fld003", "fld004", "fld005", "fld006", "fld007", "fld008", "fld009", "fld010", "fld011"],
+    "fields": ["ID", "project_name", "main_doc_url", "latest_weekly_report_url", "department", "manager_name", "due_date", "manager_id", "project_id", "start_date", "health_status"],
+    "has_more": false,
+    "query_context": {"field_scope": "all_fields", "record_scope": "all_records"},
+    "record_id_list": ["reccase06project001"]
+  }
+}

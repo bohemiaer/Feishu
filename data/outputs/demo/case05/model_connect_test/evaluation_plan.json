@@ -1,0 +1,228 @@
+{
+  "task_context": {
+    "task_id": "FRONT-PJT-CASE-05-MTG-CASE-05-03",
+    "project_id": "PJT-CASE-05",
+    "manager_id": "MGR-CASE-05",
+    "meeting_id": "MTG-CASE-05-03",
+    "evaluation_period": "2026-01-01 ~ 2026-04-24",
+    "status": "collected",
+    "created_at": "2026-05-06T09:51:26.693Z",
+    "updated_at": "2026-05-06T09:51:26.693Z"
+  },
+  "generated_at": "2026-05-06T09:51:26.702Z",
+  "project_id": "PJT-CASE-05",
+  "manager_id": "MGR-CASE-05",
+  "meeting_id": "MTG-CASE-05-03",
+  "evaluation_focus": {
+    "evaluation_period": "2026-01-01 ~ 2026-04-24",
+    "report_type": "single",
+    "execution_mode": "full_evaluation",
+    "focus_dimensions": [
+      {
+        "dimension": "方向校准力",
+        "priority": "medium",
+        "reasons": [
+          "当前会议为阶段复盘，需要校验目标、范围和优先级是否与文档和历史决策一致。",
+          "当前会议缺完整妙记转写，发言语境需要依赖会议表和 Statements 交叉校验。"
+        ]
+      },
+      {
+        "dimension": "推进闭环力",
+        "priority": "high",
+        "reasons": [
+          "任务关闭率为 0.4333，需要检查遗留项是否被清楚转入下一阶段。",
+          "当前会议行动项与任务表关联数量不一致，需要复核会后扩展任务或重复挂载。"
+        ]
+      },
+      {
+        "dimension": "风险治理力",
+        "priority": "high",
+        "reasons": [
+          "风险未收口占比为 1，需要重点检查高等级风险和遗留风险治理。",
+          "高等级风险收口率为 0，需要复核未收口高风险的缓释动作。"
+        ]
+      },
+      {
+        "dimension": "协同调度力",
+        "priority": "medium",
+        "reasons": [
+          "日历、会议和通讯录样本齐备，可检查必要干系人同步与跨团队阻塞处理。"
+        ]
+      },
+      {
+        "dimension": "组织行为健康度",
+        "priority": "high",
+        "reasons": [
+          "高压推进语言样本占比为 0.04，只生成观察项并进入人工复核。",
+          "当前输入存在补录、噪音或上下文不足，组织行为判断必须降低置信度。"
+        ]
+      }
+    ],
+    "data_warnings": [
+      "当前会议没有完整妙记转写，当前会议事实将更多依赖会议表和 Statements。",
+      "历史会议中存在 summary_only 样本，历史复核时需降低留痕置信度。"
+    ],
+    "metric_gaps": []
+  },
+  "execution_plan": {
+    "plan_id": "PLAN-PJT-CASE-05-MTG-CASE-05-03",
+    "execution_mode": "full_evaluation",
+    "agent_plan": [
+      {
+        "agent_name": "Management Reviewer",
+        "required": true,
+        "input_keys": [
+          "meeting_fact_pack",
+          "history_bundle",
+          "hard_metrics_result"
+        ],
+        "output_keys": [
+          "dimension_findings",
+          "human_review_items"
+        ],
+        "focus_dimensions": [
+          "方向校准力",
+          "推进闭环力"
+        ]
+      },
+      {
+        "agent_name": "Risk & Behavior Auditor",
+        "required": true,
+        "input_keys": [
+          "meeting_fact_pack",
+          "history_bundle",
+          "hard_metrics_result",
+          "raw_payload"
+        ],
+        "output_keys": [
+          "dimension_findings",
+          "risk_flags",
+          "human_review_items"
+        ],
+        "focus_dimensions": [
+          "风险治理力",
+          "组织行为健康度"
+        ]
+      },
+      {
+        "agent_name": "Coordination Lens",
+        "required": true,
+        "input_keys": [
+          "meeting_fact_pack",
+          "hard_metrics_result",
+          "raw_payload"
+        ],
+        "output_keys": [
+          "dimension_findings",
+          "human_review_items"
+        ],
+        "focus_dimensions": [
+          "协同调度力"
+        ]
+      },
+      {
+        "agent_name": "Capability Assessor",
+        "required": true,
+        "input_keys": [
+          "dimension_findings",
+          "risk_flags",
+          "hard_metrics_result",
+          "human_review_items"
+        ],
+        "output_keys": [
+          "dimension_findings",
+          "risk_flags",
+          "human_review_items"
+        ],
+        "focus_dimensions": [
+          "方向校准力",
+          "推进闭环力",
+          "风险治理力",
+          "协同调度力",
+          "组织行为健康度"
+        ]
+      },
+      {
+        "agent_name": "Report Writer",
+        "required": true,
+        "input_keys": [
+          "dimension_findings",
+          "risk_flags",
+          "human_review_items"
+        ],
+        "output_keys": [
+          "report_payload"
+        ],
+        "focus_dimensions": [
+          "方向校准力",
+          "推进闭环力",
+          "风险治理力",
+          "协同调度力",
+          "组织行为健康度"
+        ]
+      }
+    ],
+    "required_inputs": [
+      "meeting_fact_pack",
+      "history_bundle",
+      "raw_payload",
+      "hard_metrics_result"
+    ],
+    "output_contracts": [
+      "evaluation_focus",
+      "execution_plan",
+      "human_review_rules"
+    ],
+    "stop_conditions": []
+  },
+  "human_review_rules": [
+    {
+      "rule_id": "review_missing_current_transcript",
+      "severity": "medium",
+      "reason": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+      "target_nodes": [
+        "Management Reviewer",
+        "Risk & Behavior Auditor"
+      ]
+    },
+    {
+      "rule_id": "review_behavior_language_context",
+      "severity": "medium",
+      "reason": "组织行为相关语言只能作为观察项，需人工确认语境和场景。",
+      "target_nodes": [
+        "Risk & Behavior Auditor",
+        "Capability Assessor"
+      ]
+    },
+    {
+      "rule_id": "review_unresolved_high_risks",
+      "severity": "high",
+      "reason": "高等级风险未完全收口，风险治理结论需人工复核。",
+      "target_nodes": [
+        "Risk & Behavior Auditor"
+      ]
+    },
+    {
+      "rule_id": "review_action_task_mapping",
+      "severity": "medium",
+      "reason": "会议行动项 3 条，任务表命中 2 条",
+      "target_nodes": [
+        "Management Reviewer"
+      ]
+    },
+    {
+      "rule_id": "review_data_quality_warnings",
+      "severity": "medium",
+      "reason": "前链路数据质量报告存在 warning，后续结论需要保留置信度说明。",
+      "target_nodes": [
+        "Capability Assessor",
+        "Report Writer"
+      ]
+    }
+  ],
+  "planner_notes": [
+    "历史会议样本数：2",
+    "聊天样本数：50",
+    "硬指标数：15"
+  ]
+}

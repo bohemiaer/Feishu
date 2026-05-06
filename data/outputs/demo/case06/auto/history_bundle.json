@@ -1,0 +1,253 @@
+{
+  "recent_meetings": [
+    {
+      "meeting_id": "MTG-CASE-06-11",
+      "meeting_title": "供应商价格谈判会",
+      "meeting_time": "2026-03-20 14:00 - 15:00",
+      "review_status": "空转记录",
+      "summary": [
+        "与新供应商谈判价格，对方坚持不降价。会议没有达成任何书面协议。",
+        "继续谈判; 另寻其他供应商比较"
+      ]
+    },
+    {
+      "meeting_id": "MTG-CASE-06-10",
+      "meeting_title": "手板供应商问题专题会",
+      "meeting_time": "2026-03-15 10:00 - 12:00",
+      "review_status": "完整记录",
+      "summary": [
+        "手板供应商CNC精度不够，需要返工。决定更换供应商。",
+        "更换手板供应商; 新供应商价格贵30%可接受; 交期不能延"
+      ]
+    },
+    {
+      "meeting_id": "MTG-CASE-06-09",
+      "meeting_title": "联合调试启动会",
+      "meeting_time": "2026-03-05 14:00 - 17:00",
+      "review_status": "完整记录",
+      "summary": [
+        "联合调试启动。发现语音模块和主控芯片兼容性问题。",
+        "接口电路调整; 本周内解决兼容性问题"
+      ]
+    }
+  ],
+  "past_evaluations": [],
+  "risk_history": [
+    {
+      "record_id": "reccase06task001",
+      "task_id": "NO.601",
+      "risk_id": "",
+      "field_changes": [
+        {
+          "field": "status",
+          "old_value": "待开始",
+          "new_value": "进行中",
+          "operator": {
+            "open_id": "ou_case06zhoumu001",
+            "name": "周牧"
+          },
+          "update_time": "2026-01-10 09:15"
+        },
+        {
+          "field": "status",
+          "old_value": "进行中",
+          "new_value": "已完成",
+          "operator": {
+            "open_id": "ou_case06zhoumu001",
+            "name": "周牧"
+          },
+          "update_time": "2026-01-31 18:00"
+        }
+      ]
+    },
+    {
+      "record_id": "reccase06task002",
+      "task_id": "NO.602",
+      "risk_id": "",
+      "field_changes": [
+        {
+          "field": "status",
+          "old_value": "待开始",
+          "new_value": "进行中",
+          "operator": {
+            "open_id": "ou_case06zhoumu001",
+            "name": "周牧"
+          },
+          "update_time": "2026-01-15 09:00"
+        },
+        {
+          "field": "status",
+          "old_value": "进行中",
+          "new_value": "已完成",
+          "operator": {
+            "open_id": "ou_case06zhoumu001",
+            "name": "周牧"
+          },
+          "update_time": "2026-02-15 17:30"
+        }
+      ]
+    },
+    {
+      "record_id": "reccase06task010",
+      "task_id": "NO.610",
+      "risk_id": "",
+      "field_changes": [
+        {
+          "field": "status",
+          "old_value": "待开始",
+          "new_value": "进行中",
+          "operator": {
+            "open_id": "ou_case06zhoumu001",
+            "name": "周牧"
+          },
+          "update_time": "2026-04-01 09:00"
+        },
+        {
+          "field": "is_overdue",
+          "old_value": "false",
+          "new_value": "true",
+          "operator": {
+            "open_id": "系统",
+            "name": "系统"
+          },
+          "update_time": "2026-04-16 00:00"
+        }
+      ]
+    },
+    {
+      "record_id": "reccase06task016",
+      "task_id": "NO.616",
+      "risk_id": "",
+      "field_changes": [
+        {
+          "field": "status",
+          "old_value": "待开始",
+          "new_value": "进行中",
+          "operator": {
+            "open_id": "ou_case06zhoumu001",
+            "name": "周牧"
+          },
+          "update_time": "2026-04-15 09:00"
+        },
+        {
+          "field": "is_overdue",
+          "old_value": "false",
+          "new_value": "true",
+          "operator": {
+            "open_id": "系统",
+            "name": "系统"
+          },
+          "update_time": "2026-04-21 00:00"
+        }
+      ]
+    },
+    {
+      "record_id": "reccase06task020",
+      "task_id": "NO.620",
+      "risk_id": "",
+      "field_changes": [
+        {
+          "field": "status",
+          "old_value": "待开始",
+          "new_value": "进行中",
+          "operator": {
+            "open_id": "ou_case06zhoumu001",
+            "name": "周牧"
+          },
+          "update_time": "2026-04-25 09:00"
+        },
+        {
+          "field": "is_overdue",
+          "old_value": "false",
+          "new_value": "true",
+          "operator": {
+            "open_id": "系统",
+            "name": "系统"
+          },
+          "update_time": "2026-04-30 00:00"
+        }
+      ]
+    },
+    {
+      "record_id": "reccase06risk001",
+      "task_id": "",
+      "risk_id": "NO.701",
+      "field_changes": [
+        {
+          "field": "followup_status",
+          "old_value": "open",
+          "new_value": "resolved",
+          "operator": {
+            "open_id": "ou_case06zhoumu001",
+            "name": "周牧"
+          },
+          "update_time": "2026-02-05 14:20"
+        }
+      ]
+    },
+    {
+      "record_id": "reccase06risk002",
+      "task_id": "",
+      "risk_id": "NO.702",
+      "field_changes": [
+        {
+          "field": "followup_status",
+          "old_value": "open",
+          "new_value": "resolved",
+          "operator": {
+            "open_id": "ou_case06zhoumu001",
+            "name": "周牧"
+          },
+          "update_time": "2026-04-12 10:30"
+        }
+      ]
+    },
+    {
+      "record_id": "reccase06risk003",
+      "task_id": "",
+      "risk_id": "NO.703",
+      "field_changes": [
+        {
+          "field": "followup_status",
+          "old_value": "open",
+          "new_value": "tracking",
+          "operator": {
+            "open_id": "ou_case06zhoumu001",
+            "name": "周牧"
+          },
+          "update_time": "2026-04-29 09:00"
+        }
+      ]
+    }
+  ],
+  "history_meetings": [
+    {
+      "meeting_id": "MTG-CASE-06-11",
+      "summary": "供应商价格谈判会：与新供应商谈判价格，对方坚持不降价。会议没有达成任何书面协议。"
+    },
+    {
+      "meeting_id": "MTG-CASE-06-10",
+      "summary": "手板供应商问题专题会：手板供应商CNC精度不够，需要返工。决定更换供应商。"
+    },
+    {
+      "meeting_id": "MTG-CASE-06-09",
+      "summary": "联合调试启动会：联合调试启动。发现语音模块和主控芯片兼容性问题。"
+    }
+  ],
+  "task_closure_notes": [
+    "undefined 产品概念设计方案输出 状态=已完成 owner=周牧 DDL=2026-01-15",
+    "undefined 结构设计方案初稿 状态=已完成 owner=李明 DDL=2026-01-18",
+    "undefined 硬件平台选型评估 状态=已完成 owner=王芳 DDL=2026-01-15",
+    "undefined 核心芯片替代方案评估 状态=已完成 owner=王芳 DDL=2026-01-25",
+    "undefined 算法demo准备 状态=已完成 owner=张强 DDL=2026-01-20",
+    "undefined 结构方案修改 状态=已完成 owner=李明 DDL=2026-02-05"
+  ],
+  "risk_notes": [
+    "undefined 核心芯片供应商产能不足，可能影响交期 跟进状态=resolved",
+    "undefined 结构方案需要调整，电池仓和散热设计不合理 跟进状态=resolved",
+    "undefined 替代芯片价格上浮15%，超出预算 跟进状态=resolved",
+    "undefined 外观设计颜色方案讨论无结论，方案悬而未决 跟进状态=open",
+    "undefined 硬件方案需要补充，部分接口设计不清晰 跟进状态=resolved",
+    "undefined 语音模块和主控芯片兼容性问题 跟进状态=resolved"
+  ]
+}

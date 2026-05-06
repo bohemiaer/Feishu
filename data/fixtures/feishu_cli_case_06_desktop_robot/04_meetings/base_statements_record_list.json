@@ -1,0 +1,36 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "data": [
+      ["NO.301", "1", "2", "会议纪要：项目启动会 09:30 确认技术路线和分工", "周牧", "PJT-CASE-06", "MTG-CASE-06-01-STM-1", "meeting", "确认产品概念方案和技术路线。结构设计2周内出初稿。", "MTG-CASE-06-01", "MGR-CASE-06", "有依据"],
+      ["NO.302", "1", "2", "会议纪要：项目启动会 10:00 讨论供应商评估计划", "周牧", "PJT-CASE-06", "MTG-CASE-06-01-STM-2", "meeting", "硬件方案由王芳负责，同步启动供应商评估。", "MTG-CASE-06-01", "MGR-CASE-06", "有依据"],
+      ["NO.303", "0.9", "2", "会议纪要：芯片缺货讨论 14:15 讨论芯片缺货影响", "王芳", "PJT-CASE-06", "MTG-CASE-06-02-STM-1", "meeting", "核心芯片供应商产能不足，可能影响交期。", "MTG-CASE-06-02", "MGR-CASE-06", "有依据"],
+      ["NO.304", "0.9", "2", "会议纪要：芯片缺货讨论 14:30 讨论替代方案", "周牧", "PJT-CASE-06", "MTG-CASE-06-02-STM-2", "meeting", "接受替代芯片方案，价格上浮15%可接受。", "MTG-CASE-06-02", "MGR-CASE-06", "有依据"],
+      ["NO.305", "1", "2", "会议纪要：结构方案讨论 15:00 评审结构初稿", "李明", "PJT-CASE-06", "MTG-CASE-06-02-STM-3", "meeting", "电池仓和散热设计不合理，需要重新调整。", "MTG-CASE-06-02", "MGR-CASE-06", "有依据"],
+      ["NO.306", "0.8", "1", "群聊记录：结构进度跟进", "刘洋", "PJT-CASE-06", "MTG-CASE-06-03-CHAT-1", "chat", "李明说结构修改还在进行中，可能要延期。", "MTG-CASE-06-03", "MGR-CASE-06", "有依据"],
+      ["NO.307", "0.8", "1", "群聊记录：周牧催促", "周牧", "PJT-CASE-06", "MTG-CASE-06-03-CHAT-2", "chat", "李明，结构方案周五前必须给我，不能再拖了。", "MTG-CASE-06-03", "MGR-CASE-06", "有依据"],
+      ["NO.308", "1", "2", "会议纪要：硬件方案评审 10:30 确认方案", "王芳", "PJT-CASE-06", "MTG-CASE-06-04-STM-1", "meeting", "硬件方案基本可行，部分接口设计需要补充。", "MTG-CASE-06-04", "MGR-CASE-06", "有依据"],
+      ["NO.309", "0.9", "2", "会议纪要：芯片替代确认 11:00 确认替代方案", "周牧", "PJT-CASE-06", "MTG-CASE-06-04-STM-2", "meeting", "芯片替代方案已确定，接受价格上浮15%。", "MTG-CASE-06-04", "MGR-CASE-06", "有依据"],
+      ["NO.310", "0.7", "1", "会议纪要：外观讨论 空转", "周牧", "PJT-CASE-06", "MTG-CASE-06-05-STM-1", "meeting", "讨论了颜色方案，大家意见不统一，没有结论。", "MTG-CASE-06-05", "MGR-CASE-06", "待考证"],
+      ["NO.311", "0.7", "1", "会议纪要：外观讨论 空转", "李明", "PJT-CASE-06", "MTG-CASE-06-05-STM-2", "meeting", "我建议用白色，但其他人有不同意见。", "MTG-CASE-06-05", "MGR-CASE-06", "待考证"],
+      ["NO.312", "1", "2", "会议纪要：外观初稿讨论 14:30 评审外观设计", "李明", "PJT-CASE-06", "MTG-CASE-06-06-STM-1", "meeting", "外观初稿基本成型，颜色和材质需要进一步确定。", "MTG-CASE-06-06", "MGR-CASE-06", "有依据"],
+      ["NO.313", "0.9", "2", "会议纪要：外观初稿讨论 15:00 确认下一步", "周牧", "PJT-CASE-06", "MTG-CASE-06-06-STM-2", "meeting", "外观设计调整后下周评审冻结。", "MTG-CASE-06-06", "MGR-CASE-06", "有依据"],
+      ["NO.314", "1", "2", "会议纪要：外观冻结确认 10:30 冻结外观设计", "周牧", "PJT-CASE-06", "MTG-CASE-06-07-STM-1", "meeting", "外观设计冻结，可进行下一步工作。", "MTG-CASE-06-07", "MGR-CASE-06", "有依据"],
+      ["NO.315", "0.8", "1", "会议纪要：周例会 空转", "刘洋", "PJT-CASE-06", "MTG-CASE-06-08-STM-1", "meeting", "本周各模块进度正常，没有特殊情况。", "MTG-CASE-06-08", "MGR-CASE-06", "待考证"],
+      ["NO.316", "0.8", "1", "会议纪要：周例会 空转", "周牧", "PJT-CASE-06", "MTG-CASE-06-08-STM-2", "meeting", "好，继续保持，有问题随时同步。", "MTG-CASE-06-08", "MGR-CASE-06", "待考证"],
+      ["NO.317", "0.9", "1", "群聊记录：联合调试启动", "张强", "PJT-CASE-06", "MTG-CASE-06-09-CHAT-1", "chat", "联合调试启动，语音模块和主控芯片有兼容性问题。", "MTG-CASE-06-09", "MGR-CASE-06", "有依据"],
+      ["NO.318", "0.9", "2", "会议纪要：联合调试 15:00 发现接口问题", "周牧", "PJT-CASE-06", "MTG-CASE-06-09-STM-2", "meeting", "接口电路需要调整，本周内解决。", "MTG-CASE-06-09", "MGR-CASE-06", "有依据"],
+      ["NO.319", "0.9", "2", "会议纪要：供应商问题 10:35 CNC精度不够", "李明", "PJT-CASE-06", "MTG-CASE-06-10-STM-1", "meeting", "供应商CNC加工精度不够，需要更换供应商。", "MTG-CASE-06-10", "MGR-CASE-06", "有依据"],
+      ["NO.320", "0.9", "2", "会议纪要：供应商问题 10:40 更换决策", "周牧", "PJT-CASE-06", "MTG-CASE-06-10-STM-2", "meeting", "更换供应商，新供应商价格贵30%可接受。", "MTG-CASE-06-10", "MGR-CASE-06", "有依据"],
+      ["NO.321", "0.7", "1", "会议纪要：价格谈判 空转", "周牧", "PJT-CASE-06", "MTG-CASE-06-11-STM-1", "meeting", "供应商坚持不降价，没有任何进展。", "MTG-CASE-06-11", "MGR-CASE-06", "待考证"],
+      ["NO.322", "0.9", "2", "会议纪要：测试结果 09:15 续航不达标", "刘洋", "PJT-CASE-06", "MTG-CASE-06-12-STM-1", "meeting", "功能测试整体达标，续航测试差15分钟。", "MTG-CASE-06-12", "MGR-CASE-06", "有依据"],
+      ["NO.323", "0.9", "2", "会议纪要：后续安排 09:30 优化方案", "周牧", "PJT-CASE-06", "MTG-CASE-06-12-STM-2", "meeting", "续航优化方案评估，软件优化优先。", "MTG-CASE-06-12", "MGR-CASE-06", "有依据"]
+    ],
+    "field_id_list": ["fldStmID", "fldEvidenceConfidence", "fldReviewMeetingCount", "fldEvidenceRef", "fldSpeakerName", "fldProjectID", "fldStatementID", "fldEvidenceSourceType", "fldStatementSummary", "fldMeetingID", "fldSpeakerID", "fldFactCheckResult"],
+    "fields": ["ID", "evidence_confidence", "review_meeting_count", "evidence_ref", "speaker_name", "project_id", "statement_id", "evidence_source_type", "statement_summary", "meeting_id", "speaker_id", "fact_check_result"],
+    "has_more": false,
+    "query_context": {"field_scope": "all_fields", "record_scope": "all_records"},
+    "record_id_list": ["reccase06stm001", "reccase06stm002", "reccase06stm003", "reccase06stm004", "reccase06stm005", "reccase06stm006", "reccase06stm007", "reccase06stm008", "reccase06stm009", "reccase06stm010", "reccase06stm011", "reccase06stm012", "reccase06stm013", "reccase06stm014", "reccase06stm015", "reccase06stm016", "reccase06stm017", "reccase06stm018", "reccase06stm019", "reccase06stm020", "reccase06stm021", "reccase06stm022", "reccase06stm023"]
+  }
+}

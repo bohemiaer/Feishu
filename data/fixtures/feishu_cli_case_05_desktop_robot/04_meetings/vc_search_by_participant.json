@@ -1,0 +1,66 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "has_more": false,
+    "items": [
+      {
+        "display_info": "V1.5迭代同步会\n\n4月21日 09:15 | 组织者：周牧 | ID: 421 091 530",
+        "id": "7642010915300001",
+        "meta_data": {
+          "app_link": "https://applink.feishu.cn/client/vctab/open?source=chat&action=detail&meetingId=7642010915300001",
+          "avatar": "https://lf-package-cn.feishucdn.com/obj/feishu-static/vchat-static-resource/meeting_icon.png",
+          "description": "4月21日 09:15 | 组织者：周牧 | ID: 421 091 530"
+        }
+      },
+      {
+        "display_info": "供应商模具评审会\n\n4月22日 10:30 | 组织者：周牧 | ID: 422 103 045",
+        "id": "7642021030450002",
+        "meta_data": {
+          "app_link": "https://applink.feishu.cn/client/vctab/open?source=chat&action=detail&meetingId=7642021030450002",
+          "avatar": "https://lf-package-cn.feishucdn.com/obj/feishu-static/vchat-static-resource/meeting_icon.png",
+          "description": "4月22日 10:30 | 组织者：周牧 | ID: 422 103 045"
+        }
+      },
+      {
+        "display_info": "外观冻结确认会\n\n4月25日 10:00 | 组织者：周牧 | ID: 425 100 002",
+        "id": "7642051000020003",
+        "meta_data": {
+          "app_link": "https://applink.feishu.cn/client/vctab/open?source=chat&action=detail&meetingId=7642051000020003",
+          "avatar": "https://lf-package-cn.feishucdn.com/obj/feishu-static/vchat-static-resource/meeting_icon.png",
+          "description": "4月25日 10:00 | 组织者：周牧 | ID: 425 100 002"
+        }
+      },
+      {
+        "display_info": "散热孔技术协调会\n\n4月18日 14:30 | 组织者：周牧 | ID: 418 143 025",
+        "id": "76420181430250004",
+        "meta_data": {
+          "app_link": "https://applink.feishu.cn/client/vctab/open?source=chat&action=detail&meetingId=76420181430250004",
+          "avatar": "https://lf-package-cn.feishucdn.com/obj/feishu-static/vchat-static-resource/meeting_icon.png",
+          "description": "4月18日 14:30 | 组织者：周牧 | ID: 418 143 025"
+        }
+      },
+      {
+        "display_info": "4月月度总结会\n\n4月30日 09:00 | 组织者：周牧 | ID: 430 090 015",
+        "id": "7643010900150005",
+        "meta_data": {
+          "app_link": "https://applink.feishu.cn/client/vctab/open?source=chat&action=detail&meetingId=7643010900150005",
+          "avatar": "https://lf-package-cn.feishucdn.com/obj/feishu-static/vchat-static-resource/meeting_icon.png",
+          "description": "4月30日 09:00 | 组织者：周牧 | ID: 430 090 015"
+        }
+      }
+    ],
+    "page_token": "case05_vc_token_end",
+    "total": null
+  },
+  "meta": {
+    "count": 5
+  },
+  "_notice": {
+    "update": {
+      "current": "1.0.19",
+      "latest": "1.0.23",
+      "message": "lark-cli 1.0.23 available, current 1.0.19"
+    }
+  }
+}

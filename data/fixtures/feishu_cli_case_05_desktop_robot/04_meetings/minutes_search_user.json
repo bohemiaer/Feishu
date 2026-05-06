@@ -1,0 +1,86 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "has_more": false,
+    "items": [
+      {
+        "minute_token": "mn_case05_0421_sync",
+        "title": "V1.5迭代同步会",
+        "owner": "周牧",
+        "start_time": "2026-04-21 09:15",
+        "end_time": "2026-04-21 10:30",
+        "participants": [
+          "周牧",
+          "陈立",
+          "林峰",
+          "赵雪",
+          "张悦"
+        ],
+        "meeting_id": "MTG-CASE-05-01"
+      },
+      {
+        "minute_token": "mn_case05_0422_mold",
+        "title": "供应商模具评审会",
+        "owner": "周牧",
+        "start_time": "2026-04-22 10:30",
+        "end_time": "2026-04-22 11:45",
+        "participants": [
+          "周牧",
+          "林峰",
+          "陈立"
+        ],
+        "meeting_id": "MTG-CASE-05-02"
+      },
+      {
+        "minute_token": "mn_case05_0424_emergency",
+        "title": "供应链风险应急沟通",
+        "owner": "林峰",
+        "start_time": "2026-04-24 09:00",
+        "end_time": "2026-04-24 09:45",
+        "participants": [
+          "周牧",
+          "林峰"
+        ],
+        "meeting_id": "MTG-CASE-05-03"
+      },
+      {
+        "minute_token": "mn_case05_0425_freeze",
+        "title": "外观冻结确认会",
+        "owner": "周牧",
+        "start_time": "2026-04-25 10:00",
+        "end_time": "2026-04-25 11:00",
+        "participants": [
+          "周牧",
+          "陈立",
+          "赵雪",
+          "张悦"
+        ],
+        "meeting_id": "MTG-CASE-05-04"
+      },
+      {
+        "minute_token": "mn_case05_0430_monthly",
+        "title": "4月月度总结会",
+        "owner": "周牧",
+        "start_time": "2026-04-30 09:00",
+        "end_time": "2026-04-30 10:00",
+        "participants": [
+          "周牧",
+          "陈立",
+          "林峰",
+          "赵雪",
+          "张悦"
+        ],
+        "meeting_id": "MTG-CASE-05-12"
+      }
+    ],
+    "total": 5
+  },
+  "_notice": {
+    "update": {
+      "current": "1.0.19",
+      "latest": "1.0.23",
+      "message": "lark-cli 1.0.23 available, current 1.0.19"
+    }
+  }
+}

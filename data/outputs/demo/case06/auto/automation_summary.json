@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-05-06T13:20:58.486Z",
+  "bundle_path": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\fixtures\\feishu_cli_case_06_desktop_robot",
+  "output_dir": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto",
+  "selected_meeting_id": "MTG-CASE-06-12",
+  "front_status": "collected",
+  "completeness_status": "ready",
+  "degrade_reasons": [],
+  "blocking_reasons": [],
+  "meeting_selection_attempts": [
+    {
+      "meeting_id": "MTG-CASE-06-12",
+      "status": "collected",
+      "completeness_status": "ready",
+      "blocking_reasons": []
+    }
+  ],
+  "fallback_used": false,
+  "hard_metrics_status": {
+    "sample_counts": {
+      "task_count": 40,
+      "risk_count": 10,
+      "meeting_count": 12,
+      "chat_message_count": 127,
+      "calendar_event_count": 12,
+      "contact_count": 5,
+      "base_history_count": 8
+    },
+    "metric_count": 15,
+    "available_count": 15,
+    "degraded_count": 0,
+    "no_sample_count": 0
+  },
+  "capability_status": "degraded",
+  "report_status": "degraded",
+  "human_review_item_count": 10,
+  "files": {
+    "task_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\task_request.json",
+    "orchestration_state": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\orchestration_state.json",
+    "input_completeness_report": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\input_completeness_report.json",
+    "raw_payload": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\raw_payload.json",
+    "history_bundle": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\history_bundle.json",
+    "meeting_fact_pack": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\meeting_fact_pack.json",
+    "data_quality_report": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\data_quality_report.json",
+    "hard_metrics_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\hard_metrics_result.json",
+    "evaluation_plan": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\evaluation_plan.json",
+    "management_reviewer_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\management_reviewer_request.json",
+    "management_reviewer_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\management_reviewer_result.json",
+    "risk_behavior_auditor_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\risk_behavior_auditor_request.json",
+    "risk_behavior_auditor_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\risk_behavior_auditor_result.json",
+    "coordination_lens_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\coordination_lens_request.json",
+    "coordination_lens_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\coordination_lens_result.json",
+    "capability_assessor_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\capability_assessor_request.json",
+    "capability_assessor_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\capability_assessor_result.json",
+    "report_writer_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\report_writer_request.json",
+    "report_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\report_result.json",
+    "automation_summary": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\automation_summary.json",
+    "observability_summary": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\observability_summary.json",
+    "full_loop_observability": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\full_loop_observability.json",
+    "observability_markdown": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\observability.md",
+    "full_loop_observability_markdown": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case06\\auto\\full_loop_observability.md",
+    "full_loop_observability_docs_markdown": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\docs\\observability\\case06_full_loop_observability.md"
+  }
+}

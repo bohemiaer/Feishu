@@ -1,7 +1,7 @@
 "use strict";
 
 const path = require("path");
-const { readJson, writeJson } = require("../../src/shared/fs_utils");
+const { readArtifactJson, writeArtifactJson } = require("../../src/shared/schema_validation");
 const { runHardMetricsEngine } = require("../../src/domain/evaluation/hard_metrics_engine");
 
 function parseArgs(argv) {
@@ -21,16 +21,16 @@ function main() {
   const args = parseArgs(process.argv);
   const inputDir = path.resolve(args["input-dir"] || "data/outputs/demo/case04/current");
   const outputPath = path.resolve(args.output || path.join(inputDir, "hard_metrics_result.json"));
-  const meetingFactPack = readJson(path.join(inputDir, "meeting_fact_pack.json"));
-  const historyBundle = readJson(path.join(inputDir, "history_bundle.json"));
-  const rawPayload = readJson(path.join(inputDir, "raw_payload.json"));
+  const meetingFactPack = readArtifactJson(path.join(inputDir, "meeting_fact_pack.json"));
+  const historyBundle = readArtifactJson(path.join(inputDir, "history_bundle.json"));
+  const rawPayload = readArtifactJson(path.join(inputDir, "raw_payload.json"));
   const result = runHardMetricsEngine({
     meetingFactPack,
     historyBundle,
     rawPayload
   });
 
-  writeJson(outputPath, result);
+  writeArtifactJson(outputPath, result);
   process.stdout.write(JSON.stringify({
     output: outputPath,
     metric_count: result.metric_quality_report.metric_count,

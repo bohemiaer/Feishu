@@ -1,0 +1,236 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "base_token": "R7bebfixvam0AqsPowucJcuHn2e",
+    "table_id": "Tasks",
+    "histories": [
+      {
+        "record_id": "reccase05task001",
+        "task_id": "PJT-CASE-05-TASK-01",
+        "field_changes": [
+          {
+            "field": "status",
+            "old_value": "待开始",
+            "new_value": "进行中",
+            "operator": {
+              "open_id": "ou_case05zhoumutarget001",
+              "name": "周牧"
+            },
+            "update_time": "2026-04-02 09:15"
+          },
+          {
+            "field": "status",
+            "old_value": "进行中",
+            "new_value": "已完成",
+            "operator": {
+              "open_id": "ou_case05zhoumutarget001",
+              "name": "周牧"
+            },
+            "update_time": "2026-04-05 17:30"
+          }
+        ]
+      },
+      {
+        "record_id": "reccase05task002",
+        "task_id": "PJT-CASE-05-TASK-02",
+        "field_changes": [
+          {
+            "field": "status",
+            "old_value": "待开始",
+            "new_value": "进行中",
+            "operator": {
+              "open_id": "ou_case05zhoumutarget001",
+              "name": "周牧"
+            },
+            "update_time": "2026-04-02 09:15"
+          },
+          {
+            "field": "status",
+            "old_value": "进行中",
+            "new_value": "已完成",
+            "operator": {
+              "open_id": "ou_case05zhoumutarget001",
+              "name": "周牧"
+            },
+            "update_time": "2026-04-05 17:30"
+          }
+        ]
+      },
+      {
+        "record_id": "reccase05task003",
+        "task_id": "PJT-CASE-05-TASK-03",
+        "field_changes": [
+          {
+            "field": "status",
+            "old_value": "待开始",
+            "new_value": "进行中",
+            "operator": {
+              "open_id": "ou_case05zhoumutarget001",
+              "name": "周牧"
+            },
+            "update_time": "2026-04-05 09:00"
+          },
+          {
+            "field": "status",
+            "old_value": "进行中",
+            "new_value": "已完成",
+            "operator": {
+              "open_id": "ou_case05zhoumutarget001",
+              "name": "周牧"
+            },
+            "update_time": "2026-04-08 16:45"
+          }
+        ]
+      },
+      {
+        "record_id": "reccase05task007",
+        "task_id": "PJT-CASE-05-TASK-07",
+        "field_changes": [
+          {
+            "field": "status",
+            "old_value": "待开始",
+            "new_value": "进行中",
+            "operator": {
+              "open_id": "ou_case05zhoumutarget001",
+              "name": "周牧"
+            },
+            "update_time": "2026-04-15 09:00"
+          },
+          {
+            "field": "status",
+            "old_value": "进行中",
+            "new_value": "已完成",
+            "operator": {
+              "open_id": "ou_case05zhoumutarget001",
+              "name": "周牧"
+            },
+            "update_time": "2026-04-18 15:20"
+          }
+        ]
+      },
+      {
+        "record_id": "reccase05task509",
+        "task_id": "PJT-CASE-05-TASK-09",
+        "field_changes": [
+          {
+            "field": "status",
+            "old_value": "待开始",
+            "new_value": "进行中",
+            "operator": {
+              "open_id": "ou_case05zhoumutarget001",
+              "name": "周牧"
+            },
+            "update_time": "2026-04-22 09:00"
+          },
+          {
+            "field": "status",
+            "old_value": "进行中",
+            "new_value": "已完成",
+            "operator": {
+              "open_id": "ou_case05zhoumutarget001",
+              "name": "周牧"
+            },
+            "update_time": "2026-04-25 17:00"
+          }
+        ]
+      },
+      {
+        "record_id": "reccase05task510",
+        "task_id": "PJT-CASE-05-TASK-10",
+        "field_changes": [
+          {
+            "field": "status",
+            "old_value": "待开始",
+            "new_value": "进行中",
+            "operator": {
+              "open_id": "ou_case05zhoumutarget001",
+              "name": "周牧"
+            },
+            "update_time": "2026-04-22 09:00"
+          },
+          {
+            "field": "due_date",
+            "old_value": "2026-04-25 18:00",
+            "new_value": "2026-04-25 17:00",
+            "operator": {
+              "open_id": "ou_case05zhoumutarget001",
+              "name": "周牧"
+            },
+            "update_time": "2026-04-25 10:30"
+          },
+          {
+            "field": "status",
+            "old_value": "进行中",
+            "new_value": "已完成",
+            "operator": {
+              "open_id": "ou_case05zhoumutarget001",
+              "name": "周牧"
+            },
+            "update_time": "2026-04-25 17:00"
+          }
+        ]
+      },
+      {
+        "record_id": "reccase05task512",
+        "task_id": "PJT-CASE-05-TASK-12",
+        "field_changes": [
+          {
+            "field": "status",
+            "old_value": "待开始",
+            "new_value": "进行中",
+            "operator": {
+              "open_id": "ou_case05suppliermgr003",
+              "name": "林峰"
+            },
+            "update_time": "2026-04-22 14:00"
+          },
+          {
+            "field": "due_date",
+            "old_value": "2026-04-28 18:00",
+            "new_value": "2026-04-29 18:00",
+            "operator": {
+              "open_id": "ou_case05suppliermgr003",
+              "name": "林峰"
+            },
+            "update_time": "2026-04-24 10:00"
+          }
+        ]
+      },
+      {
+        "record_id": "reccase05risk008",
+        "risk_id": "PJT-CASE-05-RISK-08",
+        "field_changes": [
+          {
+            "field": "followup_status",
+            "old_value": "open",
+            "new_value": "tracking",
+            "operator": {
+              "open_id": "ou_case05zhoumutarget001",
+              "name": "周牧"
+            },
+            "update_time": "2026-04-21 11:00"
+          },
+          {
+            "field": "followup_status",
+            "old_value": "tracking",
+            "new_value": "open",
+            "operator": {
+              "open_id": "ou_case05zhoumutarget001",
+              "name": "周牧"
+            },
+            "update_time": "2026-04-24 10:00"
+          }
+        ]
+      }
+    ],
+    "has_more": false
+  },
+  "_notice": {
+    "update": {
+      "current": "1.0.19",
+      "latest": "1.0.23",
+      "message": "lark-cli 1.0.23 available, current 1.0.19"
+    }
+  }
+}

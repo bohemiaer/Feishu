@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "output_layer_input.schema.json",
+  "title": "OutputLayerInput",
+  "type": "object",
+  "required": [
+    "metadata",
+    "workspace_home",
+    "people_overview",
+    "evaluation_run",
+    "dimension_results",
+    "metric_results",
+    "review_items",
+    "evidence_index",
+    "writeback_decisions"
+  ],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": [
+        "generated_at",
+        "input_dir",
+        "evaluation_id",
+        "project_id",
+        "manager_id",
+        "package_type"
+      ],
+      "properties": {
+        "generated_at": { "type": "string" },
+        "input_dir": { "type": "string" },
+        "evaluation_id": { "type": "string" },
+        "project_id": { "type": "string" },
+        "manager_id": { "type": "string" },
+        "package_type": {
+          "type": "string",
+          "const": "output_layer_input"
+        }
+      },
+      "additionalProperties": true
+    },
+    "workspace_home": {
+      "type": "array",
+      "minItems": 5,
+      "items": { "$ref": "#/$defs/record" }
+    },
+    "people_overview": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/record" }
+    },
+    "evaluation_run": { "$ref": "#/$defs/record" },
+    "dimension_results": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/record" }
+    },
+    "metric_results": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/record" }
+    },
+    "review_items": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/record" }
+    },
+    "evidence_index": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/record" }
+    },
+    "writeback_decisions": {
+      "type": "object",
+      "required": [
+        "report_can_finalize",
+        "report_status",
+        "needs_human_review",
+        "needs_evidence",
+        "observation_only",
+        "tables_to_write"
+      ],
+      "properties": {
+        "report_can_finalize": { "type": "boolean" },
+        "report_status": { "type": "string" },
+        "needs_human_review": { "type": "boolean" },
+        "needs_evidence": { "type": "boolean" },
+        "observation_only": { "type": "boolean" },
+        "tables_to_write": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "record": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          { "type": "string" },
+          { "type": "number" },
+          { "type": "boolean" },
+          {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                { "type": "string" },
+                { "type": "number" },
+                { "type": "boolean" }
+              ]
+            }
+          },
+          { "type": "null" }
+        ]
+      }
+    }
+  },
+  "additionalProperties": false
+}

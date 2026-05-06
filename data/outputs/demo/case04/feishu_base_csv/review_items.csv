@@ -1,0 +1,15 @@
+review_item_id,evaluation_id,关联评估任务,关联维度结果,关联指标结果,复核类型,系统初判,触发原因,证据摘要,置信度,建议处理,复核状态,复核人,复核备注,复核时间,是否允许报告生效,关联证据,关联报告
+HR-MTG-CASE-04-04-01,EVAL-PJT-CASE-04-MTG-CASE-04-04,EVAL-PJT-CASE-04-MTG-CASE-04-04,DIM-EVAL-PJT-CASE-04-MTG-CASE-04-04-方向校准力,,样本不足,,当前会议缺完整妙记转写，关键语义判断需人工确认上下文。,"当前会议缺完整妙记转写，发言语境需要依赖会议表和 Statements 交叉校验。
+""missing_fields"": [""meeting_docs.current_transcript""]",,补证,pending 待复核,,,,false,"EVD-planner_slice-task_context-FRONT-PJT-CASE-04-MTG-CASE-04-04
+EVD-current_meeting-current_meeting_facts-MTG-CASE-04-04",
+HR-MTG-CASE-04-04-02,EVAL-PJT-CASE-04-MTG-CASE-04-04,EVAL-PJT-CASE-04-MTG-CASE-04-04,DIM-EVAL-PJT-CASE-04-MTG-CASE-04-04-推进闭环力,,证据冲突,,会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载,"会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载
+会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",,修改,pending 待复核,,,,false,"EVD-planner_slice-task_context-FRONT-PJT-CASE-04-MTG-CASE-04-04
+EVD-hard_metrics-hard_metrics_result-current_meeting_action_task_rate",
+HR-001,EVAL-PJT-CASE-04-MTG-CASE-04-04,EVAL-PJT-CASE-04-MTG-CASE-04-04,DIM-EVAL-PJT-CASE-04-MTG-CASE-04-04-风险治理力,,低置信,,高等级风险未完全收口，风险治理结论需人工复核。,value = 2 / 3,,通过,pending 待复核,,,,false,EVD-hard_metrics-hard_metrics_result-high_risk_resolution_rate,
+HR-002,EVAL-PJT-CASE-04-MTG-CASE-04-04,EVAL-PJT-CASE-04-MTG-CASE-04-04,DIM-EVAL-PJT-CASE-04-MTG-CASE-04-04-组织行为健康度,,敏感判断,,组织行为相关语言（高压推进、成员反馈压力）只能作为观察项，需人工确认语境和场景。,今天 5 点前必须统一一版口径，谁负责适配今天就定下来，不能继续空转。,,降级为观察项,pending 待复核,,,,false,EVD-chat-02_chats_im_messages_search_user_json-om_case04msg0007,
+HR-003,EVAL-PJT-CASE-04-MTG-CASE-04-04,EVAL-PJT-CASE-04-MTG-CASE-04-04,DIM-EVAL-PJT-CASE-04-MTG-CASE-04-04-风险治理力,,敏感判断,,当前会议MTG-CASE-04-04缺完整妙记转写，关键语义判断（如复盘语气、决策过程）需人工确认上下文。,meeting_docs.current_transcript,,降级为观察项,pending 待复核,,,,false,EVD-current_meeting-current_meeting_missing_fields-MTG-CASE-04-04,
+HRV-CASE-04-COORD-01,EVAL-PJT-CASE-04-MTG-CASE-04-04,EVAL-PJT-CASE-04-MTG-CASE-04-04,DIM-EVAL-PJT-CASE-04-MTG-CASE-04-04-协同调度力,,低置信,,需要人工复核‘客服链路遗留项进入下一阶段继续跟踪’这一决策，是否已明确同步给所有必要的干系人（如客服平台部主管、仓配系统部接口人等），并形成了被各方确认的解决路径和交接计划。当前证据仅显示为会议决策，缺乏跨团队同步的明确证据。,"客服链路遗留项进入下一阶段继续跟踪
+依赖外部供应商反馈，异常 B 处理偏慢
+name: 马会, department: 客服平台部, project_role: customer_service_partner",,通过,pending 待复核,,,,false,"EVD-current_meeting-current_meeting_facts-MTG-CASE-04-04
+EVD-risk-coordination_context-NO_205
+EVD-org_contacts-coordination_context-马会",

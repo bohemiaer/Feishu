@@ -9,7 +9,11 @@ const { buildRiskBehaviorAuditRequest, auditRiskBehavior } = require("../agents/
 const { runEvaluationPlanner } = require("../domain/evaluation/evaluation_planner");
 const { runHardMetricsEngine } = require("../domain/evaluation/hard_metrics_engine");
 const { loadCase04SampleBundle } = require("../integrations/sample_case04_adapter");
-const { ensureDir, writeJson } = require("../shared/fs_utils");
+const { ensureDir, fileExists, writeJson } = require("../shared/fs_utils");
+const { writeArtifactJson } = require("../shared/schema_validation");
+const { buildArtifactFileIndex } = require("./artifact_files");
+const { writeFullLoopObservabilityMarkdown } = require("./full_loop_observability");
+const { writeObservabilityArtifacts } = require("./observability");
 const { runFrontPipeline } = require("./front_pipeline");
 
 function nowIso() {
@@ -37,22 +41,110 @@ function defaultOutputDir(bundlePath) {
   return path.resolve("data/outputs/automation", bundleName, timestampForPath());
 }
 
+function inferCaseNumber(value) {
+  const match = String(value || "").match(/case[-_ ]?0?(\d+)/i);
+  return match ? match[1].padStart(2, "0") : null;
+}
+
+function defaultFullLoopDocPaths(bundlePath, outputDir) {
+  const caseNumber = inferCaseNumber(bundlePath) || inferCaseNumber(outputDir);
+
+  return {
+    outputDirDoc: path.join(outputDir, "full_loop_observability.md"),
+    docsDoc: caseNumber
+      ? path.resolve("docs/observability", `case${caseNumber}_full_loop_observability.md`)
+      : null,
+    title: caseNumber
+      ? `Case ${caseNumber} Full Loop Observability`
+      : "Full Loop Observability"
+  };
+}
+
+function canWriteFullLoopObservability(outputDir) {
+  const requiredFiles = [
+    "orchestration_state.json",
+    "input_completeness_report.json"
+  ];
+
+  return requiredFiles.every((name) => fileExists(path.join(outputDir, name)));
+}
+
+function startRuntimeNode(nodeName, extra = {}) {
+  const startedAt = nowIso();
+  const startedMs = Date.now();
+
+  return {
+    finish(patch = {}) {
+      return {
+        node_name: nodeName,
+        started_at: startedAt,
+        finished_at: nowIso(),
+        duration_ms: Date.now() - startedMs,
+        ...extra,
+        ...patch
+      };
+    }
+  };
+}
+
+async function runAgentNode({
+  nodeKey,
+  agentName,
+  request,
+  run,
+  shouldRun,
+  modelInvoked
+}) {
+  const tracker = startRuntimeNode(nodeKey, {
+    agent_name: agentName,
+    model_invoked: Boolean(modelInvoked)
+  });
+
+  if (!shouldRun) {
+    return {
+      result: null,
+      runtime: tracker.finish({
+        status: "skipped_model_disabled"
+      })
+    };
+  }
+
+  try {
+    const result = await run(request);
+    return {
+      result,
+      runtime: tracker.finish({
+        status: result ? "completed" : "missing_result"
+      })
+    };
+  } catch (error) {
+    return {
+      result: null,
+      error,
+      runtime: tracker.finish({
+        status: "failed",
+        error_message: error.message
+      })
+    };
+  }
+}
+
 function writeFrontOutputs(outputDir, frontResult) {
-  writeJson(path.join(outputDir, "task_request.json"), frontResult.task_request);
-  writeJson(path.join(outputDir, "orchestration_state.json"), frontResult.orchestration_state);
-  writeJson(path.join(outputDir, "input_completeness_report.json"), frontResult.input_completeness_report);
+  writeArtifactJson(path.join(outputDir, "task_request.json"), frontResult.task_request);
+  writeArtifactJson(path.join(outputDir, "orchestration_state.json"), frontResult.orchestration_state);
+  writeArtifactJson(path.join(outputDir, "input_completeness_report.json"), frontResult.input_completeness_report);
 
   if (frontResult.raw_payload) {
-    writeJson(path.join(outputDir, "raw_payload.json"), frontResult.raw_payload);
+    writeArtifactJson(path.join(outputDir, "raw_payload.json"), frontResult.raw_payload);
   }
   if (frontResult.history_bundle) {
-    writeJson(path.join(outputDir, "history_bundle.json"), frontResult.history_bundle);
+    writeArtifactJson(path.join(outputDir, "history_bundle.json"), frontResult.history_bundle);
   }
   if (frontResult.meeting_fact_pack) {
-    writeJson(path.join(outputDir, "meeting_fact_pack.json"), frontResult.meeting_fact_pack);
+    writeArtifactJson(path.join(outputDir, "meeting_fact_pack.json"), frontResult.meeting_fact_pack);
   }
   if (frontResult.data_quality_report) {
-    writeJson(path.join(outputDir, "data_quality_report.json"), frontResult.data_quality_report);
+    writeArtifactJson(path.join(outputDir, "data_quality_report.json"), frontResult.data_quality_report);
   }
 }
 
@@ -160,168 +252,293 @@ function buildAutomationSummary(context) {
     human_review_item_count: context.reportResult && Array.isArray(context.reportResult.human_review_items)
       ? context.reportResult.human_review_items.length
       : 0,
-    files: {
-      task_request: path.join(context.outputDir, "task_request.json"),
-      orchestration_state: path.join(context.outputDir, "orchestration_state.json"),
-      input_completeness_report: path.join(context.outputDir, "input_completeness_report.json"),
-      raw_payload: path.join(context.outputDir, "raw_payload.json"),
-      history_bundle: path.join(context.outputDir, "history_bundle.json"),
-      meeting_fact_pack: path.join(context.outputDir, "meeting_fact_pack.json"),
-      data_quality_report: path.join(context.outputDir, "data_quality_report.json"),
-      hard_metrics_result: path.join(context.outputDir, "hard_metrics_result.json"),
-      evaluation_plan: path.join(context.outputDir, "evaluation_plan.json"),
-      management_reviewer_result: path.join(context.outputDir, "management_reviewer_result.json"),
-      risk_behavior_auditor_result: path.join(context.outputDir, "risk_behavior_auditor_result.json"),
-      coordination_lens_result: path.join(context.outputDir, "coordination_lens_result.json"),
-      capability_assessor_result: path.join(context.outputDir, "capability_assessor_result.json"),
-      report_result: path.join(context.outputDir, "report_result.json")
-    }
+    files: buildArtifactFileIndex(context.outputDir, context.extraFiles || {})
   };
 }
 
 async function runEvaluationAutomation(options = {}) {
   const bundlePath = path.resolve(options.bundlePath || "data/fixtures/feishu_cli_case_04_simulated_5d");
   const outputDir = path.resolve(options.outputDir || defaultOutputDir(bundlePath));
+  const fullLoopDocPaths = defaultFullLoopDocPaths(bundlePath, outputDir);
+  const summaryExtraFiles = fullLoopDocPaths.docsDoc
+    ? { full_loop_observability_docs_markdown: fullLoopDocPaths.docsDoc }
+    : {};
   ensureDir(outputDir);
+  const runtimeMeta = {
+    run_started_at: nowIso(),
+    run_finished_at: null,
+    total_duration_ms: 0,
+    error_message: null,
+    nodes: {}
+  };
+  const totalStartedMs = Date.now();
+  let selection = null;
+  let frontResult = null;
+  let hardMetricsResult = null;
+  let evaluationPlan = null;
+  let capabilityResult = null;
+  let reportResult = null;
+  let summary = null;
 
-  const selection = runFrontPipelineWithSelection({
-    bundlePath,
-    meetingId: options.meetingId,
-    evaluationPeriod: options.evaluationPeriod,
-    triggerType: options.triggerType || "feishu_bot",
-    strictMeetingSelection: Boolean(options.strictMeetingSelection)
-  });
-  const frontResult = selection.front_result;
+  try {
+    const frontTracker = startRuntimeNode("front_pipeline");
+    selection = runFrontPipelineWithSelection({
+      bundlePath,
+      meetingId: options.meetingId,
+      evaluationPeriod: options.evaluationPeriod,
+      triggerType: options.triggerType || "feishu_bot",
+      strictMeetingSelection: Boolean(options.strictMeetingSelection)
+    });
+    frontResult = selection.front_result;
+    runtimeMeta.nodes.front_pipeline = frontTracker.finish({
+      status: frontResult.orchestration_state.status,
+      completeness_status: frontResult.orchestration_state.completeness_status
+    });
 
-  writeFrontOutputs(outputDir, frontResult);
+    writeFrontOutputs(outputDir, frontResult);
 
-  if (frontResult.orchestration_state.completeness_status === "blocked") {
-    const summary = buildAutomationSummary({
+    if (frontResult.orchestration_state.completeness_status === "blocked") {
+      summary = buildAutomationSummary({
+        bundlePath,
+        outputDir,
+        selectedMeetingId: selection.selectedMeetingId,
+        selectionAttempts: selection.attempts,
+      fallbackUsed: selection.fallback_used,
+      frontResult,
+      hardMetricsResult: null,
+      capabilityResult: null,
+      reportResult: null,
+      extraFiles: summaryExtraFiles
+      });
+      writeArtifactJson(path.join(outputDir, "automation_summary.json"), summary);
+      return summary;
+    }
+
+    const hardMetricsTracker = startRuntimeNode("hard_metrics");
+    hardMetricsResult = runHardMetricsEngine({
+      meetingFactPack: frontResult.meeting_fact_pack,
+      historyBundle: frontResult.history_bundle,
+      rawPayload: frontResult.raw_payload
+    });
+    runtimeMeta.nodes.hard_metrics = hardMetricsTracker.finish({
+      status: "completed"
+    });
+    writeArtifactJson(path.join(outputDir, "hard_metrics_result.json"), hardMetricsResult);
+
+    const plannerTracker = startRuntimeNode("evaluation_planner");
+    evaluationPlan = runEvaluationPlanner({
+      taskRequest: frontResult.task_request,
+      meetingFactPack: frontResult.meeting_fact_pack,
+      historyBundle: frontResult.history_bundle,
+      rawPayload: frontResult.raw_payload,
+      dataQualityReport: frontResult.data_quality_report,
+      inputCompletenessReport: frontResult.input_completeness_report,
+      hardMetricsResult
+    });
+    runtimeMeta.nodes.evaluation_planner = plannerTracker.finish({
+      status: evaluationPlan && evaluationPlan.execution_plan
+        ? evaluationPlan.execution_plan.execution_mode || "completed"
+        : "completed"
+    });
+    writeArtifactJson(path.join(outputDir, "evaluation_plan.json"), evaluationPlan);
+
+    const managementRequest = buildManagementReviewRequest({
+      meetingFactPack: frontResult.meeting_fact_pack,
+      historyBundle: frontResult.history_bundle,
+      hardMetricsResult,
+      evaluationPlan
+    });
+    const riskBehaviorRequest = buildRiskBehaviorAuditRequest({
+      meetingFactPack: frontResult.meeting_fact_pack,
+      historyBundle: frontResult.history_bundle,
+      hardMetricsResult,
+      rawPayload: frontResult.raw_payload,
+      evaluationPlan
+    });
+    const coordinationRequest = buildCoordinationLensRequest({
+      meetingFactPack: frontResult.meeting_fact_pack,
+      hardMetricsResult,
+      rawPayload: frontResult.raw_payload,
+      evaluationPlan
+    });
+
+    writeArtifactJson(path.join(outputDir, "management_reviewer_request.json"), managementRequest);
+    writeArtifactJson(path.join(outputDir, "risk_behavior_auditor_request.json"), riskBehaviorRequest);
+    writeArtifactJson(path.join(outputDir, "coordination_lens_request.json"), coordinationRequest);
+
+    const [managementRun, riskRun, coordinationRun] = await Promise.all([
+      runAgentNode({
+        nodeKey: "management_reviewer",
+        agentName: "Management Reviewer",
+        request: managementRequest,
+        run: reviewManagement,
+        shouldRun: options.callModel !== false,
+        modelInvoked: options.callModel !== false
+      }),
+      runAgentNode({
+        nodeKey: "risk_behavior_auditor",
+        agentName: "Risk & Behavior Auditor",
+        request: riskBehaviorRequest,
+        run: auditRiskBehavior,
+        shouldRun: options.callModel !== false,
+        modelInvoked: options.callModel !== false
+      }),
+      runAgentNode({
+        nodeKey: "coordination_lens",
+        agentName: "Coordination Lens",
+        request: coordinationRequest,
+        run: reviewCoordination,
+        shouldRun: options.callModel !== false,
+        modelInvoked: options.callModel !== false
+      })
+    ]);
+
+    runtimeMeta.nodes.management_reviewer = managementRun.runtime;
+    runtimeMeta.nodes.risk_behavior_auditor = riskRun.runtime;
+    runtimeMeta.nodes.coordination_lens = coordinationRun.runtime;
+
+    if (managementRun.result) {
+      writeArtifactJson(path.join(outputDir, "management_reviewer_result.json"), managementRun.result);
+    }
+    if (riskRun.result) {
+      writeArtifactJson(path.join(outputDir, "risk_behavior_auditor_result.json"), riskRun.result);
+    }
+    if (coordinationRun.result) {
+      writeArtifactJson(path.join(outputDir, "coordination_lens_result.json"), coordinationRun.result);
+    }
+
+    const reviewerError = [managementRun, riskRun, coordinationRun].find((item) => item.error);
+    if (reviewerError) {
+      throw reviewerError.error;
+    }
+
+    const managementReviewerResult = managementRun.result;
+    const riskBehaviorAuditorResult = riskRun.result;
+    const coordinationLensResult = coordinationRun.result;
+
+    const capabilityRequest = buildCapabilityAssessmentRequest({
+      meetingFactPack: frontResult.meeting_fact_pack,
+      hardMetricsResult,
+      evaluationPlan,
+      inputCompletenessReport: frontResult.input_completeness_report,
+      dataQualityReport: frontResult.data_quality_report,
+      managementReviewerResult,
+      riskBehaviorAuditorResult,
+      coordinationLensResult
+    });
+    writeArtifactJson(path.join(outputDir, "capability_assessor_request.json"), capabilityRequest);
+
+    const capabilityRun = await runAgentNode({
+      nodeKey: "capability_assessor",
+      agentName: "Capability Assessor",
+      request: capabilityRequest,
+      run: assessCapabilityCase04,
+      shouldRun: options.callModel !== false || capabilityRequest.input_status.readiness === "blocked",
+      modelInvoked: options.callModel !== false
+    });
+    runtimeMeta.nodes.capability_assessor = capabilityRun.runtime;
+    capabilityResult = capabilityRun.result;
+
+    if (capabilityResult) {
+      writeArtifactJson(path.join(outputDir, "capability_assessor_result.json"), capabilityResult);
+    }
+    if (capabilityRun.error) {
+      throw capabilityRun.error;
+    }
+
+    const reportRequest = buildCase04ReportRequest({
+      meetingFactPack: frontResult.meeting_fact_pack,
+      historyBundle: frontResult.history_bundle,
+      rawPayload: frontResult.raw_payload,
+      hardMetricsResult,
+      evaluationPlan,
+      capabilityAssessorResult: capabilityResult,
+      managementReviewerResult,
+      riskBehaviorAuditorResult,
+      coordinationLensResult
+    });
+    writeArtifactJson(path.join(outputDir, "report_writer_request.json"), reportRequest);
+
+    const reportRun = await runAgentNode({
+      nodeKey: "report_writer",
+      agentName: "Report Writer",
+      request: reportRequest,
+      run: writeCase04Report,
+      shouldRun: options.callModel !== false || reportRequest.input_status.readiness === "blocked",
+      modelInvoked: options.callModel !== false
+    });
+    runtimeMeta.nodes.report_writer = reportRun.runtime;
+    reportResult = reportRun.result;
+
+    if (reportResult) {
+      writeArtifactJson(path.join(outputDir, "report_result.json"), reportResult);
+    }
+    if (reportRun.error) {
+      throw reportRun.error;
+    }
+
+    summary = buildAutomationSummary({
       bundlePath,
       outputDir,
       selectedMeetingId: selection.selectedMeetingId,
       selectionAttempts: selection.attempts,
       fallbackUsed: selection.fallback_used,
       frontResult,
-      hardMetricsResult: null,
-      capabilityResult: null,
-      reportResult: null
+      hardMetricsResult,
+      capabilityResult,
+      reportResult,
+      extraFiles: summaryExtraFiles
     });
-    writeJson(path.join(outputDir, "automation_summary.json"), summary);
+    writeArtifactJson(path.join(outputDir, "automation_summary.json"), summary);
     return summary;
+  } catch (error) {
+    runtimeMeta.error_message = error.message;
+    throw error;
+  } finally {
+    runtimeMeta.run_finished_at = nowIso();
+    runtimeMeta.total_duration_ms = Date.now() - totalStartedMs;
+
+    writeObservabilityArtifacts({
+      bundlePath,
+      outputDir,
+      selectedMeetingId: selection ? selection.selectedMeetingId : null,
+      selectionAttempts: selection ? selection.attempts : [],
+      fallbackUsed: selection ? selection.fallback_used : false,
+      callModel: options.callModel !== false,
+      triggerType: options.triggerType || "manual",
+      runtimeMeta,
+      extraFiles: {
+        ...summaryExtraFiles,
+        full_loop_observability_markdown: fullLoopDocPaths.outputDirDoc
+      }
+    });
+
+    if (canWriteFullLoopObservability(outputDir)) {
+      const outputDirDocResult = writeFullLoopObservabilityMarkdown({
+        inputDir: outputDir,
+        output: fullLoopDocPaths.outputDirDoc,
+        metadataOutput: path.join(outputDir, "full_loop_observability.json"),
+        title: fullLoopDocPaths.title
+      });
+
+      if (fullLoopDocPaths.docsDoc) {
+        writeFullLoopObservabilityMarkdown({
+          inputDir: outputDir,
+          output: fullLoopDocPaths.docsDoc,
+          metadataOutput: null,
+          title: fullLoopDocPaths.title
+        });
+      }
+
+      if (summary && summary.files) {
+        summary.files.full_loop_observability_markdown = outputDirDocResult.output;
+        if (fullLoopDocPaths.docsDoc) {
+          summary.files.full_loop_observability_docs_markdown = fullLoopDocPaths.docsDoc;
+        }
+        writeArtifactJson(path.join(outputDir, "automation_summary.json"), summary);
+      }
+    }
   }
-
-  const hardMetricsResult = runHardMetricsEngine({
-    meetingFactPack: frontResult.meeting_fact_pack,
-    historyBundle: frontResult.history_bundle,
-    rawPayload: frontResult.raw_payload
-  });
-  writeJson(path.join(outputDir, "hard_metrics_result.json"), hardMetricsResult);
-
-  const evaluationPlan = runEvaluationPlanner({
-    taskRequest: frontResult.task_request,
-    meetingFactPack: frontResult.meeting_fact_pack,
-    historyBundle: frontResult.history_bundle,
-    rawPayload: frontResult.raw_payload,
-    dataQualityReport: frontResult.data_quality_report,
-    inputCompletenessReport: frontResult.input_completeness_report,
-    hardMetricsResult
-  });
-  writeJson(path.join(outputDir, "evaluation_plan.json"), evaluationPlan);
-
-  const managementRequest = buildManagementReviewRequest({
-    meetingFactPack: frontResult.meeting_fact_pack,
-    historyBundle: frontResult.history_bundle,
-    hardMetricsResult,
-    evaluationPlan
-  });
-  const riskBehaviorRequest = buildRiskBehaviorAuditRequest({
-    meetingFactPack: frontResult.meeting_fact_pack,
-    historyBundle: frontResult.history_bundle,
-    hardMetricsResult,
-    rawPayload: frontResult.raw_payload,
-    evaluationPlan
-  });
-  const coordinationRequest = buildCoordinationLensRequest({
-    meetingFactPack: frontResult.meeting_fact_pack,
-    hardMetricsResult,
-    rawPayload: frontResult.raw_payload,
-    evaluationPlan
-  });
-
-  writeJson(path.join(outputDir, "management_reviewer_request.json"), managementRequest);
-  writeJson(path.join(outputDir, "risk_behavior_auditor_request.json"), riskBehaviorRequest);
-  writeJson(path.join(outputDir, "coordination_lens_request.json"), coordinationRequest);
-
-  const reviewerCalls = options.callModel === false
-    ? [Promise.resolve(null), Promise.resolve(null), Promise.resolve(null)]
-    : [
-      reviewManagement(managementRequest),
-      auditRiskBehavior(riskBehaviorRequest),
-      reviewCoordination(coordinationRequest)
-    ];
-  const [managementReviewerResult, riskBehaviorAuditorResult, coordinationLensResult] = await Promise.all(reviewerCalls);
-
-  if (managementReviewerResult) {
-    writeJson(path.join(outputDir, "management_reviewer_result.json"), managementReviewerResult);
-  }
-  if (riskBehaviorAuditorResult) {
-    writeJson(path.join(outputDir, "risk_behavior_auditor_result.json"), riskBehaviorAuditorResult);
-  }
-  if (coordinationLensResult) {
-    writeJson(path.join(outputDir, "coordination_lens_result.json"), coordinationLensResult);
-  }
-
-  const capabilityRequest = buildCapabilityAssessmentRequest({
-    meetingFactPack: frontResult.meeting_fact_pack,
-    hardMetricsResult,
-    evaluationPlan,
-    inputCompletenessReport: frontResult.input_completeness_report,
-    dataQualityReport: frontResult.data_quality_report,
-    managementReviewerResult,
-    riskBehaviorAuditorResult,
-    coordinationLensResult
-  });
-  writeJson(path.join(outputDir, "capability_assessor_request.json"), capabilityRequest);
-
-  const capabilityResult = (options.callModel === false && capabilityRequest.input_status.readiness !== "blocked")
-    ? null
-    : await assessCapabilityCase04(capabilityRequest);
-  if (capabilityResult) {
-    writeJson(path.join(outputDir, "capability_assessor_result.json"), capabilityResult);
-  }
-
-  const reportRequest = buildCase04ReportRequest({
-    meetingFactPack: frontResult.meeting_fact_pack,
-    hardMetricsResult,
-    evaluationPlan,
-    capabilityAssessorResult: capabilityResult,
-    managementReviewerResult,
-    riskBehaviorAuditorResult,
-    coordinationLensResult
-  });
-  writeJson(path.join(outputDir, "report_writer_request.json"), reportRequest);
-
-  const reportResult = (options.callModel === false && reportRequest.input_status.readiness !== "blocked")
-    ? null
-    : await writeCase04Report(reportRequest);
-  if (reportResult) {
-    writeJson(path.join(outputDir, "report_result.json"), reportResult);
-  }
-
-  const summary = buildAutomationSummary({
-    bundlePath,
-    outputDir,
-    selectedMeetingId: selection.selectedMeetingId,
-    selectionAttempts: selection.attempts,
-    fallbackUsed: selection.fallback_used,
-    frontResult,
-    hardMetricsResult,
-    capabilityResult,
-    reportResult
-  });
-  writeJson(path.join(outputDir, "automation_summary.json"), summary);
-  return summary;
 }
 
 module.exports = {

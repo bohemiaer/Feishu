@@ -1,0 +1,1276 @@
+{
+  "metadata": {
+    "generated_at": "2026-05-06T18:53:45.662Z",
+    "input_dir": "E:\\GITHUB-RES\\Feishu\\data\\outputs\\demo\\case06\\auto",
+    "evaluation_id": "EVAL-PJT-CASE-06-MTG-CASE-06-12",
+    "project_id": "PJT-CASE-06",
+    "manager_id": "MGR-CASE-06",
+    "package_type": "output_layer_input"
+  },
+  "workspace_home": [
+    {
+      "module_id": "人员评估总览看板",
+      "平台视角": "评估看板",
+      "模块说明": "看本轮评估对象、状态、数据覆盖和报告入口。",
+      "入口链接": "https://jcneyh7qlo8i.feishu.cn/base/Z6d9bO5UqajK01swK9CcoGU9nkf?table=tblfQS3bHVLNavvZ",
+      "推荐使用人": "HRBP / 评审负责人",
+      "展示状态": "启用",
+      "关联数据表": [
+        "people_overview",
+        "evaluation_runs"
+      ],
+      "备注": "系统首页入口配置"
+    },
+    {
+      "module_id": "单人评估看板",
+      "平台视角": "评估看板",
+      "模块说明": "看单个中层的综合评分、五维形状和阻断项。",
+      "入口链接": "https://jcneyh7qlo8i.feishu.cn/base/Z6d9bO5UqajK01swK9CcoGU9nkf?dashboard=blkwsVk95GtFvTLA",
+      "推荐使用人": "上级管理者 / HRBP",
+      "展示状态": "启用",
+      "关联数据表": [
+        "evaluation_runs",
+        "dimension_results",
+        "metric_results"
+      ],
+      "备注": "系统首页入口配置"
+    },
+    {
+      "module_id": "五维结论",
+      "平台视角": "维度数据",
+      "模块说明": "看五个一级维度的等级、置信度、结论和下钻入口。",
+      "入口链接": "https://jcneyh7qlo8i.feishu.cn/base/Z6d9bO5UqajK01swK9CcoGU9nkf?table=tblMUq8orwwRSi1c",
+      "推荐使用人": "评审负责人 / 上级管理者",
+      "展示状态": "启用",
+      "关联数据表": [
+        "dimension_results"
+      ],
+      "备注": "系统首页入口配置"
+    },
+    {
+      "module_id": "五维评审",
+      "平台视角": "BI看板",
+      "模块说明": "看指标值、样本量、缺失率和数据源质量。",
+      "入口链接": "https://jcneyh7qlo8i.feishu.cn/base/Z6d9bO5UqajK01swK9CcoGU9nkf?table=tbldjPFXVZ4PD9RJ",
+      "推荐使用人": "PMO / 数据负责人",
+      "展示状态": "启用",
+      "关联数据表": [
+        "metric_results",
+        "evidence_index"
+      ],
+      "备注": "系统首页入口配置"
+    },
+    {
+      "module_id": "人工复核",
+      "平台视角": "复核审批",
+      "模块说明": "处理低置信、证据冲突、责任归因和补证事项。",
+      "入口链接": "https://jcneyh7qlo8i.feishu.cn/base/Z6d9bO5UqajK01swK9CcoGU9nkf?table=tblShT3KAkGRjj1T",
+      "推荐使用人": "复核人 / HRBP",
+      "展示状态": "启用",
+      "关联数据表": [
+        "review_items",
+        "evidence_index"
+      ],
+      "备注": "系统首页入口配置"
+    },
+    {
+      "module_id": "证据索引",
+      "平台视角": "证据下钻",
+      "模块说明": "查看关键证据、冲突证据、权限状态和证据片段。",
+      "入口链接": "https://jcneyh7qlo8i.feishu.cn/base/Z6d9bO5UqajK01swK9CcoGU9nkf?table=tblQenU1BAdECcY2",
+      "推荐使用人": "复核人 / 审计查看人",
+      "展示状态": "启用",
+      "关联数据表": [
+        "evidence_index"
+      ],
+      "备注": "系统首页入口配置"
+    }
+  ],
+  "people_overview": [
+    {
+      "person_id": "MGR-CASE-06",
+      "中层姓名": "周牧",
+      "所属部门": "",
+      "管理范围": "PJT-CASE-06",
+      "主责角色": "项目负责人",
+      "最新报告状态": "needs_evidence 需补证",
+      "最新签字状态": "未签字",
+      "最新整体置信度": 0.7,
+      "数据覆盖等级": "中",
+      "待复核数量": 7,
+      "需补证数量": 1,
+      "人工复核要求": "需要",
+      "主关注维度": [
+        "方向校准力",
+        "推进闭环力",
+        "组织行为健康度"
+      ],
+      "评估总览": "管理者周牧在PJT-CASE-06项目MTG-CASE-06-12会议期间的表现呈现混合特征。在方向校准上，能基于事实做出清晰判断；在风险治理和协同调度方面，展现了扎实的基础能力和高效的解决推动力。然而，推进闭环流程存在严重脱节和混乱，是当前最突出的管理风险。同时，风险根治效果不足和组织行为中的高压模式是需要持续关注和改进的领域。由于关键证据（完整会议转写）缺失及部分行为观察需语境复核，整体评估置信度有所降级。",
+      "数据覆盖结论": "可用数据源：Base 记录、Base 历史、云文档、聊天历史、会议/妙记、日历、通讯录。质量提醒：当前会议没有完整妙记转写，当前会议事实将更多依赖会议表和 Statements。",
+      "综合评分": 68.25,
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "单人ReviewPacket": "https://jcneyh7qlo8i.feishu.cn/base/Z6d9bO5UqajK01swK9CcoGU9nkf?dashboard=blkwsVk95GtFvTLA",
+      "关联维度": [
+        "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-方向校准力",
+        "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-推进闭环力",
+        "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-风险治理力",
+        "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-协同调度力",
+        "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-组织行为健康度"
+      ],
+      "关联复核项": [
+        "review_missing_current_transcript_MTG-CASE-06-12",
+        "review_action_task_mapping_MTG-CASE-06-12",
+        "HR-001",
+        "HR-002",
+        "HRV-CORD-001",
+        "low_confidence_方向校准力",
+        "low_confidence_组织行为健康度"
+      ]
+    }
+  ],
+  "evaluation_run": {
+    "evaluation_id": "EVAL-PJT-CASE-06-MTG-CASE-06-12",
+    "评估包标题": "周牧｜单人 Review Packet",
+    "评估对象名称": "周牧",
+    "项目范围": "PJT-CASE-06",
+    "评估周期": "2026-01-01 ~ 2026-03-26",
+    "报告状态": "needs_evidence 需补证",
+    "综合评分": 68.25,
+    "整体置信度": 0.7,
+    "数据覆盖等级": "中",
+    "数据覆盖结论": "可用数据源：Base 记录、Base 历史、云文档、聊天历史、会议/妙记、日历、通讯录。质量提醒：当前会议没有完整妙记转写，当前会议事实将更多依赖会议表和 Statements。",
+    "人工复核要求": "需要",
+    "人审未完成数量": 7,
+    "单人ReviewPacket": "https://jcneyh7qlo8i.feishu.cn/base/Z6d9bO5UqajK01swK9CcoGU9nkf?dashboard=blkwsVk95GtFvTLA",
+    "签字状态": "未签字",
+    "评估总览": "管理者周牧在PJT-CASE-06项目MTG-CASE-06-12会议期间的表现呈现混合特征。在方向校准上，能基于事实做出清晰判断；在风险治理和协同调度方面，展现了扎实的基础能力和高效的解决推动力。然而，推进闭环流程存在严重脱节和混乱，是当前最突出的管理风险。同时，风险根治效果不足和组织行为中的高压模式是需要持续关注和改进的领域。由于关键证据（完整会议转写）缺失及部分行为观察需语境复核，整体评估置信度有所降级。",
+    "启用维度": [
+      "方向校准力",
+      "推进闭环力",
+      "风险治理力",
+      "协同调度力",
+      "组织行为健康度"
+    ],
+    "五维结论入口": [
+      "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-方向校准力",
+      "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-推进闭环力",
+      "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-风险治理力",
+      "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-协同调度力",
+      "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-组织行为健康度"
+    ],
+    "人工复核入口": [
+      "review_missing_current_transcript_MTG-CASE-06-12",
+      "review_action_task_mapping_MTG-CASE-06-12",
+      "HR-001",
+      "HR-002",
+      "HRV-CORD-001",
+      "low_confidence_方向校准力",
+      "low_confidence_组织行为健康度"
+    ]
+  },
+  "dimension_results": [
+    {
+      "dimension_result_id": "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-方向校准力",
+      "维度页标题": "方向校准力",
+      "中层姓名": "周牧",
+      "所属人员": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "维度等级": "健康",
+      "维度分数": 75,
+      "维度权重": 20,
+      "加权得分": 15,
+      "置信度": 0.7,
+      "是否需复核": true,
+      "核心结论": "基于专家软指标加权评估：判断依据充分度(70)、目标/路径修正清晰度(75)、优先级收敛耗时(65)、方向反复次数(90)。管理者在本次会议中基于具体测试结果（续航差15分钟）做出‘软件优化优先’的清晰判断，并与项目风险文档对齐，展现了基于事实的方向校准能力。历史会议决策留痕覆盖率为100%（meeting_decision_coverage_rate=1），表明决策留痕习惯良好。但存在长期未决问题（如外观颜色方案）影响优先级收敛，且因缺少完整会议转写，对整体方向把控的评估受限。",
+      "关键证据摘要": "提供了续航问题的具体数据，是后续判断的基础。\n管理者基于测试结果做出的明确方向判断。\nmetric_id=meeting_decision_coverage_rate, formula=value = meetings_with_decision_trace / total_meetings, calculation.expression=12 / 12, value=1。表明历史会议决策留痕良好。",
+      "边界说明": "当前会议缺少完整妙记转写，无法全面评估管理者对项目目标、范围等宏观维度的判断依据和讨论过程。\n部分软指标（如优先级收敛耗时）为基于风险状态的代理观察，无法精确测量单次会议的共识耗时。",
+      "建议动作": "该维度存在复核项，请从关联复核项进入处理。",
+      "关联指标": [
+        "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-meeting_decision_coverage_rate"
+      ],
+      "关联证据": [
+        "EVD-statement-MTG-CASE-06-12-STM-1",
+        "EVD-statement-MTG-CASE-06-12-STM-2",
+        "EVD-hard_metric-meeting_decision_coverage_rate",
+        "EVD-base_risk-NO.704"
+      ],
+      "关联复核项": [
+        "review_missing_current_transcript_MTG-CASE-06-12",
+        "low_confidence_方向校准力"
+      ]
+    },
+    {
+      "dimension_result_id": "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-推进闭环力",
+      "维度页标题": "推进闭环力",
+      "中层姓名": "周牧",
+      "所属人员": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "维度等级": "中等",
+      "维度分数": 60,
+      "维度权重": 25,
+      "加权得分": 15,
+      "置信度": 0.8,
+      "是否需复核": true,
+      "核心结论": "综合硬指标与专家发现：任务延期率15%（6/40）、任务关闭率62.5%（25/40）表明推进存在压力。关键风险是会议行动项（3条）与任务表关联任务（9条）严重不匹配（current_meeting_action_task_rate异常），暴露出任务定义源头和闭环流程的混乱。任务定义完整率100%（40/40）和已关闭任务质量代理指标100%（25/25）表明基础任务管理要素齐全且关闭任务有留痕。会议行动项留痕覆盖率为66.7%（8/12），存在提升空间。",
+      "关键证据摘要": "metric_id=task_overdue_rate, formula=value = overdue_tasks / tasks_with_due_date, calculation.expression=6 / 40, value=0.15。表明有15%的任务已延期。\nmetric_id=task_closure_rate, formula=value = closed_tasks / total_tasks, calculation.expression=25 / 40, value=0.625。表明任务关闭率为62.5%。\nmetric_id=current_meeting_action_task_rate, 指标异常明确指出了行动项与任务数量不匹配的核心问题。",
+      "边界说明": "会议行动项与任务表的严重脱节（3 vs 9）是重大流程风险，其具体原因（会后扩展、重复挂载）需要人工复核澄清。",
+      "建议动作": "该维度存在复核项，请从关联复核项进入处理。",
+      "关联指标": [
+        "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-task_definition_completeness_rate",
+        "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-task_overdue_rate",
+        "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-task_closure_rate",
+        "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-closed_task_quality_rate",
+        "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-current_meeting_action_task_rate",
+        "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-meeting_action_item_coverage_rate"
+      ],
+      "关联证据": [
+        "EVD-hard_metric-task_overdue_rate",
+        "EVD-hard_metric-task_closure_rate",
+        "EVD-hard_metric-current_meeting_action_task_rate",
+        "EVD-hard_metric-meeting_action_item_coverage_rate"
+      ],
+      "关联复核项": [
+        "review_action_task_mapping_MTG-CASE-06-12"
+      ]
+    },
+    {
+      "dimension_result_id": "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-风险治理力",
+      "维度页标题": "风险治理力",
+      "中层姓名": "周牧",
+      "所属人员": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "维度等级": "中等",
+      "维度分数": 70,
+      "维度权重": 20,
+      "加权得分": 14,
+      "置信度": 0.8,
+      "是否需复核": true,
+      "核心结论": "综合硬指标与专家软指标：高等级风险收口率100%（2/2）、风险缓释动作覆盖率100%（10/10）表明基础风险识别与应对机制健全。主要短板在于风险未收口占比30%（3/10）和同类风险复发样本数高（7/10，技术风险5次，成本风险2次），表明风险治理的闭环及时性与根治效果不足。专家软指标‘高等级风险识别覆盖率’(100)、‘风险升级及时率’(80)与‘同类风险复发率’(30)共同支撑了该评分，显示在及时应对高风险方面表现良好，但在预防复发和解决中等级遗留风险方面存在明显缺口。",
+      "关键证据摘要": "metric_id=open_risk_rate, formula=open_or_tracking_risks / total_risks, calculation.expression=3 / 10, value=0.3。显示有3个风险未收口。\nmetric_id=repeated_risk_type_count, formula=sum(count(risk_type) where count(risk_type) > 1), calculation.expression=7, value=7。显示技术风险复发5次，成本风险复发2次。\nmetric_id=high_risk_resolution_rate, formula=value = resolved_high_risks / total_high_risks, calculation.expression=2 / 2, value=1。表明高等级风险已全部收口。",
+      "边界说明": "风险升级可能通过非记录渠道进行，无法完全捕获。风险分类粒度可能影响复发判断。",
+      "建议动作": "该维度存在复核项，请从关联复核项进入处理。",
+      "关联指标": [
+        "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-high_risk_resolution_rate",
+        "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-risk_mitigation_action_rate",
+        "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-open_risk_rate",
+        "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-repeated_risk_type_count"
+      ],
+      "关联证据": [
+        "EVD-hard_metric-open_risk_rate",
+        "EVD-hard_metric-repeated_risk_type_count",
+        "EVD-hard_metric-high_risk_resolution_rate",
+        "EVD-base_risk-NO.709"
+      ],
+      "关联复核项": [
+        "HR-002"
+      ]
+    },
+    {
+      "dimension_result_id": "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-协同调度力",
+      "维度页标题": "协同调度力",
+      "中层姓名": "周牧",
+      "所属人员": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "维度等级": "健康",
+      "维度分数": 80,
+      "维度权重": 20,
+      "加权得分": 16,
+      "置信度": 0.8,
+      "是否需复核": true,
+      "核心结论": "基于专家软指标加权评估：跨角色有效响应平均时长(70)、关键里程碑/风险同步率(60)、依赖澄清效率(85)、阻塞解决成功率(90)。管理者能快速识别阻塞、明确责任、推动解决，依赖澄清效率高，阻塞解决成功率高。日历必要干系人覆盖率100%（12/12）确保核心团队内部协同。主要风险在于关键里程碑变化和重大风险的同步可能仅限于项目核心团队（关键里程碑/风险同步率较低），缺乏向更广泛必要干系人（如上级管理层）进行正式升级或通报的证据。",
+      "关键证据摘要": "针对手板供应商CNC精度问题，管理者（周牧）立即决策更换供应商，并明确指派刘洋为责任方，展示快速调度。\n针对联合调试中的兼容性问题，管理者（周牧）明确责任方（王芳）和配合方（张强），并设定明确时限，展示依赖澄清效率。\n关键风险（续航不达标）在评审会议中被同步给参会者，但证据仅限于核心团队内部。",
+      "边界说明": "无法确认关键里程碑和风险是否已同步给所有必要的项目外干系人（如部门领导、依赖方），存在信息孤岛风险。",
+      "建议动作": "该维度存在复核项，请从关联复核项进入处理。",
+      "关联指标": [
+        "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-calendar_stakeholder_coverage_rate",
+        "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-manager_chat_signal_count"
+      ],
+      "关联证据": [
+        "EVD-chat-om_case06msg0102",
+        "EVD-chat-om_case06msg0088",
+        "EVD-statement-MTG-CASE-06-12-STM-1",
+        "EVD-hard_metrics-calendar_stakeholder_coverage_rate"
+      ],
+      "关联复核项": [
+        "HRV-CORD-001"
+      ]
+    },
+    {
+      "dimension_result_id": "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-组织行为健康度",
+      "维度页标题": "组织行为健康度",
+      "中层姓名": "周牧",
+      "所属人员": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "维度等级": "需关注",
+      "维度分数": 55,
+      "维度权重": 15,
+      "加权得分": 8.25,
+      "置信度": 0.6,
+      "是否需复核": true,
+      "核心结论": "基于专家软指标与硬指标观察：管理者非常规时段消息占比23.33%（14/60）、高压推进语言样本占比16.67%（10/60）表明存在夜间工作与高压指令沟通模式。专家软指标‘高风险语言触发频次’(40)、‘深夜高压催办比例’(35)评分较低，而‘公开负向反馈比例’(95)较高，表明工作反馈多针对具体问题，未发现公开人身攻击。‘会议空转率’(50)因缺少会议转写而置信度极低。整体行为模式可能潜在地影响团队健康度，需结合具体项目压力背景进行人工语境复核。",
+      "关键证据摘要": "metric_id=late_night_manager_message_rate, formula=manager_messages_between_22_00_and_08_00 / manager_chat_messages, calculation.expression=14 / 60, value=0.2333。显示管理者在非常规时段发送消息比例较高。\nmetric_id=high_pressure_language_sample_rate, formula=manager_messages_matching_pressure_keywords / manager_chat_messages, calculation.expression=10 / 60, value=0.1667。显示管理者消息中规则命中的高压语言样本比例。\n管理者在深夜（00:15）发送工作指令，内容包含明确的工作否定（“不能用”）和指令（“打回重做”），属于高风险语言观察项。",
+      "边界说明": "组织行为判断高度依赖语境。关键词命中不能直接等同于不当管理行为，需结合具体工作压力、项目阶段和团队文化进行人工复核。\n缺少当前会议完整转录，无法评估会议效率（空转率）。",
+      "建议动作": "该维度存在复核项，请从关联复核项进入处理。",
+      "关联指标": [
+        "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-late_night_manager_message_rate",
+        "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-high_pressure_language_sample_rate"
+      ],
+      "关联证据": [
+        "EVD-hard_metric-late_night_manager_message_rate",
+        "EVD-hard_metric-high_pressure_language_sample_rate",
+        "EVD-chat-om_case06msg0016",
+        "EVD-chat-om_case06msg0045"
+      ],
+      "关联复核项": [
+        "HR-001",
+        "low_confidence_组织行为健康度"
+      ]
+    }
+  ],
+  "metric_results": [
+    {
+      "metric_result_id": "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-meeting_decision_coverage_rate",
+      "metric_id": "meeting_decision_coverage_rate",
+      "指标页标题": "方向校准力｜会议决策留痕覆盖率",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "维度名称": "方向校准力",
+      "指标值文本": "1 ratio",
+      "判断结果": "健康",
+      "样本量": 12,
+      "缺失率": 0,
+      "数据源质量": "高",
+      "是否降级": false,
+      "关联证据": [
+        "EVD-hard_metric-meeting_decision_coverage_rate"
+      ]
+    },
+    {
+      "metric_result_id": "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-task_definition_completeness_rate",
+      "metric_id": "task_definition_completeness_rate",
+      "指标页标题": "推进闭环力｜任务定义完整率",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "维度名称": "推进闭环力",
+      "指标值文本": "1 ratio",
+      "判断结果": "健康",
+      "样本量": 40,
+      "缺失率": 0,
+      "数据源质量": "高",
+      "是否降级": false,
+      "关联证据": [
+        "EVD-hard_metric-task_definition_completeness_rate"
+      ]
+    },
+    {
+      "metric_result_id": "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-task_overdue_rate",
+      "metric_id": "task_overdue_rate",
+      "指标页标题": "推进闭环力｜任务延期率",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "维度名称": "推进闭环力",
+      "指标值文本": "0.15 ratio",
+      "判断结果": "需关注",
+      "样本量": 40,
+      "缺失率": 0,
+      "数据源质量": "高",
+      "是否降级": false,
+      "关联证据": [
+        "EVD-hard_metric-task_overdue_rate"
+      ]
+    },
+    {
+      "metric_result_id": "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-task_closure_rate",
+      "metric_id": "task_closure_rate",
+      "指标页标题": "推进闭环力｜任务关闭率",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "维度名称": "推进闭环力",
+      "指标值文本": "0.625 ratio",
+      "判断结果": "中等",
+      "样本量": 40,
+      "缺失率": 0,
+      "数据源质量": "高",
+      "是否降级": false,
+      "关联证据": [
+        "EVD-hard_metric-task_closure_rate"
+      ]
+    },
+    {
+      "metric_result_id": "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-closed_task_quality_rate",
+      "metric_id": "closed_task_quality_rate",
+      "指标页标题": "推进闭环力｜任务关闭质量代理指标",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "维度名称": "推进闭环力",
+      "指标值文本": "1 ratio",
+      "判断结果": "健康",
+      "样本量": 25,
+      "缺失率": 0,
+      "数据源质量": "高",
+      "是否降级": false,
+      "关联证据": [
+        "EVD-hard_metric-closed_task_quality_rate"
+      ]
+    },
+    {
+      "metric_result_id": "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-current_meeting_action_task_rate",
+      "metric_id": "current_meeting_action_task_rate",
+      "指标页标题": "推进闭环力｜当前会议行动项入表率",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "维度名称": "推进闭环力",
+      "指标值文本": "1 ratio",
+      "判断结果": "健康",
+      "样本量": 3,
+      "缺失率": 0,
+      "数据源质量": "高",
+      "是否降级": false,
+      "关联证据": [
+        "EVD-hard_metric-current_meeting_action_task_rate"
+      ]
+    },
+    {
+      "metric_result_id": "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-meeting_action_item_coverage_rate",
+      "metric_id": "meeting_action_item_coverage_rate",
+      "指标页标题": "推进闭环力｜会议行动项留痕覆盖率",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "维度名称": "推进闭环力",
+      "指标值文本": "0.6667 ratio",
+      "判断结果": "中等",
+      "样本量": 12,
+      "缺失率": 0,
+      "数据源质量": "高",
+      "是否降级": false,
+      "关联证据": [
+        "EVD-hard_metric-meeting_action_item_coverage_rate"
+      ]
+    },
+    {
+      "metric_result_id": "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-high_risk_resolution_rate",
+      "metric_id": "high_risk_resolution_rate",
+      "指标页标题": "风险治理力｜高等级风险收口率",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "维度名称": "风险治理力",
+      "指标值文本": "1 ratio",
+      "判断结果": "健康",
+      "样本量": 2,
+      "缺失率": 0,
+      "数据源质量": "高",
+      "是否降级": false,
+      "关联证据": [
+        "EVD-hard_metric-high_risk_resolution_rate"
+      ]
+    },
+    {
+      "metric_result_id": "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-risk_mitigation_action_rate",
+      "metric_id": "risk_mitigation_action_rate",
+      "指标页标题": "风险治理力｜风险缓释动作覆盖率",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "维度名称": "风险治理力",
+      "指标值文本": "1 ratio",
+      "判断结果": "健康",
+      "样本量": 10,
+      "缺失率": 0,
+      "数据源质量": "高",
+      "是否降级": false,
+      "关联证据": [
+        "EVD-hard_metric-risk_mitigation_action_rate"
+      ]
+    },
+    {
+      "metric_result_id": "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-open_risk_rate",
+      "metric_id": "open_risk_rate",
+      "指标页标题": "风险治理力｜风险未收口占比",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "维度名称": "风险治理力",
+      "指标值文本": "0.3 ratio",
+      "判断结果": "需关注",
+      "样本量": 10,
+      "缺失率": 0,
+      "数据源质量": "高",
+      "是否降级": false,
+      "关联证据": [
+        "EVD-hard_metric-open_risk_rate"
+      ]
+    },
+    {
+      "metric_result_id": "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-repeated_risk_type_count",
+      "metric_id": "repeated_risk_type_count",
+      "指标页标题": "风险治理力｜同类风险复发样本数",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "维度名称": "风险治理力",
+      "指标值文本": "7 count",
+      "判断结果": "需关注",
+      "样本量": 10,
+      "缺失率": 0,
+      "数据源质量": "高",
+      "是否降级": false,
+      "关联证据": [
+        "EVD-hard_metric-repeated_risk_type_count"
+      ]
+    },
+    {
+      "metric_result_id": "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-calendar_stakeholder_coverage_rate",
+      "metric_id": "calendar_stakeholder_coverage_rate",
+      "指标页标题": "协同调度力｜日历必要干系人覆盖率",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "维度名称": "协同调度力",
+      "指标值文本": "1 ratio",
+      "判断结果": "健康",
+      "样本量": 12,
+      "缺失率": 0,
+      "数据源质量": "高",
+      "是否降级": false,
+      "关联证据": [
+        "EVD-hard_metric-calendar_stakeholder_coverage_rate"
+      ]
+    },
+    {
+      "metric_result_id": "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-manager_chat_signal_count",
+      "metric_id": "manager_chat_signal_count",
+      "指标页标题": "协同调度力｜管理者聊天同步样本数",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "维度名称": "协同调度力",
+      "指标值文本": "60 count",
+      "判断结果": "需关注",
+      "样本量": 127,
+      "缺失率": 0,
+      "数据源质量": "高",
+      "是否降级": false,
+      "关联证据": [
+        "EVD-hard_metric-manager_chat_signal_count"
+      ]
+    },
+    {
+      "metric_result_id": "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-late_night_manager_message_rate",
+      "metric_id": "late_night_manager_message_rate",
+      "指标页标题": "组织行为健康度｜管理者非常规时段消息占比",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "维度名称": "组织行为健康度",
+      "指标值文本": "0.2333 ratio",
+      "判断结果": "需关注",
+      "样本量": 60,
+      "缺失率": 0,
+      "数据源质量": "高",
+      "是否降级": false,
+      "关联证据": [
+        "EVD-hard_metric-late_night_manager_message_rate"
+      ]
+    },
+    {
+      "metric_result_id": "MET-EVAL-PJT-CASE-06-MTG-CASE-06-12-high_pressure_language_sample_rate",
+      "metric_id": "high_pressure_language_sample_rate",
+      "指标页标题": "组织行为健康度｜高压推进语言样本占比",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "维度名称": "组织行为健康度",
+      "指标值文本": "0.1667 ratio",
+      "判断结果": "需关注",
+      "样本量": 60,
+      "缺失率": 0,
+      "数据源质量": "高",
+      "是否降级": false,
+      "关联证据": [
+        "EVD-hard_metric-high_pressure_language_sample_rate"
+      ]
+    }
+  ],
+  "review_items": [
+    {
+      "review_item_id": "review_missing_current_transcript_MTG-CASE-06-12",
+      "复核事项": "需补证｜方向校准力",
+      "中层姓名": "周牧",
+      "所属人员": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "复核类型": "需补证",
+      "复核状态": "needs_evidence 需补证",
+      "系统初判": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+      "触发原因": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+      "证据摘要": "来自planner_slice中human_review_rules的明确要求。\n当前会议记录中明确缺少完整转写。",
+      "建议处理": "补证",
+      "复核备注": "",
+      "是否允许报告生效": false,
+      "关联维度结果": [
+        "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-方向校准力"
+      ],
+      "关联指标结果": [],
+      "关联证据": [
+        "EVD-planner_slice-human_review_rules",
+        "EVD-current_meeting-missing_fields"
+      ]
+    },
+    {
+      "review_item_id": "review_action_task_mapping_MTG-CASE-06-12",
+      "复核事项": "降级确认｜推进闭环力",
+      "中层姓名": "周牧",
+      "所属人员": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "复核类型": "降级确认",
+      "复核状态": "pending 待复核",
+      "系统初判": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",
+      "触发原因": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",
+      "证据摘要": "来自planner_slice中human_review_rules的明确要求。\n硬指标异常明确指出了行动项与任务数量不匹配的问题。\n当前会议记录的行动项列表，共3条。",
+      "建议处理": "降级为观察项",
+      "复核备注": "",
+      "是否允许报告生效": false,
+      "关联维度结果": [
+        "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-推进闭环力"
+      ],
+      "关联指标结果": [],
+      "关联证据": [
+        "EVD-planner_slice-human_review_rules",
+        "EVD-hard_metric-current_meeting_action_task_rate",
+        "EVD-current_meeting-action_items"
+      ]
+    },
+    {
+      "review_item_id": "HR-001",
+      "复核事项": "敏感判断｜组织行为健康度",
+      "中层姓名": "周牧",
+      "所属人员": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "复核类型": "敏感判断",
+      "复核状态": "pending 待复核",
+      "系统初判": "管理者存在深夜工作沟通与使用高压指令语言的行为模式，可能对团队工作节奏与心理安全产生影响，需结合具体情境进行人工复核。",
+      "触发原因": "管理者存在深夜工作沟通与使用高压指令语言的行为模式，可能对团队工作节奏与心理安全产生影响，需结合具体情境进行人工复核。",
+      "证据摘要": "metric_id=late_night_manager_message_rate, value=0.2333，显示管理者23.33%的消息在非常规时段发送。\nmetric_id=high_pressure_language_sample_rate, value=0.1667，显示16.67%的消息命中高压语言关键词。\n深夜发送的包含明确否定和指令的高风险语言实例。",
+      "建议处理": "降级为观察项",
+      "复核备注": "",
+      "是否允许报告生效": false,
+      "关联维度结果": [
+        "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-组织行为健康度"
+      ],
+      "关联指标结果": [],
+      "关联证据": [
+        "EVD-hard_metric-late_night_manager_message_rate",
+        "EVD-hard_metric-high_pressure_language_sample_rate",
+        "EVD-chat-om_case06msg0016"
+      ]
+    },
+    {
+      "review_item_id": "HR-002",
+      "复核事项": "降级确认｜风险治理力",
+      "中层姓名": "周牧",
+      "所属人员": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "复核类型": "降级确认",
+      "复核状态": "pending 待复核",
+      "系统初判": "中等级风险遗留问题突出，存在治理延迟风险。风险NO.704（外观设计颜色）、NO.709（电池续航）、NO.710（手板延期）均处于未收口状态（open/tracking），需关注其治理动作的及时性与有效性。",
+      "触发原因": "中等级风险遗留问题突出，存在治理延迟风险。风险NO.704（外观设计颜色）、NO.709（电池续航）、NO.710（手板延期）均处于未收口状态（open/tracking），需关注其治理动作的及时性与有效性。",
+      "证据摘要": "metric_id=open_risk_rate, value=0.3，明确列出三个未收口风险。\n风险NO.709在当前会议MTG-CASE-06-12中被识别并标记为tracking。",
+      "建议处理": "降级为观察项",
+      "复核备注": "",
+      "是否允许报告生效": false,
+      "关联维度结果": [
+        "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-风险治理力"
+      ],
+      "关联指标结果": [],
+      "关联证据": [
+        "EVD-hard_metric-open_risk_rate",
+        "EVD-base_risk-NO.709"
+      ]
+    },
+    {
+      "review_item_id": "HRV-CORD-001",
+      "复核事项": "降级确认｜协同调度力",
+      "中层姓名": "周牧",
+      "所属人员": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "复核类型": "降级确认",
+      "复核状态": "pending 待复核",
+      "系统初判": "需要人工复核：关键里程碑（手板制作延期）和重大风险（续航不达标、供应商成本增加）是否已按照组织要求，同步给项目外的必要干系人（如部门总监、产品线负责人、财务部门）？当前证据仅显示在项目核心团队内部同步。",
+      "触发原因": "需要人工复核：关键里程碑（手板制作延期）和重大风险（续航不达标、供应商成本增加）是否已按照组织要求，同步给项目外的必要干系人（如部门总监、产品线负责人、财务部门）？当前证据仅显示在项目核心团队内部同步。",
+      "证据摘要": "手板制作任务已逾期，是关键里程碑延期。\n续航不达标是当前会议识别的重大技术风险。\n风险记录建议‘向领导汇报成本增加’，但聊天记录中仅见‘我单独向领导汇报’的表述，缺乏后续确认。",
+      "建议处理": "降级为观察项",
+      "复核备注": "",
+      "是否允许报告生效": false,
+      "关联维度结果": [
+        "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-协同调度力"
+      ],
+      "关联指标结果": [],
+      "关联证据": [
+        "EVD-coordination_context-task_NO.626",
+        "EVD-statement-MTG-CASE-06-12-STM-1",
+        "EVD-coordination_context-risk_NO.703"
+      ]
+    },
+    {
+      "review_item_id": "low_confidence_方向校准力",
+      "复核事项": "低置信｜方向校准力",
+      "中层姓名": "周牧",
+      "所属人员": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "复核类型": "低置信",
+      "复核状态": "pending 待复核",
+      "系统初判": "方向校准力置信度为 0.7，建议评审人确认边界说明与关键证据。",
+      "触发原因": "方向校准力置信度为 0.7，建议评审人确认边界说明与关键证据。",
+      "证据摘要": "提供了续航问题的具体数据，是后续判断的基础。\n管理者基于测试结果做出的明确方向判断。\nmetric_id=meeting_decision_coverage_rate, formula=value = meetings_with_decision_trace / total_meetings, calculation.expression=12 / 12, value=1。表明历史会议决策留痕良好。\n自2026年2月提出的风险，状态仍为open，表明优先级问题长期未解决，影响收敛效率。",
+      "建议处理": "降级为观察项",
+      "复核备注": "",
+      "是否允许报告生效": false,
+      "关联维度结果": [
+        "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-方向校准力"
+      ],
+      "关联指标结果": [],
+      "关联证据": [
+        "EVD-statement-MTG-CASE-06-12-STM-1",
+        "EVD-statement-MTG-CASE-06-12-STM-2",
+        "EVD-hard_metric-meeting_decision_coverage_rate",
+        "EVD-base_risk-NO.704"
+      ]
+    },
+    {
+      "review_item_id": "low_confidence_组织行为健康度",
+      "复核事项": "低置信｜组织行为健康度",
+      "中层姓名": "周牧",
+      "所属人员": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "复核类型": "低置信",
+      "复核状态": "pending 待复核",
+      "系统初判": "组织行为健康度置信度为 0.6，建议评审人确认边界说明与关键证据。",
+      "触发原因": "组织行为健康度置信度为 0.6，建议评审人确认边界说明与关键证据。",
+      "证据摘要": "metric_id=late_night_manager_message_rate, formula=manager_messages_between_22_00_and_08_00 / manager_chat_messages, calculation.expression=14 / 60, value=0.2333。显示管理者在非常规时段发送消息比例较高。\nmetric_id=high_pressure_language_sample_rate, formula=manager_messages_matching_pressure_keywords / manager_chat_messages, calculation.expression=10 / 60, value=0.1667。显示管理者消息中规则命中的高压语言样本比例。\n管理者在深夜（00:15）发送工作指令，内容包含明确的工作否定（“不能用”）和指令（“打回重做”），属于高风险语言观察项。\n指令明确要求补充材料，虽在深夜发出，但未包含负向情绪表达，属于工作指令范畴。",
+      "建议处理": "降级为观察项",
+      "复核备注": "",
+      "是否允许报告生效": false,
+      "关联维度结果": [
+        "DIM-EVAL-PJT-CASE-06-MTG-CASE-06-12-组织行为健康度"
+      ],
+      "关联指标结果": [],
+      "关联证据": [
+        "EVD-hard_metric-late_night_manager_message_rate",
+        "EVD-hard_metric-high_pressure_language_sample_rate",
+        "EVD-chat-om_case06msg0016",
+        "EVD-chat-om_case06msg0045"
+      ]
+    }
+  ],
+  "evidence_index": [
+    {
+      "evidence_id": "EVD-statement-MTG-CASE-06-12-STM-1",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "会议纪要",
+      "证据标题": "会议纪要｜方向校准力｜关键证据",
+      "证据片段": "功能测试整体达标，续航测试差15分钟。\n提供了续航问题的具体数据，是后续判断的基础。",
+      "关联维度": "方向校准力",
+      "related_metric_id": "",
+      "证据质量": "中",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": [
+        "HRV-CORD-001",
+        "low_confidence_方向校准力"
+      ]
+    },
+    {
+      "evidence_id": "EVD-statement-MTG-CASE-06-12-STM-2",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "会议纪要",
+      "证据标题": "会议纪要｜方向校准力｜关键证据",
+      "证据片段": "续航优化方案评估，软件优化优先。\n管理者基于测试结果做出的明确方向判断。",
+      "关联维度": "方向校准力",
+      "related_metric_id": "",
+      "证据质量": "中",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": [
+        "low_confidence_方向校准力"
+      ]
+    },
+    {
+      "evidence_id": "EVD-hard_metric-meeting_decision_coverage_rate",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "人工补录",
+      "证据标题": "人工补录｜方向校准力｜关键证据",
+      "证据片段": "value = 1, calculation.expression = \"12 / 12\"\nmetric_id=meeting_decision_coverage_rate, formula=value = meetings_with_decision_trace / total_meetings, calculation.expression=12 / 12, value=1。表明历史会议决策留痕良好。",
+      "关联维度": "方向校准力",
+      "related_metric_id": "meeting_decision_coverage_rate",
+      "证据质量": "高",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": [
+        "low_confidence_方向校准力"
+      ]
+    },
+    {
+      "evidence_id": "EVD-base_risk-NO.704",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "风险表",
+      "证据标题": "风险表｜方向校准力｜关键证据",
+      "证据片段": "外观设计颜色方案讨论无结论，方案悬而未决\n自2026年2月提出的风险，状态仍为open，表明优先级问题长期未解决，影响收敛效率。",
+      "关联维度": "方向校准力",
+      "related_metric_id": "",
+      "证据质量": "中",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": [
+        "low_confidence_方向校准力"
+      ]
+    },
+    {
+      "evidence_id": "EVD-hard_metric-task_overdue_rate",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "人工补录",
+      "证据标题": "人工补录｜推进闭环力｜关键证据",
+      "证据片段": "value = 0.15, calculation.expression = \"6 / 40\"\nmetric_id=task_overdue_rate, formula=value = overdue_tasks / tasks_with_due_date, calculation.expression=6 / 40, value=0.15。表明有15%的任务已延期。",
+      "关联维度": "推进闭环力",
+      "related_metric_id": "task_overdue_rate",
+      "证据质量": "高",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": []
+    },
+    {
+      "evidence_id": "EVD-hard_metric-task_closure_rate",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "人工补录",
+      "证据标题": "人工补录｜推进闭环力｜关键证据",
+      "证据片段": "value = 0.625, calculation.expression = \"25 / 40\"\nmetric_id=task_closure_rate, formula=value = closed_tasks / total_tasks, calculation.expression=25 / 40, value=0.625。表明任务关闭率为62.5%。",
+      "关联维度": "推进闭环力",
+      "related_metric_id": "task_closure_rate",
+      "证据质量": "高",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": []
+    },
+    {
+      "evidence_id": "EVD-hard_metric-current_meeting_action_task_rate",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "人工补录",
+      "证据标题": "人工补录｜推进闭环力｜关键证据",
+      "证据片段": "anomalies = [\"会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载\"]\nmetric_id=current_meeting_action_task_rate, 指标异常明确指出了行动项与任务数量不匹配的核心问题。",
+      "关联维度": "推进闭环力",
+      "related_metric_id": "current_meeting_action_task_rate",
+      "证据质量": "高",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": [
+        "review_action_task_mapping_MTG-CASE-06-12"
+      ]
+    },
+    {
+      "evidence_id": "EVD-hard_metric-meeting_action_item_coverage_rate",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "人工补录",
+      "证据标题": "人工补录｜推进闭环力｜关键证据",
+      "证据片段": "value = 0.6667, calculation.expression = \"8 / 12\"\nmetric_id=meeting_action_item_coverage_rate, formula=value = meetings_with_action_item_count_gt_0 / total_meetings, calculation.expression=8 / 12, value=0.6667。表明有33.3%的会议未记录行动项。",
+      "关联维度": "推进闭环力",
+      "related_metric_id": "meeting_action_item_coverage_rate",
+      "证据质量": "高",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": []
+    },
+    {
+      "evidence_id": "EVD-hard_metric-open_risk_rate",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "人工补录",
+      "证据标题": "人工补录｜风险治理力｜关键证据",
+      "证据片段": "value = 0.3, numerator = 3, denominator = 10, anomalies = [\"NO.704 open\", \"NO.709 tracking\", \"NO.710 tracking\"]\nmetric_id=open_risk_rate, formula=open_or_tracking_risks / total_risks, calculation.expression=3 / 10, value=0.3。显示有3个风险未收口。",
+      "关联维度": "风险治理力",
+      "related_metric_id": "open_risk_rate",
+      "证据质量": "高",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": [
+        "HR-002"
+      ]
+    },
+    {
+      "evidence_id": "EVD-hard_metric-repeated_risk_type_count",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "人工补录",
+      "证据标题": "人工补录｜风险治理力｜关键证据",
+      "证据片段": "value = 7, numerator = 7, denominator = 10, anomalies = [\"技术风险:5\", \"成本风险:2\"]\nmetric_id=repeated_risk_type_count, formula=sum(count(risk_type) where count(risk_type) > 1), calculation.expression=7, value=7。显示技术风险复发5次，成本风险复发2次。",
+      "关联维度": "风险治理力",
+      "related_metric_id": "repeated_risk_type_count",
+      "证据质量": "高",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": []
+    },
+    {
+      "evidence_id": "EVD-hard_metric-high_risk_resolution_rate",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "人工补录",
+      "证据标题": "人工补录｜风险治理力｜关键证据",
+      "证据片段": "value = 1, calculation.expression = \"2 / 2\"\nmetric_id=high_risk_resolution_rate, formula=value = resolved_high_risks / total_high_risks, calculation.expression=2 / 2, value=1。表明高等级风险已全部收口。",
+      "关联维度": "风险治理力",
+      "related_metric_id": "high_risk_resolution_rate",
+      "证据质量": "高",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": []
+    },
+    {
+      "evidence_id": "EVD-base_risk-NO.709",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "风险表",
+      "证据标题": "风险表｜风险治理力｜关键证据",
+      "证据片段": "电池续航时间低于设计指标15分钟 followup_status=tracking risk_level=medium\n风险NO.709在当前会议MTG-CASE-06-12中被识别并标记为tracking，是未收口风险之一。",
+      "关联维度": "风险治理力",
+      "related_metric_id": "",
+      "证据质量": "中",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": [
+        "HR-002"
+      ]
+    },
+    {
+      "evidence_id": "EVD-chat-om_case06msg0102",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "聊天记录",
+      "证据标题": "聊天记录｜协同调度力｜关键证据",
+      "证据片段": "这个问题很严重，必须更换供应商。刘洋你去联系备选供应商。\n针对手板供应商CNC精度问题，管理者（周牧）立即决策更换供应商，并明确指派刘洋为责任方，展示快速调度。",
+      "关联维度": "协同调度力",
+      "related_metric_id": "",
+      "证据质量": "中",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": []
+    },
+    {
+      "evidence_id": "EVD-chat-om_case06msg0088",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "聊天记录",
+      "证据标题": "聊天记录｜协同调度力｜关键证据",
+      "证据片段": "王芳，你配合张强解决这个问题，这周内必须搞定。\n针对联合调试中的兼容性问题，管理者（周牧）明确责任方（王芳）和配合方（张强），并设定明确时限，展示依赖澄清效率。",
+      "关联维度": "协同调度力",
+      "related_metric_id": "",
+      "证据质量": "中",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": []
+    },
+    {
+      "evidence_id": "EVD-hard_metrics-calendar_stakeholder_coverage_rate",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "人工补录",
+      "证据标题": "人工补录｜协同调度力｜关键证据",
+      "证据片段": "{\"metric_id\": \"calendar_stakeholder_coverage_rate\", \"value\": 1, \"formula\": {\"numerator_definition\": \"日历参会人同时覆盖评估对象、关键协作者，并命中项目通讯录成员的事件数\"}}\n硬指标显示会议均覆盖了项目通讯录内成员（即核心团队），但未体现是否包含更高级别或外围的必要干系人。",
+      "关联维度": "协同调度力",
+      "related_metric_id": "",
+      "证据质量": "中",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": []
+    },
+    {
+      "evidence_id": "EVD-hard_metric-late_night_manager_message_rate",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "人工补录",
+      "证据标题": "人工补录｜组织行为健康度｜关键证据",
+      "证据片段": "value = 0.2333, numerator = 14, denominator = 60, anomalies = [\"2026-01-08 00:15 李明，结构方案有几个问题：电池仓设计不合理，散热方案需要优化。不能用，打回重做。\", ...]\nmetric_id=late_night_manager_message_rate, formula=manager_messages_between_22_00_and_08_00 / manager_chat_messages, calculation.expression=14 / 60, value=0.2333。显示管理者在非常规时段发送消息比例较高。",
+      "关联维度": "组织行为健康度",
+      "related_metric_id": "late_night_manager_message_rate",
+      "证据质量": "高",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": [
+        "HR-001",
+        "low_confidence_组织行为健康度"
+      ]
+    },
+    {
+      "evidence_id": "EVD-hard_metric-high_pressure_language_sample_rate",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "人工补录",
+      "证据标题": "人工补录｜组织行为健康度｜关键证据",
+      "证据片段": "value = 0.1667, numerator = 10, denominator = 60, anomalies = [\"2026-01-10 23:30 李明，结构方案周五前必须给我，不能再拖了。\", ...]\nmetric_id=high_pressure_language_sample_rate, formula=manager_messages_matching_pressure_keywords / manager_chat_messages, calculation.expression=10 / 60, value=0.1667。显示管理者消息中规则命中的高压语言样本比例。",
+      "关联维度": "组织行为健康度",
+      "related_metric_id": "high_pressure_language_sample_rate",
+      "证据质量": "高",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": [
+        "HR-001",
+        "low_confidence_组织行为健康度"
+      ]
+    },
+    {
+      "evidence_id": "EVD-chat-om_case06msg0016",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "聊天记录",
+      "证据标题": "聊天记录｜组织行为健康度｜关键证据",
+      "证据片段": "李明，结构方案有几个问题：电池仓设计不合理，散热方案需要优化。不能用，打回重做。\n管理者在深夜（00:15）发送工作指令，内容包含明确的工作否定（“不能用”）和指令（“打回重做”），属于高风险语言观察项。",
+      "关联维度": "组织行为健康度",
+      "related_metric_id": "",
+      "证据质量": "中",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": [
+        "HR-001",
+        "low_confidence_组织行为健康度"
+      ]
+    },
+    {
+      "evidence_id": "EVD-chat-om_case06msg0045",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "聊天记录",
+      "证据标题": "聊天记录｜组织行为健康度｜关键证据",
+      "证据片段": "王芳，硬件方案有几个地方需要补充，明天上午给我。\n指令明确要求补充材料，虽在深夜发出，但未包含负向情绪表达，属于工作指令范畴。",
+      "关联维度": "组织行为健康度",
+      "related_metric_id": "",
+      "证据质量": "中",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": [
+        "low_confidence_组织行为健康度"
+      ]
+    },
+    {
+      "evidence_id": "EVD-hard_metric-task_definition_completeness_rate",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "人工补录",
+      "证据标题": "人工补录｜推进闭环力｜关键证据",
+      "证据片段": "指标值：1 ratio；判断结果：健康；样本量：40",
+      "关联维度": "推进闭环力",
+      "related_metric_id": "task_definition_completeness_rate",
+      "证据质量": "高",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": []
+    },
+    {
+      "evidence_id": "EVD-hard_metric-closed_task_quality_rate",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "人工补录",
+      "证据标题": "人工补录｜推进闭环力｜关键证据",
+      "证据片段": "指标值：1 ratio；判断结果：健康；样本量：25",
+      "关联维度": "推进闭环力",
+      "related_metric_id": "closed_task_quality_rate",
+      "证据质量": "高",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": []
+    },
+    {
+      "evidence_id": "EVD-hard_metric-risk_mitigation_action_rate",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "人工补录",
+      "证据标题": "人工补录｜风险治理力｜关键证据",
+      "证据片段": "指标值：1 ratio；判断结果：健康；样本量：10",
+      "关联维度": "风险治理力",
+      "related_metric_id": "risk_mitigation_action_rate",
+      "证据质量": "高",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": []
+    },
+    {
+      "evidence_id": "EVD-hard_metric-calendar_stakeholder_coverage_rate",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "人工补录",
+      "证据标题": "人工补录｜协同调度力｜关键证据",
+      "证据片段": "指标值：1 ratio；判断结果：健康；样本量：12",
+      "关联维度": "协同调度力",
+      "related_metric_id": "calendar_stakeholder_coverage_rate",
+      "证据质量": "高",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": []
+    },
+    {
+      "evidence_id": "EVD-hard_metric-manager_chat_signal_count",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "人工补录",
+      "证据标题": "人工补录｜协同调度力｜关键证据",
+      "证据片段": "指标值：60 count；判断结果：需关注；样本量：127",
+      "关联维度": "协同调度力",
+      "related_metric_id": "manager_chat_signal_count",
+      "证据质量": "高",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": []
+    },
+    {
+      "evidence_id": "EVD-planner_slice-human_review_rules",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "人工补录",
+      "证据标题": "人工补录｜方向校准力｜关键证据",
+      "证据片段": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。\n来自planner_slice中human_review_rules的明确要求。",
+      "关联维度": "方向校准力",
+      "related_metric_id": "",
+      "证据质量": "中",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": [
+        "review_missing_current_transcript_MTG-CASE-06-12",
+        "review_action_task_mapping_MTG-CASE-06-12"
+      ]
+    },
+    {
+      "evidence_id": "EVD-current_meeting-missing_fields",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "会议纪要",
+      "证据标题": "会议纪要｜方向校准力｜关键证据",
+      "证据片段": "[\"meeting_docs.current_transcript\"]\n当前会议记录中明确缺少完整转写。",
+      "关联维度": "方向校准力",
+      "related_metric_id": "",
+      "证据质量": "中",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": [
+        "review_missing_current_transcript_MTG-CASE-06-12"
+      ]
+    },
+    {
+      "evidence_id": "EVD-current_meeting-action_items",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "会议纪要",
+      "证据标题": "会议纪要｜推进闭环力｜关键证据",
+      "证据片段": "[\"周报同步\", \"周报同步\", \"手板功能测试\"]\n当前会议记录的行动项列表，共3条。",
+      "关联维度": "推进闭环力",
+      "related_metric_id": "",
+      "证据质量": "中",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": [
+        "review_action_task_mapping_MTG-CASE-06-12"
+      ]
+    },
+    {
+      "evidence_id": "EVD-coordination_context-task_NO.626",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "人工补录",
+      "证据标题": "人工补录｜协同调度力｜关键证据",
+      "证据片段": "{\"id\": \"NO.626\", \"task_name\": \"手板制作\", \"status\": \"进行中\", \"is_closed\": \"false\", \"is_overdue\": \"true\", \"due_date\": \"2026-03-25\"}\n手板制作任务已逾期，是关键里程碑延期。",
+      "关联维度": "协同调度力",
+      "related_metric_id": "",
+      "证据质量": "中",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": [
+        "HRV-CORD-001"
+      ]
+    },
+    {
+      "evidence_id": "EVD-coordination_context-risk_NO.703",
+      "中层姓名": "周牧",
+      "评估周期": "2026-01-01 ~ 2026-03-26",
+      "来源类型": "人工补录",
+      "证据标题": "人工补录｜协同调度力｜关键证据",
+      "证据片段": "{\"id\": \"NO.703\", \"followup_status\": \"resolved\", \"risk_description\": \"替代芯片价格上浮15%，超出预算\", \"suggested_action\": \"向领导汇报成本增加事项，接受价格上浮\"}\n风险记录建议‘向领导汇报成本增加’，但聊天记录中仅见‘我单独向领导汇报’的表述，缺乏后续确认。",
+      "关联维度": "协同调度力",
+      "related_metric_id": "",
+      "证据质量": "中",
+      "是否关键证据": true,
+      "是否存在冲突": false,
+      "冲突说明": "",
+      "权限状态": "仅摘要可见",
+      "review_ids": [
+        "HRV-CORD-001"
+      ]
+    }
+  ],
+  "writeback_decisions": {
+    "report_can_finalize": false,
+    "report_status": "needs_evidence 需补证",
+    "needs_human_review": true,
+    "needs_evidence": true,
+    "observation_only": false,
+    "tables_to_write": [
+      "workspace_home",
+      "people_overview",
+      "evaluation_runs",
+      "dimension_results",
+      "metric_results",
+      "review_items",
+      "evidence_index"
+    ]
+  }
+}

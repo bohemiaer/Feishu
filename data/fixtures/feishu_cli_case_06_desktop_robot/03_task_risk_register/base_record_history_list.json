@@ -1,0 +1,72 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "base_token": "R7bebfixvam0AqsPowucJcuHn2e",
+    "table_id": "Tasks",
+    "histories": [
+      {
+        "record_id": "reccase06task001",
+        "task_id": "NO.601",
+        "field_changes": [
+          {"field": "status", "old_value": "待开始", "new_value": "进行中", "operator": {"open_id": "ou_case06zhoumu001", "name": "周牧"}, "update_time": "2026-01-10 09:15"},
+          {"field": "status", "old_value": "进行中", "new_value": "已完成", "operator": {"open_id": "ou_case06zhoumu001", "name": "周牧"}, "update_time": "2026-01-31 18:00"}
+        ]
+      },
+      {
+        "record_id": "reccase06task002",
+        "task_id": "NO.602",
+        "field_changes": [
+          {"field": "status", "old_value": "待开始", "new_value": "进行中", "operator": {"open_id": "ou_case06zhoumu001", "name": "周牧"}, "update_time": "2026-01-15 09:00"},
+          {"field": "status", "old_value": "进行中", "new_value": "已完成", "operator": {"open_id": "ou_case06zhoumu001", "name": "周牧"}, "update_time": "2026-02-15 17:30"}
+        ]
+      },
+      {
+        "record_id": "reccase06task010",
+        "task_id": "NO.610",
+        "field_changes": [
+          {"field": "status", "old_value": "待开始", "new_value": "进行中", "operator": {"open_id": "ou_case06zhoumu001", "name": "周牧"}, "update_time": "2026-04-01 09:00"},
+          {"field": "is_overdue", "old_value": "false", "new_value": "true", "operator": {"open_id": "系统", "name": "系统"}, "update_time": "2026-04-16 00:00"}
+        ]
+      },
+      {
+        "record_id": "reccase06task016",
+        "task_id": "NO.616",
+        "field_changes": [
+          {"field": "status", "old_value": "待开始", "new_value": "进行中", "operator": {"open_id": "ou_case06zhoumu001", "name": "周牧"}, "update_time": "2026-04-15 09:00"},
+          {"field": "is_overdue", "old_value": "false", "new_value": "true", "operator": {"open_id": "系统", "name": "系统"}, "update_time": "2026-04-21 00:00"}
+        ]
+      },
+      {
+        "record_id": "reccase06task020",
+        "task_id": "NO.620",
+        "field_changes": [
+          {"field": "status", "old_value": "待开始", "new_value": "进行中", "operator": {"open_id": "ou_case06zhoumu001", "name": "周牧"}, "update_time": "2026-04-25 09:00"},
+          {"field": "is_overdue", "old_value": "false", "new_value": "true", "operator": {"open_id": "系统", "name": "系统"}, "update_time": "2026-04-30 00:00"}
+        ]
+      },
+      {
+        "record_id": "reccase06risk001",
+        "risk_id": "NO.701",
+        "field_changes": [
+          {"field": "followup_status", "old_value": "open", "new_value": "resolved", "operator": {"open_id": "ou_case06zhoumu001", "name": "周牧"}, "update_time": "2026-02-05 14:20"}
+        ]
+      },
+      {
+        "record_id": "reccase06risk002",
+        "risk_id": "NO.702",
+        "field_changes": [
+          {"field": "followup_status", "old_value": "open", "new_value": "resolved", "operator": {"open_id": "ou_case06zhoumu001", "name": "周牧"}, "update_time": "2026-04-12 10:30"}
+        ]
+      },
+      {
+        "record_id": "reccase06risk003",
+        "risk_id": "NO.703",
+        "field_changes": [
+          {"field": "followup_status", "old_value": "open", "new_value": "tracking", "operator": {"open_id": "ou_case06zhoumu001", "name": "周牧"}, "update_time": "2026-04-29 09:00"}
+        ]
+      }
+    ],
+    "has_more": false
+  }
+}

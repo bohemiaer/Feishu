@@ -1,7 +1,7 @@
 "use strict";
 
 const path = require("path");
-const { readJson, writeJson } = require("../../src/shared/fs_utils");
+const { readArtifactJson, writeArtifactJson } = require("../../src/shared/schema_validation");
 const { buildManagementReviewRequest, reviewManagement } = require("../../src/agents/management_reviewer");
 
 function parseArgs(argv) {
@@ -23,17 +23,17 @@ async function main() {
   const requestOutput = path.resolve(args["request-output"] || path.join(inputDir, "management_reviewer_request.json"));
   const resultOutput = args.output ? path.resolve(args.output) : "";
   const request = buildManagementReviewRequest({
-    meetingFactPack: readJson(path.join(inputDir, "meeting_fact_pack.json")),
-    historyBundle: readJson(path.join(inputDir, "history_bundle.json")),
-    hardMetricsResult: readJson(path.join(inputDir, "hard_metrics_result.json")),
-    evaluationPlan: readJson(path.join(inputDir, "evaluation_plan.json"))
+    meetingFactPack: readArtifactJson(path.join(inputDir, "meeting_fact_pack.json")),
+    historyBundle: readArtifactJson(path.join(inputDir, "history_bundle.json")),
+    hardMetricsResult: readArtifactJson(path.join(inputDir, "hard_metrics_result.json")),
+    evaluationPlan: readArtifactJson(path.join(inputDir, "evaluation_plan.json"))
   });
 
-  writeJson(requestOutput, request);
+  writeArtifactJson(requestOutput, request);
 
   if (args["call-model"]) {
     const result = await reviewManagement(request);
-    writeJson(resultOutput || path.join(inputDir, "management_reviewer_result.json"), result);
+    writeArtifactJson(resultOutput || path.join(inputDir, "management_reviewer_result.json"), result);
   }
 
   process.stdout.write(JSON.stringify({

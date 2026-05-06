@@ -1,0 +1,314 @@
+{
+  "meeting_id": "MTG-CASE-06-12",
+  "project_id": "PJT-CASE-06",
+  "manager_id": "MGR-CASE-06",
+  "dimension_findings": [
+    {
+      "dimension": "方向校准力",
+      "finding_type": "observation",
+      "summary": "管理者在阶段复盘会议中，基于测试结果对续航问题做出了明确的优先级判断（软件优化优先），并与项目文档中的风险描述保持一致。但由于缺少完整会议转写，无法评估其对目标、范围的整体校准情况。",
+      "evidence_refs": [
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-06-12-STM-2",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "续航优化方案评估，软件优化优先。",
+          "evidence_note": "管理者周牧在会议中明确了续航问题的优化方向，给出了优先级判断。"
+        },
+        {
+          "source_type": "base_record",
+          "source_file": "03_task_risk_register/base_projects_record_list.json",
+          "source_id": "PJT-CASE-06",
+          "timestamp": "2026-01-01",
+          "excerpt": "桌面机器人产品研发项目",
+          "evidence_note": "项目背景信息。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "meeting_decision_coverage_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 1, calculation.expression = \"12 / 12\"",
+          "evidence_note": "metric_id=meeting_decision_coverage_rate, formula=value = meetings_with_decision_trace / total_meetings, calculation.expression=12 / 12, value=1。表明历史会议决策留痕良好。"
+        }
+      ],
+      "confidence": 0.7,
+      "risk_tags": [
+        "missing_context"
+      ],
+      "suggested_actions": [
+        "建议补充完整会议转写，以便更准确地评估管理者在会议中对项目目标、范围和关键约束的整体判断。"
+      ]
+    },
+    {
+      "dimension": "推进闭环力",
+      "finding_type": "risk",
+      "summary": "当前会议行动项（3条）与任务表关联任务（9条）数量严重不一致，表明会后存在大量任务扩展或重复挂载，任务定义的源头和闭环过程存在混乱风险。同时，项目整体任务延期率（15%）和关闭率（62.5%）表明推进闭环存在压力。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 1, anomalies = [\"会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载\"]",
+          "evidence_note": "metric_id=current_meeting_action_task_rate, formula=value = min(tasks_linked_to_current_meeting, current_meeting_action_item_count) / current_meeting_action_item_count, calculation.expression=3 / 3, value=1。指标值虽为1，但异常提示明确指出了行动项与任务数量不匹配的问题。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "task_overdue_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.15, calculation.expression = \"6 / 40\"",
+          "evidence_note": "metric_id=task_overdue_rate, formula=value = overdue_tasks / tasks_with_due_date, calculation.expression=6 / 40, value=0.15。表明有15%的任务已延期。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "task_closure_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.625, calculation.expression = \"25 / 40\"",
+          "evidence_note": "metric_id=task_closure_rate, formula=value = closed_tasks / total_tasks, calculation.expression=25 / 40, value=0.625。表明任务关闭率为62.5%。"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.627",
+          "timestamp": "2026-03-30",
+          "excerpt": "手板功能测试 source_meeting_id=MTG-CASE-06-12",
+          "evidence_note": "任务表中关联到当前会议的任务示例之一。"
+        }
+      ],
+      "confidence": 0.9,
+      "risk_tags": [
+        "action_task_mismatch",
+        "overdue_pressure"
+      ],
+      "suggested_actions": [
+        "需人工复核任务表，明确哪些是本次会议新增的、必要的行动项，哪些是重复或会后补充的任务，确保任务来源清晰。",
+        "关注并推动解决6项延期任务，特别是长期未决的‘外观颜色方案确定’、‘结构详细设计’等。"
+      ]
+    }
+  ],
+  "soft_indicators": [
+    {
+      "indicator_id": "judgment_basis_degree",
+      "dimension": "方向校准力",
+      "label": "判断依据充分度",
+      "value": 70,
+      "unit": "score",
+      "status": "degraded",
+      "score": 70,
+      "confidence": 0.7,
+      "score_basis": "在当前会议中，管理者基于‘续航测试差15分钟’的具体测试结果（NO.322）做出‘软件优化优先’的判断（NO.323），判断有明确的事实依据。但会议缺少完整转写，无法评估其对项目目标、范围等更宏观维度的判断依据。结合历史会议决策留痕覆盖率为100%（meeting_decision_coverage_rate=1），表明管理者有良好的决策留痕习惯。综合评定为中等偏上。",
+      "evidence_refs": [
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-06-12-STM-1",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "功能测试整体达标，续航测试差15分钟。",
+          "evidence_note": "提供了续航问题的具体数据，是后续判断的基础。"
+        },
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-06-12-STM-2",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "续航优化方案评估，软件优化优先。",
+          "evidence_note": "管理者基于测试结果做出的明确方向判断。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "meeting_decision_coverage_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 1, calculation.expression = \"12 / 12\"",
+          "evidence_note": "metric_id=meeting_decision_coverage_rate, formula=value = meetings_with_decision_trace / total_meetings, calculation.expression=12 / 12, value=1。"
+        }
+      ],
+      "limitations": [
+        "当前会议缺完整妙记转写，无法全面评估判断所依据的上下文和讨论过程。"
+      ]
+    },
+    {
+      "indicator_id": "goal_correction_clarity",
+      "dimension": "方向校准力",
+      "label": "目标/路径修正清晰度",
+      "value": 75,
+      "unit": "score",
+      "status": "degraded",
+      "score": 75,
+      "confidence": 0.7,
+      "score_basis": "针对‘电池续航时间低于设计指标15分钟’这一已知风险（NO.709），管理者在会议中明确了‘续航优化方案评估，软件优化优先’的修正路径，并关联了‘续航优化方案’（NO.628，DDL=2026-04-05）等具体任务，修正动作清晰。但未在会议材料中明确提及对整体项目目标或里程碑的潜在影响评估。",
+      "evidence_refs": [
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-06-12-STM-2",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "续航优化方案评估，软件优化优先。",
+          "evidence_note": "管理者对续航问题的明确修正方向。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.709",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "电池续航时间低于设计指标15分钟",
+          "evidence_note": "项目文档中记录的已知风险，与会议讨论问题一致。"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.628",
+          "timestamp": "2026-04-05",
+          "excerpt": "续航优化方案 source_meeting_id=MTG-CASE-06-12",
+          "evidence_note": "根据会议决策生成的具体任务，用于执行路径修正。"
+        }
+      ],
+      "limitations": [
+        "缺少会议转写，无法确认是否对修正方案的成本、时间影响进行了充分讨论。"
+      ]
+    },
+    {
+      "indicator_id": "priority_convergence_time",
+      "dimension": "方向校准力",
+      "label": "优先级收敛耗时（代理指标）",
+      "value": 65,
+      "unit": "score",
+      "status": "degraded",
+      "score": 65,
+      "confidence": 0.6,
+      "score_basis": "通过历史风险记录观察，部分问题（如外观颜色方案NO.704）从2026-02-12（MTG-CASE-06-05）提出至今（2026-03-26）仍处于‘open’状态，任务（NO.636）也已严重延期，表明优先级收敛或决策执行缓慢。而本次会议的续航问题（NO.709）在识别后立即给出了优化方向和任务，收敛较快。整体表现不均。以长期悬而未决的问题为主要扣分项。",
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.704",
+          "timestamp": "MTG-CASE-06-05",
+          "excerpt": "外观设计颜色方案讨论无结论，方案悬而未决",
+          "evidence_note": "自2026年2月提出的风险，状态仍为open，表明优先级问题长期未解决。"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.636",
+          "timestamp": "2026-02-20",
+          "excerpt": "外观颜色方案确定 DDL=2026-02-20 is_overdue=true",
+          "evidence_note": "与风险NO.704对应的任务，已严重延期，佐证了问题悬而未决。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.709",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "电池续航时间低于设计指标15分钟",
+          "evidence_note": "本次会议新识别/讨论的风险，已进入tracking状态并关联了任务。"
+        }
+      ],
+      "limitations": [
+        "此为基于风险状态的代理观察，无法精确测量单次会议上就某个议题达成共识的实际耗时。"
+      ]
+    },
+    {
+      "indicator_id": "direction_flip_flop_count",
+      "dimension": "方向校准力",
+      "label": "方向反复次数",
+      "value": 90,
+      "unit": "score",
+      "status": "degraded",
+      "score": 90,
+      "confidence": 0.8,
+      "score_basis": "基于现有会议记录、决策和任务回溯，未发现明显的方向性反复。例如，对于续航问题，本次会议明确‘软件优化优先’，任务表中对应生成‘续航优化方案’任务，方向一致。历史风险如芯片替代（NO.701/703）、供应商切换（NO.707）等，决策后均有相应的任务闭环，未见反复。主要扣分点在于‘外观颜色方案’等长期未决问题可能隐含的方向不决，但非已定方向的推翻。",
+      "evidence_refs": [
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-06-12-STM-2",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "续航优化方案评估，软件优化优先。",
+          "evidence_note": "当前会议对续航问题的方向决策。"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.628",
+          "timestamp": "2026-04-05",
+          "excerpt": "续航优化方案 source_meeting_id=MTG-CASE-06-12",
+          "evidence_note": "与会议决策对应的新任务，方向一致。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.707",
+          "timestamp": "MTG-CASE-06-10",
+          "excerpt": "手板供应商CNC加工精度不够，尺寸有偏差",
+          "evidence_note": "历史风险，决策‘更换供应商’后，有‘手板供应商切换’（NO.616）等任务闭环，未见反复。"
+        }
+      ],
+      "limitations": [
+        "评估依赖于已记录的历史决策和任务，若存在未记录的临时口头变更则无法捕捉。"
+      ]
+    }
+  ],
+  "human_review_items": [
+    {
+      "review_id": "review_missing_current_transcript_MTG-CASE-06-12",
+      "reason": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+      "severity": "medium",
+      "related_dimension": "方向校准力",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "input",
+          "source_id": "human_review_rules",
+          "timestamp": "",
+          "excerpt": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+          "evidence_note": "来自planner_slice中human_review_rules的明确要求。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "input",
+          "source_id": "missing_fields",
+          "timestamp": "",
+          "excerpt": "[\"meeting_docs.current_transcript\"]",
+          "evidence_note": "当前会议记录中明确缺少完整转写。"
+        }
+      ]
+    },
+    {
+      "review_id": "review_action_task_mapping_MTG-CASE-06-12",
+      "reason": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",
+      "severity": "medium",
+      "related_dimension": "推进闭环力",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "input",
+          "source_id": "human_review_rules",
+          "timestamp": "",
+          "excerpt": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",
+          "evidence_note": "来自planner_slice中human_review_rules的明确要求。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "anomalies = [\"会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载\"]",
+          "evidence_note": "硬指标异常明确指出了行动项与任务数量不匹配的问题。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "input",
+          "source_id": "action_items",
+          "timestamp": "",
+          "excerpt": "[\"周报同步\", \"周报同步\", \"手板功能测试\"]",
+          "evidence_note": "当前会议记录的行动项列表，共3条。"
+        }
+      ]
+    }
+  ],
+  "management_review_summary": "本次阶段复盘会议中，管理者针对续航测试不达标的问题，做出了‘软件优化优先’的清晰判断，并与项目风险文档对齐，展现了基于事实的方向校准能力。然而，会议行动项与后续任务表严重脱节（3 vs 9），暴露出任务定义和闭环流程的混乱，是推进闭环力的主要风险点。项目整体存在多项任务延期，需关注长期未决问题（如外观颜色方案）对方向收敛的影响。由于缺少完整会议转写，对管理者在会议中的整体方向把控评估受限，建议人工复核。"
+}

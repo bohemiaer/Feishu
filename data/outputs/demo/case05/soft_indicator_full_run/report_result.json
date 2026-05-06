@@ -1,0 +1,586 @@
+{
+  "report_status": "degraded",
+  "report_title": "周牧（MGR-CASE-05）项目管理能力评估报告 - 2026-01-01 ~ 2026-04-24",
+  "manager_id": "MGR-CASE-05",
+  "project_id": "PJT-CASE-05",
+  "report_type": "weekly_report",
+  "summary": "本次评估围绕管理者周牧在项目PJT-CASE-05中的五维能力展开，评估周期为2026-01-01至2026-04-24。管理者在协同调度和方向一致性上表现出优势，能主动处理跨团队阻塞并围绕核心风险决策。然而，评估揭示了两个严重的系统性风险：风险治理未能有效闭环，所有风险均未收口且同类风险复发；推进闭环链条存在断裂，行动项转化和任务关闭率均不理想。这些缺陷构成了项目执行的主要风险点。此外，由于关键会议（MTG-CASE-05-03）记录缺失，对方向校准的深度判断和组织行为健康度的评估置信度降低，需人工复核相关语境。",
+  "score_overview": [
+    {
+      "dimension": "方向校准力",
+      "score": 70,
+      "confidence": 0.65,
+      "evidence_refs": [
+        {
+          "source_type": "soft_indicator",
+          "source_file": "expert_results.management_reviewer_result.soft_indicators[0]",
+          "source_id": "soft_direction_clarity_under_risk",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "加分项：会议决策（协调插队、评估供应商C）直接对应了会上提及的风险（供应商产能瓶颈）。扣分项：缺少完整会议记录，无法判断管理者是否澄清了各应对方案的优先级（如插队为主、评估备选为辅），以及与项目核心目标（压缩开模周期）的明确关联。",
+          "evidence_note": "软指标评分依据，说明方向判断的优势与局限。"
+        },
+        {
+          "source_type": "soft_indicator",
+          "source_file": "expert_results.management_reviewer_result.soft_indicators[2]",
+          "source_id": "soft_historical_decision_consistency",
+          "timestamp": "2026-04-22 10:30 - 11:45",
+          "excerpt": "近期会议（MTG-CASE-05-02, MTG-CASE-05-01）的决策重点（供应商问题、成本、外观冻结）与项目文档（main_doc_excerpt）中列出的核心风险（供应商产能、成本上升、认证变更）高度相关，显示管理者能持续围绕已知关键约束进行决策。",
+          "evidence_note": "软指标评分依据，说明历史决策与项目风险的一致性。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics[0]",
+          "source_id": "meeting_decision_coverage_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = meetings_with_decision_trace / total_meetings, calculation.expression=3 / 3, value=1",
+          "evidence_note": "硬指标显示所有会议均有决策留痕，为方向判断提供了基础记录。"
+        }
+      ],
+      "content": "方向校准力 70"
+    },
+    {
+      "dimension": "推进闭环力",
+      "score": 45,
+      "confidence": 0.85,
+      "evidence_refs": [
+        {
+          "source_type": "soft_indicator",
+          "source_file": "expert_results.management_reviewer_result.soft_indicators[1]",
+          "source_id": "soft_action_to_task_conversion_rigor",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "严重扣分项：当前会议行动项3条，任务表仅映射2条（NO.508, NO.522），存在1条行动项（推测为‘协调供应链总监争取插队’）未在评估周期内的任务表中找到直接对应，表明转化流程存在缺口。结合硬指标‘当前会议行动项入表率=0.6667’和‘任务关闭率=0.4333’，反映整体闭环推进存在明显阻力。",
+          "evidence_note": "软指标评分依据，直接指出行动项转化和整体闭环的严重问题。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics[5]",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = min(tasks_linked_to_current_meeting, current_meeting_action_item_count) / current_meeting_action_item_count, calculation.expression=2 / 3, value=0.6667",
+          "evidence_note": "硬指标量化了当前会议行动项与任务映射的不一致。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics[3]",
+          "source_id": "task_closure_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = closed_tasks / total_tasks, calculation.expression=13 / 30, value=0.4333",
+          "evidence_note": "硬指标显示整体任务关闭率偏低，是闭环乏力的核心证据。"
+        }
+      ],
+      "content": "推进闭环力 45"
+    },
+    {
+      "dimension": "风险治理力",
+      "score": 25,
+      "confidence": 0.85,
+      "evidence_refs": [
+        {
+          "source_type": "soft_indicator",
+          "source_file": "expert_results.risk_behavior_auditor_result.soft_indicators[1]",
+          "source_id": "SI_RG_02",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "所有风险均未收口，两个高风险（供应商工艺、防水变更）持续处于open状态。同时，供应链风险已出现两次（NO.601工艺、NO.604产能），表明对特定类型的风险缺乏有效的根治或系统性缓释措施，治理闭环存在明显缺口。",
+          "evidence_note": "软指标评分依据，明确指出治理闭环的严重缺陷和风险复发问题。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics[10]",
+          "source_id": "open_risk_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = open_or_tracking_risks / total_risks, calculation.expression=5 / 5, value=1",
+          "evidence_note": "硬指标证明所有风险均未收口，是治理乏力的核心证据。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics[7]",
+          "source_id": "high_risk_resolution_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = resolved_high_risks / total_high_risks, calculation.expression=0 / 2, value=0",
+          "evidence_note": "硬指标证明高等级风险均未解决，凸显了重大风险敞口。"
+        }
+      ],
+      "content": "风险治理力 25"
+    },
+    {
+      "dimension": "协同调度力",
+      "score": 75,
+      "confidence": 0.8,
+      "evidence_refs": [
+        {
+          "source_type": "soft_indicator",
+          "source_file": "expert_results.coordination_lens_result.soft_indicators[0]",
+          "source_id": "soft_coord_001",
+          "timestamp": "evaluation_period",
+          "excerpt": "管理者在收到依赖问题后，能明确澄清责任方（自己、法务、声学团队）和下一步动作（确认、评估、协调），并转化为具体任务（如NO.507, NO.516, NO.525）。大部分相关任务显示为‘已完成’，表明澄清有效并推动了进展。",
+          "evidence_note": "软指标评分依据，说明依赖澄清和行动指派的有效性。"
+        },
+        {
+          "source_type": "soft_indicator",
+          "source_file": "expert_results.coordination_lens_result.soft_indicators[1]",
+          "source_id": "soft_coord_002",
+          "timestamp": "MTG-CASE-05-03",
+          "excerpt": "当面临‘供应商产能瓶颈’（NO.604）这一高风险阻塞时，管理者在应急会议（MTG-CASE-05-03）中决策‘协调供应链总监争取插队’，并在群聊中明确‘单独跟进’的升级路径，形成了被相关方（林峰）知晓的解决路径。这超越了简单的问题复述，体现了主动调度。",
+          "evidence_note": "软指标评分依据，说明对高风险阻塞的主动升级和路径构建能力。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0038",
+          "timestamp": "2026-04-24 09:12",
+          "excerpt": "先不在群里说了，我单独找供应链总监协调，看看能不能插队。",
+          "evidence_note": "管理者明确构建跨层级协调路径的原始文本，是主动调度的直接证据。"
+        }
+      ],
+      "content": "协同调度力 75"
+    },
+    {
+      "dimension": "组织行为健康度",
+      "score": 60,
+      "confidence": 0.6,
+      "evidence_refs": [
+        {
+          "source_type": "soft_indicator",
+          "source_file": "expert_results.risk_behavior_auditor_result.soft_indicators[2]",
+          "source_id": "SI_OBH_01",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "仅发现一条含有‘必须’、‘不能再改了’的指令性消息（om_case05msg0025），该消息在常规工作时间发出，目标明确。其余大部分聊天记录为信息同步、问题澄清和任务分配，语气中性。但由于当前会议缺少完整转写，无法评估会议中的互动氛围，因此置信度降低。",
+          "evidence_note": "软指标评分依据，说明高压语言样本的孤立性及评估局限。"
+        },
+        {
+          "source_type": "soft_indicator",
+          "source_file": "expert_results.risk_behavior_auditor_result.soft_indicators[3]",
+          "source_id": "SI_OBH_02",
+          "timestamp": "2026-04-24 09:12",
+          "excerpt": "管理者在公开群聊中同步了大部分风险（如专利、成本、工艺问题），但在处理最新供应链产能风险（NO.604）时，明确表示‘先不在群里说了，我单独找供应链总监协调’。这显示在应对紧急或敏感风险时，管理者倾向于使用非公开渠道进行‘救火’，可能影响团队对整体风险态势的感知和协同应对。",
+          "evidence_note": "软指标评分依据，说明风险沟通渠道选择的观察及其潜在影响。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics[14]",
+          "source_id": "high_pressure_language_sample_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = manager_messages_matching_pressure_keywords / manager_chat_messages, calculation.expression=1 / 25, value=0.04",
+          "evidence_note": "硬指标量化了高压语言规则命中的样本占比，仅为孤立事件。"
+        }
+      ],
+      "content": "组织行为健康度 60"
+    }
+  ],
+  "key_evidence": [
+    {
+      "evidence_type": "优势证据",
+      "description": "协同调度与依赖澄清有效",
+      "evidence_refs": [
+        {
+          "source_type": "soft_indicator",
+          "source_file": "expert_results.coordination_lens_result.soft_indicators[0]",
+          "source_id": "soft_coord_001",
+          "timestamp": "evaluation_period",
+          "excerpt": "管理者在收到依赖问题后，能明确澄清责任方（自己、法务、声学团队）和下一步动作（确认、评估、协调），并转化为具体任务（如NO.507, NO.516, NO.525）。大部分相关任务显示为‘已完成’，表明澄清有效并推动了进展。",
+          "evidence_note": "软指标评分依据，说明依赖澄清和行动指派的有效性。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics[12]",
+          "source_id": "calendar_stakeholder_coverage_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = calendar_events_with_required_stakeholders / total_calendar_events, calculation.expression=3 / 3, value=1",
+          "evidence_note": "硬指标证明日历事件有效覆盖了必要干系人，为协同提供了组织基础。"
+        }
+      ],
+      "content": "协同调度与依赖澄清有效"
+    },
+    {
+      "evidence_type": "风险证据",
+      "description": "风险治理闭环失效",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics[10]",
+          "source_id": "open_risk_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = open_or_tracking_risks / total_risks, calculation.expression=5 / 5, value=1",
+          "evidence_note": "硬指标证明所有风险均未收口，是治理乏力的核心证据。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics[11]",
+          "source_id": "repeated_risk_type_count",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = sum(count(risk_type) where count(risk_type) > 1), calculation.expression=2, value=2",
+          "evidence_note": "硬指标证明‘供应链’类风险已出现两次，表明风险复发模式。"
+        }
+      ],
+      "content": "风险治理闭环失效"
+    },
+    {
+      "evidence_type": "风险证据",
+      "description": "推进闭环链条断裂",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics[5]",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = min(tasks_linked_to_current_meeting, current_meeting_action_item_count) / current_meeting_action_item_count, calculation.expression=2 / 3, value=0.6667",
+          "evidence_note": "硬指标量化了当前会议行动项与任务映射的不一致。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics[3]",
+          "source_id": "task_closure_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = closed_tasks / total_tasks, calculation.expression=13 / 30, value=0.4333",
+          "evidence_note": "硬指标显示整体任务关闭率偏低，是闭环乏力的核心证据。"
+        }
+      ],
+      "content": "推进闭环链条断裂"
+    },
+    {
+      "evidence_type": "观察证据",
+      "description": "风险沟通渠道选择观察",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0038",
+          "timestamp": "2026-04-24 09:12",
+          "excerpt": "先不在群里说了，我单独找供应链总监协调，看看能不能插队。",
+          "evidence_note": "管理者在处理紧急供应链风险时选择移出公开渠道进行单独协调，可能影响风险透明度。此观察需人工复核语境。"
+        }
+      ],
+      "content": "风险沟通渠道选择观察"
+    }
+  ],
+  "risk_alerts": [
+    {
+      "risk_level": "高",
+      "description": "风险治理闭环失效，所有风险均未收口，高等级风险持续开放，且供应链类风险已复发，存在重大治理缺口和项目延期风险。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics[10]",
+          "source_id": "open_risk_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = open_or_tracking_risks / total_risks, calculation.expression=5 / 5, value=1",
+          "evidence_note": "硬指标证明所有风险均未收口。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics[7]",
+          "source_id": "high_risk_resolution_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = resolved_high_risks / total_high_risks, calculation.expression=0 / 2, value=0",
+          "evidence_note": "硬指标证明高等级风险均未解决。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.601",
+          "timestamp": "MTG-CASE-05-02",
+          "excerpt": "供应商A模具曲面壁厚不均，需返工3处，可能延误T0节点；risk_level: high; followup_status: open; suggested_action: 同步调整拔模角度压缩返工周期至4天",
+          "evidence_note": "高风险之一，状态为open，可能延误T0节点。"
+        }
+      ],
+      "content": "风险治理闭环失效，所有风险均未收口，高等级风险持续开放，且供应链类风险已复发，存在重大治理缺口和项目延期风险。"
+    },
+    {
+      "risk_level": "高",
+      "description": "推进闭环链条存在断裂风险，会议行动项未能完全转化为任务，且整体任务关闭率低（43.33%），从决策到执行的转化与落地环节受阻。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics[5]",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = min(tasks_linked_to_current_meeting, current_meeting_action_item_count) / current_meeting_action_item_count, calculation.expression=2 / 3, value=0.6667",
+          "evidence_note": "硬指标显示当前会议行动项入表率仅为66.67%。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics[3]",
+          "source_id": "task_closure_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = closed_tasks / total_tasks, calculation.expression=13 / 30, value=0.4333",
+          "evidence_note": "硬指标显示整体任务关闭率仅为43.33%。"
+        },
+        {
+          "source_type": "soft_indicator",
+          "source_file": "expert_results.management_reviewer_result.soft_indicators[1]",
+          "source_id": "soft_action_to_task_conversion_rigor",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "严重扣分项：当前会议行动项3条，任务表仅映射2条（NO.508, NO.522），存在1条行动项（推测为‘协调供应链总监争取插队’）未在评估周期内的任务表中找到直接对应，表明转化流程存在缺口。",
+          "evidence_note": "软指标直接指出行动项转化存在缺口。"
+        }
+      ],
+      "content": "推进闭环链条存在断裂风险，会议行动项未能完全转化为任务，且整体任务关闭率低（43.33%），从决策到执行的转化与落地环节受阻。"
+    },
+    {
+      "risk_level": "中",
+      "description": "关键会议（MTG-CASE-05-03）缺少完整转写，影响对决策深度、优先级及组织行为语境的精确评估，导致相关维度评分置信度降低。",
+      "evidence_refs": [
+        {
+          "source_type": "current_meeting",
+          "source_file": "",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "",
+          "excerpt": "missing_fields: [\"meeting_docs.current_transcript\"]",
+          "evidence_note": "输入数据中明确指出当前会议缺少完整转写。"
+        },
+        {
+          "source_type": "meeting_info",
+          "source_file": "current_meeting",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "review_status: 补录摘要",
+          "evidence_note": "会议记录状态为补录摘要，缺少完整转写。"
+        }
+      ],
+      "content": "关键会议（MTG-CASE-05-03）缺少完整转写，影响对决策深度、优先级及组织行为语境的精确评估，导致相关维度评分置信度降低。"
+    }
+  ],
+  "human_review_items": [
+    {
+      "review_id": "HR_ACTION_MAPPING_01",
+      "reason": "会议行动项与任务表关联数量不一致。当前会议记录行动项3条，但任务表中source_meeting_id为MTG-CASE-05-03的任务仅2条（NO.508, NO.522）。需人工确认缺失的行动项（可能为‘协调供应链总监争取插队’）是否已转化为任务（如NO.525）、被合并或遗漏。",
+      "severity": "medium",
+      "related_dimension": "推进闭环力",
+      "evidence_refs": [
+        {
+          "source_type": "current_meeting",
+          "source_file": "",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "供应商B打样评估 | 声学团队散热孔位置确认",
+          "evidence_note": "会议记录的行动项列表（根据上下文推断为3条，此处列出2条）。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "anomalies: [\"会议行动项 3 条，任务表命中 2 条\"]",
+          "evidence_note": "metric_id=current_meeting_action_task_rate, anomalies字段指出不一致。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR_MISSING_TRANSCRIPT_01",
+      "reason": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。例如，决策‘同步评估供应商C打样能力’的具体背景、评估标准、以及与‘协调插队’的优先级关系无法从现有摘要中准确判断，可能影响对方向校准力的评估。",
+      "severity": "medium",
+      "related_dimension": "方向校准力",
+      "evidence_refs": [
+        {
+          "source_type": "current_meeting",
+          "source_file": "",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "",
+          "excerpt": "missing_fields: [\"meeting_docs.current_transcript\"]",
+          "evidence_note": "输入数据中明确指出当前会议缺少完整转写。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR_RG_01",
+      "reason": "高等级风险未完全收口，风险治理结论需人工复核。",
+      "severity": "medium",
+      "related_dimension": "风险治理力",
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.601",
+          "timestamp": "MTG-CASE-05-02",
+          "excerpt": "供应商A模具曲面壁厚不均，需返工3处，可能延误T0节点；risk_level: high; followup_status: open; suggested_action: 同步调整拔模角度压缩返工周期至4天",
+          "evidence_note": "待复核的高风险之一。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.602",
+          "timestamp": "MTG-CASE-05-01",
+          "excerpt": "智能门锁防水等级从IPX4提升至IPX6，外观开口需重新设计；risk_level: high; followup_status: open; suggested_action: 评估密封圈+导流槽组合方案，5月5日前输出新方案",
+          "evidence_note": "待复核的高风险之二。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR_OBH_01",
+      "reason": "组织行为相关语言只能作为观察项，需人工确认语境和场景。",
+      "severity": "medium",
+      "related_dimension": "风险治理力",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0038",
+          "timestamp": "2026-04-24 09:12",
+          "excerpt": "先不在群里说了，我单独找供应链总监协调，看看能不能插队。",
+          "evidence_note": "需要人工复核语境的关键行为观察文本。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR_OBH_02",
+      "reason": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+      "severity": "medium",
+      "related_dimension": "风险治理力",
+      "evidence_refs": [
+        {
+          "source_type": "meeting_info",
+          "source_file": "current_meeting",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "review_status: 补录摘要",
+          "evidence_note": "会议记录状态为补录摘要，缺少完整转写。"
+        },
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-05-03-STM-1",
+          "timestamp": "MTG-CASE-05-03",
+          "excerpt": "已经让法务在看了，初步判断有规避空间，但需要调整底部轮廓线。",
+          "evidence_note": "会议中关于专利风险（NO.603）的有限陈述。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR_COORD_001",
+      "reason": "需复核高风险阻塞（供应商产能瓶颈，风险NO.604）的升级协调结果。管理者周牧启动了‘供应链总监插队协调’（任务NO.525），但聊天记录显示‘需要高层会议决策’（om_case05msg0048），且任务状态为‘进行中’。需人工确认该协调的最终结果（是否成功插队）以及对关键里程碑（如模具T0节点）的实际影响，以评估协同调度的闭环有效性。",
+      "severity": "medium",
+      "related_dimension": "协同调度力",
+      "evidence_refs": [
+        {
+          "source_type": "coordination_context",
+          "source_file": "provided_in_input",
+          "source_id": "risks",
+          "timestamp": "evaluation_period",
+          "excerpt": "风险NO.604：核心注塑供应商Q2产能饱和，模具排期可能延后10天。建议行动：协调供应链总监争取插队，同步评估供应商C打样能力。",
+          "evidence_note": "高风险阻塞，建议行动包含跨层级协调。"
+        },
+        {
+          "source_type": "coordination_context",
+          "source_file": "provided_in_input",
+          "source_id": "tasks",
+          "timestamp": "evaluation_period",
+          "excerpt": "任务NO.525：供应链总监插队协调，状态=进行中，负责人=周牧，截止日期=2026-05-10。",
+          "evidence_note": "为应对风险NO.604创建的任务，状态未完成。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0048",
+          "timestamp": "2026-04-29 10:15",
+          "excerpt": "还在沟通，总监说需要高层会议决策。",
+          "evidence_note": "表明协调遇到更高层级的决策依赖，路径未在评估期内闭环。"
+        }
+      ]
+    }
+  ],
+  "next_actions": [
+    {
+      "action": "人工复核并补全会议行动项与任务的映射关系，明确缺失项的处理状态。",
+      "evidence_refs": [
+        {
+          "source_type": "human_review_item",
+          "source_file": "capability_assessor_result.human_review_items[0]",
+          "source_id": "HR_ACTION_MAPPING_01",
+          "timestamp": "",
+          "excerpt": "会议行动项与任务表关联数量不一致。当前会议记录行动项3条，但任务表中source_meeting_id为MTG-CASE-05-03的任务仅2条（NO.508, NO.522）。需人工确认缺失的行动项（可能为‘协调供应链总监争取插队’）是否已转化为任务（如NO.525）、被合并或遗漏。",
+          "evidence_note": "待复核项，直接指向闭环断裂风险。"
+        }
+      ],
+      "content": "人工复核并补全会议行动项与任务的映射关系，明确缺失项的处理状态。"
+    },
+    {
+      "action": "人工复核高风险（NO.601, NO.602）的未收口原因及当前缓释进展，制定明确的收口计划。",
+      "evidence_refs": [
+        {
+          "source_type": "human_review_item",
+          "source_file": "capability_assessor_result.human_review_items[2]",
+          "source_id": "HR_RG_01",
+          "timestamp": "",
+          "excerpt": "高等级风险未完全收口，风险治理结论需人工复核。",
+          "evidence_note": "待复核项，直接指向风险治理失效风险。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.601",
+          "timestamp": "MTG-CASE-05-02",
+          "excerpt": "供应商A模具曲面壁厚不均，需返工3处，可能延误T0节点；risk_level: high; followup_status: open; suggested_action: 同步调整拔模角度压缩返工周期至4天",
+          "evidence_note": "高风险之一，状态为open，可能延误T0节点。"
+        }
+      ],
+      "content": "人工复核高风险（NO.601, NO.602）的未收口原因及当前缓释进展，制定明确的收口计划。"
+    },
+    {
+      "action": "跟进高风险阻塞（风险NO.604）的协调结果，确认插队是否成功及对T0节点的影响，并更新任务状态。",
+      "evidence_refs": [
+        {
+          "source_type": "human_review_item",
+          "source_file": "capability_assessor_result.human_review_items[5]",
+          "source_id": "HR_COORD_001",
+          "timestamp": "",
+          "excerpt": "需复核高风险阻塞（供应商产能瓶颈，风险NO.604）的升级协调结果。管理者周牧启动了‘供应链总监插队协调’（任务NO.525），但聊天记录显示‘需要高层会议决策’（om_case05msg0048），且任务状态为‘进行中’。需人工确认该协调的最终结果（是否成功插队）以及对关键里程碑（如模具T0节点）的实际影响，以评估协同调度的闭环有效性。",
+          "evidence_note": "待复核项，指向协同调度的闭环风险。"
+        }
+      ],
+      "content": "跟进高风险阻塞（风险NO.604）的协调结果，确认插队是否成功及对T0节点的影响，并更新任务状态。"
+    },
+    {
+      "action": "补充关键会议（MTG-CASE-05-03）的完整转写，以提升后续评估中对决策深度和组织行为语境的判断置信度。",
+      "evidence_refs": [
+        {
+          "source_type": "human_review_item",
+          "source_file": "capability_assessor_result.human_review_items[1]",
+          "source_id": "HR_MISSING_TRANSCRIPT_01",
+          "timestamp": "",
+          "excerpt": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。例如，决策‘同步评估供应商C打样能力’的具体背景、评估标准、以及与‘协调插队’的优先级关系无法从现有摘要中准确判断，可能影响对方向校准力的评估。",
+          "evidence_note": "待复核项，指向数据质量风险。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "",
+          "excerpt": "missing_fields: [\"meeting_docs.current_transcript\"]",
+          "evidence_note": "输入数据中明确指出当前会议缺少完整转写。"
+        }
+      ],
+      "content": "补充关键会议（MTG-CASE-05-03）的完整转写，以提升后续评估中对决策深度和组织行为语境的判断置信度。"
+    }
+  ],
+  "base_writeback_payload": {
+    "project_id": "PJT-CASE-05",
+    "manager_id": "MGR-CASE-05",
+    "meeting_id": "MTG-CASE-05-03",
+    "evaluation_period": "2026-01-01 ~ 2026-04-24",
+    "report_generated_at": "2026-05-06T10:26:45.742Z",
+    "overall_score": 55,
+    "dimension_scores": {
+      "方向校准力": 70,
+      "推进闭环力": 45,
+      "风险治理力": 25,
+      "协同调度力": 75,
+      "组织行为健康度": 60
+    },
+    "top_risks": [
+      "风险治理闭环失效：所有风险均未收口，高等级风险持续开放，且供应链风险已复发，存在重大治理缺口。",
+      "推进闭环断裂：会议行动项未能完全转化为任务，且整体任务关闭率低，从决策到执行的链条存在断裂风险。",
+      "关键信息缺失：当前会议缺少完整转写，影响对决策深度、优先级及组织行为语境的精确评估。"
+    ],
+    "human_review_required": true,
+    "human_review_item_ids": [
+      "HR_ACTION_MAPPING_01",
+      "HR_MISSING_TRANSCRIPT_01",
+      "HR_RG_01",
+      "HR_OBH_01",
+      "HR_OBH_02",
+      "HR_COORD_001"
+    ],
+    "report_status": "degraded"
+  },
+  "missing_upstream_results": []
+}

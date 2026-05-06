@@ -11,6 +11,7 @@
     "manager_name",
     "input_status",
     "capability_assessor_result",
+    "expert_results",
     "expert_summaries",
     "evaluation_plan",
     "hard_metrics_result",
@@ -44,6 +45,26 @@
     "capability_assessor_result": {
       "type": ["object", "null"]
     },
+    "expert_results": {
+      "type": "object",
+      "required": [
+        "management_reviewer_result",
+        "risk_behavior_auditor_result",
+        "coordination_lens_result"
+      ],
+      "properties": {
+        "management_reviewer_result": {
+          "type": ["object", "null"]
+        },
+        "risk_behavior_auditor_result": {
+          "type": ["object", "null"]
+        },
+        "coordination_lens_result": {
+          "type": ["object", "null"]
+        }
+      },
+      "additionalProperties": false
+    },
     "expert_summaries": {
       "type": "object",
       "required": [
@@ -60,6 +81,8 @@
     },
     "evaluation_plan": { "type": "object" },
     "hard_metrics_result": { "type": "object" },
+    "history_bundle": { "type": "object" },
+    "raw_payload": { "type": "object" },
     "meeting_fact_pack": { "type": "object" },
     "human_review_items": {
       "type": "array",

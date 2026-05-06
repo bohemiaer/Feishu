@@ -1,0 +1,1746 @@
+{
+  "report_status": "degraded",
+  "report_title": "周牧 MTG-CASE-06-12 周报评估",
+  "manager_id": "MGR-CASE-06",
+  "project_id": "PJT-CASE-06",
+  "report_type": "weekly_report",
+  "summary": "Report Writer 模型调用失败，已回退为确定性指标摘要输出。原因: fetch failed",
+  "indicator_results": [
+    {
+      "indicator_id": "judgment_basis_degree",
+      "dimension": "方向校准力",
+      "label": "判断依据度",
+      "value": 1,
+      "unit": "ratio",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "judgment_basis_degree",
+      "score": 70,
+      "confidence": 0.7,
+      "calculation_basis": "value = supported_decision_weight / total_decision_points; calculation.expression=18 / 18",
+      "evidence_refs": [
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-06-01-STM-1",
+          "timestamp": "MTG-CASE-06-01",
+          "excerpt": "确认产品概念方案和技术路线。结构设计2周内出初稿。",
+          "evidence_note": "fact_check_result=有依据; evidence_ref=会议纪要：项目启动会 09:30 确认技术路线和分工"
+        },
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-06-01-STM-2",
+          "timestamp": "MTG-CASE-06-01",
+          "excerpt": "硬件方案由王芳负责，同步启动供应商评估。",
+          "evidence_note": "fact_check_result=有依据; evidence_ref=会议纪要：项目启动会 10:00 讨论供应商评估计划"
+        },
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-06-02-STM-1",
+          "timestamp": "MTG-CASE-06-02",
+          "excerpt": "核心芯片供应商产能不足，可能影响交期。",
+          "evidence_note": "fact_check_result=有依据; evidence_ref=会议纪要：芯片缺货讨论 14:15 讨论芯片缺货影响"
+        },
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-06-02-STM-2",
+          "timestamp": "MTG-CASE-06-02",
+          "excerpt": "接受替代芯片方案，价格上浮15%可接受。",
+          "evidence_note": "fact_check_result=有依据; evidence_ref=会议纪要：芯片缺货讨论 14:30 讨论替代方案"
+        },
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-06-02-STM-3",
+          "timestamp": "MTG-CASE-06-02",
+          "excerpt": "电池仓和散热设计不合理，需要重新调整。",
+          "evidence_note": "fact_check_result=有依据; evidence_ref=会议纪要：结构方案讨论 15:00 评审结构初稿"
+        }
+      ],
+      "limitations": [
+        "当前会议缺完整妙记转写，无法全面评估判断所依据的上下文和讨论过程。"
+      ]
+    },
+    {
+      "indicator_id": "goal_correction_clarity",
+      "dimension": "方向校准力",
+      "label": "目标纠偏清晰度",
+      "value": 1,
+      "unit": "ratio",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "goal_correction_clarity",
+      "score": 75,
+      "confidence": 0.7,
+      "calculation_basis": "value = current_meeting_actions_with_task_owner_and_deadline_proxy / current_meeting_action_items; calculation.expression=3 / 3",
+      "evidence_refs": [
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.624",
+          "timestamp": "2026-03-21",
+          "excerpt": "周报同步 owner=刘洋 due_date=2026-03-21",
+          "evidence_note": "用具备 owner 与 due_date 的任务作为纠偏清晰度代理证据。"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.625",
+          "timestamp": "2026-03-28",
+          "excerpt": "周报同步 owner=刘洋 due_date=2026-03-28",
+          "evidence_note": "用具备 owner 与 due_date 的任务作为纠偏清晰度代理证据。"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.627",
+          "timestamp": "2026-03-30",
+          "excerpt": "手板功能测试 owner=张强 due_date=2026-03-30",
+          "evidence_note": "用具备 owner 与 due_date 的任务作为纠偏清晰度代理证据。"
+        }
+      ],
+      "limitations": [
+        "缺少会议转写，无法确认是否对修正方案的成本、时间影响进行了充分讨论。",
+        "当前实现按任务匹配作为 owner/DDL 代理。"
+      ]
+    },
+    {
+      "indicator_id": "priority_convergence_time",
+      "dimension": "方向校准力",
+      "label": "优先级收敛时长",
+      "value": 8.8,
+      "unit": "minutes",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "priority_convergence_time",
+      "score": 65,
+      "confidence": 0.6,
+      "calculation_basis": "value = avg(manager_priority_response_minutes); samples=4",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0029",
+          "timestamp": "2026-01-16 09:30",
+          "excerpt": "周经理，电池仓和散热方案已经调整好了，今天下午可以发给您。",
+          "evidence_note": "优先级分歧或问题首次暴露。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0030",
+          "timestamp": "2026-01-16 09:35",
+          "excerpt": "好，下午必须收到。",
+          "evidence_note": "管理者在 5 分钟后给出优先级/取舍口径。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0087",
+          "timestamp": "2026-02-27 17:10",
+          "excerpt": "语音模块和主控芯片的兼容性有问题，需要调整接口电路。",
+          "evidence_note": "优先级分歧或问题首次暴露。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0088",
+          "timestamp": "2026-02-27 17:15",
+          "excerpt": "王芳，你配合张强解决这个问题，这周内必须搞定。",
+          "evidence_note": "管理者在 5 分钟后给出优先级/取舍口径。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0101",
+          "timestamp": "2026-03-12 14:00",
+          "excerpt": "周经理，手板制作遇到点问题，CNC加工精度不够，尺寸有偏差。",
+          "evidence_note": "优先级分歧或问题首次暴露。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0102",
+          "timestamp": "2026-03-12 14:10",
+          "excerpt": "这个问题很严重，必须更换供应商。刘洋你去联系备选供应商。",
+          "evidence_note": "管理者在 10 分钟后给出优先级/取舍口径。"
+        }
+      ],
+      "limitations": [
+        "此为基于风险状态的代理观察，无法精确测量单次会议上就某个议题达成共识的实际耗时。",
+        "按聊天中显式优先级话术做分钟级代理统计。"
+      ]
+    },
+    {
+      "indicator_id": "direction_flip_flop_count",
+      "dimension": "方向校准力",
+      "label": "方向反复变更次数",
+      "value": 0,
+      "unit": "count",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "direction_flip_flop_count",
+      "score": 90,
+      "confidence": 0.8,
+      "calculation_basis": "value = count(explicit_direction_flip_flop_patterns); no explicit push-pause-restart pattern found in current Base history sample.",
+      "evidence_refs": [
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-06-06",
+          "timestamp": "2026-02-15 14:00 - 17:00",
+          "excerpt": "外观设计调整颜色方案和材质; 硬件调试分两阶段进行; 外观设计下周评审冻结",
+          "evidence_note": "历史会议决策口径保持连续，当前样本未发现明确反向折返。"
+        },
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-06-07",
+          "timestamp": "2026-02-25 10:00 - 12:00",
+          "excerpt": "外观设计冻结; 算法继续优化争取98%; 硬件第二阶段调试启动",
+          "evidence_note": "历史会议决策口径保持连续，当前样本未发现明确反向折返。"
+        },
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-06-12",
+          "timestamp": "2026-03-26 09:00 - 10:00",
+          "excerpt": "续航优化方案评估; 软件优化优先; 认证测试准备启动",
+          "evidence_note": "历史会议决策口径保持连续，当前样本未发现明确反向折返。"
+        }
+      ],
+      "limitations": [
+        "评估依赖于已记录的历史决策和任务，若存在未记录的临时口头变更则无法捕捉。",
+        "当前仅基于可用会议决策摘要与 Base 历史抽样。"
+      ]
+    },
+    {
+      "indicator_id": "task_definition_completeness_rate",
+      "dimension": "推进闭环力",
+      "label": "任务定义完整率",
+      "value": 1,
+      "unit": "ratio",
+      "status": "available",
+      "source_type": "hard_metric",
+      "source_id": "task_definition_completeness_rate",
+      "score": null,
+      "confidence": null,
+      "calculation_basis": "value = tasks_with_task_name_owner_due_date / total_tasks",
+      "evidence_refs": [
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.601",
+          "timestamp": "2026-01-15",
+          "excerpt": "产品概念设计方案输出",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.602",
+          "timestamp": "2026-01-18",
+          "excerpt": "结构设计方案初稿",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.603",
+          "timestamp": "2026-01-15",
+          "excerpt": "硬件平台选型评估",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.604",
+          "timestamp": "2026-01-25",
+          "excerpt": "核心芯片替代方案评估",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.605",
+          "timestamp": "2026-01-20",
+          "excerpt": "算法demo准备",
+          "evidence_note": ""
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "indicator_id": "task_overdue_rate",
+      "dimension": "推进闭环力",
+      "label": "任务延期率",
+      "value": 0.15,
+      "unit": "ratio",
+      "status": "available",
+      "source_type": "hard_metric",
+      "source_id": "task_overdue_rate",
+      "score": null,
+      "confidence": null,
+      "calculation_basis": "value = overdue_tasks / tasks_with_due_date",
+      "evidence_refs": [
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.626",
+          "timestamp": "2026-03-25",
+          "excerpt": "手板制作 DDL=2026-03-25 is_overdue=true",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.631",
+          "timestamp": "2026-03-28",
+          "excerpt": "成本核算 DDL=2026-03-28 is_overdue=true",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.636",
+          "timestamp": "2026-02-20",
+          "excerpt": "外观颜色方案确定 DDL=2026-02-20 is_overdue=true",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.637",
+          "timestamp": "2026-02-10",
+          "excerpt": "结构详细设计 DDL=2026-02-10 is_overdue=true",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.638",
+          "timestamp": "2026-02-15",
+          "excerpt": "硬件详细设计 DDL=2026-02-15 is_overdue=true",
+          "evidence_note": ""
+        }
+      ],
+      "limitations": [
+        "NO.626 手板制作 DDL=2026-03-25",
+        "NO.631 成本核算 DDL=2026-03-28",
+        "NO.636 外观颜色方案确定 DDL=2026-02-20",
+        "NO.637 结构详细设计 DDL=2026-02-10",
+        "NO.638 硬件详细设计 DDL=2026-02-15",
+        "NO.640 测试报告整理 DDL=2026-03-30"
+      ]
+    },
+    {
+      "indicator_id": "task_closure_quality_rate",
+      "dimension": "推进闭环力",
+      "label": "任务关闭质量",
+      "value": 1,
+      "unit": "ratio",
+      "status": "available",
+      "source_type": "hard_metric",
+      "source_id": "closed_task_quality_rate",
+      "score": null,
+      "confidence": null,
+      "calculation_basis": "value = qualified_closed_tasks / closed_tasks",
+      "evidence_refs": [
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.601",
+          "timestamp": "2026-01-15",
+          "excerpt": "产品概念设计方案输出 close_duration=5 source_meeting_id=MTG-CASE-06-01",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.602",
+          "timestamp": "2026-01-18",
+          "excerpt": "结构设计方案初稿 close_duration=3 source_meeting_id=MTG-CASE-06-01",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.603",
+          "timestamp": "2026-01-15",
+          "excerpt": "硬件平台选型评估 close_duration=4 source_meeting_id=MTG-CASE-06-01",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.604",
+          "timestamp": "2026-01-25",
+          "excerpt": "核心芯片替代方案评估 close_duration=5 source_meeting_id=MTG-CASE-06-02",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.605",
+          "timestamp": "2026-01-20",
+          "excerpt": "算法demo准备 close_duration=3 source_meeting_id=MTG-CASE-06-01",
+          "evidence_note": ""
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "indicator_id": "high_risk_identification_coverage_rate",
+      "dimension": "风险治理力",
+      "label": "高等级风险识别覆盖率",
+      "value": 1,
+      "unit": "ratio",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "high_risk_identification_coverage_rate",
+      "score": 100,
+      "confidence": 0.9,
+      "calculation_basis": "value = identified_high_risks / total_high_risks; calculation.expression=2 / 2",
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.701",
+          "timestamp": "MTG-CASE-06-02",
+          "excerpt": "核心芯片供应商产能不足，可能影响交期 trigger_reason=供应商Q1订单饱和，优先供应大客户",
+          "evidence_note": "高等级风险建档与触发原因留痕。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.707",
+          "timestamp": "MTG-CASE-06-10",
+          "excerpt": "手板供应商CNC加工精度不够，尺寸有偏差 trigger_reason=供应商设备老旧，加工精度下降",
+          "evidence_note": "高等级风险建档与触发原因留痕。"
+        }
+      ],
+      "limitations": [
+        "无法确认风险在会议讨论前是否已被团队内部感知。"
+      ]
+    },
+    {
+      "indicator_id": "risk_mitigation_action_rate",
+      "dimension": "风险治理力",
+      "label": "缓释动作落地率",
+      "value": 1,
+      "unit": "ratio",
+      "status": "available",
+      "source_type": "hard_metric",
+      "source_id": "risk_mitigation_action_rate",
+      "score": null,
+      "confidence": null,
+      "calculation_basis": "value = risks_with_suggested_action / total_risks",
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.701",
+          "timestamp": "MTG-CASE-06-02",
+          "excerpt": "立即启动替代方案评估，寻找备选供应商",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.702",
+          "timestamp": "MTG-CASE-06-03",
+          "excerpt": "打回重做，调整电池仓和散热方案",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.703",
+          "timestamp": "MTG-CASE-06-04",
+          "excerpt": "向领导汇报成本增加事项，接受价格上浮",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.704",
+          "timestamp": "MTG-CASE-06-05",
+          "excerpt": "继续讨论，收集更多参考方案",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.705",
+          "timestamp": "MTG-CASE-06-06",
+          "excerpt": "补充接口设计和电源方案",
+          "evidence_note": ""
+        }
+      ],
+      "limitations": []
+    },
+    {
+      "indicator_id": "risk_escalation_timeliness_rate",
+      "dimension": "风险治理力",
+      "label": "风险升级及时率",
+      "value": 0,
+      "unit": "ratio",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "risk_escalation_timeliness_rate",
+      "score": 80,
+      "confidence": 0.7,
+      "calculation_basis": "value = timely_escalation_signals / eligible_non_low_risks_proxy; calculation.expression=0 / 8",
+      "evidence_refs": [],
+      "limitations": [
+        "部分风险升级可能通过线下或非记录渠道进行，无法完全捕获。",
+        "当前以聊天/发言中的升级信号作为及时升级代理。"
+      ]
+    },
+    {
+      "indicator_id": "similar_risk_recurrence_rate",
+      "dimension": "风险治理力",
+      "label": "同类风险复发率",
+      "value": 0.7,
+      "unit": "ratio",
+      "status": "available",
+      "source_type": "soft_indicator",
+      "source_id": "similar_risk_recurrence_rate",
+      "score": 30,
+      "confidence": 0.9,
+      "calculation_basis": "value = repeated_risk_samples / total_risks; calculation.expression=7 / 10",
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.701",
+          "timestamp": "MTG-CASE-06-02",
+          "excerpt": "供应链: 核心芯片供应商产能不足，可能影响交期",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.702",
+          "timestamp": "MTG-CASE-06-03",
+          "excerpt": "技术风险: 结构方案需要调整，电池仓和散热设计不合理",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.703",
+          "timestamp": "MTG-CASE-06-04",
+          "excerpt": "成本风险: 替代芯片价格上浮15%，超出预算",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.704",
+          "timestamp": "MTG-CASE-06-05",
+          "excerpt": "技术风险: 外观设计颜色方案讨论无结论，方案悬而未决",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.705",
+          "timestamp": "MTG-CASE-06-06",
+          "excerpt": "技术风险: 硬件方案需要补充，部分接口设计不清晰",
+          "evidence_note": ""
+        }
+      ],
+      "limitations": [
+        "风险分类（risk_type）的粒度可能影响复发判断。"
+      ]
+    },
+    {
+      "indicator_id": "cross_role_effective_response_time",
+      "dimension": "协同调度力",
+      "label": "跨角色有效响应时长",
+      "value": 17,
+      "unit": "minutes",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "cross_role_effective_response_time",
+      "score": 70,
+      "confidence": 0.7,
+      "calculation_basis": "value = avg(first_effective_response_minutes); samples=10",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0055",
+          "timestamp": "2026-02-03 10:00",
+          "excerpt": "周经理，供应商那边确认了替代芯片的交期，下周可以到货。",
+          "evidence_note": "跨角色问题/依赖首次提出。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0056",
+          "timestamp": "2026-02-03 10:15",
+          "excerpt": "好，进度可以推进了。",
+          "evidence_note": "管理者在 15 分钟后给出有效响应。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0061",
+          "timestamp": "2026-02-06 09:30",
+          "excerpt": "周经理，本周进度：结构方案已冻结；替代芯片下周到货；算法优化到97%。",
+          "evidence_note": "跨角色问题/依赖首次提出。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0062",
+          "timestamp": "2026-02-06 10:00",
+          "excerpt": "好，下周重点是外观设计和人脸识别模块联调。",
+          "evidence_note": "管理者在 30 分钟后给出有效响应。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0064",
+          "timestamp": "2026-02-10 14:00",
+          "excerpt": "周经理，替代芯片到货了，我检查了一下没问题。",
+          "evidence_note": "跨角色问题/依赖首次提出。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0065",
+          "timestamp": "2026-02-10 14:15",
+          "excerpt": "好，可以开始硬件调试了。",
+          "evidence_note": "管理者在 15 分钟后给出有效响应。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0081",
+          "timestamp": "2026-02-23 09:15",
+          "excerpt": "周经理抱歉，马上发。本周进度：外观设计已冻结；硬件调试第一阶段完成；算法优化达标。",
+          "evidence_note": "跨角色问题/依赖首次提出。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0082",
+          "timestamp": "2026-02-23 09:30",
+          "excerpt": "好，下周重点是联合调试和手板制作准备。",
+          "evidence_note": "管理者在 15 分钟后给出有效响应。"
+        }
+      ],
+      "limitations": [
+        "样本为定性观察，无法精确计算平均小时数。响应‘有效性’基于内容判断，非简单‘收到’。"
+      ]
+    },
+    {
+      "indicator_id": "key_milestone_sync_rate",
+      "dimension": "协同调度力",
+      "label": "关键里程碑同步率",
+      "value": 1,
+      "unit": "ratio",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "key_milestone_sync_rate",
+      "score": 60,
+      "confidence": 0.8,
+      "calculation_basis": "value = stakeholder_synced_meetings_proxy / total_key_meetings_proxy; calculation.expression=12 / 12",
+      "evidence_refs": [
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-06-01",
+          "timestamp": "2026-01-10 09:00 - 12:00",
+          "excerpt": "项目启动会与技术方案评审 participants=周牧,李明,王芳,张强,刘洋 decisions=确认产品概念方案和技术路线; 结构设计由李明主导，2周内出初稿; 硬件方案由王芳负责，同步启动供应商评估; 算法由张强负责，尽快出demo",
+          "evidence_note": "关键会议有必要干系人与后续决策留痕。"
+        },
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-06-02",
+          "timestamp": "2026-01-20 14:00 - 17:00",
+          "excerpt": "芯片缺货与结构方案评审会 participants=周牧,李明,王芳,刘洋 decisions=接受替代芯片方案，价格上浮15%可接受; 打回结构方案重做; 立即启动备选供应商引入流程",
+          "evidence_note": "关键会议有必要干系人与后续决策留痕。"
+        },
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-06-03",
+          "timestamp": "2026-01-28 10:00 - 11:00",
+          "excerpt": "结构方案进度跟进会 participants=周牧,李明,刘洋 decisions=继续修改; 下周再讨论",
+          "evidence_note": "关键会议有必要干系人与后续决策留痕。"
+        }
+      ],
+      "limitations": [
+        "无法确认同步是否到达所有必要的干系人（如部门领导、依赖方）。"
+      ]
+    },
+    {
+      "indicator_id": "dependency_clarification_time",
+      "dimension": "协同调度力",
+      "label": "依赖澄清时长",
+      "value": null,
+      "unit": "minutes",
+      "status": "no_sample",
+      "source_type": "soft_indicator",
+      "source_id": "dependency_clarification_time",
+      "score": 85,
+      "confidence": 0.85,
+      "calculation_basis": "value = avg(dependency_clarification_minutes); samples=0",
+      "evidence_refs": [],
+      "limitations": [
+        "时间为定性评估，基于对话间隔。"
+      ]
+    },
+    {
+      "indicator_id": "blocker_resolution_success_rate",
+      "dimension": "协同调度力",
+      "label": "协同阻塞清理成功率",
+      "value": 1,
+      "unit": "ratio",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "blocker_resolution_success_rate",
+      "score": 90,
+      "confidence": 0.9,
+      "calculation_basis": "value = blockers_with_resolution_or_confirmed_path_proxy / total_blockers_proxy; calculation.expression=2 / 2",
+      "evidence_refs": [
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.603",
+          "timestamp": "2026-01-15",
+          "excerpt": "硬件平台选型评估 status=已完成 owner=王芳",
+          "evidence_note": "跨团队阻塞的任务化推进或解决路径证据。"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.604",
+          "timestamp": "2026-01-25",
+          "excerpt": "核心芯片替代方案评估 status=已完成 owner=王芳",
+          "evidence_note": "跨团队阻塞的任务化推进或解决路径证据。"
+        }
+      ],
+      "limitations": [
+        "评估基于风险状态和聊天记录中的解决迹象，非所有问题都有独立的‘已关闭’确认。"
+      ]
+    },
+    {
+      "indicator_id": "high_risk_language_trigger_frequency",
+      "dimension": "组织行为健康度",
+      "label": "高风险语言触发频次",
+      "value": 10,
+      "unit": "count",
+      "status": "available",
+      "source_type": "soft_indicator",
+      "source_id": "high_risk_language_trigger_frequency",
+      "score": 40,
+      "confidence": 0.8,
+      "calculation_basis": "value = manager_messages_matching_pressure_keywords; calculation.expression=10",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0018",
+          "timestamp": "2026-01-10 23:30",
+          "excerpt": "李明，结构方案周五前必须给我，不能再拖了。",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0026",
+          "timestamp": "2026-01-15 23:00",
+          "excerpt": "刘洋，帮我跟催下李明的结构方案，周三前必须出终稿。",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0030",
+          "timestamp": "2026-01-16 09:35",
+          "excerpt": "好，下午必须收到。",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0045",
+          "timestamp": "2026-01-23 23:30",
+          "excerpt": "王芳，硬件方案有几个地方需要补充，明天上午给我。",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0070",
+          "timestamp": "2026-02-15 23:30",
+          "excerpt": "李明，外观设计有几个地方需要调整：颜色方案和材质选择，周一前给我。",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0088",
+          "timestamp": "2026-02-27 17:15",
+          "excerpt": "王芳，你配合张强解决这个问题，这周内必须搞定。",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0102",
+          "timestamp": "2026-03-12 14:10",
+          "excerpt": "这个问题很严重，必须更换供应商。刘洋你去联系备选供应商。",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0121",
+          "timestamp": "2026-03-26 09:00",
+          "excerpt": "续航必须达标，这个月内解决。张强你评估下优化方案。",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0123",
+          "timestamp": "2026-03-26 09:15",
+          "excerpt": "好，周五前给我方案。",
+          "evidence_note": ""
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0126",
+          "timestamp": "2026-03-28 23:30",
+          "excerpt": "先尝试软件优化，效果不好再考虑增大电池。周五前给我结果。",
+          "evidence_note": ""
+        }
+      ],
+      "limitations": [
+        "关键词命中不能直接等同于不当管理行为，需结合具体工作压力、项目阶段和团队文化进行人工语境复核。"
+      ]
+    },
+    {
+      "indicator_id": "public_negative_feedback_ratio",
+      "dimension": "组织行为健康度",
+      "label": "公开负向反馈占比",
+      "value": 0,
+      "unit": "ratio",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "public_negative_feedback_ratio",
+      "score": 95,
+      "confidence": 0.9,
+      "calculation_basis": "value = public_negative_feedback_messages_proxy / manager_public_messages_proxy; calculation.expression=0 / 60",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0002",
+          "timestamp": "2026-01-02 09:15",
+          "excerpt": "各位好，桌面机器人项目今天正式启动。项目周期6个月，目标Q2完成小批量试产。",
+          "evidence_note": "公开沟通样本；当前未识别到针对个人的负向评价。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0004",
+          "timestamp": "2026-01-02 09:35",
+          "excerpt": "刘洋，你协助我跟进下各节点的进度，每天同步一次。",
+          "evidence_note": "公开沟通样本；当前未识别到针对个人的负向评价。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0007",
+          "timestamp": "2026-01-03 10:00",
+          "excerpt": "王芳，硬件方案这边有什么想法吗？",
+          "evidence_note": "公开沟通样本；当前未识别到针对个人的负向评价。"
+        }
+      ],
+      "limitations": [
+        "仅基于群聊文本分析，私聊或线下沟通中的反馈无法评估。",
+        "当前以公开群聊中的管理者消息作为反馈样本代理。"
+      ]
+    },
+    {
+      "indicator_id": "late_night_high_pressure_urging_ratio",
+      "dimension": "组织行为健康度",
+      "label": "深夜高压催办占比",
+      "value": 0.3333,
+      "unit": "ratio",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "late_night_high_pressure_urging_ratio",
+      "score": 35,
+      "confidence": 0.85,
+      "calculation_basis": "value = late_night_urging_messages / total_urging_messages_proxy; calculation.expression=8 / 24",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0004",
+          "timestamp": "2026-01-02 09:35",
+          "excerpt": "刘洋，你协助我跟进下各节点的进度，每天同步一次。",
+          "evidence_note": "催办/跟进样本；当前未识别到深夜催办。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0015",
+          "timestamp": "2026-01-07 22:00",
+          "excerpt": "收到，我看看。",
+          "evidence_note": "催办/跟进样本；当前未识别到深夜催办。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0018",
+          "timestamp": "2026-01-10 23:30",
+          "excerpt": "李明，结构方案周五前必须给我，不能再拖了。",
+          "evidence_note": "催办/跟进样本；当前未识别到深夜催办。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0023",
+          "timestamp": "2026-01-14 21:00",
+          "excerpt": "收到，我看看。",
+          "evidence_note": "催办/跟进样本；当前未识别到深夜催办。"
+        }
+      ],
+      "limitations": [
+        "无法判断接收方是否处于正常工作待命状态，或是否存在紧急项目背景。"
+      ]
+    },
+    {
+      "indicator_id": "repeated_urging_rate",
+      "dimension": "组织行为健康度",
+      "label": "重复催办率",
+      "value": 0,
+      "unit": "ratio",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "repeated_urging_rate",
+      "score": 70,
+      "confidence": 0.6,
+      "calculation_basis": "value = repeated_urging_without_new_information / total_urging_messages_proxy; calculation.expression=0 / 24",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0004",
+          "timestamp": "2026-01-02 09:35",
+          "excerpt": "刘洋，你协助我跟进下各节点的进度，每天同步一次。",
+          "evidence_note": "当前样本未发现同一事项在 24 小时内无信息增量的重复催办。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0015",
+          "timestamp": "2026-01-07 22:00",
+          "excerpt": "收到，我看看。",
+          "evidence_note": "当前样本未发现同一事项在 24 小时内无信息增量的重复催办。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0018",
+          "timestamp": "2026-01-10 23:30",
+          "excerpt": "李明，结构方案周五前必须给我，不能再拖了。",
+          "evidence_note": "当前样本未发现同一事项在 24 小时内无信息增量的重复催办。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0023",
+          "timestamp": "2026-01-14 21:00",
+          "excerpt": "收到，我看看。",
+          "evidence_note": "当前样本未发现同一事项在 24 小时内无信息增量的重复催办。"
+        }
+      ],
+      "limitations": [
+        "催办的必要性和合理性需结合任务紧急程度和成员响应情况综合判断。",
+        "当前基于样本人工规则近似，未做主题聚类。"
+      ]
+    },
+    {
+      "indicator_id": "meeting_idle_churn_rate",
+      "dimension": "组织行为健康度",
+      "label": "会议空转率",
+      "value": 0.1667,
+      "unit": "ratio",
+      "status": "degraded",
+      "source_type": "soft_indicator",
+      "source_id": "meeting_idle_churn_rate",
+      "score": 50,
+      "confidence": 0.3,
+      "calculation_basis": "value = meetings_missing_two_of_decision_owner_deadline / total_meetings; calculation.expression=2 / 12",
+      "evidence_refs": [
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-06-01",
+          "timestamp": "2026-01-10 09:00 - 12:00",
+          "excerpt": "项目启动会与技术方案评审 decisions=确认产品概念方案和技术路线; 结构设计由李明主导，2周内出初稿; 硬件方案由王芳负责，同步启动供应商评估; 算法由张强负责，尽快出demo action_item_count=4",
+          "evidence_note": "结合会议决策留痕与 source_meeting_id 对应任务，判断会议是否空转。"
+        },
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-06-02",
+          "timestamp": "2026-01-20 14:00 - 17:00",
+          "excerpt": "芯片缺货与结构方案评审会 decisions=接受替代芯片方案，价格上浮15%可接受; 打回结构方案重做; 立即启动备选供应商引入流程 action_item_count=3",
+          "evidence_note": "结合会议决策留痕与 source_meeting_id 对应任务，判断会议是否空转。"
+        },
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-06-03",
+          "timestamp": "2026-01-28 10:00 - 11:00",
+          "excerpt": "结构方案进度跟进会 decisions=继续修改; 下周再讨论 action_item_count=0",
+          "evidence_note": "结合会议决策留痕与 source_meeting_id 对应任务，判断会议是否空转。"
+        }
+      ],
+      "limitations": [
+        "关键证据（会议转录）缺失，导致本指标置信度很低，无法做出可靠判断。"
+      ]
+    }
+  ],
+  "score_overview": [
+    {
+      "dimension": "方向校准力",
+      "level": "dimension_score",
+      "content": "方向校准力 75 分",
+      "evidence_refs": [
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-06-12-STM-1",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "功能测试整体达标，续航测试差15分钟。",
+          "evidence_note": "提供了续航问题的具体数据，是后续判断的基础。"
+        },
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-06-12-STM-2",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "续航优化方案评估，软件优化优先。",
+          "evidence_note": "管理者基于测试结果做出的明确方向判断。"
+        }
+      ]
+    },
+    {
+      "dimension": "推进闭环力",
+      "level": "dimension_score",
+      "content": "推进闭环力 60 分",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "task_overdue_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.15, calculation.expression = \"6 / 40\"",
+          "evidence_note": "metric_id=task_overdue_rate, formula=value = overdue_tasks / tasks_with_due_date, calculation.expression=6 / 40, value=0.15。表明有15%的任务已延期。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "task_closure_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.625, calculation.expression = \"25 / 40\"",
+          "evidence_note": "metric_id=task_closure_rate, formula=value = closed_tasks / total_tasks, calculation.expression=25 / 40, value=0.625。表明任务关闭率为62.5%。"
+        }
+      ]
+    },
+    {
+      "dimension": "风险治理力",
+      "level": "dimension_score",
+      "content": "风险治理力 70 分",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "open_risk_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.3, numerator = 3, denominator = 10, anomalies = [\"NO.704 open\", \"NO.709 tracking\", \"NO.710 tracking\"]",
+          "evidence_note": "metric_id=open_risk_rate, formula=open_or_tracking_risks / total_risks, calculation.expression=3 / 10, value=0.3。显示有3个风险未收口。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "repeated_risk_type_count",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 7, numerator = 7, denominator = 10, anomalies = [\"技术风险:5\", \"成本风险:2\"]",
+          "evidence_note": "metric_id=repeated_risk_type_count, formula=sum(count(risk_type) where count(risk_type) > 1), calculation.expression=7, value=7。显示技术风险复发5次，成本风险复发2次。"
+        }
+      ]
+    },
+    {
+      "dimension": "协同调度力",
+      "level": "dimension_score",
+      "content": "协同调度力 80 分",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0102",
+          "timestamp": "2026-03-12 14:10",
+          "excerpt": "这个问题很严重，必须更换供应商。刘洋你去联系备选供应商。",
+          "evidence_note": "针对手板供应商CNC精度问题，管理者（周牧）立即决策更换供应商，并明确指派刘洋为责任方，展示快速调度。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0088",
+          "timestamp": "2026-02-27 17:15",
+          "excerpt": "王芳，你配合张强解决这个问题，这周内必须搞定。",
+          "evidence_note": "针对联合调试中的兼容性问题，管理者（周牧）明确责任方（王芳）和配合方（张强），并设定明确时限，展示依赖澄清效率。"
+        }
+      ]
+    },
+    {
+      "dimension": "组织行为健康度",
+      "level": "dimension_score",
+      "content": "组织行为健康度 55 分",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "late_night_manager_message_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.2333, numerator = 14, denominator = 60, anomalies = [\"2026-01-08 00:15 李明，结构方案有几个问题：电池仓设计不合理，散热方案需要优化。不能用，打回重做。\", ...]",
+          "evidence_note": "metric_id=late_night_manager_message_rate, formula=manager_messages_between_22_00_and_08_00 / manager_chat_messages, calculation.expression=14 / 60, value=0.2333。显示管理者在非常规时段发送消息比例较高。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_pressure_language_sample_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.1667, numerator = 10, denominator = 60, anomalies = [\"2026-01-10 23:30 李明，结构方案周五前必须给我，不能再拖了。\", ...]",
+          "evidence_note": "metric_id=high_pressure_language_sample_rate, formula=manager_messages_matching_pressure_keywords / manager_chat_messages, calculation.expression=10 / 60, value=0.1667。显示管理者消息中规则命中的高压语言样本比例。"
+        }
+      ]
+    }
+  ],
+  "key_evidence": [
+    {
+      "dimension": "方向校准力",
+      "level": "evidence",
+      "content": "功能测试整体达标，续航测试差15分钟。",
+      "evidence_refs": [
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-06-12-STM-1",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "功能测试整体达标，续航测试差15分钟。",
+          "evidence_note": "提供了续航问题的具体数据，是后续判断的基础。"
+        }
+      ]
+    },
+    {
+      "dimension": "推进闭环力",
+      "level": "evidence",
+      "content": "value = 0.15, calculation.expression = \"6 / 40\"",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "task_overdue_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.15, calculation.expression = \"6 / 40\"",
+          "evidence_note": "metric_id=task_overdue_rate, formula=value = overdue_tasks / tasks_with_due_date, calculation.expression=6 / 40, value=0.15。表明有15%的任务已延期。"
+        }
+      ]
+    },
+    {
+      "dimension": "风险治理力",
+      "level": "evidence",
+      "content": "value = 0.3, numerator = 3, denominator = 10, anomalies = [\"NO.704 open\", \"NO.709 tracking\", \"NO.710 tracking\"]",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "open_risk_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.3, numerator = 3, denominator = 10, anomalies = [\"NO.704 open\", \"NO.709 tracking\", \"NO.710 tracking\"]",
+          "evidence_note": "metric_id=open_risk_rate, formula=open_or_tracking_risks / total_risks, calculation.expression=3 / 10, value=0.3。显示有3个风险未收口。"
+        }
+      ]
+    },
+    {
+      "dimension": "协同调度力",
+      "level": "evidence",
+      "content": "这个问题很严重，必须更换供应商。刘洋你去联系备选供应商。",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0102",
+          "timestamp": "2026-03-12 14:10",
+          "excerpt": "这个问题很严重，必须更换供应商。刘洋你去联系备选供应商。",
+          "evidence_note": "针对手板供应商CNC精度问题，管理者（周牧）立即决策更换供应商，并明确指派刘洋为责任方，展示快速调度。"
+        }
+      ]
+    },
+    {
+      "dimension": "组织行为健康度",
+      "level": "evidence",
+      "content": "value = 0.2333, numerator = 14, denominator = 60, anomalies = [\"2026-01-08 00:15 李明，结构方案有几个问题：电池仓设计不合理，散热方案需要优化。不能用，打回重做。\", ...]",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "late_night_manager_message_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.2333, numerator = 14, denominator = 60, anomalies = [\"2026-01-08 00:15 李明，结构方案有几个问题：电池仓设计不合理，散热方案需要优化。不能用，打回重做。\", ...]",
+          "evidence_note": "metric_id=late_night_manager_message_rate, formula=manager_messages_between_22_00_and_08_00 / manager_chat_messages, calculation.expression=14 / 60, value=0.2333。显示管理者在非常规时段发送消息比例较高。"
+        }
+      ]
+    }
+  ],
+  "risk_alerts": [
+    {
+      "dimension": "方向校准力",
+      "level": "medium",
+      "content": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "input",
+          "source_id": "human_review_rules",
+          "timestamp": "",
+          "excerpt": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+          "evidence_note": "来自planner_slice中human_review_rules的明确要求。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "input",
+          "source_id": "missing_fields",
+          "timestamp": "",
+          "excerpt": "[\"meeting_docs.current_transcript\"]",
+          "evidence_note": "当前会议记录中明确缺少完整转写。"
+        }
+      ]
+    },
+    {
+      "dimension": "推进闭环力",
+      "level": "medium",
+      "content": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "input",
+          "source_id": "human_review_rules",
+          "timestamp": "",
+          "excerpt": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",
+          "evidence_note": "来自planner_slice中human_review_rules的明确要求。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "anomalies = [\"会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载\"]",
+          "evidence_note": "硬指标异常明确指出了行动项与任务数量不匹配的问题。"
+        }
+      ]
+    },
+    {
+      "dimension": "组织行为健康度",
+      "level": "medium",
+      "content": "管理者存在深夜工作沟通与使用高压指令语言的行为模式，可能对团队工作节奏与心理安全产生影响，需结合具体情境进行人工复核。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "late_night_manager_message_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.2333, numerator = 14, denominator = 60",
+          "evidence_note": "metric_id=late_night_manager_message_rate, value=0.2333，显示管理者23.33%的消息在非常规时段发送。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_pressure_language_sample_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.1667, numerator = 10, denominator = 60",
+          "evidence_note": "metric_id=high_pressure_language_sample_rate, value=0.1667，显示16.67%的消息命中高压语言关键词。"
+        }
+      ]
+    },
+    {
+      "dimension": "风险治理力",
+      "level": "medium",
+      "content": "中等级风险遗留问题突出，存在治理延迟风险。风险NO.704（外观设计颜色）、NO.709（电池续航）、NO.710（手板延期）均处于未收口状态（open/tracking），需关注其治理动作的及时性与有效性。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "open_risk_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.3, numerator = 3, denominator = 10, anomalies = [\"NO.704 open\", \"NO.709 tracking\", \"NO.710 tracking\"]",
+          "evidence_note": "metric_id=open_risk_rate, value=0.3，明确列出三个未收口风险。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.709",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "电池续航时间低于设计指标15分钟 followup_status=tracking risk_level=medium",
+          "evidence_note": "风险NO.709在当前会议MTG-CASE-06-12中被识别并标记为tracking。"
+        }
+      ]
+    },
+    {
+      "dimension": "协同调度力",
+      "level": "medium",
+      "content": "需要人工复核：关键里程碑（手板制作延期）和重大风险（续航不达标、供应商成本增加）是否已按照组织要求，同步给项目外的必要干系人（如部门总监、产品线负责人、财务部门）？当前证据仅显示在项目核心团队内部同步。",
+      "evidence_refs": [
+        {
+          "source_type": "coordination_context",
+          "source_file": "internal_context",
+          "source_id": "task_NO.626",
+          "timestamp": "2026-03-26",
+          "excerpt": "{\"id\": \"NO.626\", \"task_name\": \"手板制作\", \"status\": \"进行中\", \"is_closed\": \"false\", \"is_overdue\": \"true\", \"due_date\": \"2026-03-25\"}",
+          "evidence_note": "手板制作任务已逾期，是关键里程碑延期。"
+        },
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-06-12-STM-1",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "功能测试整体达标，续航测试差15分钟。",
+          "evidence_note": "续航不达标是当前会议识别的重大技术风险。"
+        }
+      ]
+    }
+  ],
+  "human_review_items": [
+    {
+      "review_id": "review_missing_current_transcript_MTG-CASE-06-12",
+      "reason": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+      "severity": "medium",
+      "related_dimension": "方向校准力",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "input",
+          "source_id": "human_review_rules",
+          "timestamp": "",
+          "excerpt": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+          "evidence_note": "来自planner_slice中human_review_rules的明确要求。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "input",
+          "source_id": "missing_fields",
+          "timestamp": "",
+          "excerpt": "[\"meeting_docs.current_transcript\"]",
+          "evidence_note": "当前会议记录中明确缺少完整转写。"
+        }
+      ]
+    },
+    {
+      "review_id": "review_action_task_mapping_MTG-CASE-06-12",
+      "reason": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",
+      "severity": "medium",
+      "related_dimension": "推进闭环力",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "input",
+          "source_id": "human_review_rules",
+          "timestamp": "",
+          "excerpt": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",
+          "evidence_note": "来自planner_slice中human_review_rules的明确要求。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "anomalies = [\"会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载\"]",
+          "evidence_note": "硬指标异常明确指出了行动项与任务数量不匹配的问题。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "input",
+          "source_id": "action_items",
+          "timestamp": "",
+          "excerpt": "[\"周报同步\", \"周报同步\", \"手板功能测试\"]",
+          "evidence_note": "当前会议记录的行动项列表，共3条。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-001",
+      "reason": "管理者存在深夜工作沟通与使用高压指令语言的行为模式，可能对团队工作节奏与心理安全产生影响，需结合具体情境进行人工复核。",
+      "severity": "medium",
+      "related_dimension": "组织行为健康度",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "late_night_manager_message_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.2333, numerator = 14, denominator = 60",
+          "evidence_note": "metric_id=late_night_manager_message_rate, value=0.2333，显示管理者23.33%的消息在非常规时段发送。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_pressure_language_sample_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.1667, numerator = 10, denominator = 60",
+          "evidence_note": "metric_id=high_pressure_language_sample_rate, value=0.1667，显示16.67%的消息命中高压语言关键词。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0016",
+          "timestamp": "2026-01-08 00:15",
+          "excerpt": "李明，结构方案有几个问题：电池仓设计不合理，散热方案需要优化。不能用，打回重做。",
+          "evidence_note": "深夜发送的包含明确否定和指令的高风险语言实例。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-002",
+      "reason": "中等级风险遗留问题突出，存在治理延迟风险。风险NO.704（外观设计颜色）、NO.709（电池续航）、NO.710（手板延期）均处于未收口状态（open/tracking），需关注其治理动作的及时性与有效性。",
+      "severity": "medium",
+      "related_dimension": "风险治理力",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "open_risk_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.3, numerator = 3, denominator = 10, anomalies = [\"NO.704 open\", \"NO.709 tracking\", \"NO.710 tracking\"]",
+          "evidence_note": "metric_id=open_risk_rate, value=0.3，明确列出三个未收口风险。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.709",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "电池续航时间低于设计指标15分钟 followup_status=tracking risk_level=medium",
+          "evidence_note": "风险NO.709在当前会议MTG-CASE-06-12中被识别并标记为tracking。"
+        }
+      ]
+    },
+    {
+      "review_id": "HRV-CORD-001",
+      "reason": "需要人工复核：关键里程碑（手板制作延期）和重大风险（续航不达标、供应商成本增加）是否已按照组织要求，同步给项目外的必要干系人（如部门总监、产品线负责人、财务部门）？当前证据仅显示在项目核心团队内部同步。",
+      "severity": "medium",
+      "related_dimension": "协同调度力",
+      "evidence_refs": [
+        {
+          "source_type": "coordination_context",
+          "source_file": "internal_context",
+          "source_id": "task_NO.626",
+          "timestamp": "2026-03-26",
+          "excerpt": "{\"id\": \"NO.626\", \"task_name\": \"手板制作\", \"status\": \"进行中\", \"is_closed\": \"false\", \"is_overdue\": \"true\", \"due_date\": \"2026-03-25\"}",
+          "evidence_note": "手板制作任务已逾期，是关键里程碑延期。"
+        },
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-06-12-STM-1",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "功能测试整体达标，续航测试差15分钟。",
+          "evidence_note": "续航不达标是当前会议识别的重大技术风险。"
+        },
+        {
+          "source_type": "coordination_context",
+          "source_file": "internal_context",
+          "source_id": "risk_NO.703",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "{\"id\": \"NO.703\", \"followup_status\": \"resolved\", \"risk_description\": \"替代芯片价格上浮15%，超出预算\", \"suggested_action\": \"向领导汇报成本增加事项，接受价格上浮\"}",
+          "evidence_note": "风险记录建议‘向领导汇报成本增加’，但聊天记录中仅见‘我单独向领导汇报’的表述，缺乏后续确认。"
+        }
+      ]
+    },
+    {
+      "review_id": "review_missing_current_transcript_MTG-CASE-06-12",
+      "reason": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+      "severity": "medium",
+      "related_dimension": "方向校准力",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "input",
+          "source_id": "human_review_rules",
+          "timestamp": "",
+          "excerpt": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+          "evidence_note": "来自planner_slice中human_review_rules的明确要求。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "input",
+          "source_id": "missing_fields",
+          "timestamp": "",
+          "excerpt": "[\"meeting_docs.current_transcript\"]",
+          "evidence_note": "当前会议记录中明确缺少完整转写。"
+        }
+      ]
+    },
+    {
+      "review_id": "review_action_task_mapping_MTG-CASE-06-12",
+      "reason": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",
+      "severity": "medium",
+      "related_dimension": "推进闭环力",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "input",
+          "source_id": "human_review_rules",
+          "timestamp": "",
+          "excerpt": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",
+          "evidence_note": "来自planner_slice中human_review_rules的明确要求。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "anomalies = [\"会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载\"]",
+          "evidence_note": "硬指标异常明确指出了行动项与任务数量不匹配的问题。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "input",
+          "source_id": "action_items",
+          "timestamp": "",
+          "excerpt": "[\"周报同步\", \"周报同步\", \"手板功能测试\"]",
+          "evidence_note": "当前会议记录的行动项列表，共3条。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-001",
+      "reason": "",
+      "severity": "medium",
+      "related_dimension": "组织行为健康度",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "late_night_manager_message_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.2333, numerator = 14, denominator = 60",
+          "evidence_note": "metric_id=late_night_manager_message_rate, value=0.2333，显示管理者23.33%的消息在非常规时段发送。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_pressure_language_sample_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.1667, numerator = 10, denominator = 60",
+          "evidence_note": "metric_id=high_pressure_language_sample_rate, value=0.1667，显示16.67%的消息命中高压语言关键词。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0016",
+          "timestamp": "2026-01-08 00:15",
+          "excerpt": "李明，结构方案有几个问题：电池仓设计不合理，散热方案需要优化。不能用，打回重做。",
+          "evidence_note": "深夜发送的包含明确否定和指令的高风险语言实例。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-002",
+      "reason": "",
+      "severity": "medium",
+      "related_dimension": "风险治理力",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "open_risk_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.3, numerator = 3, denominator = 10, anomalies = [\"NO.704 open\", \"NO.709 tracking\", \"NO.710 tracking\"]",
+          "evidence_note": "metric_id=open_risk_rate, value=0.3，明确列出三个未收口风险。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.709",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "电池续航时间低于设计指标15分钟 followup_status=tracking risk_level=medium",
+          "evidence_note": "风险NO.709在当前会议MTG-CASE-06-12中被识别并标记为tracking。"
+        }
+      ]
+    },
+    {
+      "review_id": "HRV-CORD-001",
+      "reason": "需要人工复核：关键里程碑（手板制作延期）和重大风险（续航不达标、供应商成本增加）是否已按照组织要求，同步给项目外的必要干系人（如部门总监、产品线负责人、财务部门）？当前证据仅显示在项目核心团队内部同步。",
+      "severity": "medium",
+      "related_dimension": "协同调度力",
+      "evidence_refs": [
+        {
+          "source_type": "coordination_context",
+          "source_file": "internal_context",
+          "source_id": "task_NO.626",
+          "timestamp": "2026-03-26",
+          "excerpt": "{\"id\": \"NO.626\", \"task_name\": \"手板制作\", \"status\": \"进行中\", \"is_closed\": \"false\", \"is_overdue\": \"true\", \"due_date\": \"2026-03-25\"}",
+          "evidence_note": "手板制作任务已逾期，是关键里程碑延期。"
+        },
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-06-12-STM-1",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "功能测试整体达标，续航测试差15分钟。",
+          "evidence_note": "续航不达标是当前会议识别的重大技术风险。"
+        },
+        {
+          "source_type": "coordination_context",
+          "source_file": "internal_context",
+          "source_id": "risk_NO.703",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "{\"id\": \"NO.703\", \"followup_status\": \"resolved\", \"risk_description\": \"替代芯片价格上浮15%，超出预算\", \"suggested_action\": \"向领导汇报成本增加事项，接受价格上浮\"}",
+          "evidence_note": "风险记录建议‘向领导汇报成本增加’，但聊天记录中仅见‘我单独向领导汇报’的表述，缺乏后续确认。"
+        }
+      ]
+    }
+  ],
+  "next_actions": [
+    {
+      "dimension": "方向校准力",
+      "level": "medium",
+      "content": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "input",
+          "source_id": "human_review_rules",
+          "timestamp": "",
+          "excerpt": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+          "evidence_note": "来自planner_slice中human_review_rules的明确要求。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "input",
+          "source_id": "missing_fields",
+          "timestamp": "",
+          "excerpt": "[\"meeting_docs.current_transcript\"]",
+          "evidence_note": "当前会议记录中明确缺少完整转写。"
+        }
+      ]
+    },
+    {
+      "dimension": "推进闭环力",
+      "level": "medium",
+      "content": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "input",
+          "source_id": "human_review_rules",
+          "timestamp": "",
+          "excerpt": "会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载",
+          "evidence_note": "来自planner_slice中human_review_rules的明确要求。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "anomalies = [\"会议行动项 3 条，任务表关联 9 条，存在会后扩展任务或重复挂载\"]",
+          "evidence_note": "硬指标异常明确指出了行动项与任务数量不匹配的问题。"
+        }
+      ]
+    },
+    {
+      "dimension": "组织行为健康度",
+      "level": "medium",
+      "content": "管理者存在深夜工作沟通与使用高压指令语言的行为模式，可能对团队工作节奏与心理安全产生影响，需结合具体情境进行人工复核。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "late_night_manager_message_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.2333, numerator = 14, denominator = 60",
+          "evidence_note": "metric_id=late_night_manager_message_rate, value=0.2333，显示管理者23.33%的消息在非常规时段发送。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_pressure_language_sample_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.1667, numerator = 10, denominator = 60",
+          "evidence_note": "metric_id=high_pressure_language_sample_rate, value=0.1667，显示16.67%的消息命中高压语言关键词。"
+        }
+      ]
+    },
+    {
+      "dimension": "风险治理力",
+      "level": "medium",
+      "content": "中等级风险遗留问题突出，存在治理延迟风险。风险NO.704（外观设计颜色）、NO.709（电池续航）、NO.710（手板延期）均处于未收口状态（open/tracking），需关注其治理动作的及时性与有效性。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "hard_metrics_result",
+          "source_id": "open_risk_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "value = 0.3, numerator = 3, denominator = 10, anomalies = [\"NO.704 open\", \"NO.709 tracking\", \"NO.710 tracking\"]",
+          "evidence_note": "metric_id=open_risk_rate, value=0.3，明确列出三个未收口风险。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.709",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "电池续航时间低于设计指标15分钟 followup_status=tracking risk_level=medium",
+          "evidence_note": "风险NO.709在当前会议MTG-CASE-06-12中被识别并标记为tracking。"
+        }
+      ]
+    },
+    {
+      "dimension": "协同调度力",
+      "level": "medium",
+      "content": "需要人工复核：关键里程碑（手板制作延期）和重大风险（续航不达标、供应商成本增加）是否已按照组织要求，同步给项目外的必要干系人（如部门总监、产品线负责人、财务部门）？当前证据仅显示在项目核心团队内部同步。",
+      "evidence_refs": [
+        {
+          "source_type": "coordination_context",
+          "source_file": "internal_context",
+          "source_id": "task_NO.626",
+          "timestamp": "2026-03-26",
+          "excerpt": "{\"id\": \"NO.626\", \"task_name\": \"手板制作\", \"status\": \"进行中\", \"is_closed\": \"false\", \"is_overdue\": \"true\", \"due_date\": \"2026-03-25\"}",
+          "evidence_note": "手板制作任务已逾期，是关键里程碑延期。"
+        },
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-06-12-STM-1",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "功能测试整体达标，续航测试差15分钟。",
+          "evidence_note": "续航不达标是当前会议识别的重大技术风险。"
+        }
+      ]
+    }
+  ],
+  "base_writeback_payload": {
+    "manager_id": "MGR-CASE-06",
+    "project_id": "PJT-CASE-06",
+    "report_status": "degraded",
+    "fallback_reason": "fetch failed"
+  },
+  "missing_upstream_results": []
+}

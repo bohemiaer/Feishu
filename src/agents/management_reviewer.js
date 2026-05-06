@@ -1,6 +1,7 @@
 "use strict";
 
 const { callJsonModel } = require("../llm/client");
+const { assertArtifactValid } = require("../shared/schema_validation");
 
 const SYSTEM_PROMPT = `
 你是 Management Reviewer，负责方向校准力与推进闭环力评审。
@@ -42,6 +43,27 @@ const SYSTEM_PROMPT = `
       "suggested_actions": []
     }
   ],
+  "soft_indicators": [
+    {
+      "indicator_id": "",
+      "dimension": "方向校准力",
+      "label": "",
+      "score": 0,
+      "confidence": 0.0,
+      "score_basis": "",
+      "evidence_refs": [
+        {
+          "source_type": "",
+          "source_file": "",
+          "source_id": "",
+          "timestamp": "",
+          "excerpt": "",
+          "evidence_note": ""
+        }
+      ],
+      "limitations": []
+    }
+  ],
   "human_review_items": [
     {
       "review_id": "",
@@ -65,6 +87,17 @@ const SYSTEM_PROMPT = `
 
 要求：
 - 只使用输入中提供的事实、指标和证据引用
+- 你必须先为本职责范围内的维度计算 2-4 个 soft_indicators，再输出 dimension_findings
+- 你必须输出 4 个 PRD 对齐的 soft_indicators，indicator_id 固定为：
+  - judgment_basis_degree
+  - goal_correction_clarity
+  - priority_convergence_time
+  - direction_flip_flop_count
+- task_definition_completeness_rate、task_overdue_rate、task_closure_quality_rate 由硬指标层直接提供，不要在 soft_indicators 里重复生成
+- soft_indicators 是专家根据多条证据归纳出的 PRD 指标结果，不得复写 hard_metrics 中已有 metric_id
+- 每个 soft_indicator 都要给出 value、unit、status、score
+- value 要尽量贴近 PRD 原始口径，例如 ratio、hours、count
+- score 是为了后续总评估而做的 0-100 归一化分
 - 每一条 finding 和 human_review_item 都必须至少包含 1 条 evidence_refs
 - evidence_refs 不得只写 ID；必须包含 source_type、source_file、source_id、timestamp、excerpt、evidence_note
 - excerpt 必须是输入中的原文片段或硬指标计算表达式，不得改写成自己的总结
@@ -114,13 +147,134 @@ function selectPlannerSlice(evaluationPlan) {
   };
 }
 
+function normalizeEvidenceRefs(refs) {
+  return (Array.isArray(refs) ? refs : []).map((ref) => {
+    if (typeof ref === "string") {
+      return {
+        source_type: "unresolved_ref",
+        source_file: "",
+        source_id: ref,
+        timestamp: "",
+        excerpt: ref,
+        evidence_note: "Model returned an unresolved evidence reference."
+      };
+    }
+    return {
+      source_type: ref.source_type || "",
+      source_file: ref.source_file || "",
+      source_id: ref.source_id || ref.id || "",
+      timestamp: ref.timestamp || "",
+      excerpt: ref.excerpt || ref.original_text || ref.quote || "",
+      evidence_note: ref.evidence_note || ref.note || ""
+    };
+  });
+}
+
+function normalizeManagementDimension(value, fallbackDimension) {
+  if (value === "方向校准力" || value === "推进闭环力") {
+    return value;
+  }
+  const text = String(value || "");
+  if (/方向|校准|优先级|范围/.test(text)) {
+    return "方向校准力";
+  }
+  if (/闭环|任务|行动项|推进/.test(text)) {
+    return "推进闭环力";
+  }
+  return fallbackDimension;
+}
+
+function placeholderEvidenceRef(text) {
+  return {
+    source_type: "unresolved_ref",
+    source_file: "",
+    source_id: "manual_review_required",
+    timestamp: "",
+    excerpt: text || "manual_review_required",
+    evidence_note: "No structured evidence ref was returned by the model; manual review required."
+  };
+}
+
+function ensureEvidenceRefs(refs, fallbackText) {
+  return Array.isArray(refs) && refs.length > 0
+    ? refs
+    : [placeholderEvidenceRef(fallbackText)];
+}
+
+function normalizeSoftIndicator(item, fallbackDimension) {
+  const score = typeof item.score === "number" ? Math.round(item.score) : 0;
+  const resolvedValue = item.value === undefined || item.value === null ? score : item.value;
+  return {
+    indicator_id: item.indicator_id || item.id || "",
+    dimension: normalizeManagementDimension(item.dimension, fallbackDimension),
+    label: item.label || item.name || "",
+    value: resolvedValue,
+    unit: item.unit || "score",
+    status: item.status || "degraded",
+    score,
+    confidence: typeof item.confidence === "number" ? item.confidence : 0.7,
+    score_basis: item.score_basis || item.summary || "",
+    evidence_refs: ensureEvidenceRefs(
+      normalizeEvidenceRefs(item.evidence_refs || []),
+      item.score_basis || item.summary || item.label || ""
+    ),
+    limitations: Array.isArray(item.limitations) ? item.limitations : []
+  };
+}
+
+function normalizeFinding(item, fallbackDimension) {
+  return {
+    dimension: normalizeManagementDimension(item.dimension, fallbackDimension),
+    finding_type: item.finding_type || item.type || "observation",
+    summary: item.summary || item.finding || item.description || "",
+    evidence_refs: ensureEvidenceRefs(
+      normalizeEvidenceRefs(item.evidence_refs || []),
+      item.summary || item.finding || item.description || ""
+    ),
+    confidence: typeof item.confidence === "number" ? item.confidence : 0.7,
+    risk_tags: Array.isArray(item.risk_tags) ? item.risk_tags : [],
+    suggested_actions: Array.isArray(item.suggested_actions) ? item.suggested_actions : []
+  };
+}
+
+function normalizeHumanReviewItem(item, fallbackDimension) {
+  return {
+    review_id: item.review_id || item.id || "",
+    reason: item.reason || item.review_reason || "",
+    severity: item.severity || "medium",
+    related_dimension: normalizeManagementDimension(item.related_dimension, fallbackDimension),
+    evidence_refs: ensureEvidenceRefs(
+      normalizeEvidenceRefs(item.evidence_refs || []),
+      item.reason || item.review_reason || ""
+    )
+  };
+}
+
+function normalizeManagementReviewResult(result) {
+  return {
+    meeting_id: result.meeting_id || "",
+    project_id: result.project_id || "",
+    manager_id: result.manager_id || "",
+    dimension_findings: (Array.isArray(result.dimension_findings) ? result.dimension_findings : []).map((item) =>
+      normalizeFinding(item, normalizeManagementDimension(item.dimension, "推进闭环力"))
+    ),
+    soft_indicators: (Array.isArray(result.soft_indicators) ? result.soft_indicators : []).map((item) =>
+      normalizeSoftIndicator(item, normalizeManagementDimension(item.dimension, "推进闭环力"))
+    ),
+    human_review_items: (Array.isArray(result.human_review_items) ? result.human_review_items : []).map((item) =>
+      normalizeHumanReviewItem(item, normalizeManagementDimension(item.related_dimension, "推进闭环力"))
+    ),
+    management_review_summary: result.management_review_summary || ""
+  };
+}
+
 function buildManagementReviewRequest({
   meetingFactPack,
   historyBundle,
   hardMetricsResult,
   evaluationPlan
 }) {
-  return {
+  return assertArtifactValid("management_reviewer_request", {
     task_context: meetingFactPack.task_context,
     meeting_id: meetingFactPack.meeting_info.meeting_id,
     project_id: meetingFactPack.meeting_info.project_id,
@@ -151,14 +305,17 @@ function buildManagementReviewRequest({
         "meeting_action_item_coverage_rate"
       ].includes(item.metric_id)
     )
-  };
+  });
 }
 
 async function reviewManagement(request) {
-  return callJsonModel({
+  const result = await callJsonModel({
     systemPrompt: SYSTEM_PROMPT,
     userPrompt: JSON.stringify(request, null, 2),
     temperature: 0.2
+  });
+  return assertArtifactValid("management_reviewer_result", normalizeManagementReviewResult(result), {
+    stage: "post_model"
   });
 }
 

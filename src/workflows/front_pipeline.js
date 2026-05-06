@@ -3,6 +3,7 @@
 const path = require("path");
 const { createTaskContext, TASK_STATUS } = require("../domain/task/task_context");
 const { CASE04_SOURCE_FILES, SOURCE_GROUPS, loadCase04SampleBundle, splitPiped } = require("../integrations/sample_case04_adapter");
+const { assertArtifactValid } = require("../shared/schema_validation");
 
 const FRONT_PIPELINE_VERSION = "front-pipeline-case04-v1";
 
@@ -28,7 +29,7 @@ function createTaskRequest(sampleBundle, options = {}) {
   const currentMeeting = sampleBundle.current_meeting || {};
   const evaluationPeriod = options.evaluationPeriod || normalizeMeetingDateRange(project, currentMeeting);
 
-  return {
+  return assertArtifactValid("task_request", {
     task_id: buildTaskId(project.project_id || sampleBundle.manifest.project_id, currentMeeting.meeting_id),
     evaluation_target: {
       manager_id: project.manager_id || sampleBundle.manifest.manager_id,
@@ -46,7 +47,7 @@ function createTaskRequest(sampleBundle, options = {}) {
       source_mode: "case04_sample_bundle",
       bundle_path: sampleBundle.bundle_root
     }
-  };
+  });
 }
 
 function createRecommendedActions(blockingReasons, degradeReasons) {
@@ -209,7 +210,7 @@ function runInputCompletenessCheck(taskRequest, sampleBundle) {
     detail: sampleBundle.current_meeting_id || "missing"
   });
 
-  return {
+  return assertArtifactValid("input_completeness_report", {
     task_id: taskRequest.task_id,
     checked_at: nowIso(),
     required_sources: SOURCE_GROUPS.filter((item) => item.required).map((item) => item.name),
@@ -221,7 +222,7 @@ function runInputCompletenessCheck(taskRequest, sampleBundle) {
     source_checks: sourceChecks,
     sample_checks: sampleChecks,
     recommended_actions: createRecommendedActions(blockingReasons, degradeReasons)
-  };
+  });
 }
 
 function buildOrchestrationState(taskRequest, inputReport, stage) {
@@ -232,7 +233,7 @@ function buildOrchestrationState(taskRequest, inputReport, stage) {
         ? "degraded"
         : "ready";
 
-  return {
+  return assertArtifactValid("orchestration_state", {
     task_id: taskRequest.task_id,
     pipeline_version: FRONT_PIPELINE_VERSION,
     status: completenessStatus === "blocked" ? "blocked" : stage === "collected" ? "collected" : "input_checked",
@@ -251,7 +252,7 @@ function buildOrchestrationState(taskRequest, inputReport, stage) {
     blocking_reasons: inputReport.blocking_reasons,
     warnings: inputReport.source_checks.flatMap((item) => item.notes || []),
     updated_at: nowIso()
-  };
+  });
 }
 
 function dedupeStrings(values) {
@@ -315,7 +316,7 @@ function buildHistoryBundle(sampleBundle, currentMeetingId) {
     .slice(0, 6)
     .map((risk) => `${risk.risk_id} ${risk.risk_description} 跟进状态=${risk.followup_status}`);
 
-  return {
+  return assertArtifactValid("history_bundle", {
     recent_meetings: historyMeetings.map((meeting) => ({
       meeting_id: meeting.meeting_id,
       meeting_title: meeting.meeting_title,
@@ -333,7 +334,7 @@ function buildHistoryBundle(sampleBundle, currentMeetingId) {
     })),
     task_closure_notes: taskClosureNotes,
     risk_notes: riskNotes
-  };
+  });
 }
 
 function compareMeetingByTimeDesc(left, right) {
@@ -401,7 +402,7 @@ function buildRawPayload(taskRequest, sampleBundle) {
     }
   ];
 
-  return {
+  return assertArtifactValid("raw_payload", {
     evaluation_target: {
       manager_id: taskRequest.evaluation_target.manager_id,
       manager_name: taskRequest.evaluation_target.manager_name,
@@ -425,7 +426,7 @@ function buildRawPayload(taskRequest, sampleBundle) {
       source_catalog: sampleBundle.source_catalog,
       current_meeting_tasks: currentMeetingTasks
     }
-  };
+  });
 }
 
 function buildMissingFields(sampleBundle, currentMeeting) {
@@ -461,7 +462,7 @@ function buildDataQualityReport(taskRequest, sampleBundle, inputReport, historyB
     issues.push("部分任务 DDL 不是精确时间，后续硬指标计算需做降级处理。");
   }
 
-  return {
+  return assertArtifactValid("data_quality_report", {
     task_id: taskRequest.task_id,
     checked_at: nowIso(),
     current_meeting_id: sampleBundle.current_meeting_id,
@@ -487,7 +488,7 @@ function buildDataQualityReport(taskRequest, sampleBundle, inputReport, historyB
     recommended_actions: dedupeStrings(inputReport.recommended_actions.concat([
       "后续接入 Hard Metrics Engine 时，对模糊 DDL 和补录摘要样本单独做降级口径。"
     ]))
-  };
+  });
 }
 
 function buildMeetingFactPack(taskRequest, sampleBundle, rawPayload, historyBundle) {
@@ -568,7 +569,7 @@ function buildMeetingFactPack(taskRequest, sampleBundle, rawPayload, historyBund
     });
   }
 
-  return {
+  return assertArtifactValid("meeting_fact_pack", {
     task_context: createTaskContext({
       task_id: taskRequest.task_id,
       project_id: taskRequest.evaluation_target.project_id,
@@ -624,7 +625,7 @@ function buildMeetingFactPack(taskRequest, sampleBundle, rawPayload, historyBund
     },
     missing_fields: buildMissingFields(sampleBundle, currentMeeting),
     provenance_refs: provenanceRefs
-  };
+  });
 }
 
 function collectFrontData(taskRequest, sampleBundle, inputReport) {

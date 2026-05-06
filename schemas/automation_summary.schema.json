@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "automation_summary.schema.json",
+  "title": "AutomationSummary",
+  "type": "object",
+  "required": [
+    "generated_at",
+    "bundle_path",
+    "output_dir",
+    "selected_meeting_id",
+    "front_status",
+    "completeness_status",
+    "degrade_reasons",
+    "blocking_reasons",
+    "meeting_selection_attempts",
+    "fallback_used",
+    "hard_metrics_status",
+    "capability_status",
+    "report_status",
+    "human_review_item_count",
+    "files"
+  ],
+  "properties": {
+    "generated_at": { "type": "string" },
+    "bundle_path": { "type": "string" },
+    "output_dir": { "type": "string" },
+    "selected_meeting_id": { "type": ["string", "null"] },
+    "front_status": { "type": "string" },
+    "completeness_status": {
+      "type": "string",
+      "enum": ["unknown", "ready", "degraded", "blocked"]
+    },
+    "degrade_reasons": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "blocking_reasons": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "meeting_selection_attempts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "meeting_id",
+          "status",
+          "completeness_status",
+          "blocking_reasons"
+        ],
+        "properties": {
+          "meeting_id": { "type": ["string", "null"] },
+          "status": { "type": "string" },
+          "completeness_status": { "type": "string" },
+          "blocking_reasons": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "fallback_used": { "type": "boolean" },
+    "hard_metrics_status": {
+      "type": ["object", "null"],
+      "additionalProperties": true
+    },
+    "capability_status": { "type": "string" },
+    "report_status": { "type": "string" },
+    "human_review_item_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "files": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

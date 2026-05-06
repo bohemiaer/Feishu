@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-05-06T11:17:02.183Z",
+  "run_finished_at": "2026-05-06T11:17:02.168Z",
+  "input_dir": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run",
+  "title": "Case 05 全链路可观测报告",
+  "output_markdown": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\full_loop_observability.md",
+  "markdown_sha256": "5b1b2791d1db00d4ce7c28ebaec43b53b78593a8dc84a9c50c40b625574a7c44",
+  "run_summary": {
+    "project_id": "PJT-CASE-05",
+    "manager_id": "MGR-CASE-05",
+    "meeting_id": "MTG-CASE-05-03",
+    "evaluation_period": "2026-01-01 ~ 2026-04-24",
+    "orchestration_status": "collected",
+    "completeness_status": "ready",
+    "assessment_status": "degraded",
+    "report_status": "missing"
+  },
+  "missing_artifacts": [
+    "report_result.json"
+  ],
+  "observability_issues": [
+    {
+      "severity": "warning",
+      "category": "missing_artifact",
+      "message": "Missing artifact: report_result.json",
+      "related_ids": [
+        "report_result.json"
+      ]
+    },
+    {
+      "severity": "warning",
+      "category": "unresolved_reference",
+      "message": "管理评审专家 finding #1 could not resolve ref: {\"source_type\":\"meeting_fact\",\"source_file\":\"current_meeting.meeting_facts.manager_speech_summary\",\"source_id\":\"\",\"timestamp\":\"2026-04-24 09:00 - 09:45\",\"excerpt\":\"核心注塑供应商Q2产能饱和，模具排期可能延后10天。\\n备选供应商B精度不达标，只能等A产能释放。\\n需要协调供应链总监争取插队。\",\"evidence_note\":\"管理者在会议中清晰陈述了问题（产能、精度）和核心应对方向（协调插队）。\"}",
+      "related_ids": [
+        "管理评审专家 finding #1",
+        "{\"source_type\":\"meeting_fact\",\"source_file\":\"current_meeting.meeting_facts.manager_speech_summary\",\"source_id\":\"\",\"timestamp\":\"2026-04-24 09:00 - 09:45\",\"excerpt\":\"核心注塑供应商Q2产能饱和，模具排期可能延后10天。\\n备选供应商B精度不达标，只能等A产能释放。\\n需要协调供应链总监争取插队。\",\"evidence_note\":\"管理者在会议中清晰陈述了问题（产能、精度）和核心应对方向（协调插队）。\"}"
+      ]
+    },
+    {
+      "severity": "warning",
+      "category": "unresolved_reference",
+      "message": "管理评审专家 finding #1 could not resolve ref: {\"source_type\":\"meeting_fact\",\"source_file\":\"current_meeting.meeting_facts.decisions\",\"source_id\":\"\",\"timestamp\":\"2026-04-24 09:00 - 09:45\",\"excerpt\":\"协调供应链总监争取插队\\n同步评估供应商C打样能力\\n周牧单独跟进不占用群资源\",\"evidence_note\":\"会议决策明确了具体行动方向，包括主方案（插队）和备选方案（评估C）。\"}",
+      "related_ids": [
+        "管理评审专家 finding #1",
+        "{\"source_type\":\"meeting_fact\",\"source_file\":\"current_meeting.meeting_facts.decisions\",\"source_id\":\"\",\"timestamp\":\"2026-04-24 09:00 - 09:45\",\"excerpt\":\"协调供应链总监争取插队\\n同步评估供应商C打样能力\\n周牧单独跟进不占用群资源\",\"evidence_note\":\"会议决策明确了具体行动方向，包括主方案（插队）和备选方案（评估C）。\"}"
+      ]
+    },
+    {
+      "severity": "warning",
+      "category": "unresolved_reference",
+      "message": "管理评审专家 finding #2 could not resolve ref: {\"source_type\":\"meeting_fact\",\"source_file\":\"current_meeting.meeting_facts.action_items\",\"source_id\":\"\",\"timestamp\":\"2026-04-24 09:00 - 09:45\",\"excerpt\":\"供应商B打样评估\\n声学团队散热孔位置确认\",\"evidence_note\":\"会议记录的行动项列表。\"}",
+      "related_ids": [
+        "管理评审专家 finding #2",
+        "{\"source_type\":\"meeting_fact\",\"source_file\":\"current_meeting.meeting_facts.action_items\",\"source_id\":\"\",\"timestamp\":\"2026-04-24 09:00 - 09:45\",\"excerpt\":\"供应商B打样评估\\n声学团队散热孔位置确认\",\"evidence_note\":\"会议记录的行动项列表。\"}"
+      ]
+    }
+  ],
+  "section_counts": {
+    "runtime_row_count": 9,
+    "source_coverage_count": 7,
+    "hard_metric_count": 15,
+    "expert_finding_count": 8,
+    "risk_flag_count": 3,
+    "capability_score_count": 5,
+    "report_item_count": 0
+  },
+  "files": {
+    "task_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\task_request.json",
+    "orchestration_state": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\orchestration_state.json",
+    "input_completeness_report": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\input_completeness_report.json",
+    "raw_payload": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\raw_payload.json",
+    "history_bundle": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\history_bundle.json",
+    "meeting_fact_pack": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\meeting_fact_pack.json",
+    "data_quality_report": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\data_quality_report.json",
+    "hard_metrics_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\hard_metrics_result.json",
+    "evaluation_plan": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\evaluation_plan.json",
+    "management_reviewer_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\management_reviewer_request.json",
+    "management_reviewer_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\management_reviewer_result.json",
+    "risk_behavior_auditor_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\risk_behavior_auditor_request.json",
+    "risk_behavior_auditor_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\risk_behavior_auditor_result.json",
+    "coordination_lens_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\coordination_lens_request.json",
+    "coordination_lens_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\coordination_lens_result.json",
+    "capability_assessor_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\capability_assessor_request.json",
+    "capability_assessor_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\capability_assessor_result.json",
+    "report_writer_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\report_writer_request.json",
+    "report_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\report_result.json",
+    "automation_summary": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\automation_summary.json",
+    "observability_summary": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\observability_summary.json",
+    "full_loop_observability": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\full_loop_observability.json",
+    "observability_markdown": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\observability.md",
+    "full_loop_observability_markdown": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\prd_indicator_full_run\\full_loop_observability.md"
+  }
+}

@@ -62,6 +62,35 @@ async function sendTextMessage({ receiveId, receiveIdType = "chat_id", text }) {
   return payload;
 }
 
+async function sendInteractiveMessage({ receiveId, receiveIdType = "chat_id", card }) {
+  const tenantAccessToken = await fetchTenantAccessToken();
+  const url = `https://open.feishu.cn/open-apis/im/v1/messages?receive_id_type=${encodeURIComponent(receiveIdType)}`;
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${tenantAccessToken}`
+    },
+    body: JSON.stringify({
+      receive_id: receiveId,
+      msg_type: "interactive",
+      content: JSON.stringify(card)
+    })
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to send Feishu interactive message: ${response.status} ${await response.text()}`);
+  }
+
+  const payload = await response.json();
+  if (payload.code !== 0) {
+    throw new Error(`Failed to send Feishu interactive message: ${JSON.stringify(payload)}`);
+  }
+
+  return payload;
+}
+
 module.exports = {
+  sendInteractiveMessage,
   sendTextMessage
 };

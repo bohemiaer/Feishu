@@ -1,0 +1,1067 @@
+{
+  "task_context": {
+    "task_id": "FRONT-PJT-CASE-06-MTG-CASE-06-12",
+    "project_id": "PJT-CASE-06",
+    "manager_id": "MGR-CASE-06",
+    "meeting_id": "MTG-CASE-06-12",
+    "evaluation_period": "2026-01-01 ~ 2026-03-26",
+    "status": "collected",
+    "created_at": "2026-05-06T13:06:37.178Z",
+    "updated_at": "2026-05-06T13:06:37.178Z"
+  },
+  "meeting_info": {
+    "meeting_id": "MTG-CASE-06-12",
+    "project_id": "PJT-CASE-06",
+    "manager_id": "MGR-CASE-06",
+    "manager_name": "周牧",
+    "meeting_title": "手板功能测试结果评审会",
+    "meeting_time": "2026-03-26 09:00 - 10:00",
+    "participants": [
+      "周牧",
+      "李明",
+      "王芳",
+      "张强",
+      "刘洋"
+    ],
+    "calendar_event_id": "cal_case06_evt_0326",
+    "review_status": "完整记录"
+  },
+  "meeting_facts": {
+    "manager_speech_summary": [
+      "手板功能测试整体达标，续航测试差15分钟。"
+    ],
+    "decisions": [
+      "续航优化方案评估; 软件优化优先; 认证测试准备启动"
+    ],
+    "risks_mentioned": [
+      "功能测试结果",
+      "续航问题",
+      "后续安排"
+    ],
+    "action_items": [
+      "周报同步",
+      "周报同步",
+      "手板功能测试"
+    ],
+    "transcript_segments": [],
+    "statement_evidence": [
+      {
+        "id": "NO.322",
+        "evidence_confidence": 0.9,
+        "review_meeting_count": 2,
+        "evidence_ref": "会议纪要：测试结果 09:15 续航不达标",
+        "speaker_name": "刘洋",
+        "project_id": "PJT-CASE-06",
+        "statement_id": "MTG-CASE-06-12-STM-1",
+        "evidence_source_type": "meeting",
+        "statement_summary": "功能测试整体达标，续航测试差15分钟。",
+        "meeting_id": "MTG-CASE-06-12",
+        "speaker_id": "MGR-CASE-06",
+        "fact_check_result": "有依据"
+      },
+      {
+        "id": "NO.323",
+        "evidence_confidence": 0.9,
+        "review_meeting_count": 2,
+        "evidence_ref": "会议纪要：后续安排 09:30 优化方案",
+        "speaker_name": "周牧",
+        "project_id": "PJT-CASE-06",
+        "statement_id": "MTG-CASE-06-12-STM-2",
+        "evidence_source_type": "meeting",
+        "statement_summary": "续航优化方案评估，软件优化优先。",
+        "meeting_id": "MTG-CASE-06-12",
+        "speaker_id": "MGR-CASE-06",
+        "fact_check_result": "有依据"
+      }
+    ],
+    "noise_signals": []
+  },
+  "project_snapshot": {
+    "project_name": "桌面机器人产品研发项目",
+    "project_stage": "",
+    "project_health": "yellow",
+    "open_tasks": [
+      {
+        "id": "NO.625",
+        "task_name": "周报同步",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "刘洋",
+        "due_date": "2026-03-28",
+        "source_meeting_id": "MTG-CASE-06-12"
+      },
+      {
+        "id": "NO.626",
+        "task_name": "手板制作",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "true",
+        "owner": "李明",
+        "due_date": "2026-03-25",
+        "source_meeting_id": "MTG-CASE-06-10"
+      },
+      {
+        "id": "NO.627",
+        "task_name": "手板功能测试",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "张强",
+        "due_date": "2026-03-30",
+        "source_meeting_id": "MTG-CASE-06-12"
+      },
+      {
+        "id": "NO.628",
+        "task_name": "续航优化方案",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "张强",
+        "due_date": "2026-04-05",
+        "source_meeting_id": "MTG-CASE-06-12"
+      },
+      {
+        "id": "NO.629",
+        "task_name": "小批量试产准备",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "刘洋",
+        "due_date": "2026-04-15",
+        "source_meeting_id": "MTG-CASE-06-12"
+      },
+      {
+        "id": "NO.630",
+        "task_name": "认证测试准备",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "王芳",
+        "due_date": "2026-04-20",
+        "source_meeting_id": "MTG-CASE-06-12"
+      },
+      {
+        "id": "NO.631",
+        "task_name": "成本核算",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "true",
+        "owner": "刘洋",
+        "due_date": "2026-03-28",
+        "source_meeting_id": "MTG-CASE-06-10"
+      },
+      {
+        "id": "NO.633",
+        "task_name": "现场跟单",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "刘洋",
+        "due_date": "2026-03-18",
+        "source_meeting_id": "MTG-CASE-06-10"
+      },
+      {
+        "id": "NO.634",
+        "task_name": "专利布局",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "周牧",
+        "due_date": "2026-04-10",
+        "source_meeting_id": "MTG-CASE-06-12"
+      },
+      {
+        "id": "NO.635",
+        "task_name": "认证机构对接",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "王芳",
+        "due_date": "2026-04-25",
+        "source_meeting_id": "MTG-CASE-06-12"
+      },
+      {
+        "id": "NO.636",
+        "task_name": "外观颜色方案确定",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "true",
+        "owner": "李明",
+        "due_date": "2026-02-20",
+        "source_meeting_id": "MTG-CASE-06-05"
+      },
+      {
+        "id": "NO.637",
+        "task_name": "结构详细设计",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "true",
+        "owner": "李明",
+        "due_date": "2026-02-10",
+        "source_meeting_id": "MTG-CASE-06-03"
+      },
+      {
+        "id": "NO.638",
+        "task_name": "硬件详细设计",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "true",
+        "owner": "王芳",
+        "due_date": "2026-02-15",
+        "source_meeting_id": "MTG-CASE-06-04"
+      },
+      {
+        "id": "NO.639",
+        "task_name": "软件架构设计",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "张强",
+        "due_date": "2026-03-01",
+        "source_meeting_id": "MTG-CASE-06-09"
+      },
+      {
+        "id": "NO.640",
+        "task_name": "测试报告整理",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "true",
+        "owner": "刘洋",
+        "due_date": "2026-03-30",
+        "source_meeting_id": "MTG-CASE-06-12"
+      }
+    ],
+    "overdue_tasks": [
+      {
+        "id": "NO.626",
+        "task_name": "手板制作",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "true",
+        "owner": "李明",
+        "due_date": "2026-03-25",
+        "source_meeting_id": "MTG-CASE-06-10"
+      },
+      {
+        "id": "NO.631",
+        "task_name": "成本核算",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "true",
+        "owner": "刘洋",
+        "due_date": "2026-03-28",
+        "source_meeting_id": "MTG-CASE-06-10"
+      },
+      {
+        "id": "NO.636",
+        "task_name": "外观颜色方案确定",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "true",
+        "owner": "李明",
+        "due_date": "2026-02-20",
+        "source_meeting_id": "MTG-CASE-06-05"
+      },
+      {
+        "id": "NO.637",
+        "task_name": "结构详细设计",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "true",
+        "owner": "李明",
+        "due_date": "2026-02-10",
+        "source_meeting_id": "MTG-CASE-06-03"
+      },
+      {
+        "id": "NO.638",
+        "task_name": "硬件详细设计",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "true",
+        "owner": "王芳",
+        "due_date": "2026-02-15",
+        "source_meeting_id": "MTG-CASE-06-04"
+      },
+      {
+        "id": "NO.640",
+        "task_name": "测试报告整理",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "true",
+        "owner": "刘洋",
+        "due_date": "2026-03-30",
+        "source_meeting_id": "MTG-CASE-06-12"
+      }
+    ],
+    "open_risks": [
+      {
+        "id": "NO.704",
+        "followup_status": "open",
+        "meeting_id": "MTG-CASE-06-05",
+        "trigger_reason": "多次讨论未能达成一致",
+        "risk_description": "外观设计颜色方案讨论无结论，方案悬而未决",
+        "risk_level": "medium",
+        "project_id": "PJT-CASE-06",
+        "suggested_action": "继续讨论，收集更多参考方案",
+        "risk_type": "技术风险"
+      },
+      {
+        "id": "NO.709",
+        "followup_status": "tracking",
+        "meeting_id": "MTG-CASE-06-12",
+        "trigger_reason": "当前电池容量无法满足完整工作日需求",
+        "risk_description": "电池续航时间低于设计指标15分钟",
+        "risk_level": "medium",
+        "project_id": "PJT-CASE-06",
+        "suggested_action": "评估软件功耗优化和电池容量提升两个方案",
+        "risk_type": "技术风险"
+      },
+      {
+        "id": "NO.710",
+        "followup_status": "tracking",
+        "meeting_id": "MTG-CASE-06-10",
+        "trigger_reason": "供应商切换和返工导致进度延迟",
+        "risk_description": "手板延期可能导致后续认证测试时间压缩",
+        "risk_level": "medium",
+        "project_id": "PJT-CASE-06",
+        "suggested_action": "加快后续工作节奏，压缩非关键路径时间",
+        "risk_type": "进度风险"
+      }
+    ],
+    "all_tasks": [
+      {
+        "id": "NO.601",
+        "task_name": "产品概念设计方案输出",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "5",
+        "is_overdue": "false",
+        "owner": "周牧",
+        "due_date": "2026-01-15",
+        "source_meeting_id": "MTG-CASE-06-01"
+      },
+      {
+        "id": "NO.602",
+        "task_name": "结构设计方案初稿",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "3",
+        "is_overdue": "false",
+        "owner": "李明",
+        "due_date": "2026-01-18",
+        "source_meeting_id": "MTG-CASE-06-01"
+      },
+      {
+        "id": "NO.603",
+        "task_name": "硬件平台选型评估",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "4",
+        "is_overdue": "false",
+        "owner": "王芳",
+        "due_date": "2026-01-15",
+        "source_meeting_id": "MTG-CASE-06-01"
+      },
+      {
+        "id": "NO.604",
+        "task_name": "核心芯片替代方案评估",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "5",
+        "is_overdue": "false",
+        "owner": "王芳",
+        "due_date": "2026-01-25",
+        "source_meeting_id": "MTG-CASE-06-02"
+      },
+      {
+        "id": "NO.605",
+        "task_name": "算法demo准备",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "3",
+        "is_overdue": "false",
+        "owner": "张强",
+        "due_date": "2026-01-20",
+        "source_meeting_id": "MTG-CASE-06-01"
+      },
+      {
+        "id": "NO.606",
+        "task_name": "结构方案修改",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "8",
+        "is_overdue": "false",
+        "owner": "李明",
+        "due_date": "2026-02-05",
+        "source_meeting_id": "MTG-CASE-06-02"
+      },
+      {
+        "id": "NO.607",
+        "task_name": "硬件方案评审",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "5",
+        "is_overdue": "false",
+        "owner": "王芳",
+        "due_date": "2026-02-10",
+        "source_meeting_id": "MTG-CASE-06-04"
+      },
+      {
+        "id": "NO.608",
+        "task_name": "外观设计初稿",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "6",
+        "is_overdue": "false",
+        "owner": "李明",
+        "due_date": "2026-02-18",
+        "source_meeting_id": "MTG-CASE-06-05"
+      },
+      {
+        "id": "NO.609",
+        "task_name": "外观设计评审",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "3",
+        "is_overdue": "false",
+        "owner": "周牧",
+        "due_date": "2026-02-25",
+        "source_meeting_id": "MTG-CASE-06-06"
+      },
+      {
+        "id": "NO.610",
+        "task_name": "外观设计冻结",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "3",
+        "is_overdue": "false",
+        "owner": "李明",
+        "due_date": "2026-02-28",
+        "source_meeting_id": "MTG-CASE-06-07"
+      },
+      {
+        "id": "NO.611",
+        "task_name": "硬件第一阶段调试",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "5",
+        "is_overdue": "false",
+        "owner": "王芳",
+        "due_date": "2026-02-25",
+        "source_meeting_id": "MTG-CASE-06-07"
+      },
+      {
+        "id": "NO.612",
+        "task_name": "硬件第二阶段调试",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "6",
+        "is_overdue": "false",
+        "owner": "王芳",
+        "due_date": "2026-03-08",
+        "source_meeting_id": "MTG-CASE-06-07"
+      },
+      {
+        "id": "NO.613",
+        "task_name": "算法优化达标",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "3",
+        "is_overdue": "false",
+        "owner": "张强",
+        "due_date": "2026-02-28",
+        "source_meeting_id": "MTG-CASE-06-07"
+      },
+      {
+        "id": "NO.614",
+        "task_name": "联合调试",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "5",
+        "is_overdue": "false",
+        "owner": "张强",
+        "due_date": "2026-03-10",
+        "source_meeting_id": "MTG-CASE-06-09"
+      },
+      {
+        "id": "NO.615",
+        "task_name": "接口电路调整",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "2",
+        "is_overdue": "false",
+        "owner": "王芳",
+        "due_date": "2026-03-05",
+        "source_meeting_id": "MTG-CASE-06-09"
+      },
+      {
+        "id": "NO.616",
+        "task_name": "手板供应商切换",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "3",
+        "is_overdue": "false",
+        "owner": "李明",
+        "due_date": "2026-03-15",
+        "source_meeting_id": "MTG-CASE-06-10"
+      },
+      {
+        "id": "NO.617",
+        "task_name": "周报同步",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "1",
+        "is_overdue": "false",
+        "owner": "刘洋",
+        "due_date": "2026-01-31",
+        "source_meeting_id": "MTG-CASE-06-01"
+      },
+      {
+        "id": "NO.618",
+        "task_name": "周报同步",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "1",
+        "is_overdue": "false",
+        "owner": "刘洋",
+        "due_date": "2026-02-07",
+        "source_meeting_id": "MTG-CASE-06-04"
+      },
+      {
+        "id": "NO.619",
+        "task_name": "周报同步",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "1",
+        "is_overdue": "false",
+        "owner": "刘洋",
+        "due_date": "2026-02-14",
+        "source_meeting_id": "MTG-CASE-06-05"
+      },
+      {
+        "id": "NO.620",
+        "task_name": "周报同步",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "1",
+        "is_overdue": "false",
+        "owner": "刘洋",
+        "due_date": "2026-02-21",
+        "source_meeting_id": "MTG-CASE-06-06"
+      },
+      {
+        "id": "NO.621",
+        "task_name": "周报同步",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "1",
+        "is_overdue": "false",
+        "owner": "刘洋",
+        "due_date": "2026-02-28",
+        "source_meeting_id": "MTG-CASE-06-07"
+      },
+      {
+        "id": "NO.622",
+        "task_name": "周报同步",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "1",
+        "is_overdue": "false",
+        "owner": "刘洋",
+        "due_date": "2026-03-07",
+        "source_meeting_id": "MTG-CASE-06-09"
+      },
+      {
+        "id": "NO.623",
+        "task_name": "周报同步",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "1",
+        "is_overdue": "false",
+        "owner": "刘洋",
+        "due_date": "2026-03-14",
+        "source_meeting_id": "MTG-CASE-06-10"
+      },
+      {
+        "id": "NO.624",
+        "task_name": "周报同步",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "1",
+        "is_overdue": "false",
+        "owner": "刘洋",
+        "due_date": "2026-03-21",
+        "source_meeting_id": "MTG-CASE-06-12"
+      },
+      {
+        "id": "NO.625",
+        "task_name": "周报同步",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "刘洋",
+        "due_date": "2026-03-28",
+        "source_meeting_id": "MTG-CASE-06-12"
+      },
+      {
+        "id": "NO.626",
+        "task_name": "手板制作",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "true",
+        "owner": "李明",
+        "due_date": "2026-03-25",
+        "source_meeting_id": "MTG-CASE-06-10"
+      },
+      {
+        "id": "NO.627",
+        "task_name": "手板功能测试",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "张强",
+        "due_date": "2026-03-30",
+        "source_meeting_id": "MTG-CASE-06-12"
+      },
+      {
+        "id": "NO.628",
+        "task_name": "续航优化方案",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "张强",
+        "due_date": "2026-04-05",
+        "source_meeting_id": "MTG-CASE-06-12"
+      },
+      {
+        "id": "NO.629",
+        "task_name": "小批量试产准备",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "刘洋",
+        "due_date": "2026-04-15",
+        "source_meeting_id": "MTG-CASE-06-12"
+      },
+      {
+        "id": "NO.630",
+        "task_name": "认证测试准备",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "王芳",
+        "due_date": "2026-04-20",
+        "source_meeting_id": "MTG-CASE-06-12"
+      },
+      {
+        "id": "NO.631",
+        "task_name": "成本核算",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "true",
+        "owner": "刘洋",
+        "due_date": "2026-03-28",
+        "source_meeting_id": "MTG-CASE-06-10"
+      },
+      {
+        "id": "NO.632",
+        "task_name": "备选供应商联系",
+        "status": "已完成",
+        "is_closed": "true",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "1",
+        "is_overdue": "false",
+        "owner": "刘洋",
+        "due_date": "2026-03-13",
+        "source_meeting_id": "MTG-CASE-06-10"
+      },
+      {
+        "id": "NO.633",
+        "task_name": "现场跟单",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "刘洋",
+        "due_date": "2026-03-18",
+        "source_meeting_id": "MTG-CASE-06-10"
+      },
+      {
+        "id": "NO.634",
+        "task_name": "专利布局",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "周牧",
+        "due_date": "2026-04-10",
+        "source_meeting_id": "MTG-CASE-06-12"
+      },
+      {
+        "id": "NO.635",
+        "task_name": "认证机构对接",
+        "status": "待开始",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "王芳",
+        "due_date": "2026-04-25",
+        "source_meeting_id": "MTG-CASE-06-12"
+      },
+      {
+        "id": "NO.636",
+        "task_name": "外观颜色方案确定",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "true",
+        "owner": "李明",
+        "due_date": "2026-02-20",
+        "source_meeting_id": "MTG-CASE-06-05"
+      },
+      {
+        "id": "NO.637",
+        "task_name": "结构详细设计",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "true",
+        "owner": "李明",
+        "due_date": "2026-02-10",
+        "source_meeting_id": "MTG-CASE-06-03"
+      },
+      {
+        "id": "NO.638",
+        "task_name": "硬件详细设计",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "true",
+        "owner": "王芳",
+        "due_date": "2026-02-15",
+        "source_meeting_id": "MTG-CASE-06-04"
+      },
+      {
+        "id": "NO.639",
+        "task_name": "软件架构设计",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "false",
+        "owner": "张强",
+        "due_date": "2026-03-01",
+        "source_meeting_id": "MTG-CASE-06-09"
+      },
+      {
+        "id": "NO.640",
+        "task_name": "测试报告整理",
+        "status": "进行中",
+        "is_closed": "false",
+        "project_id": "PJT-CASE-06",
+        "close_duration": "",
+        "is_overdue": "true",
+        "owner": "刘洋",
+        "due_date": "2026-03-30",
+        "source_meeting_id": "MTG-CASE-06-12"
+      }
+    ],
+    "all_risks": [
+      {
+        "id": "NO.701",
+        "followup_status": "resolved",
+        "meeting_id": "MTG-CASE-06-02",
+        "trigger_reason": "供应商Q1订单饱和，优先供应大客户",
+        "risk_description": "核心芯片供应商产能不足，可能影响交期",
+        "risk_level": "high",
+        "project_id": "PJT-CASE-06",
+        "suggested_action": "立即启动替代方案评估，寻找备选供应商",
+        "risk_type": "供应链"
+      },
+      {
+        "id": "NO.702",
+        "followup_status": "resolved",
+        "meeting_id": "MTG-CASE-06-03",
+        "trigger_reason": "初稿评审发现设计问题",
+        "risk_description": "结构方案需要调整，电池仓和散热设计不合理",
+        "risk_level": "medium",
+        "project_id": "PJT-CASE-06",
+        "suggested_action": "打回重做，调整电池仓和散热方案",
+        "risk_type": "技术风险"
+      },
+      {
+        "id": "NO.703",
+        "followup_status": "resolved",
+        "meeting_id": "MTG-CASE-06-04",
+        "trigger_reason": "核心芯片缺货，替代方案成本增加",
+        "risk_description": "替代芯片价格上浮15%，超出预算",
+        "risk_level": "low",
+        "project_id": "PJT-CASE-06",
+        "suggested_action": "向领导汇报成本增加事项，接受价格上浮",
+        "risk_type": "成本风险"
+      },
+      {
+        "id": "NO.704",
+        "followup_status": "open",
+        "meeting_id": "MTG-CASE-06-05",
+        "trigger_reason": "多次讨论未能达成一致",
+        "risk_description": "外观设计颜色方案讨论无结论，方案悬而未决",
+        "risk_level": "medium",
+        "project_id": "PJT-CASE-06",
+        "suggested_action": "继续讨论，收集更多参考方案",
+        "risk_type": "技术风险"
+      },
+      {
+        "id": "NO.705",
+        "followup_status": "resolved",
+        "meeting_id": "MTG-CASE-06-06",
+        "trigger_reason": "评审中发现方案不完整",
+        "risk_description": "硬件方案需要补充，部分接口设计不清晰",
+        "risk_level": "medium",
+        "project_id": "PJT-CASE-06",
+        "suggested_action": "补充接口设计和电源方案",
+        "risk_type": "技术风险"
+      },
+      {
+        "id": "NO.706",
+        "followup_status": "resolved",
+        "meeting_id": "MTG-CASE-06-09",
+        "trigger_reason": "联合调试中发现接口不匹配",
+        "risk_description": "语音模块和主控芯片兼容性问题",
+        "risk_level": "medium",
+        "project_id": "PJT-CASE-06",
+        "suggested_action": "调整接口电路，解决兼容性问题",
+        "risk_type": "技术风险"
+      },
+      {
+        "id": "NO.707",
+        "followup_status": "resolved",
+        "meeting_id": "MTG-CASE-06-10",
+        "trigger_reason": "供应商设备老旧，加工精度下降",
+        "risk_description": "手板供应商CNC加工精度不够，尺寸有偏差",
+        "risk_level": "high",
+        "project_id": "PJT-CASE-06",
+        "suggested_action": "更换供应商，选择有高精度设备的厂商",
+        "risk_type": "供应商质量"
+      },
+      {
+        "id": "NO.708",
+        "followup_status": "resolved",
+        "meeting_id": "MTG-CASE-06-11",
+        "trigger_reason": "为保证质量选择高价供应商",
+        "risk_description": "新供应商价格贵30%，增加项目成本",
+        "risk_level": "low",
+        "project_id": "PJT-CASE-06",
+        "suggested_action": "与供应商谈判，争取优惠",
+        "risk_type": "成本风险"
+      },
+      {
+        "id": "NO.709",
+        "followup_status": "tracking",
+        "meeting_id": "MTG-CASE-06-12",
+        "trigger_reason": "当前电池容量无法满足完整工作日需求",
+        "risk_description": "电池续航时间低于设计指标15分钟",
+        "risk_level": "medium",
+        "project_id": "PJT-CASE-06",
+        "suggested_action": "评估软件功耗优化和电池容量提升两个方案",
+        "risk_type": "技术风险"
+      },
+      {
+        "id": "NO.710",
+        "followup_status": "tracking",
+        "meeting_id": "MTG-CASE-06-10",
+        "trigger_reason": "供应商切换和返工导致进度延迟",
+        "risk_description": "手板延期可能导致后续认证测试时间压缩",
+        "risk_level": "medium",
+        "project_id": "PJT-CASE-06",
+        "suggested_action": "加快后续工作节奏，压缩非关键路径时间",
+        "risk_type": "进度风险"
+      }
+    ]
+  },
+  "document_snapshot": {
+    "project_goal": "Q1完成产品设计冻结和技术验证；Q2完成小批量试产和认证；建立完整的供应链体系",
+    "weekly_highlights": [
+      "核心供应商产能紧张，可能影响交期",
+      "部分元器件缺货，需要寻找替代方案",
+      "外观设计需要兼顾性能和成本",
+      "电池续航时间低于设计指标15分钟"
+    ],
+    "review_highlights": [
+      "核心供应商产能紧张，可能影响交期",
+      "部分元器件缺货，需要寻找替代方案",
+      "外观设计需要兼顾性能和成本",
+      "电池续航时间低于设计指标15分钟",
+      "2026-01-31 概念设计评审通过",
+      "2026-02-28 技术方案冻结",
+      "2026-03-31 外观设计评审",
+      "2026-04-30 手板验证（进行中，部分延期）"
+    ],
+    "main_doc_excerpt": "# 项目概述\n桌面机器人是一款面向家庭用户的智能交互设备，集成了语音助手、人脸识别、自主导航等功能。项目目标是在Q2完成产品化并进入小批量试产。\n## 核心目标\n- Q1完成产品设计冻结和技术验证\n- Q2完成小批量试产和认证\n- 建立完整的供应链体系\n## 当前阶段\n当前处于手板验证阶段（M4）。已完成产品概念设计、结构方案冻结、外观设计评审。目前面临手板供应商质量问题，已切换供应商。同时存在续航测试未达标的技术风险。\n## 已知风险\n- 核心供应商产能紧张，可能影响交期\n- 部分元器件缺货，需要寻找替代方案\n- 外观设计需要兼顾性能和成本\n- 电池续航时间低于设计指标15分钟\n## 里程碑\n- 2026-01-31 概念设计评审通过\n- 2026-02-28 技术方案冻结\n- 2026-03-31 外观设计评审\n- 2026-04-30 手板验证（进行中，部分延期）\n- 2026-05-31 小批量试产\n- 2026-06-30 认证测试",
+    "review_doc_excerpt": "- 核心供应商产能紧张，可能影响交期\n- 部分元器件缺货，需要寻找替代方案\n- 外观设计需要兼顾性能和成本\n- 电池续航时间低于设计指标15分钟\n- 2026-01-31 概念设计评审通过\n- 2026-02-28 技术方案冻结\n- 2026-03-31 外观设计评审\n- 2026-04-30 手板验证（进行中，部分延期）\n- 2026-05-31 小批量试产\n- 2026-06-30 认证测试\n当前处于手板验证阶段（M4）。已完成产品概念设计、结构方案冻结、外观设计评审。目前面临手板供应商质量问题，已切换供应商。同时存在续航测试未达标的技术风险。"
+  },
+  "metrics": {
+    "action_item_count": 3,
+    "open_task_count": 15,
+    "overdue_task_count": 6,
+    "open_risk_count": 3,
+    "total_task_count": 40,
+    "total_risk_count": 10,
+    "historical_meeting_count": 3
+  },
+  "missing_fields": [
+    "meeting_docs.current_transcript"
+  ],
+  "provenance_refs": [
+    {
+      "source_type": "base_record",
+      "source_file": "03_task_risk_register/base_projects_record_list.json",
+      "source_id": "PJT-CASE-06",
+      "timestamp": "2026-01-01",
+      "excerpt": "桌面机器人产品研发项目"
+    },
+    {
+      "source_type": "base_record",
+      "source_file": "04_meetings/base_meetings_record_list.json",
+      "source_id": "MTG-CASE-06-12",
+      "timestamp": "2026-03-26 09:00 - 10:00",
+      "excerpt": "手板功能测试结果评审会"
+    },
+    {
+      "source_type": "statement",
+      "source_file": "04_meetings/base_statements_record_list.json",
+      "source_id": "MTG-CASE-06-12-STM-1",
+      "timestamp": "MTG-CASE-06-12",
+      "excerpt": "功能测试整体达标，续航测试差15分钟。"
+    },
+    {
+      "source_type": "statement",
+      "source_file": "04_meetings/base_statements_record_list.json",
+      "source_id": "MTG-CASE-06-12-STM-2",
+      "timestamp": "MTG-CASE-06-12",
+      "excerpt": "续航优化方案评估，软件优化优先。"
+    },
+    {
+      "source_type": "chat",
+      "source_file": "02_chats/im_messages_search_user.json",
+      "source_id": "om_case06msg0002",
+      "timestamp": "2026-01-02 09:15",
+      "excerpt": "各位好，桌面机器人项目今天正式启动。项目周期6个月，目标Q2完成小批量试产。"
+    },
+    {
+      "source_type": "chat",
+      "source_file": "02_chats/im_messages_search_user.json",
+      "source_id": "om_case06msg0004",
+      "timestamp": "2026-01-02 09:35",
+      "excerpt": "刘洋，你协助我跟进下各节点的进度，每天同步一次。"
+    },
+    {
+      "source_type": "chat",
+      "source_file": "02_chats/im_messages_search_user.json",
+      "source_id": "om_case06msg0007",
+      "timestamp": "2026-01-03 10:00",
+      "excerpt": "王芳，硬件方案这边有什么想法吗？"
+    },
+    {
+      "source_type": "chat",
+      "source_file": "02_chats/im_messages_search_user.json",
+      "source_id": "om_case06msg0009",
+      "timestamp": "2026-01-03 10:20",
+      "excerpt": "好，你整理下各平台的优缺点对比，下周评审会上讨论。"
+    },
+    {
+      "source_type": "calendar",
+      "source_file": "06_calendar/calendar_events_instance_view.json",
+      "source_id": "cal_case06_evt_0326",
+      "timestamp": "2026-03-26T09:00:00+08:00",
+      "excerpt": "手板功能测试结果评审会"
+    }
+  ]
+}

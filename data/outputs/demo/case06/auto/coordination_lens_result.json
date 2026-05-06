@@ -1,0 +1,337 @@
+{
+  "meeting_id": "MTG-CASE-06-12",
+  "project_id": "PJT-CASE-06",
+  "manager_id": "MGR-CASE-06",
+  "dimension_findings": [
+    {
+      "dimension": "协同调度力",
+      "finding_type": "strength",
+      "summary": "管理者积极跟进风险与阻塞，形成明确的解决路径并指派责任人，有效推动问题解决。",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0102",
+          "timestamp": "2026-03-12 14:10",
+          "excerpt": "这个问题很严重，必须更换供应商。刘洋你去联系备选供应商。",
+          "evidence_note": "针对手板供应商CNC精度问题，管理者（周牧）立即决策更换供应商，并明确指派刘洋为责任方。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0107",
+          "timestamp": "2026-03-14 10:30",
+          "excerpt": "价格可以谈，交期不能再延了。你去现场盯着，有问题随时向我汇报。",
+          "evidence_note": "针对新供应商价格和交期问题，管理者（周牧）给出谈判原则（价格可谈，交期优先），并明确下一步动作（现场跟单）和汇报机制。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0088",
+          "timestamp": "2026-02-27 17:15",
+          "excerpt": "王芳，你配合张强解决这个问题，这周内必须搞定。",
+          "evidence_note": "针对联合调试中的兼容性问题，管理者（周牧）明确责任方（王芳）和配合方（张强），并设定明确时限。"
+        }
+      ],
+      "confidence": 0.9,
+      "risk_tags": [],
+      "suggested_actions": []
+    },
+    {
+      "dimension": "协同调度力",
+      "finding_type": "risk",
+      "summary": "关键里程碑（手板制作延期）和风险（续航不达标）在会议中被识别，但未在聊天记录中看到向更广泛的必要干系人（如上级领导）进行正式的风险升级或同步。",
+      "evidence_refs": [
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-06-12-STM-1",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "功能测试整体达标，续航测试差15分钟。",
+          "evidence_note": "当前会议识别出续航不达标的关键技术风险。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0120",
+          "timestamp": "2026-03-26 08:45",
+          "excerpt": "周经理，功能测试结果出来了，整体达标，但续航测试差了15分钟。",
+          "evidence_note": "聊天中同步了续航风险，但仅限于项目核心团队内部。"
+        },
+        {
+          "source_type": "coordination_context",
+          "source_file": "internal_context",
+          "source_id": "task_NO.626",
+          "timestamp": "2026-03-26",
+          "excerpt": "{\"id\": \"NO.626\", \"task_name\": \"手板制作\", \"status\": \"进行中\", \"is_closed\": \"false\", \"is_overdue\": \"true\", \"due_date\": \"2026-03-25\"}",
+          "evidence_note": "手板制作任务已逾期，构成关键里程碑延期。聊天记录中未见向项目外必要干系人（如管理层）的正式风险升级。"
+        }
+      ],
+      "confidence": 0.75,
+      "risk_tags": [
+        "风险同步不足",
+        "里程碑延期"
+      ],
+      "suggested_actions": [
+        "建议对已识别的关键风险（如续航不达标、手板延期）建立正式的向上汇报或跨部门同步机制。"
+      ]
+    },
+    {
+      "dimension": "协同调度力",
+      "finding_type": "observation",
+      "summary": "管理者频繁发起进度跟进和任务催办，但部分跟进（如周报同步）存在延迟响应，需要管理者反复提醒。",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0039",
+          "timestamp": "2026-01-21 18:30",
+          "excerpt": "刘洋，本周进度同步呢？怎么还没发？",
+          "evidence_note": "管理者（周牧）主动催办周报同步任务。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0040",
+          "timestamp": "2026-01-21 18:35",
+          "excerpt": "周经理抱歉，马上发。",
+          "evidence_note": "任务责任人（刘洋）的响应为补救性质，非主动同步。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0080",
+          "timestamp": "2026-02-23 09:00",
+          "excerpt": "刘洋，本周进度同步呢？",
+          "evidence_note": "类似催办情况再次发生，表明例行同步机制的执行存在依赖管理者提醒。"
+        }
+      ],
+      "confidence": 0.8,
+      "risk_tags": [
+        "响应延迟"
+      ],
+      "suggested_actions": []
+    }
+  ],
+  "soft_indicators": [
+    {
+      "indicator_id": "cross_role_effective_response_time",
+      "dimension": "协同调度力",
+      "label": "跨角色有效响应平均时长",
+      "value": 70,
+      "unit": "score",
+      "status": "degraded",
+      "score": 70,
+      "confidence": 0.7,
+      "score_basis": "基于对关键请求（如方案提交、问题解决）的响应观察，多数能在1-2天内给出实质性进展反馈，但存在个别延迟（如周报）需催办。整体响应及时性良好。",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0016",
+          "timestamp": "2026-01-08 00:15",
+          "excerpt": "李明，结构方案有几个问题：电池仓设计不合理，散热方案需要优化。不能用，打回重做。",
+          "evidence_note": "管理者提出修改要求。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0031",
+          "timestamp": "2026-01-16 18:00",
+          "excerpt": "周经理，结构方案终稿已发，请查收。",
+          "evidence_note": "责任方（李明）在约8天后提交了实质性成果（修改后的方案），属于有效响应。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0088",
+          "timestamp": "2026-02-27 17:15",
+          "excerpt": "王芳，你配合张强解决这个问题，这周内必须搞定。",
+          "evidence_note": "管理者指派跨角色协作任务并设定本周内完成的时限。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0090",
+          "timestamp": "2026-02-28 23:00",
+          "excerpt": "周经理，接口电路调整好了，请确认。",
+          "evidence_note": "责任方（王芳）在约1天后给出了问题解决的实质性反馈，属于有效响应。"
+        }
+      ],
+      "limitations": [
+        "样本为定性观察，无法精确计算平均小时数。响应‘有效性’基于内容判断，非简单‘收到’。"
+      ]
+    },
+    {
+      "indicator_id": "key_milestone_sync_rate",
+      "dimension": "协同调度力",
+      "label": "关键里程碑/风险同步率",
+      "value": 60,
+      "unit": "score",
+      "status": "degraded",
+      "score": 60,
+      "confidence": 0.8,
+      "score_basis": "项目核心团队内部（通过会议和群聊）对已识别的里程碑变化和风险（如芯片缺货、手板供应商问题、续航不达标）有同步。但缺乏证据表明这些关键问题被正式同步给项目外的必要干系人（如上级管理层），存在同步范围不足的风险。",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0019",
+          "timestamp": "2026-01-12 14:00",
+          "excerpt": "周经理，供应商那边说核心芯片缺货，可能要延期2周。",
+          "evidence_note": "风险（芯片缺货）在项目群内被提出。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0101",
+          "timestamp": "2026-03-12 14:00",
+          "excerpt": "周经理，手板制作遇到点问题，CNC加工精度不够，尺寸有偏差。",
+          "evidence_note": "风险（手板供应商质量问题）在项目群内被提出。"
+        },
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-06-12-STM-1",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "功能测试整体达标，续航测试差15分钟。",
+          "evidence_note": "关键风险（续航不达标）在评审会议中被同步给参会者。"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "internal_metrics",
+          "source_id": "calendar_stakeholder_coverage_rate",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "{\"metric_id\": \"calendar_stakeholder_coverage_rate\", \"value\": 1, \"formula\": {\"numerator_definition\": \"日历参会人同时覆盖评估对象、关键协作者，并命中项目通讯录成员的事件数\"}}",
+          "evidence_note": "硬指标显示会议均覆盖了项目通讯录内成员（即核心团队），但未体现是否包含更高级别或外围的必要干系人。"
+        }
+      ],
+      "limitations": [
+        "无法确认同步是否到达所有必要的干系人（如部门领导、依赖方）。"
+      ]
+    },
+    {
+      "indicator_id": "dependency_clarification_time",
+      "dimension": "协同调度力",
+      "label": "依赖澄清效率",
+      "value": 85,
+      "unit": "score",
+      "status": "degraded",
+      "score": 85,
+      "confidence": 0.85,
+      "score_basis": "当出现跨角色依赖或阻塞时，管理者能快速介入澄清责任方、配合方和下一步动作，通常在对话中即时完成，推动问题进入解决轨道。",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0087",
+          "timestamp": "2026-02-27 17:10",
+          "excerpt": "语音模块和主控芯片的兼容性有问题，需要调整接口电路。",
+          "evidence_note": "张强提出跨硬件-算法的依赖问题。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0088",
+          "timestamp": "2026-02-27 17:15",
+          "excerpt": "王芳，你配合张强解决这个问题，这周内必须搞定。",
+          "evidence_note": "管理者（周牧）在5分钟内明确责任方（王芳）、配合方（张强）和解决时限（本周内）。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case06msg0102",
+          "timestamp": "2026-03-12 14:10",
+          "excerpt": "这个问题很严重，必须更换供应商。刘洋你去联系备选供应商。",
+          "evidence_note": "针对供应商问题，管理者（周牧）在10分钟内做出更换决策并明确责任方（刘洋）。"
+        }
+      ],
+      "limitations": [
+        "时间为定性评估，基于对话间隔。"
+      ]
+    },
+    {
+      "indicator_id": "blocker_resolution_success_rate",
+      "dimension": "协同调度力",
+      "label": "阻塞解决成功率",
+      "value": 90,
+      "unit": "score",
+      "status": "degraded",
+      "score": 90,
+      "confidence": 0.9,
+      "score_basis": "观察期内出现的明确协同阻塞（如芯片缺货、接口兼容性问题、供应商质量问题）均通过管理者调度形成了解决路径，并最终被解决（风险状态为resolved）或进入明确的解决轨道（tracking）。",
+      "evidence_refs": [
+        {
+          "source_type": "coordination_context",
+          "source_file": "internal_context",
+          "source_id": "risk_NO.701",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "{\"id\": \"NO.701\", \"followup_status\": \"resolved\", \"risk_description\": \"核心芯片供应商产能不足，可能影响交期\", \"suggested_action\": \"立即启动替代方案评估，寻找备选供应商\"}",
+          "evidence_note": "芯片缺货风险已解决（resolved）。聊天记录显示管理者决策接受替代方案并推进。"
+        },
+        {
+          "source_type": "coordination_context",
+          "source_file": "internal_context",
+          "source_id": "risk_NO.706",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "{\"id\": \"NO.706\", \"followup_status\": \"resolved\", \"risk_description\": \"语音模块和主控芯片兼容性问题\", \"suggested_action\": \"调整接口电路，解决兼容性问题\"}",
+          "evidence_note": "接口兼容性风险已解决（resolved）。聊天记录显示管理者指派任务后问题被解决。"
+        },
+        {
+          "source_type": "coordination_context",
+          "source_file": "internal_context",
+          "source_id": "risk_NO.707",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "{\"id\": \"NO.707\", \"followup_status\": \"resolved\", \"risk_description\": \"手板供应商CNC加工精度不够，尺寸有偏差\", \"suggested_action\": \"更换供应商，选择有高精度设备的厂商\"}",
+          "evidence_note": "供应商质量风险已解决（resolved）。聊天记录显示管理者决策更换供应商并谈判成功。"
+        },
+        {
+          "source_type": "coordination_context",
+          "source_file": "internal_context",
+          "source_id": "risk_NO.709",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "{\"id\": \"NO.709\", \"followup_status\": \"tracking\", \"risk_description\": \"电池续航时间低于设计指标15分钟\", \"suggested_action\": \"评估软件功耗优化和电池容量提升两个方案\"}",
+          "evidence_note": "续航风险处于跟踪中（tracking）。当前会议已决策软件优化优先，并指派张强评估，形成了解决路径。"
+        }
+      ],
+      "limitations": [
+        "评估基于风险状态和聊天记录中的解决迹象，非所有问题都有独立的‘已关闭’确认。"
+      ]
+    }
+  ],
+  "human_review_items": [
+    {
+      "review_id": "HRV-CORD-001",
+      "reason": "需要人工复核：关键里程碑（手板制作延期）和重大风险（续航不达标、供应商成本增加）是否已按照组织要求，同步给项目外的必要干系人（如部门总监、产品线负责人、财务部门）？当前证据仅显示在项目核心团队内部同步。",
+      "severity": "medium",
+      "related_dimension": "协同调度力",
+      "evidence_refs": [
+        {
+          "source_type": "coordination_context",
+          "source_file": "internal_context",
+          "source_id": "task_NO.626",
+          "timestamp": "2026-03-26",
+          "excerpt": "{\"id\": \"NO.626\", \"task_name\": \"手板制作\", \"status\": \"进行中\", \"is_closed\": \"false\", \"is_overdue\": \"true\", \"due_date\": \"2026-03-25\"}",
+          "evidence_note": "手板制作任务已逾期，是关键里程碑延期。"
+        },
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-06-12-STM-1",
+          "timestamp": "MTG-CASE-06-12",
+          "excerpt": "功能测试整体达标，续航测试差15分钟。",
+          "evidence_note": "续航不达标是当前会议识别的重大技术风险。"
+        },
+        {
+          "source_type": "coordination_context",
+          "source_file": "internal_context",
+          "source_id": "risk_NO.703",
+          "timestamp": "2026-01-01 ~ 2026-03-26",
+          "excerpt": "{\"id\": \"NO.703\", \"followup_status\": \"resolved\", \"risk_description\": \"替代芯片价格上浮15%，超出预算\", \"suggested_action\": \"向领导汇报成本增加事项，接受价格上浮\"}",
+          "evidence_note": "风险记录建议‘向领导汇报成本增加’，但聊天记录中仅见‘我单独向领导汇报’的表述，缺乏后续确认。"
+        }
+      ]
+    }
+  ],
+  "coordination_summary": "管理者（周牧）在协同调度上表现主动，能快速识别阻塞、明确责任、推动解决，依赖澄清效率高，阻塞解决成功率高。团队内部响应和同步基本有效。主要风险点在于关键里程碑变化和重大风险的同步可能仅限于项目核心团队，缺乏向更广泛必要干系人（如上级管理层）进行正式升级或通报的证据，存在信息孤岛风险，建议人工复核此环节。"
+}

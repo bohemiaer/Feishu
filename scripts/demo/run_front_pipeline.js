@@ -2,7 +2,8 @@
 
 const path = require("path");
 const { runFrontPipeline } = require("../../src/workflows/front_pipeline");
-const { ensureDir, writeJson } = require("../../src/shared/fs_utils");
+const { ensureDir } = require("../../src/shared/fs_utils");
+const { writeArtifactJson } = require("../../src/shared/schema_validation");
 
 function parseArgs(argv) {
   const args = {};
@@ -28,21 +29,21 @@ function main() {
   });
 
   ensureDir(outputDir);
-  writeJson(path.join(outputDir, "task_request.json"), result.task_request);
-  writeJson(path.join(outputDir, "orchestration_state.json"), result.orchestration_state);
-  writeJson(path.join(outputDir, "input_completeness_report.json"), result.input_completeness_report);
+  writeArtifactJson(path.join(outputDir, "task_request.json"), result.task_request);
+  writeArtifactJson(path.join(outputDir, "orchestration_state.json"), result.orchestration_state);
+  writeArtifactJson(path.join(outputDir, "input_completeness_report.json"), result.input_completeness_report);
 
   if (result.raw_payload) {
-    writeJson(path.join(outputDir, "raw_payload.json"), result.raw_payload);
+    writeArtifactJson(path.join(outputDir, "raw_payload.json"), result.raw_payload);
   }
   if (result.history_bundle) {
-    writeJson(path.join(outputDir, "history_bundle.json"), result.history_bundle);
+    writeArtifactJson(path.join(outputDir, "history_bundle.json"), result.history_bundle);
   }
   if (result.meeting_fact_pack) {
-    writeJson(path.join(outputDir, "meeting_fact_pack.json"), result.meeting_fact_pack);
+    writeArtifactJson(path.join(outputDir, "meeting_fact_pack.json"), result.meeting_fact_pack);
   }
   if (result.data_quality_report) {
-    writeJson(path.join(outputDir, "data_quality_report.json"), result.data_quality_report);
+    writeArtifactJson(path.join(outputDir, "data_quality_report.json"), result.data_quality_report);
   }
 
   process.stdout.write(JSON.stringify({
