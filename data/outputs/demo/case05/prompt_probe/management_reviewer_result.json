@@ -1,0 +1,253 @@
+{
+  "meeting_id": "MTG-CASE-05-03",
+  "project_id": "PJT-CASE-05",
+  "manager_id": "MGR-CASE-05",
+  "dimension_findings": [
+    {
+      "dimension": "方向校准力",
+      "finding_type": "observation",
+      "summary": "管理者在应急会议中能识别关键约束并做出初步方向判断，但缺乏对项目整体目标、范围和优先级的明确校准，且因缺少完整会议记录，判断的完整性和确定性受限。",
+      "evidence_refs": [
+        {
+          "source_type": "current_meeting",
+          "source_file": "input",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "核心注塑供应商Q2产能饱和，模具排期可能延后10天。\n备选供应商B精度不达标，只能等A产能释放。\n需要协调供应链总监争取插队。",
+          "evidence_note": "来自 current_meeting.meeting_facts.manager_speech_summary，显示了管理者对供应链瓶颈（关键约束）的识别和初步应对方向（协调插队）。"
+        },
+        {
+          "source_type": "statement",
+          "source_file": "04_meetings/base_statements_record_list.json",
+          "source_id": "MTG-CASE-05-03-STM-2",
+          "timestamp": "MTG-CASE-05-03",
+          "excerpt": "先不在群里说了，我单独找供应链总监协调，看看能不能插队。",
+          "evidence_note": "来自 current_meeting.meeting_facts.statement_evidence，显示了管理者对行动方式的决策（单独跟进）。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "input",
+          "source_id": "meeting_decision_coverage_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 1, calculation.expression = 3 / 3",
+          "evidence_note": "metric_id: meeting_decision_coverage_rate, formula: value = meetings_with_decision_trace / total_meetings, calculation.expression: 3 / 3, value: 1。表明会议决策有留痕，为方向判断提供了基础。"
+        }
+      ],
+      "confidence": 0.6,
+      "risk_tags": [
+        "missing_context",
+        "reactive_focus"
+      ],
+      "suggested_actions": [
+        "在后续会议中，建议管理者在应对具体风险时，明确说明该应对措施如何服务于项目的核心目标（如压缩开模周期）和当前阶段优先级。"
+      ]
+    },
+    {
+      "dimension": "推进闭环力",
+      "finding_type": "risk",
+      "summary": "会议行动项到任务表的转化存在缺口（1条未入表），且任务关闭率偏低（43.33%），表明会后跟进和任务闭环存在断裂风险。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "input",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 0.6667, calculation.expression = 2 / 3, anomalies: [\"会议行动项 3 条，任务表命中 2 条\"]",
+          "evidence_note": "metric_id: current_meeting_action_task_rate, formula: value = min(tasks_linked_to_current_meeting, current_meeting_action_item_count) / current_meeting_action_item_count, calculation.expression: 2 / 3, value: 0.6667。表明当前会议有1条行动项未在任务表中找到对应记录。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "input",
+          "source_id": "task_closure_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 0.4333, calculation.expression = 13 / 30",
+          "evidence_note": "metric_id: task_closure_rate, formula: value = closed_tasks / total_tasks, calculation.expression: 13 / 30, value: 0.4333。表明项目整体任务关闭率较低，存在较多进行中或待开始任务。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "input",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "action_items: [\"供应商B打样评估\", \"声学团队散热孔位置确认\"]",
+          "evidence_note": "来自 current_meeting.meeting_facts.action_items，列出了两条行动项。"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.508",
+          "timestamp": "2026-04-20",
+          "excerpt": "供应商B打样评估 source_meeting_id=MTG-CASE-05-03",
+          "evidence_note": "来自 hard_metrics_result.metric_id: current_meeting_action_task_rate 的 evidence_refs，显示此任务关联到当前会议。"
+        },
+        {
+          "source_type": "base_task",
+          "source_file": "03_task_risk_register/base_tasks_record_list.json",
+          "source_id": "NO.522",
+          "timestamp": "2026-04-20",
+          "excerpt": "声学团队散热孔位置确认 source_meeting_id=MTG-CASE-05-03",
+          "evidence_note": "来自 hard_metrics_result.metric_id: current_meeting_action_task_rate 的 evidence_refs，显示此任务关联到当前会议。"
+        }
+      ],
+      "confidence": 0.8,
+      "risk_tags": [
+        "action_tracking_gap",
+        "low_closure_rate"
+      ],
+      "suggested_actions": [
+        "核查当前会议缺失的那条行动项（可能为‘协调供应链总监争取插队’）是否已通过其他方式跟进或记录，并确保所有会议结论都有明确的任务承载和责任人。",
+        "针对低关闭率，建议在后续会议中回顾进行中任务的进展和阻塞，推动闭环。"
+      ]
+    }
+  ],
+  "soft_indicators": [
+    {
+      "indicator_id": "soft_dir_risk_priority_alignment",
+      "dimension": "方向校准力",
+      "label": "风险应对与项目优先级对齐度",
+      "score": 65,
+      "confidence": 0.7,
+      "score_basis": "结合会议事实与项目文档评估。管理者能识别供应链风险（产能饱和）并决策应对（协调插队、评估备选），这直接关联项目‘优化供应链适配性，压缩开模周期’的核心目标，显示了一定对齐性（+）。但当前会议为应急沟通，聚焦单一风险，未在会议材料中明确提及此应对措施相对于其他高风险（如专利规避、防水变更）或项目阶段目标的优先级排序，存在反应式管理的迹象（-）。结合硬指标‘会议决策留痕覆盖率’为1，表明决策有记录，为评估提供了基础。",
+      "evidence_refs": [
+        {
+          "source_type": "current_meeting",
+          "source_file": "input",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "核心注塑供应商Q2产能饱和，模具排期可能延后10天。\n需要协调供应链总监争取插队。",
+          "evidence_note": "显示管理者针对供应链风险做出了方向性决策。"
+        },
+        {
+          "source_type": "document_snapshot",
+          "source_file": "input",
+          "source_id": "PJT-CASE-05",
+          "timestamp": "N/A",
+          "excerpt": "优化供应链适配性，将开模周期从 industry average 45天压缩至32天",
+          "evidence_note": "来自 project_context.document_snapshot.project_goal，显示项目核心目标之一。"
+        },
+        {
+          "source_type": "document_snapshot",
+          "source_file": "input",
+          "source_id": "PJT-CASE-05",
+          "timestamp": "N/A",
+          "excerpt": "供应商产能瓶颈：核心注塑供应商Q2订单饱和，可能延误模具T0节点\n认证变更：智能门锁新增指纹识别模块的防水等级要求（从IPX4提升至IPX6），影响外观开口设计\n设计专利：竞品近期发布了相似外观方案，需评估专利规避空间",
+          "evidence_note": "来自 project_context.document_snapshot.weekly_highlights，列出了多个并行的高优先级风险。"
+        }
+      ],
+      "limitations": [
+        "当前会议缺完整妙记转写，无法确认会上是否讨论了与其他风险的优先级比较。"
+      ]
+    },
+    {
+      "indicator_id": "soft_pcl_action_tracking_continuity",
+      "dimension": "推进闭环力",
+      "label": "行动项跟踪连续性",
+      "score": 55,
+      "confidence": 0.8,
+      "score_basis": "结合当前会议行动项、任务表关联情况及历史任务关闭率评估。硬指标‘当前会议行动项入表率’为66.7%（3项行动有2项入表），显示会后任务创建存在缺口（-）。硬指标‘任务关闭率’为43.33%，处于较低水平，表明历史任务闭环存在压力，可能影响新行动项的推进动力（-）。然而，硬指标‘任务定义完整率’和‘会议行动项留痕覆盖率’均为1，表明任务基本信息和会议行动记录机制是健全的（+）。综合来看，从会议决策到任务创建，再到最终闭环的链条存在薄弱环节。",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metric",
+          "source_file": "input",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 0.6667, calculation.expression = 2 / 3",
+          "evidence_note": "metric_id: current_meeting_action_task_rate, formula: value = min(tasks_linked_to_current_meeting, current_meeting_action_item_count) / current_meeting_action_item_count, calculation.expression: 2 / 3, value: 0.6667"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "input",
+          "source_id": "task_closure_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 0.4333, calculation.expression = 13 / 30",
+          "evidence_note": "metric_id: task_closure_rate, formula: value = closed_tasks / total_tasks, calculation.expression: 13 / 30, value: 0.4333"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "input",
+          "source_id": "task_definition_completeness_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 1, calculation.expression = 30 / 30",
+          "evidence_note": "metric_id: task_definition_completeness_rate, formula: value = tasks_with_task_name_owner_due_date / total_tasks, calculation.expression: 30 / 30, value: 1"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "input",
+          "source_id": "meeting_action_item_coverage_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 1, calculation.expression = 3 / 3",
+          "evidence_note": "metric_id: meeting_action_item_coverage_rate, formula: value = meetings_with_action_item_count_gt_0 / total_meetings, calculation.expression: 3 / 3, value: 1"
+        }
+      ],
+      "limitations": [
+        "无法确认未入表的行动项是否通过非任务系统方式（如口头、即时消息）跟进。"
+      ]
+    }
+  ],
+  "human_review_items": [
+    {
+      "review_id": "review_missing_current_transcript_dir",
+      "reason": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。例如，管理者判断‘只能等A产能释放’是基于哪些评估？会上是否讨论了此风险对项目整体里程碑的影响？",
+      "severity": "medium",
+      "related_dimension": "方向校准力",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "input",
+          "source_id": "human_review_rules",
+          "timestamp": "N/A",
+          "excerpt": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+          "evidence_note": "来自 planner_slice.human_review_rules[0].reason。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "input",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "missing_fields: [\"meeting_docs.current_transcript\"]",
+          "evidence_note": "来自 current_meeting.missing_fields，确认缺少完整转写。"
+        }
+      ]
+    },
+    {
+      "review_id": "review_action_task_mapping_pcl",
+      "reason": "会议行动项 3 条，任务表命中 2 条。需要人工复核缺失的1条行动项（可能为决策‘协调供应链总监争取插队’）是否已转化为任务（如任务NO.525‘供应链总监插队协调’的source_meeting_id是否为MTG-CASE-05-03？），或是会后扩展了任务，或是存在记录遗漏。",
+      "severity": "medium",
+      "related_dimension": "推进闭环力",
+      "evidence_refs": [
+        {
+          "source_type": "planner_slice",
+          "source_file": "input",
+          "source_id": "human_review_rules",
+          "timestamp": "N/A",
+          "excerpt": "会议行动项 3 条，任务表命中 2 条",
+          "evidence_note": "来自 planner_slice.human_review_rules[1].reason。"
+        },
+        {
+          "source_type": "hard_metric",
+          "source_file": "input",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "anomalies: [\"会议行动项 3 条，任务表命中 2 条\"]",
+          "evidence_note": "来自 hard_metrics_result.metric_id: current_meeting_action_task_rate 的 anomalies 字段。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "input",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "decisions: [\"协调供应链总监争取插队\", \"同步评估供应商C打样能力\", \"周牧单独跟进不占用群资源\"]",
+          "evidence_note": "来自 current_meeting.meeting_facts.decisions，其中‘协调供应链总监争取插队’是明确决策。"
+        },
+        {
+          "source_type": "project_context",
+          "source_file": "input",
+          "source_id": "PJT-CASE-05",
+          "timestamp": "N/A",
+          "excerpt": "{\"id\": \"NO.525\", \"task_name\": \"供应链总监插队协调\", \"status\": \"进行中\", \"owner\": \"周牧\", \"due_date\": \"2026-05-10\", \"source_meeting_id\": \"MTG-CASE-05-06\"}",
+          "evidence_note": "来自 project_context.project_snapshot.open_tasks，任务NO.525内容匹配，但其source_meeting_id指向后续会议MTG-CASE-05-06，需要人工确认关联性。"
+        }
+      ]
+    }
+  ],
+  "management_review_summary": "本次应急会议中，管理者展现了识别关键约束（供应链产能）并做出初步方向决策（协调插队、评估备选）的能力，决策留痕完整。然而，方向校准上更多是反应式应对，缺乏与项目整体目标、范围及多风险优先级的明确对齐阐述。在推进闭环方面，暴露出明显风险：会议行动项未能完全转化为跟踪任务，且项目整体任务关闭率偏低，表明从决策到任务创建再到最终闭环的链条存在断裂。需要人工复核行动项与任务的映射关系，并关注低关闭率背后可能存在的推进阻力。"
+}

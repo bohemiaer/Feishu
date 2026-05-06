@@ -1,5 +1,7 @@
 "use strict";
 
+const { assertArtifactValid } = require("../../shared/schema_validation");
+
 function nowIso() {
   return new Date().toISOString();
 }
@@ -31,6 +33,60 @@ function isOpenRisk(risk) {
 
 function hasValue(value) {
   return asText(value) !== "";
+}
+
+function firstPopulatedText(values) {
+  return values.map(asText).find(Boolean) || "";
+}
+
+function taskIdOf(task) {
+  return firstPopulatedText([
+    task && task.task_id,
+    task && task.id,
+    task && task.ID,
+    task && task.record_id,
+    task && task.recordId
+  ]) || "unknown_task";
+}
+
+function riskIdOf(risk) {
+  return firstPopulatedText([
+    risk && risk.risk_id,
+    risk && risk.id,
+    risk && risk.ID,
+    risk && risk.record_id,
+    risk && risk.recordId
+  ]) || "unknown_risk";
+}
+
+function meetingIdOf(meeting) {
+  return firstPopulatedText([
+    meeting && meeting.meeting_id,
+    meeting && meeting.id,
+    meeting && meeting.ID,
+    meeting && meeting.record_id,
+    meeting && meeting.recordId
+  ]) || "unknown_meeting";
+}
+
+function messageIdOf(message) {
+  return firstPopulatedText([
+    message && message.message_id,
+    message && message.id,
+    message && message.ID,
+    message && message.record_id,
+    message && message.recordId
+  ]) || "unknown_message";
+}
+
+function eventIdOf(event) {
+  return firstPopulatedText([
+    event && event.event_id,
+    event && event.id,
+    event && event.ID,
+    event && event.record_id,
+    event && event.recordId
+  ]) || "unknown_event";
 }
 
 function ratio(numerator, denominator) {
@@ -204,37 +260,37 @@ function buildEvidenceRef(sourceType, sourceId, excerpt, options = {}) {
 }
 
 function taskEvidence(task, excerpt = task.task_name) {
-  return buildEvidenceRef("base_task", task.task_id, excerpt, {
+  return buildEvidenceRef("base_task", taskIdOf(task), excerpt, {
     timestamp: task.due_date,
-    evidenceLabel: `${task.task_id || task.id || "unknown"} ${task.task_name || ""}`.trim()
+    evidenceLabel: `${taskIdOf(task)} ${task.task_name || ""}`.trim()
   });
 }
 
 function riskEvidence(risk, excerpt = risk.risk_description) {
-  return buildEvidenceRef("base_risk", risk.risk_id, excerpt, {
+  return buildEvidenceRef("base_risk", riskIdOf(risk), excerpt, {
     timestamp: risk.meeting_id,
-    evidenceLabel: `${risk.risk_id || risk.id || "unknown"} ${risk.risk_level || ""} ${risk.followup_status || ""}`.trim()
+    evidenceLabel: `${riskIdOf(risk)} ${risk.risk_level || ""} ${risk.followup_status || ""}`.trim()
   });
 }
 
 function meetingEvidence(meeting, excerpt = meeting.meeting_title) {
-  return buildEvidenceRef("base_meeting", meeting.meeting_id, excerpt, {
+  return buildEvidenceRef("base_meeting", meetingIdOf(meeting), excerpt, {
     timestamp: meeting.meeting_time,
-    evidenceLabel: `${meeting.meeting_id || meeting.id || "unknown"} ${meeting.meeting_title || ""}`.trim()
+    evidenceLabel: `${meetingIdOf(meeting)} ${meeting.meeting_title || ""}`.trim()
   });
 }
 
 function chatEvidence(message, excerpt = message.content) {
-  return buildEvidenceRef("chat", message.message_id, excerpt, {
+  return buildEvidenceRef("chat", messageIdOf(message), excerpt, {
     timestamp: message.create_time,
     evidenceLabel: `${message.sender && message.sender.name ? message.sender.name : "unknown"} ${message.create_time || ""}`.trim()
   });
 }
 
 function calendarEvidence(event, excerpt = event.summary) {
-  return buildEvidenceRef("calendar", event.event_id, excerpt, {
+  return buildEvidenceRef("calendar", eventIdOf(event), excerpt, {
     timestamp: event.start_time,
-    evidenceLabel: `${event.event_id || "unknown"} ${event.summary || ""}`.trim()
+    evidenceLabel: `${eventIdOf(event)} ${event.summary || ""}`.trim()
   });
 }
 
@@ -352,7 +408,7 @@ function taskOverdueRate(tasks, window) {
     unit: "ratio",
     window,
     sampleScope: "Base Tasks with due_date",
-    anomalies: overdueTasks.map((task) => `${task.task_id} ${task.task_name} DDL=${task.due_date}`),
+    anomalies: overdueTasks.map((task) => `${taskIdOf(task)} ${task.task_name} DDL=${task.due_date}`),
     evidenceRefs: overdueTasks.slice(0, 5).map((task) => taskEvidence(task, `${task.task_name} DDL=${task.due_date} is_overdue=${task.is_overdue}`))
   });
 }
@@ -384,7 +440,7 @@ function closedTaskQualityRate(tasks, baseHistory, window) {
   );
   const missing = closedTasks
     .filter((task) => !qualified.includes(task))
-    .map((task) => task.task_id || task.id || "unknown");
+    .map((task) => taskIdOf(task));
 
   return buildMetric({
     metricId: "closed_task_quality_rate",
@@ -474,7 +530,7 @@ function riskOpenRate(risks, window) {
     unit: "ratio",
     window,
     sampleScope: "Base Risks followup_status",
-    anomalies: openRisks.map((risk) => `${risk.risk_id} ${risk.followup_status}`),
+    anomalies: openRisks.map((risk) => `${riskIdOf(risk)} ${risk.followup_status}`),
     evidenceRefs: openRisks.slice(0, 5).map((risk) => riskEvidence(risk, `${risk.risk_description} followup_status=${risk.followup_status}`))
   });
 }
@@ -531,7 +587,7 @@ function meetingActionCompletenessRate(meetings, window) {
     sampleScope: "Base Meetings action_item_count",
     anomalies: meetings
       .filter((meeting) => Number(meeting.action_item_count || 0) === 0)
-      .map((meeting) => `${meeting.meeting_id} action_item_count=0`),
+      .map((meeting) => `${meetingIdOf(meeting)} action_item_count=0`),
     evidenceRefs: actionable.slice(0, 5).map((meeting) => meetingEvidence(meeting, `${meeting.meeting_title} action_item_count=${meeting.action_item_count}`))
   });
 }
@@ -694,7 +750,7 @@ function runHardMetricsEngine({ meetingFactPack, historyBundle, rawPayload }) {
   ];
   const quality = collectMetricQuality(metrics);
 
-  return {
+  return assertArtifactValid("hard_metrics_result", {
     task_context: meetingFactPack.task_context,
     generated_at: nowIso(),
     project_id: meetingFactPack.meeting_info.project_id,
@@ -719,7 +775,7 @@ function runHardMetricsEngine({ meetingFactPack, historyBundle, rawPayload }) {
     },
     metric_gaps: quality.metric_gaps,
     anomaly_samples: quality.anomaly_samples
-  };
+  });
 }
 
 module.exports = {

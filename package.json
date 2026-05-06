@@ -12,11 +12,17 @@
     "review:coordination:case04": "node scripts/demo/run_coordination_lens.js --input-dir data/outputs/demo/case04/current --request-output data/outputs/demo/case04/current/coordination_lens_request.json",
     "assess:capability:case04": "node scripts/demo/run_capability_assessor.js --input-dir data/outputs/demo/case04/current --request-output data/outputs/demo/case04/current/capability_assessor_request.json --output data/outputs/demo/case04/current/capability_assessor_result.json",
     "report:case04": "node scripts/demo/run_report_writer.js --input-dir data/outputs/demo/case04/current --request-output data/outputs/demo/case04/current/report_writer_request.json --output data/outputs/demo/case04/current/report_result.json",
-    "observability:case04": "node scripts/dev/write_case04_observability_md.js --input-dir data/outputs/demo/case04/current --output docs/observability/case04_full_loop_observability.md",
+    "observability:write": "node scripts/dev/write_full_loop_observability_md.js",
+    "observability:case04": "node scripts/dev/write_full_loop_observability_md.js --input-dir data/outputs/demo/case04/current --output docs/observability/case04_full_loop_observability.md --title \"Case 04 Full Loop Observability\"",
+    "observability:case05": "node scripts/dev/write_full_loop_observability_md.js --input-dir data/outputs/demo/case05/auto --output docs/observability/case05_full_loop_observability.md --title \"Case 05 Full Loop Observability\"",
+    "validate:smoke": "node scripts/dev/run_schema_validation_smoke.js",
     "writeback:csv:case04": "node scripts/dev/write_feishu_base_csv.js --input-dir data/outputs/demo/case04/current --output-dir data/outputs/demo/case04/feishu_base_csv",
     "demo": "node scripts/demo/run_front_pipeline.js --input-dir data/fixtures/feishu_cli_case_04_simulated_5d --output-dir data/outputs/demo/case04/current",
     "auto:case05": "node scripts/demo/run_evaluation_automation.js --input-dir data/fixtures/feishu_cli_case_05_desktop_robot --output-dir data/outputs/demo/case05/auto",
     "automation:run": "node scripts/demo/run_evaluation_automation.js",
     "bot:server": "node scripts/dev/run_feishu_bot_server.js --port 3030"
+  },
+  "dependencies": {
+    "ajv": "^8.20.0"
   }
 }

@@ -1,0 +1,116 @@
+{
+  "schema_bundle_version": "2026-05-05.v1",
+  "json_schema_dialect": "https://json-schema.org/draft/2020-12/schema",
+  "artifacts": {
+    "task_request": {
+      "schema_file": "task_request.schema.json",
+      "artifact_kind": "input_request",
+      "validation_mode": "strict_read_write"
+    },
+    "orchestration_state": {
+      "schema_file": "orchestration_state.schema.json",
+      "artifact_kind": "pipeline_state",
+      "validation_mode": "strict_read_write"
+    },
+    "input_completeness_report": {
+      "schema_file": "input_completeness_report.schema.json",
+      "artifact_kind": "quality_report",
+      "validation_mode": "strict_read_write"
+    },
+    "raw_payload": {
+      "schema_file": "raw_payload.schema.json",
+      "artifact_kind": "intermediate_payload",
+      "validation_mode": "strict_read_write"
+    },
+    "history_bundle": {
+      "schema_file": "history_bundle.schema.json",
+      "artifact_kind": "intermediate_payload",
+      "validation_mode": "strict_read_write"
+    },
+    "meeting_fact_pack": {
+      "schema_file": "meeting_fact_pack.schema.json",
+      "artifact_kind": "intermediate_payload",
+      "validation_mode": "strict_read_write"
+    },
+    "data_quality_report": {
+      "schema_file": "data_quality_report.schema.json",
+      "artifact_kind": "quality_report",
+      "validation_mode": "strict_read_write"
+    },
+    "hard_metrics_result": {
+      "schema_file": "hard_metrics_result.schema.json",
+      "artifact_kind": "deterministic_result",
+      "validation_mode": "strict_read_write"
+    },
+    "evaluation_plan": {
+      "schema_file": "evaluation_plan.schema.json",
+      "artifact_kind": "planning_result",
+      "validation_mode": "strict_read_write"
+    },
+    "management_reviewer_request": {
+      "schema_file": "management_reviewer_request.schema.json",
+      "artifact_kind": "agent_request",
+      "validation_mode": "strict_read_write"
+    },
+    "management_reviewer_result": {
+      "schema_file": "management_reviewer_result.schema.json",
+      "artifact_kind": "agent_result",
+      "validation_mode": "strict_post_model"
+    },
+    "risk_behavior_auditor_request": {
+      "schema_file": "risk_behavior_auditor_request.schema.json",
+      "artifact_kind": "agent_request",
+      "validation_mode": "strict_read_write"
+    },
+    "risk_behavior_auditor_result": {
+      "schema_file": "risk_behavior_auditor_result.schema.json",
+      "artifact_kind": "agent_result",
+      "validation_mode": "strict_post_model"
+    },
+    "coordination_lens_request": {
+      "schema_file": "coordination_lens_request.schema.json",
+      "artifact_kind": "agent_request",
+      "validation_mode": "strict_read_write"
+    },
+    "coordination_lens_result": {
+      "schema_file": "coordination_lens_result.schema.json",
+      "artifact_kind": "agent_result",
+      "validation_mode": "strict_post_model"
+    },
+    "capability_assessor_request": {
+      "schema_file": "capability_assessor_request.schema.json",
+      "artifact_kind": "agent_request",
+      "validation_mode": "strict_read_write"
+    },
+    "capability_assessor_result": {
+      "schema_file": "capability_assessor_result.schema.json",
+      "artifact_kind": "agent_result",
+      "validation_mode": "strict_post_model"
+    },
+    "report_writer_request": {
+      "schema_file": "report_writer_request.schema.json",
+      "artifact_kind": "agent_request",
+      "validation_mode": "strict_read_write"
+    },
+    "report_result": {
+      "schema_file": "report_result.schema.json",
+      "artifact_kind": "agent_result",
+      "validation_mode": "strict_post_model"
+    },
+    "automation_summary": {
+      "schema_file": "automation_summary.schema.json",
+      "artifact_kind": "workflow_summary",
+      "validation_mode": "strict_read_write"
+    },
+    "observability_summary": {
+      "schema_file": "observability_summary.schema.json",
+      "artifact_kind": "observability_summary",
+      "validation_mode": "strict_read_write"
+    },
+    "full_loop_observability": {
+      "schema_file": "full_loop_observability.schema.json",
+      "artifact_kind": "observability_detail",
+      "validation_mode": "strict_read_write"
+    }
+  }
+}

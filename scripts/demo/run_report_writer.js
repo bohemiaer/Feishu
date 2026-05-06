@@ -2,7 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const { readJson, writeJson } = require("../../src/shared/fs_utils");
+const { readArtifactJson, writeArtifactJson } = require("../../src/shared/schema_validation");
 const { buildCase04ReportRequest, writeCase04Report } = require("../../src/agents/report_writer");
 
 function parseArgs(argv) {
@@ -19,7 +19,7 @@ function parseArgs(argv) {
 }
 
 function readOptionalJson(filePath) {
-  return fs.existsSync(filePath) ? readJson(filePath) : null;
+  return fs.existsSync(filePath) ? readArtifactJson(filePath) : null;
 }
 
 async function main() {
@@ -28,19 +28,19 @@ async function main() {
   const requestOutput = path.resolve(args["request-output"] || path.join(inputDir, "report_writer_request.json"));
   const output = path.resolve(args.output || path.join(inputDir, "report_result.json"));
   const request = buildCase04ReportRequest({
-    meetingFactPack: readJson(path.join(inputDir, "meeting_fact_pack.json")),
-    hardMetricsResult: readJson(path.join(inputDir, "hard_metrics_result.json")),
-    evaluationPlan: readJson(path.join(inputDir, "evaluation_plan.json")),
+    meetingFactPack: readArtifactJson(path.join(inputDir, "meeting_fact_pack.json")),
+    hardMetricsResult: readArtifactJson(path.join(inputDir, "hard_metrics_result.json")),
+    evaluationPlan: readArtifactJson(path.join(inputDir, "evaluation_plan.json")),
     capabilityAssessorResult: readOptionalJson(path.join(inputDir, "capability_assessor_result.json")),
     managementReviewerResult: readOptionalJson(path.join(inputDir, "management_reviewer_result.json")),
     riskBehaviorAuditorResult: readOptionalJson(path.join(inputDir, "risk_behavior_auditor_result.json")),
     coordinationLensResult: readOptionalJson(path.join(inputDir, "coordination_lens_result.json"))
   });
 
-  writeJson(requestOutput, request);
+  writeArtifactJson(requestOutput, request);
 
   if (args["call-model"] || request.input_status.readiness === "blocked") {
-    writeJson(output, await writeCase04Report(request));
+    writeArtifactJson(output, await writeCase04Report(request));
   }
 
   process.stdout.write(JSON.stringify({

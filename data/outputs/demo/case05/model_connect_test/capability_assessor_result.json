@@ -1,0 +1,485 @@
+{
+  "meeting_id": "MTG-CASE-05-03",
+  "project_id": "PJT-CASE-05",
+  "manager_id": "MGR-CASE-05",
+  "assessment_status": "degraded",
+  "dimension_scores": [
+    {
+      "dimension": "方向校准力",
+      "score": 60,
+      "confidence": 0.6,
+      "score_basis": "会议决策留痕覆盖率（meetings_with_decision_trace / total_meetings）为1，表明会议决策有明确留痕。但专家发现管理者在应急会议中缺乏对项目整体目标（如开模周期压缩）的明确校准，存在目标校准缺失风险。",
+      "supporting_finding_refs": [
+        {
+          "ref_type": "finding",
+          "id": "management_reviewer_result.dimension_findings[0]"
+        }
+      ],
+      "supporting_metric_refs": [
+        {
+          "ref_type": "metric",
+          "metric_id": "meeting_decision_coverage_rate",
+          "id": "meeting_decision_coverage_rate"
+        }
+      ],
+      "evidence_quotes": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics",
+          "source_id": "meeting_decision_coverage_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 1",
+          "evidence_note": "metric_id=meeting_decision_coverage_rate, formula=value = meetings_with_decision_trace / total_meetings, calculation.expression=3 / 3, value=1"
+        },
+        {
+          "source_type": "base_meeting",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "协调供应链总监争取插队 | 同步评估供应商C打样能力 | 周牧单独跟进不占用群资源",
+          "evidence_note": "会议决策摘要，显示针对供应链产能风险做出了具体决策，但未提及与核心目标的校准。"
+        },
+        {
+          "source_type": "document_snapshot",
+          "source_file": "project_context",
+          "source_id": "PJT-CASE-05",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "优化供应链适配性，将开模周期从 industry average 45天压缩至32天",
+          "evidence_note": "项目核心目标之一，当前会议未提及与此目标的校准。"
+        }
+      ],
+      "limitations": [
+        "当前会议缺完整妙记转写，关键语义判断需人工确认上下文，导致置信度降低。"
+      ]
+    },
+    {
+      "dimension": "推进闭环力",
+      "score": 65,
+      "confidence": 0.8,
+      "score_basis": "任务定义完整率（tasks_with_task_name_owner_due_date / total_tasks）为1，任务延期率为0，已关闭任务质量代理指标（qualified_closed_tasks / closed_tasks）为1，表明任务管理基础能力良好。但当前会议行动项入表率（min(tasks_linked_to_current_meeting, current_meeting_action_item_count) / current_meeting_action_item_count）为0.6667，且项目整体任务关闭率（closed_tasks / total_tasks）仅为0.4333，存在行动项遗漏和任务积压风险。",
+      "supporting_finding_refs": [
+        {
+          "ref_type": "finding",
+          "id": "management_reviewer_result.dimension_findings[1]"
+        },
+        {
+          "ref_type": "finding",
+          "id": "management_reviewer_result.dimension_findings[2]"
+        }
+      ],
+      "supporting_metric_refs": [
+        {
+          "ref_type": "metric",
+          "metric_id": "task_definition_completeness_rate",
+          "id": "task_definition_completeness_rate"
+        },
+        {
+          "ref_type": "metric",
+          "metric_id": "task_overdue_rate",
+          "id": "task_overdue_rate"
+        },
+        {
+          "ref_type": "metric",
+          "metric_id": "closed_task_quality_rate",
+          "id": "closed_task_quality_rate"
+        },
+        {
+          "ref_type": "metric",
+          "metric_id": "current_meeting_action_task_rate",
+          "id": "current_meeting_action_task_rate"
+        },
+        {
+          "ref_type": "metric",
+          "metric_id": "task_closure_rate",
+          "id": "task_closure_rate"
+        }
+      ],
+      "evidence_quotes": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics",
+          "source_id": "task_definition_completeness_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 1",
+          "evidence_note": "metric_id=task_definition_completeness_rate, formula=value = tasks_with_task_name_owner_due_date / total_tasks, calculation.expression=30 / 30, value=1"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics",
+          "source_id": "task_overdue_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 0",
+          "evidence_note": "metric_id=task_overdue_rate, formula=value = overdue_tasks / tasks_with_due_date, calculation.expression=0 / 30, value=0"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics",
+          "source_id": "closed_task_quality_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 1",
+          "evidence_note": "metric_id=closed_task_quality_rate, formula=value = qualified_closed_tasks / closed_tasks, calculation.expression=13 / 13, value=1"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 0.6667",
+          "evidence_note": "metric_id=current_meeting_action_task_rate, formula=value = min(tasks_linked_to_current_meeting, current_meeting_action_item_count) / current_meeting_action_item_count, calculation.expression=2 / 3, value=0.6667"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics",
+          "source_id": "task_closure_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 0.4333",
+          "evidence_note": "metric_id=task_closure_rate, formula=value = closed_tasks / total_tasks, calculation.expression=13 / 30, value=0.4333"
+        }
+      ],
+      "limitations": [
+        "会议行动项与任务表关联数量不一致，存在闭环断裂风险，需人工复核。"
+      ]
+    },
+    {
+      "dimension": "风险治理力",
+      "score": 40,
+      "confidence": 0.8,
+      "score_basis": "风险缓释动作覆盖率（risks_with_suggested_action / total_risks）为1，表明风险识别后能形成治理思路。但高等级风险收口率（resolved_high_risks / total_high_risks）为0，风险未收口占比（open_or_tracking_risks / total_risks）为1，且同类风险复发样本数（sum(count(risk_type) where count(risk_type) > 1)）为2（供应链风险复发），表明风险治理闭环存在显著缺口，高等级风险治理失效。",
+      "supporting_finding_refs": [
+        {
+          "ref_type": "finding",
+          "id": "risk_behavior_auditor_result.dimension_findings[0]"
+        },
+        {
+          "ref_type": "finding",
+          "id": "risk_behavior_auditor_result.dimension_findings[1]"
+        },
+        {
+          "ref_type": "finding",
+          "id": "risk_behavior_auditor_result.dimension_findings[2]"
+        },
+        {
+          "ref_type": "finding",
+          "id": "risk_behavior_auditor_result.dimension_findings[3]"
+        }
+      ],
+      "supporting_metric_refs": [
+        {
+          "ref_type": "metric",
+          "metric_id": "risk_mitigation_action_rate",
+          "id": "risk_mitigation_action_rate"
+        },
+        {
+          "ref_type": "metric",
+          "metric_id": "high_risk_resolution_rate",
+          "id": "high_risk_resolution_rate"
+        },
+        {
+          "ref_type": "metric",
+          "metric_id": "open_risk_rate",
+          "id": "open_risk_rate"
+        },
+        {
+          "ref_type": "metric",
+          "metric_id": "repeated_risk_type_count",
+          "id": "repeated_risk_type_count"
+        }
+      ],
+      "evidence_quotes": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "risk_mitigation_action_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 1, calculation.expression = 5 / 5",
+          "evidence_note": "metric_id=risk_mitigation_action_rate, formula=value = risks_with_suggested_action / total_risks, calculation.expression=5 / 5, value=1"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "high_risk_resolution_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 0, calculation.expression = 0 / 2",
+          "evidence_note": "metric_id=high_risk_resolution_rate, formula=value = resolved_high_risks / total_high_risks, calculation.expression=0 / 2, value=0"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "open_risk_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 1, calculation.expression = 5 / 5",
+          "evidence_note": "metric_id=open_risk_rate, formula=value = open_or_tracking_risks / total_risks, calculation.expression=5 / 5, value=1"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics_result",
+          "source_id": "repeated_risk_type_count",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 2, anomalies = [\"供应链:2\"]",
+          "evidence_note": "metric_id=repeated_risk_type_count, formula=value = sum(count(risk_type) where count(risk_type) > 1), calculation.expression=2, value=2, 显示供应链风险复发。"
+        }
+      ],
+      "limitations": [
+        "高等级风险未完全收口，风险治理结论需人工复核。"
+      ]
+    },
+    {
+      "dimension": "协同调度力",
+      "score": 85,
+      "confidence": 0.9,
+      "score_basis": "日历必要干系人覆盖率（calendar_events_with_required_stakeholders / total_calendar_events）为1，管理者聊天同步样本数为25。专家发现管理者在群聊中主动同步关键信息、澄清依赖、指派任务，并对关键风险能及时响应并形成解决路径，跨角色响应多为有效响应。",
+      "supporting_finding_refs": [
+        {
+          "ref_type": "finding",
+          "id": "coordination_lens_result.dimension_findings[0]"
+        },
+        {
+          "ref_type": "finding",
+          "id": "coordination_lens_result.dimension_findings[1]"
+        },
+        {
+          "ref_type": "finding",
+          "id": "coordination_lens_result.dimension_findings[2]"
+        }
+      ],
+      "supporting_metric_refs": [
+        {
+          "ref_type": "metric",
+          "metric_id": "calendar_stakeholder_coverage_rate",
+          "id": "calendar_stakeholder_coverage_rate"
+        },
+        {
+          "ref_type": "metric",
+          "metric_id": "manager_chat_signal_count",
+          "id": "manager_chat_signal_count"
+        }
+      ],
+      "evidence_quotes": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics",
+          "source_id": "calendar_stakeholder_coverage_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 1",
+          "evidence_note": "metric_id=calendar_stakeholder_coverage_rate, formula=value = calendar_events_with_required_stakeholders / total_calendar_events, calculation.expression=3 / 3, value=1"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics",
+          "source_id": "manager_chat_signal_count",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 25",
+          "evidence_note": "metric_id=manager_chat_signal_count, formula=value = manager_chat_messages_count, calculation.expression=25, value=25"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0002",
+          "timestamp": "2026-04-01 09:15",
+          "excerpt": "4月项目启动，本周重点是完成智能音箱和扫地机器人的概念设计评审。",
+          "evidence_note": "管理者周牧主动同步项目关键里程碑及本周重点。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0038",
+          "timestamp": "2026-04-24 09:12",
+          "excerpt": "先不在群里说了，我单独找供应链总监协调，看看能不能插队。",
+          "evidence_note": "管理者针对供应链阻塞风险，主动承担协调责任并明确升级路径。"
+        }
+      ],
+      "limitations": [
+        "针对‘供应链风险应急沟通’会议的关键决策，是否在会后有效同步给更广泛的核心干系人，需人工复核以确保协同一致性。"
+      ]
+    },
+    {
+      "dimension": "组织行为健康度",
+      "score": 70,
+      "confidence": 0.5,
+      "score_basis": "管理者非常规时段消息占比（manager_messages_between_22_00_and_08_00 / manager_chat_messages）为0。高压推进语言样本占比（manager_messages_matching_pressure_keywords / manager_chat_messages）为0.04，仅观察到一条命中样本。",
+      "supporting_finding_refs": [
+        {
+          "ref_type": "finding",
+          "id": "risk_behavior_auditor_result.risk_flags[2]"
+        }
+      ],
+      "supporting_metric_refs": [
+        {
+          "ref_type": "metric",
+          "metric_id": "late_night_manager_message_rate",
+          "id": "late_night_manager_message_rate"
+        },
+        {
+          "ref_type": "metric",
+          "metric_id": "high_pressure_language_sample_rate",
+          "id": "high_pressure_language_sample_rate"
+        }
+      ],
+      "evidence_quotes": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics",
+          "source_id": "late_night_manager_message_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 0",
+          "evidence_note": "metric_id=late_night_manager_message_rate, formula=value = manager_messages_between_22_00_and_08_00 / manager_chat_messages, calculation.expression=0 / 25, value=0"
+        },
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics",
+          "source_id": "high_pressure_language_sample_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "value = 0.04, anomalies = [\"2026-04-21 09:15 本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。\"]",
+          "evidence_note": "metric_id=high_pressure_language_sample_rate, formula=value = manager_messages_matching_pressure_keywords / manager_chat_messages, calculation.expression=1 / 25, value=0.04, 显示存在一条命中样本。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0025",
+          "timestamp": "2026-04-21 09:15",
+          "excerpt": "本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。",
+          "evidence_note": "管理者聊天消息中命中关键词“必须”。此为观察项，需人工复核语境。"
+        }
+      ],
+      "limitations": [
+        "当前会议缺完整转写，无法进行全面的行为评估。组织行为相关语言样本需人工复核语境和场景，导致置信度显著降低。"
+      ]
+    }
+  ],
+  "overall_assessment": {
+    "overall_score": 64,
+    "top_strengths": [
+      "协同调度力：管理者在群聊中主动同步信息、澄清依赖、指派任务，并对关键风险能及时响应并形成解决路径，协同主动性强。",
+      "推进闭环力（基础能力）：任务定义完整、无延期，已关闭任务质量高，体现了良好的任务管理基础。"
+    ],
+    "top_risks": [
+      "风险治理力：所有风险均未收口，高等级风险收口率为0，且供应链风险出现复发，风险治理闭环存在显著缺口。",
+      "推进闭环力（执行风险）：当前会议行动项未完全录入任务系统，项目整体任务关闭率低（43.33%），存在行动项遗漏和任务积压风险。"
+    ],
+    "confidence": 0.7,
+    "summary": "管理者周牧在协同调度方面表现突出，能有效同步信息、处理依赖和风险。任务管理的基础能力扎实。然而，风险治理存在严重短板，所有风险均未有效收口，高等级风险治理失效。同时，任务推进存在闭环断裂和积压风险。方向校准和组织行为健康度因数据质量（会议转写缺失）和样本限制，评估置信度较低，需人工复核关键语境。"
+  },
+  "human_review_items": [
+    {
+      "review_id": "review_missing_current_transcript_01",
+      "reason": "当前会议缺完整妙记转写，关键语义判断需人工确认上下文。",
+      "severity": "medium",
+      "related_dimension": "方向校准力",
+      "evidence_refs": [
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "missing_fields: [\"meeting_docs.current_transcript\"]",
+          "evidence_note": "会议记录中缺少完整的转写文本。"
+        }
+      ]
+    },
+    {
+      "review_id": "review_action_task_mapping_01",
+      "reason": "会议行动项 3 条，任务表命中 2 条",
+      "severity": "medium",
+      "related_dimension": "推进闭环力",
+      "evidence_refs": [
+        {
+          "source_type": "hard_metrics",
+          "source_file": "hard_metrics",
+          "source_id": "current_meeting_action_task_rate",
+          "timestamp": "2026-01-01 ~ 2026-04-24",
+          "excerpt": "anomalies: [\"会议行动项 3 条，任务表命中 2 条\"]",
+          "evidence_note": "硬指标异常样本，显示行动项与任务关联不一致。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "decisions: [\"协调供应链总监争取插队\", \"同步评估供应商C打样能力\", \"周牧单独跟进不占用群资源\"]",
+          "evidence_note": "会议决策中包含未明确列为行动项但需要跟进的事项。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-CASE-05-01",
+      "reason": "高等级风险未完全收口，风险治理结论需人工复核。",
+      "severity": "medium",
+      "related_dimension": "风险治理力",
+      "evidence_refs": [
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.601",
+          "timestamp": "MTG-CASE-05-02",
+          "excerpt": "供应商A模具曲面壁厚不均，需返工3处，可能延误T0节点 followup_status=open",
+          "evidence_note": "高风险NO.601状态为open。"
+        },
+        {
+          "source_type": "base_risk",
+          "source_file": "03_task_risk_register/base_risks_record_list.json",
+          "source_id": "NO.602",
+          "timestamp": "MTG-CASE-05-01",
+          "excerpt": "智能门锁防水等级从IPX4提升至IPX6，外观开口需重新设计 followup_status=open",
+          "evidence_note": "高风险NO.602状态为open。"
+        }
+      ]
+    },
+    {
+      "review_id": "HR-CASE-05-02",
+      "reason": "组织行为相关语言只能作为观察项，需人工确认语境和场景。",
+      "severity": "medium",
+      "related_dimension": "风险治理力",
+      "evidence_refs": [
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0025",
+          "timestamp": "2026-04-21 09:15",
+          "excerpt": "本周重点：智能音箱和扫地机器人的外观必须冻结，不能再改了。",
+          "evidence_note": "需人工复核该指令的语境和合理性。"
+        },
+        {
+          "source_type": "current_meeting",
+          "source_file": "current_meeting",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "missing_fields: [\"meeting_docs.current_transcript\"]",
+          "evidence_note": "当前会议缺完整转写，无法提供更多会议中的行为上下文。"
+        }
+      ]
+    },
+    {
+      "review_id": "HRV-MTG-CASE-05-03-01",
+      "reason": "需要复核管理者（周牧）在‘供应链风险应急沟通’会议（MTG-CASE-05-03）中，关于‘协调供应链总监争取插队’和‘同步评估供应商C打样能力’的决策，是否在会后有效同步给了项目核心干系人（如品牌、结构、CMF等），而不仅仅是与供应链经理（林峰）的两人沟通。当前证据仅显示两人会议和群聊中的初步表态。",
+      "severity": "medium",
+      "related_dimension": "协同调度力",
+      "evidence_refs": [
+        {
+          "source_type": "calendar",
+          "source_file": "06_calendar/calendar_events_instance_view.json",
+          "source_id": "cal_case05_evt_0424_emergency",
+          "timestamp": "2026-04-24T09:00:00+08:00",
+          "excerpt": "供应链风险应急沟通 attendees=周牧,林峰",
+          "evidence_note": "应急会议仅两人参加。"
+        },
+        {
+          "source_type": "chat",
+          "source_file": "02_chats/im_messages_search_user.json",
+          "source_id": "om_case05msg0038",
+          "timestamp": "2026-04-24 09:12",
+          "excerpt": "先不在群里说了，我单独找供应链总监协调，看看能不能插队。",
+          "evidence_note": "管理者决定单独协调，未在群聊中同步后续进展。"
+        },
+        {
+          "source_type": "base_record",
+          "source_file": "04_meetings/base_meetings_record_list.json",
+          "source_id": "MTG-CASE-05-03",
+          "timestamp": "2026-04-24 09:00 - 09:45",
+          "excerpt": "供应链风险应急沟通",
+          "evidence_note": "会议决策包含‘协调供应链总监争取插队’和‘同步评估供应商C打样能力’。"
+        }
+      ]
+    }
+  ],
+  "missing_upstream_results": []
+}

@@ -1,0 +1,282 @@
+{
+  "recent_meetings": [
+    {
+      "meeting_id": "MTG-CASE-05-02",
+      "meeting_title": "供应商模具评审会",
+      "meeting_time": "2026-04-22 10:30 - 11:45",
+      "review_status": "部分留痕缺失",
+      "summary": [
+        "供应商A模具评审发现3处曲面壁厚不均。",
+        "返工预计5-7天，调整拔模角度可压缩到4天。",
+        "成本上升15%先不纠结，保证设计效果。",
+        "同步调整拔模角度压缩返工周期"
+      ]
+    },
+    {
+      "meeting_id": "MTG-CASE-05-01",
+      "meeting_title": "V1.5迭代同步会",
+      "meeting_time": "2026-04-21 09:15 - 10:30",
+      "review_status": "需复核",
+      "summary": [
+        "智能音箱和扫地机器人外观本周必须冻结。",
+        "智能门锁防水等级变更已同步到文档。",
+        "设计效果优先，成本问题单独沟通。",
+        "外观冻结本周完成"
+      ]
+    }
+  ],
+  "past_evaluations": [],
+  "risk_history": [
+    {
+      "record_id": "reccase05task001",
+      "task_id": "PJT-CASE-05-TASK-01",
+      "risk_id": "",
+      "field_changes": [
+        {
+          "field": "status",
+          "old_value": "待开始",
+          "new_value": "进行中",
+          "operator": {
+            "open_id": "ou_case05zhoumutarget001",
+            "name": "周牧"
+          },
+          "update_time": "2026-04-02 09:15"
+        },
+        {
+          "field": "status",
+          "old_value": "进行中",
+          "new_value": "已完成",
+          "operator": {
+            "open_id": "ou_case05zhoumutarget001",
+            "name": "周牧"
+          },
+          "update_time": "2026-04-05 17:30"
+        }
+      ]
+    },
+    {
+      "record_id": "reccase05task002",
+      "task_id": "PJT-CASE-05-TASK-02",
+      "risk_id": "",
+      "field_changes": [
+        {
+          "field": "status",
+          "old_value": "待开始",
+          "new_value": "进行中",
+          "operator": {
+            "open_id": "ou_case05zhoumutarget001",
+            "name": "周牧"
+          },
+          "update_time": "2026-04-02 09:15"
+        },
+        {
+          "field": "status",
+          "old_value": "进行中",
+          "new_value": "已完成",
+          "operator": {
+            "open_id": "ou_case05zhoumutarget001",
+            "name": "周牧"
+          },
+          "update_time": "2026-04-05 17:30"
+        }
+      ]
+    },
+    {
+      "record_id": "reccase05task003",
+      "task_id": "PJT-CASE-05-TASK-03",
+      "risk_id": "",
+      "field_changes": [
+        {
+          "field": "status",
+          "old_value": "待开始",
+          "new_value": "进行中",
+          "operator": {
+            "open_id": "ou_case05zhoumutarget001",
+            "name": "周牧"
+          },
+          "update_time": "2026-04-05 09:00"
+        },
+        {
+          "field": "status",
+          "old_value": "进行中",
+          "new_value": "已完成",
+          "operator": {
+            "open_id": "ou_case05zhoumutarget001",
+            "name": "周牧"
+          },
+          "update_time": "2026-04-08 16:45"
+        }
+      ]
+    },
+    {
+      "record_id": "reccase05task007",
+      "task_id": "PJT-CASE-05-TASK-07",
+      "risk_id": "",
+      "field_changes": [
+        {
+          "field": "status",
+          "old_value": "待开始",
+          "new_value": "进行中",
+          "operator": {
+            "open_id": "ou_case05zhoumutarget001",
+            "name": "周牧"
+          },
+          "update_time": "2026-04-15 09:00"
+        },
+        {
+          "field": "status",
+          "old_value": "进行中",
+          "new_value": "已完成",
+          "operator": {
+            "open_id": "ou_case05zhoumutarget001",
+            "name": "周牧"
+          },
+          "update_time": "2026-04-18 15:20"
+        }
+      ]
+    },
+    {
+      "record_id": "reccase05task509",
+      "task_id": "PJT-CASE-05-TASK-09",
+      "risk_id": "",
+      "field_changes": [
+        {
+          "field": "status",
+          "old_value": "待开始",
+          "new_value": "进行中",
+          "operator": {
+            "open_id": "ou_case05zhoumutarget001",
+            "name": "周牧"
+          },
+          "update_time": "2026-04-22 09:00"
+        },
+        {
+          "field": "status",
+          "old_value": "进行中",
+          "new_value": "已完成",
+          "operator": {
+            "open_id": "ou_case05zhoumutarget001",
+            "name": "周牧"
+          },
+          "update_time": "2026-04-25 17:00"
+        }
+      ]
+    },
+    {
+      "record_id": "reccase05task510",
+      "task_id": "PJT-CASE-05-TASK-10",
+      "risk_id": "",
+      "field_changes": [
+        {
+          "field": "status",
+          "old_value": "待开始",
+          "new_value": "进行中",
+          "operator": {
+            "open_id": "ou_case05zhoumutarget001",
+            "name": "周牧"
+          },
+          "update_time": "2026-04-22 09:00"
+        },
+        {
+          "field": "due_date",
+          "old_value": "2026-04-25 18:00",
+          "new_value": "2026-04-25 17:00",
+          "operator": {
+            "open_id": "ou_case05zhoumutarget001",
+            "name": "周牧"
+          },
+          "update_time": "2026-04-25 10:30"
+        },
+        {
+          "field": "status",
+          "old_value": "进行中",
+          "new_value": "已完成",
+          "operator": {
+            "open_id": "ou_case05zhoumutarget001",
+            "name": "周牧"
+          },
+          "update_time": "2026-04-25 17:00"
+        }
+      ]
+    },
+    {
+      "record_id": "reccase05task512",
+      "task_id": "PJT-CASE-05-TASK-12",
+      "risk_id": "",
+      "field_changes": [
+        {
+          "field": "status",
+          "old_value": "待开始",
+          "new_value": "进行中",
+          "operator": {
+            "open_id": "ou_case05suppliermgr003",
+            "name": "林峰"
+          },
+          "update_time": "2026-04-22 14:00"
+        },
+        {
+          "field": "due_date",
+          "old_value": "2026-04-28 18:00",
+          "new_value": "2026-04-29 18:00",
+          "operator": {
+            "open_id": "ou_case05suppliermgr003",
+            "name": "林峰"
+          },
+          "update_time": "2026-04-24 10:00"
+        }
+      ]
+    },
+    {
+      "record_id": "reccase05risk008",
+      "task_id": "",
+      "risk_id": "PJT-CASE-05-RISK-08",
+      "field_changes": [
+        {
+          "field": "followup_status",
+          "old_value": "open",
+          "new_value": "tracking",
+          "operator": {
+            "open_id": "ou_case05zhoumutarget001",
+            "name": "周牧"
+          },
+          "update_time": "2026-04-21 11:00"
+        },
+        {
+          "field": "followup_status",
+          "old_value": "tracking",
+          "new_value": "open",
+          "operator": {
+            "open_id": "ou_case05zhoumutarget001",
+            "name": "周牧"
+          },
+          "update_time": "2026-04-24 10:00"
+        }
+      ]
+    }
+  ],
+  "history_meetings": [
+    {
+      "meeting_id": "MTG-CASE-05-02",
+      "summary": "供应商模具评审会：供应商A模具评审发现3处曲面壁厚不均。；返工预计5-7天，调整拔模角度可压缩到4天。"
+    },
+    {
+      "meeting_id": "MTG-CASE-05-01",
+      "summary": "V1.5迭代同步会：智能音箱和扫地机器人外观本周必须冻结。；智能门锁防水等级变更已同步到文档。"
+    }
+  ],
+  "task_closure_notes": [
+    "undefined 智能音箱概念设计稿输出 状态=已完成 owner=周牧 DDL=2026-04-05",
+    "undefined 扫地机器人概念设计稿输出 状态=已完成 owner=周牧 DDL=2026-04-05",
+    "undefined 智能门锁概念设计稿输出 状态=已完成 owner=周牧 DDL=2026-04-08",
+    "undefined 概念设计评审会组织 状态=已完成 owner=周牧 DDL=2026-04-10",
+    "undefined 品牌颜色方案调整 状态=已完成 owner=赵雪 DDL=2026-04-15",
+    "undefined 供应商A报价评估 状态=已完成 owner=林峰 DDL=2026-04-12"
+  ],
+  "risk_notes": [
+    "undefined 供应商A模具曲面壁厚不均，需返工3处，可能延误T0节点 跟进状态=open",
+    "undefined 智能门锁防水等级从IPX4提升至IPX6，外观开口需重新设计 跟进状态=open",
+    "undefined 竞品发布相似外观方案，存在专利侵权风险 跟进状态=open",
+    "undefined 核心注塑供应商Q2产能饱和，模具排期可能延后10天 跟进状态=open",
+    "undefined ID曲面导致模具成本上升15% 跟进状态=tracking"
+  ]
+}

@@ -146,6 +146,8 @@ node scripts/demo/run_evaluation_automation.js --input-dir data/fixtures/feishu_
 - 评估规划
 - 各 Agent request 生成
 - `automation_summary.json` 汇总
+- `observability_summary.json`、`observability.md`
+- `full_loop_observability.md`
 
 但不会真正请求 LLM。
 
@@ -156,6 +158,25 @@ node scripts/demo/run_evaluation_automation.js --input-dir data/fixtures/feishu_
 ```bash
 node scripts/demo/run_evaluation_automation.js --input-dir data/fixtures/feishu_cli_case_05_desktop_robot --output-dir data/outputs/demo/case05/auto_with_model
 ```
+
+### 6.4 生成完整观测文档
+
+统一入口：
+
+```bash
+node scripts/dev/write_full_loop_observability_md.js --input-dir data/outputs/demo/case04/current
+```
+
+也可以显式指定标题和输出路径：
+
+```bash
+node scripts/dev/write_full_loop_observability_md.js --input-dir data/outputs/demo/case05/auto --output docs/observability/case05_full_loop_observability.md --title "Case 05 Full Loop Observability"
+```
+
+说明：
+
+- 如果 `--output` 未传，脚本会尽量从 `input-dir` 推断 `caseXX_full_loop_observability.md`
+- `evaluation_automation` 主流程在成功产出完整链路文件后，也会自动生成同一份 full loop observability 文档
 
 ## 7. 常用 npm 脚本
 
@@ -172,7 +193,9 @@ node scripts/demo/run_evaluation_automation.js --input-dir data/fixtures/feishu_
 | `npm run review:coordination:case04` | 生成协同评审 request |
 | `npm run assess:capability:case04` | 生成综合能力评估结果 |
 | `npm run report:case04` | 生成报告结果 |
-| `npm run observability:case04` | 输出可观测性 Markdown |
+| `npm run observability:write -- --input-dir <dir>` | 用统一入口生成 full loop 可观测性 Markdown |
+| `npm run observability:case04` | 生成 Case 04 full loop 可观测性 Markdown |
+| `npm run observability:case05` | 生成 Case 05 full loop 可观测性 Markdown |
 | `npm run writeback:csv:case04` | 生成飞书 Base 回写 CSV |
 | `npm run auto:case05` | 跑 Case 05 自动化样例 |
 | `npm run automation:run` | 通用自动化入口 |
@@ -233,8 +256,38 @@ run data/fixtures/feishu_cli_case_05_desktop_robot --no-model
 - 领域计算结果：`hard_metrics_result.json`、`evaluation_plan.json`
 - Agent 请求与结果：`*_request.json`、`*_result.json`
 - 总结文件：`automation_summary.json`
+- 观测文件：`observability_summary.json`、`observability.md`、`full_loop_observability.md`
 
 演示输出默认位于 `data/outputs/demo/`。
+
+### 9.3 Schema 版本与校验
+
+当前仓库已经把 schema 约定集中到：
+
+- `schemas/schema_manifest.json`
+- `schemas/*.schema.json`
+
+当前 schema bundle 版本为 `2026-05-05.v1`，采用 JSON Schema `draft/2020-12`。
+
+校验策略分三层：
+
+- 确定性产物在函数返回前做严格校验
+- 关键 JSON 文件在读写时做严格校验
+- LLM 结果在归一化后做严格校验，失败即中断，不静默落盘
+
+可以单独对某个输出目录执行离线校验：
+
+```bash
+node scripts/dev/validate_artifact_dir.js --input-dir <your-output-dir>
+```
+
+如果你想直接跑一遍带产物生成的 smoke validation：
+
+```bash
+npm run validate:smoke
+```
+
+详细约定见：[docs/architecture/schema_version_and_validation.md](docs/architecture/schema_version_and_validation.md)
 
 ## 10. 核心工作流
 
@@ -285,6 +338,7 @@ run data/fixtures/feishu_cli_case_05_desktop_robot --no-model
 - 架构规划：[docs/architecture/项目结构规划.md](docs/architecture/项目结构规划.md)
 - 飞书 Bot 自动化：[docs/architecture/feishu_bot_automation.md](docs/architecture/feishu_bot_automation.md)
 - 可观测性样例：[docs/observability/case04_full_loop_observability.md](docs/observability/case04_full_loop_observability.md)
+- 可观测性样例（Case 05）：[docs/observability/case05_full_loop_observability.md](docs/observability/case05_full_loop_observability.md)
 
 ## 13. 当前状态与建议
 
@@ -297,7 +351,7 @@ run data/fixtures/feishu_cli_case_05_desktop_robot --no-model
 
 - 补充测试目录下的单元测试和集成测试
 - 进一步完善真实飞书数据拉取与回写闭环
-- 明确 schema 版本和结果校验策略
+- 扩展 `automation_summary`、观测性文件和 CSV 回写文件的 schema 覆盖范围
 - 清理本地调试配置，避免提交真实密钥
 
 ---

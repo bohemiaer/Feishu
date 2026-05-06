@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "observability_summary.schema.json",
+  "title": "ObservabilitySummary",
+  "type": "object",
+  "required": [
+    "generated_at",
+    "bundle_path",
+    "output_dir",
+    "selected_meeting_id",
+    "trigger_type",
+    "call_model",
+    "run_status",
+    "run_started_at",
+    "run_finished_at",
+    "total_duration_ms",
+    "error_message",
+    "front_pipeline",
+    "hard_metrics",
+    "evaluation_plan",
+    "data_counts",
+    "observability_issue_count",
+    "observability_issues",
+    "meeting_selection_attempts",
+    "agent_runs",
+    "files"
+  ],
+  "properties": {
+    "generated_at": { "type": "string" },
+    "bundle_path": { "type": ["string", "null"] },
+    "output_dir": { "type": "string" },
+    "selected_meeting_id": { "type": ["string", "null"] },
+    "trigger_type": { "type": ["string", "null"] },
+    "call_model": { "type": "boolean" },
+    "run_status": {
+      "type": "string",
+      "enum": ["completed", "degraded", "blocked", "failed"]
+    },
+    "run_started_at": { "type": ["string", "null"] },
+    "run_finished_at": { "type": ["string", "null"] },
+    "total_duration_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "error_message": { "type": ["string", "null"] },
+    "front_pipeline": {
+      "type": "object",
+      "required": [
+        "status",
+        "completeness_status",
+        "blocking_reason_count",
+        "degrade_reason_count",
+        "selection_attempt_count",
+        "fallback_used",
+        "duration_ms"
+      ],
+      "properties": {
+        "status": { "type": "string" },
+        "completeness_status": { "type": "string" },
+        "blocking_reason_count": { "type": "integer", "minimum": 0 },
+        "degrade_reason_count": { "type": "integer", "minimum": 0 },
+        "selection_attempt_count": { "type": "integer", "minimum": 0 },
+        "fallback_used": { "type": "boolean" },
+        "duration_ms": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "hard_metrics": {
+      "type": "object",
+      "required": ["metric_quality_report", "duration_ms"],
+      "properties": {
+        "metric_quality_report": {
+          "type": ["object", "null"],
+          "additionalProperties": true
+        },
+        "duration_ms": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "evaluation_plan": {
+      "type": "object",
+      "required": ["execution_mode", "duration_ms"],
+      "properties": {
+        "execution_mode": { "type": ["string", "null"] },
+        "duration_ms": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "data_counts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "observability_issue_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "observability_issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["severity", "category", "message", "related_ids"],
+        "properties": {
+          "severity": { "type": "string" },
+          "category": { "type": "string" },
+          "message": { "type": "string" },
+          "related_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "meeting_selection_attempts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "meeting_id",
+          "status",
+          "completeness_status",
+          "blocking_reasons"
+        ],
+        "properties": {
+          "meeting_id": { "type": ["string", "null"] },
+          "status": { "type": "string" },
+          "completeness_status": { "type": "string" },
+          "blocking_reasons": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "agent_runs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "agent_key",
+          "display_name",
+          "status",
+          "started_at",
+          "finished_at",
+          "duration_ms",
+          "model_invoked",
+          "request_file",
+          "result_file",
+          "request_size_bytes",
+          "result_size_bytes",
+          "request_metric_count",
+          "request_human_review_rule_count",
+          "request_provenance_ref_count",
+          "finding_count",
+          "risk_flag_count",
+          "score_count",
+          "human_review_count",
+          "key_evidence_count",
+          "risk_alert_count",
+          "next_action_count",
+          "missing_upstream_result_count",
+          "error_message"
+        ],
+        "properties": {
+          "agent_key": { "type": "string" },
+          "display_name": { "type": "string" },
+          "status": { "type": "string" },
+          "started_at": { "type": ["string", "null"] },
+          "finished_at": { "type": ["string", "null"] },
+          "duration_ms": { "type": "integer", "minimum": 0 },
+          "model_invoked": { "type": "boolean" },
+          "request_file": { "type": ["string", "null"] },
+          "result_file": { "type": ["string", "null"] },
+          "request_size_bytes": { "type": "integer", "minimum": 0 },
+          "result_size_bytes": { "type": "integer", "minimum": 0 },
+          "request_metric_count": { "type": "integer", "minimum": 0 },
+          "request_human_review_rule_count": { "type": "integer", "minimum": 0 },
+          "request_provenance_ref_count": { "type": "integer", "minimum": 0 },
+          "finding_count": { "type": "integer", "minimum": 0 },
+          "risk_flag_count": { "type": "integer", "minimum": 0 },
+          "score_count": { "type": "integer", "minimum": 0 },
+          "human_review_count": { "type": "integer", "minimum": 0 },
+          "key_evidence_count": { "type": "integer", "minimum": 0 },
+          "risk_alert_count": { "type": "integer", "minimum": 0 },
+          "next_action_count": { "type": "integer", "minimum": 0 },
+          "missing_upstream_result_count": { "type": "integer", "minimum": 0 },
+          "error_message": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "files": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,65 @@
+{
+  "generated_at": "2026-05-06T10:02:16.626Z",
+  "run_finished_at": "2026-05-06T10:02:16.597Z",
+  "input_dir": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test",
+  "title": "Case 05 全链路可观测报告",
+  "output_markdown": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\full_loop_observability.md",
+  "markdown_sha256": "c6693b3938088eafd43e10e83165d4508a16653534d69b37d012cce9cbbb9bff",
+  "run_summary": {
+    "project_id": "PJT-CASE-05",
+    "manager_id": "MGR-CASE-05",
+    "meeting_id": "MTG-CASE-05-03",
+    "evaluation_period": "2026-01-01 ~ 2026-04-24",
+    "orchestration_status": "collected",
+    "completeness_status": "ready",
+    "assessment_status": "degraded",
+    "report_status": "degraded"
+  },
+  "missing_artifacts": [],
+  "observability_issues": [
+    {
+      "severity": "warning",
+      "category": "unresolved_reference",
+      "message": "capability_score:组织行为健康度:finding could not resolve ref: risk_behavior_auditor_result.risk_flags[2]",
+      "related_ids": [
+        "capability_score:组织行为健康度:finding",
+        "risk_behavior_auditor_result.risk_flags[2]"
+      ]
+    }
+  ],
+  "section_counts": {
+    "runtime_row_count": 9,
+    "source_coverage_count": 7,
+    "hard_metric_count": 15,
+    "expert_finding_count": 10,
+    "risk_flag_count": 3,
+    "capability_score_count": 5,
+    "report_item_count": 15
+  },
+  "files": {
+    "task_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\task_request.json",
+    "orchestration_state": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\orchestration_state.json",
+    "input_completeness_report": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\input_completeness_report.json",
+    "raw_payload": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\raw_payload.json",
+    "history_bundle": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\history_bundle.json",
+    "meeting_fact_pack": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\meeting_fact_pack.json",
+    "data_quality_report": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\data_quality_report.json",
+    "hard_metrics_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\hard_metrics_result.json",
+    "evaluation_plan": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\evaluation_plan.json",
+    "management_reviewer_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\management_reviewer_request.json",
+    "management_reviewer_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\management_reviewer_result.json",
+    "risk_behavior_auditor_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\risk_behavior_auditor_request.json",
+    "risk_behavior_auditor_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\risk_behavior_auditor_result.json",
+    "coordination_lens_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\coordination_lens_request.json",
+    "coordination_lens_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\coordination_lens_result.json",
+    "capability_assessor_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\capability_assessor_request.json",
+    "capability_assessor_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\capability_assessor_result.json",
+    "report_writer_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\report_writer_request.json",
+    "report_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\report_result.json",
+    "automation_summary": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\automation_summary.json",
+    "observability_summary": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\observability_summary.json",
+    "full_loop_observability": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\full_loop_observability.json",
+    "observability_markdown": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\observability.md",
+    "full_loop_observability_markdown": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\model_connect_test\\full_loop_observability.md"
+  }
+}

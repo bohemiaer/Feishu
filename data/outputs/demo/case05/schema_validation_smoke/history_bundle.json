@@ -1,0 +1,55 @@
+{
+  "recent_meetings": [
+    {
+      "meeting_id": "MTG-CASE-05-03",
+      "meeting_title": "供应链风险应急沟通",
+      "meeting_time": "2026-04-24 09:00 - 09:45",
+      "review_status": "补录摘要",
+      "summary": [
+        "核心注塑供应商Q2产能饱和，模具排期可能延后10天。",
+        "备选供应商B精度不达标，只能等A产能释放。",
+        "需要协调供应链总监争取插队。",
+        "协调供应链总监争取插队"
+      ]
+    },
+    {
+      "meeting_id": "MTG-CASE-05-02",
+      "meeting_title": "供应商模具评审会",
+      "meeting_time": "2026-04-22 10:30 - 11:45",
+      "review_status": "部分留痕缺失",
+      "summary": [
+        "供应商A模具评审发现3处曲面壁厚不均。",
+        "返工预计5-7天，调整拔模角度可压缩到4天。",
+        "成本上升15%先不纠结，保证设计效果。",
+        "同步调整拔模角度压缩返工周期"
+      ]
+    }
+  ],
+  "past_evaluations": [],
+  "risk_history": [],
+  "history_meetings": [
+    {
+      "meeting_id": "MTG-CASE-05-03",
+      "summary": "供应链风险应急沟通：核心注塑供应商Q2产能饱和，模具排期可能延后10天。；备选供应商B精度不达标，只能等A产能释放。"
+    },
+    {
+      "meeting_id": "MTG-CASE-05-02",
+      "summary": "供应商模具评审会：供应商A模具评审发现3处曲面壁厚不均。；返工预计5-7天，调整拔模角度可压缩到4天。"
+    }
+  ],
+  "task_closure_notes": [
+    "undefined 智能音箱概念设计稿输出 状态=已完成 owner=周牧 DDL=2026-04-05",
+    "undefined 扫地机器人概念设计稿输出 状态=已完成 owner=周牧 DDL=2026-04-05",
+    "undefined 智能门锁概念设计稿输出 状态=已完成 owner=周牧 DDL=2026-04-08",
+    "undefined 概念设计评审会组织 状态=已完成 owner=周牧 DDL=2026-04-10",
+    "undefined 品牌颜色方案调整 状态=已完成 owner=赵雪 DDL=2026-04-15",
+    "undefined 供应商A报价评估 状态=已完成 owner=林峰 DDL=2026-04-12"
+  ],
+  "risk_notes": [
+    "undefined 供应商A模具曲面壁厚不均，需返工3处，可能延误T0节点 跟进状态=open",
+    "undefined 智能门锁防水等级从IPX4提升至IPX6，外观开口需重新设计 跟进状态=open",
+    "undefined 竞品发布相似外观方案，存在专利侵权风险 跟进状态=open",
+    "undefined 核心注塑供应商Q2产能饱和，模具排期可能延后10天 跟进状态=open",
+    "undefined ID曲面导致模具成本上升15% 跟进状态=tracking"
+  ]
+}

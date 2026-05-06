@@ -1,7 +1,7 @@
 "use strict";
 
 const path = require("path");
-const { readJson, writeJson } = require("../../src/shared/fs_utils");
+const { readArtifactJson, writeArtifactJson } = require("../../src/shared/schema_validation");
 const { auditRiskBehavior, buildRiskBehaviorAuditRequest } = require("../../src/agents/risk_behavior_auditor");
 
 function parseArgs(argv) {
@@ -22,18 +22,18 @@ async function main() {
   const inputDir = path.resolve(args["input-dir"] || "data/outputs/demo/case04/current");
   const requestOutput = path.resolve(args["request-output"] || path.join(inputDir, "risk_behavior_auditor_request.json"));
   const request = buildRiskBehaviorAuditRequest({
-    meetingFactPack: readJson(path.join(inputDir, "meeting_fact_pack.json")),
-    historyBundle: readJson(path.join(inputDir, "history_bundle.json")),
-    hardMetricsResult: readJson(path.join(inputDir, "hard_metrics_result.json")),
-    rawPayload: readJson(path.join(inputDir, "raw_payload.json")),
-    evaluationPlan: readJson(path.join(inputDir, "evaluation_plan.json"))
+    meetingFactPack: readArtifactJson(path.join(inputDir, "meeting_fact_pack.json")),
+    historyBundle: readArtifactJson(path.join(inputDir, "history_bundle.json")),
+    hardMetricsResult: readArtifactJson(path.join(inputDir, "hard_metrics_result.json")),
+    rawPayload: readArtifactJson(path.join(inputDir, "raw_payload.json")),
+    evaluationPlan: readArtifactJson(path.join(inputDir, "evaluation_plan.json"))
   });
 
-  writeJson(requestOutput, request);
+  writeArtifactJson(requestOutput, request);
 
   if (args["call-model"]) {
     const output = path.resolve(args.output || path.join(inputDir, "risk_behavior_auditor_result.json"));
-    writeJson(output, await auditRiskBehavior(request));
+    writeArtifactJson(output, await auditRiskBehavior(request));
   }
 
   process.stdout.write(JSON.stringify({

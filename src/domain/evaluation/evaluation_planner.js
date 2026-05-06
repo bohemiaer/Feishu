@@ -1,5 +1,7 @@
 "use strict";
 
+const { assertArtifactValid } = require("../../shared/schema_validation");
+
 function nowIso() {
   return new Date().toISOString();
 }
@@ -261,7 +263,7 @@ function runEvaluationPlanner({
       : []
   };
 
-  return {
+  return assertArtifactValid("evaluation_plan", {
     task_context: meetingFactPack.task_context,
     generated_at: nowIso(),
     project_id: meetingFactPack.meeting_info.project_id,
@@ -282,7 +284,7 @@ function runEvaluationPlanner({
       `聊天样本数：${rawPayload && rawPayload.raw_payload ? asArray(rawPayload.raw_payload.chat_history).length : 0}`,
       `硬指标数：${hardMetricsResult && hardMetricsResult.metric_quality_report ? hardMetricsResult.metric_quality_report.metric_count : 0}`
     ]
-  };
+  });
 }
 
 module.exports = {

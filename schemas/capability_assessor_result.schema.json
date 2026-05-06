@@ -65,6 +65,10 @@
             "type": "array",
             "items": { "type": "object" }
           },
+          "supporting_soft_indicator_refs": {
+            "type": "array",
+            "items": { "type": "object" }
+          },
           "evidence_quotes": {
             "type": "array",
             "items": {

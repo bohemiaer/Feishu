@@ -1,6 +1,7 @@
 "use strict";
 
 const { callJsonModel } = require("../llm/client");
+const { assertArtifactValid } = require("../shared/schema_validation");
 
 const SYSTEM_PROMPT = `
 你是 Risk & Behavior Auditor，负责风险治理力与组织行为健康度审计。
@@ -23,6 +24,27 @@ const SYSTEM_PROMPT = `
   "project_id": "",
   "manager_id": "",
   "dimension_findings": [],
+  "soft_indicators": [
+    {
+      "indicator_id": "",
+      "dimension": "风险治理力",
+      "label": "",
+      "score": 0,
+      "confidence": 0.0,
+      "score_basis": "",
+      "evidence_refs": [
+        {
+          "source_type": "",
+          "source_file": "",
+          "source_id": "",
+          "timestamp": "",
+          "excerpt": "",
+          "evidence_note": ""
+        }
+      ],
+      "limitations": []
+    }
+  ],
   "risk_flags": [
     {
       "flag_id": "",
@@ -48,6 +70,9 @@ const SYSTEM_PROMPT = `
 }
 
 硬性证据要求：
+- 你必须先为风险治理力、组织行为健康度计算 2-4 个 soft_indicators，再输出 findings 和 risk_flags
+- soft_indicators 是专家根据多条证据归纳出的软指标，不得复写 hard_metrics 中已有 metric_id
+- soft_indicators 的 score_basis 必须说明它如何结合事实与 hard_metrics
 - dimension_findings、risk_flags、human_review_items 中每一条都必须至少包含 1 条 evidence_refs
 - evidence_refs 不得只写 ID；必须包含 source_type、source_file、source_id、timestamp、excerpt、evidence_note
 - excerpt 必须引用输入原文或硬指标计算表达式，不得写成二次总结
@@ -103,7 +128,7 @@ function buildRiskBehaviorAuditRequest({
 }) {
   const raw = rawPayload && rawPayload.raw_payload ? rawPayload.raw_payload : {};
 
-  return {
+  return assertArtifactValid("risk_behavior_auditor_request", {
     task_context: meetingFactPack.task_context,
     meeting_id: meetingFactPack.meeting_info.meeting_id,
     project_id: meetingFactPack.meeting_info.project_id,
@@ -140,7 +165,7 @@ function buildRiskBehaviorAuditRequest({
         "late_night_manager_message_rate"
       ].includes(item.metric_id)
     )
-  };
+  });
 }
 
 function normalizeEvidenceRefs(refs) {
@@ -166,13 +191,47 @@ function normalizeEvidenceRefs(refs) {
   });
 }
 
+function normalizeRiskBehaviorDimension(value, fallbackDimension) {
+  if (value === "风险治理力" || value === "组织行为健康度") {
+    return value;
+  }
+  const text = String(value || "");
+  if (/风险|治理|缓释|升级|收口/.test(text)) {
+    return "风险治理力";
+  }
+  if (/行为|健康|语言|高压|深夜/.test(text)) {
+    return "组织行为健康度";
+  }
+  return fallbackDimension;
+}
+
+function placeholderEvidenceRef(text) {
+  return {
+    source_type: "unresolved_ref",
+    source_file: "",
+    source_id: "manual_review_required",
+    timestamp: "",
+    excerpt: text || "manual_review_required",
+    evidence_note: "No structured evidence ref was returned by the model; manual review required."
+  };
+}
+
+function ensureEvidenceRefs(refs, fallbackText) {
+  return Array.isArray(refs) && refs.length > 0
+    ? refs
+    : [placeholderEvidenceRef(fallbackText)];
+}
+
 function normalizeFinding(item, index, riskFlags) {
   if (typeof item === "string") {
     return {
       dimension: item.includes("组织行为") ? "组织行为健康度" : "风险治理力",
       finding_type: "observation",
       summary: item,
-      evidence_refs: normalizeEvidenceRefs(riskFlags.flatMap((flag) => flag.evidence_refs || [])).slice(0, 3),
+      evidence_refs: ensureEvidenceRefs(
+        normalizeEvidenceRefs(riskFlags.flatMap((flag) => flag.evidence_refs || [])).slice(0, 3),
+        item
+      ),
       confidence: 0.6,
       risk_tags: [],
       suggested_actions: []
@@ -180,13 +239,35 @@ function normalizeFinding(item, index, riskFlags) {
   }
 
   return {
-    dimension: item.dimension || (index === 1 ? "组织行为健康度" : "风险治理力"),
+    dimension: normalizeRiskBehaviorDimension(
+      item.dimension,
+      index === 1 ? "组织行为健康度" : "风险治理力"
+    ),
     finding_type: item.finding_type || item.type || "observation",
     summary: item.summary || item.finding || item.description || "",
-    evidence_refs: normalizeEvidenceRefs(item.evidence_refs || []),
+    evidence_refs: ensureEvidenceRefs(
+      normalizeEvidenceRefs(item.evidence_refs || []),
+      item.summary || item.finding || item.description || ""
+    ),
     confidence: typeof item.confidence === "number" ? item.confidence : 0.7,
     risk_tags: Array.isArray(item.risk_tags) ? item.risk_tags : [],
     suggested_actions: Array.isArray(item.suggested_actions) ? item.suggested_actions : []
+  };
+}
+
+function normalizeSoftIndicator(item, fallbackDimension) {
+  return {
+    indicator_id: item.indicator_id || item.id || "",
+    dimension: normalizeRiskBehaviorDimension(item.dimension, fallbackDimension),
+    label: item.label || item.name || "",
+    score: typeof item.score === "number" ? Math.round(item.score) : 0,
+    confidence: typeof item.confidence === "number" ? item.confidence : 0.7,
+    score_basis: item.score_basis || item.summary || "",
+    evidence_refs: ensureEvidenceRefs(
+      normalizeEvidenceRefs(item.evidence_refs || []),
+      item.score_basis || item.summary || item.label || ""
+    ),
+    limitations: Array.isArray(item.limitations) ? item.limitations : []
   };
 }
 
@@ -201,8 +282,14 @@ function normalizeHumanReviewItem(item, flagsById) {
     review_id: item.review_id || item.item_id || item.id || "",
     reason: item.reason || item.review_reason || "",
     severity: item.severity || "medium",
-    related_dimension: item.related_dimension || (relatedFlagIds.some((flagId) => /^BF/.test(flagId)) ? "组织行为健康度" : "风险治理力"),
-    evidence_refs: evidenceRefs.length > 0 ? evidenceRefs : normalizeEvidenceRefs(fallbackRefs).slice(0, 3)
+    related_dimension: normalizeRiskBehaviorDimension(
+      item.related_dimension,
+      relatedFlagIds.some((flagId) => /^BF/.test(flagId)) ? "组织行为健康度" : "风险治理力"
+    ),
+    evidence_refs: ensureEvidenceRefs(
+      evidenceRefs.length > 0 ? evidenceRefs : normalizeEvidenceRefs(fallbackRefs).slice(0, 3),
+      item.reason || item.review_reason || ""
+    )
   };
 }
 
@@ -212,7 +299,10 @@ function normalizeRiskBehaviorResult(result) {
     flag_type: flag.flag_type || "risk_governance",
     severity: flag.severity || "medium",
     summary: flag.summary || flag.description || "",
-    evidence_refs: normalizeEvidenceRefs(flag.evidence_refs || []),
+    evidence_refs: ensureEvidenceRefs(
+      normalizeEvidenceRefs(flag.evidence_refs || []),
+      flag.summary || flag.description || ""
+    ),
     confidence: typeof flag.confidence === "number" ? flag.confidence : 0.7,
     requires_human_review: flag.requires_human_review !== false
   }));
@@ -224,6 +314,8 @@ function normalizeRiskBehaviorResult(result) {
     manager_id: result.manager_id || "",
     dimension_findings: (Array.isArray(result.dimension_findings) ? result.dimension_findings : [])
       .map((item, index) => normalizeFinding(item, index, riskFlags)),
+    soft_indicators: (Array.isArray(result.soft_indicators) ? result.soft_indicators : [])
+      .map((item) => normalizeSoftIndicator(item, item.dimension || "风险治理力")),
     risk_flags: riskFlags,
     human_review_items: (Array.isArray(result.human_review_items) ? result.human_review_items : [])
       .map((item) => normalizeHumanReviewItem(item, flagsById)),
@@ -237,7 +329,9 @@ async function auditRiskBehavior(request) {
     userPrompt: JSON.stringify(request, null, 2),
     temperature: 0.2
   });
-  return normalizeRiskBehaviorResult(result);
+  return assertArtifactValid("risk_behavior_auditor_result", normalizeRiskBehaviorResult(result), {
+    stage: "post_model"
+  });
 }
 
 module.exports = {

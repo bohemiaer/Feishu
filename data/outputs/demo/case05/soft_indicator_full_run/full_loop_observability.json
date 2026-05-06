@@ -1,0 +1,182 @@
+{
+  "generated_at": "2026-05-06T10:39:31.557Z",
+  "run_finished_at": "2026-05-06T10:39:31.532Z",
+  "input_dir": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run",
+  "title": "Case 05 全链路可观测报告",
+  "output_markdown": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\full_loop_observability.md",
+  "markdown_sha256": "9b8302f09f5efc9e664b9083fd9630729444e7cb9434838d211c4c2fa0b60de2",
+  "run_summary": {
+    "project_id": "PJT-CASE-05",
+    "manager_id": "MGR-CASE-05",
+    "meeting_id": "MTG-CASE-05-03",
+    "evaluation_period": "2026-01-01 ~ 2026-04-24",
+    "orchestration_status": "collected",
+    "completeness_status": "ready",
+    "assessment_status": "degraded",
+    "report_status": "degraded"
+  },
+  "missing_artifacts": [],
+  "observability_issues": [
+    {
+      "severity": "warning",
+      "category": "unresolved_reference",
+      "message": "report_score_overview:1 could not resolve ref: soft_direction_clarity_under_risk",
+      "related_ids": [
+        "report_score_overview:1",
+        "soft_direction_clarity_under_risk"
+      ]
+    },
+    {
+      "severity": "warning",
+      "category": "unresolved_reference",
+      "message": "report_score_overview:1 could not resolve ref: soft_historical_decision_consistency",
+      "related_ids": [
+        "report_score_overview:1",
+        "soft_historical_decision_consistency"
+      ]
+    },
+    {
+      "severity": "warning",
+      "category": "unresolved_reference",
+      "message": "report_score_overview:2 could not resolve ref: soft_action_to_task_conversion_rigor",
+      "related_ids": [
+        "report_score_overview:2",
+        "soft_action_to_task_conversion_rigor"
+      ]
+    },
+    {
+      "severity": "warning",
+      "category": "unresolved_reference",
+      "message": "report_score_overview:3 could not resolve ref: SI_RG_02",
+      "related_ids": [
+        "report_score_overview:3",
+        "SI_RG_02"
+      ]
+    },
+    {
+      "severity": "warning",
+      "category": "unresolved_reference",
+      "message": "report_score_overview:4 could not resolve ref: soft_coord_001",
+      "related_ids": [
+        "report_score_overview:4",
+        "soft_coord_001"
+      ]
+    },
+    {
+      "severity": "warning",
+      "category": "unresolved_reference",
+      "message": "report_score_overview:4 could not resolve ref: soft_coord_002",
+      "related_ids": [
+        "report_score_overview:4",
+        "soft_coord_002"
+      ]
+    },
+    {
+      "severity": "warning",
+      "category": "unresolved_reference",
+      "message": "report_score_overview:5 could not resolve ref: SI_OBH_01",
+      "related_ids": [
+        "report_score_overview:5",
+        "SI_OBH_01"
+      ]
+    },
+    {
+      "severity": "warning",
+      "category": "unresolved_reference",
+      "message": "report_score_overview:5 could not resolve ref: SI_OBH_02",
+      "related_ids": [
+        "report_score_overview:5",
+        "SI_OBH_02"
+      ]
+    },
+    {
+      "severity": "warning",
+      "category": "unresolved_reference",
+      "message": "report_key_evidence:1 could not resolve ref: soft_coord_001",
+      "related_ids": [
+        "report_key_evidence:1",
+        "soft_coord_001"
+      ]
+    },
+    {
+      "severity": "warning",
+      "category": "unresolved_reference",
+      "message": "report_risk_alert:2 could not resolve ref: soft_action_to_task_conversion_rigor",
+      "related_ids": [
+        "report_risk_alert:2",
+        "soft_action_to_task_conversion_rigor"
+      ]
+    },
+    {
+      "severity": "warning",
+      "category": "unresolved_reference",
+      "message": "report_next_action:1 could not resolve ref: HR_ACTION_MAPPING_01",
+      "related_ids": [
+        "report_next_action:1",
+        "HR_ACTION_MAPPING_01"
+      ]
+    },
+    {
+      "severity": "warning",
+      "category": "unresolved_reference",
+      "message": "report_next_action:2 could not resolve ref: HR_RG_01",
+      "related_ids": [
+        "report_next_action:2",
+        "HR_RG_01"
+      ]
+    },
+    {
+      "severity": "warning",
+      "category": "unresolved_reference",
+      "message": "report_next_action:3 could not resolve ref: HR_COORD_001",
+      "related_ids": [
+        "report_next_action:3",
+        "HR_COORD_001"
+      ]
+    },
+    {
+      "severity": "warning",
+      "category": "unresolved_reference",
+      "message": "report_next_action:4 could not resolve ref: HR_MISSING_TRANSCRIPT_01",
+      "related_ids": [
+        "report_next_action:4",
+        "HR_MISSING_TRANSCRIPT_01"
+      ]
+    }
+  ],
+  "section_counts": {
+    "runtime_row_count": 9,
+    "source_coverage_count": 7,
+    "hard_metric_count": 15,
+    "expert_finding_count": 7,
+    "risk_flag_count": 2,
+    "capability_score_count": 5,
+    "report_item_count": 16
+  },
+  "files": {
+    "task_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\task_request.json",
+    "orchestration_state": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\orchestration_state.json",
+    "input_completeness_report": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\input_completeness_report.json",
+    "raw_payload": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\raw_payload.json",
+    "history_bundle": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\history_bundle.json",
+    "meeting_fact_pack": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\meeting_fact_pack.json",
+    "data_quality_report": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\data_quality_report.json",
+    "hard_metrics_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\hard_metrics_result.json",
+    "evaluation_plan": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\evaluation_plan.json",
+    "management_reviewer_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\management_reviewer_request.json",
+    "management_reviewer_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\management_reviewer_result.json",
+    "risk_behavior_auditor_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\risk_behavior_auditor_request.json",
+    "risk_behavior_auditor_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\risk_behavior_auditor_result.json",
+    "coordination_lens_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\coordination_lens_request.json",
+    "coordination_lens_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\coordination_lens_result.json",
+    "capability_assessor_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\capability_assessor_request.json",
+    "capability_assessor_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\capability_assessor_result.json",
+    "report_writer_request": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\report_writer_request.json",
+    "report_result": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\report_result.json",
+    "automation_summary": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\automation_summary.json",
+    "observability_summary": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\observability_summary.json",
+    "full_loop_observability": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\full_loop_observability.json",
+    "observability_markdown": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\observability.md",
+    "full_loop_observability_markdown": "D:\\Users\\HCI_lab\\Desktop\\github\\飞书比赛\\data\\outputs\\demo\\case05\\soft_indicator_full_run\\full_loop_observability.md"
+  }
+}

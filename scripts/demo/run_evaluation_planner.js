@@ -1,7 +1,7 @@
 "use strict";
 
 const path = require("path");
-const { readJson, writeJson } = require("../../src/shared/fs_utils");
+const { readArtifactJson, writeArtifactJson } = require("../../src/shared/schema_validation");
 const { runEvaluationPlanner } = require("../../src/domain/evaluation/evaluation_planner");
 
 function parseArgs(argv) {
@@ -22,16 +22,16 @@ function main() {
   const inputDir = path.resolve(args["input-dir"] || "data/outputs/demo/case04/current");
   const outputPath = path.resolve(args.output || path.join(inputDir, "evaluation_plan.json"));
   const result = runEvaluationPlanner({
-    taskRequest: readJson(path.join(inputDir, "task_request.json")),
-    meetingFactPack: readJson(path.join(inputDir, "meeting_fact_pack.json")),
-    historyBundle: readJson(path.join(inputDir, "history_bundle.json")),
-    rawPayload: readJson(path.join(inputDir, "raw_payload.json")),
-    dataQualityReport: readJson(path.join(inputDir, "data_quality_report.json")),
-    inputCompletenessReport: readJson(path.join(inputDir, "input_completeness_report.json")),
-    hardMetricsResult: readJson(path.join(inputDir, "hard_metrics_result.json"))
+    taskRequest: readArtifactJson(path.join(inputDir, "task_request.json")),
+    meetingFactPack: readArtifactJson(path.join(inputDir, "meeting_fact_pack.json")),
+    historyBundle: readArtifactJson(path.join(inputDir, "history_bundle.json")),
+    rawPayload: readArtifactJson(path.join(inputDir, "raw_payload.json")),
+    dataQualityReport: readArtifactJson(path.join(inputDir, "data_quality_report.json")),
+    inputCompletenessReport: readArtifactJson(path.join(inputDir, "input_completeness_report.json")),
+    hardMetricsResult: readArtifactJson(path.join(inputDir, "hard_metrics_result.json"))
   });
 
-  writeJson(outputPath, result);
+  writeArtifactJson(outputPath, result);
   process.stdout.write(JSON.stringify({
     output: outputPath,
     execution_mode: result.evaluation_focus.execution_mode,

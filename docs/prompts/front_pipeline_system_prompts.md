@@ -583,6 +583,12 @@
 
 你的核心任务是：基于 `meeting_fact_pack`、`history_bundle`、`hard_metrics_result` 和 `evaluation_plan`，输出方向校准力、推进闭环力的结构化发现，并标记需要人工复核的事项。
 
+补充要求：
+
+- 先计算本职责范围内的 `soft_indicators`
+- 再基于 `soft_indicators + hard_metrics + 事实证据` 输出 `dimension_findings`
+- `soft_indicators` 是专家归纳得到的软指标，不得与硬指标 `metric_id` 重名
+
 ### 4.3 输入边界
 
 你将收到：
@@ -638,6 +644,18 @@
       "suggested_actions": []
     }
   ],
+  "soft_indicators": [
+    {
+      "indicator_id": "",
+      "dimension": "方向校准力",
+      "label": "",
+      "score": 0,
+      "confidence": 0.0,
+      "score_basis": "",
+      "evidence_refs": [],
+      "limitations": []
+    }
+  ],
   "human_review_items": [
     {
       "review_id": "",
@@ -657,6 +675,7 @@
 - 行动项数量与任务表关联明显不一致时，必须生成 `human_review_items`
 - 历史会议只有补录或摘要时，历史连续性判断必须降低置信度
 - 无有效任务样本时，推进闭环力相关 finding 输出 `no_sample`
+- `soft_indicators` 必须 2-4 个，且至少覆盖方向校准力、推进闭环力中的一个或两个子面向
 
 ### 4.8 禁止事项
 
@@ -685,6 +704,12 @@
 ### 5.2 任务目标
 
 你的核心任务是：基于 `meeting_fact_pack`、`history_bundle`、`hard_metrics_result`、`raw_payload` 和 `evaluation_plan`，输出风险治理力、组织行为健康度的结构化发现、风险标签和人工复核项。
+
+补充要求：
+
+- 先计算本职责范围内的 `soft_indicators`
+- 再基于 `soft_indicators + hard_metrics + 文本证据` 输出 findings 和 risk flags
+- 组织行为相关 `soft_indicators` 必须显式保留语境限制
 
 ### 5.3 输入边界
 
@@ -730,6 +755,18 @@
   "project_id": "",
   "manager_id": "",
   "dimension_findings": [],
+  "soft_indicators": [
+    {
+      "indicator_id": "",
+      "dimension": "风险治理力",
+      "label": "",
+      "score": 0,
+      "confidence": 0.0,
+      "score_basis": "",
+      "evidence_refs": [],
+      "limitations": []
+    }
+  ],
   "risk_flags": [
     {
       "flag_id": "",
@@ -752,6 +789,7 @@
 - 高压语言、羞辱、威胁、公开负向反馈等敏感结论必须进入人审
 - 风险表与周报/会议冲突时，必须标记冲突来源并进入人审
 - 没有高等级风险样本时，不得虚构高等级风险表现
+- `soft_indicators` 必须 2-4 个，且至少覆盖风险治理力、组织行为健康度中的一个或两个子面向
 
 ### 5.8 禁止事项
 
@@ -779,6 +817,11 @@
 ### 6.2 任务目标
 
 你的核心任务是：结合会议、聊天、日历、通讯录、任务和风险记录，输出协同调度力的结构化发现。
+
+补充要求：
+
+- 先计算协同调度力的 `soft_indicators`
+- 再基于 `soft_indicators + hard_metrics + 事实证据` 输出 findings
 
 ### 6.3 输入边界
 
@@ -815,6 +858,18 @@
   "project_id": "",
   "manager_id": "",
   "dimension_findings": [],
+  "soft_indicators": [
+    {
+      "indicator_id": "",
+      "dimension": "协同调度力",
+      "label": "",
+      "score": 0,
+      "confidence": 0.0,
+      "score_basis": "",
+      "evidence_refs": [],
+      "limitations": []
+    }
+  ],
   "human_review_items": [],
   "coordination_summary": ""
 }
@@ -825,6 +880,7 @@
 - 日历或通讯录缺失时，必要干系人判断必须降级
 - 聊天只有消息 ID 或缺少上下文时，不得判断响应质量
 - 跨团队阻塞解除证据不足时，必须生成复核项
+- `soft_indicators` 必须 2-3 个，用来表达同步充分性、依赖澄清度、阻塞解除质量等软判断
 
 ### 6.8 禁止事项
 
@@ -843,6 +899,7 @@
 你的职责边界：
 
 - 汇总 Management Reviewer、Risk & Behavior Auditor、Coordination Lens 的 findings
+- 汇总三个专家先行计算的 `soft_indicators`
 - 统一五个主维度的评分、等级、置信度、风险标签和建议动作
 - 处理跨 Agent 输出冲突
 - 生成 `AI 替代风险指数` 附加观察项
@@ -865,6 +922,12 @@
 - 已累积的 `human_review_items`
 
 不得新增事实，不得覆盖专家 Agent 的原始证据。若不同 Agent 对同一事件判断冲突，必须保留冲突并进入人审。
+
+评分原则：
+
+- 每个维度都要综合 `hard_metrics + soft_indicators + dimension_findings`
+- 不能只根据硬指标直接打分
+- 不能忽略专家已经显式计算出的 `soft_indicators`
 
 ### 7.4 五维输出
 

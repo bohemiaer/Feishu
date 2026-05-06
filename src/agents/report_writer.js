@@ -1,6 +1,7 @@
 "use strict";
 
 const { callJsonModel } = require("../llm/client");
+const { assertArtifactValid } = require("../shared/schema_validation");
 
 const CASE04_SYSTEM_PROMPT = `
 你是 Report Writer，负责把结构化评估结果转写为飞书文档、消息和 Base 回写载荷。
@@ -135,7 +136,7 @@ function buildCase04ReportRequest({
     missing.push("capability_assessor_result_ready");
   }
 
-  return {
+  return assertArtifactValid("report_writer_request", {
     task_context: meetingFactPack.task_context,
     meeting_id: meetingFactPack.meeting_info.meeting_id,
     project_id: meetingFactPack.meeting_info.project_id,
@@ -171,12 +172,12 @@ function buildCase04ReportRequest({
       riskBehaviorAuditorResult,
       coordinationLensResult
     ])
-  };
+  });
 }
 
 async function writeCase04Report(request) {
   if (request.input_status && request.input_status.readiness === "blocked") {
-    return {
+    return assertArtifactValid("report_result", {
       report_status: "blocked",
       report_title: "",
       manager_id: request.manager_id,
@@ -190,7 +191,9 @@ async function writeCase04Report(request) {
       next_actions: [],
       base_writeback_payload: {},
       missing_upstream_results: request.input_status.missing_upstream_results
-    };
+    }, {
+      stage: "post_model"
+    });
   }
 
   const result = await callJsonModel({
@@ -198,7 +201,9 @@ async function writeCase04Report(request) {
     userPrompt: JSON.stringify(request, null, 2),
     temperature: 0.3
   });
-  return normalizeReportResult(result);
+  return assertArtifactValid("report_result", normalizeReportResult(result), {
+    stage: "post_model"
+  });
 }
 
 module.exports = {

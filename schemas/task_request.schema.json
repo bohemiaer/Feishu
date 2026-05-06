@@ -24,7 +24,7 @@
       "properties": {
         "trigger_type": {
           "type": "string",
-          "enum": ["manual", "scheduled", "event", "risk"]
+          "enum": ["manual", "scheduled", "event", "risk", "feishu_bot"]
         },
         "report_type": {
           "type": "string",
